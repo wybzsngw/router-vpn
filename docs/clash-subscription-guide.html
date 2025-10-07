@@ -3,8 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>申请 Clash 订阅指南｜持续更新中~~</title>
-  <meta name="description" content="一步步教你申请 Clash 订阅，并导入到 MerlinClash。" />
+  <title>Clash订阅申请指南 - 机场推荐与MerlinClash导入教程 | 蓝胖云 扬帆云 大哥云 三番云</title>
+  <meta name="description" content="详细的Clash订阅申请指南，包含蓝胖云、扬帆云、大哥云、三番云等机场推荐，MerlinClash导入教程，价格对比，流媒体解锁，ChatGPT访问等完整攻略。" />
+  <meta name="keywords" content="Clash订阅,机场推荐,蓝胖云,扬帆云,大哥云,三番云,MerlinClash,路由器VPN,流媒体解锁,ChatGPT访问,翻墙,科学上网" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Clash订阅申请指南 - 机场推荐与MerlinClash导入教程" />
+  <meta property="og:description" content="详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mowei-ie.github.io/router-vpn/clash-subscription-guide.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Clash订阅申请指南 - 机场推荐与MerlinClash导入教程" />
+  <meta name="twitter:description" content="详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程" />
+  <link rel="canonical" href="https://mowei-ie.github.io/router-vpn/clash-subscription-guide.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Clash订阅申请指南",
+    "description": "详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程",
+    "url": "https://mowei-ie.github.io/router-vpn/clash-subscription-guide.html",
+    "author": {
+      "@type": "Organization",
+      "name": "Router VPN Guide"
+    },
+    "datePublished": "2024-01-01",
+    "dateModified": "2024-01-01",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "机场推荐列表",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "蓝胖云",
+          "description": "极致性价比，爆款套餐仅需¥8/月"
+        },
+        {
+          "@type": "ListItem", 
+          "position": 2,
+          "name": "扬帆云",
+          "description": "性价比、多地区，影音解锁"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3, 
+          "name": "大哥云",
+          "description": "稳定优先、专线优化"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "三番云", 
+          "description": "覆盖全面、便捷导入"
+        }
+      ]
+    }
+  }
+  </script>
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=370664813"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID', {
+      page_title: 'Clash订阅申请指南',
+      page_location: window.location.href,
+      custom_map: {
+        'custom_parameter_1': 'clash_guide'
+      }
+    });
+  </script>
+  
   <style>
     :root{
       --bg-start:#f7f8fc; /* light background start */
@@ -90,6 +162,9 @@
       <div>
         <h1>申请 Clash 订阅 ｜ 持续更新中~~</h1>
         <div class="subtitle">一文搞定订阅申请与 MerlinClash 导入，附购买与验证要点</div>
+        <div class="visit-counter" style="margin-top: 8px; font-size: 12px; color: var(--muted);">
+          <span id="visit-count">正在加载访问次数...</span>
+        </div>
       </div>
     </header>
 
@@ -257,6 +332,41 @@
       本页参考并整理自 <a href="https://clashforandroid.org/node/#" target="_blank" rel="noopener">clashforandroid.org/node/#</a>（仅用作学习与指引）。请遵守当地法律法规，合理合规使用网络与订阅服务。
     </footer>
   </div>
+
+  <!-- 访问计数脚本 -->
+  <script>
+    // 简单的访问计数功能
+    function updateVisitCount() {
+      // 从localStorage获取访问次数
+      let visitCount = localStorage.getItem('clash_guide_visits');
+      if (!visitCount) {
+        visitCount = 1;
+      } else {
+        visitCount = parseInt(visitCount) + 1;
+      }
+      
+      // 保存到localStorage
+      localStorage.setItem('clash_guide_visits', visitCount);
+      
+      // 更新显示
+      const countElement = document.getElementById('visit-count');
+      if (countElement) {
+        countElement.textContent = `页面访问次数: ${visitCount.toLocaleString()}`;
+      }
+      
+      // 发送到Google Analytics (如果配置了GA)
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'page_view', {
+          'custom_parameter_1': 'clash_guide',
+          'page_title': 'Clash订阅申请指南',
+          'visit_count': visitCount
+        });
+      }
+    }
+
+    // 页面加载完成后更新计数
+    document.addEventListener('DOMContentLoaded', updateVisitCount);
+  </script>
 </body>
 </html>
 
