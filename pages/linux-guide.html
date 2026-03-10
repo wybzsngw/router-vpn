@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux Clash 翻墙教程 — GUI 桌面版与服务器版</title>
+  <meta name="description" content="Linux 系统使用 Clash 实现科学上网，含 Clash Verge Rev 桌面版与无 GUI 服务器版完整教程，支持 Debian/Ubuntu/Fedora/Arch。" />
+  <meta name="keywords" content="Clash,Linux,翻墙,科学上网,Clash Verge Rev,headless,无GUI" />
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker {
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul, .card ol { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    pre, code {
+      background: rgba(0,0,0,.04);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    code.inline { padding: .2em .5em; display: inline }
+    pre { margin: 12px 0 }
+    pre code { padding: 0; background: none }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .section-divider {
+      margin: 36px 0 16px;
+      font-size: 14px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 600;
+    }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Linux Clash 翻墙教程 — GUI 桌面版与服务器版</h1>
+    <p class="subtitle">在 Linux 上使用 Clash Verge Rev 或命令行版 Clash 实现科学上网</p>
+
+    <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="index.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="clash-subscription-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="asus-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
+      <a href="soft-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">软路由</a>
+      <a href="windows-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows</a>
+      <a href="linux-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">Linux</a>
+      <a href="macos-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">macOS</a>
+      <a href="mobile-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
+    </nav>
+
+    <!-- GUI DESKTOP SECTION -->
+
+    <div class="section-divider">一、GUI 桌面版</div>
+
+    <section class="card">
+      <div class="kicker">GUI 01</div>
+      <h2>1. 方案概述</h2>
+      <p><strong>Clash Verge Rev for Linux</strong> 与 Windows、macOS 版本功能一致，提供图形化界面，支持订阅管理、规则分流、TUN 模式等。</p>
+      <p><strong>支持发行版</strong>：Debian、Ubuntu、Fedora、Arch Linux 等主流桌面发行版。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">GUI 02</div>
+      <h2>2. 下载安装</h2>
+      <p>从 GitHub 发布页下载对应格式：</p>
+      <ul>
+        <li><strong>AppImage</strong> — 通用格式，赋予执行权限后直接运行</li>
+        <li><strong>deb</strong> — Debian/Ubuntu：<code class="inline">sudo dpkg -i clash-verge-rev_*.deb</code></li>
+        <li><strong>rpm</strong> — Fedora/RHEL：<code class="inline">sudo rpm -i clash-verge-rev_*.rpm</code></li>
+        <li><strong>Arch</strong>：<code class="inline">yay -S clash-verge-rev</code> 或 <code class="inline">pacman -S clash-verge-rev</code></li>
+      </ul>
+      <p>发布页：<a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener">clash-verge-rev releases</a></p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">GUI 03</div>
+      <h2>3. 导入订阅</h2>
+      <p>与 Windows 操作相同：</p>
+      <ol style="list-style:decimal">
+        <li>打开 Clash Verge Rev</li>
+        <li>点击 <strong>Profiles</strong>（配置）</li>
+        <li>在输入框粘贴订阅链接</li>
+        <li>点击 <strong>Import</strong> 导入</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <div class="kicker">GUI 04</div>
+      <h2>4. 启动代理</h2>
+      <p><strong>系统代理（System Proxy）</strong>：打开主界面的 System Proxy 开关，系统代理将指向 Clash（默认 <code class="inline">127.0.0.1:7897</code>）。</p>
+      <p><strong>TUN 模式</strong>：开启 TUN 开关可实现全局代理，首次使用可能需安装依赖或授予权限。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">GUI 05</div>
+      <h2>5. 桌面环境代理</h2>
+      <p>若系统代理未自动生效，可手动配置：</p>
+      <ul>
+        <li><strong>GNOME</strong>：设置 → 网络 → 网络代理 → 手动，填入 <code class="inline">127.0.0.1</code> 和端口 <code class="inline">7897</code></li>
+        <li><strong>KDE</strong>：系统设置 → 网络 → 代理，配置 HTTP/SOCKS 代理</li>
+      </ul>
+    </section>
+
+    <!-- HEADLESS SERVER SECTION -->
+
+    <div class="section-divider">二、无 GUI 服务器版（Headless）</div>
+
+    <section class="card">
+      <div class="kicker">Headless 01</div>
+      <h2>6. 方案概述</h2>
+      <p>适用于<strong>无图形界面的 Linux 服务器</strong>，如 Ubuntu Server、CentOS、Debian 等。通过命令行安装 Clash 二进制，配合 systemd 服务与配置文件实现代理。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Headless 02</div>
+      <h2>7. 下载安装</h2>
+      <p>根据架构下载 Clash 二进制：</p>
+      <pre><code># 检测架构
+uname -m
+
+# 下载（以 amd64 为例）
+wget https://github.com/Dreamacro/clash/releases/download/v1.18.0/clash-linux-amd64-v1.18.0.gz
+gunzip clash-linux-amd64-v1.18.0.gz
+chmod +x clash-linux-amd64-v1.18.0
+sudo mv clash-linux-amd64-v1.18.0 /usr/local/bin/clash
+
+# 验证
+clash -v</code></pre>
+      <p>架构对应：<code class="inline">x86_64</code>→amd64，<code class="inline">aarch64</code>→arm64，<code class="inline">armv7l</code>→armv7。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Headless 03</div>
+      <h2>8. 配置文件</h2>
+      <p>配置文件路径：<code class="inline">~/.config/clash/config.yaml</code></p>
+      <p>关键字段说明：</p>
+      <pre><code>port: 7890              # HTTP 代理端口
+socks-port: 7891        # SOCKS5 端口
+allow-lan: false        # 是否允许局域网连接
+mode: rule              # 规则模式
+external-controller: 127.0.0.1:9090  # REST API 端口
+
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  nameserver: [223.5.5.5, 119.29.29.29]
+  fallback: [8.8.8.8, 1.1.1.1]
+
+proxies: [...]          # 代理节点
+proxy-groups: [...]     # 代理组
+rules: [...]            # 分流规则</code></pre>
+      <p>可使用订阅链接下载配置：<code class="inline">curl -L "订阅URL" -o ~/.config/clash/config.yaml</code></p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Headless 04</div>
+      <h2>9. systemd 服务</h2>
+      <p>创建 <code class="inline">/etc/systemd/system/clash.service</code>：</p>
+      <pre><code>[Unit]
+Description=Clash daemon
+After=network-online.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5
+User=你的用户名
+ExecStart=/usr/local/bin/clash -d /home/你的用户名/.config/clash
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+      <p>启动与管理：</p>
+      <pre><code>sudo systemctl daemon-reload
+sudo systemctl start clash
+sudo systemctl enable clash
+sudo systemctl status clash</code></pre>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Headless 05</div>
+      <h2>10. 环境变量代理</h2>
+      <p>临时设置（当前会话）：</p>
+      <pre><code>export http_proxy=http://127.0.0.1:7890
+export https_proxy=http://127.0.0.1:7890
+export all_proxy=socks5://127.0.0.1:7891
+export no_proxy=localhost,127.0.0.1,::1</code></pre>
+      <p>永久设置：将上述内容追加到 <code class="inline">~/.bashrc</code> 或 <code class="inline">/etc/environment</code>，然后执行 <code class="inline">source ~/.bashrc</code>。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Headless 06</div>
+      <h2>11. REST API</h2>
+      <p>Clash 提供 External Controller，默认 <code class="inline">127.0.0.1:9090</code>，可用 curl 管理：</p>
+      <pre><code># 获取当前配置
+curl http://127.0.0.1:9090/configs
+
+# 获取代理列表
+curl http://127.0.0.1:9090/proxies
+
+# 切换节点（需替换 proxy-name 和 selector-name）
+curl -X PUT http://127.0.0.1:9090/proxies/selector-name \
+  -H "Content-Type: application/json" \
+  -d '{"name":"proxy-name"}'</code></pre>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Headless 07</div>
+      <h2>12. 一键安装脚本</h2>
+      <p>项目提供一键安装脚本，可自动完成下载、安装、配置目录创建、systemd 服务等步骤：</p>
+      <pre><code># 使用项目内脚本
+./scripts/install-clash-headless.sh</code></pre>
+      <p>脚本路径：<code class="inline">scripts/install-clash-headless.sh</code></p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Headless 08</div>
+      <h2>13. 常见问题</h2>
+      <p><strong>Permission denied</strong> — 确保 clash 二进制有执行权限：<code class="inline">chmod +x /usr/local/bin/clash</code></p>
+      <p><strong>端口被占用</strong> — 修改 config.yaml 中的 port、socks-port；或关闭占用端口的进程。</p>
+      <p><strong>DNS 解析失败</strong> — 检查 dns 配置；确保 Country.mmdb 已下载到配置目录。</p>
+      <p><strong>服务无法启动</strong> — 检查 <code class="inline">clash -t -d ~/.config/clash</code> 验证配置；查看 <code class="inline">journalctl -u clash -f</code> 日志。</p>
+    </section>
+
+    <footer>
+      <p>📄 Markdown 源文件：<a href="../docs/clash-linux-install-guide.md">docs/clash-linux-install-guide.md</a>、<a href="../docs/clash-linux-headless-guide.md">docs/clash-linux-headless-guide.md</a></p>
+      <p style="margin-top:8px"><a href="index.html">← 返回首页</a></p>
+    </footer>
+  </div>
+</body>
+</html>

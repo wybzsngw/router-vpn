@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>华硕路由器 Clash 翻墙教程 — 梅林固件 + MerlinClash</title>
+  <meta name="description" content="华硕路由器使用梅林固件与 MerlinClash 实现全屋科学上网，含硬件准备、固件刷机、订阅配置、分流规则、游戏加速、流媒体解锁等完整教程。" />
+  <meta name="keywords" content="华硕路由器,梅林固件,MerlinClash,Clash,翻墙,科学上网,KoolCenter" />
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker {
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul, .card ol { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    pre, code {
+      background: rgba(0,0,0,.04);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    code.inline { padding: .2em .5em; display: inline }
+    pre { margin: 12px 0 }
+    pre code { padding: 0; background: none }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .callout {
+      background: linear-gradient(135deg, rgba(14,165,233,.08), rgba(124,77,255,.08));
+      border: 1px solid rgba(14,165,233,.2);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .callout strong { color: var(--brand) }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>华硕路由器 Clash 翻墙教程 — 梅林固件 + MerlinClash</h1>
+    <p class="subtitle">在华硕路由器上使用梅林固件与 MerlinClash 实现全屋科学上网</p>
+
+    <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="index.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="clash-subscription-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="asus-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">华硕路由器</a>
+      <a href="soft-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">软路由</a>
+      <a href="windows-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows</a>
+      <a href="linux-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Linux</a>
+      <a href="macos-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">macOS</a>
+      <a href="mobile-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
+    </nav>
+
+    <!-- PART 1: 梅林固件刷机 -->
+
+    <section class="card">
+      <div class="kicker">Part 1</div>
+      <h2>1. 硬件准备</h2>
+      <p>推荐使用以下华硕路由器型号，均支持梅林固件与 MerlinClash：</p>
+      <table>
+        <tr><th>型号</th><th>CPU</th><th>内存</th><th>接口</th><th>Wi-Fi</th></tr>
+        <tr><td>RT-AX86U Pro</td><td>博通四核 2.0GHz</td><td>1GB</td><td>2.5G+4×1G</td><td>Wi-Fi 6</td></tr>
+        <tr><td>RT-AX88U Pro</td><td>博通四核 2.0GHz</td><td>1GB</td><td>2.5G+8×1G</td><td>Wi-Fi 6</td></tr>
+        <tr><td>RT-BE86U</td><td>博通四核 2.6GHz</td><td>2GB</td><td>2.5G+多口千兆</td><td>Wi-Fi 7</td></tr>
+        <tr><td>GT-AX6000</td><td>博通四核 2.0GHz</td><td>1GB</td><td>2.5G+4×1G</td><td>Wi-Fi 6</td></tr>
+        <tr><td>RT-AC86U</td><td>博通双核 1.8GHz</td><td>512MB</td><td>1G WAN+4×1G LAN</td><td>Wi-Fi 5</td></tr>
+      </table>
+      <p>入门级推荐 RT-AC86U；追求性能与性价比首选 RT-AX86U Pro；高端旗舰可选 RT-BE86U。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 1</div>
+      <h2>2. 固件下载</h2>
+      <p><strong>KoolCenter（推荐）</strong>：<a href="https://www.asusgo.com/" target="_blank" rel="noopener">www.asusgo.com</a> — 提供官改与梅林改版固件，按机型选择对应版本。</p>
+      <p><strong>梅林官方</strong>：<a href="https://www.asuswrt-merlin.net/" target="_blank" rel="noopener">www.asuswrt-merlin.net</a> — 原版梅林固件。</p>
+      <p><strong>固件命名规则</strong>：</p>
+      <ul>
+        <li><code class="inline">102.x_y</code> — 新平台/新内核，适用于 Wi-Fi 7/BE 系列及部分 AX 机型</li>
+        <li><code class="inline">388.x_y</code> — Wi-Fi 6/AX 系列主线分支</li>
+        <li><code class="inline">386.x_y</code> — 较老机型</li>
+      </ul>
+      <p>下载后务必核对 MD5 校验值，确保文件完整。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 1</div>
+      <h2>3. 备份设置</h2>
+      <p>刷机前务必备份当前配置，避免丢失宽带账号、Wi-Fi 密码等设置。</p>
+      <ol style="list-style:decimal">
+        <li>登录路由器管理界面（如 <code class="inline">http://192.168.50.1</code> 或 <code class="inline">http://router.asus.com</code>）</li>
+        <li>进入 <strong>系统管理</strong> → <strong>备份/恢复/导出设置</strong></li>
+        <li>点击 <strong>下载</strong> 保存当前配置到本地</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 1</div>
+      <h2>4. 刷入固件</h2>
+      <ol style="list-style:decimal">
+        <li>进入 <strong>系统管理</strong> → <strong>固件升级</strong></li>
+        <li>点击「选择文件」，选择下载的 <code class="inline">.w</code> 固件文件</li>
+        <li>点击「上传」开始刷机</li>
+        <li>等待 3–5 分钟，期间请勿断电或重启</li>
+        <li>路由器会自动重启完成升级</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 1</div>
+      <h2>5. 恢复出厂</h2>
+      <p>刷机完成后建议执行一次恢复出厂设置，以避免旧配置与新固件冲突。</p>
+      <ol style="list-style:decimal">
+        <li>进入 <strong>系统管理</strong> → <strong>恢复/导出/上传设置</strong></li>
+        <li>勾选「恢复」旁的复选框，点击「恢复」按钮</li>
+        <li>路由器重启后，重新进入向导设置宽带、Wi-Fi 等基础参数</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 1</div>
+      <h2>6. 验证版本</h2>
+      <p>登录路由器管理界面，确认固件版本字符串显示为「Merlin」或「koolshare」字样，说明梅林固件已成功刷入。</p>
+      <p>同时检查是否出现「软件中心」入口，这是安装 MerlinClash 的前提。</p>
+    </section>
+
+    <!-- PART 2: MerlinClash 安装配置 -->
+
+    <section class="card">
+      <div class="kicker">Part 2</div>
+      <h2>7. 软件中心</h2>
+      <p>若固件来自 KoolCenter，通常已自带软件中心。若未显示或需更新：</p>
+      <ul>
+        <li>进入 KoolCenter 官网，按机型下载对应软件中心安装包</li>
+        <li>在路由器管理界面中找到「软件中心」或「离线安装」入口</li>
+        <li>上传并安装软件中心，完成后刷新页面</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 2</div>
+      <h2>8. 安装 MerlinClash</h2>
+      <p><strong>离线安装步骤：</strong></p>
+      <p>根据路由器型号选择对应版本下载：</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin:12px 0">
+        <a href="../downloads/MC2_0.4.6_ARM64.tar.gz" download style="display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(14,165,233,.12));color:var(--text);text-decoration:none;border:1px solid rgba(16,185,129,.25);font-size:14px;font-weight:500">⬇ MC2_0.4.6_ARM64.tar.gz（推荐）</a>
+        <a href="../downloads/MC2_0.3_ARM64.tar.gz" download style="display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:rgba(0,0,0,.04);color:var(--text);text-decoration:none;border:1px solid rgba(0,0,0,.08);font-size:14px">⬇ MC2_0.3_ARM64.tar.gz</a>
+      </div>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:10px">右键点击 → 链接另存为，或直接点击下载。将来会持续更新版本。</p>
+      <ol style="list-style:decimal">
+        <li>下载对应版本的 <code class="inline">.tar.gz</code> 安装包（ARM64 适用于 RT-AX86U PRO 等，ARM32 适用于 AX82U 等）</li>
+        <li>进入 <strong>软件中心</strong> → <strong>离线安装</strong></li>
+        <li>上传 <code class="inline">.tar.gz</code> 文件</li>
+        <li>点击「安装」后等待完成</li>
+      </ol>
+      <div class="callout">
+        <strong>更多版本下载：</strong><a href="https://t.me/merlinclashcat" target="_blank" rel="noopener">Telegram 下载频道</a> · <a href="https://t.me/s/merlinclashfile" target="_blank" rel="noopener">Telegram 文件频道</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 2</div>
+      <h2>9. 订阅导入</h2>
+      <p>在 MerlinClash 中配置订阅：</p>
+      <ol style="list-style:decimal">
+        <li>打开 MerlinClash 主界面</li>
+        <li>进入 <strong>订阅设置</strong></li>
+        <li>粘贴订阅链接（从机场/代理服务商获取）</li>
+        <li>点击「更新」拉取节点列表</li>
+      </ol>
+      <p>订阅链接通常格式为：<code class="inline">https://xxx.com/api/v1/client/subscribe?token=xxx</code>，请妥善保管勿泄露。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 2</div>
+      <h2>10. 节点选择</h2>
+      <p>在 MerlinClash 的节点列表中：</p>
+      <ul>
+        <li>可对节点进行延迟测试，选择延迟最低、稳定性最好的节点</li>
+        <li>支持手动选择节点或使用「自动选择」</li>
+        <li>建议定期更新订阅以获取最新节点</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 2</div>
+      <h2>11. 分流规则</h2>
+      <p>MerlinClash 支持规则分流，可按需配置：</p>
+      <ul>
+        <li><strong>流媒体</strong>：Netflix、Disney+、HBO 等走专用节点</li>
+        <li><strong>AI 服务</strong>：ChatGPT、Claude 等走代理</li>
+        <li><strong>游戏</strong>：游戏加速节点单独配置</li>
+        <li><strong>国内直连</strong>：GEOIP CN、国内域名直连</li>
+      </ul>
+      <p>规则从上到下匹配，命中即执行对应动作。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 2</div>
+      <h2>12. 游戏加速</h2>
+      <p>在 MerlinClash 中配置游戏模式：</p>
+      <ul>
+        <li>选择低延迟、专线游戏节点</li>
+        <li>可针对特定游戏或平台启用加速</li>
+        <li>建议使用 UDP 支持良好的节点</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 2</div>
+      <h2>13. 流媒体解锁</h2>
+      <p>针对 Netflix、Disney+ 等流媒体：</p>
+      <ul>
+        <li>选择支持对应地区解锁的节点（如美区、港区等）</li>
+        <li>部分机场提供流媒体专用节点</li>
+        <li>在分流规则中可单独配置流媒体域名走代理</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 2</div>
+      <h2>14. 广告过滤</h2>
+      <p>MerlinClash 支持广告过滤规则：</p>
+      <ul>
+        <li>在规则配置中添加 REJECT 规则屏蔽广告域名</li>
+        <li>可引用第三方广告过滤规则集</li>
+        <li>注意：过度过滤可能影响部分网站正常使用</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 2</div>
+      <h2>15. 监控与日志</h2>
+      <p>MerlinClash 提供：</p>
+      <ul>
+        <li><strong>状态监控</strong>：连接状态、流量统计</li>
+        <li><strong>日志查看</strong>：排查连接问题、规则命中情况</li>
+        <li><strong>性能指标</strong>：CPU、内存占用</li>
+      </ul>
+      <p>可通过 Web 管理面板或路由器内嵌界面查看。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Part 2</div>
+      <h2>16. 常见问题</h2>
+      <p><strong>节点列表为空</strong> — 检查订阅链接是否有效；检查网络；部分机场需在网页端重新生成订阅。</p>
+      <p><strong>订阅更新失败</strong> — 确认路由器可访问外网；检查订阅链接格式；尝试手动更新。</p>
+      <p><strong>速度下降</strong> — 更换节点；检查节点是否过载；确认宽带带宽是否充足。</p>
+      <p><strong>DNS 问题</strong> — 在 MerlinClash 中启用 DNS 配置；使用 DoH/DoT；检查 DNS 泄露。</p>
+    </section>
+
+    <footer>
+      <p>📄 更多文档：<a href="../README.md">GitHub README</a></p>
+      <p style="margin-top:8px"><a href="index.html">← 返回首页</a></p>
+    </footer>
+  </div>
+</body>
+</html>

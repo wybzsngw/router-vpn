@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>macOS Clash 翻墙教程 — ClashX Meta</title>
+  <meta name="description" content="macOS 系统使用 ClashX Meta 实现科学上网，含下载安装、订阅导入、增强模式、终端代理、Homebrew 协同等完整教程。" />
+  <meta name="keywords" content="ClashX Meta,macOS,翻墙,科学上网,Clash,代理,增强模式" />
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker {
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    pre, code {
+      background: rgba(0,0,0,.04);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    code.inline { padding: .2em .5em; display: inline }
+    pre { margin: 12px 0 }
+    pre code { padding: 0; background: none }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>macOS Clash 翻墙教程 — ClashX Meta</h1>
+    <p class="subtitle">在 macOS 上使用 ClashX Meta 实现科学上网</p>
+
+    <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="index.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="clash-subscription-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="asus-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
+      <a href="soft-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">软路由</a>
+      <a href="windows-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows</a>
+      <a href="linux-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Linux</a>
+      <a href="macos-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">macOS</a>
+      <a href="mobile-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
+    </nav>
+
+    <!-- 1. 软件介绍 -->
+    <section class="card">
+      <div class="kicker">Section 01</div>
+      <h2>软件介绍</h2>
+      <p><strong>ClashX Meta</strong> 是 macOS 上基于 <strong>Clash.Meta</strong> 内核的图形化代理客户端，是原 <strong>ClashX</strong> 的继任者。ClashX 项目已停止维护，ClashX Meta 由社区持续更新，支持更多现代特性。</p>
+      <table>
+        <tr><th>特性</th><th>ClashX</th><th>ClashX Meta</th></tr>
+        <tr><td>内核</td><td>原版 Clash</td><td>Clash.Meta</td></tr>
+        <tr><td>维护状态</td><td>已停止</td><td>持续更新</td></tr>
+        <tr><td>TUN 增强模式</td><td>不支持</td><td>支持</td></tr>
+        <tr><td>协议支持</td><td>基础</td><td>更全（VLESS、Hysteria 等）</td></tr>
+      </table>
+      <p><strong>为什么选择 ClashX Meta？</strong></p>
+      <ul>
+        <li><strong>原生 macOS 体验</strong>：菜单栏常驻，轻量简洁</li>
+        <li><strong>Clash.Meta 内核</strong>：支持更多协议和规则</li>
+        <li><strong>增强模式（TUN）</strong>：可接管终端等全部流量</li>
+        <li><strong>开源免费</strong>：代码透明，社区活跃</li>
+      </ul>
+    </section>
+
+    <!-- 2. 系统要求 -->
+    <section class="card">
+      <div class="kicker">Section 02</div>
+      <h2>系统要求</h2>
+      <table>
+        <tr><th>项目</th><th>要求</th></tr>
+        <tr><td>操作系统</td><td>macOS 10.15 (Catalina) 及以上</td></tr>
+        <tr><td>架构</td><td>Apple Silicon (M1/M2/M3) 与 Intel 均支持</td></tr>
+        <tr><td>磁盘空间</td><td>约 50MB</td></tr>
+      </table>
+      <p>检查系统版本：</p>
+      <pre><code># 在终端执行
+sw_vers</code></pre>
+      <p>输出中的 <code class="inline">ProductVersion</code> 需为 10.15 或更高。</p>
+    </section>
+
+    <!-- 3. 下载安装 -->
+    <section class="card">
+      <div class="kicker">Section 03</div>
+      <h2>下载安装</h2>
+      <p><strong>方法一：GitHub 发布页</strong></p>
+      <p>打开 <a href="https://github.com/MetaCubeX/ClashX.Meta/releases" target="_blank" rel="noopener">ClashX Meta 官方发布页</a>，在 Assets 区域选择：</p>
+      <ul>
+        <li><code class="inline">ClashX.Meta-x.x.x-arm64.dmg</code> — Apple Silicon (M1/M2/M3)</li>
+        <li><code class="inline">ClashX.Meta-x.x.x-x64.dmg</code> — Intel 芯片</li>
+      </ul>
+      <p>下载完成后，双击 .dmg 文件，将 ClashX Meta 拖入<strong>应用程序</strong>文件夹。</p>
+      <p><strong>方法二：Homebrew 安装</strong></p>
+      <pre><code># 使用 Homebrew Cask 安装
+brew install --cask clashx-meta</code></pre>
+      <p>首次启动若提示「无法验证开发者」，打开 <strong>系统设置 → 隐私与安全性</strong>，点击「仍要打开」即可。</p>
+    </section>
+
+    <!-- 4. 导入订阅 -->
+    <section class="card">
+      <div class="kicker">Section 04</div>
+      <h2>导入订阅</h2>
+      <p><strong>1. 获取订阅链接</strong></p>
+      <p>从您的机场/代理服务商获取订阅链接（通常为 <code class="inline">https://xxx.com/api/v1/client/subscribe?token=xxx</code> 格式）。</p>
+      <p><strong>2. 通过菜单导入</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>点击菜单栏的 ClashX Meta 图标（猫形图标）</li>
+        <li>选择 <strong>配置</strong> → <strong>远程配置文件</strong> → <strong>管理</strong></li>
+        <li>点击 <strong>添加</strong>，粘贴订阅链接，命名后保存</li>
+      </ol>
+      <p><strong>3. 选择并更新配置</strong></p>
+      <p>在 <strong>配置</strong> 子菜单中点击要使用的配置名称，使其生效。右键配置 → <strong>更新</strong> 可手动刷新订阅。</p>
+    </section>
+
+    <!-- 5. 启动代理 -->
+    <section class="card">
+      <div class="kicker">Section 05</div>
+      <h2>启动代理</h2>
+      <p><strong>设置系统代理</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>点击菜单栏 ClashX Meta 图标</li>
+        <li>勾选 <strong>设置为系统代理</strong>（Set as System Proxy）</li>
+      </ol>
+      <p>勾选后，系统代理将指向 Clash（默认 HTTP <code class="inline">127.0.0.1:7890</code>，SOCKS5 <code class="inline">127.0.0.1:7891</code>），支持系统代理的应用（如 Safari、Chrome）会自动走代理。</p>
+      <p>若需终端、命令行工具等全部走代理，请开启 <strong>增强模式</strong>，详见下方。</p>
+    </section>
+
+    <!-- 6. 增强模式 -->
+    <section class="card">
+      <div class="kicker">Section 06</div>
+      <h2>增强模式</h2>
+      <p><strong>什么是增强模式？</strong></p>
+      <p><strong>增强模式</strong>（Enhanced Mode）即 <strong>TUN 模式</strong>，通过虚拟网卡接管系统全部网络流量，实现真正的全局代理。与仅设置系统代理不同，增强模式可让<strong>终端、Git、npm、pip</strong> 等不读取系统代理的工具也走代理。</p>
+      <p><strong>启用增强模式</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>点击菜单栏 ClashX Meta 图标</li>
+        <li>选择 <strong>增强模式</strong> → <strong>启用</strong></li>
+      </ol>
+      <p>首次启用会要求输入<strong>管理员密码</strong>，用于创建虚拟网卡。若仅浏览网页，使用系统代理即可；若需终端走代理，建议开启增强模式。</p>
+    </section>
+
+    <!-- 7. 代理模式 -->
+    <section class="card">
+      <div class="kicker">Section 07</div>
+      <h2>代理模式</h2>
+      <p>在菜单栏 ClashX Meta 图标下，<strong>代理模式</strong> 可切换分流策略：</p>
+      <table>
+        <tr><th>模式</th><th>说明</th></tr>
+        <tr><td>规则 (Rule)</td><td>按规则分流：国内直连，国外走代理。<strong>推荐日常使用</strong></td></tr>
+        <tr><td>全局 (Global)</td><td>所有流量走代理</td></tr>
+        <tr><td>直连 (Direct)</td><td>所有流量直连，不走代理</td></tr>
+      </table>
+    </section>
+
+    <!-- 8. 终端代理配置 -->
+    <section class="card">
+      <div class="kicker">Section 08</div>
+      <h2>终端代理配置</h2>
+      <p>若未开启增强模式，终端默认<strong>不走</strong>系统代理，需手动配置环境变量。</p>
+      <p><strong>临时设置（当前会话）</strong></p>
+      <pre><code>export http_proxy="http://127.0.0.1:7890"
+export https_proxy="http://127.0.0.1:7890"
+export all_proxy="socks5://127.0.0.1:7891"</code></pre>
+      <p><strong>持久化配置（.zshrc）</strong></p>
+      <pre><code># 编辑 ~/.zshrc
+nano ~/.zshrc
+
+# 在文件末尾添加：
+# ClashX Meta 代理（端口以实际配置为准）
+export http_proxy="http://127.0.0.1:7890"
+export https_proxy="http://127.0.0.1:7890"
+export all_proxy="socks5://127.0.0.1:7891"
+export no_proxy="localhost,127.0.0.1,*.local"</code></pre>
+      <p>保存后执行 <code class="inline">source ~/.zshrc</code> 或重新打开终端。</p>
+      <p><strong>快捷开关别名</strong></p>
+      <pre><code># 在 ~/.zshrc 中添加
+alias proxy-on='export http_proxy="http://127.0.0.1:7890" https_proxy="http://127.0.0.1:7890" all_proxy="socks5://127.0.0.1:7891"'
+alias proxy-off='unset http_proxy https_proxy all_proxy'
+
+# 使用方式：
+proxy-on   # 开启代理
+proxy-off  # 关闭代理</code></pre>
+    </section>
+
+    <!-- 9. 与 Homebrew 协同 -->
+    <section class="card">
+      <div class="kicker">Section 09</div>
+      <h2>与 Homebrew 协同</h2>
+      <p>Homebrew 安装软件时，若网络受限，可通过代理加速。</p>
+      <p><strong>临时使用代理安装</strong></p>
+      <pre><code>export ALL_PROXY="http://127.0.0.1:7890"
+brew install xxx</code></pre>
+      <p><strong>持久配置</strong></p>
+      <p>在 <code class="inline">~/.zshrc</code> 中添加：</p>
+      <pre><code>export ALL_PROXY="http://127.0.0.1:7890"</code></pre>
+      <p><strong>仅对 Homebrew 使用代理</strong></p>
+      <pre><code># 仅当前会话
+export HOMEBREW_ALL_PROXY="http://127.0.0.1:7890"
+brew update
+brew install xxx</code></pre>
+      <p><strong>取消代理</strong></p>
+      <pre><code>unset ALL_PROXY
+unset HOMEBREW_ALL_PROXY</code></pre>
+    </section>
+
+    <!-- 10. Dashboard 面板 -->
+    <section class="card">
+      <div class="kicker">Section 10</div>
+      <h2>Dashboard 面板</h2>
+      <p><strong>内置 Dashboard</strong></p>
+      <p>点击菜单栏 ClashX Meta 图标 → 选择 <strong>Dashboard</strong> 或 <strong>打开控制面板</strong>。默认地址通常为 <code class="inline">http://127.0.0.1:9090</code>。</p>
+      <p><strong>外部 Dashboard：Yacd</strong></p>
+      <p><a href="https://github.com/haishanh/yacd" target="_blank" rel="noopener">Yacd</a> 是更美观的第三方 Clash 面板。</p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>在 ClashX Meta 中确保 <strong>External Controller</strong> 已开启（默认 <code class="inline">127.0.0.1:9090</code>）</li>
+        <li>访问 Yacd 在线版：<a href="https://yacd.haishan.me" target="_blank" rel="noopener">https://yacd.haishan.me</a></li>
+        <li>在页面中填写 API 地址：<code class="inline">http://127.0.0.1:9090</code>，点击连接</li>
+      </ol>
+      <p>可查看节点延迟、切换节点、查看规则匹配等。</p>
+    </section>
+
+    <!-- 11. 开机自启 -->
+    <section class="card">
+      <div class="kicker">Section 11</div>
+      <h2>开机自启</h2>
+      <p><strong>方法一：系统设置</strong></p>
+      <p>打开 <strong>系统设置</strong> → <strong>通用</strong> → <strong>登录项</strong> → 点击 <strong>+</strong>，在应用程序中找到 <strong>ClashX Meta</strong>，添加。</p>
+      <p><strong>方法二：应用内设置</strong></p>
+      <p>部分版本的 ClashX Meta 在 <strong>偏好设置</strong> 或 <strong>设置</strong> 中提供「开机启动」选项，勾选即可。</p>
+    </section>
+
+    <!-- 12. 常见问题 -->
+    <section class="card">
+      <div class="kicker">Section 12</div>
+      <h2>常见问题</h2>
+      <p><strong>1. 提示「无法验证开发者」或「已损坏」</strong></p>
+      <pre><code># 在终端执行（将路径替换为实际应用路径）
+xattr -cr /Applications/ClashX\ Meta.app</code></pre>
+      <p>或按系统设置 → 隐私与安全性 → 仍要打开。</p>
+      <p><strong>2. 增强模式无法启用</strong> — 确认已输入正确的管理员密码；检查是否被安全软件拦截；尝试重启 Mac 后再次启用。</p>
+      <p><strong>3. 配置文件格式错误</strong> — 确认订阅链接有效；检查机场是否支持 Clash 格式。</p>
+      <p><strong>4. DNS 解析异常</strong> — 在 Clash 配置中检查 <code class="inline">dns</code> 段，可尝试使用 <code class="inline">8.8.8.8</code>、<code class="inline">1.1.1.1</code> 等公共 DNS。</p>
+      <p><strong>5. 端口被占用</strong> — 在配置文件中修改 <code class="inline">mixed-port</code>、<code class="inline">port</code>、<code class="inline">socks-port</code>、<code class="inline">external-controller</code> 等端口号。</p>
+      <p><strong>6. 菜单栏图标不显示</strong> — 检查系统设置 → 控制中心 → 菜单栏；或重启 ClashX Meta。</p>
+    </section>
+
+    <footer>
+      <p>📄 本文档对应 Markdown 源文件：<a href="../docs/macos/clashx-meta.md">docs/macos/clashx-meta.md</a></p>
+      <p style="margin-top:8px"><a href="index.html">← 返回首页</a></p>
+    </footer>
+  </div>
+</body>
+</html>

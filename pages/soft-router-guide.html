@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>软路由翻墙教程 — OpenWrt + OpenClash / iKuai</title>
+  <meta name="description" content="软路由翻墙完整教程，含 OpenWrt + OpenClash 与 iKuai 旁路由方案，覆盖硬件推荐、网络拓扑、订阅导入、DNS 配置等。" />
+  <meta name="keywords" content="软路由,OpenWrt,OpenClash,iKuai,翻墙,科学上网,Clash,旁路由" />
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .section-title { margin: 36px 0 16px; font-size: 14px; letter-spacing: .15em; text-transform: uppercase; color: var(--accent) }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker {
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    pre, code {
+      background: rgba(0,0,0,.04);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    code.inline { padding: .2em .5em; display: inline }
+    pre { margin: 12px 0 }
+    pre code { padding: 0; background: none }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>软路由翻墙教程 — OpenWrt + OpenClash / iKuai</h1>
+    <p class="subtitle">在软路由上使用 OpenClash 实现全家设备自动翻墙</p>
+
+    <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="index.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="clash-subscription-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="asus-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
+      <a href="soft-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">软路由</a>
+      <a href="windows-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows</a>
+      <a href="linux-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Linux</a>
+      <a href="macos-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">macOS</a>
+      <a href="mobile-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
+    </nav>
+
+    <!-- ========== OpenWrt 部分 ========== -->
+    <h2 class="section-title">OpenWrt + OpenClash</h2>
+
+    <section class="card">
+      <div class="kicker">OpenWrt 01</div>
+      <h2>方案概述</h2>
+      <p><strong>什么是软路由？</strong></p>
+      <p>软路由（Soft Router）是指使用通用 x86/ARM 硬件配合路由固件（如 OpenWrt）实现的路由功能，与传统的硬路由（购买成品路由器）相对。软路由通常性能更强、可定制性更高。</p>
+      <p><strong>为什么选择 OpenWrt + OpenClash？</strong></p>
+      <ul>
+        <li><strong>OpenWrt</strong>：开源、稳定、可扩展的 Linux 路由系统，社区活跃，插件丰富</li>
+        <li><strong>OpenClash</strong>：基于 Clash 内核的 OpenWrt 插件，支持订阅、分流、TUN 等完整功能</li>
+      </ul>
+      <p><strong>方案优势</strong>：全家设备自动代理、细粒度控制（按域名/IP 分流）、高性能、统一管理。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">OpenWrt 02</div>
+      <h2>硬件推荐</h2>
+      <p><strong>x86 迷你主机</strong>（首选）：常见型号 N100、N5105、J4125、J1900 等，功耗低、体积小、性能足够。建议选择双网口版本（WAN + LAN）。</p>
+      <p>其他选择：旧电脑（加装双网卡）、虚拟机（ESXi、Proxmox VE、Hyper-V 等）。</p>
+      <table>
+        <tr><th>项目</th><th>最低配置</th><th>推荐配置</th></tr>
+        <tr><td>CPU</td><td>2 核</td><td>4 核及以上</td></tr>
+        <tr><td>内存</td><td>2GB</td><td>4GB 及以上</td></tr>
+        <tr><td>网口</td><td>双网口（WAN + LAN）</td><td>双千兆或 2.5G</td></tr>
+        <tr><td>存储</td><td>512MB</td><td>1GB 及以上</td></tr>
+      </table>
+    </section>
+
+    <section class="card">
+      <div class="kicker">OpenWrt 03</div>
+      <h2>OpenWrt 安装</h2>
+      <p><strong>1. 下载固件</strong></p>
+      <ul>
+        <li><strong>官方 OpenWrt</strong>：<a href="https://openwrt.org/" target="_blank" rel="noopener">openwrt.org</a> 选择对应设备型号</li>
+        <li><strong>ImmortalWrt</strong>：国内用户推荐，预装更多中文支持，<a href="https://immortalwrt.org/" target="_blank" rel="noopener">immortalwrt.org</a></li>
+      </ul>
+      <p>x86 设备通常选择 <code class="inline">combined-ext4.img.gz</code> 或 <code class="inline">generic-ext4-combined.img.gz</code>。</p>
+      <p><strong>2. 写入存储</strong></p>
+      <p>Windows 用户：使用 Rufus 或 balenaEtcher 将 .img 镜像写入 U 盘或硬盘，选择「原始磁盘镜像」模式。</p>
+      <pre><code># Linux 用户：解压后写入 U 盘（替换 /dev/sdX 为实际设备）
+gunzip openwrt-xxx.img.gz
+sudo dd if=openwrt-xxx.img of=/dev/sdX bs=4M status=progress</code></pre>
+      <p><strong>3. 首次启动</strong>：将 U 盘/硬盘插入设备，从该存储启动。默认 LAN IP 多为 <code class="inline">192.168.1.1</code>，用网线连接电脑访问 <code class="inline">http://192.168.1.1</code>。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">OpenWrt 04</div>
+      <h2>网络拓扑</h2>
+      <p><strong>模式一：软路由作为主路由</strong></p>
+      <pre><code>互联网 → 光猫 → [软路由 WAN] OpenWrt [LAN] → 交换机/设备</code></pre>
+      <p>软路由负责拨号、NAT、DHCP；所有流量经软路由，OpenClash 可全局代理。</p>
+      <p><strong>模式二：软路由作为旁路由（旁路网关）</strong></p>
+      <pre><code>互联网 → 主路由 → 交换机 → 设备
+                   ↓
+             [旁路由 OpenWrt]（仅 LAN，同网段）</code></pre>
+      <p>主路由负责拨号、DHCP；旁路由只做代理网关，不参与拨号；客户端需将网关设为旁路由 IP，或由主路由 DHCP 推送。</p>
+      <p><strong>旁路由配置要点</strong>：旁路由 LAN IP 与主路由同网段（如 <code class="inline">192.168.1.2</code>）；网关指向主路由；关闭 DHCP。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">OpenWrt 05</div>
+      <h2>安装 OpenClash</h2>
+      <p><strong>1. 更新软件源</strong> — 进入 <strong>系统 → 软件包</strong>，点击「更新列表」。</p>
+      <p><strong>2. 安装依赖</strong> — 在「软件包」中搜索并安装：<code class="inline">iptables</code>、<code class="inline">dnsmasq-full</code>、<code class="inline">coreutils</code>、<code class="inline">bash</code>、<code class="inline">curl</code>、<code class="inline">ca-certificates</code>、<code class="inline">ipset</code>、<code class="inline">libcap</code>、<code class="inline">kmod-tun</code> 等。</p>
+      <pre><code># 或通过 SSH 安装
+opkg update
+opkg install iptables dnsmasq-full coreutils coreutils-nohup bash curl ca-certificates ipset libcap libcap-bin kmod-tun kmod-inet-diag</code></pre>
+      <p><strong>3. 下载 OpenClash ipk</strong> — 访问 <a href="https://github.com/vernesong/OpenClash/releases" target="_blank" rel="noopener">OpenClash GitHub Releases</a>，根据 CPU 架构选择 x86_64 或 ARM 版本。</p>
+      <p><strong>4. 安装</strong> — 在「系统 → 软件包」中点击「上传软件包」选择 ipk 安装，或 SSH 执行：<code class="inline">opkg install /tmp/luci-app-openclash_xxx.ipk</code></p>
+      <p>安装完成后，在 <strong>服务 → OpenClash</strong> 中即可看到管理界面。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">OpenWrt 06</div>
+      <h2>导入订阅</h2>
+      <p><strong>方式一：订阅链接（推荐）</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>进入 <strong>OpenClash → 配置管理 → 订阅管理</strong></li>
+        <li>点击「添加」，填入订阅 URL</li>
+        <li>点击「更新配置」下载节点列表</li>
+        <li>在「配置订阅」中选择刚更新的配置，点击「使用配置」</li>
+      </ol>
+      <p><strong>方式二：手动上传 YAML</strong></p>
+      <p>从机场面板导出 Clash 配置，在 <strong>配置管理</strong> 中点击「上传」，选择 .yaml 文件，上传后选择该配置并「使用配置」。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">OpenWrt 07</div>
+      <h2>运行模式</h2>
+      <p><strong>Fake-IP 模式 vs Redir-Host 模式</strong></p>
+      <table>
+        <tr><th>模式</th><th>说明</th><th>适用场景</th></tr>
+        <tr><td>Fake-IP</td><td>用虚拟 IP 解析域名，减少 DNS 请求，降低延迟</td><td><strong>推荐大多数用户</strong>，兼容性好</td></tr>
+        <tr><td>Redir-Host</td><td>真实 DNS 解析，再根据 IP 分流</td><td>部分老旧应用、特殊场景</td></tr>
+      </table>
+      <p>建议默认使用 Fake-IP，若遇到某些应用异常再尝试 Redir-Host。</p>
+      <p><strong>TUN / Mixed 模式</strong>：TUN 模式接管系统网络栈，可代理所有流量（含 UDP、游戏）；Mixed 模式兼顾兼容性与游戏加速。游戏加速、UDP 需求建议开启 TUN 或 Mixed。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">OpenWrt 08</div>
+      <h2>DNS 配置</h2>
+      <p>在 <strong>OpenClash → DNS 设置</strong> 中：</p>
+      <ul>
+        <li><strong>本地 DNS 劫持</strong>：建议开启，避免 DNS 泄露</li>
+        <li><strong>Fake-IP 范围</strong>：默认 <code class="inline">198.18.0.1/16</code> 即可</li>
+        <li><strong>上游 DNS</strong>：选择可靠的公共 DNS（如 8.8.8.8、1.1.1.1、DoH）</li>
+      </ul>
+      <p><strong>避免 DNS 泄露</strong>：开启「DNS 劫持」，确保所有 DNS 请求经 OpenClash 处理；使用 DoH/DoT 加密上游；可访问 <a href="https://dnsleaktest.com/" target="_blank" rel="noopener">dnsleaktest.com</a> 检查是否泄露。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">OpenWrt 09</div>
+      <h2>故障排除</h2>
+      <p><strong>OpenClash 无法启动</strong> — 检查依赖是否完整安装；查看 <strong>系统 → 系统日志</strong> 或 OpenClash 日志；确认内核版本与 OpenClash 兼容。</p>
+      <p><strong>核心下载失败</strong> — 检查 OpenWrt 能否访问 GitHub；可手动从 <a href="https://github.com/MetaCubeX/Clash.Meta/releases" target="_blank" rel="noopener">Clash Meta Releases</a> 下载对应架构的 clash-meta，上传到 <code class="inline">/etc/openclash/core/</code>。</p>
+      <p><strong>DNS 解析循环</strong> — 关闭主路由或旁路由上的重复 DNS 劫持；确保 dnsmasq 与 OpenClash 的 DNS 端口不冲突。</p>
+      <p><strong>客户端无法上网</strong> — 检查客户端网关是否指向 OpenWrt（旁路由模式）；确认 OpenClash 已启动且运行模式正确；检查防火墙规则是否放行。</p>
+    </section>
+
+    <!-- ========== iKuai 部分 ========== -->
+    <h2 class="section-title">iKuai + 旁路由</h2>
+
+    <section class="card">
+      <div class="kicker">iKuai 01</div>
+      <h2>iKuai + 旁路由方案概述</h2>
+      <p>本方案以 <strong>iKuai 爱快</strong> 作为主路由，<strong>OpenWrt + OpenClash</strong> 作为旁路由，实现多 WAN、流控、行为管理等功能与翻墙代理的分离部署。</p>
+      <table>
+        <tr><th>组件</th><th>职责</th><th>优势</th></tr>
+        <tr><td>iKuai 主路由</td><td>拨号、多 WAN 负载均衡、QoS 流控、行为管理、认证计费</td><td>企业级功能，适合多线接入、带宽管理</td></tr>
+        <tr><td>OpenWrt 旁路由</td><td>仅负责 Clash 代理</td><td>专注翻墙，主路由故障不影响代理；可单独重启升级</td></tr>
+      </table>
+      <p><strong>职责分离的好处</strong>：主路由稳定、代理独立、灵活切换（需要代理的设备指向旁路由，不需要的走主路由直连）。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">iKuai 02</div>
+      <h2>网络拓扑图</h2>
+      <pre><code>                        互联网
+                           │
+                           ▼
+              ┌─────────────────────────┐
+              │   iKuai 主路由           │
+              │   - WAN 拨号/多线        │
+              │   - LAN: 192.168.1.1    │
+              │   - DHCP 服务器          │
+              └───────────┬─────────────┘
+                          │
+                          ▼
+              ┌─────────────────────────┐
+              │       交换机 / LAN       │
+              │   192.168.1.0/24         │
+              └───┬─────────────────┬───┘
+                  │                 │
+        ┌─────────┘                 └─────────┐
+        ▼                                     ▼
+┌───────────────┐                   ┌─────────────────┐
+│  OpenWrt 旁路由 │                   │  客户端设备      │
+│  192.168.1.2   │◄── 网关指向 ──────│  网关: 192.168.1.2 │
+│  仅 LAN，无 WAN │                   │  (需代理的设备)   │
+│  OpenClash     │                   └─────────────────┘
+└───────────────┘
+
+说明：
+- 主路由 iKuai 负责拨号、DHCP、流控
+- 旁路由 OpenWrt 与主路由同网段，网关指向 iKuai
+- 需要翻墙的设备：手动设置网关为 192.168.1.2，或由 iKuai DHCP 推送</code></pre>
+    </section>
+
+    <section class="card">
+      <div class="kicker">iKuai 03</div>
+      <h2>配置要点</h2>
+      <p><strong>iKuai 主路由</strong>：WAN 口配置拨号；LAN 口 IP 如 <code class="inline">192.168.1.1</code>；DHCP 服务端地址池如 <code class="inline">192.168.1.100</code>～<code class="inline">192.168.1.200</code>；可选：DHCP 推送旁路由为网关。</p>
+      <p><strong>旁路由 OpenWrt</strong>：仅保留 LAN，删除或禁用 WAN；LAN 配置：IP <code class="inline">192.168.1.2</code>、网关 <code class="inline">192.168.1.1</code>、DNS <code class="inline">192.168.1.1</code> 或 <code class="inline">8.8.8.8</code>；关闭 DHCP；安装 OpenClash 并导入订阅。</p>
+      <p><strong>避免路由循环</strong>：确认旁路由网关指向主路由，主路由 DHCP 的网关不要出现交叉指向。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">iKuai 04</div>
+      <h2>客户端指向方法</h2>
+      <p><strong>方法 A：单设备手动设置网关</strong></p>
+      <p>在需要翻墙的设备上：Windows 网络适配器 → IPv4 → 手动设置网关为 <code class="inline">192.168.1.2</code>；手机/平板在 WiFi 高级设置中修改网关；智能电视若支持静态 IP，网关填 <code class="inline">192.168.1.2</code>。</p>
+      <p><strong>方法 B：iKuai DHCP 推送网关</strong></p>
+      <p>在 iKuai 的 DHCP 中，为指定客户端或地址池设置网关为 <code class="inline">192.168.1.2</code>，则这些设备会自动通过旁路由上网。</p>
+      <p><strong>方法 C：iKuai 策略路由</strong></p>
+      <p>使用 iKuai 的 <strong>流控分流 → 分流设置</strong> 或 <strong>端口分流</strong>，将特定 IP、MAC 或端口的流量指向旁路由 <code class="inline">192.168.1.2</code>，适合按用户、按应用精细控制。</p>
+    </section>
+
+    <footer>
+      <p>📄 本文档对应 Markdown 源文件：<a href="../docs/soft-router/openwrt-clash.md">docs/soft-router/openwrt-clash.md</a>、<a href="../docs/soft-router/ikuai-clash.md">docs/soft-router/ikuai-clash.md</a></p>
+      <p style="margin-top:8px"><a href="index.html">← 返回首页</a></p>
+    </footer>
+  </div>
+</body>
+</html>

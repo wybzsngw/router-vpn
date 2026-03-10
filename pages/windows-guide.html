@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Windows Clash 翻墙教程 — Clash Verge Rev</title>
+  <meta name="description" content="Windows 系统使用 Clash Verge Rev 实现科学上网，含下载安装、订阅导入、TUN 模式、分应用代理、规则分流等完整教程。" />
+  <meta name="keywords" content="Clash Verge Rev,Windows,翻墙,科学上网,Clash,代理,TUN模式" />
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker {
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    pre, code {
+      background: rgba(0,0,0,.04);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    code.inline { padding: .2em .5em; display: inline }
+    pre { margin: 12px 0 }
+    pre code { padding: 0; background: none }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Windows Clash 翻墙教程 — Clash Verge Rev</h1>
+    <p class="subtitle">在 Windows 上使用 Clash Verge Rev 实现科学上网</p>
+
+    <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="index.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="clash-subscription-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="asus-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
+      <a href="soft-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">软路由</a>
+      <a href="windows-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">Windows</a>
+      <a href="linux-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Linux</a>
+      <a href="macos-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">macOS</a>
+      <a href="mobile-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
+    </nav>
+
+    <!-- 1. 软件介绍 -->
+    <section class="card">
+      <div class="kicker">Section 01</div>
+      <h2>软件介绍</h2>
+      <p><strong>Clash Verge Rev</strong> 是一款基于 Clash 内核的跨平台代理客户端，专为 Windows、macOS 和 Linux 设计。它提供图形化界面，支持订阅管理、规则分流、TUN 模式等高级功能，是当前 Windows 上最活跃维护的 Clash 客户端之一。</p>
+      <p><strong>为什么选择 Clash Verge Rev？</strong></p>
+      <ul>
+        <li><strong>开源免费</strong>：基于 MIT 协议，代码透明可审计</li>
+        <li><strong>功能完善</strong>：支持订阅、规则、TUN、脚本模式等</li>
+        <li><strong>持续维护</strong>：社区活跃，定期更新修复问题</li>
+        <li><strong>跨平台</strong>：同一套配置可在多系统使用</li>
+      </ul>
+      <p><strong>Clash for Windows (CFW)</strong> 曾是 Windows 上最流行的 Clash 图形客户端，但项目已于 2023 年 11 月停止维护。Clash Verge Rev 是 CFW 的继任者之一，采用 Rust 重写，性能更好、资源占用更低，建议新用户直接使用 Clash Verge Rev。</p>
+    </section>
+
+    <!-- 2. 系统要求 -->
+    <section class="card">
+      <div class="kicker">Section 02</div>
+      <h2>系统要求</h2>
+      <table>
+        <tr><th>项目</th><th>要求</th></tr>
+        <tr><td>操作系统</td><td>Windows 10 64 位 或 Windows 11 64 位</td></tr>
+        <tr><td>架构</td><td>x64 (amd64)，不支持 32 位系统</td></tr>
+        <tr><td>磁盘空间</td><td>约 100MB</td></tr>
+        <tr><td>.NET 运行时</td><td>部分版本可能需要 .NET 6.0 或更高</td></tr>
+      </table>
+      <p>检查系统版本：</p>
+      <pre><code># 在 PowerShell 中执行
+[System.Environment]::OSVersion.Version
+# 或
+winver</code></pre>
+      <p>若需安装 .NET 运行时，可从 <a href="https://dotnet.microsoft.com/download" target="_blank" rel="noopener">Microsoft .NET 下载页</a> 获取。</p>
+    </section>
+
+    <!-- 3. 下载安装 -->
+    <section class="card">
+      <div class="kicker">Section 03</div>
+      <h2>下载安装</h2>
+      <p><strong>1. 访问 GitHub 发布页</strong></p>
+      <p>打开 Clash Verge Rev 的官方发布页面：</p>
+      <p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
+      <p><strong>2. 选择安装包</strong></p>
+      <p>在 <strong>Assets</strong> 区域找到适合 Windows x64 的安装包：</p>
+      <ul>
+        <li><code class="inline">clash-verge-rev_x.x.x_x64-setup.exe</code> — 推荐，带安装向导</li>
+        <li><code class="inline">clash-verge-rev_x.x.x_x64-portable.zip</code> — 便携版，解压即用</li>
+      </ul>
+      <p><strong>3. 安装步骤</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>双击下载的安装包</li>
+        <li>若出现 Windows 安全提示，点击「更多信息」→「仍要运行」</li>
+        <li>选择安装路径（默认即可）并点击「安装」</li>
+        <li>安装完成后，勾选「启动 Clash Verge Rev」并点击「完成」</li>
+      </ol>
+      <p>启动后应看到 Clash Verge Rev 主界面，包含 **Profiles**、**Proxies**、**Logs** 等标签页。</p>
+    </section>
+
+    <!-- 4. 导入订阅 -->
+    <section class="card">
+      <div class="kicker">Section 04</div>
+      <h2>导入订阅</h2>
+      <p><strong>1. 获取订阅链接</strong></p>
+      <p>从您的机场/代理服务商获取订阅链接（通常为 <code class="inline">https://xxx.com/api/v1/client/subscribe?token=xxx</code> 格式）。请妥善保管，不要泄露。</p>
+      <p><strong>2. 导入订阅</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>打开 Clash Verge Rev</li>
+        <li>点击左侧 <strong>Profiles</strong>（配置）标签</li>
+        <li>在顶部输入框粘贴订阅链接</li>
+        <li>点击 <strong>Import</strong>（导入）按钮</li>
+      </ol>
+      <p><strong>3. 选择配置</strong></p>
+      <p>导入成功后，配置列表会出现新条目。点击该配置名称，使其变为当前使用的配置。</p>
+      <p><strong>4. 更新订阅</strong></p>
+      <p>点击配置右侧的刷新图标可手动更新。建议在 <strong>Settings → Profiles</strong> 中开启 <strong>Auto Update</strong>，设置自动更新间隔（如 24 小时）。</p>
+    </section>
+
+    <!-- 5. 启动代理 -->
+    <section class="card">
+      <div class="kicker">Section 05</div>
+      <h2>启动代理</h2>
+      <p><strong>系统代理模式（System Proxy）</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>在主界面找到 <strong>System Proxy</strong> 开关</li>
+        <li>打开开关，系统代理将指向 Clash（默认 <code class="inline">127.0.0.1:7897</code>）</li>
+        <li>支持系统代理的软件（如浏览器、部分应用）会自动走代理</li>
+      </ol>
+      <p><strong>TUN 模式</strong></p>
+      <p>若需全局代理（包括游戏、UWP 应用等），可开启主界面的 <strong>TUN</strong> 开关，详见下方「TUN 模式详解」。</p>
+    </section>
+
+    <!-- 6. 代理模式说明 -->
+    <section class="card">
+      <div class="kicker">Section 06</div>
+      <h2>代理模式说明</h2>
+      <p>在 <strong>Proxies</strong> 标签页可切换全局代理模式：</p>
+      <table>
+        <tr><th>模式</th><th>说明</th></tr>
+        <tr><td>Rule（规则）</td><td>按规则分流：国内直连，国外走代理。<strong>推荐日常使用</strong></td></tr>
+        <tr><td>Global（全局）</td><td>所有流量走代理</td></tr>
+        <tr><td>Direct（直连）</td><td>所有流量直连，不走代理</td></tr>
+        <tr><td>Script（脚本）</td><td>使用 JavaScript 脚本自定义分流逻辑</td></tr>
+      </table>
+    </section>
+
+    <!-- 7. TUN 模式详解 -->
+    <section class="card">
+      <div class="kicker">Section 07</div>
+      <h2>TUN 模式详解</h2>
+      <p><strong>什么是 TUN 模式？</strong></p>
+      <p>TUN 模式通过虚拟网卡接管系统网络流量，实现<strong>真正的全局代理</strong>，无需应用支持系统代理。</p>
+      <p><strong>启用 TUN 模式</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>点击主界面的 <strong>TUN</strong> 开关</li>
+        <li>首次使用会提示安装 <strong>wintun</strong> 驱动，需<strong>管理员权限</strong></li>
+        <li>按提示完成驱动安装后，TUN 模式即可生效</li>
+      </ol>
+      <p><strong>优势</strong>：全局生效、DNS 可控、透明代理。注意：安装驱动时请确保网络畅通；若失败可尝试以管理员身份运行 Clash Verge Rev。</p>
+    </section>
+
+    <!-- 8. 分应用代理 -->
+    <section class="card">
+      <div class="kicker">Section 08</div>
+      <h2>分应用代理</h2>
+      <p><strong>UWP 应用（Microsoft Store）不走代理？</strong></p>
+      <p>UWP 应用默认有网络隔离，即使开启系统代理，也可能无法使用。需要配置 <strong>Loopback 豁免</strong>。</p>
+      <p>以<strong>管理员身份</strong>打开 PowerShell 或 CMD，执行：</p>
+      <pre><code># 查看已安装的 UWP 应用
+Get-AppxPackage | Select Name, PackageFamilyName
+
+# 为指定应用添加 Loopback 豁免（示例：Microsoft Edge）
+CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"
+
+# 查找 Telegram 的 PackageFamilyName
+Get-AppxPackage *Telegram* | Select Name, PackageFamilyName</code></pre>
+      <p>将输出的 <code class="inline">PackageFamilyName</code> 填入上述命令的 <code class="inline">-n=</code> 参数。也可使用 <a href="https://github.com/tiagonmas/EnableLoopback" target="_blank" rel="noopener">EnableLoopback</a> 等图形化工具。</p>
+    </section>
+
+    <!-- 9. 规则与分流 -->
+    <section class="card">
+      <div class="kicker">Section 09</div>
+      <h2>规则与分流</h2>
+      <p>Clash 按<strong>从上到下</strong>的顺序匹配规则，命中即执行对应动作。订阅配置通常包含类似结构：</p>
+      <pre><code>rules:
+  - DOMAIN-SUFFIX,google.com,PROXY
+  - DOMAIN-SUFFIX,youtube.com,PROXY
+  - GEOIP,CN,DIRECT
+  - MATCH,PROXY</code></pre>
+      <p>在 <strong>Profiles</strong> 中编辑配置，或使用 <strong>Settings → Config</strong> 中的 <strong>Prepend Rules</strong> / <strong>Append Rules</strong> 追加规则：</p>
+      <pre><code># 示例：屏蔽某域名
+- DOMAIN,ads.example.com,REJECT
+
+# 示例：某域名强制直连
+- DOMAIN-SUFFIX,internal.company.com,DIRECT</code></pre>
+    </section>
+
+    <!-- 10. 开机自启 -->
+    <section class="card">
+      <div class="kicker">Section 10</div>
+      <h2>开机自启</h2>
+      <p><strong>方法一：软件内设置</strong></p>
+      <p>打开 <strong>Settings</strong> → 找到 <strong>General</strong> 或 <strong>Startup</strong> → 开启 <strong>Launch on system startup</strong>（开机启动）。</p>
+      <p><strong>方法二：任务计划程序</strong></p>
+      <p>按 <code class="inline">Win + R</code>，输入 <code class="inline">taskschd.msc</code>，创建基本任务，触发器选「当计算机启动时」，程序填 Clash Verge Rev 的安装路径，例如：</p>
+      <pre><code>C:\Users\你的用户名\AppData\Local\Programs\clash-verge-rev\Clash Verge Rev.exe</code></pre>
+    </section>
+
+    <!-- 11. 常见问题 -->
+    <section class="card">
+      <div class="kicker">Section 11</div>
+      <h2>常见问题</h2>
+      <p><strong>1. 端口冲突</strong> — 在 Settings → Clash 中修改端口，或关闭占用端口的其他代理软件。</p>
+      <pre><code>netstat -ano | findstr 7897</code></pre>
+      <p><strong>2. TUN 驱动安装失败</strong> — 以管理员身份运行；暂时关闭杀毒软件；或手动下载 <a href="https://www.wintun.net/" target="_blank" rel="noopener">wintun</a> 并安装。</p>
+      <p><strong>3. 订阅更新失败</strong> — 检查订阅链接是否有效；检查网络；部分机场需在网页端重新生成订阅链接。</p>
+      <p><strong>4. DNS 泄露</strong> — 开启 TUN 模式；在配置中启用 <code class="inline">dns.enable</code>；使用 DoH/DoT DNS。</p>
+      <p><strong>5. 部分网站无法访问</strong> — 确认代理模式为 Rule；检查规则是否将国内域名错误指向代理。</p>
+    </section>
+
+    <!-- 12. 进阶配置 -->
+    <section class="card">
+      <div class="kicker">Section 12</div>
+      <h2>进阶配置</h2>
+      <p><strong>自定义配置覆写</strong> — 在 Settings → Config 中可添加 Prepend 或 Append 配置，对当前配置进行覆写。</p>
+      <p><strong>External Controller API</strong> — Clash 提供 REST API，默认地址为 <code class="inline">127.0.0.1:9090</code>，可用于第三方面板控制或脚本自动化。</p>
+      <pre><code># 示例：获取当前配置（PowerShell）
+Invoke-WebRequest -Uri "http://127.0.0.1:9090/configs" -UseBasicParsing</code></pre>
+      <p><strong>Clash Dashboard</strong> — 在 Settings 中可配置 Dashboard 地址，使用 Yacd（<code class="inline">https://yacd.haishan.me</code>）等 Web 面板进行可视化管理。</p>
+    </section>
+
+    <footer>
+      <p>📄 本文档对应 Markdown 源文件：<a href="../docs/windows/clash-verge-rev.md">docs/windows/clash-verge-rev.md</a></p>
+      <p style="margin-top:8px"><a href="index.html">← 返回首页</a></p>
+    </footer>
+  </div>
+</body>
+</html>

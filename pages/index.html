@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clash 全平台翻墙指南 - 路由器/软路由/Windows/Linux/macOS/手机</title>
+  <meta name="description" content="Clash 全平台翻墙配置指南，覆盖华硕路由器、软路由 OpenWrt、Windows、Linux、macOS、Android、iOS，含订阅申请、节点配置、分流规则等完整教程。" />
+  <meta name="keywords" content="Clash,翻墙,科学上网,华硕路由器,软路由,OpenWrt,Windows,Linux,macOS,Android,iOS,MerlinClash,VPN,代理" />
+  <link rel="canonical" href="https://mowei-ie.github.io/router-vpn/pages/index.html" />
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+      --shadow: 0 6px 20px rgba(17,24,39,.07);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px }
+
+    /* Header */
+    .header { text-align: center; margin-bottom: 40px }
+    .header h1 { font-size: 32px; line-height: 1.3; margin-bottom: 8px }
+    .header h1 span { background: linear-gradient(135deg, var(--brand), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent }
+    .header .sub { color: var(--muted); font-size: 16px; line-height: 1.6 }
+
+    /* Nav bar */
+    .nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 36px; padding: 12px 16px; background: var(--card); border-radius: 14px; box-shadow: var(--shadow) }
+    .nav a { padding: 8px 16px; border-radius: 10px; text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: all .2s }
+    .nav a:hover, .nav a.active { background: linear-gradient(135deg, rgba(14,165,233,.12), rgba(124,77,255,.12)); color: var(--brand) }
+
+    /* Grid */
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) }
+
+    /* Card */
+    .card {
+      background: var(--card); border: 1px solid rgba(0,0,0,.06); border-radius: 18px;
+      padding: 28px 24px; box-shadow: var(--shadow);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-5px); border-color: rgba(14,165,233,.4); box-shadow: 0 14px 40px rgba(14,165,233,.12) }
+    .card-icon { font-size: 36px; margin-bottom: 12px }
+    .card h3 { font-size: 20px; margin-bottom: 6px }
+    .card .desc { color: var(--muted); font-size: 14px; line-height: 1.7; flex: 1 }
+    .card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px }
+    .card .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; background: rgba(14,165,233,.1); color: var(--accent); border: 1px solid rgba(14,165,233,.2) }
+    .card .tag.purple { background: rgba(124,77,255,.1); color: var(--brand); border-color: rgba(124,77,255,.2) }
+    .card .tag.green { background: rgba(16,185,129,.1); color: var(--success); border-color: rgba(16,185,129,.2) }
+    .card .btns { display: flex; gap: 10px; margin-top: 16px }
+    .card .btn {
+      display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(14,165,233,.1), rgba(124,77,255,.1));
+      color: var(--text); text-decoration: none; font-size: 14px; font-weight: 500;
+      border: 1px solid rgba(0,0,0,.06); transition: all .2s;
+    }
+    .card .btn:hover { box-shadow: 0 6px 20px rgba(14,165,233,.18); transform: translateY(-2px); border-color: rgba(14,165,233,.35) }
+    .card .btn.secondary { background: rgba(0,0,0,.03) }
+
+    /* Section divider */
+    .section-title { margin: 44px 0 20px; font-size: 14px; letter-spacing: .15em; text-transform: uppercase; color: var(--accent) }
+
+    /* Footer */
+    footer { margin-top: 48px; text-align: center; color: var(--muted); font-size: 13px; line-height: 1.8 }
+    footer a { color: var(--accent); text-decoration: none }
+
+    @media(max-width:700px){
+      .header h1 { font-size: 24px }
+      .grid { grid-template-columns: 1fr }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <h1><span>Clash 全平台翻墙指南</span></h1>
+      <p class="sub">一站式订阅申请与配置教程，覆盖路由器、桌面端、移动端</p>
+    </div>
+
+    <nav class="nav">
+      <a href="#subscribe">订阅申请</a>
+      <a href="#router">路由器</a>
+      <a href="#desktop">桌面端</a>
+      <a href="#mobile">移动端</a>
+      <a href="#more">资源下载</a>
+    </nav>
+
+    <!-- ==================== 订阅申请 ==================== -->
+    <div class="section-title" id="subscribe">Step 1 · 获取订阅</div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">🎫</div>
+        <h3>Clash 订阅申请指南</h3>
+        <p class="desc">机场推荐与价格对比，含蓝胖云、扬帆云、大哥云、尔湾云等，一键获取 Clash 订阅链接。</p>
+        <div class="tags">
+          <span class="tag">机场推荐</span>
+          <span class="tag purple">价格对比</span>
+          <span class="tag green">流媒体解锁</span>
+        </div>
+        <div class="btns">
+          <a class="btn" href="clash-subscription-guide.html">查看指南 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 路由器 ==================== -->
+    <div class="section-title" id="router">路由器方案 · 全屋翻墙</div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">📡</div>
+        <h3>华硕路由器 + MerlinClash</h3>
+        <p class="desc">华硕梅林固件刷机、MerlinClash 安装配置、订阅导入、分流规则、游戏加速、流媒体解锁，全屋设备无感翻墙。</p>
+        <div class="tags">
+          <span class="tag">梅林固件</span>
+          <span class="tag">MerlinClash</span>
+          <span class="tag green">全屋覆盖</span>
+        </div>
+        <div class="btns">
+          <a class="btn" href="asus-router-guide.html">查看教程 →</a>
+          <a class="btn secondary" href="https://github.com/EI-ie/router-vpn">GitHub 文档</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🖧</div>
+        <h3>软路由 OpenWrt / iKuai</h3>
+        <p class="desc">OpenWrt + OpenClash 全功能方案，iKuai + 旁路由架构，适合追求极致性能与灵活配置的进阶用户。</p>
+        <div class="tags">
+          <span class="tag">OpenWrt</span>
+          <span class="tag">OpenClash</span>
+          <span class="tag purple">旁路由</span>
+        </div>
+        <div class="btns">
+          <a class="btn" href="soft-router-guide.html">查看教程 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 桌面端 ==================== -->
+    <div class="section-title" id="desktop">桌面端 · 个人设备</div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">🪟</div>
+        <h3>Windows</h3>
+        <p class="desc">Clash Verge Rev 安装与使用，系统代理 / TUN 模式切换，UWP 应用解锁，开机自启配置。</p>
+        <div class="tags">
+          <span class="tag">Clash Verge Rev</span>
+          <span class="tag">TUN 模式</span>
+        </div>
+        <div class="btns">
+          <a class="btn" href="windows-guide.html">查看教程 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🍎</div>
+        <h3>macOS</h3>
+        <p class="desc">ClashX Meta 安装与增强模式，系统代理配置，终端代理设置，与 Homebrew 协同使用。</p>
+        <div class="tags">
+          <span class="tag">ClashX Meta</span>
+          <span class="tag purple">增强模式</span>
+        </div>
+        <div class="btns">
+          <a class="btn" href="macos-guide.html">查看教程 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🐧</div>
+        <h3>Linux</h3>
+        <p class="desc">GUI 桌面版与无 GUI 服务器版两套方案，systemd 服务管理，环境变量代理，REST API 控制，附一键安装脚本。</p>
+        <div class="tags">
+          <span class="tag">桌面版</span>
+          <span class="tag">服务器版</span>
+          <span class="tag green">一键脚本</span>
+        </div>
+        <div class="btns">
+          <a class="btn" href="linux-guide.html">查看教程 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 移动端 ==================== -->
+    <div class="section-title" id="mobile">移动端 · 随身翻墙</div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>Android / iOS 手机</h3>
+        <p class="desc">Android 使用 Clash Meta for Android，iOS 使用 Shadowrocket / Stash。含订阅导入、规则模式、分应用代理、外区 Apple ID 获取等。</p>
+        <div class="tags">
+          <span class="tag">Android</span>
+          <span class="tag purple">iOS</span>
+          <span class="tag green">分应用代理</span>
+        </div>
+        <div class="btns">
+          <a class="btn" href="mobile-guide.html">查看教程 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 资源下载 ==================== -->
+    <div class="section-title" id="more">资源下载</div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h3>MerlinClash 插件包</h3>
+        <p class="desc">华硕梅林路由器 Clash 插件离线安装包，根据路由器 CPU 架构选择对应版本。将来会持续更新。</p>
+        <div class="tags">
+          <span class="tag green">ARM64</span>
+          <span class="tag">ARM32</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
+          <a href="../downloads/MC2_0.4.6_ARM64.tar.gz" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(14,165,233,.12));color:var(--text);text-decoration:none;border:1px solid rgba(16,185,129,.25);font-size:14px;font-weight:500">⬇ MC2_0.4.6_ARM64.tar.gz（推荐）</a>
+          <a href="../downloads/MC2_0.3_ARM64.tar.gz" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:rgba(0,0,0,.04);color:var(--text);text-decoration:none;border:1px solid rgba(0,0,0,.08);font-size:14px">⬇ MC2_0.3_ARM64.tar.gz</a>
+        </div>
+        <p style="color:var(--muted);font-size:12px;margin-top:10px">更多版本：<a href="https://t.me/merlinclashcat" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">Telegram 频道</a></p>
+      </div>
+    </div>
+
+    <footer>
+      <p>本站内容仅用作学习与技术指引，请遵守当地法律法规，合理合规使用网络服务。</p>
+      <p style="margin-top:6px"><a href="https://github.com/EI-ie/router-vpn">GitHub 项目主页</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

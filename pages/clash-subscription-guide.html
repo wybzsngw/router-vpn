@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clash订阅申请指南 - 机场推荐与MerlinClash导入教程 | 蓝胖云 扬帆云 大哥云 尔湾云</title>
+  <meta name="description" content="详细的Clash订阅申请指南，包含蓝胖云、扬帆云、大哥云、尔湾云等机场推荐，MerlinClash导入教程，价格对比，流媒体解锁，ChatGPT访问等完整攻略。" />
+  <meta name="keywords" content="Clash订阅,机场推荐,蓝胖云,扬帆云,大哥云,尔湾云,MerlinClash,路由器VPN,流媒体解锁,ChatGPT访问,翻墙,科学上网" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Clash订阅申请指南 - 机场推荐与MerlinClash导入教程" />
+  <meta property="og:description" content="详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mowei-ie.github.io/router-vpn/clash-subscription-guide.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Clash订阅申请指南 - 机场推荐与MerlinClash导入教程" />
+  <meta name="twitter:description" content="详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程" />
+  <link rel="canonical" href="https://mowei-ie.github.io/router-vpn/clash-subscription-guide.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Clash订阅申请指南",
+    "description": "详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程",
+    "url": "https://mowei-ie.github.io/router-vpn/clash-subscription-guide.html",
+    "author": {
+      "@type": "Organization",
+      "name": "Router VPN Guide"
+    },
+    "datePublished": "2024-01-01",
+    "dateModified": "2024-01-01",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "机场推荐列表",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "蓝胖云",
+          "description": "极致性价比，爆款套餐仅需¥8/月"
+        },
+        {
+          "@type": "ListItem", 
+          "position": 2,
+          "name": "扬帆云",
+          "description": "性价比、多地区，影音解锁"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3, 
+          "name": "大哥云",
+          "description": "稳定优先、专线优化"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "尔湾云", 
+          "description": "套餐层级清晰、多档位可选"
+        }
+      ]
+    }
+  }
+  </script>
+  
+  <!-- 自建统计服务 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // 自建统计服务配置
+    const STATS_CONFIG = {
+      supabaseUrl: 'YOUR_SUPABASE_URL',
+      supabaseKey: 'YOUR_SUPABASE_ANON_KEY',
+      enableRealTime: true,
+      enableDetailedTracking: true
+    };
+
+    // 统计API实例
+    let statsAPI = null;
+
+    // 初始化统计服务
+    async function initStatistics() {
+      try {
+        // 检查配置
+        if (STATS_CONFIG.supabaseUrl === 'YOUR_SUPABASE_URL') {
+          console.log('统计服务未配置，使用本地统计');
+          updateLocalStats();
+          return;
+        }
+
+        // 初始化API
+        statsAPI = new StatisticsAPI(STATS_CONFIG.supabaseUrl, STATS_CONFIG.supabaseKey);
+        
+        // 记录页面访问
+        await statsAPI.trackPageView({
+          url: window.location.href,
+          title: document.title,
+          referrer: document.referrer
+        });
+
+        // 获取并显示统计
+        await displayStatistics();
+        
+      } catch (error) {
+        console.error('统计服务初始化失败:', error);
+        updateLocalStats();
+      }
+    }
+
+    // 显示统计数据
+    async function displayStatistics() {
+      try {
+        const result = await statsAPI.getRealTimeStats();
+        
+        if (result.success) {
+          const stats = result.data;
+          const countElement = document.getElementById('visit-count');
+          
+          if (countElement) {
+            countElement.innerHTML = `
+              <span style="color: var(--accent);">📊 实时统计</span><br>
+              今日访问: ${stats.totalViews.toLocaleString()} | 
+              独立访客: ${stats.uniqueSessions.toLocaleString()}
+            `;
+          }
+        } else {
+          updateLocalStats();
+        }
+      } catch (error) {
+        console.error('获取统计数据失败:', error);
+        updateLocalStats();
+      }
+    }
+
+    // 本地统计备用方案
+    function updateLocalStats() {
+      let visitCount = localStorage.getItem('clash_guide_visits');
+      if (!visitCount) {
+        visitCount = 1;
+      } else {
+        visitCount = parseInt(visitCount) + 1;
+      }
+      localStorage.setItem('clash_guide_visits', visitCount);
+      
+      const countElement = document.getElementById('visit-count');
+      if (countElement) {
+        countElement.innerHTML = `
+          <span style="color: var(--accent);">📈 本地统计</span><br>
+          页面访问: ${visitCount.toLocaleString()}
+        `;
+      }
+    }
+
+    // 页面加载时初始化统计
+    document.addEventListener('DOMContentLoaded', initStatistics);
+
+    // 页面卸载时记录停留时间
+    window.addEventListener('beforeunload', function() {
+      if (statsAPI) {
+        // 记录页面停留时间等额外数据
+        const duration = Date.now() - performance.timing.navigationStart;
+        statsAPI.trackEvent('page_duration', { duration: duration });
+      }
+    });
+  </script>
+  
+  <style>
+    :root{
+      --bg-start:#f7f8fc; /* light background start */
+      --bg-mid:#eef1f7;   /* light background mid */
+      --bg-end:#ffffff;   /* light background end */
+      --card:#ffffff;
+      --text:#0f172a;     /* near-black */
+      --muted:#475569;    /* slate */
+      --brand:#7c4dff;    /* violet */
+      --accent:#0ea5e9;   /* sky */
+      --success:#10b981;  /* emerald */
+      --warn:#f59e0b;     /* amber */
+      --danger:#ef4444;   /* red */
+      --shadow: 0 6px 16px rgba(17,24,39,.08), inset 0 0 0 1px rgba(17,24,39,.04);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Microsoft YaHei", "Noto Sans CJK", "PingFang SC", sans-serif;
+      color:var(--text);
+      background: radial-gradient(1000px 500px at 10% 0%, rgba(14,165,233,.12), transparent 60%),
+                  linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 60%, var(--bg-end) 100%);
+      background-attachment: fixed;
+    }
+    .container{max-width:1080px;margin:0 auto;padding:40px 24px 80px}
+    header{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+    .logo{
+      width:44px;height:44px;border-radius:12px;
+      background: conic-gradient(from 220deg, var(--accent), var(--brand));
+      box-shadow: 0 6px 18px rgba(0,229,255,.35), inset 0 0 0 1px rgba(255,255,255,.15);
+    }
+    h1{font-size:28px;line-height:1.1;margin:0}
+    .subtitle{color:var(--muted);margin-top:6px}
+
+    .hero{
+      margin-top:18px;margin-bottom:28px;padding:18px 18px 16px;border-radius:16px;
+      background: linear-gradient(180deg, rgba(124,77,255,.08), rgba(14,165,233,.06));
+      box-shadow: var(--shadow);
+      border:1px solid rgba(0,0,0,.06);
+    }
+    .hero a{color:var(--accent);text-decoration:none;border-bottom:1px dashed rgba(0,229,255,.5)}
+
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+    .col-12{grid-column:span 12}
+    .col-6{grid-column:span 12}
+    @media(min-width:860px){.col-6{grid-column:span 6}}
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(0,0,0,.08); border-radius:16px; padding:18px; box-shadow:var(--shadow);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .card:hover{transform:translateY(-4px);border-color:rgba(14,165,233,.45);box-shadow:0 12px 34px rgba(14,165,233,.15), inset 0 0 0 1px rgba(17,24,39,.03)}
+    .kicker{letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-size:12px}
+    .card h3{margin:6px 0 10px;font-size:20px}
+    .badge{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:rgba(124,77,255,.18);border:1px solid rgba(124,77,255,.35);color:#e9deff;margin-right:8px}
+    .desc{color:var(--muted);margin:8px 0 12px}
+    .steps{margin:10px 0 0;padding-left:18px}
+    .steps li{margin:6px 0}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
+      background:linear-gradient(135deg, rgba(14,165,233,.12), rgba(124,77,255,.12));
+      color:var(--text);text-decoration:none;border:1px solid rgba(0,0,0,.08);
+      transition: all .25s ease;
+    }
+    .btn:hover{box-shadow:0 10px 24px rgba(14,165,233,.2);transform:translateY(-2px);border-color:rgba(14,165,233,.45)}
+    .btn.secondary{background:linear-gradient(135deg, rgba(0,0,0,.04), rgba(0,0,0,.02))}
+
+    .callout{margin-top:18px;padding:14px;border-radius:14px;border:1px dashed rgba(0,0,0,.14);background:rgba(0,0,0,.03);color:var(--text)}
+    code.inline{padding:.15em .45em;border-radius:.5em;background:rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.12)}
+
+    footer{margin-top:28px;color:var(--muted);font-size:13px}
+    footer a{color:var(--accent);text-decoration:none}
+  </style>
+  <!-- Data extracted and curated from clashforandroid.org aggregator -->
+</head>
+<body>
+  <div class="container">
+    <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="index.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="clash-subscription-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">订阅申请</a>
+      <a href="asus-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
+      <a href="soft-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">软路由</a>
+      <a href="windows-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows</a>
+      <a href="linux-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Linux</a>
+      <a href="macos-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">macOS</a>
+      <a href="mobile-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
+    </nav>
+    <header>
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>申请 Clash 订阅 ｜ 持续更新中~~</h1>
+        <div class="subtitle">一文搞定订阅申请与 MerlinClash 导入，附购买与验证要点</div>
+        <div class="visit-counter" style="margin-top: 8px; font-size: 12px; color: var(--muted);">
+          <span id="visit-count">正在加载访问次数...</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>以下内容为精简汇总（含参考报价与导入步骤）</div>
+    </section>
+
+    <section class="card" style="margin-bottom:18px">
+      <div class="kicker">Overview</div>
+      <h3>机场总览对比（参考）</h3>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse">
+          <thead>
+            <tr style="text-align:left;border-bottom:1px solid rgba(255,255,255,.1)">
+              <th style="padding:10px 8px">机场</th>
+              <th style="padding:10px 8px">定位</th>
+              <th style="padding:10px 8px">推荐人群</th>
+              <th style="padding:10px 8px">参考价/月</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px dashed rgba(255,255,255,.08)">
+              <td style="padding:10px 8px">扬帆云</td>
+              <td style="padding:10px 8px">性价比、多地区</td>
+              <td style="padding:10px 8px">影音解锁/日常通勤</td>
+              <td style="padding:10px 8px">¥15.99–88.99（参考）</td>
+            </tr>
+            <tr style="border-bottom:1px dashed rgba(255,255,255,.08)">
+              <td style="padding:10px 8px">大哥云</td>
+              <td style="padding:10px 8px">稳定优先、专线优化</td>
+              <td style="padding:10px 8px">远程办公/视频会议</td>
+              <td style="padding:10px 8px">¥20–100+（参考）</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 8px">尔湾云</td>
+              <td style="padding:10px 8px">套餐层级清晰、多档位可选</td>
+              <td style="padding:10px 8px">多设备家庭/影音与游戏用户</td>
+              <td style="padding:10px 8px">¥13.99–99.99（参考）</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 8px">蓝胖云</td>
+              <td style="padding:10px 8px">极致性价比、稳定可靠</td>
+              <td style="padding:10px 8px">个人用户/轻量使用</td>
+              <td style="padding:10px 8px">¥8–20（参考）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout" style="margin-top:12px">说明：以上为常见区间，仅作参考，请以后续官网页实际标注为准。</div>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Provider</div>
+      <h3>扬帆云</h3>
+      <ul class="steps">
+        <li>定位/特点：性价比、多地区</li>
+        <li>参考价/月：¥15.99–88.99</li>
+        <li>流量（参考）：100–1200 GB</li>
+        <li>峰值速度：200–2000 Mbps</li>
+        <li>设备数：2–6 台</li>
+        <li>特性/说明：全球节点 · 流媒体解锁 · 年付7折码 618</li>
+      </ul>
+      <div class="callout" style="margin-top:8px">常规套餐默认每月订单日重置流量；当月未用流量不结转至下月。</div>
+      <div class="btns" style="margin-top:10px">
+        <a class="btn" href="https://yftg1.com/register?code=BnJcjUjE" target="_blank" rel="noopener">前往官网</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Provider</div>
+      <h3>大哥云</h3>
+      <ul class="steps">
+        <li>定位/特点：稳定优先、专线优化</li>
+        <li>版本：v1.7.4</li>
+        <li>参考价：月付 ¥19.90/29.90；季付 ¥69；年付 ¥88/199/299/699</li>
+        <li>流量（参考）：15–1000 GB/月</li>
+        <li>峰值速度：500–1000 Mbps</li>
+        <li>协议：Trojan</li>
+        <li>设备数：未标注</li>
+        <li>地区：新疆地区不可用</li>
+        <li>流量重置：订单日重置或购买/续费套餐重置</li>
+        <li>优惠：9折优惠券 mcuE8uOq</li>
+        <li>退款：不支持原路退款</li>
+      </ul>
+      <div class="btns" style="margin-top:10px">
+        <a class="btn" href="https://aff02.dgy02.com/#/register?code=1CAfWNQC" target="_blank" rel="noopener">前往官网</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Provider</div>
+      <h3>尔湾云</h3>
+      <ul class="steps">
+        <li>定位/特点：套餐层级清晰、节点覆盖广</li>
+        <li>价格（月付）：¥13.99 / ¥19.99 / ¥29.99 / ¥39.99 / ¥59.99 / ¥99.99</li>
+        <li>流量：50GB / 100GB / 200GB / 350GB / 600GB / 1200GB</li>
+        <li>峰值带宽：50Mbps / 50Mbps / 140Mbps / 270Mbps / 500Mbps / 500Mbps</li>
+        <li>设备数：2台 / 2台 / 3台 / 5台 / 8台 / 10台</li>
+        <li>流量重置：按周期重置，套餐到期后流量清零</li>
+        <li>结算周期：支持月付 / 季付 / 半年 / 年付</li>
+        <li>解锁能力：支持主流流媒体与 ChatGPT 场景（以实时线路为准）</li>
+        <li>售后：在线客服，常规问题可快速响应</li>
+        <li>购买说明：套餐页常见活动与折扣码，以下单页展示为准</li>
+      </ul>
+      <div class="btns" style="margin-top:10px">
+        <a class="btn" href="https://ewanwtt.net/auth/register?code=EGi8tb" target="_blank" rel="noopener">前往官网</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Provider</div>
+      <h3>蓝胖云</h3>
+      <ul class="steps">
+        <li>定位/特点：极致性价比、稳定可靠</li>
+        <li>版本：v1.7.5.2685.1112</li>
+        <li>爆款套餐：New_2024_168GB月付 ¥8.00/月</li>
+        <li>热销套餐：New_2024_336GB月付 ¥16.00/月</li>
+        <li>至尊套餐：New_2024_420GB月付 ¥20.00/月</li>
+        <li>流量：168GB / 336GB / 420GB 每月</li>
+        <li>设备数：最多同时5个设备在线</li>
+        <li>流媒体解锁：Netflix奈飞、Disney+等流媒体</li>
+        <li>AI解锁：日本新加坡线路解锁ChatGPT</li>
+        <li>售后服务：工单24小时内回复</li>
+        <li>安全特性：隧道加密安全无忧</li>
+        <li>适用人群：个人使用/个人小团体使用</li>
+      </ul>
+      <div class="callout" style="margin-top:8px">蓝胖云以极致性价比著称，爆款套餐仅需¥8/月，特别适合对价格敏感的个人用户。</div>
+      <div class="btns" style="margin-top:10px">
+        <a class="btn" href="https://jpp.lanpangyun.me/#/register?code=30Y2Sexl" target="_blank" rel="noopener">前往官网</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Checklist</div>
+      <h3>通用申请要点</h3>
+      <span class="badge" style="background:rgba(0,212,166,.18);border-color:rgba(0,212,166,.35)">建议</span>
+      <ul class="steps">
+        <li>优先选择支持 <strong>Clash 订阅</strong> 与 <strong>HTTPS</strong> 的机场。</li>
+        <li>留意是否提供「订阅转换/短链」与「流媒体解锁/ChatGPT」。</li>
+        <li>保存售后渠道（客服/工单/Telegram 群）。</li>
+        <li>订阅链接一般可在「我的订阅 / 账户 / 仪表盘」中找到。</li>
+        <li>导入后如节点为空，先在机场后台「重置订阅」再刷新。</li>
+      </ul>
+    </section>
+
+    <section id="import" class="card" style="margin-top:18px">
+      <div class="kicker">Import</div>
+      <h3>将订阅导入 MerlinClash（华硕梅林）</h3>
+      <ol class="steps">
+        <li>进入路由器管理界面 → 软件中心 → MerlinClash → 打开「订阅设置」。</li>
+        <li>在「订阅链接」粘贴机场提供的 Clash 订阅 URL（<code class="inline">https://...</code>）。</li>
+        <li>点击「更新订阅」→ 等待节点同步完成。</li>
+        <li>到「运行状态/节点列表」检查是否加载成功；如失败，重试「更新订阅」。</li>
+      </ol>
+      <div class="callout">
+        提示：若需分流/解锁流媒体，可在「规则设置」启用对应的规则集或策略组。
+      </div>
+      <div class="btns" style="margin-top:12px">
+        <a class="btn" href="https://github.com/EI-ie/router-vpn">返回项目 README 订阅配置</a>
+      </div>
+    </section>
+
+    <footer>
+      本页参考并整理自 <a href="https://clashforandroid.org/node/#" target="_blank" rel="noopener">clashforandroid.org/node/#</a>（仅用作学习与指引）。请遵守当地法律法规，合理合规使用网络与订阅服务。
+    </footer>
+  </div>
+
+</body>
+</html>
+
+

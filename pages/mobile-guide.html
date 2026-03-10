@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>手机 Clash 翻墙教程 — Android & iOS</title>
+  <meta name="description" content="Android 与 iOS 手机使用 Clash 实现科学上网，含 Clash Meta for Android、Shadowrocket、Stash 等完整教程。" />
+  <meta name="keywords" content="Clash,翻墙,科学上网,Android,iOS,Clash Meta,Shadowrocket,Stash,手机代理" />
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .section-title { margin: 36px 0 16px; font-size: 14px; letter-spacing: .15em; text-transform: uppercase; color: var(--accent) }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker {
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    pre, code {
+      background: rgba(0,0,0,.04);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    code.inline { padding: .2em .5em; display: inline }
+    pre { margin: 12px 0 }
+    pre code { padding: 0; background: none }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>手机 Clash 翻墙教程 — Android & iOS</h1>
+    <p class="subtitle">在 Android 与 iOS 手机上使用 Clash 实现科学上网</p>
+
+    <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="index.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="clash-subscription-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="asus-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
+      <a href="soft-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">软路由</a>
+      <a href="windows-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows</a>
+      <a href="linux-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Linux</a>
+      <a href="macos-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">macOS</a>
+      <a href="mobile-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">手机</a>
+    </nav>
+
+    <!-- ========== Android 部分 ========== -->
+    <h2 class="section-title">Android</h2>
+
+    <section class="card">
+      <div class="kicker">Android 01</div>
+      <h2>Clash Meta for Android 介绍</h2>
+      <p><strong>Clash Meta for Android</strong>（简称 CMA）是一款基于 Clash Meta 内核的 Android 代理客户端。它完全开源，代码透明可审计，支持订阅管理、规则分流、TUN 模式、分应用代理等功能。</p>
+      <p><strong>为什么选择 Clash Meta for Android？</strong></p>
+      <ul>
+        <li><strong>开源免费</strong>：基于 MIT 协议，代码托管于 GitHub</li>
+        <li><strong>功能完善</strong>：支持订阅、规则、TUN、分应用代理等</li>
+        <li><strong>持续维护</strong>：社区活跃，定期更新</li>
+        <li><strong>兼容性强</strong>：支持 Clash、Clash Meta 等主流订阅格式</li>
+      </ul>
+      <p>官方发布页：<a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" rel="noopener">GitHub Releases</a>。建议从官方 GitHub 或 F-Droid 下载，确保安全可靠。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Android 02</div>
+      <h2>下载安装</h2>
+      <p><strong>1. 从 GitHub 下载 APK</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>在手机浏览器中打开：<a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" rel="noopener">ClashMetaForAndroid Releases</a></li>
+        <li>找到最新版本，展开 <strong>Assets</strong></li>
+        <li>根据设备架构选择：<code class="inline">arm64-v8a</code>（绝大多数 64 位手机）、<code class="inline">armeabi-v7a</code>（32 位）、<code class="inline">x86_64</code>（模拟器）</li>
+        <li>点击对应的 <code class="inline">.apk</code> 文件下载</li>
+      </ol>
+      <p><strong>2. 允许安装未知来源</strong></p>
+      <p>若系统提示「无法安装未知来源的应用」，请进入 <strong>设置 → 应用 → 特殊应用权限</strong> → <strong>安装未知应用</strong>，选择您用于下载的浏览器，允许该应用安装未知应用。</p>
+      <p><strong>3. 安装 APK</strong></p>
+      <p>打开文件管理器，找到下载的 APK 文件，点击安装即可。Clash Meta for Android 未在 Google Play 上架，需从 GitHub 或 F-Droid 获取。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Android 03</div>
+      <h2>导入订阅</h2>
+      <p><strong>步骤：</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>打开 <strong>Clash Meta for Android</strong></li>
+        <li>点击底部 <strong>Profile</strong>（配置）标签</li>
+        <li>点击右上角 <strong>+</strong> 按钮</li>
+        <li>选择 <strong>URL</strong> 方式</li>
+        <li>在 URL 输入框中粘贴您的订阅链接</li>
+        <li>Profile Name 可自定义（如「我的订阅」）</li>
+        <li>点击 <strong>Save</strong> 或「确定」</li>
+      </ol>
+      <p>添加后应用会自动拉取订阅内容。若需手动更新，在 Profile 列表中长按该配置 → 选择 <strong>Update</strong>，或点击配置右侧的刷新图标。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Android 04</div>
+      <h2>启动连接</h2>
+      <p><strong>1. 选择配置</strong></p>
+      <p>在 Profile 中确保已选中您要使用的订阅配置（通常显示为蓝色勾选）。</p>
+      <p><strong>2. 启动代理</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>返回应用主界面</li>
+        <li>点击中央的 <strong>大按钮</strong> 或 <strong>开关</strong> 启动代理</li>
+        <li>首次启动时系统会弹出 <strong>VPN 权限请求</strong>，点击「确定」或「允许」授予权限</li>
+        <li>连接成功后，按钮会变为「已连接」状态，通知栏会显示 VPN 图标</li>
+      </ol>
+      <p>再次点击大按钮或开关即可断开代理。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Android 05</div>
+      <h2>代理模式</h2>
+      <p>Clash Meta for Android 支持多种代理模式：</p>
+      <table>
+        <tr><th>模式</th><th>说明</th></tr>
+        <tr><td>Rule（规则）</td><td>按规则分流：国内直连，国外走代理。<strong>推荐日常使用</strong></td></tr>
+        <tr><td>Global（全局）</td><td>所有流量走代理</td></tr>
+        <tr><td>Direct（直连）</td><td>所有流量直连，不走代理</td></tr>
+      </table>
+      <p>在主界面或 <strong>Proxies</strong> 标签中找到顶部的模式选择器，点击即可切换。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Android 06</div>
+      <h2>分应用代理</h2>
+      <p>分应用代理可指定哪些应用走代理、哪些直连，节省流量并提升体验。</p>
+      <p><strong>设置步骤：</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>打开 <strong>Settings</strong>（设置）</li>
+        <li>进入 <strong>Network</strong> → <strong>Per-App Proxy</strong>（分应用代理）</li>
+        <li>开启该功能</li>
+      </ol>
+      <p><strong>模式说明：</strong></p>
+      <ul>
+        <li><strong>Bypass（绕过）</strong>：只对列表中的应用走代理，其余直连。适用于仅需代理少数应用（如浏览器、Twitter、YouTube）</li>
+        <li><strong>Proxy（代理）</strong>：只对列表中的应用直连，其余走代理。适用于大部分应用走代理，少数应用（如银行、支付）直连</li>
+      </ul>
+      <p>在分应用代理设置中点击「添加应用」或「+」，从应用列表中选择要加入的应用即可。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Android 07</div>
+      <h2>节点选择与测速</h2>
+      <p><strong>1. 进入 Proxy 标签</strong></p>
+      <p>点击底部 <strong>Proxies</strong>（代理）标签，可看到订阅中的节点列表和策略组。</p>
+      <p><strong>2. 选择节点</strong></p>
+      <p>若订阅包含「自动选择」「节点选择」等策略组，点击进入；在节点列表中点击任意节点即可切换。</p>
+      <p><strong>3. 测速</strong></p>
+      <ul>
+        <li>在节点列表或策略组中，点击 <strong>测速</strong> 或 <strong>延迟测试</strong> 按钮</li>
+        <li>应用会逐个测试节点延迟（ping）</li>
+        <li>测速完成后可按延迟排序，选择延迟最低的节点</li>
+      </ul>
+      <p>测速后节点通常会自动按延迟从低到高排序，可手动选择延迟低、稳定性好的节点使用。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Android 08</div>
+      <h2>常见问题</h2>
+      <p><strong>1. 电池优化导致后台被杀</strong> — 进入 <strong>设置 → 应用 → Clash Meta for Android → 电池</strong>，选择「无限制」或「不限制后台」；部分厂商需在「自启动管理」中允许应用自启动。</p>
+      <p><strong>2. VPN 权限被拒绝</strong> — 确保在系统弹窗中点击「确定」授予 VPN 权限；若已拒绝，可到 <strong>设置 → 应用 → 权限</strong> 中检查。</p>
+      <p><strong>3. 订阅导入失败</strong> — 检查订阅链接是否可访问；确认网络正常；部分订阅可能需在特定网络环境下才能获取。</p>
+      <p><strong>4. 与其他 VPN 冲突</strong> — 同时开启多个 VPN 可能冲突，请关闭其他 VPN 或代理应用后再使用 Clash Meta for Android。</p>
+    </section>
+
+    <!-- ========== iOS 部分 ========== -->
+    <h2 class="section-title">iOS</h2>
+
+    <section class="card">
+      <div class="kicker">iOS 01</div>
+      <h2>iOS 工具概述</h2>
+      <p>iOS 上常用的 Clash 类代理工具需从非中国大陆 App Store 下载，主要选项包括：</p>
+      <table>
+        <tr><th>应用</th><th>价格</th><th>特点</th></tr>
+        <tr><td>Shadowrocket</td><td>$2.99</td><td>功能全面，支持多协议，界面简洁，推荐首选</td></tr>
+        <tr><td>Stash</td><td>$3.99</td><td>基于 Clash 内核，规则分流强大，偏好 Clash 用户</td></tr>
+        <tr><td>Quantumult X</td><td>$7.99</td><td>功能丰富，可定制性强，进阶用户</td></tr>
+      </table>
+      <p><strong>重要说明</strong>：所有上述应用均需从外区（如美区、港区）Apple ID 下载。中国区 App Store 不提供这些应用，因此您需要注册或使用外区 Apple ID。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">iOS 02</div>
+      <h2>获取外区 Apple ID</h2>
+      <p><strong>方法一：在网页上注册（推荐）</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>在电脑浏览器中访问：<a href="https://appleid.apple.com/account/create" target="_blank" rel="noopener">appleid.apple.com/account/create</a></li>
+        <li>填写个人信息：姓名、国家/地区选择 <strong>美国</strong> 或 <strong>香港</strong>（推荐美区）、出生日期、邮箱、密码</li>
+        <li>验证邮箱：输入 Apple 发送的验证码</li>
+        <li>支付方式：美国区可选择「无」或添加信用卡；若选择「无」，部分付费应用需通过 <strong>礼品卡</strong> 充值后购买</li>
+        <li>完成注册</li>
+      </ol>
+      <p><strong>方法二：使用礼品卡</strong></p>
+      <p>若无法绑定信用卡，可购买对应地区的 Apple 礼品卡（美区礼品卡可在亚马逊、淘宝等渠道购买，注意选择正规渠道），充值后用于购买应用。</p>
+      <p><strong>注意</strong>：国家/地区一旦选定更改较麻烦，建议选择美区或港区；建议单独注册外区 Apple ID，而非修改现有中国区账号。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">iOS 03</div>
+      <h2>Shadowrocket 使用</h2>
+      <p><strong>1. 添加订阅</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>打开 Shadowrocket</li>
+        <li>点击底部 <strong>配置</strong> 或 <strong>设置</strong></li>
+        <li>点击右上角 <strong>+</strong> 或「添加」</li>
+        <li>选择 <strong>URL</strong> 或「订阅」</li>
+        <li>粘贴您的订阅链接</li>
+        <li>点击「确定」或「保存」</li>
+      </ol>
+      <p><strong>2. 连接代理</strong></p>
+      <p>在主界面点击顶部的连接开关或大按钮；首次连接时系统会弹出「添加 VPN 配置」提示，点击「允许」并输入设备密码（若需要）；连接成功后状态栏会显示 VPN 图标。</p>
+      <p><strong>3. 选择节点</strong></p>
+      <p>在配置标签中确保已选中您的订阅；点击底部「首页」或「代理」标签；在节点列表或策略组中选择要使用的节点，点击即可切换。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">iOS 04</div>
+      <h2>Stash 使用</h2>
+      <p><strong>Stash</strong> 基于 Clash 内核，与 Clash 配置兼容性更好。</p>
+      <p><strong>添加配置</strong>：打开 Stash → 点击底部「配置」→ 点击「从 URL 下载」→ 粘贴订阅链接 → 点击「下载」或「确定」。</p>
+      <p><strong>选择策略组</strong>：Stash 支持策略组（如「自动选择」「节点选择」），在「代理」或「首页」中选择要使用的策略组和节点。</p>
+      <p><strong>连接</strong>：点击主界面的连接按钮，授予 VPN 权限，连接成功后即可使用。</p>
+      <p>若订阅返回的是 Clash 格式，Shadowrocket 与 Stash 均可使用；若为其他格式，可优先尝试 Shadowrocket。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">iOS 05</div>
+      <h2>按需连接</h2>
+      <p><strong>按需连接</strong>：在特定 Wi-Fi 下自动连接代理，适用于在家或公司 Wi-Fi 自动开代理的场景。</p>
+      <p><strong>设置步骤（以 Shadowrocket 为例）</strong>：</p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>打开 <strong>设置</strong> → <strong>按需连接</strong> 或 <strong>On Demand</strong></li>
+        <li>添加 Wi-Fi 网络：选择「仅在以下 Wi-Fi 下连接」</li>
+        <li>输入 Wi-Fi 名称（SSID）</li>
+        <li>保存后，连接该 Wi-Fi 时会自动开启代理</li>
+      </ol>
+      <p>若路由器已部署 Clash，可设置「在家 Wi-Fi 不自动连接」；出门使用移动网络或公共 Wi-Fi 时，可手动连接或设置按需连接。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">iOS 06</div>
+      <h2>常见问题</h2>
+      <p><strong>1. 中国区 App Store 找不到应用</strong> — 这些应用未在中国区上架，必须使用外区（美区、港区等）Apple ID 登录 App Store 后下载。</p>
+      <p><strong>2. 切换 Apple ID 区域需谨慎</strong> — 切换区域需清空余额、取消订阅等；若账号有未到期订阅可能无法切换；建议单独注册外区 Apple ID，而非修改现有账号。</p>
+      <p><strong>3. 订阅格式兼容性</strong> — Shadowrocket 支持 Clash、SS、SSR、V2Ray 等多种格式；Stash 主要支持 Clash 格式；若订阅为 Clash 格式，两者均可使用。</p>
+      <p><strong>4. 连接后无法上网</strong> — 检查订阅是否已正确加载并包含有效节点；尝试切换节点或规则模式；确认规则是否正确；重启应用或设备后重试。</p>
+    </section>
+
+    <footer>
+      <p>📄 本文档对应 Markdown 源文件：<a href="../docs/mobile/android-clash-meta.md">docs/mobile/android-clash-meta.md</a>、<a href="../docs/mobile/ios-shadowrocket.md">docs/mobile/ios-shadowrocket.md</a></p>
+      <p style="margin-top:8px"><a href="index.html">← 返回首页</a></p>
+    </footer>
+  </div>
+</body>
+</html>
