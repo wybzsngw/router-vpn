@@ -36,6 +36,99 @@
     .header h1 { font-size: 32px; line-height: 1.3; margin-bottom: 8px }
     .header h1 span { background: linear-gradient(135deg, var(--brand), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent }
     .header .sub { color: var(--muted); font-size: 16px; line-height: 1.6 }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border-radius: 999px;
+      background: rgba(124,77,255,.08); color: var(--brand);
+      border: 1px solid rgba(124,77,255,.15); font-size: 13px; font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .hero-panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.84));
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 24px;
+      box-shadow: 0 18px 46px rgba(17,24,39,.08);
+      padding: 34px 28px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: auto -120px -120px auto;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(124,77,255,.18), transparent 65%);
+      pointer-events: none;
+    }
+    .hero-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:20px }
+    .hero-btn {
+      display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius:12px;
+      text-decoration:none; color:var(--text); background:linear-gradient(135deg, rgba(14,165,233,.12), rgba(124,77,255,.12));
+      border:1px solid rgba(0,0,0,.06); font-size:14px; font-weight:600;
+      transition: all .2s;
+    }
+    .hero-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(14,165,233,.15) }
+    .hero-btn.secondary { background: rgba(255,255,255,.7) }
+    .stats {
+      display:grid; gap:14px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      margin: 24px 0 4px;
+    }
+    .stat {
+      background: rgba(255,255,255,.78); border:1px solid rgba(0,0,0,.05); border-radius:16px;
+      padding:16px 14px; text-align:left;
+    }
+    .stat .num { font-size:24px; font-weight:800; color:var(--text); margin-bottom:4px }
+    .stat .label { color:var(--muted); font-size:13px; line-height:1.6 }
+    .notice-grid {
+      display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin: 0 0 28px;
+    }
+    .notice {
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 18px 18px 16px;
+    }
+    .notice h3 { font-size: 16px; margin-bottom: 8px }
+    .notice p, .notice li { color: var(--muted); font-size: 14px; line-height: 1.8 }
+    .notice ul { padding-left: 18px; margin-top: 8px }
+    .quick-grid {
+      display:grid; gap:20px; grid-template-columns: 1.35fr .95fr;
+      margin-bottom: 14px;
+    }
+    .quick-card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+    .quick-card h3 { font-size: 20px; margin: 6px 0 10px }
+    .quick-card p { color: var(--muted); line-height: 1.8; font-size: 14px }
+    .step-list { display:grid; gap:10px; margin-top:14px }
+    .step-item {
+      display:grid; grid-template-columns: 34px 1fr; gap:12px; align-items:flex-start;
+      padding: 12px 14px; border-radius: 14px; background: rgba(0,0,0,.025);
+      border: 1px solid rgba(0,0,0,.04);
+    }
+    .step-badge {
+      width:34px; height:34px; border-radius:999px; display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, rgba(14,165,233,.16), rgba(124,77,255,.18));
+      color: var(--brand); font-weight: 800; font-size: 13px;
+    }
+    .step-item strong { display:block; margin-bottom:4px }
+    .mini-links { display:grid; gap:10px; margin-top:14px }
+    .mini-link {
+      display:flex; justify-content:space-between; gap:12px; align-items:center;
+      padding:12px 14px; border-radius:14px; text-decoration:none; color:var(--text);
+      background: rgba(14,165,233,.05); border:1px solid rgba(14,165,233,.12);
+      transition: all .2s;
+    }
+    .mini-link:hover { transform: translateY(-1px); border-color: rgba(14,165,233,.3) }
+    .mini-link span:last-child { color: var(--muted); font-size: 13px }
 
     /* Nav bar */
     .nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 36px; padding: 12px 16px; background: var(--card); border-radius: 14px; box-shadow: var(--shadow) }
@@ -80,24 +173,126 @@
     @media(max-width:700px){
       .header h1 { font-size: 24px }
       .grid { grid-template-columns: 1fr }
+      .quick-grid { grid-template-columns: 1fr }
+      .hero-panel { padding: 26px 18px }
     }
   </style>
 </head>
 <body>
   <div class="container">
 
-    <div class="header">
-      <h1><span>Clash 全平台翻墙指南</span></h1>
-      <p class="sub">一站式订阅申请与配置教程，覆盖路由器、桌面端、移动端</p>
+    <div class="hero-panel">
+      <div class="header" style="margin-bottom:0">
+        <div class="eyebrow">Router VPN Guide · 正式门户首页</div>
+        <h1><span>Clash 全平台翻墙指南</span></h1>
+        <p class="sub">一站式订阅申请与配置教程，覆盖华硕路由器、软路由、Windows、Linux、macOS 与手机端，帮助你按设备场景快速完成部署。</p>
+      </div>
+
+      <div class="hero-actions">
+        <a class="hero-btn" href="clash-subscription-guide.html">先获取订阅</a>
+        <a class="hero-btn secondary" href="#router">查看路由器方案</a>
+        <a class="hero-btn secondary" href="#more">下载插件与资源</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num">6</div>
+          <div class="label">平台教程<br>路由器、桌面端、移动端全覆盖</div>
+        </div>
+        <div class="stat">
+          <div class="num">2</div>
+          <div class="label">访问入口<br>老地址兼容，新页面持续扩展</div>
+        </div>
+        <div class="stat">
+          <div class="num">1</div>
+          <div class="label">统一下载目录<br>插件包与后续资源集中管理</div>
+        </div>
+      </div>
     </div>
 
     <nav class="nav">
       <a href="#subscribe">订阅申请</a>
+      <a href="#start">快速开始</a>
       <a href="#router">路由器</a>
       <a href="#desktop">桌面端</a>
       <a href="#mobile">移动端</a>
       <a href="#more">资源下载</a>
     </nav>
+
+    <div class="notice-grid">
+      <div class="notice">
+        <h3>老用户兼容说明</h3>
+        <p>已发布的订阅页旧地址仍然可用：<code>clash-subscription-guide.html</code>。新内容会逐步集中到首页与 <code>pages/</code> 子路径中。</p>
+      </div>
+      <div class="notice">
+        <h3>站点结构说明</h3>
+        <p><code>/docs</code> 用于 GitHub Pages 发布，HTML、图片和下载文件统一放在发布目录内；Markdown 文档在仓库根目录分类维护。</p>
+      </div>
+      <div class="notice">
+        <h3>使用建议</h3>
+        <ul>
+          <li>新用户先看订阅申请，再按设备选择教程</li>
+          <li>路由器用户优先看华硕方案或软路由方案</li>
+          <li>桌面端与移动端适合快速单设备部署</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title" id="start">Quick Start · 快速开始</div>
+    <div class="quick-grid">
+      <div class="quick-card">
+        <div class="section-title" style="margin:0 0 8px;font-size:12px">推荐路径</div>
+        <h3>3 步完成配置</h3>
+        <p>如果你是第一次接触 Clash，可以按下面的顺序完成，从订阅获取到设备落地会更清晰。</p>
+        <div class="step-list">
+          <div class="step-item">
+            <div class="step-badge">01</div>
+            <div>
+              <strong>先申请订阅</strong>
+              通过机场获取 Clash 订阅链接，完成套餐选择、注册与订阅地址复制。
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-badge">02</div>
+            <div>
+              <strong>按设备选择教程</strong>
+              路由器适合全屋覆盖，桌面端适合个人设备，手机端适合移动场景。
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-badge">03</div>
+            <div>
+              <strong>导入订阅并测试连通性</strong>
+              导入后优先测试节点延迟、流媒体解锁与常用服务访问情况。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-card">
+        <div class="section-title" style="margin:0 0 8px;font-size:12px">热门入口</div>
+        <h3>常用页面直达</h3>
+        <p>下面这些是最常被访问的入口，适合直接收藏。</p>
+        <div class="mini-links">
+          <a class="mini-link" href="clash-subscription-guide.html">
+            <span>订阅申请指南</span>
+            <span>老地址保留</span>
+          </a>
+          <a class="mini-link" href="pages/asus-router-guide.html">
+            <span>华硕路由器教程</span>
+            <span>MerlinClash</span>
+          </a>
+          <a class="mini-link" href="pages/linux-guide.html">
+            <span>Linux 教程</span>
+            <span>桌面版 + 服务器版</span>
+          </a>
+          <a class="mini-link" href="downloads/MC2_0.4.6_ARM64.tar.gz">
+            <span>MerlinClash 插件下载</span>
+            <span>ARM64 推荐版</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- ==================== 订阅申请 ==================== -->
     <div class="section-title" id="subscribe">Step 1 · 获取订阅</div>
@@ -233,6 +428,7 @@
 
     <footer>
       <p>本站内容仅用作学习与技术指引，请遵守当地法律法规，合理合规使用网络服务。</p>
+      <p style="margin-top:6px">推荐收藏首页：<a href="https://mowei-ie.github.io/router-vpn/">mowei-ie.github.io/router-vpn/</a></p>
       <p style="margin-top:6px"><a href="https://github.com/EI-ie/router-vpn">GitHub 项目主页</a></p>
     </footer>
 
