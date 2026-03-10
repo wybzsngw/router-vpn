@@ -112,23 +112,28 @@
     pre code { padding: 0; background: none }
     a { color: var(--accent); text-decoration: none }
     a:hover { text-decoration: underline }
-    .share-strip {
-      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px;
-      margin:0 0 24px; padding:16px 18px; border-radius:18px;
-      background:linear-gradient(135deg, rgba(124,77,255,.1), rgba(14,165,233,.12));
-      border:1px solid rgba(124,77,255,.18); box-shadow:0 10px 28px rgba(17,24,39,.08);
+    .floating-share {
+      position:fixed; right:22px; bottom:22px; z-index:999;
+      display:flex; flex-direction:column; align-items:flex-end; gap:10px;
     }
-    .share-strip strong { display:block; margin-bottom:4px; font-size:15px }
-    .share-strip p { color: var(--muted); font-size:13px; line-height:1.7 }
-    .share-actions { display:flex; flex-wrap:wrap; gap:10px }
-    .share-btn {
-      appearance:none; border:none; display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      min-width:120px; padding:11px 16px; border-radius:12px; background:#fff; color:var(--text);
-      font-size:14px; font-weight:700; cursor:pointer; border:1px solid rgba(0,0,0,.06);
-      box-shadow:0 4px 12px rgba(0,0,0,.04); transition:all .2s;
+    .floating-share-panel {
+      display:none; flex-direction:column; gap:8px; padding:10px; border-radius:16px;
+      background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 14px 34px rgba(17,24,39,.12); backdrop-filter:blur(10px);
     }
-    .share-btn:hover { transform:translateY(-2px); box-shadow:0 10px 22px rgba(14,165,233,.15) }
-    .share-btn.primary { background:linear-gradient(135deg, rgba(14,165,233,.95), rgba(124,77,255,.92)); color:#fff; border-color:transparent }
+    .floating-share.is-open .floating-share-panel { display:flex }
+    .floating-share-main, .floating-share-btn {
+      appearance:none; border:1px solid rgba(0,0,0,.08); display:inline-flex; align-items:center;
+      justify-content:center; gap:8px; border-radius:999px; background:rgba(255,255,255,.94);
+      color:var(--text); font-size:13px; font-weight:700; cursor:pointer; transition:all .2s;
+      box-shadow:0 8px 22px rgba(17,24,39,.1);
+    }
+    .floating-share-main { min-width:92px; padding:12px 16px }
+    .floating-share-btn { min-width:96px; padding:10px 14px; justify-content:flex-start }
+    .floating-share-main:hover, .floating-share-btn:hover {
+      transform:translateY(-2px); border-color:rgba(124,77,255,.28); box-shadow:0 12px 28px rgba(17,24,39,.14);
+    }
+    .floating-share-main.primary { background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(240,244,255,.96)) }
     footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
     footer a { color: var(--accent) }
   </style>
@@ -149,17 +154,6 @@
       <a href="mobile-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
     </nav>
 
-    <section class="share-strip" aria-label="收藏与分享">
-      <div>
-        <strong>一键收藏 · 一键分享</strong>
-        <p>支持收藏当前教程；移动端优先调用系统分享，不支持时自动复制链接和推荐文案，方便转发到微信或朋友圈。</p>
-      </div>
-      <div class="share-actions">
-        <button class="share-btn" type="button" onclick="favoritePage()">收藏本站</button>
-        <button class="share-btn primary" type="button" onclick="sharePage()">分享到微信/朋友圈</button>
-        <button class="share-btn" type="button" onclick="copyPageLink()">复制链接</button>
-      </div>
-    </section>
 
     <!-- ========== OpenWrt 部分 ========== -->
     <h2 class="section-title">OpenWrt + OpenClash</h2>
@@ -356,7 +350,27 @@ opkg install iptables dnsmasq-full coreutils coreutils-nohup bash curl ca-certif
       <p style="margin-top:8px"><a href="../index.html">← 返回首页</a></p>
     </footer>
   </main>
+  <div class="floating-share" id="floating-share" aria-label="悬浮分享">
+    <div class="floating-share-panel" aria-label="分享菜单">
+      <button class="floating-share-btn" type="button" onclick="sharePage()">分享</button>
+      <button class="floating-share-btn" type="button" onclick="favoritePage()">收藏</button>
+      <button class="floating-share-btn" type="button" onclick="copyPageLink()">复制链接</button>
+    </div>
+    <button class="floating-share-main primary" id="floating-share-toggle" type="button" aria-expanded="false" onclick="toggleShareMenu()">分享</button>
+  </div>
   <script>
+    function toggleShareMenu() {
+      const widget = document.getElementById('floating-share');
+      const toggle = document.getElementById('floating-share-toggle');
+      const isOpen = widget.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    function closeShareMenu() {
+      const widget = document.getElementById('floating-share');
+      const toggle = document.getElementById('floating-share-toggle');
+      widget.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
     function getSharePayload() {
       return {
         title: document.title,
@@ -369,6 +383,7 @@ opkg install iptables dnsmasq-full coreutils coreutils-nohup bash curl ca-certif
       const text = payload.title + '\n' + payload.text + '\n' + payload.url;
       try {
         await navigator.clipboard.writeText(text);
+        closeShareMenu();
         alert('链接和分享文案已复制，打开微信后可直接粘贴发送或转发到朋友圈。');
       } catch (error) {
         window.prompt('请复制下面的内容并分享：', text);
@@ -379,6 +394,7 @@ opkg install iptables dnsmasq-full coreutils coreutils-nohup bash curl ca-certif
       if (navigator.share) {
         try {
           await navigator.share(payload);
+          closeShareMenu();
           return;
         } catch (error) {}
       }
@@ -389,15 +405,29 @@ opkg install iptables dnsmasq-full coreutils coreutils-nohup bash curl ca-certif
       try {
         if (window.external && 'AddFavorite' in window.external) {
           window.external.AddFavorite(window.location.href, document.title);
+          closeShareMenu();
           return;
         }
         if (window.sidebar && window.sidebar.addPanel) {
           window.sidebar.addPanel(document.title, window.location.href, '');
+          closeShareMenu();
           return;
         }
       } catch (error) {}
+      closeShareMenu();
       alert('请使用快捷键 ' + (isApple ? 'Command/Cmd + D' : 'Ctrl + D') + ' 收藏当前页面；移动端请使用浏览器菜单中的“收藏/加入书签”。');
     }
+    document.addEventListener('click', function(event) {
+      const widget = document.getElementById('floating-share');
+      if (widget && !widget.contains(event.target)) {
+        closeShareMenu();
+      }
+    });
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeShareMenu();
+      }
+    });
   </script>
 </body>
 </html>
