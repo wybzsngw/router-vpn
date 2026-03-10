@@ -109,16 +109,82 @@
     }
     .hero-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(14,165,233,.15) }
     .hero-btn.secondary { background: rgba(255,255,255,.7) }
-    .stats {
-      display:grid; gap:14px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      margin: 24px 0 4px;
+    .hero-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      text-align: center;
     }
-    .stat {
-      background: rgba(255,255,255,.78); border:1px solid rgba(0,0,0,.05); border-radius:16px;
-      padding:16px 14px; text-align:left;
+    .hero-focus {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 24px;
     }
-    .stat .num { font-size:24px; font-weight:800; color:var(--text); margin-bottom:4px }
-    .stat .label { color:var(--muted); font-size:13px; line-height:1.6 }
+    .focus-card {
+      background: rgba(255,255,255,.8);
+      border: 1px solid rgba(0,0,0,.05);
+      border-radius: 18px;
+      padding: 18px 16px;
+      text-align: left;
+    }
+    .focus-card .meta {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .focus-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .focus-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .focus-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 12px;
+      border-radius: 10px;
+      background: rgba(14,165,233,.07);
+      border: 1px solid rgba(14,165,233,.12);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .focus-card a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(14,165,233,.12);
+    }
+    .path-strip {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 0 0 28px;
+    }
+    .path-card {
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .path-card h3 { font-size: 16px; margin-bottom: 8px }
+    .path-card p { color: var(--muted); font-size: 14px; line-height: 1.8; margin-bottom: 12px }
+    .path-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
     .notice-grid {
       display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       margin: 0 0 28px;
@@ -174,8 +240,8 @@
     .nav a:hover, .nav a.active { background: linear-gradient(135deg, rgba(14,165,233,.12), rgba(124,77,255,.12)); color: var(--brand) }
     .floating-share {
       position: fixed;
-      right: 22px;
-      bottom: 22px;
+      right: 18px;
+      bottom: 92px;
       z-index: 999;
       display: flex;
       flex-direction: column;
@@ -214,6 +280,7 @@
     .floating-share-main {
       min-width: 92px;
       padding: 12px 16px;
+      opacity: .96;
     }
     .floating-share-btn {
       min-width: 96px;
@@ -270,6 +337,8 @@
       .grid { grid-template-columns: 1fr }
       .quick-grid { grid-template-columns: 1fr }
       .hero-panel { padding: 26px 18px }
+      .floating-share { right: 14px; bottom: 84px }
+      .floating-share-main { min-width: 82px; padding: 11px 14px }
     }
   </style>
 </head>
@@ -278,29 +347,37 @@
 
     <div class="hero-panel">
       <div class="header" style="margin-bottom:0">
-        <div class="eyebrow">Router VPN Guide · 正式门户首页</div>
-        <h1><span>Clash 全平台翻墙指南</span></h1>
-        <p class="sub">一站式订阅申请与配置教程，覆盖华硕路由器、软路由、Windows、Linux、macOS 与手机端，帮助你按设备场景快速完成部署。</p>
+        <div class="eyebrow">订阅申请 · 教程配置 · 插件下载</div>
+        <h1><span>Clash 订阅、配置与下载入口</span></h1>
+        <p class="sub">首页只保留最常用的核心功能：先获取订阅，再按设备选择教程，最后下载对应插件或客户端，尽量让你少走弯路。</p>
       </div>
 
       <div class="hero-actions">
-        <a class="hero-btn" href="clash-subscription-guide.html">先获取订阅</a>
-        <a class="hero-btn secondary" href="#router">查看路由器方案</a>
-        <a class="hero-btn secondary" href="#more">下载插件与资源</a>
+        <a class="hero-btn" href="clash-subscription-guide.html">1. 获取订阅</a>
+        <a class="hero-btn secondary" href="#device-entry">2. 选择设备教程</a>
+        <a class="hero-btn secondary" href="#more">3. 下载插件</a>
       </div>
 
-      <div class="stats">
-        <div class="stat">
-          <div class="num">6</div>
-          <div class="label">平台教程<br>路由器、桌面端、移动端全覆盖</div>
+      <div class="hero-note">适合第一次接触 Clash 的用户，也适合已经有订阅、只想快速找到对应设备教程的用户。</div>
+
+      <div class="hero-focus">
+        <div class="focus-card">
+          <div class="meta">Step 1</div>
+          <h3>先申请 Clash 订阅</h3>
+          <p>整理了机场推荐、价格对比、流媒体解锁和注册入口，先拿到可用订阅链接。</p>
+          <a href="clash-subscription-guide.html">打开订阅申请</a>
         </div>
-        <div class="stat">
-          <div class="num">2</div>
-          <div class="label">访问入口<br>老地址兼容，新页面持续扩展</div>
+        <div class="focus-card">
+          <div class="meta">Step 2</div>
+          <h3>按设备直接找教程</h3>
+          <p>华硕路由器、软路由、Windows、Linux、macOS、Android、iPhone 都有对应入口。</p>
+          <a href="#device-entry">按设备查看</a>
         </div>
-        <div class="stat">
-          <div class="num">1</div>
-          <div class="label">统一下载目录<br>插件包与后续资源集中管理</div>
+        <div class="focus-card">
+          <div class="meta">Step 3</div>
+          <h3>下载 MerlinClash 插件</h3>
+          <p>需要给华硕路由器离线安装插件时，可直接从首页下载常用 ARM64 版本。</p>
+          <a href="#more">查看下载</a>
         </div>
       </div>
     </div>
@@ -314,22 +391,40 @@
       <a href="#more">资源下载</a>
     </nav>
 
+    <div class="path-strip">
+      <div class="path-card">
+        <h3>第一次使用</h3>
+        <p>建议先看订阅申请，再按设备类型进入教程，最后导入订阅并测试连通性。</p>
+        <a href="clash-subscription-guide.html">从订阅申请开始</a>
+      </div>
+      <div class="path-card">
+        <h3>已经有订阅</h3>
+        <p>如果你已经拿到 Clash 订阅链接，可以直接跳到对应设备页面，不必重复阅读介绍内容。</p>
+        <a href="#device-entry">直接选择设备教程</a>
+      </div>
+      <div class="path-card">
+        <h3>只需要插件下载</h3>
+        <p>华硕路由器用户如果只想下载 MerlinClash 离线包，可直接进入下载区获取推荐版本。</p>
+        <a href="#more">直接前往下载</a>
+      </div>
+    </div>
+
     <div class="notice-grid">
       <div class="notice">
-        <h3>老用户兼容说明</h3>
-        <p>已发布的订阅页旧地址仍然可用：<code>clash-subscription-guide.html</code>。新内容会逐步集中到首页与 <code>pages/</code> 子路径中。</p>
-      </div>
-      <div class="notice">
-        <h3>站点结构说明</h3>
-        <p><code>/docs</code> 用于 GitHub Pages 发布，HTML、图片和下载文件统一放在发布目录内；Markdown 文档在仓库根目录分类维护。</p>
-      </div>
-      <div class="notice">
-        <h3>使用建议</h3>
+        <h3>新用户建议</h3>
         <ul>
-          <li>新用户先看订阅申请，再按设备选择教程</li>
-          <li>路由器用户优先看华硕方案或软路由方案</li>
-          <li>桌面端与移动端适合快速单设备部署</li>
+          <li>先申请订阅，再选择设备教程</li>
+          <li>优先使用规则模式，完成后再调高级功能</li>
+          <li>导入后先测试延迟、流媒体和常用网站访问</li>
         </ul>
+      </div>
+      <div class="notice">
+        <h3>老用户入口</h3>
+        <p>老地址 <code>clash-subscription-guide.html</code> 仍然保留可访问。你也可以直接把本首页加入收藏，后续入口会持续在这里集中更新。</p>
+      </div>
+      <div class="notice">
+        <h3>站点定位</h3>
+        <p>这个首页不是项目介绍页，而是你的功能入口页。重点就是 3 件事：订阅、教程、下载。</p>
       </div>
     </div>
 
@@ -408,6 +503,7 @@
     </div>
 
     <!-- ==================== 路由器 ==================== -->
+    <div class="section-title" id="device-entry">按设备选择教程</div>
     <div class="section-title" id="router">路由器方案 · 全屋翻墙</div>
     <div class="grid">
       <div class="card">
