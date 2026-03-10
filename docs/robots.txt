@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mowei-ie.github.io/router-vpn/sitemap.xml

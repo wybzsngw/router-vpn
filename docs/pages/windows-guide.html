@@ -5,7 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Windows Clash 翻墙教程 — Clash Verge Rev</title>
   <meta name="description" content="Windows 系统使用 Clash Verge Rev 实现科学上网，含下载安装、订阅导入、TUN 模式、分应用代理、规则分流等完整教程。" />
-  <meta name="keywords" content="Clash Verge Rev,Windows,翻墙,科学上网,Clash,代理,TUN模式" />
+  <meta name="keywords" content="Clash Verge Rev,Windows,翻墙,科学上网,Clash,代理,TUN模式,系统代理,规则分流" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Windows Clash 翻墙教程 — Clash Verge Rev" />
+  <meta property="og:description" content="Windows 系统使用 Clash Verge Rev 实现科学上网，含下载安装、订阅导入、TUN 模式、分应用代理等完整教程。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mowei-ie.github.io/router-vpn/pages/windows-guide.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台翻墙指南" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Windows Clash 翻墙教程 — Clash Verge Rev" />
+  <meta name="twitter:description" content="Windows 上使用 Clash Verge Rev 实现科学上网的完整教程。" />
+  <link rel="canonical" href="https://mowei-ie.github.io/router-vpn/pages/windows-guide.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Windows Clash Verge Rev 翻墙教程",
+    "description": "Windows 系统使用 Clash Verge Rev 实现科学上网",
+    "url": "https://mowei-ie.github.io/router-vpn/pages/windows-guide.html",
+    "author": { "@type": "Organization", "name": "Router VPN Guide" },
+    "inLanguage": "zh-CN",
+    "step": [
+      { "@type": "HowToStep", "name": "下载安装", "text": "从 GitHub 下载 Clash Verge Rev 安装包并安装" },
+      { "@type": "HowToStep", "name": "导入订阅", "text": "在 Profiles 中粘贴订阅链接并导入" },
+      { "@type": "HowToStep", "name": "启动代理", "text": "开启 System Proxy 或 TUN 模式" },
+      { "@type": "HowToStep", "name": "选择代理模式", "text": "根据需求选择 Rule / Global / Direct 模式" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://mowei-ie.github.io/router-vpn/" },
+      { "@type": "ListItem", "position": 2, "name": "Windows 教程", "item": "https://mowei-ie.github.io/router-vpn/pages/windows-guide.html" }
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg: #f7f8fc;
@@ -75,11 +114,11 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <h1>Windows Clash 翻墙教程 — Clash Verge Rev</h1>
     <p class="subtitle">在 Windows 上使用 Clash Verge Rev 实现科学上网</p>
 
-    <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+    <nav aria-label="站内导航" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
       <a href="../index.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
       <a href="../clash-subscription-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
       <a href="asus-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
@@ -283,6 +322,6 @@ Invoke-WebRequest -Uri "http://127.0.0.1:9090/configs" -UseBasicParsing</code></
       <p>📄 本文档对应 Markdown 源文件：<a href="../../windows/clash-verge-rev.md">windows/clash-verge-rev.md</a></p>
       <p style="margin-top:8px"><a href="../index.html">← 返回首页</a></p>
     </footer>
-  </div>
+  </main>
 </body>
 </html>

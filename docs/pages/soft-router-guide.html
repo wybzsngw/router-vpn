@@ -5,7 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>软路由翻墙教程 — OpenWrt + OpenClash / iKuai</title>
   <meta name="description" content="软路由翻墙完整教程，含 OpenWrt + OpenClash 与 iKuai 旁路由方案，覆盖硬件推荐、网络拓扑、订阅导入、DNS 配置等。" />
-  <meta name="keywords" content="软路由,OpenWrt,OpenClash,iKuai,翻墙,科学上网,Clash,旁路由" />
+  <meta name="keywords" content="软路由,OpenWrt,OpenClash,iKuai,翻墙,科学上网,Clash,旁路由,全屋翻墙,透明代理" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="软路由翻墙教程 — OpenWrt + OpenClash / iKuai" />
+  <meta property="og:description" content="软路由翻墙完整教程，含 OpenWrt + OpenClash 与 iKuai 旁路由方案，覆盖硬件推荐、网络拓扑、订阅导入、DNS 配置等。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mowei-ie.github.io/router-vpn/pages/soft-router-guide.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台翻墙指南" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="软路由翻墙教程 — OpenWrt + OpenClash / iKuai" />
+  <meta name="twitter:description" content="OpenWrt + OpenClash 与 iKuai 旁路由翻墙方案完整教程。" />
+  <link rel="canonical" href="https://mowei-ie.github.io/router-vpn/pages/soft-router-guide.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "软路由翻墙教程 — OpenWrt + OpenClash / iKuai",
+    "description": "在软路由上使用 OpenClash 或 iKuai 旁路由实现全家设备自动翻墙",
+    "url": "https://mowei-ie.github.io/router-vpn/pages/soft-router-guide.html",
+    "author": { "@type": "Organization", "name": "Router VPN Guide" },
+    "inLanguage": "zh-CN",
+    "step": [
+      { "@type": "HowToStep", "name": "硬件准备", "text": "选择 x86 迷你主机或其他软路由硬件" },
+      { "@type": "HowToStep", "name": "安装 OpenWrt", "text": "下载固件并写入存储设备" },
+      { "@type": "HowToStep", "name": "配置网络拓扑", "text": "选择主路由或旁路由模式" },
+      { "@type": "HowToStep", "name": "安装 OpenClash", "text": "更新软件源并安装 OpenClash 插件" },
+      { "@type": "HowToStep", "name": "导入订阅", "text": "添加订阅链接或上传 YAML 配置" },
+      { "@type": "HowToStep", "name": "配置 DNS", "text": "设置 DNS 劫持与上游 DNS 避免泄露" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://mowei-ie.github.io/router-vpn/" },
+      { "@type": "ListItem", "position": 2, "name": "软路由教程", "item": "https://mowei-ie.github.io/router-vpn/pages/soft-router-guide.html" }
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg: #f7f8fc;
@@ -76,11 +117,11 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <h1>软路由翻墙教程 — OpenWrt + OpenClash / iKuai</h1>
     <p class="subtitle">在软路由上使用 OpenClash 实现全家设备自动翻墙</p>
 
-    <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+    <nav aria-label="站内导航" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
       <a href="../index.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
       <a href="../clash-subscription-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
       <a href="asus-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
@@ -285,6 +326,6 @@ opkg install iptables dnsmasq-full coreutils coreutils-nohup bash curl ca-certif
       <p>📄 本文档对应 Markdown 源文件：<a href="../../soft-router/openwrt-clash.md">soft-router/openwrt-clash.md</a>、<a href="../../soft-router/ikuai-clash.md">soft-router/ikuai-clash.md</a></p>
       <p style="margin-top:8px"><a href="../index.html">← 返回首页</a></p>
     </footer>
-  </div>
+  </main>
 </body>
 </html>
