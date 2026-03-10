@@ -1,6 +1,6 @@
 # iOS 翻墙教程 — Shadowrocket & Stash
 
-> 📄 本文对应 HTML 页面：[手机教程](../../pages/mobile-guide.html)
+> 📄 本文对应 HTML 页面：[手机教程](../docs/pages/mobile-guide.html)
 
 本教程将指导您在 iPhone 或 iPad 上使用 Shadowrocket、Stash 等工具实现科学上网，适用于需要绕过网络审查、访问境外网站的场景。
 

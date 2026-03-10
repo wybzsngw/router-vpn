@@ -1,6 +1,6 @@
 # Clash 订阅申请指南 — 机场推荐与对比
 
-> 📄 本文对应 HTML 页面：[订阅申请指南](../../pages/clash-subscription-guide.html)
+> 📄 本文对应 HTML 页面：[订阅申请指南](../docs/clash-subscription-guide.html)
 
 本指南将帮助你了解什么是机场订阅、如何选择合适的机场服务，以及如何获取并配置 Clash 订阅链接。
 

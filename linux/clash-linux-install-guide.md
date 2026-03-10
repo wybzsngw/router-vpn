@@ -1,5 +1,7 @@
 # Clash Linux 安装教程
 
+> 📄 本文对应 HTML 页面：[Linux 教程](../docs/pages/linux-guide.html)
+
 本教程将指导您在Linux系统上安装和配置Clash代理工具。
 
 - **适用系统**: Ubuntu、Debian、CentOS、Rocky Linux、Fedora等主流Linux发行版
@@ -68,8 +70,8 @@ curl -L -o clash-linux-arm64-v1.18.0.gz https://github.com/Dreamacro/clash/relea
 如果项目目录中已有对应架构的Clash文件，可以直接使用：
 
 ```bash
-# 假设文件在 docs/ 目录下
-cp docs/clash-linux-amd64-v1.18.0 ~/clash-install/
+# 假设文件在当前目录
+cp ./clash-linux-amd64-v1.18.0 ~/clash-install/
 ```
 
 ---

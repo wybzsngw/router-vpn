@@ -1,5 +1,7 @@
 # Clash 无GUI Linux系统完整安装教程
 
+> 📄 本文对应 HTML 页面：[Linux 教程](../docs/pages/linux-guide.html)
+
 本教程专为**无图形界面（Headless）的Linux服务器**设计，提供完整的命令行安装和配置指南。
 
 - **适用系统**: Ubuntu Server、Debian、CentOS、Rocky Linux、Fedora等无GUI Linux发行版

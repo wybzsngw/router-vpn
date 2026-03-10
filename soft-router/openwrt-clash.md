@@ -1,6 +1,6 @@
 # 软路由翻墙教程 — OpenWrt + OpenClash
 
-> 📄 本文对应 HTML 页面：[软路由教程](../../pages/soft-router-guide.html)
+> 📄 本文对应 HTML 页面：[软路由教程](../docs/pages/soft-router-guide.html)
 
 本教程介绍如何在 OpenWrt 软路由上使用 OpenClash 实现全家设备自动翻墙，适用于需要绕过网络审查、访问国际互联网的用户。
 

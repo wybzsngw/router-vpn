@@ -1,6 +1,6 @@
 # Windows 系统代理配置指南
 
-> 📄 本文对应 HTML 页面：[Windows 教程](../../pages/windows-guide.html)
+> 📄 本文对应 HTML 页面：[Windows 教程](../docs/pages/windows-guide.html)
 
 本指南介绍 Windows 系统下各类代理配置方法，作为 [Clash Verge Rev 教程](./clash-verge-rev.md) 的补充，帮助您在不同场景下正确使用代理。
 
@@ -28,7 +28,7 @@
    - 地址：`127.0.0.1`（Clash Verge Rev 默认）
    - 端口：`7897`（以 Clash 实际端口为准）
 
-![系统代理设置](../../images/windows/system-proxy-settings.png)
+![系统代理设置](../images/windows/system-proxy-settings.png)
 
 ### 通过 Clash 自动设置
 
@@ -125,7 +125,7 @@ set HTTPS_PROXY=
 5. 代理端口：`7897`（HTTP）或 `7891`（SOCKS5）
 6. 保存
 
-![SwitchyOmega 配置](../../images/windows/switchyomega-config.png)
+![SwitchyOmega 配置](../images/windows/switchyomega-config.png)
 
 #### 3. 切换模式
 
@@ -276,7 +276,7 @@ export HTTPS_PROXY="http://${hostip}:7897"
 ## 相关链接
 
 - [Clash Verge Rev 教程](./clash-verge-rev.md)
-- [Windows 教程](../../pages/windows-guide.html)
+- [Windows 教程](../docs/pages/windows-guide.html)
 
 ---
 

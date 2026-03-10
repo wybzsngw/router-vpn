@@ -1,6 +1,6 @@
 # 华硕路由器梅林固件刷机教程
 
-> 📄 本文对应 HTML 页面：[华硕路由器教程](../../pages/asus-router-guide.html)
+> 📄 本文对应 HTML 页面：[华硕路由器教程](../docs/pages/asus-router-guide.html)
 
 本教程详细介绍如何在华硕路由器上刷入梅林固件，为后续安装 MerlinClash 实现全屋科学上网奠定基础。华硕路由器刷固件流程成熟稳定，操作得当风险较低。
 
@@ -40,7 +40,7 @@
 
 ### 1.3 华硕 RT-AC86U 入门级推荐
 
-![华硕RT-AC86U](../../images/asus/asus-rt-ac86u.png)
+![华硕RT-AC86U](../images/asus-rt-ac86u.png)
 
 | 规格项目 | 详细参数 | 说明 |
 |---------|---------|------|
@@ -56,7 +56,7 @@
 
 ### 1.4 华硕 RT-AX86U PRO 详细规格
 
-![华硕RT-AX86U PRO](../../images/asus/asus-rt-ax86u-pro.png)
+![华硕RT-AX86U PRO](../images/asus-rt-ax86u-pro.png)
 
 | 规格项目 | 详细参数 | 说明 |
 |---------|---------|------|
@@ -72,7 +72,7 @@
 
 ### 1.5 华硕 RT-BE86U 高端旗舰
 
-![华硕RT-BE86U](../../images/asus/rt-be86u.png)
+![华硕RT-BE86U](../images/RT-BE86U.png)
 
 | 规格项目 | 详细参数 | 说明 |
 |---------|---------|------|
@@ -141,7 +141,7 @@ KoolCenter 提供官改与梅林改版固件，适配机型全、更新及时：
 2. 进入 **系统管理** → **恢复/导出/上传设置**
 3. 点击 **导出** 或 **备份**，将配置文件保存到电脑
 
-![备份设置界面](../../images/asus/backup-settings.png)
+![备份设置界面](../images/backup-settings.png)
 
 ### 3.3 下载固件并校验
 
@@ -155,7 +155,7 @@ KoolCenter 提供官改与梅林改版固件，适配机型全、更新及时：
 
 ### 4.1 梅林固件简介
 
-![梅林固件界面](../../images/asus/merlin-firmware.png)
+![梅林固件界面](../images/merlin-firmware.png)
 
 **梅林固件（ASUSWRT-Merlin）** 基于华硕官方固件，专为华硕路由器优化：
 
@@ -168,7 +168,7 @@ KoolCenter 提供官改与梅林改版固件，适配机型全、更新及时：
 1. 在浏览器中输入 `http://192.168.50.1` 或 `http://router.asus.com`
 2. 使用管理员账号登录（用户名和密码为自行设置）
 
-![路由器登录界面](../../images/asus/router-login.png)
+![路由器登录界面](../images/router-login.png)
 
 ### 4.3 第二步：固件双清（非新机必做）
 
@@ -178,7 +178,7 @@ KoolCenter 提供官改与梅林改版固件，适配机型全、更新及时：
 2. 勾选恢复按钮旁的选择框
 3. 点击 **恢复** 按钮执行双清
 
-![固件双清界面](../../images/asus/backup-settings.png)
+![固件双清界面](../images/backup-settings.png)
 
 > 若是全新路由器，可跳过此步骤。
 
@@ -188,7 +188,7 @@ KoolCenter 提供官改与梅林改版固件，适配机型全、更新及时：
 2. 点击 **选择文件**，选择已下载的梅林固件（.trx 或 .w 等格式）
 3. 点击 **上传** 开始刷机
 
-![固件升级界面](../../images/asus/firmware-upload.png)
+![固件升级界面](../images/firmware-upload.png)
 
 ### 4.5 第四步：等待刷机完成
 
@@ -196,7 +196,7 @@ KoolCenter 提供官改与梅林改版固件，适配机型全、更新及时：
 - **期间切勿断电或重启路由器**
 - 路由器会自动重启，请耐心等待
 
-![刷机进度](../../images/asus/flash-progress.png)
+![刷机进度](../images/flash-progress.png)
 
 ---
 
@@ -221,7 +221,7 @@ KoolCenter 提供官改与梅林改版固件，适配机型全、更新及时：
 2. 进入 **系统信息** → **固件版本**
 3. 确认显示为梅林固件版本（如 `388.8_4`、`102.4_0` 等）
 
-![固件版本确认](../../images/asus/firmware-version.png)
+![固件版本确认](../images/firmware-version.png)
 
 ### 6.2 检查软件中心
 
@@ -232,7 +232,7 @@ KoolCenter 提供官改与梅林改版固件，适配机型全、更新及时：
 - 高级网络设置
 - 自定义脚本支持
 
-![软件中心界面](../../images/asus/software-center.png)
+![软件中心界面](../images/software-center.png)
 
 若能看到软件中心，说明梅林固件已成功刷入，可继续安装 MerlinClash 插件。
 

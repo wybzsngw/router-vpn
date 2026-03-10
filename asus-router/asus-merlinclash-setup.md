@@ -1,6 +1,6 @@
 # MerlinClash 安装与配置教程
 
-> 📄 本文对应 HTML 页面：[华硕路由器教程](../../pages/asus-router-guide.html)
+> 📄 本文对应 HTML 页面：[华硕路由器教程](../docs/pages/asus-router-guide.html)
 
 本教程介绍如何在已刷梅林固件的华硕路由器上安装并配置 MerlinClash，实现全屋透明代理与科学上网。MerlinClash 专为华硕梅林固件开发，支持多种代理协议，配置灵活，运行稳定。
 
@@ -20,7 +20,7 @@
 
 ## 一、MerlinClash 简介
 
-![Clash 界面](../../images/asus/clash-interface.png)
+![Clash 界面](../images/clash-interface.png)
 
 **MerlinClash** 是专为华硕梅林固件开发的 Clash 插件，具有以下特点：
 
@@ -45,7 +45,7 @@
 2. 进入 **软件中心**
 3. 点击 **更新** 按钮，将软件中心升级到最新版本
 
-![软件中心更新](../../images/asus/software-center-update.png)
+![软件中心更新](../images/software-center-update.png)
 
 ### 2.2 确认存储空间
 
@@ -67,7 +67,7 @@
 **下载来源**：
 
 - **本项目**：
-  - RT-AX86U PRO 等 ARM64 路由器：[MC2_0.4.6_ARM64.tar.gz](../../downloads/MC2_0.4.6_ARM64.tar.gz)（推荐）或 [MC2_0.3_ARM64.tar.gz](../../downloads/MC2_0.3_ARM64.tar.gz)
+  - RT-AX86U PRO 等 ARM64 路由器：[MC2_0.4.6_ARM64.tar.gz](../docs/downloads/MC2_0.4.6_ARM64.tar.gz)（推荐）或 [MC2_0.3_ARM64.tar.gz](../docs/downloads/MC2_0.3_ARM64.tar.gz)
   - 建议在链接上右键，使用「链接另存为」下载
 - **Telegram 频道**：[MerlinClash 下载频道](https://t.me/merlinclashcat)（需 Telegram 账号，可获取最新版本）
 
@@ -78,7 +78,7 @@
 3. 点击 **上传并安装**
 4. 等待安装完成
 
-![离线安装界面](../../images/asus/offline-install.png)
+![离线安装界面](../images/offline-install.png)
 
 ### 3.3 启用 MerlinClash
 
@@ -86,7 +86,7 @@
 2. 点击 **启动** 按钮
 3. 等待插件启动完成
 
-![MerlinClash 启动](../../images/asus/merlinclash-start.png)
+![MerlinClash 启动](../images/merlinclash-start.png)
 
 > **提示**：若安装失败，可尝试使用 Chrome 浏览器进行安装，并检查软件中心是否已升级、插件包是否完整、存储空间是否充足。
 
@@ -106,7 +106,7 @@
 4. 点击 **更新订阅**
 5. 等待节点更新完成
 
-![订阅配置界面](../../images/asus/subscription-config.png)
+![订阅配置界面](../images/subscription-config.png)
 
 ### 4.3 定期更新订阅
 
@@ -151,7 +151,7 @@
 | **端口设置** | HTTP/SOCKS5 端口 | 保持默认（如 7890、7891）即可 |
 | **DNS 设置** | 代理 DNS 配置 | 使用默认或按需自定义 |
 
-![基本配置界面](../../images/asus/basic-config.png)
+![基本配置界面](../images/basic-config.png)
 
 ### 6.2 分流规则配置
 
@@ -159,7 +159,7 @@
 2. 选择合适的分流规则（国内直连、国外代理等）
 3. 可自定义规则或使用预设规则
 
-![规则配置界面](../../images/asus/rules-config.png)
+![规则配置界面](../images/rules-config.png)
 
 ### 6.3 启用透明代理
 
@@ -175,7 +175,7 @@
 2. 查看 **运行状态**，确认显示「运行中」
 3. 检查 **节点列表**，确认节点已加载
 
-![运行状态界面](../../images/asus/status-check.png)
+![运行状态界面](../images/status-check.png)
 
 ### 7.2 连接测试
 
@@ -183,7 +183,7 @@
 2. 检查是否能正常访问
 3. 访问 `https://www.whatismyipaddress.com` 验证出口 IP 是否已改变
 
-![网络测试结果](../../images/asus/network-test.png)
+![网络测试结果](../images/network-test.png)
 
 ### 7.3 管理面板功能
 

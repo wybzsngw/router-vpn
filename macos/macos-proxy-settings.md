@@ -1,6 +1,6 @@
 # macOS 系统代理配置指南
 
-> 📄 本文对应 HTML 页面：[macOS 教程](../../pages/macos-guide.html)
+> 📄 本文对应 HTML 页面：[macOS 教程](../docs/pages/macos-guide.html)
 
 本指南介绍 macOS 系统下各类代理配置方法，作为 [ClashX Meta 教程](./clashx-meta.md) 的补充，帮助您在不同场景下正确使用代理。
 
@@ -31,7 +31,7 @@
 6. 若需绕过本地地址，在 **忽略这些主机与域的代理设置** 中填入：`localhost, 127.0.0.1, *.local`
 7. 点击 **好** 保存
 
-![系统代理设置](../../images/macos/system-proxy-settings.png)
+![系统代理设置](../images/macos/system-proxy-settings.png)
 
 ### 通过 Clash 自动设置
 
@@ -123,7 +123,7 @@ unset http_proxy https_proxy all_proxy no_proxy
 
 点击菜单栏 **Wi-Fi** 图标 → **位置** → 选择对应位置，即可快速切换。
 
-![网络位置](../../images/macos/network-location.png)
+![网络位置](../images/macos/network-location.png)
 
 ### 使用场景
 
@@ -262,7 +262,7 @@ function FindProxyForURL(url, host) {
 ## 相关链接
 
 - [ClashX Meta 教程](./clashx-meta.md)
-- [macOS 教程](../../pages/macos-guide.html)
+- [macOS 教程](../docs/pages/macos-guide.html)
 
 ---
 

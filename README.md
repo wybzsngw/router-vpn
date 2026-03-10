@@ -2,7 +2,7 @@
 
 > 一站式 Clash 订阅申请与配置教程，覆盖路由器、软路由、Windows、Linux、macOS、Android、iOS。
 >
-> 🌐 **在线页面**：<https://mowei-ie.github.io/router-vpn/pages/index.html>
+> 🌐 **在线页面**：<https://mowei-ie.github.io/router-vpn/>
 
 ---
 
@@ -12,70 +12,62 @@
 
 | 页面 | 说明 | 链接 |
 |------|------|------|
-| 全平台导航首页 | 所有教程入口 | [index.html](pages/index.html) |
-| 订阅申请指南 | 机场推荐与对比 | [clash-subscription-guide.html](pages/clash-subscription-guide.html) |
-| 华硕路由器教程 | 梅林固件 + MerlinClash | [asus-router-guide.html](pages/asus-router-guide.html) |
-| 软路由教程 | OpenWrt + OpenClash / iKuai | [soft-router-guide.html](pages/soft-router-guide.html) |
-| Windows 教程 | Clash Verge Rev | [windows-guide.html](pages/windows-guide.html) |
-| Linux 教程 | GUI 桌面版 & 服务器版 | [linux-guide.html](pages/linux-guide.html) |
-| macOS 教程 | ClashX Meta | [macos-guide.html](pages/macos-guide.html) |
-| 手机教程 | Android & iOS | [mobile-guide.html](pages/mobile-guide.html) |
+| 全平台导航首页 | 所有教程入口 | [index.html](docs/index.html) |
+| 订阅申请指南 | 机场推荐与对比 | [clash-subscription-guide.html](docs/clash-subscription-guide.html) |
+| 华硕路由器教程 | 梅林固件 + MerlinClash | [asus-router-guide.html](docs/pages/asus-router-guide.html) |
+| 软路由教程 | OpenWrt + OpenClash / iKuai | [soft-router-guide.html](docs/pages/soft-router-guide.html) |
+| Windows 教程 | Clash Verge Rev | [windows-guide.html](docs/pages/windows-guide.html) |
+| Linux 教程 | GUI 桌面版 & 服务器版 | [linux-guide.html](docs/pages/linux-guide.html) |
+| macOS 教程 | ClashX Meta | [macos-guide.html](docs/pages/macos-guide.html) |
+| 手机教程 | Android & iOS | [mobile-guide.html](docs/pages/mobile-guide.html) |
 
 ### 文档（Markdown）
 
 | 分类 | 文档 |
 |------|------|
-| **订阅/机场** | [订阅申请指南](docs/subscription/clash-subscription-guide.md) |
-| **华硕路由器** | [梅林固件刷机](docs/asus-router/asus-merlin-flash.md) · [MerlinClash 安装配置](docs/asus-router/asus-merlinclash-setup.md) · [高级功能](docs/asus-router/asus-advanced.md) |
-| **软路由** | [OpenWrt + OpenClash](docs/soft-router/openwrt-clash.md) · [iKuai + 旁路由](docs/soft-router/ikuai-clash.md) |
-| **Windows** | [Clash Verge Rev 教程](docs/windows/clash-verge-rev.md) · [系统代理配置](docs/windows/windows-proxy-settings.md) |
-| **Linux** | [GUI 桌面版](docs/linux/clash-linux-gui.md) · [无 GUI 服务器版](docs/linux/clash-linux-headless.md) |
-| **macOS** | [ClashX Meta 教程](docs/macos/clashx-meta.md) · [系统代理配置](docs/macos/macos-proxy-settings.md) |
-| **手机** | [Android Clash Meta](docs/mobile/android-clash-meta.md) · [iOS Shadowrocket & Stash](docs/mobile/ios-shadowrocket.md) |
-| **通用** | [故障排除](docs/common/troubleshooting.md) · [分流规则详解](docs/common/proxy-rules.md) · [术语表](docs/common/glossary.md) |
-| **扩展** | [Tailscale ESXi 远程访问](docs/extras/tailscale-esxi-guide.md) · [统计服务部署](docs/extras/deployment-guide.md) |
+| **订阅/机场** | [订阅申请指南](subscription/clash-subscription-guide.md) |
+| **华硕路由器** | [梅林固件刷机](asus-router/asus-merlin-flash.md) · [MerlinClash 安装配置](asus-router/asus-merlinclash-setup.md) · [高级功能](asus-router/asus-advanced.md) |
+| **软路由** | [OpenWrt + OpenClash](soft-router/openwrt-clash.md) · [iKuai + 旁路由](soft-router/ikuai-clash.md) |
+| **Windows** | [Clash Verge Rev 教程](windows/clash-verge-rev.md) · [系统代理配置](windows/windows-proxy-settings.md) |
+| **Linux** | [桌面版安装](linux/clash-linux-install-guide.md) · [无 GUI 服务器版](linux/clash-linux-headless-guide.md) |
+| **macOS** | [ClashX Meta 教程](macos/clashx-meta.md) · [系统代理配置](macos/macos-proxy-settings.md) |
+| **手机** | [Android Clash Meta](mobile/android-clash-meta.md) · [iOS Shadowrocket & Stash](mobile/ios-shadowrocket.md) |
+| **通用** | [故障排除](common/troubleshooting.md) · [分流规则详解](common/proxy-rules.md) · [术语表](common/glossary.md) |
+| **扩展** | [Tailscale ESXi 远程访问](extras/tailscale-esxi-guide.md) · [统计服务部署](extras/deployment-guide.md) |
 
 ### 项目结构
 
 ```
 router-vpn/
 ├── README.md                 ← 你在这里
-├── pages/                    # HTML 页面（对外发布 GitHub Pages）
-│   ├── index.html            # 全平台导航首页
-│   ├── clash-subscription-guide.html
-│   ├── asus-router-guide.html
-│   ├── soft-router-guide.html
-│   ├── windows-guide.html
-│   ├── linux-guide.html
-│   ├── macos-guide.html
-│   └── mobile-guide.html
-├── docs/                     # Markdown 文档
-│   ├── asus-router/          # 华硕路由器
-│   ├── soft-router/          # 软路由
-│   ├── windows/              # Windows
-│   ├── linux/                # Linux
-│   ├── macos/                # macOS
-│   ├── mobile/               # 手机
-│   ├── subscription/         # 订阅/机场
-│   ├── common/               # 通用（故障排除/规则/术语）
-│   └── extras/               # 扩展工具
-├── downloads/                # 下载文件（插件包、工具等）
-│   ├── MC2_0.4.6_ARM64.tar.gz
-│   └── MC2_0.3_ARM64.tar.gz
+├── docs/                     # GitHub Pages 发布目录（仅 HTML / 下载）
+│   ├── index.html            # 网站首页
+│   ├── clash-subscription-guide.html  # 已发布旧路径，继续保留
+│   ├── pages/                # 新增 HTML 页面
+│   └── downloads/            # 对外下载文件
+├── asus-router/              # 华硕路由器 MD 文档
+├── soft-router/              # 软路由 MD 文档
+├── windows/                  # Windows MD 文档
+├── linux/                    # Linux MD 文档
+├── macos/                    # macOS MD 文档
+├── mobile/                   # 手机 MD 文档
+├── subscription/             # 订阅/机场 MD 文档
+├── common/                   # 通用 MD 文档
+├── extras/                   # 扩展 MD 文档
 ├── images/                   # 截图资源（按平台分目录）
 └── scripts/                  # 辅助脚本
 ```
 
 ### 下载文件
 
-所有可供下载的文件（插件安装包、工具等）统一放在 `downloads/` 目录下：
+所有可供下载的文件（插件安装包、工具等）统一放在 `docs/downloads/` 目录下：
 
 | 文件 | 说明 | 下载 |
 |------|------|------|
-| MC2_0.4.6_ARM64.tar.gz | MerlinClash ARM64 版（推荐） | [下载](downloads/MC2_0.4.6_ARM64.tar.gz) |
-| MC2_0.3_ARM64.tar.gz | MerlinClash ARM64 旧版 | [下载](downloads/MC2_0.3_ARM64.tar.gz) |
+| MC2_0.4.6_ARM64.tar.gz | MerlinClash ARM64 版（推荐） | [下载](docs/downloads/MC2_0.4.6_ARM64.tar.gz) |
+| MC2_0.3_ARM64.tar.gz | MerlinClash ARM64 旧版 | [下载](docs/downloads/MC2_0.3_ARM64.tar.gz) |
 
-> 将来新增的下载文件也请放入此目录，MD 中使用相对路径引用，HTML 中使用 `../downloads/文件名` 引用。
+> 将来新增的下载文件也请放入此目录。根目录下的 MD 建议链接到 `../docs/downloads/文件名` 或 `docs/downloads/文件名`，`docs/pages/*.html` 使用 `../downloads/文件名`。
 
 ---
 
@@ -90,7 +82,7 @@ router-vpn/
 > 不论是官改的固件，还是梅林的固件，目前都已经十分成熟了，不要纠结官方的固件，
 > 如果你实在纠结，后期还是可以重新刷回来的，华硕刷固件的稳定性真是没得说。
 
-> 📖 详细拆分文档：[梅林刷机](docs/asus-router/asus-merlin-flash.md) · [MerlinClash 配置](docs/asus-router/asus-merlinclash-setup.md) · [高级功能](docs/asus-router/asus-advanced.md)
+> 📖 详细拆分文档：[梅林刷机](asus-router/asus-merlin-flash.md) · [MerlinClash 配置](asus-router/asus-merlinclash-setup.md) · [高级功能](asus-router/asus-advanced.md)
 
 ## 📋 目录
 
@@ -392,7 +384,7 @@ router-vpn/
 ————————————————————————————————————————————————
 #### 从本项目
 根据您的路由器型号选择对应版本：
-   - **RT-AX86U PRO 等 ARM64 路由器**：下载 [MC2_0.4.6_ARM64.tar.gz](downloads/MC2_0.4.6_ARM64.tar.gz)（推荐）或 [MC2_0.3_ARM64.tar.gz](downloads/MC2_0.3_ARM64.tar.gz)
+   - **RT-AX86U PRO 等 ARM64 路由器**：下载 [MC2_0.4.6_ARM64.tar.gz](docs/downloads/MC2_0.4.6_ARM64.tar.gz)（推荐）或 [MC2_0.3_ARM64.tar.gz](docs/downloads/MC2_0.3_ARM64.tar.gz)
    - 在链接上点右键，使用“链接另存为”进行下载
    - 梅林Clash也可以通过 [Telegram下载频道](https://t.me/s/merlinclashfile) 获取最新版本（需有Telegram账号）
 
@@ -465,7 +457,7 @@ router-vpn/
 
 #### 申请clash订阅
 
-查看教程：<a href="https://mowei-ie.github.io/router-vpn/pages/clash-subscription-guide.html" target="_blank">申请 Clash 订阅指南</a>
+查看教程：<a href="https://mowei-ie.github.io/router-vpn/clash-subscription-guide.html" target="_blank">申请 Clash 订阅指南</a>
 
 
 #### 订阅配置
