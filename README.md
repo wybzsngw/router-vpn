@@ -17,7 +17,7 @@
 | 分类 | 文档 |
 | ------ | ------ |
 | **订阅/机场** | [订阅申请指南](subscription/clash-subscription-guide.md) |
-| **华硕路由器** | [梅林固件刷机](asus-router/asus-merlin-flash.md) · [MerlinClash 安装配置](asus-router/asus-merlinclash-setup.md) · [高级功能](asus-router/asus-advanced.md) |
+| **华硕路由器** | [梅林固件刷机](asus-router/asus-merlin-flash.md) · [MerlinClash 安装配置](asus-router/asus-merlinclash-setup.md) · [高级功能 / Fancyss 补充](asus-router/asus-advanced.md) |
 | **软路由** | [OpenWrt + OpenClash](soft-router/openwrt-clash.md) · [iKuai + 旁路由](soft-router/ikuai-clash.md) |
 | **Windows** | [Clash Verge Rev 教程](windows/clash-verge-rev.md) · [系统代理配置](windows/windows-proxy-settings.md) |
 | **Linux** | [桌面版安装](linux/clash-linux-install-guide.md) · [无 GUI 服务器版](linux/clash-linux-headless-guide.md) |
@@ -47,7 +47,9 @@
 | 文件 | 说明 | 下载 |
 | ------ | ------ | ------ |
 | MC2_0.4.6_ARM64.tar.gz | MerlinClash ARM64 版（推荐） | [下载](docs/downloads/MC2_0.4.6_ARM64.tar.gz) |
+| MC2_0.4.6_ARM32.tar.gz | MerlinClash ARM32 版（新增） | [下载](docs/downloads/MC2_0.4.6_ARM32.tar.gz) |
 | MC2_0.3_ARM64.tar.gz | MerlinClash ARM64 旧版 | [下载](docs/downloads/MC2_0.3_ARM64.tar.gz) |
+| fancyss_hnd_full.tar.gz | Fancyss HND Full 示例离线包 | [下载](docs/downloads/fancyss_hnd_full.tar.gz) |
 
 > 将来新增的下载文件也请放入此目录，并在对应专题文档中补充使用说明。
 
@@ -107,9 +109,11 @@
 | 文件 | 说明 | 下载 |
 | ------ | ------ | ------ |
 | MC2_0.4.6_ARM64.tar.gz | MerlinClash ARM64 版（推荐） | [下载](docs/downloads/MC2_0.4.6_ARM64.tar.gz) |
+| MC2_0.4.6_ARM32.tar.gz | MerlinClash ARM32 版（新增） | [下载](docs/downloads/MC2_0.4.6_ARM32.tar.gz) |
 | MC2_0.3_ARM64.tar.gz | MerlinClash ARM64 旧版 | [下载](docs/downloads/MC2_0.3_ARM64.tar.gz) |
+| fancyss_hnd_full.tar.gz | Fancyss HND Full 示例离线包 | [下载](docs/downloads/fancyss_hnd_full.tar.gz) |
 
-> 华硕路由器相关的安装、适配机型、使用步骤等说明，应以 `asus-router/` 下的文档为准，不再在 `README.md` 中展开。
+> 华硕路由器相关的安装、ARM32/ARM64 适配机型、Fancyss 平台选择、使用步骤、刷回官方固件等说明，应以 `asus-router/` 下的文档为准，不再在 `README.md` 中展开。
 
 ---
 

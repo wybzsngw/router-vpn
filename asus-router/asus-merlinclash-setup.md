@@ -59,19 +59,34 @@
 
 根据路由器型号选择对应版本：
 
-| 版本 | 适用机型 |
-|------|----------|
-| **MC2_0.4.6 ARM64** | BE6500、BE88U/BE86U/BE96U/BE3600、AC86U、GT5300、AX68U/AX86U/AX88U/AX92U/AX11000、AX11000 pro/AX86U pro/AX88U pro、GT-AX6000、TX-AX6000、TUF-AX4200q、GS7、RAX80 等 |
-| **MC2_0.4.6 ARM32** | BD4、AX3000/AX5400/AX6600/GT6、AX82U/AX56U/AX58U/AX1800、AX89X、RAX50 等 |
+| 版本 | CPU 架构 | 适用机型示例 |
+| ---- | -------- | ------------ |
+| **MC2_0.4.6 ARM64** | ARM V8 64 位 | BE6500、BE88U/BE86U/BE96U/BE3600、AC86U、GT5300、AX68U/AX86U/AX88U/AX92U/AX11000、AX11000 Pro、AX86U Pro、AX88U Pro、GT-AX6000、TX-AX6000、TUF-AX4200Q、GS7、RAX80 等 |
+| **MC2_0.4.6 ARM32** | ARM V7 32 位 | BD4、AX3000/AX5400/AX6600/GT6、AX82U/AX56U/AX58U/AX1800、AX89X、RAX50 等 |
 
 **下载来源**：
 
-- **本项目**：
-  - RT-AX86U PRO 等 ARM64 路由器：[MC2_0.4.6_ARM64.tar.gz](../docs/downloads/MC2_0.4.6_ARM64.tar.gz)（推荐）或 [MC2_0.3_ARM64.tar.gz](../docs/downloads/MC2_0.3_ARM64.tar.gz)
+- **本项目下载**：
+  - ARM64 推荐版：[MC2_0.4.6_ARM64.tar.gz](../docs/downloads/MC2_0.4.6_ARM64.tar.gz)
+  - ARM32 新增版：[MC2_0.4.6_ARM32.tar.gz](../docs/downloads/MC2_0.4.6_ARM32.tar.gz)
+  - ARM64 旧版备用：[MC2_0.3_ARM64.tar.gz](../docs/downloads/MC2_0.3_ARM64.tar.gz)
   - 建议在链接上右键，使用「链接另存为」下载
-- **Telegram 频道**：[MerlinClash 下载频道](https://t.me/merlinclashcat)（需 Telegram 账号，可获取最新版本）
+- **Telegram 下载频道**：[MerlinClash 下载频道](https://t.me/merlinclashcat)
+- **Telegram 文件频道**：[MerlinClash 文件列表](https://t.me/s/merlinclashfile)
 
-### 3.2 离线安装步骤
+### 3.2 如何判断 ARM64 或 ARM32
+
+如果不确定自己的路由器该选哪个安装包，可按下面方式判断：
+
+1. 先对照本页上方机型表，优先按常见机型归类选择
+2. 新款 BE 系列、AX86U Pro、AX88U Pro、GT-AX6000 这类高性能机型通常使用 **ARM64**
+3. AX82U、AX56U、AX58U、AX1800、RAX50 这类机型通常使用 **ARM32**
+4. 若已经刷入梅林固件，可在系统信息或机型资料页中查看 CPU 架构
+5. 仍不确定时，先回到固件下载页确认机型平台，避免装错版本
+
+> **经验建议**：优先以机型适配列表为准，不要只凭路由器新旧判断。安装包选错时，常见表现是无法安装、安装后插件不显示，或启动失败。
+
+### 3.3 离线安装步骤
 
 1. 进入 **软件中心** → **离线安装**
 2. 点击 **选择文件**，选择下载的 MerlinClash 插件包（.tar.gz 格式）
@@ -80,7 +95,7 @@
 
 ![离线安装界面](../docs/images/offline-install.png)
 
-### 3.3 启用 MerlinClash
+### 3.4 启用 MerlinClash
 
 1. 安装完成后，在软件中心找到 **MerlinClash**
 2. 点击 **启动** 按钮
@@ -88,7 +103,7 @@
 
 ![MerlinClash 启动](../docs/images/merlinclash-start.png)
 
-> **提示**：若安装失败，可尝试使用 Chrome 浏览器进行安装，并检查软件中心是否已升级、插件包是否完整、存储空间是否充足。
+> **提示**：若安装失败，可尝试使用 Chrome 浏览器进行安装，并检查软件中心是否已升级、插件包是否完整、存储空间是否充足；如果安装完成但插件未显示，可刷新页面、清理浏览器缓存，或重启一次路由器后再进入软件中心查看。
 
 ---
 
@@ -114,6 +129,8 @@
 
 - 进入 **订阅设置** → 点击 **更新订阅**
 - 可设置自动更新间隔（若插件支持）
+- 更换机场或节点套餐后，建议先删除失效订阅再重新导入
+- 更新完成后，顺手做一次延迟测试和流媒体解锁测试
 
 ---
 
@@ -146,7 +163,7 @@
 3. 配置以下参数：
 
 | 参数 | 说明 | 建议 |
-|------|------|------|
+| ---- | ---- | ---- |
 | **运行模式** | 透明代理 / 规则模式等 | 选择「透明代理」实现全屋代理 |
 | **端口设置** | HTTP/SOCKS5 端口 | 保持默认（如 7890、7891）即可 |
 | **DNS 设置** | 代理 DNS 配置 | 使用默认或按需自定义 |
@@ -200,4 +217,6 @@ MerlinClash 管理面板通常提供：
 
 - [申请 Clash 订阅指南](../../clash-subscription-guide.html)
 - [MerlinClash Telegram 下载频道](https://t.me/merlinclashcat)
+- [MerlinClash Telegram 文件频道](https://t.me/s/merlinclashfile)
+- [KoolCenter 固件下载总入口](https://fw.koolcenter.com/)
 - [Clash 官方文档](https://clash.gitbook.io/)

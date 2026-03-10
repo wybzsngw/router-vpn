@@ -93,9 +93,17 @@
 
 KoolCenter 提供官改与梅林改版固件，适配机型全、更新及时：
 
-- **RT-AC86U**：[KoolCenter RT‑AC86U 梅林固件](https://www.asusgo.com/firmware/download?devicename=rt-ac86u&firmware=merlin)
-- **RT-AX86U PRO**：[KoolCenter RT-AX86U PRO 梅林固件](https://www.asusgo.com/firmware/download?devicename=rt-ax86u_pro&firmware=merlin)
-- **RT-BE86U**：[KoolCenter RT‑BE86U 梅林固件](https://www.asusgo.com/firmware/download?devicename=rt-be86u&firmware=merlin)
+- **固件总入口**：[https://fw.koolcenter.com/](https://fw.koolcenter.com/)
+- **RT-AX86U PRO**：[KoolCenter RT-AX86U PRO 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX86U_PRO/?C=M&O=D)
+- **RT-AX86U**：[KoolCenter RT-AX86U 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX86U/?C=M&O=D)
+- **RT-AX88U PRO**：[KoolCenter RT-AX88U PRO 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX88U_PRO/?C=M&O=D)
+- **RT-AX68U**：[KoolCenter RT-AX68U 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX68U/?C=M&O=D)
+- **TUF-AX3000**：[KoolCenter TUF-AX3000 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/TUF-AX3000/?C=M&O=D)
+- **TUF-AX5400**：[KoolCenter TUF-AX5400 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/TUF-AX5400/?C=M&O=D)
+- **RT-BE86U**：[KoolCenter RT-BE86U 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_102/RT-BE86U/?C=M&O=D)
+- **RT-BE88U**：[KoolCenter RT-BE88U 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_102/RT-BE88U/)
+- **RT-BE96U**：[KoolCenter RT-BE96U 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_102/RT-BE96U/?C=M&O=D)
+- **GT-BE98 PRO**：[KoolCenter GT-BE98 PRO 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_102/GT-BE98_PRO/)
 
 ### 2.2 梅林官方
 
@@ -117,6 +125,21 @@ KoolCenter 提供官改与梅林改版固件，适配机型全、更新及时：
 - 新机或 BE 系列：优先选择 `102.x_*`（如 `102.4_0`）
 - AX 机型：有 `102.x_*` 可优先；仅梅林分支时选最新稳定 `388.x_*`（如 `388.8_4`）
 - 升级前务必备份配置，并核验 MD5
+
+### 2.4 刷回官方固件入口
+
+如果只是想恢复官方系统，不一定需要复杂救砖流程，通常直接刷回官方固件即可：
+
+- **华硕下载中心**：[https://www.asus.com.cn/support/download-center/](https://www.asus.com.cn/support/download-center/)
+- **示例机型页面（RT-AX86U Pro）**：[华硕官方固件下载页](https://www.asus.com.cn/networking-iot-servers/wifi-routers/asus-gaming-routers/rt-ax86u-pro/helpdesk_bios?model2Name=RT-AX86U-Pro)
+
+恢复思路：
+
+1. 打开华硕官方支持页面并搜索你的路由器型号
+2. 进入 **驱动程序和工具软件** → **BIOS 与固件**
+3. 下载最新官方固件
+4. 通过与刷梅林相同的方式上传官方固件
+5. 刷回后建议恢复出厂设置，避免旧插件配置残留
 
 ---
 
@@ -236,10 +259,21 @@ KoolCenter 提供官改与梅林改版固件，适配机型全、更新及时：
 
 若能看到软件中心，说明梅林固件已成功刷入，可继续安装 MerlinClash 插件。
 
+### 6.3 何时考虑刷回官方固件
+
+以下场景可以考虑恢复官方固件：
+
+- 准备转手出售路由器，希望回到原厂状态
+- 某个新功能仅官方固件支持，且当前梅林版本未适配
+- 长期不再使用插件生态，只想保持最简系统
+- 排查异常时，想先回到官方环境做对比测试
+
 ---
 
 ## 📚 参考资源
 
-- [KoolCenter 梅林固件下载（RT‑AX86U PRO）](https://www.koolcenter.com/fw/device/rt-ax86u_pro/merlin)
-- [KoolCenter 梅林固件下载（RT‑BE86U）](https://www.asusgo.com/firmware/download?devicename=rt-be86u&firmware=merlin)
+- [KoolCenter 固件总入口](https://fw.koolcenter.com/)
+- [KoolCenter RT-AX86U PRO 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX86U_PRO/?C=M&O=D)
+- [KoolCenter RT-BE86U 固件目录](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_102/RT-BE86U/?C=M&O=D)
+- [华硕官方下载中心](https://www.asus.com.cn/support/download-center/)
 - [梅林固件官方 GitHub](https://github.com/RMerl/asuswrt-merlin.ng)

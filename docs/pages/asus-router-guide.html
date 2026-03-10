@@ -182,8 +182,9 @@
     <section class="card">
       <div class="kicker">Part 1</div>
       <h2>2. 固件下载</h2>
-      <p><strong>KoolCenter（推荐）</strong>：<a href="https://www.asusgo.com/" target="_blank" rel="noopener">www.asusgo.com</a> — 提供官改与梅林改版固件，按机型选择对应版本。</p>
+      <p><strong>KoolCenter（推荐）</strong>：<a href="https://fw.koolcenter.com/" target="_blank" rel="noopener">fw.koolcenter.com</a> — 提供官改与梅林改版固件，按机型选择对应版本。</p>
       <p><strong>梅林官方</strong>：<a href="https://www.asuswrt-merlin.net/" target="_blank" rel="noopener">www.asuswrt-merlin.net</a> — 原版梅林固件。</p>
+      <p><strong>常用机型直达</strong>：<a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX86U_PRO/?C=M&O=D" target="_blank" rel="noopener">RT-AX86U Pro</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX86U/?C=M&O=D" target="_blank" rel="noopener">RT-AX86U</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX88U_PRO/?C=M&O=D" target="_blank" rel="noopener">RT-AX88U Pro</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX68U/?C=M&O=D" target="_blank" rel="noopener">RT-AX68U</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/TUF-AX3000/?C=M&O=D" target="_blank" rel="noopener">TUF-AX3000</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/TUF-AX5400/?C=M&O=D" target="_blank" rel="noopener">TUF-AX5400</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_102/RT-BE86U/?C=M&O=D" target="_blank" rel="noopener">RT-BE86U</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_102/RT-BE88U/" target="_blank" rel="noopener">RT-BE88U</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_102/RT-BE96U/?C=M&O=D" target="_blank" rel="noopener">RT-BE96U</a></p>
       <p><strong>固件命名规则</strong>：</p>
       <ul>
         <li><code class="inline">102.x_y</code> — 新平台/新内核，适用于 Wi-Fi 7/BE 系列及部分 AX 机型</li>
@@ -191,6 +192,9 @@
         <li><code class="inline">386.x_y</code> — 较老机型</li>
       </ul>
       <p>下载后务必核对 MD5 校验值，确保文件完整。</p>
+      <div class="callout">
+        <strong>刷回官方固件：</strong><a href="https://www.asus.com.cn/support/download-center/" target="_blank" rel="noopener">华硕下载中心</a>。搜索机型后进入「驱动程序和工具软件」→「BIOS 与固件」，下载官方固件并按同样方式上传刷回；完成后建议恢复出厂设置。
+      </div>
     </section>
 
     <section class="card">
@@ -247,16 +251,22 @@
       </ul>
     </section>
 
-    <section class="card">
+    <section class="card" id="downloads">
       <div class="kicker">Part 2</div>
       <h2>8. 安装 MerlinClash</h2>
       <p><strong>离线安装步骤：</strong></p>
-      <p>根据路由器型号选择对应版本下载：</p>
+      <p>根据路由器型号和 CPU 架构选择对应版本下载：</p>
+      <table>
+        <tr><th>版本</th><th>架构</th><th>适用机型示例</th></tr>
+        <tr><td>MC2_0.4.6_ARM64</td><td>ARM V8 64 位</td><td>RT-AX86U Pro、RT-AX88U Pro、GT-AX6000、RT-BE86U、RT-BE88U、RT-BE96U、RT-AX68U、RT-AC86U 等</td></tr>
+        <tr><td>MC2_0.4.6_ARM32</td><td>ARM V7 32 位</td><td>RT-AX82U、RT-AX56U、RT-AX58U、RT-AX1800、TUF-AX3000、TUF-AX5400、GT6、RAX50 等</td></tr>
+      </table>
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin:12px 0">
         <a href="../downloads/MC2_0.4.6_ARM64.tar.gz" download style="display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(14,165,233,.12));color:var(--text);text-decoration:none;border:1px solid rgba(16,185,129,.25);font-size:14px;font-weight:500">⬇ MC2_0.4.6_ARM64.tar.gz（推荐）</a>
+        <a href="../downloads/MC2_0.4.6_ARM32.tar.gz" download style="display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,rgba(124,77,255,.08),rgba(14,165,233,.08));color:var(--text);text-decoration:none;border:1px solid rgba(124,77,255,.16);font-size:14px;font-weight:500">⬇ MC2_0.4.6_ARM32.tar.gz（ARM32）</a>
         <a href="../downloads/MC2_0.3_ARM64.tar.gz" download style="display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:rgba(0,0,0,.04);color:var(--text);text-decoration:none;border:1px solid rgba(0,0,0,.08);font-size:14px">⬇ MC2_0.3_ARM64.tar.gz</a>
       </div>
-      <p style="color:var(--muted);font-size:13px;margin-bottom:10px">右键点击 → 链接另存为，或直接点击下载。将来会持续更新版本。</p>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:10px">右键点击 → 链接另存为，或直接点击下载。若不确定该选 ARM64 还是 ARM32，优先按机型表判断，不要盲装。</p>
       <ol style="list-style:decimal">
         <li>下载对应版本的 <code class="inline">.tar.gz</code> 安装包（ARM64 适用于 RT-AX86U PRO 等，ARM32 适用于 AX82U 等）</li>
         <li>进入 <strong>软件中心</strong> → <strong>离线安装</strong></li>
@@ -264,7 +274,8 @@
         <li>点击「安装」后等待完成</li>
       </ol>
       <div class="callout">
-        <strong>更多版本下载：</strong><a href="https://t.me/merlinclashcat" target="_blank" rel="noopener">Telegram 下载频道</a> · <a href="https://t.me/s/merlinclashfile" target="_blank" rel="noopener">Telegram 文件频道</a>
+        <strong>更多版本下载：</strong><a href="https://t.me/merlinclashcat" target="_blank" rel="noopener">Telegram 下载频道</a> · <a href="https://t.me/s/merlinclashfile" target="_blank" rel="noopener">Telegram 文件频道</a><br />
+        <strong>安装小提示：</strong>若安装完成后插件未显示，可刷新页面、清理浏览器缓存，或重启路由器后再次进入软件中心查看。
       </div>
     </section>
 
@@ -357,6 +368,30 @@
       <p><strong>订阅更新失败</strong> — 确认路由器可访问外网；检查订阅链接格式；尝试手动更新。</p>
       <p><strong>速度下降</strong> — 更换节点；检查节点是否过载；确认宽带带宽是否充足。</p>
       <p><strong>DNS 问题</strong> — 在 MerlinClash 中启用 DNS 配置；使用 DoH/DoT；检查 DNS 泄露。</p>
+    </section>
+
+    <section class="card" id="fancyss">
+      <div class="kicker">Part 3</div>
+      <h2>17. Fancyss 可选方案</h2>
+      <p><strong>Fancyss</strong> 是华硕官改 / 梅林固件软件中心生态中的另一套科学上网插件方案，可视作 MerlinClash 之外的补充选择。</p>
+      <p>根据其公开 README，Fancyss 支持较多平台代理包和协议组合，常见平台包括 <code class="inline">arm</code>、<code class="inline">hnd</code>、<code class="inline">hnd_v8</code>、<code class="inline">qca</code>、<code class="inline">mtk</code>，并区分 <code class="inline">full</code> 与 <code class="inline">lite</code> 两类版本。</p>
+      <ul>
+        <li><strong>适合人群</strong>：更熟悉华硕软件中心插件生态、需要更细平台包划分、或希望在 full / lite 间取舍的用户</li>
+        <li><strong>当前仓库提供</strong>：<a href="../downloads/fancyss_hnd_full.tar.gz" download>fancyss_hnd_full.tar.gz</a></li>
+        <li><strong>重要提醒</strong>：该文件不是通用包，安装前请先按 Fancyss 官方平台表核对机型</li>
+      </ul>
+      <img src="../images/asus/fancyss-1.png" alt="Fancyss 手动安装页面" style="width:100%;border-radius:12px;border:1px solid rgba(0,0,0,.08);margin:14px 0;" />
+      <p>典型流程是：在软件中心进入手动安装，上传对应平台的 Fancyss 离线包，安装完成后在已安装插件中打开 Fancyss。</p>
+      <img src="../images/asus/fancyss-3.png" alt="Fancyss 导入订阅页面" style="width:100%;border-radius:12px;border:1px solid rgba(0,0,0,.08);margin:14px 0;" />
+      <p>进入插件后，可在订阅、更新管理、节点管理等页面导入节点信息，再启用插件并切换线路。</p>
+      <img src="../images/asus/fancyss-6.png" alt="Fancyss 节点管理页面" style="width:100%;border-radius:12px;border:1px solid rgba(0,0,0,.08);margin:14px 0;" />
+      <div class="callout">
+        <strong>引用说明：</strong>本节 Fancyss 相关介绍依据其公开项目资料整理，详细平台支持、版本划分、离线包目录与后续更新请以原项目为准。<br />
+        <a href="https://github.com/hq450/fancyss_history_package/blob/master/README.md" target="_blank" rel="noopener">Fancyss README</a> ·
+        <a href="https://github.com/hq450/fancyss_history_package" target="_blank" rel="noopener">历史安装包仓库</a> ·
+        <a href="https://github.com/hq450/fancyss" target="_blank" rel="noopener">源码仓库</a> ·
+        <a href="https://hq450.github.io/fancyss/" target="_blank" rel="noopener">项目页面</a>
+      </div>
     </section>
 
     <footer>
