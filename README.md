@@ -54,7 +54,7 @@ router-vpn/
 ├── subscription/             # 订阅/机场 MD 文档
 ├── common/                   # 通用 MD 文档
 ├── extras/                   # 扩展 MD 文档
-├── images/                   # 截图资源（按平台分目录）
+├── docs/images/              # 截图资源（供 HTML 与 MD 共用）
 └── scripts/                  # 辅助脚本
 ```
 
@@ -157,7 +157,7 @@ router-vpn/
 
 ### 华硕RT-AC86U 入门级推荐
 
-![华硕RT-AC86U](images/asus-rt-ac86u.png)
+![华硕RT-AC86U](docs/images/asus-rt-ac86u.png)
 
 | 规格项目 | 详细参数 | 说明 |
 |---------|---------|------|
@@ -192,7 +192,7 @@ router-vpn/
 
 ### 华硕RT-AX86U PRO 详细规格
 
-![华硕RT-AX86U PRO](images/asus-rt-ax86u-pro.png)
+![华硕RT-AX86U PRO](docs/images/asus-rt-ax86u-pro.png)
 
 | 规格项目 | 详细参数 | 说明 |
 |---------|---------|------|
@@ -225,7 +225,7 @@ router-vpn/
 5. **性价比高**：相比其他品牌同配置产品价格更实惠
 
 #### 华硕RT-BE86U 高端旗舰推荐
-![华硕RT-BE86U](images/RT-BE86U.png)
+![华硕RT-BE86U](docs/images/RT-BE86U.png)
 - 定位：Wi‑Fi 7 高端旗舰，面向高端与多设备并发场景
 
 
@@ -266,7 +266,7 @@ router-vpn/
 
 ### 1. 梅林固件介绍
 
-![梅林固件界面](images/merlin-firmware.png)
+![梅林固件界面](docs/images/merlin-firmware.png)
 
 **梅林固件（ASUSWRT-Merlin）**是基于华硕官方固件的第三方增强版本，专为华硕路由器优化：
 
@@ -320,27 +320,27 @@ router-vpn/
 1. 在浏览器中输入 `http://192.168.50.1` 或 `http://router.asus.com`
 2. 使用管理员账号登录（用户名和密码都是自己设置的）
 
-![路由器登录界面](images/router-login.png)
+![路由器登录界面](docs/images/router-login.png)
 
 #### 第二步：固件双清（如果是新路由器不需要）
 1. 进入【系统管理 】
 2.【 恢复/导出/上传设置】，勾选恢复按钮旁的选择框，然后点击恢复按钮
 
-![固件双清界面](images/backup-settings.png)
+![固件双清界面](docs/images/backup-settings.png)
 
 #### 第三步：上传梅林固件
 1. 进入"系统管理" → "固件升级"
 2. 点击"选择文件"，选择下载的梅林固件
 3. 点击"上传"开始刷机
 
-![固件升级界面](images/firmware-upload.png)
+![固件升级界面](docs/images/firmware-upload.png)
 
 #### 第四步：等待刷机完成
 - 刷机过程大约需要3-5分钟
 - 期间请勿断电或重启路由器
 - 路由器会自动重启
 
-![刷机进度](images/flash-progress.png)
+![刷机进度](docs/images/flash-progress.png)
 
 
 ### 4. 验证刷机成功
@@ -350,7 +350,7 @@ router-vpn/
 2. 查看"系统信息" → "固件版本"
 3. 确认显示为梅林固件版本
 
-![固件版本确认](images/firmware-version.png)
+![固件版本确认](docs/images/firmware-version.png)
 
 #### 检查软件中心
 梅林固件新增的功能包括：
@@ -359,13 +359,13 @@ router-vpn/
 - 高级网络设置
 - 自定义脚本支持
 
-![软件中心界面](images/software-center.png)
+![软件中心界面](docs/images/software-center.png)
 
 ## ⚙️ Clash安装配置
 
 ### 1. Clash介绍
 
-![Clash界面](images/clash-interface.png)
+![Clash界面](docs/images/clash-interface.png)
 
 **MerlinClash**是专为华硕梅林固件开发的Clash插件，具有以下特点：
 
@@ -426,7 +426,7 @@ router-vpn/
 2. 进入"软件中心"
 3. 点击"更新"按钮，升级软件中心到最新版本
 
-![软件中心更新](images/software-center-update.png)
+![软件中心更新](docs/images/software-center-update.png)
 
 #### 第二步：离线安装MerlinClash
 1. 进入"软件中心" → "离线安装"
@@ -434,14 +434,14 @@ router-vpn/
 3. 点击"上传并安装"
 4. 等待安装完成
 
-![离线安装界面](images/offline-install.png)
+![离线安装界面](docs/images/offline-install.png)
 
 #### 第三步：启用MerlinClash
 1. 安装完成后，在软件中心找到"MerlinClash"
 2. 点击"启动"按钮
 3. 等待插件启动完成
 
-![MerlinClash启动](images/merlinclash-start.png)
+![MerlinClash启动](docs/images/merlinclash-start.png)
 
 ### 4. 配置MerlinClash
 
@@ -453,7 +453,7 @@ router-vpn/
    - **端口设置**: 保持默认（7890、7891）
    - **DNS设置**: 使用默认DNS配置
 
-![基本配置界面](images/basic-config.png)
+![基本配置界面](docs/images/basic-config.png)
 
 #### 申请clash订阅
 
@@ -466,14 +466,14 @@ router-vpn/
 3. 点击"更新订阅"
 4. 等待节点更新完成
 
-![订阅配置界面](images/subscription-config.png)
+![订阅配置界面](docs/images/subscription-config.png)
 
 #### 分流规则配置
 1. 点击"规则设置"
 2. 选择合适的分流规则
 3. 可以自定义规则或使用预设规则
 
-![规则配置界面](images/rules-config.png)
+![规则配置界面](docs/images/rules-config.png)
 
 ### 5. 测试连接
 
@@ -482,14 +482,14 @@ router-vpn/
 2. 查看"运行状态"，确认显示"运行中"
 3. 检查"节点列表"，确认节点已加载
 
-![运行状态界面](images/status-check.png)
+![运行状态界面](docs/images/status-check.png)
 
 #### 测试网络连接
 1. 在浏览器中访问 `http://www.google.com`
 2. 检查是否能正常访问
 3. 访问 `https://www.whatismyipaddress.com` 验证IP地址
 
-![网络测试结果](images/network-test.png)
+![网络测试结果](docs/images/network-test.png)
 
 ### 6. 高级功能
 
@@ -517,21 +517,21 @@ MerlinClash提供Web管理面板：
 3. 选择游戏节点组
 4. 启用游戏加速功能
 
-![游戏加速配置](images/game-acceleration.png)
+![游戏加速配置](docs/images/game-acceleration.png)
 
 #### 流媒体解锁
 1. 点击"规则设置" → "流媒体解锁"
 2. 选择流媒体节点组
 3. 配置支持的流媒体平台
 
-![流媒体解锁配置](images/streaming-unlock.png)
+![流媒体解锁配置](docs/images/streaming-unlock.png)
 
 #### 广告屏蔽
 1. 点击"规则设置" → "广告屏蔽"
 2. 启用广告屏蔽功能
 3. 选择广告屏蔽规则
 
-![广告屏蔽配置](images/ad-blocking.png)
+![广告屏蔽配置](docs/images/ad-blocking.png)
 
 ### 2. 性能优化
 
@@ -566,14 +566,14 @@ MerlinClash提供Web管理面板：
 2. 查看"性能监控"页面
 3. 监控CPU、内存、网络使用情况
 
-![性能监控界面](images/performance-monitor.png)
+![性能监控界面](docs/images/performance-monitor.png)
 
 ### 2. 日志分析
 1. 进入MerlinClash管理界面
 2. 点击"日志查看"
 3. 分析错误信息和警告
 
-![日志分析界面](images/log-analysis.png)
+![日志分析界面](docs/images/log-analysis.png)
 
 ## 🔧 故障排除
 

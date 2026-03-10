@@ -31,7 +31,7 @@
 6. 若需绕过本地地址，在 **忽略这些主机与域的代理设置** 中填入：`localhost, 127.0.0.1, *.local`
 7. 点击 **好** 保存
 
-![系统代理设置](../images/macos/system-proxy-settings.png)
+> 截图待补充：macOS 系统代理设置界面
 
 ### 通过 Clash 自动设置
 
@@ -123,7 +123,7 @@ unset http_proxy https_proxy all_proxy no_proxy
 
 点击菜单栏 **Wi-Fi** 图标 → **位置** → 选择对应位置，即可快速切换。
 
-![网络位置](../images/macos/network-location.png)
+> 截图待补充：macOS 网络位置切换界面
 
 ### 使用场景
 

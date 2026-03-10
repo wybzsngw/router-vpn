@@ -28,7 +28,7 @@
    - 地址：`127.0.0.1`（Clash Verge Rev 默认）
    - 端口：`7897`（以 Clash 实际端口为准）
 
-![系统代理设置](../images/windows/system-proxy-settings.png)
+> 截图待补充：Windows 系统代理设置界面
 
 ### 通过 Clash 自动设置
 
@@ -125,7 +125,7 @@ set HTTPS_PROXY=
 5. 代理端口：`7897`（HTTP）或 `7891`（SOCKS5）
 6. 保存
 
-![SwitchyOmega 配置](../images/windows/switchyomega-config.png)
+> 截图待补充：SwitchyOmega 配置界面
 
 #### 3. 切换模式
 
