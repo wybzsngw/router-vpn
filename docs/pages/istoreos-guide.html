@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iStoreOS 科学上网完整专题 — iStore 插件 + Are-u-ok + ESXi</title>
+  <meta name="description" content="iStoreOS 科学上网完整专题：支持设备与固件下载、x86/ESXi/PVE 安装、PassWall/OpenClash/SSR-Plus 插件安装（Are-u-ok）、旁路由最佳实践、ESXi 虚拟机代理等。" />
+  <meta name="keywords" content="iStoreOS,iStore,Are-u-ok,科学上网,PassWall,OpenClash,SSR-Plus,旁路由,ESXi,软路由,代理,翻墙,OpenWrt" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="iStoreOS 科学上网完整专题 — iStore 插件 + Are-u-ok + ESXi" />
+  <meta property="og:description" content="iStoreOS 科学上网完整专题：设备支持、固件下载、插件安装、旁路由、ESXi 虚拟机代理。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mowei-ie.github.io/router-vpn/pages/istoreos-guide.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台翻墙指南" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="iStoreOS 科学上网完整专题" />
+  <meta name="twitter:description" content="iStoreOS 科学上网完整专题：设备支持、固件下载、插件安装、旁路由、ESXi 虚拟机代理。" />
+  <link rel="canonical" href="https://mowei-ie.github.io/router-vpn/pages/istoreos-guide.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "iStoreOS 科学上网完整专题",
+    "description": "在 iStoreOS 上通过 iStore + Are-u-ok 安装 PassWall/OpenClash 等代理工具实现科学上网",
+    "url": "https://mowei-ie.github.io/router-vpn/pages/istoreos-guide.html",
+    "author": { "@type": "Organization", "name": "Router VPN Guide" },
+    "inLanguage": "zh-CN",
+    "step": [
+      { "@type": "HowToStep", "name": "下载固件并安装 iStoreOS", "text": "从 fw.koolcenter.com 下载对应设备的固件并刷入" },
+      { "@type": "HowToStep", "name": "确认平台架构", "text": "通过 uname -m 确认 x86_64 或 aarch64" },
+      { "@type": "HowToStep", "name": "下载科学上网插件", "text": "从 Are-u-ok 仓库下载对应平台的 .run 安装包" },
+      { "@type": "HowToStep", "name": "安装插件", "text": "在 iStore 手动安装或 SSH 执行 sh 包名.run" },
+      { "@type": "HowToStep", "name": "配置旁路由与代理", "text": "配置网络、防火墙、导入订阅" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://mowei-ie.github.io/router-vpn/" },
+      { "@type": "ListItem", "position": 2, "name": "iStoreOS 专题", "item": "https://mowei-ie.github.io/router-vpn/pages/istoreos-guide.html" }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .section-title { margin: 36px 0 16px; font-size: 14px; letter-spacing: .15em; text-transform: uppercase; color: var(--accent) }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker {
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card h3 { font-size: 16px; margin: 14px 0 8px }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul, .card ol { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    pre, code {
+      background: rgba(0,0,0,.04);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    code.inline { padding: .2em .5em; display: inline }
+    pre { margin: 12px 0 }
+    pre code { padding: 0; background: none }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .callout {
+      background: linear-gradient(135deg, rgba(14,165,233,.08), rgba(124,77,255,.08));
+      border: 1px solid rgba(14,165,233,.2);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 14px 0;
+    }
+    .callout strong { color: var(--brand) }
+    .floating-share {
+      position:fixed; right:18px; bottom:92px; z-index:999;
+      display:flex; flex-direction:column; align-items:flex-end; gap:10px;
+    }
+    .floating-share-panel {
+      display:none; flex-direction:column; gap:8px; padding:10px; border-radius:16px;
+      background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 14px 34px rgba(17,24,39,.12); backdrop-filter:blur(10px);
+    }
+    .floating-share.is-open .floating-share-panel { display:flex }
+    .floating-share-main, .floating-share-btn {
+      appearance:none; border:1px solid rgba(0,0,0,.08); display:inline-flex; align-items:center;
+      justify-content:center; gap:8px; border-radius:999px; background:rgba(255,255,255,.94);
+      color:var(--text); font-size:13px; font-weight:700; cursor:pointer; transition:all .2s;
+      box-shadow:0 8px 22px rgba(17,24,39,.1);
+    }
+    .floating-share-main { min-width:92px; padding:12px 16px }
+    .floating-share-btn { min-width:96px; padding:10px 14px; justify-content:flex-start }
+    .floating-share-main:hover, .floating-share-btn:hover {
+      transform:translateY(-2px); border-color:rgba(124,77,255,.28); box-shadow:0 12px 28px rgba(17,24,39,.14);
+    }
+    .floating-share-main.primary { background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(240,244,255,.96)) }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>iStoreOS 科学上网完整专题</h1>
+    <p class="subtitle">iStore 插件 + Are-u-ok 第三方插件包 + ESXi 虚拟机代理 + 旁路由最佳实践</p>
+
+    <nav aria-label="站内导航" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="../index.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="../clash-subscription-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="asus-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
+      <a href="soft-router-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">软路由</a>
+      <a href="windows-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows</a>
+      <a href="linux-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Linux</a>
+      <a href="macos-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">macOS</a>
+      <a href="mobile-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
+      <a href="istoreos-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">iStoreOS</a>
+    </nav>
+
+    <!-- 目录 -->
+    <section class="card">
+      <div class="kicker">目录</div>
+      <h2>快速导航</h2>
+      <ul>
+        <li><a href="#s1">一、iStoreOS 是什么</a></li>
+        <li><a href="#s2">二、支持设备与固件下载</a></li>
+        <li><a href="#s3">三、iStoreOS 安装（x86 / ESXi / PVE）</a></li>
+        <li><a href="#s4">四、ESXi 专题：安装 iStoreOS 并代理虚拟机</a></li>
+        <li><a href="#s5">五、科学上网插件安装（Are-u-ok）</a></li>
+        <li><a href="#s6">六、旁路由最佳实践</a></li>
+        <li><a href="#s7">七、稳定性清单</a></li>
+        <li><a href="#s8">八、常见坑与排查</a></li>
+        <li><a href="#s9">九、参考链接</a></li>
+      </ul>
+    </section>
+
+    <!-- 一、iStoreOS 是什么 -->
+    <section class="card" id="s1">
+      <div class="kicker">Section 01</div>
+      <h2>iStoreOS 是什么</h2>
+      <p><a href="https://doc.linkease.com/zh/guide/istoreos/" target="_blank" rel="noopener">iStoreOS</a> 是基于 OpenWrt 开发的<strong>开源免费路由兼存储系统</strong>，由 LinkEase 推出。相比原生 OpenWrt，它提供了更友好的 Web 管理界面和 <strong>iStore 软件中心</strong>生态，降低了插件安装与维护门槛。</p>
+      <ul>
+        <li><strong>iStore 软件中心</strong>：自动处理依赖，支持在线/离线安装（<code class="inline">.run</code> 格式）</li>
+        <li><strong>网络向导</strong>：主路由、旁路由等模式一键配置</li>
+        <li><strong>三套 UI</strong>：小白路由版 / iStoreNAS 桌面版 / 极客版</li>
+      </ul>
+      <div class="callout">
+        <strong>官方入口：</strong>
+        <a href="https://doc.linkease.com/zh/guide/istoreos/" target="_blank" rel="noopener">iStoreOS 文档</a>
+        · <a href="https://site.istoreos.com/" target="_blank" rel="noopener">iStoreOS 官网</a>
+        · <a href="https://github.com/istoreos/istoreos" target="_blank" rel="noopener">GitHub 源码</a>
+      </div>
+    </section>
+
+    <!-- 二、支持设备与固件下载 -->
+    <section class="card" id="s2">
+      <div class="kicker">Section 02</div>
+      <h2>支持设备与固件下载</h2>
+      <p>来源：<a href="https://doc.linkease.com/zh/guide/istoreos/install.html" target="_blank" rel="noopener">iStoreOS 官方安装文档</a></p>
+
+      <h3>支持设备列表</h3>
+      <table>
+        <tr><th>分类</th><th>支持设备</th></tr>
+        <tr><td>x86 通用</td><td>x86 物理机、PVE、ESXi 8.0、VMware Workstation、Hyper-V、iKuai、UNRAID</td></tr>
+        <tr><td>专用设备</td><td>EasePi R1、EasePi ARS2</td></tr>
+        <tr><td>Rockchip</td><td>R2S/R2C、R4S、R5S/R5C、R6S/R6C、R66S、R68S、H66K/H68K/H69K、H88K、莱因特 T68M</td></tr>
+        <tr><td>其他 ARM</td><td>树莓派 Model 4、Radxa E20C/E52C、GL MT3000、小米 AX9000</td></tr>
+        <tr><td>Apple</td><td>Apple Silicon M 系列（VMware Fusion）</td></tr>
+      </table>
+
+      <h3>固件下载</h3>
+      <table>
+        <tr><th>设备</th><th>下载地址</th></tr>
+        <tr><td>x86_64</td><td><a href="https://fw.koolcenter.com/iStoreOS/x86_64/" target="_blank" rel="noopener">fw.koolcenter.com/iStoreOS/x86_64/</a></td></tr>
+        <tr><td>R2S</td><td><a href="https://fw.koolcenter.com/iStoreOS/r2s/" target="_blank" rel="noopener">fw.koolcenter.com/iStoreOS/r2s/</a></td></tr>
+        <tr><td>R4S</td><td><a href="https://fw.koolcenter.com/iStoreOS/r4s/" target="_blank" rel="noopener">fw.koolcenter.com/iStoreOS/r4s/</a></td></tr>
+        <tr><td>R5S/R5C</td><td><a href="https://fw.koolcenter.com/iStoreOS/r5s/" target="_blank" rel="noopener">fw.koolcenter.com/iStoreOS/r5s/</a></td></tr>
+        <tr><td>R6S/R6C</td><td><a href="https://fw.koolcenter.com/iStoreOS/r6s/" target="_blank" rel="noopener">fw.koolcenter.com/iStoreOS/r6s/</a></td></tr>
+        <tr><td>R68S</td><td><a href="https://fw.koolcenter.com/iStoreOS/r68s/" target="_blank" rel="noopener">fw.koolcenter.com/iStoreOS/r68s/</a></td></tr>
+      </table>
+      <p style="color:var(--muted);font-size:13px">固件通常为 <code class="inline">.img.gz</code> 格式，刷写工具会自动解压，无需手动解压。</p>
+    </section>
+
+    <!-- 三、iStoreOS 安装 -->
+    <section class="card" id="s3">
+      <div class="kicker">Section 03</div>
+      <h2>iStoreOS 安装（x86 物理机 / ESXi / PVE）</h2>
+
+      <h3>3.1 x86 物理机安装</h3>
+      <p>详细参考：<a href="https://doc.linkease.com/zh/guide/istoreos/install_x86.html" target="_blank" rel="noopener">iStoreOS 官方 x86 安装教程</a></p>
+      <ol style="list-style:decimal">
+        <li>从上方链接下载 x86_64 固件（<code class="inline">.img.gz</code>）</li>
+        <li>使用 <strong>Rufus</strong> 或 <strong>balenaEtcher</strong> 将镜像写入 U 盘</li>
+        <li>设置 BIOS 从 U 盘启动，引导进入 iStoreOS</li>
+        <li>默认管理地址：<code class="inline">http://192.168.100.1</code>，用户名 <code class="inline">root</code>，密码 <code class="inline">password</code></li>
+        <li>通过网络向导完成 WAN/LAN 配置</li>
+      </ol>
+
+      <h3>3.2 VMware / PVE 虚拟机安装</h3>
+      <ul>
+        <li><strong>PVE</strong>：可直接使用 <code class="inline">.img.gz</code>，通过 <code class="inline">qm importdisk</code> 导入</li>
+        <li><strong>VMware Workstation</strong>：使用 StarWind V2V Converter 将 <code class="inline">.img</code> 转换为 <code class="inline">.vmdk</code></li>
+      </ul>
+
+      <h3>3.3 ESXi 安装（详见下一节）</h3>
+    </section>
+
+    <!-- 四、ESXi 专题 -->
+    <section class="card" id="s4">
+      <div class="kicker">Section 04 · ESXi 专题</div>
+      <h2>ESXi：安装 iStoreOS 并代理虚拟机科学上网</h2>
+      <p>高频场景：ESXi 主机上跑一个 iStoreOS 虚拟机作为软路由/旁路由，让同一 ESXi 上的其他 VM（Windows/Linux/NAS 等）都走它来科学上网。</p>
+
+      <h3>4.1 镜像准备</h3>
+      <ol style="list-style:decimal">
+        <li>下载 x86_64 固件：<a href="https://fw.koolcenter.com/iStoreOS/x86_64/" target="_blank" rel="noopener">fw.koolcenter.com/iStoreOS/x86_64/</a></li>
+        <li>解压 <code class="inline">.img.gz</code> 得到 <code class="inline">.img</code> 文件</li>
+        <li>使用 <strong>StarWind V2V Converter</strong> 将 <code class="inline">.img</code> 转换为 ESXi 兼容 VMDK（会生成 <code class="inline">istoreos.vmdk</code> + <code class="inline">istoreos-flat.vmdk</code>）</li>
+        <li>将两个 VMDK 文件上传到 ESXi 数据存储</li>
+      </ol>
+
+      <h3>4.2 创建虚拟机</h3>
+      <ol style="list-style:decimal">
+        <li>ESXi → 创建/注册虚拟机 → 创建新虚拟机</li>
+        <li>操作系统类型：<strong>Linux → 其他 Linux（64 位）</strong></li>
+        <li>CPU：2 核及以上；内存：2GB 及以上</li>
+        <li><strong>删除默认硬盘</strong>，改为「添加现有硬盘」→ 选择上传的 <code class="inline">istoreos.vmdk</code></li>
+        <li>引导选项：<strong>BIOS</strong>（非 UEFI）</li>
+        <li>网络适配器：<br/>
+          &nbsp;&nbsp;网卡 1（WAN）：连接可访问外网的虚拟交换机/端口组<br/>
+          &nbsp;&nbsp;网卡 2（LAN）：连接内部虚拟交换机（其他 VM 所在的端口组）<br/>
+          &nbsp;&nbsp;适配器类型建议 <strong>VMXNET3</strong>
+        </li>
+      </ol>
+
+      <h3>4.3 基本网络配置</h3>
+      <p>启动虚拟机后，通过控制台或浏览器（<code class="inline">http://192.168.100.1</code>）进入管理界面。</p>
+      <ul>
+        <li><strong>作为主路由</strong>：WAN 口拨号/DHCP，LAN 口为内部虚拟交换机提供网关和 DHCP</li>
+        <li><strong>作为旁路由</strong>（更常见）：只使用一个网口，与 ESXi 管理网络同网段；关闭 DHCP；网关指向物理主路由</li>
+      </ul>
+
+      <h3>4.4 让其他虚拟机走代理</h3>
+      <p><strong>方法 A：修改 VM 网关（逐台设置）</strong></p>
+      <p>在需要科学上网的 VM 中，将网关和 DNS 都改为 iStoreOS 的 IP。</p>
+      <p><strong>方法 B：iStoreOS 做 DHCP（全自动）</strong></p>
+      <p>如果 iStoreOS 作为主路由并负责 DHCP，内部 VM 默认走它，无需额外配置。</p>
+      <p><strong>方法 C：虚拟交换机隔离（推荐）</strong></p>
+      <p>在 ESXi 上创建一个<strong>独立的内部虚拟交换机</strong>（不绑物理网卡）。iStoreOS 的 LAN 口连接这个交换机，需要代理的 VM 也连接这个交换机。iStoreOS 的 WAN 口连 ESXi 管理网络。这样内部 VM 的所有流量都必须经过 iStoreOS。</p>
+      <pre><code>ESXi 物理网卡 ← → vSwitch0（管理网络 + iStoreOS WAN）
+                          iStoreOS VM
+                    WAN ↑          ↓ LAN
+                                vSwitch-Internal（独立，无物理网卡）
+                                    ↑
+                            其他需要代理的 VM</code></pre>
+
+      <h3>4.5 安装科学上网插件</h3>
+      <p>虚拟机网络调通后，按「<a href="#s5">第五节</a>」安装 PassWall / OpenClash 等插件，导入订阅即可。</p>
+    </section>
+
+    <!-- 五、科学上网插件安装 -->
+    <section class="card" id="s5">
+      <div class="kicker">Section 05</div>
+      <h2>科学上网插件安装（Are-u-ok）</h2>
+      <p>来源：<a href="https://github.com/AUK9527/Are-u-ok" target="_blank" rel="noopener">AUK9527/Are-u-ok</a>，插件由 <a href="https://github.com/bcseputetto/Are-u-ok" target="_blank" rel="noopener">bcseputetto</a> 维护。</p>
+
+      <h3>5.1 确认平台架构</h3>
+      <pre><code>uname -m</code></pre>
+      <table>
+        <tr><th>平台</th><th>典型设备</th><th>仓库目录</th></tr>
+        <tr><td><code class="inline">aarch64</code>（cortex-a53）</td><td>小米 AX3600/AX9000、红米 AX6000、EasePi ARS2</td><td><a href="https://github.com/AUK9527/Are-u-ok/tree/main/apps" target="_blank" rel="noopener">apps/</a></td></tr>
+        <tr><td><code class="inline">aarch64</code>（generic / Rockchip）</td><td>R2S/R4S/R5S/R6S/R68S</td><td>同 <code class="inline">apps/</code>（兼容）</td></tr>
+        <tr><td><code class="inline">x86_64</code></td><td>Intel/AMD PC、N100/J4125、ESXi/PVE VM</td><td><a href="https://github.com/AUK9527/Are-u-ok/tree/main/x86" target="_blank" rel="noopener">x86/</a></td></tr>
+      </table>
+
+      <h3>5.2 科学上网插件列表与下载（22.03）</h3>
+
+      <p><strong>aarch64_cortex-a53 平台</strong>（也兼容 aarch64_generic）</p>
+      <table>
+        <tr><th>插件名</th><th>功能</th><th>下载</th><th>编译日期</th></tr>
+        <tr><td><a href="https://github.com/xiaorouji/openwrt-passwall" target="_blank" rel="noopener">PassWall</a></td><td>科学上网</td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/apps/all/PassWall_26.2.14_aarch64_a53_all_sdk_22.03.7.run" target="_blank" rel="noopener">PassWall_26.2.14</a></td><td>2026-02-14</td></tr>
+        <tr><td><a href="https://github.com/xiaorouji/openwrt-passwall2" target="_blank" rel="noopener">PassWall2</a></td><td>科学上网</td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/apps/all/PassWall2_26.2.14_aarch64_a53_all_sdk_22.03.7.run" target="_blank" rel="noopener">PassWall2_26.2.14</a></td><td>2026-02-14</td></tr>
+        <tr><td><a href="https://github.com/fw876/helloworld" target="_blank" rel="noopener">SSR-Plus</a></td><td>科学上网</td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/apps/all/SSR-Plus_190_aarch64_a53_all_sdk_22.03.7.run" target="_blank" rel="noopener">SSR-Plus_190</a></td><td>2025-08-31</td></tr>
+        <tr><td><a href="https://github.com/vernesong/OpenClash" target="_blank" rel="noopener">OpenClash</a></td><td>科学上网</td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/apps/all/OpenClash_0.47.055+aarch64_core.run" target="_blank" rel="noopener">OpenClash_0.47.055</a></td><td>2026-02-14</td></tr>
+      </table>
+
+      <p><strong>x86_64 平台</strong></p>
+      <table>
+        <tr><th>插件名</th><th>功能</th><th>下载</th><th>编译日期</th></tr>
+        <tr><td><a href="https://github.com/xiaorouji/openwrt-passwall" target="_blank" rel="noopener">PassWall</a></td><td>科学上网</td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/x86/all/PassWall_26.2.14_x86_64_all_sdk_22.03.7.run" target="_blank" rel="noopener">PassWall_26.2.14</a></td><td>2026-02-14</td></tr>
+        <tr><td><a href="https://github.com/xiaorouji/openwrt-passwall2" target="_blank" rel="noopener">PassWall2</a></td><td>科学上网</td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/x86/all/PassWall2_26.2.14_x86_64_all_sdk_22.03.7.run" target="_blank" rel="noopener">PassWall2_26.2.14</a></td><td>2026-02-14</td></tr>
+        <tr><td><a href="https://github.com/fw876/helloworld" target="_blank" rel="noopener">SSR-Plus</a></td><td>科学上网</td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/x86/all/SSR-Plus_190_x86_64_all_sdk_22.03.7.run" target="_blank" rel="noopener">SSR-Plus_190</a></td><td>2025-08-31</td></tr>
+        <tr><td><a href="https://github.com/vernesong/OpenClash" target="_blank" rel="noopener">OpenClash</a></td><td>科学上网</td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/x86/all/OpenClash_0.47.055+x86_64_core.run" target="_blank" rel="noopener">OpenClash_0.47.055</a></td><td>2026-02-14</td></tr>
+      </table>
+
+      <p><strong>其他常用插件（两个平台均有提供）</strong></p>
+      <table>
+        <tr><th>插件名</th><th>功能</th><th>ARM 下载</th><th>x86 下载</th></tr>
+        <tr><td>AdGuardHome</td><td>DNS / 广告拦截</td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/apps/all/adguardhome.run" target="_blank" rel="noopener">下载</a></td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/x86/all/adguardhome.run" target="_blank" rel="noopener">下载</a></td></tr>
+        <tr><td>MosDNS</td><td>DNS 转发/分流</td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/apps/all/mosdns_5.3.3-4_aarch64_a53_luci_1.6.11_all.run" target="_blank" rel="noopener">mosdns_5.3.3-4</a></td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/x86/all/mosdns_5.3.3-4_x86_64_luci_1.6.11_all.run" target="_blank" rel="noopener">mosdns_5.3.3-4</a></td></tr>
+        <tr><td>UnblockNeteaseMusic</td><td>解锁网易云灰色歌曲</td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/apps/all/unblockneteasemusic.run" target="_blank" rel="noopener">下载</a></td><td><a href="https://github.com/AUK9527/Are-u-ok/raw/main/x86/all/unblockneteasemusic.run" target="_blank" rel="noopener">下载</a></td></tr>
+      </table>
+
+      <h3>5.3 24.10 版本插件</h3>
+      <ul>
+        <li>爬梯插件：<a href="https://github.com/bcseputetto/Are-u-ok/releases/tag/iStoreOS_24.10" target="_blank" rel="noopener">bcseputetto/Are-u-ok 的 iStoreOS_24.10 发布</a></li>
+        <li>其他插件：<a href="https://github.com/bcseputetto/Are-u-ok/blob/master/packages_24.10/README.md" target="_blank" rel="noopener">packages_24.10/README.md</a></li>
+      </ul>
+
+      <h3>5.4 安装方法</h3>
+      <p><strong>方法 A：iStore 手动安装（推荐）</strong></p>
+      <ol style="list-style:decimal">
+        <li>下载对应平台的 <code class="inline">.run</code> 文件到本地电脑</li>
+        <li>打开 iStoreOS 管理界面 → <strong>iStore 应用商店</strong> → <strong>手动安装</strong></li>
+        <li>点击选择上传或直接拖放 <code class="inline">.run</code> 文件</li>
+        <li>等待安装完成，刷新页面后在「已安装」或「服务」菜单中即可看到</li>
+      </ol>
+      <p><strong>方法 B：终端命令安装</strong></p>
+      <p>将 <code class="inline">.run</code> 文件上传到路由器（如通过 SCP 传到 <code class="inline">/tmp/upload/</code>），然后 SSH 执行：</p>
+      <pre><code>sh /tmp/upload/PassWall_26.2.14_x86_64_all_sdk_22.03.7.run</code></pre>
+
+      <div class="callout">
+        <strong>来自 <a href="https://github.com/AUK9527/Are-u-ok" target="_blank" rel="noopener">Are-u-ok README</a> 的重要注意事项：</strong><br/>
+        · <strong>不推荐 PassWall 系列和 SSR-Plus 同时安装</strong>，部分软件包可能存在冲突<br/>
+        · 安装前推荐<strong>删除所有自行添加的第三方软件源</strong>，避免意外错误<br/>
+        · <strong>部分依赖仍需通过 opkg 在线安装</strong>——如果安装失败，先检查路由器自身的网络情况，<strong>特别是旁路由模式下最容易出现网络问题</strong><br/>
+        · <strong>再三注意需要路由器自身联网正常</strong>
+      </div>
+    </section>
+
+    <!-- 六、旁路由最佳实践 -->
+    <section class="card" id="s6">
+      <div class="kicker">Section 06</div>
+      <h2>旁路由最佳实践</h2>
+      <p>本节内容参考 iStoreOS 官方文档：<a href="https://doc.linkease.com/zh/guide/istoreos/practice/BypassRouter.html" target="_blank" rel="noopener">旁路由入门</a>，以及社区实践总结。请以官方文档为准。</p>
+
+      <h3>6.1 什么是旁路由</h3>
+      <p>旁路由本质上是一个"旁路网关"——它不负责拨号，只负责代理转发。局域网内的设备把<strong>网关和 DNS 指向旁路由</strong>，流量就会经过旁路由上的代理插件。</p>
+      <pre><code>互联网 → 光猫/主路由（拨号、DHCP）→ 交换机/LAN
+                                        ↓
+                                   iStoreOS 旁路由（同网段，仅 LAN）
+                                        ↑
+                              需要科学上网的设备（网关 = iStoreOS IP）</code></pre>
+
+      <h3>6.2 网络配置</h3>
+      <ol style="list-style:decimal">
+        <li><strong>IP 地址</strong>：与主路由同网段（如主路由 <code class="inline">192.168.1.1</code>，旁路由设为 <code class="inline">192.168.1.2</code>）</li>
+        <li><strong>子网掩码</strong>：<code class="inline">255.255.255.0</code></li>
+        <li><strong>网关</strong>：指向主路由 IP（<code class="inline">192.168.1.1</code>）</li>
+        <li><strong>DNS</strong>：可设为主路由 IP 或公共 DNS</li>
+        <li><strong>关闭 DHCP</strong>：由主路由继续提供 DHCP</li>
+      </ol>
+
+      <h3>6.3 防火墙配置</h3>
+      <p>来源：<a href="https://doc.linkease.com/zh/guide/istoreos/practice/BypassRouter.html" target="_blank" rel="noopener">iStoreOS 旁路由官方文档</a></p>
+      <p>在 iStoreOS 的 <strong>网络 → 防火墙 → 自定义规则</strong> 中添加：</p>
+      <pre><code>iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code></pre>
+      <p>在 <strong>防火墙 → 常规设置</strong> 中：入站数据 <strong>接受</strong>、出站数据 <strong>接受</strong>、转发 <strong>接受</strong>。</p>
+
+      <h3>6.4 客户端设备如何使用</h3>
+      <p><strong>方法 A：逐台设置网关</strong>：将设备的网关和 DNS 改为旁路由 IP。</p>
+      <p><strong>方法 B：主路由 DHCP 推送</strong>：在主路由 DHCP 中将网关和 DNS 改为旁路由 IP，所有获取 DHCP 的设备自动走旁路由。</p>
+      <p><strong>方法 C：DHCP 标签分组</strong>：只为特定 MAC / IP 范围推送旁路由网关，其他设备仍走主路由直连。</p>
+
+      <h3>6.5 验证</h3>
+      <ol style="list-style:decimal">
+        <li>在旁路由本机：<code class="inline">ping google.com</code></li>
+        <li>在客户端设备（已改网关）：浏览器打开 <code class="inline">google.com</code></li>
+        <li>检查 DNS 泄露：访问 <a href="https://dnsleaktest.com/" target="_blank" rel="noopener">dnsleaktest.com</a></li>
+      </ol>
+    </section>
+
+    <!-- 七、稳定性清单 -->
+    <section class="card" id="s7">
+      <div class="kicker">Section 07</div>
+      <h2>稳定性清单：DNS / IPv6 / 防火墙</h2>
+      <ul>
+        <li><strong>DNS 劫持冲突</strong>：主路由与旁路由不要同时劫持 53 端口。如果代理插件会接管 DNS，确保主路由不会再做二次劫持。</li>
+        <li><strong>IPv6 泄露</strong>：若不打算全链路接管 IPv6，建议在旁路由上关闭 IPv6，避免"IPv4 走代理、IPv6 直连"导致的地区判断异常。</li>
+        <li><strong>MTU 问题</strong>：虚拟化环境（ESXi/PVE）中如果遇到"能 ping 通但网页加载不全"，尝试将 iStoreOS 的 LAN/WAN 接口 MTU 降低到 1400–1480。</li>
+      </ul>
+    </section>
+
+    <!-- 八、常见坑与排查 -->
+    <section class="card" id="s8">
+      <div class="kicker">Section 08</div>
+      <h2>常见坑与排查</h2>
+      <table>
+        <tr><th>症状</th><th>常见原因</th><th>排查方向</th></tr>
+        <tr><td>插件安装失败</td><td>平台包不匹配 / 路由器无法联网下载依赖</td><td>确认 <code class="inline">uname -m</code> 与下载包平台一致；确认路由器能 <code class="inline">ping 8.8.8.8</code></td></tr>
+        <tr><td>安装成功但找不到入口</td><td>浏览器缓存 / LuCI 未刷新</td><td>清除浏览器缓存或 Ctrl+F5；重启路由器</td></tr>
+        <tr><td>能连但打不开网页</td><td>DNS 劫持冲突 / DNS 解析循环</td><td>检查主路由和旁路由是否同时劫持 DNS</td></tr>
+        <tr><td>部分设备能用部分不能</td><td>网关未正确指向旁路由</td><td>检查客户端的网关和 DNS 设置</td></tr>
+        <tr><td>流媒体地区异常</td><td>IPv6 泄露 / DNS 泄露</td><td>关闭 IPv6 或启用代理插件的 DNS 接管</td></tr>
+        <tr><td>ESXi VM 无法上网</td><td>虚拟交换机 / 端口组配置问题</td><td>确认 VM 网卡连接的端口组与 iStoreOS LAN 口相同</td></tr>
+      </table>
+      <div class="callout">
+        <strong>通用排查文档：</strong>
+        <a href="../../common/troubleshooting.md">Clash 常见问题排查指南</a>
+        · <a href="../../soft-router/openwrt-clash.md">OpenWrt + OpenClash 教程（DNS/拓扑思路通用）</a>
+      </div>
+    </section>
+
+    <!-- 九、参考链接 -->
+    <section class="card" id="s9">
+      <div class="kicker">附录</div>
+      <h2>参考链接</h2>
+      <ul>
+        <li><a href="https://doc.linkease.com/zh/guide/istoreos/" target="_blank" rel="noopener">iStoreOS 官方文档</a></li>
+        <li><a href="https://doc.linkease.com/zh/guide/istoreos/install.html" target="_blank" rel="noopener">iStoreOS 安装指南</a></li>
+        <li><a href="https://doc.linkease.com/zh/guide/istoreos/install_x86.html" target="_blank" rel="noopener">iStoreOS x86 安装教程</a></li>
+        <li><a href="https://doc.linkease.com/zh/guide/istoreos/practice/BypassRouter.html" target="_blank" rel="noopener">iStoreOS 旁路由最佳实践</a></li>
+        <li><a href="https://site.istoreos.com/" target="_blank" rel="noopener">iStoreOS 官网</a></li>
+        <li><a href="https://github.com/AUK9527/Are-u-ok" target="_blank" rel="noopener">Are-u-ok（iStore 第三方插件包）</a></li>
+        <li><a href="https://github.com/AUK9527/Are-u-ok/tree/main/apps" target="_blank" rel="noopener">Are-u-ok ARM 平台插件</a></li>
+        <li><a href="https://github.com/AUK9527/Are-u-ok/tree/main/x86" target="_blank" rel="noopener">Are-u-ok x86 平台插件</a></li>
+        <li><a href="https://github.com/bcseputetto/Are-u-ok/releases/tag/iStoreOS_24.10" target="_blank" rel="noopener">Are-u-ok 24.10（社区维护发布页）</a></li>
+        <li><a href="https://fw.koolcenter.com/iStoreOS/x86_64/" target="_blank" rel="noopener">iStoreOS 固件下载（x86_64）</a></li>
+      </ul>
+      <p style="color:var(--muted);font-size:13px;margin-top:12px">本站内容仅用作学习与技术指引，请遵守当地法律法规，合理合规使用网络服务。</p>
+    </section>
+
+    <footer>
+      <p>📄 本文档对应 Markdown 源文件：<a href="../../istoreos/istoreos-guide.md">istoreos/istoreos-guide.md</a></p>
+      <p style="margin-top:8px">文档最后更新：2026 年 3 月</p>
+      <p style="margin-top:8px"><a href="../index.html">← 返回首页</a></p>
+    </footer>
+  </main>
+
+  <div class="floating-share" id="floating-share" aria-label="悬浮分享">
+    <div class="floating-share-panel" aria-label="分享菜单">
+      <button class="floating-share-btn" type="button" onclick="sharePage()">分享</button>
+      <button class="floating-share-btn" type="button" onclick="favoritePage()">收藏</button>
+      <button class="floating-share-btn" type="button" onclick="copyPageLink()">复制链接</button>
+    </div>
+    <button class="floating-share-main primary" id="floating-share-toggle" type="button" aria-expanded="false" onclick="toggleShareMenu()">分享</button>
+  </div>
+
+  <script>
+    function toggleShareMenu() {
+      const widget = document.getElementById('floating-share');
+      const toggle = document.getElementById('floating-share-toggle');
+      const isOpen = widget.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    function closeShareMenu() {
+      const widget = document.getElementById('floating-share');
+      const toggle = document.getElementById('floating-share-toggle');
+      widget.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    function getSharePayload() {
+      return {
+        title: document.title,
+        text: '我在看这个 iStoreOS 科学上网专题，整理得很全，分享给你：',
+        url: window.location.href
+      };
+    }
+    async function copyPageLink() {
+      const payload = getSharePayload();
+      const text = payload.title + '\n' + payload.text + '\n' + payload.url;
+      try {
+        await navigator.clipboard.writeText(text);
+        closeShareMenu();
+        alert('链接和分享文案已复制，打开微信后可直接粘贴发送或转发到朋友圈。');
+      } catch (error) {
+        window.prompt('请复制下面的内容并分享：', text);
+      }
+    }
+    async function sharePage() {
+      const payload = getSharePayload();
+      if (navigator.share) {
+        try {
+          await navigator.share(payload);
+          closeShareMenu();
+          return;
+        } catch (error) {}
+      }
+      await copyPageLink();
+    }
+    function favoritePage() {
+      const isApple = /Mac|iPhone|iPad|iPod/i.test(navigator.platform);
+      try {
+        if (window.external && 'AddFavorite' in window.external) {
+          window.external.AddFavorite(window.location.href, document.title);
+          closeShareMenu();
+          return;
+        }
+        if (window.sidebar && window.sidebar.addPanel) {
+          window.sidebar.addPanel(document.title, window.location.href, '');
+          closeShareMenu();
+          return;
+        }
+      } catch (error) {}
+      closeShareMenu();
+      alert('请使用快捷键 ' + (isApple ? 'Command/Cmd + D' : 'Ctrl + D') + ' 收藏当前页面；移动端请使用浏览器菜单中的"收藏/加入书签"。');
+    }
+    document.addEventListener('click', function(event) {
+      const widget = document.getElementById('floating-share');
+      if (widget && !widget.contains(event.target)) {
+        closeShareMenu();
+      }
+    });
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeShareMenu();
+      }
+    });
+  </script>
+</body>
+</html>

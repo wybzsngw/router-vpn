@@ -19,6 +19,7 @@
 | **订阅/机场** | [订阅申请指南](subscription/clash-subscription-guide.md) |
 | **华硕路由器** | [梅林固件刷机](asus-router/asus-merlin-flash.md) · [MerlinClash 安装配置](asus-router/asus-merlinclash-setup.md) · [高级功能 / Fancyss 补充](asus-router/asus-advanced.md) |
 | **软路由** | [OpenWrt + OpenClash](soft-router/openwrt-clash.md) · [iKuai + 旁路由](soft-router/ikuai-clash.md) |
+| **iStoreOS** | [iStoreOS + iStore 插件（Are-u-ok）专题](istoreos/istoreos-guide.md) |
 | **Windows** | [Clash Verge Rev 教程](windows/clash-verge-rev.md) · [系统代理配置](windows/windows-proxy-settings.md) |
 | **Linux** | [桌面版安装](linux/clash-linux-install-guide.md) · [无 GUI 服务器版](linux/clash-linux-headless-guide.md) |
 | **macOS** | [ClashX Meta 教程](macos/clashx-meta.md) · [系统代理配置](macos/macos-proxy-settings.md) |
@@ -32,6 +33,7 @@
 | ------ | ------ |
 | `asus-router/` | 华硕路由器相关文档 |
 | `soft-router/` | 软路由相关文档 |
+| `istoreos/` | iStoreOS 与 iStore 插件专题 |
 | `windows/` | Windows 相关文档 |
 | `linux/` | Linux 相关文档 |
 | `macos/` | macOS 相关文档 |
@@ -73,6 +75,7 @@
 | ------ | ------ |
 | 华硕路由器 | [梅林固件刷机](asus-router/asus-merlin-flash.md) · [MerlinClash 安装配置](asus-router/asus-merlinclash-setup.md) · [高级功能](asus-router/asus-advanced.md) |
 | 软路由 | [OpenWrt + OpenClash](soft-router/openwrt-clash.md) · [iKuai + 旁路由](soft-router/ikuai-clash.md) |
+| iStoreOS | [iStoreOS + iStore 插件（Are-u-ok）专题](istoreos/istoreos-guide.md) |
 | Windows | [Clash Verge Rev 教程](windows/clash-verge-rev.md) · [系统代理配置](windows/windows-proxy-settings.md) |
 | Linux | [桌面版安装](linux/clash-linux-install-guide.md) · [无 GUI 服务器版](linux/clash-linux-headless-guide.md) |
 | macOS | [ClashX Meta 教程](macos/clashx-meta.md) · [系统代理配置](macos/macos-proxy-settings.md) |
