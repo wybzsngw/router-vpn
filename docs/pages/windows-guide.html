@@ -93,6 +93,7 @@
     .card h2 { font-size: 20px; margin-bottom: 12px }
     .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
     .card ul { padding-left: 20px; margin-bottom: 12px }
+    .card ol { padding-left: 20px; margin-bottom: 12px }
     .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
     .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
     .card th { color: var(--muted); font-weight: 600; font-size: 13px }
@@ -109,6 +110,13 @@
     pre code { padding: 0; background: none }
     a { color: var(--accent); text-decoration: none }
     a:hover { text-decoration: underline }
+    .section-image {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.08);
+      margin: 10px 0 14px;
+      box-shadow: 0 6px 20px rgba(15,23,42,.08);
+    }
     .floating-share {
       position:fixed; right:18px; bottom:92px; z-index:999;
       display:flex; flex-direction:column; align-items:flex-end; gap:10px;
@@ -151,8 +159,27 @@
       <a href="mobile-guide.html" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
     </nav>
 
-    <!-- 1. 软件介绍 -->
     <section class="card">
+      <div class="kicker">目录</div>
+      <h2>快速导航</h2>
+      <ul>
+        <li><a href="#section-1">一、软件介绍</a></li>
+        <li><a href="#section-2">二、系统要求</a></li>
+        <li><a href="#section-3">三、下载安装</a></li>
+        <li><a href="#section-4">四、导入订阅</a></li>
+        <li><a href="#section-5">五、启动代理</a></li>
+        <li><a href="#section-6">六、代理模式说明</a></li>
+        <li><a href="#section-7">七、TUN 模式详解</a></li>
+        <li><a href="#section-8">八、分应用代理</a></li>
+        <li><a href="#section-9">九、规则与分流</a></li>
+        <li><a href="#section-10">十、开机自启</a></li>
+        <li><a href="#section-11">十一、常见问题</a></li>
+        <li><a href="#section-12">十二、进阶配置</a></li>
+      </ul>
+    </section>
+
+    <!-- 1. 软件介绍 -->
+    <section class="card" id="section-1">
       <div class="kicker">Section 01</div>
       <h2>软件介绍</h2>
       <p><strong>Clash Verge Rev</strong> 是一款基于 Clash 内核的跨平台代理客户端，专为 Windows、macOS 和 Linux 设计。它提供图形化界面，支持订阅管理、规则分流、TUN 模式等高级功能，是当前 Windows 上最活跃维护的 Clash 客户端之一。</p>
@@ -167,7 +194,7 @@
     </section>
 
     <!-- 2. 系统要求 -->
-    <section class="card">
+    <section class="card" id="section-2">
       <div class="kicker">Section 02</div>
       <h2>系统要求</h2>
       <table>
@@ -186,12 +213,13 @@ winver</code></pre>
     </section>
 
     <!-- 3. 下载安装 -->
-    <section class="card">
+    <section class="card" id="section-3">
       <div class="kicker">Section 03</div>
       <h2>下载安装</h2>
       <p><strong>1. 访问 GitHub 发布页</strong></p>
       <p>打开 Clash Verge Rev 的官方发布页面：</p>
       <p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
+      <img class="section-image" src="../images/windows/clash-verge.png" alt="Clash Verge Rev GitHub 发布页截图" loading="lazy" />
       <p><strong>2. 选择安装包</strong></p>
       <p>在 <strong>Assets</strong> 区域找到适合 Windows x64 的安装包：</p>
       <ul>
@@ -200,20 +228,29 @@ winver</code></pre>
       </ul>
       <p><strong>3. 安装步骤</strong></p>
       <ol style="padding-left:20px;list-style:decimal">
-        <li>双击下载的安装包</li>
+        <li>双击下载的 <code class="inline">.exe</code> 安装包</li>
         <li>若出现 Windows 安全提示，点击「更多信息」→「仍要运行」</li>
         <li>选择安装路径（默认即可）并点击「安装」</li>
         <li>安装完成后，勾选「启动 Clash Verge Rev」并点击「完成」</li>
       </ol>
-      <p>启动后应看到 Clash Verge Rev 主界面，包含 **Profiles**、**Proxies**、**Logs** 等标签页。</p>
+      <p>启动后应看到 Clash Verge Rev 主界面，包含 <strong>Profiles</strong>、<strong>Proxies</strong>、<strong>Logs</strong> 等标签页。</p>
+      <img class="section-image" src="../images/windows/clash-verge-UI.png" alt="Clash Verge Rev 主界面" loading="lazy" />
     </section>
 
     <!-- 4. 导入订阅 -->
-    <section class="card">
+    <section class="card" id="section-4">
       <div class="kicker">Section 04</div>
       <h2>导入订阅</h2>
       <p><strong>1. 获取订阅链接</strong></p>
       <p>从您的机场/代理服务商获取订阅链接（通常为 <code class="inline">https://xxx.com/api/v1/client/subscribe?token=xxx</code> 格式）。请妥善保管，不要泄露。</p>
+      <p><strong>购买 &amp; 获取 Clash 订阅推荐</strong></p>
+      <p>如果您尚未拥有可用的 Clash 订阅节点，可参考以下页面查看节点推荐与购买流程：</p>
+      <ul>
+        <li><a href="../clash-subscription-guide.html">Clash 订阅购买全指南（节点推荐、机场注册与入门教程）</a></li>
+      </ul>
+      <p>推荐体验节点注册地址：</p>
+      <p><a href="https://jpp.lanpangyun.me/#/register?code=30Y2Sexl" target="_blank" rel="noopener">https://jpp.lanpangyun.me/#/register?code=30Y2Sexl</a></p>
+      <img class="section-image" src="../images/windows/clash-lanpang.png" alt="复制订阅链接示例" loading="lazy" />
       <p><strong>2. 导入订阅</strong></p>
       <ol style="padding-left:20px;list-style:decimal">
         <li>打开 Clash Verge Rev</li>
@@ -221,14 +258,19 @@ winver</code></pre>
         <li>在顶部输入框粘贴订阅链接</li>
         <li>点击 <strong>Import</strong>（导入）按钮</li>
       </ol>
+      <img class="section-image" src="../images/windows/clash-verge.png" alt="导入订阅界面" loading="lazy" />
       <p><strong>3. 选择配置</strong></p>
-      <p>导入成功后，配置列表会出现新条目。点击该配置名称，使其变为当前使用的配置。</p>
+      <p>导入成功后，配置列表会出现新条目。点击该配置名称，使其变为当前使用的配置（高亮显示）。</p>
+      <img class="section-image" src="../images/windows/clash-ver2.png" alt="配置选择界面" loading="lazy" />
       <p><strong>4. 更新订阅</strong></p>
-      <p>点击配置右侧的刷新图标可手动更新。建议在 <strong>Settings → Profiles</strong> 中开启 <strong>Auto Update</strong>，设置自动更新间隔（如 24 小时）。</p>
+      <ul>
+        <li>点击配置右侧的刷新图标可手动更新</li>
+        <li>建议在 <strong>Settings → Profiles</strong> 中开启 <strong>Auto Update</strong>，设置自动更新间隔（如 24 小时）</li>
+      </ul>
     </section>
 
     <!-- 5. 启动代理 -->
-    <section class="card">
+    <section class="card" id="section-5">
       <div class="kicker">Section 05</div>
       <h2>启动代理</h2>
       <p><strong>系统代理模式（System Proxy）</strong></p>
@@ -237,12 +279,23 @@ winver</code></pre>
         <li>打开开关，系统代理将指向 Clash（默认 <code class="inline">127.0.0.1:7897</code>）</li>
         <li>支持系统代理的软件（如浏览器、部分应用）会自动走代理</li>
       </ol>
-      <p><strong>TUN 模式</strong></p>
-      <p>若需全局代理（包括游戏、UWP 应用等），可开启主界面的 <strong>TUN</strong> 开关，详见下方「TUN 模式详解」。</p>
+      <img class="section-image" src="../images/windows/clash-ver3.png" alt="System Proxy 开关位置" loading="lazy" />
+      <p><strong>首页的开关位置</strong></p>
+      <img class="section-image" src="../images/windows/clash-ver-proxy.png" alt="首页 Proxy 开关" loading="lazy" />
+      <p><strong>TUN 模式 vs 系统代理模式</strong></p>
+      <table>
+        <tr><th>特性</th><th>系统代理</th><th>TUN 模式</th></tr>
+        <tr><td>覆盖范围</td><td>仅支持系统代理的应用</td><td>几乎所有应用（全局）</td></tr>
+        <tr><td>需要管理员</td><td>否</td><td>是（安装 TUN 驱动）</td></tr>
+        <tr><td>UWP 应用</td><td>需额外配置 Loopback</td><td>直接支持</td></tr>
+        <tr><td>游戏/客户端</td><td>可能不走代理</td><td>通常可走代理</td></tr>
+        <tr><td>DNS 处理</td><td>依赖应用自身</td><td>可统一接管</td></tr>
+      </table>
+      <p>日常浏览推荐先用系统代理，若部分软件不走代理，再考虑开启 TUN 模式。</p>
     </section>
 
     <!-- 6. 代理模式说明 -->
-    <section class="card">
+    <section class="card" id="section-6">
       <div class="kicker">Section 06</div>
       <h2>代理模式说明</h2>
       <p>在 <strong>Proxies</strong> 标签页可切换全局代理模式：</p>
@@ -253,10 +306,11 @@ winver</code></pre>
         <tr><td>Direct（直连）</td><td>所有流量直连，不走代理</td></tr>
         <tr><td>Script（脚本）</td><td>使用 JavaScript 脚本自定义分流逻辑</td></tr>
       </table>
+      <img class="section-image" src="../images/windows/clash-ver-rule.png" alt="代理模式切换界面" loading="lazy" />
     </section>
 
     <!-- 7. TUN 模式详解 -->
-    <section class="card">
+    <section class="card" id="section-7">
       <div class="kicker">Section 07</div>
       <h2>TUN 模式详解</h2>
       <p><strong>什么是 TUN 模式？</strong></p>
@@ -267,11 +321,28 @@ winver</code></pre>
         <li>首次使用会提示安装 <strong>wintun</strong> 驱动，需<strong>管理员权限</strong></li>
         <li>按提示完成驱动安装后，TUN 模式即可生效</li>
       </ol>
-      <p><strong>优势</strong>：全局生效、DNS 可控、透明代理。注意：安装驱动时请确保网络畅通；若失败可尝试以管理员身份运行 Clash Verge Rev。</p>
+      <p>首次启用 TUN 模式时，会提示安装虚拟网卡，需要管理员权限，安装前如遇杀毒软件报错可暂时退出杀毒软件。</p>
+      <img class="section-image" src="../images/windows/clash-ver-TUN1.png" alt="安装虚拟网卡提示" loading="lazy" />
+      <p>成功安装后，TUN 功能相关开关会正常亮起。</p>
+      <img class="section-image" src="../images/windows/clash-ver-TUN2.png" alt="TUN 模式开关" loading="lazy" />
+      <p>首页也有 TUN 模式快捷开关。如遇无法安装或功能不可用，可尝试以管理员身份重启 Clash Verge Rev，或重启电脑后重试。</p>
+      <img class="section-image" src="../images/windows/clash-ver-TUN.png" alt="首页 TUN 开关" loading="lazy" />
+      <p><strong>TUN 模式优势</strong></p>
+      <ul>
+        <li><strong>全局生效</strong>：游戏、UWP 应用、命令行工具等均可走代理</li>
+        <li><strong>DNS 可控</strong>：可统一处理 DNS，减少泄露风险</li>
+        <li><strong>透明代理</strong>：应用无感知，无需单独配置</li>
+      </ul>
+      <p><strong>注意事项</strong></p>
+      <ul>
+        <li>安装驱动时请确保网络畅通，避免下载失败</li>
+        <li>若驱动安装失败，可尝试以管理员身份运行 Clash Verge Rev</li>
+        <li>部分企业/学校网络可能限制 TUN 驱动安装</li>
+      </ul>
     </section>
 
     <!-- 8. 分应用代理 -->
-    <section class="card">
+    <section class="card" id="section-8">
       <div class="kicker">Section 08</div>
       <h2>分应用代理</h2>
       <p><strong>UWP 应用（Microsoft Store）不走代理？</strong></p>
@@ -283,13 +354,16 @@ Get-AppxPackage | Select Name, PackageFamilyName
 # 为指定应用添加 Loopback 豁免（示例：Microsoft Edge）
 CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"
 
+# 为所有 UWP 应用添加豁免（不推荐，仅作参考）
+Get-AppxPackage | ForEach-Object { CheckNetIsolation.exe LoopbackExempt -a -n=$_.PackageFamilyName }
+
 # 查找 Telegram 的 PackageFamilyName
 Get-AppxPackage *Telegram* | Select Name, PackageFamilyName</code></pre>
       <p>将输出的 <code class="inline">PackageFamilyName</code> 填入上述命令的 <code class="inline">-n=</code> 参数。也可使用 <a href="https://github.com/tiagonmas/EnableLoopback" target="_blank" rel="noopener">EnableLoopback</a> 等图形化工具。</p>
     </section>
 
     <!-- 9. 规则与分流 -->
-    <section class="card">
+    <section class="card" id="section-9">
       <div class="kicker">Section 09</div>
       <h2>规则与分流</h2>
       <p>Clash 按<strong>从上到下</strong>的顺序匹配规则，命中即执行对应动作。订阅配置通常包含类似结构：</p>
@@ -304,33 +378,55 @@ Get-AppxPackage *Telegram* | Select Name, PackageFamilyName</code></pre>
 
 # 示例：某域名强制直连
 - DOMAIN-SUFFIX,internal.company.com,DIRECT</code></pre>
+      <p><strong>引用规则集（Rule Providers）</strong></p>
+      <pre><code>rule-providers:
+  reject:
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+
+rules:
+  - RULE-SET,reject,REJECT
+  # ... 其他规则</code></pre>
     </section>
 
     <!-- 10. 开机自启 -->
-    <section class="card">
+    <section class="card" id="section-10">
       <div class="kicker">Section 10</div>
       <h2>开机自启</h2>
       <p><strong>方法一：软件内设置</strong></p>
-      <p>打开 <strong>Settings</strong> → 找到 <strong>General</strong> 或 <strong>Startup</strong> → 开启 <strong>Launch on system startup</strong>（开机启动）。</p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>打开 <strong>Settings</strong>（设置）</li>
+        <li>找到 <strong>General</strong> 或 <strong>Startup</strong> 相关选项</li>
+        <li>开启 <strong>Launch on system startup</strong>（开机启动）</li>
+      </ol>
+      <p>截图待补充：开机自启设置界面。</p>
       <p><strong>方法二：任务计划程序</strong></p>
-      <p>按 <code class="inline">Win + R</code>，输入 <code class="inline">taskschd.msc</code>，创建基本任务，触发器选「当计算机启动时」，程序填 Clash Verge Rev 的安装路径，例如：</p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>按 <code class="inline">Win + R</code>，输入 <code class="inline">taskschd.msc</code>，回车</li>
+        <li>右侧点击「创建基本任务」</li>
+        <li>名称填「Clash Verge Rev」，触发器选「当计算机启动时」</li>
+        <li>操作选「启动程序」，程序填 Clash Verge Rev 安装路径</li>
+        <li>完成创建后，在属性中勾选「使用最高权限运行」（若需 TUN）</li>
+      </ol>
       <pre><code>C:\Users\你的用户名\AppData\Local\Programs\clash-verge-rev\Clash Verge Rev.exe</code></pre>
     </section>
 
     <!-- 11. 常见问题 -->
-    <section class="card">
+    <section class="card" id="section-11">
       <div class="kicker">Section 11</div>
       <h2>常见问题</h2>
       <p><strong>1. 端口冲突</strong> — 在 Settings → Clash 中修改端口，或关闭占用端口的其他代理软件。</p>
       <pre><code>netstat -ano | findstr 7897</code></pre>
       <p><strong>2. TUN 驱动安装失败</strong> — 以管理员身份运行；暂时关闭杀毒软件；或手动下载 <a href="https://www.wintun.net/" target="_blank" rel="noopener">wintun</a> 并安装。</p>
       <p><strong>3. 订阅更新失败</strong> — 检查订阅链接是否有效；检查网络；部分机场需在网页端重新生成订阅链接。</p>
-      <p><strong>4. DNS 泄露</strong> — 开启 TUN 模式；在配置中启用 <code class="inline">dns.enable</code>；使用 DoH/DoT DNS。</p>
-      <p><strong>5. 部分网站无法访问</strong> — 确认代理模式为 Rule；检查规则是否将国内域名错误指向代理。</p>
+      <p><strong>4. DNS 泄露</strong> — 开启 TUN 模式；在配置中启用 <code class="inline">dns.enable</code> 和合适的 <code class="inline">fake-ip</code>/<code class="inline">redir-host</code> 模式；使用 DoH/DoT DNS。</p>
+      <p><strong>5. 部分网站无法访问</strong> — 确认代理模式为 Rule；检查规则是否将国内域名错误指向代理；更新订阅或规则集。</p>
     </section>
 
     <!-- 12. 进阶配置 -->
-    <section class="card">
+    <section class="card" id="section-12">
       <div class="kicker">Section 12</div>
       <h2>进阶配置</h2>
       <p><strong>自定义配置覆写</strong> — 在 Settings → Config 中可添加 Prepend 或 Append 配置，对当前配置进行覆写。</p>
@@ -340,8 +436,19 @@ Invoke-WebRequest -Uri "http://127.0.0.1:9090/configs" -UseBasicParsing</code></
       <p><strong>Clash Dashboard</strong> — 在 Settings 中可配置 Dashboard 地址，使用 Yacd（<code class="inline">https://yacd.haishan.me</code>）等 Web 面板进行可视化管理。</p>
     </section>
 
+    <section class="card">
+      <div class="kicker">附录</div>
+      <h2>相关链接</h2>
+      <ul>
+        <li><a href="https://github.com/clash-verge-rev/clash-verge-rev" target="_blank" rel="noopener">Clash Verge Rev GitHub</a></li>
+        <li><a href="https://github.com/Dreamacro/clash" target="_blank" rel="noopener">Clash 内核文档</a></li>
+        <li><a href="../clash-subscription-guide.html">订阅与机场入门</a></li>
+      </ul>
+    </section>
+
     <footer>
       <p>📄 本文档对应 Markdown 源文件：<a href="../../windows/clash-verge-rev.md">windows/clash-verge-rev.md</a></p>
+      <p style="margin-top:8px">文档最后更新：2025 年 3 月</p>
       <p style="margin-top:8px"><a href="../index.html">← 返回首页</a></p>
     </footer>
   </main>
