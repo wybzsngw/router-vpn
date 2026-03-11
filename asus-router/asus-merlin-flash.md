@@ -40,7 +40,7 @@
 
 ### 1.3 华硕 RT-AC86U 入门级推荐
 
-![华硕RT-AC86U](../docs/images/asus-rt-ac86u.png)
+![华硕 RT-AC86U](../docs/images/asus/asus-1.png)
 
 | 规格项目 | 详细参数 | 说明 |
 |---------|---------|------|
@@ -56,7 +56,7 @@
 
 ### 1.4 华硕 RT-AX86U PRO 详细规格
 
-![华硕RT-AX86U PRO](../docs/images/asus-rt-ax86u-pro.png)
+![华硕 RT-AX86U PRO](../docs/images/asus/asus-2.png)
 
 | 规格项目 | 详细参数 | 说明 |
 |---------|---------|------|
@@ -72,7 +72,7 @@
 
 ### 1.5 华硕 RT-BE86U 高端旗舰
 
-![华硕RT-BE86U](../docs/images/RT-BE86U.png)
+![华硕 RT-BE86U](../docs/images/asus/asus-3.png)
 
 | 规格项目 | 详细参数 | 说明 |
 |---------|---------|------|
