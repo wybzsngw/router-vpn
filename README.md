@@ -1,16 +1,23 @@
-# Clash 全平台翻墙指南
+# Clash 全平台科学上网教程 — 翻墙指南 2026
 
-> 一站式 Clash 订阅申请与配置教程，覆盖路由器、软路由、Windows、Linux、macOS、Android、iOS。
+[![GitHub Pages](https://img.shields.io/badge/在线阅读-GitHub%20Pages-blue?style=flat-square&logo=github)](https://mowei-ie.github.io/router-vpn/)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+[![Last Updated](https://img.shields.io/badge/更新日期-2026--03-orange?style=flat-square)]()
+
+> **2026 年最新 Clash 科学上网配置教程** — 一站式覆盖 华硕路由器（MerlinClash）、软路由（OpenWrt + OpenClash）、iStoreOS（PassWall/SSR-Plus/Are-u-ok）、Windows（Clash Verge Rev）、macOS（ClashX Meta）、Linux、Android、iOS 全平台。含订阅申请、机场推荐、节点配置、分流规则、TUN 模式、旁路由、ESXi 虚拟化等进阶内容。
 >
 > 🌐 **在线文档地址**：<https://mowei-ie.github.io/router-vpn/>
+
+**关键词**: Clash教程, 科学上网, 翻墙教程, VPN, 代理, Clash Verge Rev, OpenClash, PassWall, MerlinClash, 华硕路由器翻墙, 软路由翻墙, iStoreOS, 机场推荐, Clash订阅
 
 ---
 
 ## 🗂️ 项目总览
 
-本项目以 Markdown 文档为主，同时提供在线阅读入口：
+本项目是一个开源的 Clash 全平台科学上网配置教程集合，以 Markdown 文档为主，同时提供在线 HTML 阅读入口：
 
 - 在线文档地址：<https://mowei-ie.github.io/router-vpn/>
+- GitHub 项目主页：<https://github.com/EI-ie/router-vpn>
 
 ### 文档（Markdown）
 
@@ -120,6 +127,13 @@
 
 ---
 
+## ⭐ 为什么选择本教程
+
+- **全平台覆盖**：从路由器到手机，从 Windows 到 Linux，一个仓库搞定所有设备
+- **持续更新**：跟踪 Clash 生态最新变化（Clash Verge Rev、iStoreOS 24.10 等）
+- **中文友好**：全部中文编写，图文并茂，适合新手入门
+- **开源免费**：所有文档和代码完全开源，欢迎贡献和反馈
+
 ## ⚠️ 免责声明
 
 本教程仅供学习和研究使用，请遵守当地法律法规。使用本教程所产生的任何后果，作者不承担任何责任。请合理使用网络资源，尊重他人的知识产权。
@@ -131,11 +145,17 @@
 1. 优先查看 [故障排除](common/troubleshooting.md)
 2. 根据设备类型进入对应平台文档查找专题说明
 3. 查阅 [Clash官方文档](https://clash.gitbook.io/)
-4. 提交 Issue 到项目仓库
+4. 提交 [Issue](https://github.com/EI-ie/router-vpn/issues) 到项目仓库
 
 ---
 
 ## 📝 版本更新说明
+
+### v2.3 (2026年3月)
+
+- ✅ 全站 SEO 优化：结构化数据、FAQPage、长尾关键词、sitemap 完善
+- ✅ 新增 iStoreOS 科学上网完整专题（Are-u-ok 插件、ESXi 部署、旁路由）
+- ✅ 新增 Clash 订阅申请指南（机场推荐与价格对比）
 
 ### v2.2 (2026年3月)
 
@@ -152,12 +172,14 @@
 ---
 
 **最后更新**: 2026年3月  
-**版本**: v2.2  
+**版本**: v2.3  
 **作者**: Router VPN Team
 
 ### 参考资源
 
 - [在线页面](https://mowei-ie.github.io/router-vpn/)
-- [Clash官方文档](https://clash.gitbook.io/)
+- [Clash 官方文档](https://clash.gitbook.io/)
+- [iStoreOS 官方文档](https://doc.linkease.com/zh/guide/istoreos/)
+- [Are-u-ok 第三方插件](https://github.com/AUK9527/Are-u-ok)
 
-> 平台专属下载地址、固件链接和第三方资源，请在对应专题文档中查看。
+> 平台专属下载地址、固件链接和第三方资源，请在对应专题文档中查看。如果觉得本项目有帮助，欢迎 Star 支持！

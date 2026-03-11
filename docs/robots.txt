@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
+Disallow: /downloads/*.tar.gz
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
 
 Sitemap: https://mowei-ie.github.io/router-vpn/sitemap.xml

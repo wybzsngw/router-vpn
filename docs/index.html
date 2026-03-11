@@ -3,30 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clash 全平台翻墙指南 - 路由器/软路由/Windows/Linux/macOS/手机</title>
-  <meta name="description" content="Clash 全平台翻墙配置指南，覆盖华硕路由器、软路由 OpenWrt、Windows、Linux、macOS、Android、iOS，含订阅申请、节点配置、分流规则等完整教程。" />
-  <meta name="keywords" content="Clash,翻墙,科学上网,华硕路由器,软路由,OpenWrt,iStoreOS,iStore,Windows,Linux,macOS,Android,iOS,MerlinClash,VPN,代理" />
+  <title>Clash 全平台科学上网教程 2026 — 路由器/软路由/iStoreOS/Windows/macOS/Linux/手机翻墙指南</title>
+  <meta name="description" content="2026 最新 Clash 全平台科学上网配置教程。覆盖华硕路由器 MerlinClash、软路由 OpenWrt OpenClash、iStoreOS PassWall、Windows Clash Verge Rev、macOS ClashX Meta、Linux、Android、iOS，含订阅申请、节点配置、分流规则、TUN 模式、旁路由等完整教程。" />
+  <meta name="keywords" content="Clash教程,科学上网,翻墙教程,Clash Verge Rev,OpenClash,PassWall,MerlinClash,华硕路由器翻墙,软路由翻墙,iStoreOS科学上网,OpenWrt翻墙,Windows翻墙,macOS翻墙,Linux翻墙,Android翻墙,iOS翻墙,VPN,代理,TUN模式,旁路由,机场推荐,Clash订阅,节点配置,分流规则" />
   <meta name="author" content="Router VPN Guide" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Clash 全平台翻墙指南 - 路由器/软路由/Windows/Linux/macOS/手机" />
-  <meta property="og:description" content="Clash 全平台翻墙配置指南，覆盖华硕路由器、软路由 OpenWrt、Windows、Linux、macOS、Android、iOS，含订阅申请、节点配置、分流规则等完整教程。" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta property="og:title" content="Clash 全平台科学上网教程 2026 — 路由器/软路由/Windows/macOS/Linux/手机翻墙指南" />
+  <meta property="og:description" content="一站式 Clash 科学上网配置教程，覆盖华硕路由器、软路由 OpenWrt、iStoreOS、Windows、macOS、Linux、Android、iOS。含订阅申请、节点配置、旁路由、TUN 模式等。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mowei-ie.github.io/router-vpn/" />
   <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="Clash 全平台翻墙指南" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Clash 全平台翻墙指南 - 路由器/软路由/Windows/Linux/macOS/手机" />
-  <meta name="twitter:description" content="一站式 Clash 翻墙配置教程，覆盖华硕路由器、软路由、Windows、Linux、macOS 与手机端。" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Clash 全平台科学上网教程 2026 — 翻墙指南" />
+  <meta name="twitter:description" content="一站式 Clash 科学上网配置教程，覆盖路由器、软路由、iStoreOS、Windows、macOS、Linux 与手机端。" />
   <link rel="canonical" href="https://mowei-ie.github.io/router-vpn/" />
+  <link rel="sitemap" type="application/xml" href="sitemap.xml" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Clash 全平台翻墙指南",
+    "name": "Clash 全平台科学上网教程",
+    "alternateName": ["Clash 翻墙指南", "Router VPN Guide"],
     "url": "https://mowei-ie.github.io/router-vpn/",
-    "description": "Clash 全平台翻墙配置指南，覆盖华硕路由器、软路由、Windows、Linux、macOS、Android、iOS。",
+    "description": "2026 最新 Clash 全平台科学上网配置教程，覆盖华硕路由器、软路由、iStoreOS、Windows、macOS、Linux、Android、iOS。",
     "author": { "@type": "Organization", "name": "Router VPN Guide" },
-    "inLanguage": "zh-CN"
+    "inLanguage": "zh-CN",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://mowei-ie.github.io/router-vpn/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Clash 是什么？怎么用 Clash 科学上网？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Clash 是一款开源的多平台代理工具，支持规则分流、TUN 模式、订阅管理等。通过导入机场订阅链接即可实现科学上网。本站提供 Windows、macOS、Linux、Android、iOS、路由器全平台的 Clash 配置教程。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "路由器怎么翻墙？华硕路由器和软路由哪个好？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "华硕路由器可刷梅林固件安装 MerlinClash 实现全屋翻墙；软路由（如 OpenWrt + OpenClash 或 iStoreOS + PassWall）性能更强、可定制性更高。追求稳定选华硕，追求性能选软路由。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "iStoreOS 怎么安装科学上网插件？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "在 iStoreOS 上可通过 iStore 软件中心安装科学上网插件，也可从 Are-u-ok 第三方插件包下载 PassWall、OpenClash 等 .run 安装包手动安装。需先确认设备架构（x86_64 或 aarch64）再选择对应平台包。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Windows 上用什么 Clash 客户端？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "推荐使用 Clash Verge Rev，它是基于 Rust 重写的开源 Clash 客户端，支持订阅管理、规则分流、TUN 模式，是已停更的 Clash for Windows 的继任者。"
+        }
+      }
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -652,8 +700,18 @@
 
     <footer>
       <p>本站内容仅用作学习与技术指引，请遵守当地法律法规，合理合规使用网络服务。</p>
-      <p style="margin-top:6px">推荐收藏首页：<a href="https://mowei-ie.github.io/router-vpn/">mowei-ie.github.io/router-vpn/</a></p>
-      <p style="margin-top:6px"><a href="https://github.com/EI-ie/router-vpn">GitHub 项目主页</a></p>
+      <nav aria-label="站点全局导航" style="margin-top:12px;font-size:12px;line-height:2">
+        <a href="clash-subscription-guide.html">Clash 订阅申请</a> ·
+        <a href="pages/asus-router-guide.html">华硕路由器教程</a> ·
+        <a href="pages/soft-router-guide.html">软路由教程</a> ·
+        <a href="pages/istoreos-guide.html">iStoreOS 专题</a> ·
+        <a href="pages/windows-guide.html">Windows 教程</a> ·
+        <a href="pages/macos-guide.html">macOS 教程</a> ·
+        <a href="pages/linux-guide.html">Linux 教程</a> ·
+        <a href="pages/mobile-guide.html">手机教程</a>
+      </nav>
+      <p style="margin-top:8px">推荐收藏首页：<a href="https://mowei-ie.github.io/router-vpn/">mowei-ie.github.io/router-vpn/</a></p>
+      <p style="margin-top:4px"><a href="https://github.com/EI-ie/router-vpn">GitHub 项目主页</a> · 更新日期：2026-03-11</p>
     </footer>
 
   </main>
