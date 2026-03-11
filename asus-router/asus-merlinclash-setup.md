@@ -20,8 +20,6 @@
 
 ## 一、MerlinClash 简介
 
-![Clash 界面](../docs/images/clash-interface.png)
-
 **MerlinClash** 是专为华硕梅林固件开发的 Clash 插件，具有以下特点：
 
 - **支持协议**：Shadowsocks、ShadowsocksR、VMess、Trojan、Hysteria、WireGuard
@@ -44,8 +42,6 @@
 1. 进入路由器管理界面
 2. 进入 **软件中心**
 3. 点击 **更新** 按钮，将软件中心升级到最新版本
-
-![软件中心更新](../docs/images/software-center-update.png)
 
 ### 2.2 确认存储空间
 
@@ -93,15 +89,11 @@
 3. 点击 **上传并安装**
 4. 等待安装完成
 
-![离线安装界面](../docs/images/offline-install.png)
-
 ### 3.4 启用 MerlinClash
 
 1. 安装完成后，在软件中心找到 **MerlinClash**
 2. 点击 **启动** 按钮
 3. 等待插件启动完成
-
-![MerlinClash 启动](../docs/images/merlinclash-start.png)
 
 > **提示**：若安装失败，可尝试使用 Chrome 浏览器进行安装，并检查软件中心是否已升级、插件包是否完整、存储空间是否充足；如果安装完成但插件未显示，可刷新页面、清理浏览器缓存，或重启一次路由器后再进入软件中心查看。
 
@@ -120,8 +112,6 @@
 3. 输入机场提供的 Clash 订阅链接
 4. 点击 **更新订阅**
 5. 等待节点更新完成
-
-![订阅配置界面](../docs/images/subscription-config.png)
 
 ### 4.3 定期更新订阅
 
@@ -168,15 +158,11 @@
 | **端口设置** | HTTP/SOCKS5 端口 | 保持默认（如 7890、7891）即可 |
 | **DNS 设置** | 代理 DNS 配置 | 使用默认或按需自定义 |
 
-![基本配置界面](../docs/images/basic-config.png)
-
 ### 6.2 分流规则配置
 
 1. 点击 **规则设置** 或 **分流规则**
 2. 选择合适的分流规则（国内直连、国外代理等）
 3. 可自定义规则或使用预设规则
-
-![规则配置界面](../docs/images/rules-config.png)
 
 ### 6.3 启用透明代理
 
@@ -199,8 +185,6 @@
 1. 在浏览器中访问 `https://www.google.com`
 2. 检查是否能正常访问
 3. 访问 `https://www.whatismyipaddress.com` 验证出口 IP 是否已改变
-
-![网络测试结果](../docs/images/network-test.png)
 
 ### 7.3 管理面板功能
 
