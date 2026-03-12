@@ -32,6 +32,7 @@
 | **macOS** | [ClashX Meta 教程](macos/clashx-meta.md) · [系统代理配置](macos/macos-proxy-settings.md) |
 | **手机** | [Android Clash Meta](mobile/android-clash-meta.md) · [iOS Shadowrocket & Stash](mobile/ios-shadowrocket.md) |
 | **通用** | [故障排除](common/troubleshooting.md) · [分流规则详解](common/proxy-rules.md) · [术语表](common/glossary.md) |
+| **使用场景** | [ChatGPT 注册使用教程](docs/pages/chatgpt-guide.html) · [Netflix 解锁观看教程](docs/pages/netflix-guide.html) |
 | **扩展** | [Tailscale ESXi 远程访问](extras/tailscale-esxi-guide.md) · [统计服务部署](extras/deployment-guide.md) |
 
 ### 文档目录
@@ -95,6 +96,7 @@
 | 订阅与机场 | [订阅申请指南](subscription/clash-subscription-guide.md) |
 | 平台实操 | 进入 `asus-router/`、`soft-router/`、`windows/`、`linux/`、`macos/`、`mobile/` |
 | 通用问题 | [故障排除](common/troubleshooting.md) · [分流规则详解](common/proxy-rules.md) · [术语表](common/glossary.md) |
+| 使用场景 | [ChatGPT 教程](docs/pages/chatgpt-guide.html) · [Netflix 解锁](docs/pages/netflix-guide.html) |
 | 扩展玩法 | [Tailscale ESXi 远程访问](extras/tailscale-esxi-guide.md) · [统计服务部署](extras/deployment-guide.md) |
 | 在线阅读 | <https://mowei-ie.github.io/router-vpn/> |
 
@@ -151,6 +153,12 @@
 
 ## 📝 版本更新说明
 
+### v2.4 (2026年3月)
+
+- ✅ 新增 ChatGPT 注册使用教程、Netflix 解锁观看教程
+- ✅ 首页新增「使用场景」板块
+- ✅ 统一全站导航栏
+
 ### v2.3 (2026年3月)
 
 - ✅ 全站 SEO 优化：结构化数据、FAQPage、长尾关键词、sitemap 完善
@@ -172,7 +180,7 @@
 ---
 
 **最后更新**: 2026年3月  
-**版本**: v2.3  
+**版本**: v2.4  
 **作者**: Router VPN Team
 
 ### 参考资源
