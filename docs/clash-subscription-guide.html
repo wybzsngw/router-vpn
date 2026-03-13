@@ -73,106 +73,23 @@
   }
   </script>
   
-  <!-- 自建统计服务 -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
   <script>
-    // 自建统计服务配置
-    const STATS_CONFIG = {
-      supabaseUrl: 'YOUR_SUPABASE_URL',
-      supabaseKey: 'YOUR_SUPABASE_ANON_KEY',
-      enableRealTime: true,
-      enableDetailedTracking: true
-    };
-
-    // 统计API实例
-    let statsAPI = null;
-
-    // 初始化统计服务
-    async function initStatistics() {
-      try {
-        // 检查配置
-        if (STATS_CONFIG.supabaseUrl === 'YOUR_SUPABASE_URL') {
-          console.log('统计服务未配置，使用本地统计');
-          updateLocalStats();
-          return;
-        }
-
-        // 初始化API
-        statsAPI = new StatisticsAPI(STATS_CONFIG.supabaseUrl, STATS_CONFIG.supabaseKey);
-        
-        // 记录页面访问
-        await statsAPI.trackPageView({
-          url: window.location.href,
-          title: document.title,
-          referrer: document.referrer
-        });
-
-        // 获取并显示统计
-        await displayStatistics();
-        
-      } catch (error) {
-        console.error('统计服务初始化失败:', error);
-        updateLocalStats();
-      }
-    }
-
-    // 显示统计数据
-    async function displayStatistics() {
-      try {
-        const result = await statsAPI.getRealTimeStats();
-        
-        if (result.success) {
-          const stats = result.data;
-          const countElement = document.getElementById('visit-count');
-          
-          if (countElement) {
-            countElement.innerHTML = `
-              <span style="color: var(--accent);">📊 实时统计</span><br>
-              今日访问: ${stats.totalViews.toLocaleString()} | 
-              独立访客: ${stats.uniqueSessions.toLocaleString()}
-            `;
-          }
-        } else {
-          updateLocalStats();
-        }
-      } catch (error) {
-        console.error('获取统计数据失败:', error);
-        updateLocalStats();
-      }
-    }
-
-    // 本地统计备用方案
-    function updateLocalStats() {
-      let visitCount = localStorage.getItem('clash_guide_visits');
-      if (!visitCount) {
-        visitCount = 1;
-      } else {
-        visitCount = parseInt(visitCount) + 1;
-      }
-      localStorage.setItem('clash_guide_visits', visitCount);
-      
-      const countElement = document.getElementById('visit-count');
-      if (countElement) {
-        countElement.innerHTML = `
-          <span style="color: var(--accent);">📈 本地统计</span><br>
-          页面访问: ${visitCount.toLocaleString()}
-        `;
-      }
-    }
-
-    // 页面加载时初始化统计
-    document.addEventListener('DOMContentLoaded', initStatistics);
-
-    // 页面卸载时记录停留时间
-    window.addEventListener('beforeunload', function() {
-      if (statsAPI) {
-        // 记录页面停留时间等额外数据
-        const duration = Date.now() - performance.timing.navigationStart;
-        statsAPI.trackEvent('page_duration', { duration: duration });
-      }
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', '订阅与机场');
   </script>
-  
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
   <style>
     :root{
       --bg-start:#f7f8fc; /* light background start */
@@ -583,6 +500,7 @@
       }
     });
   </script>
+  <script src="analytics-events.js" defer></script>
 </body>
 </html>
 

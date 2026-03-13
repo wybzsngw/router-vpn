@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -47,6 +47,23 @@
       { "@type": "ListItem", "position": 2, "name": "Linux 教程", "item": "https://mowei-ie.github.io/router-vpn/pages/linux-guide.html" }
     ]
   }
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', '桌面客户端');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
   </script>
   <style>
     :root {
@@ -435,5 +452,6 @@ curl -X PUT http://127.0.0.1:9090/proxies/selector-name \
       }
     });
   </script>
+  <script src="../analytics-events.js" defer></script>
 </body>
 </html>

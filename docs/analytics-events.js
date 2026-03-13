@@ -1,0 +1,71 @@
+(function() {
+  'use strict';
+  if (typeof gtag !== 'function') return;
+
+  var AIRPORT_DOMAINS = [
+    'yftg1.com',
+    'lanpangyun.me',
+    'ewanwtt.net',
+    'jif637.net',
+    'dgy02.com'
+  ];
+
+  var AIRPORT_NAMES = {
+    'yftg1.com': '扬帆云',
+    'lanpangyun.me': '蓝胖云',
+    'ewanwtt.net': '尔湾云',
+    'jif637.net': '疾风云',
+    'dgy02.com': '大哥云'
+  };
+
+  function getAirportName(url) {
+    for (var i = 0; i < AIRPORT_DOMAINS.length; i++) {
+      if (url.indexOf(AIRPORT_DOMAINS[i]) !== -1) {
+        return AIRPORT_NAMES[AIRPORT_DOMAINS[i]];
+      }
+    }
+    return null;
+  }
+
+  function isDownloadLink(url) {
+    return /\.(tar\.gz|zip|run|apk|dmg|exe|deb|rpm|AppImage)(\?|$)/i.test(url);
+  }
+
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href]');
+    if (!link) return;
+
+    var href = link.getAttribute('href') || '';
+    var text = (link.textContent || '').trim().substring(0, 80);
+    var page = document.title;
+
+    var airportName = getAirportName(href);
+    if (airportName) {
+      gtag('event', 'clash_register_click', {
+        airport_name: airportName,
+        source_page: page,
+        link_url: href,
+        link_text: text
+      });
+      return;
+    }
+
+    if (isDownloadLink(href)) {
+      var filename = href.split('/').pop().split('?')[0];
+      gtag('event', 'plugin_download', {
+        file_name: filename,
+        source_page: page,
+        link_url: href
+      });
+      return;
+    }
+
+    if (link.hostname && link.hostname !== location.hostname) {
+      gtag('event', 'outbound_click', {
+        link_url: href,
+        link_text: text,
+        source_page: page
+      });
+    }
+  });
+})();
