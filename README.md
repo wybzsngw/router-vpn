@@ -1,14 +1,17 @@
 # Clash 全平台科学上网教程 — 翻墙指南 2026
 
-[![GitHub Pages](https://img.shields.io/badge/在线阅读-GitHub%20Pages-blue?style=flat-square&logo=github)](https://mowei-ie.github.io/router-vpn/)
-[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
-[![Last Updated](https://img.shields.io/badge/更新日期-2026--03-orange?style=flat-square)]()
+[![GitHub Pages](https://img.shields.io/badge/📖_在线阅读-GitHub%20Pages-0ea5e9?style=for-the-badge&logo=github)](https://mowei-ie.github.io/router-vpn/)
+[![GitHub stars](https://img.shields.io/github/stars/EI-ie/router-vpn?style=for-the-badge&logo=github&color=f59e0b)](https://github.com/EI-ie/router-vpn/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-10b981?style=for-the-badge)](LICENSE)
+[![Last Updated](https://img.shields.io/badge/更新-2026.03-7c4dff?style=for-the-badge)]()
+
+<p align="center">
+  <img src="docs/images/og-cover.png" alt="Clash 全平台科学上网教程" width="720" />
+</p>
 
 > **2026 年最新 Clash 科学上网配置教程** — 一站式覆盖 华硕路由器（MerlinClash）、软路由（OpenWrt + OpenClash）、iStoreOS（PassWall/SSR-Plus/Are-u-ok）、Windows（Clash Verge Rev）、macOS（ClashX Meta）、Linux、Android、iOS 全平台。含订阅申请、机场推荐、节点配置、分流规则、TUN 模式、旁路由、ESXi 虚拟化等进阶内容。
 >
-> 🌐 **在线文档地址**：<https://mowei-ie.github.io/router-vpn/>
-
-**关键词**: Clash教程, 科学上网, 翻墙教程, VPN, 代理, Clash Verge Rev, OpenClash, PassWall, MerlinClash, 华硕路由器翻墙, 软路由翻墙, iStoreOS, 机场推荐, Clash订阅
+> 🌐 **在线文档**：<https://mowei-ie.github.io/router-vpn/>  ·  ⭐ **觉得有帮助？请 Star 支持！**
 
 ---
 

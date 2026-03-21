@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -20,6 +20,8 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="软路由翻墙教程 — OpenWrt + OpenClash / iKuai" />
   <meta name="twitter:description" content="OpenWrt + OpenClash 与 iKuai 旁路由翻墙方案完整教程。" />
+  <meta property="og:image" content="https://mowei-ie.github.io/router-vpn/images/og-cover.png" />
+  <meta name="twitter:image" content="https://mowei-ie.github.io/router-vpn/images/og-cover.png" />
   <link rel="canonical" href="https://mowei-ie.github.io/router-vpn/pages/soft-router-guide.html" />
   <script type="application/ld+json">
   {
@@ -160,6 +162,7 @@
 </head>
 <body>
   <main class="container">
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px"><a href="../index.html" style="color:var(--accent);text-decoration:none">首页</a> <span style="margin:0 6px">›</span> <span>路由器教程</span> <span style="margin:0 6px">›</span> <span style="color:var(--text)">软路由教程</span></nav>
     <h1>软路由翻墙教程 — OpenWrt + OpenClash / iKuai</h1>
     <p class="subtitle">在软路由上使用 OpenClash 实现全家设备自动翻墙</p>
 
@@ -366,6 +369,15 @@ opkg install iptables dnsmasq-full coreutils coreutils-nohup bash curl ca-certif
       <p>在 iKuai 的 DHCP 中，为指定客户端或地址池设置网关为 <code class="inline">192.168.1.2</code>，则这些设备会自动通过旁路由上网。</p>
       <p><strong>方法 C：iKuai 策略路由</strong></p>
       <p>使用 iKuai 的 <strong>流控分流 → 分流设置</strong> 或 <strong>端口分流</strong>，将特定 IP、MAC 或端口的流量指向旁路由 <code class="inline">192.168.1.2</code>，适合按用户、按应用精细控制。</p>
+    </section>
+
+    <section style="margin-top:40px;padding:24px;background:linear-gradient(135deg,rgba(14,165,233,.06),rgba(124,77,255,.06));border-radius:16px;border:1px solid rgba(14,165,233,.15)">
+      <h3 style="font-size:16px;margin-bottom:16px">📌 你可能还需要</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <a href="../clash-subscription-guide.html" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🔗</span><div><strong style="font-size:14px">订阅申请指南</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">还没有订阅链接？获取机场推荐</p></div></a>
+        <a href="asus-router-guide.html" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">📡</span><div><strong style="font-size:14px">华硕路由器教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">梅林固件 + MerlinClash 全屋翻墙</p></div></a>
+        <a href="istoreos-guide.html" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🧰</span><div><strong style="font-size:14px">iStoreOS 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">iStore 插件 + Are-u-ok 第三方包</p></div></a>
+      </div>
     </section>
 
     <footer>

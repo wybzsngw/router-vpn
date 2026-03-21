@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -19,6 +19,8 @@
   <meta property="article:modified_time" content="2026-03-11" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="macOS 翻墙教程 — ClashX Meta 科学上网" />
+  <meta property="og:image" content="https://mowei-ie.github.io/router-vpn/images/og-cover.png" />
+  <meta name="twitter:image" content="https://mowei-ie.github.io/router-vpn/images/og-cover.png" />
   <meta name="twitter:description" content="macOS 上使用 ClashX Meta 实现科学上网的完整教程。" />
   <link rel="canonical" href="https://mowei-ie.github.io/router-vpn/pages/macos-guide.html" />
   <script type="application/ld+json">
@@ -157,6 +159,7 @@
 </head>
 <body>
   <main class="container">
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px"><a href="../index.html" style="color:var(--accent);text-decoration:none">首页</a> <span style="margin:0 6px">›</span> <span>桌面客户端</span> <span style="margin:0 6px">›</span> <span style="color:var(--text)">macOS 教程</span></nav>
     <h1>macOS Clash 翻墙教程 — ClashX Meta</h1>
     <p class="subtitle">在 macOS 上使用 ClashX Meta 实现科学上网</p>
 
@@ -374,6 +377,15 @@ xattr -cr /Applications/ClashX\ Meta.app</code></pre>
       <p><strong>4. DNS 解析异常</strong> — 在 Clash 配置中检查 <code class="inline">dns</code> 段，可尝试使用 <code class="inline">8.8.8.8</code>、<code class="inline">1.1.1.1</code> 等公共 DNS。</p>
       <p><strong>5. 端口被占用</strong> — 在配置文件中修改 <code class="inline">mixed-port</code>、<code class="inline">port</code>、<code class="inline">socks-port</code>、<code class="inline">external-controller</code> 等端口号。</p>
       <p><strong>6. 菜单栏图标不显示</strong> — 检查系统设置 → 控制中心 → 菜单栏；或重启 ClashX Meta。</p>
+    </section>
+
+    <section style="margin-top:40px;padding:24px;background:linear-gradient(135deg,rgba(14,165,233,.06),rgba(124,77,255,.06));border-radius:16px;border:1px solid rgba(14,165,233,.15)">
+      <h3 style="font-size:16px;margin-bottom:16px">📌 你可能还需要</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <a href="../clash-subscription-guide.html" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🔗</span><div><strong style="font-size:14px">订阅申请指南</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">还没有订阅链接？获取机场推荐</p></div></a>
+        <a href="windows-guide.html" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🪟</span><div><strong style="font-size:14px">Windows 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">Clash Verge Rev 安装与 TUN 模式</p></div></a>
+        <a href="mobile-guide.html" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">📱</span><div><strong style="font-size:14px">手机教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">Android Clash Meta + iOS Shadowrocket</p></div></a>
+      </div>
     </section>
 
     <footer>
