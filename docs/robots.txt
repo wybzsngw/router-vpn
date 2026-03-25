@@ -14,4 +14,4 @@ User-agent: Baiduspider
 Allow: /
 Crawl-delay: 2
 
-Sitemap: https://mowei-ie.github.io/router-vpn/sitemap.xml
+Sitemap: https://www.aixiaobai168.com/sitemap.xml
