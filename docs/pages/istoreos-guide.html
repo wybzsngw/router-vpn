@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -153,6 +153,8 @@
       font-size: 11px;
       margin-top: 6px;
     }
+    .src-note { font-size: 11px; color: var(--muted); margin-top: 1.5rem; padding-top: 0.6rem; border-top: 1px solid rgba(0,0,0,.06); }
+    .src-note a { color: var(--muted); text-decoration: underline dotted; }
     .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
     .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
     .card th { color: var(--muted); font-weight: 600; font-size: 13px }
@@ -255,7 +257,6 @@
     <section class="card" id="s2">
       <div class="kicker">Section 02</div>
       <h2>支持设备与固件下载</h2>
-      <p>来源：<a href="https://doc.linkease.com/zh/guide/istoreos/install.html" target="_blank" rel="noopener">iStoreOS 官方安装文档</a></p>
 
       <h3>支持设备列表</h3>
       <table>
@@ -278,6 +279,7 @@
         <tr><td>R68S</td><td><a href="https://fw.koolcenter.com/iStoreOS/r68s/" target="_blank" rel="noopener">fw.koolcenter.com/iStoreOS/r68s/</a></td></tr>
       </table>
       <p style="color:var(--muted);font-size:13px">固件通常为 <code class="inline">.img.gz</code> 格式，刷写工具会自动解压，无需手动解压。</p>
+      <p class="src-note">来源：<a href="https://doc.linkease.com/zh/guide/istoreos/install.html" target="_blank" rel="noopener">iStoreOS 官方安装文档</a></p>
     </section>
 
     <!-- 三、iStoreOS 安装 -->
@@ -286,7 +288,6 @@
       <h2>iStoreOS 安装（x86 物理机 / ESXi / PVE）</h2>
 
       <h3>3.1 x86 物理机安装</h3>
-      <p>详细参考：<a href="https://doc.linkease.com/zh/guide/istoreos/install_x86.html" target="_blank" rel="noopener">iStoreOS 官方 x86 安装教程</a></p>
       <ol style="list-style:decimal">
         <li>从上方链接下载 x86_64 固件（<code class="inline">.img.gz</code>）</li>
         <li>使用 <strong>Rufus</strong> 或 <strong>balenaEtcher</strong> 将镜像写入 U 盘</li>
@@ -355,13 +356,13 @@
 
       <h3>4.5 安装科学上网插件</h3>
       <p>虚拟机网络调通后，按「<a href="#s5">第五节</a>」安装 PassWall / OpenClash 等插件，导入订阅即可。</p>
+      <p class="src-note">参考：<a href="https://doc.linkease.com/zh/guide/istoreos/install_x86.html" target="_blank" rel="noopener">iStoreOS 官方 x86 安装教程</a></p>
     </section>
 
     <!-- 五、科学上网插件安装 -->
     <section class="card" id="s5">
       <div class="kicker">Section 05</div>
       <h2>科学上网插件安装（Are-u-ok）</h2>
-      <p>来源：<a href="https://github.com/AUK9527/Are-u-ok" target="_blank" rel="noopener">AUK9527/Are-u-ok</a>，插件由 <a href="https://github.com/bcseputetto/Are-u-ok" target="_blank" rel="noopener">bcseputetto</a> 维护。</p>
 
       <h3>5.1 确认平台架构</h3>
       <pre><code>uname -m</code></pre>
@@ -419,19 +420,19 @@
       <pre><code>sh /tmp/upload/PassWall_26.2.14_x86_64_all_sdk_22.03.7.run</code></pre>
 
       <div class="callout">
-        <strong>来自 <a href="https://github.com/AUK9527/Are-u-ok" target="_blank" rel="noopener">Are-u-ok README</a> 的重要注意事项：</strong><br/>
+        <strong>重要注意事项：</strong><br/>
         · <strong>不推荐 PassWall 系列和 SSR-Plus 同时安装</strong>，部分软件包可能存在冲突<br/>
         · 安装前推荐<strong>删除所有自行添加的第三方软件源</strong>，避免意外错误<br/>
         · <strong>部分依赖仍需通过 opkg 在线安装</strong>——如果安装失败，先检查路由器自身的网络情况，<strong>特别是旁路由模式下最容易出现网络问题</strong><br/>
         · <strong>再三注意需要路由器自身联网正常</strong>
       </div>
+      <p class="src-note">插件来源：<a href="https://github.com/AUK9527/Are-u-ok" target="_blank" rel="noopener">AUK9527/Are-u-ok</a>，当前由 <a href="https://github.com/bcseputetto/Are-u-ok" target="_blank" rel="noopener">bcseputetto</a> 维护</p>
     </section>
 
     <!-- 六、旁路由最佳实践 -->
     <section class="card" id="s6">
       <div class="kicker">Section 06</div>
       <h2>旁路由最佳实践</h2>
-      <p>本节内容参考 iStoreOS 官方文档：<a href="https://doc.linkease.com/zh/guide/istoreos/practice/BypassRouter.html" target="_blank" rel="noopener">旁路由入门</a>，以及社区实践总结。请以官方文档为准。</p>
 
       <h3>6.1 什么是旁路由</h3>
       <p>旁路由本质上是一个"旁路网关"——它不负责拨号，只负责代理转发。局域网内的设备把<strong>网关和 DNS 指向旁路由</strong>，流量就会经过旁路由上的代理插件。</p>
@@ -451,7 +452,6 @@
       </ol>
 
       <h3>6.3 防火墙配置</h3>
-      <p>来源：<a href="https://doc.linkease.com/zh/guide/istoreos/practice/BypassRouter.html" target="_blank" rel="noopener">iStoreOS 旁路由官方文档</a></p>
       <p>在 iStoreOS 的 <strong>网络 → 防火墙 → 自定义规则</strong> 中添加：</p>
       <pre><code>iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code></pre>
       <p>在 <strong>防火墙 → 常规设置</strong> 中：入站数据 <strong>接受</strong>、出站数据 <strong>接受</strong>、转发 <strong>接受</strong>。</p>
@@ -467,6 +467,7 @@
         <li>在客户端设备（已改网关）：浏览器打开 <code class="inline">google.com</code></li>
         <li>检查 DNS 泄露：访问 <a href="https://dnsleaktest.com/" target="_blank" rel="noopener">dnsleaktest.com</a></li>
       </ol>
+      <p class="src-note">参考：<a href="https://doc.linkease.com/zh/guide/istoreos/practice/BypassRouter.html" target="_blank" rel="noopener">iStoreOS 旁路由官方文档</a></p>
     </section>
 
     <!-- 七、稳定性清单 -->
