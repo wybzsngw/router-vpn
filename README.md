@@ -1,6 +1,6 @@
 # Clash 全平台科学上网教程 — 翻墙指南 2026
 
-[![GitHub Pages](https://img.shields.io/badge/📖_在线阅读-GitHub%20Pages-0ea5e9?style=for-the-badge&logo=github)](https://mowei-ie.github.io/router-vpn/)
+[![在线阅读](https://img.shields.io/badge/📖_在线阅读-主站-0ea5e9?style=for-the-badge)](https://www.aixiaobai168.com/)
 [![GitHub stars](https://img.shields.io/github/stars/EI-ie/router-vpn?style=for-the-badge&logo=github&color=f59e0b)](https://github.com/EI-ie/router-vpn/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-10b981?style=for-the-badge)](LICENSE)
 [![Last Updated](https://img.shields.io/badge/更新-2026.03-7c4dff?style=for-the-badge)]()
@@ -11,7 +11,7 @@
 
 > **2026 年最新 Clash 科学上网配置教程** — 一站式覆盖 华硕路由器（MerlinClash）、软路由（OpenWrt + OpenClash）、iStoreOS（PassWall/SSR-Plus/Are-u-ok）、Windows（Clash Verge Rev）、macOS（ClashX Meta）、Linux、Android、iOS 全平台。含订阅申请、机场推荐、节点配置、分流规则、TUN 模式、旁路由、ESXi 虚拟化等进阶内容。
 >
-> 🌐 **在线文档**：<https://mowei-ie.github.io/router-vpn/>  ·  ⭐ **觉得有帮助？请 Star 支持！**
+> 🌐 **在线文档（主站）**：<https://www.aixiaobai168.com/>  ·  ⭐ **觉得有帮助？请 Star 支持！**
 
 ---
 
@@ -19,7 +19,8 @@
 
 本项目是一个开源的 Clash 全平台科学上网配置教程集合，以 Markdown 文档为主，同时提供在线 HTML 阅读入口：
 
-- 在线文档地址：<https://mowei-ie.github.io/router-vpn/>
+- 在线文档地址（主站）：<https://www.aixiaobai168.com/>
+- 备用镜像（GitHub Pages）：<https://mowei-ie.github.io/router-vpn/>
 - GitHub 项目主页：<https://github.com/EI-ie/router-vpn>
 
 ### 文档（Markdown）
@@ -101,7 +102,7 @@
 | 通用问题 | [故障排除](common/troubleshooting.md) · [分流规则详解](common/proxy-rules.md) · [术语表](common/glossary.md) |
 | 使用场景 | [ChatGPT 教程](docs/pages/chatgpt-guide.html) · [Netflix 解锁](docs/pages/netflix-guide.html) |
 | 扩展玩法 | [Tailscale ESXi 远程访问](extras/tailscale-esxi-guide.md) · [统计服务部署](extras/deployment-guide.md) |
-| 在线阅读 | <https://mowei-ie.github.io/router-vpn/> |
+| 在线阅读 | <https://www.aixiaobai168.com/>（备用：<https://mowei-ie.github.io/router-vpn/>） |
 
 ## 📝 文档组织原则
 
@@ -188,7 +189,7 @@
 
 ### 参考资源
 
-- [在线页面](https://mowei-ie.github.io/router-vpn/)
+- [在线页面（主站）](https://www.aixiaobai168.com/) · [GitHub Pages 镜像](https://mowei-ie.github.io/router-vpn/)
 - [Clash 官方文档](https://clash.gitbook.io/)
 - [iStoreOS 官方文档](https://doc.linkease.com/zh/guide/istoreos/)
 - [Are-u-ok 第三方插件](https://github.com/AUK9527/Are-u-ok)

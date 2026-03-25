@@ -111,7 +111,7 @@ winver
 
 如果您尚未拥有可用的 Clash 订阅节点，可参考本站整理的购买指引页面获取热门机场节点推荐与详细购买流程：
 
-- 👉 [Clash 订阅购买全指南（节点推荐、机场注册与入门教程）](https://mowei-ie.github.io/router-vpn/clash-subscription-guide.html)
+- 👉 [Clash 订阅购买全指南（节点推荐、机场注册与入门教程）](https://www.aixiaobai168.com/clash-subscription-guide.html)
 
 该页面持续收录优质机场稳定节点，帮助新手快速入门体验 Clash 科学上网。强烈建议前往查看、对比适合自己的节点套餐后购买，订阅链接在购买/注册后会自动生成。
 
