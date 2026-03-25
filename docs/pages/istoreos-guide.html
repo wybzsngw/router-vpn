@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -118,6 +118,40 @@
     .card h3 { font-size: 16px; margin: 14px 0 8px }
     .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
     .card ul, .card ol { padding-left: 20px; margin-bottom: 12px }
+    /* 附录信息卡：降低视觉权重，避免喧宾夺主 */
+    .card.refs-card {
+      padding: 12px 14px;
+      border-radius: 10px;
+      border-color: rgba(0,0,0,.05);
+      box-shadow: none;
+    }
+    .card.refs-card:hover {
+      transform: none;
+      border-color: rgba(0,0,0,.08);
+      box-shadow: none;
+    }
+    .card.refs-card .kicker {
+      font-size: 10px;
+      margin-bottom: 2px;
+      letter-spacing: .08em;
+    }
+    .card.refs-card h2 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .card.refs-card ul {
+      padding-left: 16px;
+      margin-bottom: 4px;
+    }
+    .card.refs-card li {
+      font-size: 13px;
+      line-height: 1.45;
+      margin-bottom: 4px;
+    }
+    .card.refs-card p {
+      font-size: 11px;
+      margin-top: 6px;
+    }
     .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
     .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
     .card th { color: var(--muted); font-weight: 600; font-size: 13px }
@@ -473,7 +507,7 @@
     </section>
 
     <!-- 九、参考链接 -->
-    <section class="card" id="s9">
+    <section class="card refs-card" id="s9">
       <div class="kicker">附录</div>
       <h2>参考链接</h2>
       <ul>
@@ -488,7 +522,7 @@
         <li><a href="https://github.com/bcseputetto/Are-u-ok/releases/tag/iStoreOS_24.10" target="_blank" rel="noopener">Are-u-ok 24.10（社区维护发布页）</a></li>
         <li><a href="https://fw.koolcenter.com/iStoreOS/x86_64/" target="_blank" rel="noopener">iStoreOS 固件下载（x86_64）</a></li>
       </ul>
-      <p style="color:var(--muted);font-size:13px;margin-top:12px">本站内容仅用作学习与技术指引，请遵守当地法律法规，合理合规使用网络服务。</p>
+      <p style="color:var(--muted)">本站内容仅用作学习与技术指引，请遵守当地法律法规，合理合规使用网络服务。</p>
     </section>
 
     <section style="margin-top:40px;padding:24px;background:linear-gradient(135deg,rgba(14,165,233,.06),rgba(124,77,255,.06));border-radius:16px;border:1px solid rgba(14,165,233,.15)">
