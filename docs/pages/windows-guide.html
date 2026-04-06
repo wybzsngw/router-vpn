@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <script>if(location.hostname==="mowei-ie.github.io"){location.replace("https://www.aixiaobai168.com"+location.pathname.replace("/router-vpn","").replace(/\/index\.html$/,"/")+location.search+location.hash)}</script>
+  <noscript><meta http-equiv="refresh" content="0;url=https://www.aixiaobai168.com/pages/windows-guide"></noscript>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
@@ -258,7 +259,7 @@ winver</code></pre>
         <li><a href="/clash-subscription-guide">Clash 订阅购买全指南（节点推荐、机场注册与入门教程）</a></li>
       </ul>
       <p>推荐体验节点注册地址：</p>
-      <p><a href="https://jpp.lanpangyun.me/#/register?code=30Y2Sexl" target="_blank" rel="noopener">https://jpp.lanpangyun.me/#/register?code=30Y2Sexl</a></p>
+      <p><a href="https://jpp.lanpangyun.me/#/register?code=30Y2Sexl" target="_blank" rel="sponsored noopener">https://jpp.lanpangyun.me/#/register?code=30Y2Sexl</a></p>
       <img class="section-image" src="../images/windows/clash-lanpang.png" alt="复制订阅链接示例" loading="lazy" />
       <p><strong>2. 导入订阅</strong></p>
       <ol style="padding-left:20px;list-style:decimal">
@@ -566,5 +567,6 @@ Invoke-WebRequest -Uri "http://127.0.0.1:9090/configs" -UseBasicParsing</code></
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Windows Clash Verge Rev 翻墙教程","description":"Windows 系统使用 Clash Verge Rev 实现科学上网","url":"https://www.aixiaobai168.com/pages/windows-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"下载安装","text":"从 GitHub 下载 Clash Verge Rev 安装包并安装"},{"@type":"HowToStep","name":"导入订阅","text":"在 Profiles 中粘贴订阅链接并导入"},{"@type":"HowToStep","name":"启动代理","text":"开启 System Proxy 或 TUN 模式"},{"@type":"HowToStep","name":"选择代理模式","text":"根据需求选择 Rule / Global / Direct 模式"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"Windows 教程","item":"https://www.aixiaobai168.com/pages/windows-guide"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Clash Verge Rev 端口冲突怎么办？","acceptedAnswer":{"@type":"Answer","text":"在 Settings → Clash 中修改端口，或关闭占用端口的其他代理软件。可用 netstat -ano | findstr 7897 排查。"}},{"@type":"Question","name":"Clash Verge Rev TUN 驱动安装失败怎么解决？","acceptedAnswer":{"@type":"Answer","text":"以管理员身份运行 Clash Verge Rev；暂时关闭杀毒软件；或从 wintun.net 手动下载安装 TUN 驱动。"}},{"@type":"Question","name":"Clash Verge Rev 订阅更新失败怎么处理？","acceptedAnswer":{"@type":"Answer","text":"检查订阅链接是否有效；检查网络连通性；部分机场需在网页端重新生成订阅链接。"}},{"@type":"Question","name":"Windows 上 Clash 怎么防止 DNS 泄露？","acceptedAnswer":{"@type":"Answer","text":"开启 TUN 模式；在配置中启用 dns.enable 并选择 fake-ip 或 redir-host 模式；使用 DoH/DoT DNS。"}},{"@type":"Question","name":"Clash Verge Rev 部分网站无法访问？","acceptedAnswer":{"@type":"Answer","text":"确认代理模式为 Rule；检查规则是否将国内域名错误指向代理；更新订阅或规则集。"}}]}</script>
 </body>
 </html>

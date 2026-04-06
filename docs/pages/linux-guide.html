@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <script>if(location.hostname==="mowei-ie.github.io"){location.replace("https://www.aixiaobai168.com"+location.pathname.replace("/router-vpn","").replace(/\/index\.html$/,"/")+location.search+location.hash)}</script>
+  <noscript><meta http-equiv="refresh" content="0;url=https://www.aixiaobai168.com/pages/linux-guide"></noscript>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
@@ -447,5 +448,6 @@ curl -X PUT http://127.0.0.1:9090/proxies/selector-name \
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Linux Clash 翻墙教程","description":"Linux 系统使用 Clash 实现科学上网，含 GUI 桌面版与无 GUI 服务器版教程","url":"https://www.aixiaobai168.com/pages/linux-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"选择方案","text":"桌面版使用 Clash Verge Rev，服务器版使用命令行 Clash"},{"@type":"HowToStep","name":"下载安装","text":"从 GitHub 下载对应格式安装包（AppImage/deb/rpm）"},{"@type":"HowToStep","name":"导入订阅","text":"粘贴订阅链接导入配置"},{"@type":"HowToStep","name":"启动代理","text":"开启 System Proxy 或配置环境变量代理"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"Linux 教程","item":"https://www.aixiaobai168.com/pages/linux-guide"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Linux 上 Clash 提示 Permission denied 怎么办？","acceptedAnswer":{"@type":"Answer","text":"确保 clash 二进制有执行权限，运行 chmod +x /usr/local/bin/clash。"}},{"@type":"Question","name":"Linux Clash 端口被占用怎么解决？","acceptedAnswer":{"@type":"Answer","text":"修改 config.yaml 中的 port、socks-port 端口号；或用 ss -tlnp 排查并关闭占用端口的进程。"}},{"@type":"Question","name":"Linux Clash DNS 解析失败怎么处理？","acceptedAnswer":{"@type":"Answer","text":"检查 config.yaml 中的 dns 配置段；确保 Country.mmdb 已下载到配置目录。"}},{"@type":"Question","name":"Linux Clash 服务无法启动怎么排查？","acceptedAnswer":{"@type":"Answer","text":"运行 clash -t -d ~/.config/clash 验证配置文件；查看 journalctl -u clash -f 日志定位错误。"}}]}</script>
 </body>
 </html>
