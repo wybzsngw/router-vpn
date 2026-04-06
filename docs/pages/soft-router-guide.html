@@ -28,35 +28,6 @@
   <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
   <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
   <link rel="canonical" href="https://www.aixiaobai168.com/pages/soft-router-guide" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "软路由翻墙教程 — OpenWrt + OpenClash / iKuai",
-    "description": "在软路由上使用 OpenClash 或 iKuai 旁路由实现全家设备自动翻墙",
-    "url": "https://www.aixiaobai168.com/pages/soft-router-guide",
-    "author": { "@type": "Organization", "name": "Router VPN Guide" },
-    "inLanguage": "zh-CN",
-    "step": [
-      { "@type": "HowToStep", "name": "硬件准备", "text": "选择 x86 迷你主机或其他软路由硬件" },
-      { "@type": "HowToStep", "name": "安装 OpenWrt", "text": "下载固件并写入存储设备" },
-      { "@type": "HowToStep", "name": "配置网络拓扑", "text": "选择主路由或旁路由模式" },
-      { "@type": "HowToStep", "name": "安装 OpenClash", "text": "更新软件源并安装 OpenClash 插件" },
-      { "@type": "HowToStep", "name": "导入订阅", "text": "添加订阅链接或上传 YAML 配置" },
-      { "@type": "HowToStep", "name": "配置 DNS", "text": "设置 DNS 劫持与上游 DNS 避免泄露" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.aixiaobai168.com/" },
-      { "@type": "ListItem", "position": 2, "name": "软路由教程", "item": "https://www.aixiaobai168.com/pages/soft-router-guide" }
-    ]
-  }
-  </script>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
   <script>
@@ -105,6 +76,8 @@
       border-radius: 16px;
       padding: 24px;
       margin-bottom: 20px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
       box-shadow: 0 4px 12px rgba(0,0,0,.06);
       transition: transform .25s, box-shadow .25s, border-color .25s;
     }
@@ -483,5 +456,7 @@ opkg install iptables dnsmasq-full coreutils coreutils-nohup bash curl ca-certif
     });
   </script>
   <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"软路由翻墙教程 — OpenWrt + OpenClash / iKuai","description":"在软路由上使用 OpenClash 或 iKuai 旁路由实现全家设备自动翻墙","url":"https://www.aixiaobai168.com/pages/soft-router-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"硬件准备","text":"选择 x86 迷你主机或其他软路由硬件"},{"@type":"HowToStep","name":"安装 OpenWrt","text":"下载固件并写入存储设备"},{"@type":"HowToStep","name":"配置网络拓扑","text":"选择主路由或旁路由模式"},{"@type":"HowToStep","name":"安装 OpenClash","text":"更新软件源并安装 OpenClash 插件"},{"@type":"HowToStep","name":"导入订阅","text":"添加订阅链接或上传 YAML 配置"},{"@type":"HowToStep","name":"配置 DNS","text":"设置 DNS 劫持与上游 DNS 避免泄露"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"软路由教程","item":"https://www.aixiaobai168.com/pages/soft-router-guide"}]}</script>
 </body>
 </html>

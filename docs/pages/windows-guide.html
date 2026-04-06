@@ -28,33 +28,6 @@
   <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
   <meta name="twitter:description" content="Windows 上使用 Clash Verge Rev 实现科学上网的完整图文教程。" />
   <link rel="canonical" href="https://www.aixiaobai168.com/pages/windows-guide" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Windows Clash Verge Rev 翻墙教程",
-    "description": "Windows 系统使用 Clash Verge Rev 实现科学上网",
-    "url": "https://www.aixiaobai168.com/pages/windows-guide",
-    "author": { "@type": "Organization", "name": "Router VPN Guide" },
-    "inLanguage": "zh-CN",
-    "step": [
-      { "@type": "HowToStep", "name": "下载安装", "text": "从 GitHub 下载 Clash Verge Rev 安装包并安装" },
-      { "@type": "HowToStep", "name": "导入订阅", "text": "在 Profiles 中粘贴订阅链接并导入" },
-      { "@type": "HowToStep", "name": "启动代理", "text": "开启 System Proxy 或 TUN 模式" },
-      { "@type": "HowToStep", "name": "选择代理模式", "text": "根据需求选择 Rule / Global / Direct 模式" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.aixiaobai168.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Windows 教程", "item": "https://www.aixiaobai168.com/pages/windows-guide" }
-    ]
-  }
-  </script>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
   <script>
@@ -102,6 +75,8 @@
       border-radius: 16px;
       padding: 24px;
       margin-bottom: 20px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
       box-shadow: 0 4px 12px rgba(0,0,0,.06);
       transition: transform .25s, box-shadow .25s, border-color .25s;
     }
@@ -222,6 +197,9 @@
         <li><strong>跨平台</strong>：同一套配置可在多系统使用</li>
       </ul>
       <p><strong>Clash for Windows (CFW)</strong> 曾是 Windows 上最流行的 Clash 图形客户端，但项目已于 2023 年 11 月停止维护。Clash Verge Rev 是 CFW 的继任者之一，采用 Rust 重写，性能更好、资源占用更低，建议新用户直接使用 Clash Verge Rev。</p>
+      <div class="tip-box" style="background:rgba(14,165,233,.06);border-color:rgba(14,165,233,.15)">
+        <strong>还在用 CFW？</strong>继续使用旧版有安全风险。查看 <a href="/pages/clash-for-windows-alternative">Clash for Windows 替代方案与迁移指南</a>，了解为什么应该迁移、以及如何无损转移配置。
+      </div>
     </section>
 
     <!-- 2. 系统要求 -->
@@ -497,6 +475,7 @@ Invoke-WebRequest -Uri "http://127.0.0.1:9090/configs" -UseBasicParsing</code></
         <a href="/pages/soft-router-guide">软路由</a> ·
         <a href="/pages/istoreos-guide">iStoreOS</a> ·
         <a href="/pages/windows-guide">Windows</a> ·
+        <a href="/pages/clash-for-windows-alternative">CFW 替代方案</a> ·
         <a href="/pages/macos-guide">macOS</a> ·
         <a href="/pages/linux-guide">Linux</a> ·
         <a href="/pages/mobile-guide">手机</a> ·
@@ -585,5 +564,7 @@ Invoke-WebRequest -Uri "http://127.0.0.1:9090/configs" -UseBasicParsing</code></
     });
   </script>
   <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Windows Clash Verge Rev 翻墙教程","description":"Windows 系统使用 Clash Verge Rev 实现科学上网","url":"https://www.aixiaobai168.com/pages/windows-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"下载安装","text":"从 GitHub 下载 Clash Verge Rev 安装包并安装"},{"@type":"HowToStep","name":"导入订阅","text":"在 Profiles 中粘贴订阅链接并导入"},{"@type":"HowToStep","name":"启动代理","text":"开启 System Proxy 或 TUN 模式"},{"@type":"HowToStep","name":"选择代理模式","text":"根据需求选择 Rule / Global / Direct 模式"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"Windows 教程","item":"https://www.aixiaobai168.com/pages/windows-guide"}]}</script>
 </body>
 </html>

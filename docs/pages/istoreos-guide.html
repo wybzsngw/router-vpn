@@ -28,34 +28,6 @@
   <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
   <meta name="twitter:description" content="iStoreOS 科学上网完整专题：设备支持、固件下载、插件安装、旁路由、ESXi 虚拟机代理。" />
   <link rel="canonical" href="https://www.aixiaobai168.com/pages/istoreos-guide" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "iStoreOS 科学上网完整专题",
-    "description": "在 iStoreOS 上通过 iStore + Are-u-ok 安装 PassWall/OpenClash 等代理工具实现科学上网",
-    "url": "https://www.aixiaobai168.com/pages/istoreos-guide",
-    "author": { "@type": "Organization", "name": "Router VPN Guide" },
-    "inLanguage": "zh-CN",
-    "step": [
-      { "@type": "HowToStep", "name": "下载固件并安装 iStoreOS", "text": "从 fw.koolcenter.com 下载对应设备的固件并刷入" },
-      { "@type": "HowToStep", "name": "确认平台架构", "text": "通过 uname -m 确认 x86_64 或 aarch64" },
-      { "@type": "HowToStep", "name": "下载科学上网插件", "text": "从 Are-u-ok 仓库下载对应平台的 .run 安装包" },
-      { "@type": "HowToStep", "name": "安装插件", "text": "在 iStore 手动安装或 SSH 执行 sh 包名.run" },
-      { "@type": "HowToStep", "name": "配置旁路由与代理", "text": "配置网络、防火墙、导入订阅" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.aixiaobai168.com/" },
-      { "@type": "ListItem", "position": 2, "name": "iStoreOS 专题", "item": "https://www.aixiaobai168.com/pages/istoreos-guide" }
-    ]
-  }
-  </script>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
   <script>
@@ -104,6 +76,8 @@
       border-radius: 16px;
       padding: 24px;
       margin-bottom: 20px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
       box-shadow: 0 4px 12px rgba(0,0,0,.06);
       transition: transform .25s, box-shadow .25s, border-color .25s;
     }
@@ -630,5 +604,7 @@
     });
   </script>
   <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"iStoreOS 科学上网完整专题","description":"在 iStoreOS 上通过 iStore + Are-u-ok 安装 PassWall/OpenClash 等代理工具实现科学上网","url":"https://www.aixiaobai168.com/pages/istoreos-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"下载固件并安装 iStoreOS","text":"从 fw.koolcenter.com 下载对应设备的固件并刷入"},{"@type":"HowToStep","name":"确认平台架构","text":"通过 uname -m 确认 x86_64 或 aarch64"},{"@type":"HowToStep","name":"下载科学上网插件","text":"从 Are-u-ok 仓库下载对应平台的 .run 安装包"},{"@type":"HowToStep","name":"安装插件","text":"在 iStore 手动安装或 SSH 执行 sh 包名.run"},{"@type":"HowToStep","name":"配置旁路由与代理","text":"配置网络、防火墙、导入订阅"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"iStoreOS 专题","item":"https://www.aixiaobai168.com/pages/istoreos-guide"}]}</script>
 </body>
 </html>

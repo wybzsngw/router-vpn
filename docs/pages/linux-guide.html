@@ -28,33 +28,6 @@
   <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
   <meta name="twitter:description" content="Linux 上使用 Clash Verge Rev 或命令行版 Clash 实现科学上网。" />
   <link rel="canonical" href="https://www.aixiaobai168.com/pages/linux-guide" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Linux Clash 翻墙教程",
-    "description": "Linux 系统使用 Clash 实现科学上网，含 GUI 桌面版与无 GUI 服务器版教程",
-    "url": "https://www.aixiaobai168.com/pages/linux-guide",
-    "author": { "@type": "Organization", "name": "Router VPN Guide" },
-    "inLanguage": "zh-CN",
-    "step": [
-      { "@type": "HowToStep", "name": "选择方案", "text": "桌面版使用 Clash Verge Rev，服务器版使用命令行 Clash" },
-      { "@type": "HowToStep", "name": "下载安装", "text": "从 GitHub 下载对应格式安装包（AppImage/deb/rpm）" },
-      { "@type": "HowToStep", "name": "导入订阅", "text": "粘贴订阅链接导入配置" },
-      { "@type": "HowToStep", "name": "启动代理", "text": "开启 System Proxy 或配置环境变量代理" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.aixiaobai168.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Linux 教程", "item": "https://www.aixiaobai168.com/pages/linux-guide" }
-    ]
-  }
-  </script>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
   <script>
@@ -102,6 +75,8 @@
       border-radius: 16px;
       padding: 24px;
       margin-bottom: 20px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
       box-shadow: 0 4px 12px rgba(0,0,0,.06);
       transition: transform .25s, box-shadow .25s, border-color .25s;
     }
@@ -470,5 +445,7 @@ curl -X PUT http://127.0.0.1:9090/proxies/selector-name \
     });
   </script>
   <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Linux Clash 翻墙教程","description":"Linux 系统使用 Clash 实现科学上网，含 GUI 桌面版与无 GUI 服务器版教程","url":"https://www.aixiaobai168.com/pages/linux-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"选择方案","text":"桌面版使用 Clash Verge Rev，服务器版使用命令行 Clash"},{"@type":"HowToStep","name":"下载安装","text":"从 GitHub 下载对应格式安装包（AppImage/deb/rpm）"},{"@type":"HowToStep","name":"导入订阅","text":"粘贴订阅链接导入配置"},{"@type":"HowToStep","name":"启动代理","text":"开启 System Proxy 或配置环境变量代理"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"Linux 教程","item":"https://www.aixiaobai168.com/pages/linux-guide"}]}</script>
 </body>
 </html>
