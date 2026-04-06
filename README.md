@@ -25,6 +25,7 @@
 | 软路由 OpenWrt | [OpenWrt + OpenClash 完整教程](soft-router/openwrt-clash.md) |
 | 软路由 iKuai | [iKuai + 旁路由方案](soft-router/ikuai-clash.md) |
 | iStoreOS | [iStoreOS 科学上网专题（PassWall / SSR-Plus / Are-u-ok）](istoreos/istoreos-guide.md) |
+| 旁路由 | [旁路由设置教程 — 部分设备精准翻墙](https://www.aixiaobai168.com/pages/bypass-router-guide) |
 
 ### 电脑 / 手机（单设备翻墙）
 

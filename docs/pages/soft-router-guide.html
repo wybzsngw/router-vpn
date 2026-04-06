@@ -218,6 +218,9 @@ sudo dd if=openwrt-xxx.img of=/dev/sdX bs=4M status=progress</code></pre>
              [旁路由 OpenWrt]（仅 LAN，同网段）</code></pre>
       <p>主路由负责拨号、DHCP；旁路由只做代理网关，不参与拨号；客户端需将网关设为旁路由 IP，或由主路由 DHCP 推送。</p>
       <p><strong>旁路由配置要点</strong>：旁路由 LAN IP 与主路由同网段（如 <code class="inline">192.168.1.2</code>）；网关指向主路由；关闭 DHCP。</p>
+      <div class="tip-box" style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:12px;padding:14px 16px;margin:14px 0;font-size:14px">
+        <strong style="color:#059669">旁路由详细教程：</strong>如果你打算使用旁路由模式，推荐阅读 <a href="/pages/bypass-router-guide">旁路由设置完整教程</a>，涵盖通用配置步骤、客户端指向方法、DHCP 标签分组和故障排查。
+      </div>
     </section>
 
     <section class="card">

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>if(location.hostname==="mowei-ie.github.io"){location.replace("https://www.aixiaobai168.com"+location.pathname.replace("/router-vpn","").replace(/\/index\.html$/,"/")+location.search+location.hash)}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.clarity.ms" />
+  <title>旁路由设置教程 2026 | OpenWrt / iStoreOS 旁路由科学上网完整指南</title>
+  <meta name="description" content="2026 最新旁路由设置完整教程。详解旁路由原理、网络拓扑、OpenWrt 与 iStoreOS 配置步骤、防火墙规则、客户端指向方法、DHCP 标签分组、DNS 防泄漏与 IPv6 处理，实现部分设备精准翻墙。" />
+  <meta name="keywords" content="旁路由设置,旁路由教程,旁路由科学上网,旁路由配置,旁路由是什么,OpenWrt旁路由,iStoreOS旁路由,旁路网关,透明代理,全屋翻墙,DHCP网关推送,旁路由DNS,旁路由防火墙" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta property="og:title" content="旁路由设置教程 2026 — OpenWrt / iStoreOS 旁路由科学上网" />
+  <meta property="og:description" content="旁路由设置完整教程：原理讲解、网络拓扑、配置步骤、客户端指向与常见问题排查。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.aixiaobai168.com/pages/bypass-router-guide" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="article:published_time" content="2026-04-06" />
+  <meta property="article:modified_time" content="2026-04-06" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="旁路由设置教程 — OpenWrt / iStoreOS 旁路由科学上网" />
+  <meta name="twitter:description" content="旁路由设置完整教程：原理、拓扑、配置、排查一站搞定。" />
+  <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <link rel="canonical" href="https://www.aixiaobai168.com/pages/bypass-router-guide" />
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', '路由器教程');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .section-title { margin: 36px 0 16px; font-size: 14px; letter-spacing: .15em; text-transform: uppercase; color: var(--accent) }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker { letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-size: 12px; margin-bottom: 8px }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card h3 { font-size: 16px; margin: 14px 0 8px }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul, .card ol { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    pre, code { background: rgba(0,0,0,.04); border-radius: 8px; padding: 16px; overflow-x: auto; font-size: 13px; line-height: 1.6 }
+    code.inline { padding: .2em .5em; display: inline }
+    pre { margin: 12px 0 }
+    pre code { padding: 0; background: none }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .callout { background: linear-gradient(135deg, rgba(14,165,233,.08), rgba(124,77,255,.08)); border: 1px solid rgba(14,165,233,.2); border-radius: 12px; padding: 16px; margin: 14px 0 }
+    .callout strong { color: var(--brand) }
+    .tip-box { background: rgba(16,185,129,.08); border: 1px solid rgba(16,185,129,.2); border-radius: 12px; padding: 14px 16px; margin: 14px 0; font-size: 14px }
+    .tip-box strong { color: #059669 }
+    .floating-share { position:fixed; right:18px; bottom:92px; z-index:999; display:flex; flex-direction:column; align-items:flex-end; gap:10px }
+    .floating-share-panel { display:none; flex-direction:column; gap:8px; padding:10px; border-radius:16px; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 14px 34px rgba(17,24,39,.12); backdrop-filter:blur(10px) }
+    .floating-share.is-open .floating-share-panel { display:flex }
+    .floating-share-main, .floating-share-btn { appearance:none; border:1px solid rgba(0,0,0,.08); display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:999px; background:rgba(255,255,255,.94); color:var(--text); font-size:13px; font-weight:700; cursor:pointer; transition:all .2s; box-shadow:0 8px 22px rgba(17,24,39,.1) }
+    .floating-share-main { min-width:92px; padding:12px 16px }
+    .floating-share-btn { min-width:96px; padding:10px 14px; justify-content:flex-start }
+    .floating-share-main:hover, .floating-share-btn:hover { transform:translateY(-2px); border-color:rgba(124,77,255,.28); box-shadow:0 12px 28px rgba(17,24,39,.14) }
+    .floating-share-main.primary { background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(240,244,255,.96)) }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px"><a href="/" style="color:var(--accent);text-decoration:none">首页</a> <span style="margin:0 6px">›</span> <span>路由器教程</span> <span style="margin:0 6px">›</span> <span style="color:var(--text)">旁路由设置教程</span></nav>
+    <h1>旁路由设置教程 — 部分设备精准翻墙</h1>
+    <p class="subtitle">OpenWrt / iStoreOS 旁路由科学上网完整指南，覆盖原理、拓扑、配置、排查</p>
+
+    <nav aria-label="站内导航" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="/" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="/clash-subscription-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="/pages/asus-router-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
+      <a href="/pages/soft-router-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">软路由</a>
+      <a href="/pages/istoreos-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">iStoreOS</a>
+      <a href="/pages/bypass-router-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">旁路由</a>
+      <a href="/pages/windows-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows</a>
+      <a href="/pages/mobile-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
+      <a href="/pages/chatgpt-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">ChatGPT</a>
+      <a href="/pages/netflix-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Netflix</a>
+    </nav>
+
+    <!-- 目录 -->
+    <section class="card">
+      <div class="kicker">目录</div>
+      <h2>快速导航</h2>
+      <ul>
+        <li><a href="#s1">一、什么是旁路由</a></li>
+        <li><a href="#s2">二、旁路由 vs 主路由</a></li>
+        <li><a href="#s3">三、网络拓扑</a></li>
+        <li><a href="#s4">四、旁路由通用配置步骤</a></li>
+        <li><a href="#s5">五、OpenWrt 旁路由配置</a></li>
+        <li><a href="#s6">六、iStoreOS 旁路由配置</a></li>
+        <li><a href="#s7">七、客户端设备指向方法</a></li>
+        <li><a href="#s8">八、稳定性优化</a></li>
+        <li><a href="#s9">九、常见问题 FAQ</a></li>
+      </ul>
+    </section>
+
+    <!-- 一、什么是旁路由 -->
+    <section class="card" id="s1">
+      <div class="kicker">Section 01</div>
+      <h2>什么是旁路由</h2>
+      <p><strong>旁路由</strong>（也叫旁路网关）是局域网中一台专门负责代理转发的设备。它不替代你的主路由——主路由继续负责拨号上网和 DHCP，旁路由只做一件事：<strong>让经过它的流量走代理</strong>。</p>
+      <p>需要翻墙的设备把网关指向旁路由，流量就会先经过旁路由上的代理工具（OpenClash、PassWall 等），再转发到主路由出去。不需要翻墙的设备继续走主路由直连，互不影响。</p>
+      <div class="tip-box">
+        <strong>一句话理解：</strong>旁路由 = 一个"可选的代理中转站"，接上就翻墙，不接就直连。
+      </div>
+    </section>
+
+    <!-- 二、旁路由 vs 主路由 -->
+    <section class="card" id="s2">
+      <div class="kicker">Section 02</div>
+      <h2>旁路由 vs 主路由方案对比</h2>
+      <table>
+        <tr><th>对比项</th><th>主路由模式</th><th>旁路由模式</th></tr>
+        <tr><td>职责</td><td>拨号 + DHCP + NAT + 代理</td><td>仅代理转发</td></tr>
+        <tr><td>全家翻墙</td><td>所有设备自动走代理</td><td>仅指向旁路由的设备走代理</td></tr>
+        <tr><td>灵活性</td><td>全有或全无</td><td><strong>按设备精准控制</strong></td></tr>
+        <tr><td>故障影响</td><td>代理崩溃 = 全家断网</td><td>代理崩溃 = 只影响走旁路由的设备，其余正常</td></tr>
+        <tr><td>维护升级</td><td>升级需断网</td><td><strong>可热升级，不影响其他设备</strong></td></tr>
+        <tr><td>适合场景</td><td>所有设备都需要翻墙</td><td>只有部分设备需要翻墙，或想保留主路由的稳定性</td></tr>
+        <tr><td>硬件要求</td><td>需要双网口（WAN + LAN）</td><td><strong>单网口即可</strong></td></tr>
+      </table>
+      <p>大多数家庭和小型办公场景推荐旁路由模式——灵活、安全、易维护。</p>
+    </section>
+
+    <!-- 三、网络拓扑 -->
+    <section class="card" id="s3">
+      <div class="kicker">Section 03</div>
+      <h2>网络拓扑</h2>
+      <h3>标准旁路由架构</h3>
+      <pre><code>互联网 → 光猫 → 主路由（拨号 + DHCP）
+                         │
+                    LAN 交换机
+                   ┌─────┼─────┐
+                   │     │     │
+                旁路由  电脑   手机
+           (192.168.1.2)
+            OpenClash
+             PassWall
+
+  需要翻墙的设备 → 网关设为 192.168.1.2
+  不需要翻墙的设备 → 网关保持 192.168.1.1（主路由）</code></pre>
+
+      <h3>关键要点</h3>
+      <ul>
+        <li>旁路由与主路由在<strong>同一网段</strong>（如都是 192.168.1.x）</li>
+        <li>旁路由只接一根网线到交换机或主路由 LAN 口，<strong>不需要 WAN 口</strong></li>
+        <li>旁路由的网关指向主路由（192.168.1.1），形成 "设备 → 旁路由 → 主路由 → 互联网" 的链路</li>
+        <li>旁路由<strong>关闭 DHCP</strong>，由主路由统一分配 IP</li>
+      </ul>
+    </section>
+
+    <!-- 四、通用配置步骤 -->
+    <section class="card" id="s4">
+      <div class="kicker">Section 04</div>
+      <h2>旁路由通用配置步骤</h2>
+      <p>无论你使用 OpenWrt、iStoreOS 还是其他系统，旁路由的核心配置逻辑都是一样的：</p>
+
+      <h3>步骤 1：设置 LAN 口静态 IP</h3>
+      <table>
+        <tr><th>参数</th><th>值</th><th>说明</th></tr>
+        <tr><td>IP 地址</td><td><code class="inline">192.168.1.2</code></td><td>与主路由同网段，避开 DHCP 地址池</td></tr>
+        <tr><td>子网掩码</td><td><code class="inline">255.255.255.0</code></td><td>标准 /24 子网</td></tr>
+        <tr><td>网关</td><td><code class="inline">192.168.1.1</code></td><td>指向主路由</td></tr>
+        <tr><td>DNS</td><td><code class="inline">192.168.1.1</code> 或公共 DNS</td><td>代理工具会接管 DNS，这里填什么影响不大</td></tr>
+      </table>
+
+      <h3>步骤 2：关闭 DHCP</h3>
+      <p>旁路由<strong>必须关闭 DHCP 服务</strong>，否则局域网内会出现两个 DHCP 服务器导致 IP 冲突。</p>
+
+      <h3>步骤 3：配置防火墙</h3>
+      <p>确保旁路由能正确转发流量：</p>
+      <ul>
+        <li><strong>入站</strong>：接受</li>
+        <li><strong>出站</strong>：接受</li>
+        <li><strong>转发</strong>：接受</li>
+      </ul>
+      <p>添加 NAT 伪装规则（在防火墙自定义规则中）：</p>
+      <pre><code>iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code></pre>
+      <p>如果 LAN 接口名为 <code class="inline">br-lan</code>，则：</p>
+      <pre><code>iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE</code></pre>
+
+      <h3>步骤 4：安装代理工具并导入订阅</h3>
+      <p>安装 OpenClash、PassWall 等代理工具，导入你的机场订阅链接。详细安装步骤请参考：</p>
+      <ul>
+        <li><a href="/pages/soft-router-guide">OpenWrt + OpenClash 安装教程</a></li>
+        <li><a href="/pages/istoreos-guide">iStoreOS + PassWall 安装教程</a></li>
+      </ul>
+      <div class="callout">
+        <strong>没有订阅链接？</strong> 先到 <a href="/clash-subscription-guide">订阅申请指南</a> 获取机场推荐和注册方法。
+      </div>
+
+      <h3>步骤 5：验证</h3>
+      <ol style="list-style:decimal">
+        <li>在旁路由终端执行 <code class="inline">ping google.com</code>，确认旁路由本机能翻墙</li>
+        <li>在客户端设备上将网关改为旁路由 IP，打开浏览器访问 <code class="inline">google.com</code></li>
+        <li>访问 <a href="https://dnsleaktest.com/" target="_blank" rel="noopener">dnsleaktest.com</a> 检查 DNS 是否泄露</li>
+      </ol>
+    </section>
+
+    <!-- 五、OpenWrt 旁路由 -->
+    <section class="card" id="s5">
+      <div class="kicker">Section 05</div>
+      <h2>OpenWrt 旁路由配置</h2>
+
+      <h3>网络接口配置</h3>
+      <p>进入 <strong>网络 → 接口 → LAN → 编辑</strong>：</p>
+      <ol style="list-style:decimal">
+        <li>协议：静态地址</li>
+        <li>IPv4 地址：<code class="inline">192.168.1.2</code>（示例）</li>
+        <li>子网掩码：<code class="inline">255.255.255.0</code></li>
+        <li>IPv4 网关：<code class="inline">192.168.1.1</code>（主路由 IP）</li>
+        <li>DNS 服务器：<code class="inline">192.168.1.1</code></li>
+      </ol>
+      <p>如果存在 WAN 接口，将其<strong>删除或禁用</strong>——旁路由不需要 WAN。</p>
+
+      <h3>关闭 DHCP</h3>
+      <p>在 LAN 接口编辑页面 → <strong>DHCP 服务器</strong> 选项卡 → 勾选 <strong>"忽略此接口"</strong>。</p>
+
+      <h3>防火墙</h3>
+      <p>进入 <strong>网络 → 防火墙 → 常规设置</strong>：入站/出站/转发均设为"接受"。在 <strong>自定义规则</strong> 中添加 NAT 伪装规则（见上方步骤 3）。</p>
+
+      <h3>安装代理工具</h3>
+      <p>详见 <a href="/pages/soft-router-guide">软路由教程 — OpenClash 安装与配置</a>。</p>
+    </section>
+
+    <!-- 六、iStoreOS 旁路由 -->
+    <section class="card" id="s6">
+      <div class="kicker">Section 06</div>
+      <h2>iStoreOS 旁路由配置</h2>
+      <p>iStoreOS 提供了可视化的网络向导，旁路由配置更简单。</p>
+
+      <h3>使用网络向导（推荐）</h3>
+      <ol style="list-style:decimal">
+        <li>浏览器访问 iStoreOS 管理地址（默认 <code class="inline">http://192.168.100.1</code>）</li>
+        <li>点击首页的 <strong>「网络向导」</strong></li>
+        <li>选择 <strong>「旁路由设置」</strong></li>
+        <li>填写静态 IP（如 <code class="inline">192.168.1.2</code>）和主路由 IP（<code class="inline">192.168.1.1</code>）</li>
+        <li>DNS 服务器填主路由 IP</li>
+        <li>点击保存，系统会自动关闭 DHCP 并配置好网络</li>
+      </ol>
+
+      <h3>防火墙补充配置</h3>
+      <p>进入 <strong>网络 → 防火墙 → 常规设置</strong>：入站/出站/转发均设为"接受"。在 <strong>自定义规则</strong> 中添加：</p>
+      <pre><code>iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code></pre>
+
+      <h3>安装代理工具</h3>
+      <p>详见 <a href="/pages/istoreos-guide">iStoreOS 教程 — PassWall / OpenClash 安装</a>。</p>
+      <p style="color:var(--muted);font-size:13px">参考：<a href="https://doc.linkease.com/zh/guide/istoreos/practice/BypassRouter.html" target="_blank" rel="noopener">iStoreOS 官方旁路由文档</a></p>
+    </section>
+
+    <!-- 七、客户端指向方法 -->
+    <section class="card" id="s7">
+      <div class="kicker">Section 07</div>
+      <h2>客户端设备指向方法</h2>
+      <p>旁路由配好后，需要让客户端设备的流量经过旁路由。有三种方式：</p>
+
+      <h3>方法 A：逐台手动设置网关（最简单）</h3>
+      <table>
+        <tr><th>设备</th><th>操作路径</th></tr>
+        <tr><td>Windows</td><td>设置 → 网络 → 以太网/Wi-Fi → IPv4 → 手动 → 网关填 <code class="inline">192.168.1.2</code>，DNS 填 <code class="inline">192.168.1.2</code></td></tr>
+        <tr><td>macOS</td><td>系统设置 → 网络 → Wi-Fi → 详细信息 → TCP/IP → 手动 → 路由器填 <code class="inline">192.168.1.2</code></td></tr>
+        <tr><td>Android</td><td>Wi-Fi → 长按已连接的网络 → 修改 → 高级选项 → IP 设置改为静态 → 网关填 <code class="inline">192.168.1.2</code></td></tr>
+        <tr><td>iOS</td><td>设置 → Wi-Fi → 点击已连接的网络 → 配置 IP → 手动 → 路由器填 <code class="inline">192.168.1.2</code></td></tr>
+      </table>
+      <p>适合只有几台设备需要翻墙的场景。</p>
+
+      <h3>方法 B：主路由 DHCP 推送网关（全自动）</h3>
+      <p>在主路由的 DHCP 设置中，将默认网关改为旁路由 IP（<code class="inline">192.168.1.2</code>）。所有通过 DHCP 获取 IP 的设备会自动把流量发给旁路由。</p>
+      <div class="callout">
+        <strong>注意：</strong>这种方式等同于"全家翻墙"。如果只想部分设备走旁路由，请用方法 A 或方法 C。
+      </div>
+
+      <h3>方法 C：DHCP 标签分组（精准控制，推荐）</h3>
+      <p>在 OpenWrt/iStoreOS 主路由的 <strong>DHCP/DNS</strong> 设置中，可以为特定设备分配不同的网关：</p>
+      <ol style="list-style:decimal">
+        <li>进入 <strong>网络 → DHCP/DNS → 高级设置</strong></li>
+        <li>添加 DHCP 标签，例如 <code class="inline">t_proxy</code></li>
+        <li>为该标签设置 DHCP 选项：<code class="inline">3,192.168.1.2</code>（网关）和 <code class="inline">6,192.168.1.2</code>（DNS）</li>
+        <li>在 <strong>静态地址分配</strong> 中，为需要翻墙的设备 MAC 地址绑定 <code class="inline">t_proxy</code> 标签</li>
+      </ol>
+      <p>效果：带标签的设备自动走旁路由翻墙，其他设备走主路由直连。设备端无需做任何修改。</p>
+    </section>
+
+    <!-- 八、稳定性优化 -->
+    <section class="card" id="s8">
+      <div class="kicker">Section 08</div>
+      <h2>稳定性优化</h2>
+
+      <h3>DNS 防泄漏</h3>
+      <p>代理工具（OpenClash/PassWall）通常会接管 DNS 解析。确保：</p>
+      <ul>
+        <li>代理工具的 <strong>DNS 劫持 / 接管系统 DNS</strong> 功能已开启</li>
+        <li>主路由和旁路由<strong>不要同时劫持 53 端口</strong>，否则会循环</li>
+        <li>使用 DoH/DoT 加密上游 DNS（如 <code class="inline">https://dns.google/dns-query</code>）</li>
+        <li>验证：访问 <a href="https://dnsleaktest.com/" target="_blank" rel="noopener">dnsleaktest.com</a></li>
+      </ul>
+
+      <h3>IPv6 处理</h3>
+      <p>如果代理工具不支持完整的 IPv6 代理，<strong>建议在旁路由上关闭 IPv6</strong>。否则"IPv4 走代理、IPv6 直连"会导致流媒体地区判断异常或 IP 泄露。</p>
+      <p>操作：<strong>网络 → 接口 → LAN → DHCP 服务器 → IPv6 设置</strong> → 全部禁用（RA / DHCPv6 / NDP 代理均关闭）。</p>
+
+      <h3>MTU 调整</h3>
+      <p>虚拟化环境（ESXi/PVE）中如果遇到"能 ping 通但网页加载不全"或"图片加载失败"，尝试将旁路由的 LAN 接口 MTU 从默认 1500 降低到 <strong>1400–1480</strong>。</p>
+
+      <h3>硬件看门狗</h3>
+      <p>长期运行的旁路由建议在 <strong>系统 → 启动项</strong> 中启用硬件看门狗（watchdog），防止系统卡死时无法自动恢复。</p>
+    </section>
+
+    <!-- 九、FAQ -->
+    <section class="card" id="s9">
+      <div class="kicker">Section 09</div>
+      <h2>常见问题 FAQ</h2>
+
+      <h3>Q1：旁路由和主路由用同一台设备可以吗？</h3>
+      <p>不可以。旁路由的意义就是与主路由分离，各司其职。如果只有一台设备，建议直接用主路由模式。</p>
+
+      <h3>Q2：旁路由需要双网口吗？</h3>
+      <p><strong>不需要</strong>。旁路由只用一个 LAN 口连接到主路由/交换机，不需要 WAN 口。单网口的迷你主机、树莓派、虚拟机都可以做旁路由。</p>
+
+      <h3>Q3：旁路由关机/重启后，其他设备还能上网吗？</h3>
+      <p>网关指向旁路由的设备会断网（因为网关不可达）。其他设备不受影响。如果需要临时绕过旁路由，在设备上将网关改回主路由 IP 即可。</p>
+
+      <h3>Q4：修改网关后能上网但速度很慢？</h3>
+      <p>常见原因：① 代理节点本身速度慢，换一个节点试试；② 旁路由硬件性能不足（CPU 占满）；③ MTU 不匹配，参考上方 MTU 调整。</p>
+
+      <h3>Q5：部分网站/App 打不开，但 Google 能用？</h3>
+      <p>可能是分流规则问题。检查代理工具的规则设置，确认目标域名/IP 被正确分流到代理或直连。也可能是 DNS 污染——开启代理工具的 DNS 接管功能。</p>
+
+      <h3>Q6：旁路由配好了但客户端无法上网？</h3>
+      <p>按以下顺序排查：</p>
+      <ol style="list-style:decimal">
+        <li>旁路由本机能否 <code class="inline">ping 8.8.8.8</code>？不能 → 旁路由网关配置有误</li>
+        <li>旁路由本机能否 <code class="inline">ping google.com</code>？不能 → DNS 或代理工具未启动</li>
+        <li>客户端能否 <code class="inline">ping 192.168.1.2</code>（旁路由）？不能 → 网线/网络不通</li>
+        <li>以上都通但浏览器打不开 → 检查防火墙转发规则和 NAT 伪装是否配置</li>
+      </ol>
+
+      <h3>Q7：iStoreOS 和 OpenWrt 哪个更适合做旁路由？</h3>
+      <p><strong>iStoreOS</strong> 更适合新手——网络向导一键配置旁路由，iStore 软件中心安装插件更方便。<strong>OpenWrt</strong> 更适合有 Linux 基础的用户——可定制性更高，社区资源更丰富。两者本质都是 OpenWrt，代理效果无差异。</p>
+    </section>
+
+    <section style="margin-top:40px;padding:24px;background:linear-gradient(135deg,rgba(14,165,233,.06),rgba(124,77,255,.06));border-radius:16px;border:1px solid rgba(14,165,233,.15)">
+      <h3 style="font-size:16px;margin-bottom:16px">📌 你可能还需要</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <a href="/clash-subscription-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🔗</span><div><strong style="font-size:14px">订阅申请指南</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">还没有订阅链接？获取机场推荐</p></div></a>
+        <a href="/pages/soft-router-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🖥️</span><div><strong style="font-size:14px">软路由教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">OpenWrt + OpenClash / iKuai 完整方案</p></div></a>
+        <a href="/pages/istoreos-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🧰</span><div><strong style="font-size:14px">iStoreOS 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">iStore 插件 + Are-u-ok + ESXi 虚拟机</p></div></a>
+        <a href="/pages/asus-router-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">📡</span><div><strong style="font-size:14px">华硕路由器教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">梅林固件 + MerlinClash 全屋翻墙</p></div></a>
+      </div>
+    </section>
+
+    <footer>
+      <nav aria-label="相关教程" style="margin-top:12px;font-size:12px;line-height:2">
+        <strong>更多教程：</strong>
+        <a href="/">首页</a> ·
+        <a href="/clash-subscription-guide">订阅申请</a> ·
+        <a href="/pages/asus-router-guide">华硕路由器</a> ·
+        <a href="/pages/soft-router-guide">软路由</a> ·
+        <a href="/pages/istoreos-guide">iStoreOS</a> ·
+        <a href="/pages/bypass-router-guide">旁路由</a> ·
+        <a href="/pages/windows-guide">Windows</a> ·
+        <a href="/pages/macos-guide">macOS</a> ·
+        <a href="/pages/linux-guide">Linux</a> ·
+        <a href="/pages/mobile-guide">手机</a> ·
+        <a href="/pages/chatgpt-guide">ChatGPT</a> ·
+        <a href="/pages/netflix-guide">Netflix</a>
+      </nav>
+      <p style="margin-top:8px">文档更新：2026 年 4 月 · <a href="https://doc.linkease.com/zh/guide/istoreos/practice/BypassRouter.html" target="_blank" rel="noopener">iStoreOS 旁路由参考</a></p>
+    </footer>
+  </main>
+
+  <div class="floating-share" id="floating-share" aria-label="悬浮分享">
+    <div class="floating-share-panel" aria-label="分享菜单">
+      <button class="floating-share-btn" type="button" onclick="sharePage()">分享</button>
+      <button class="floating-share-btn" type="button" onclick="favoritePage()">收藏</button>
+      <button class="floating-share-btn" type="button" onclick="copyPageLink()">复制链接</button>
+    </div>
+    <button class="floating-share-main primary" id="floating-share-toggle" type="button" aria-expanded="false" onclick="toggleShareMenu()">分享</button>
+  </div>
+  <script>
+    function toggleShareMenu(){const w=document.getElementById('floating-share'),t=document.getElementById('floating-share-toggle'),o=w.classList.toggle('is-open');t.setAttribute('aria-expanded',o?'true':'false')}
+    function closeShareMenu(){const w=document.getElementById('floating-share'),t=document.getElementById('floating-share-toggle');w.classList.remove('is-open');t.setAttribute('aria-expanded','false')}
+    function getSharePayload(){return{title:document.title,text:'旁路由设置教程，讲得很清楚，分享给你：',url:window.location.href}}
+    async function copyPageLink(){const p=getSharePayload(),t=p.title+'\n'+p.text+'\n'+p.url;try{await navigator.clipboard.writeText(t);closeShareMenu();alert('链接和分享文案已复制，打开微信后可直接粘贴发送。')}catch(e){window.prompt('请复制下面的内容并分享：',t)}}
+    async function sharePage(){const p=getSharePayload();if(navigator.share){try{await navigator.share(p);closeShareMenu();return}catch(e){}}await copyPageLink()}
+    function favoritePage(){const a=/Mac|iPhone|iPad|iPod/i.test(navigator.platform);try{if(window.external&&'AddFavorite' in window.external){window.external.AddFavorite(window.location.href,document.title);closeShareMenu();return}if(window.sidebar&&window.sidebar.addPanel){window.sidebar.addPanel(document.title,window.location.href,'');closeShareMenu();return}}catch(e){}closeShareMenu();alert('请使用快捷键 '+(a?'Command/Cmd + D':'Ctrl + D')+' 收藏当前页面。')}
+    document.addEventListener('click',function(e){const w=document.getElementById('floating-share');if(w&&!w.contains(e.target))closeShareMenu()});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeShareMenu()});
+  </script>
+  <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"旁路由设置教程 — OpenWrt / iStoreOS 旁路由科学上网","description":"在局域网中部署旁路由实现部分设备精准翻墙的完整教程","url":"https://www.aixiaobai168.com/pages/bypass-router-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"设置旁路由静态 IP","text":"将旁路由 LAN 口 IP 设为与主路由同网段，网关指向主路由"},{"@type":"HowToStep","name":"关闭 DHCP","text":"在旁路由上关闭 DHCP 服务，避免与主路由冲突"},{"@type":"HowToStep","name":"配置防火墙","text":"设置入站/出站/转发为接受，添加 NAT 伪装规则"},{"@type":"HowToStep","name":"安装代理工具","text":"安装 OpenClash 或 PassWall 并导入订阅链接"},{"@type":"HowToStep","name":"客户端指向旁路由","text":"将需要翻墙的设备网关改为旁路由 IP"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"旁路由需要双网口吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。旁路由只用一个 LAN 口连接到主路由或交换机，不需要 WAN 口。单网口的迷你主机、树莓派、虚拟机都可以做旁路由。"}},{"@type":"Question","name":"旁路由关机后其他设备还能上网吗？","acceptedAnswer":{"@type":"Answer","text":"网关指向旁路由的设备会断网，其他设备不受影响。如需临时绕过旁路由，在设备上将网关改回主路由 IP 即可。"}},{"@type":"Question","name":"iStoreOS 和 OpenWrt 哪个更适合做旁路由？","acceptedAnswer":{"@type":"Answer","text":"iStoreOS 更适合新手——网络向导一键配置旁路由，iStore 软件中心安装插件更方便。OpenWrt 更适合有 Linux 基础的用户——可定制性更高，社区资源更丰富。两者代理效果无差异。"}},{"@type":"Question","name":"旁路由配好了但客户端无法上网怎么办？","acceptedAnswer":{"@type":"Answer","text":"按顺序排查：1. 旁路由本机能否 ping 8.8.8.8？不能则网关配置有误；2. 能否 ping google.com？不能则 DNS 或代理未启动；3. 客户端能否 ping 旁路由 IP？不能则网络不通；4. 以上都通则检查防火墙转发和 NAT 伪装规则。"}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"路由器教程","item":"https://www.aixiaobai168.com/pages/soft-router-guide"},{"@type":"ListItem","position":3,"name":"旁路由设置教程","item":"https://www.aixiaobai168.com/pages/bypass-router-guide"}]}</script>
+</body>
+</html>
