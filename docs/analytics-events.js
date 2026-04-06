@@ -64,6 +64,26 @@
       gtag('event', 'outbound_click', {
         link_url: href,
         link_text: text,
+        link_domain: link.hostname,
+        source_page: page
+      });
+      return;
+    }
+
+    if (link.classList.contains('cta-btn')) {
+      gtag('event', 'cta_click', {
+        link_url: href,
+        link_text: text,
+        source_page: page
+      });
+      return;
+    }
+
+    var path = link.pathname || '';
+    if (/^\/pages\//.test(path) && path !== location.pathname) {
+      gtag('event', 'cross_page_click', {
+        link_url: path,
+        link_text: text,
         source_page: page
       });
     }
