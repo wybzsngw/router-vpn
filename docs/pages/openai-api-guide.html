@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>if(location.hostname==="mowei-ie.github.io"){location.replace("https://www.aixiaobai168.com"+location.pathname.replace("/router-vpn","").replace(/\/index\.html$/,"/")+location.search+location.hash)}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.clarity.ms" />
+  <title>OpenAI API 申请与计费指南 2026 | API Key、充值、价格、和 Plus 区别</title>
+  <meta name="description" content="2026 最新 OpenAI API 申请与计费指南。详解 API Key 获取、充值方式、按量计费、和 ChatGPT Plus 的区别，适合中国用户和开发者快速上手。" />
+  <meta name="keywords" content="OpenAI API申请,OpenAI API Key,ChatGPT API怎么申请,OpenAI API充值,OpenAI API价格,ChatGPT Plus和API区别,OpenAI教程,科学上网,翻墙" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta property="og:title" content="OpenAI API 申请与计费指南 2026" />
+  <meta property="og:description" content="中国用户 OpenAI API Key 获取、充值、价格和 Plus 区别一文看懂。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.aixiaobai168.com/pages/openai-api-guide" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="article:published_time" content="2026-04-06" />
+  <meta property="article:modified_time" content="2026-04-06" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="OpenAI API 申请与计费指南 2026" />
+  <meta name="twitter:description" content="OpenAI API Key、充值、按量计费、和 ChatGPT Plus 的区别完整整理。" />
+  <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <link rel="canonical" href="https://www.aixiaobai168.com/pages/openai-api-guide" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "OpenAI API 申请与计费指南",
+    "description": "开发者申请 OpenAI API Key 并开始按量调用的完整流程",
+    "url": "https://www.aixiaobai168.com/pages/openai-api-guide",
+    "author": { "@type": "Organization", "name": "Router VPN Guide" },
+    "inLanguage": "zh-CN",
+    "step": [
+      { "@type": "HowToStep", "name": "准备账号与网络环境", "text": "确保能够稳定访问 ChatGPT 和 platform.openai.com，并完成 OpenAI 账号注册" },
+      { "@type": "HowToStep", "name": "进入开发者平台", "text": "登录 platform.openai.com，进入 API 平台查看项目、账单和密钥管理" },
+      { "@type": "HowToStep", "name": "创建 API Key", "text": "在控制台中创建新的 API Key，并仅在本地或服务器环境变量中保存" },
+      { "@type": "HowToStep", "name": "充值并开始调用", "text": "为 API 账户充值后，再按模型和 Token 用量进行调用和计费" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.aixiaobai168.com/" },
+      { "@type": "ListItem", "position": 2, "name": "ChatGPT 教程", "item": "https://www.aixiaobai168.com/pages/chatgpt-guide" },
+      { "@type": "ListItem", "position": 3, "name": "OpenAI API 指南", "item": "https://www.aixiaobai168.com/pages/openai-api-guide" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ChatGPT Plus 和 OpenAI API 是一回事吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不是。ChatGPT Plus 是网页和 App 端的会员订阅，OpenAI API 是开发者调用模型的独立服务，按 Token 单独计费，二者互不包含。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "OpenAI API Key 怎么获取？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "登录 platform.openai.com 后，在开发者平台中创建新的 API Key 即可。创建成功后应立即妥善保存，避免泄露到代码仓库。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "OpenAI API 需要先充值吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "通常需要。API 和 ChatGPT Plus 的账单分开，很多账户需要先为 API 钱包充值，之后再按调用量扣费。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "中国用户能直接使用 OpenAI API 吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "通常不能直接使用。和 ChatGPT 类似，API 平台访问和调用通常也需要位于支持 OpenAI 的地区网络环境中。"
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', '使用场景');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #0ea5e9;
+      --brand: #7c4dff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker {
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul, .card ol { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .cta-box {
+      margin: 16px 0;
+      padding: 18px 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(14,165,233,.2);
+      background: linear-gradient(135deg, rgba(14,165,233,.06), rgba(124,77,255,.06));
+    }
+    .cta-box p { margin-bottom: 8px }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(14,165,233,.14), rgba(124,77,255,.14));
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid rgba(14,165,233,.2);
+      transition: all .2s;
+    }
+    .cta-btn:hover { box-shadow: 0 8px 20px rgba(14,165,233,.18); transform: translateY(-2px); text-decoration: none }
+    .tip-box {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px dashed rgba(16,185,129,.3);
+      background: rgba(16,185,129,.04);
+      font-size: 14px;
+    }
+    .warn-box {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px dashed rgba(245,158,11,.3);
+      background: rgba(245,158,11,.04);
+      font-size: 14px;
+    }
+    code.inline { padding: .2em .5em; display: inline; background: rgba(0,0,0,.04); border-radius: 6px; font-size: 13px }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px"><a href="/" style="color:var(--accent);text-decoration:none">首页</a> <span style="margin:0 6px">›</span> <a href="/pages/chatgpt-guide" style="color:var(--accent);text-decoration:none">ChatGPT 教程</a> <span style="margin:0 6px">›</span> <span style="color:var(--text)">OpenAI API 指南</span></nav>
+    <h1>OpenAI API 申请与计费指南 2026</h1>
+    <p class="subtitle">很多人已经有 ChatGPT 账号，但对 API 仍然一头雾水。最常见的误区就是：以为开了 Plus 就等于能免费调用 API。</p>
+
+    <nav aria-label="站内导航" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="/" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="/clash-subscription-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="/pages/chatgpt-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">ChatGPT 主教程</a>
+      <a href="/pages/chatgpt-plus-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Plus / Go 充值</a>
+      <a href="/pages/openai-api-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">OpenAI API</a>
+    </nav>
+
+    <section class="card">
+      <div class="kicker">目录</div>
+      <h2>快速导航</h2>
+      <ul>
+        <li><a href="#section-1">一、先搞清楚：Plus 和 API 的区别</a></li>
+        <li><a href="#section-2">二、申请 API 前需要准备什么</a></li>
+        <li><a href="#section-3">三、如何获取 OpenAI API Key</a></li>
+        <li><a href="#section-4">四、API 是怎么计费的</a></li>
+        <li><a href="#section-5">五、适合哪些人用 API</a></li>
+        <li><a href="#section-6">六、常见问题 FAQ</a></li>
+      </ul>
+    </section>
+
+    <section class="card" id="section-1">
+      <div class="kicker">Section 01</div>
+      <h2>先搞清楚：Plus 和 API 的区别</h2>
+      <table>
+        <tr><th>项目</th><th>ChatGPT Plus</th><th>OpenAI API</th></tr>
+        <tr><td>用途</td><td>网页 / App 聊天使用</td><td>给程序、网站、脚本调用模型</td></tr>
+        <tr><td>计费方式</td><td>按月订阅</td><td>按 Token 调用量计费</td></tr>
+        <tr><td>是否互通</td><td>不包含 API 额度</td><td>也不能替代 Plus 会员</td></tr>
+        <tr><td>适合谁</td><td>普通用户、重度聊天使用者</td><td>开发者、自动化场景、产品集成</td></tr>
+      </table>
+      <div class="warn-box">
+        <strong>最重要的一句：</strong>开通 ChatGPT Plus，不等于你已经有 OpenAI API 余额。API 需要单独进入开发者平台管理和付费。
+      </div>
+    </section>
+
+    <section class="card" id="section-2">
+      <div class="kicker">Section 02</div>
+      <h2>申请 API 前需要准备什么</h2>
+      <ol>
+        <li><strong>一个正常可用的 OpenAI 账号</strong>：能登录 ChatGPT 最好。</li>
+        <li><strong>稳定的网络环境</strong>：你需要能访问 <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a>。</li>
+        <li><strong>支付方式</strong>：很多账户在实际调用前需要先给 API 钱包充值。</li>
+        <li><strong>基础安全意识</strong>：API Key 一旦泄露，别人就能直接消费你的余额。</li>
+      </ol>
+      <div class="tip-box">
+        <strong>建议：</strong>如果你连 ChatGPT 网页端都还没稳定跑通，先回去看 <a href="/pages/chatgpt-guide">ChatGPT 主教程</a>，把网络和账号先搞定。
+      </div>
+    </section>
+
+    <section class="card" id="section-3">
+      <div class="kicker">Section 03</div>
+      <h2>如何获取 OpenAI API Key</h2>
+      <ol>
+        <li>登录 <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a>。</li>
+        <li>进入开发者平台，查看项目、用量、账单等页面。</li>
+        <li>在密钥管理页面创建新的 API Key。</li>
+        <li>复制后立刻保存到安全位置，例如本地密码管理器或服务器环境变量。</li>
+        <li>不要把 Key 写进公开仓库、前端源码或截图里。</li>
+      </ol>
+      <div class="warn-box">
+        <strong>安全提醒：</strong>API Key 相当于你的钱包权限。任何泄露到 GitHub、前端 JS、公开日志里的 Key，都应该立刻作废并重建。
+      </div>
+      <p>在代码里推荐通过环境变量使用，例如读取 <code class="inline">OPENAI_API_KEY</code>，而不是硬编码在文件里。</p>
+    </section>
+
+    <section class="card" id="section-4">
+      <div class="kicker">Section 04</div>
+      <h2>API 是怎么计费的</h2>
+      <p>OpenAI API 不是按月会员，而是按你调用的模型和 Token 数量计费。你发给模型的内容是输入 Token，模型返回的内容是输出 Token。</p>
+      <table>
+        <tr><th>项目</th><th>说明</th></tr>
+        <tr><td>输入 Token</td><td>你传给模型的提示词、上下文、系统提示等</td></tr>
+        <tr><td>输出 Token</td><td>模型返回给你的回答内容</td></tr>
+        <tr><td>模型差异</td><td>模型越强，通常价格越高</td></tr>
+        <tr><td>余额管理</td><td>很多账户需要先充值，再按调用量扣费</td></tr>
+      </table>
+      <div class="tip-box">
+        <strong>当前参考：</strong>主教程中记录的 GPT-5.4 mini 参考价格为 $0.75 / 百万输入 Token。价格后续可能调整，实际以 OpenAI 官方定价页为准。
+      </div>
+      <div class="cta-box">
+        <p><strong>如果你只是日常问答和写作，不做开发，通常没必要折腾 API。</strong>这种情况直接使用 ChatGPT 免费版、Go 或 Plus 更省心。</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px">
+          <a class="cta-btn" href="/pages/chatgpt-plus-guide">看 Plus / Go 充值指南</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="section-5">
+      <div class="kicker">Section 05</div>
+      <h2>适合哪些人用 API</h2>
+      <ul>
+        <li><strong>开发者</strong>：需要把 AI 集成进自己的网站、应用、机器人或脚本。</li>
+        <li><strong>自动化用户</strong>：想批量处理文本、表格、分类、摘要、翻译。</li>
+        <li><strong>产品运营</strong>：要做表单自动回复、客服草稿、内容生成流程。</li>
+        <li><strong>非开发用户</strong>：如果只是自己聊天、写文案、问问题，优先用 ChatGPT 网页版，不一定需要 API。</li>
+      </ul>
+    </section>
+
+    <section class="card" id="section-6">
+      <div class="kicker">Section 06</div>
+      <h2>常见问题 FAQ</h2>
+
+      <p><strong>Q1：开了 ChatGPT Plus，还要不要单独充值 API？</strong></p>
+      <p>A：要。Plus 和 API 是两套独立计费系统，Plus 不会自动附带 API 额度。</p>
+
+      <p><strong>Q2：API Key 创建后为什么只显示一次？</strong></p>
+      <p>A：这是正常的安全设计。很多平台只在创建当下展示完整密钥，之后不会再重复显示，所以你要第一时间保存好。</p>
+
+      <p><strong>Q3：API 能不能放到前端网页里直接调用？</strong></p>
+      <p>A：不建议。前端代码会暴露给用户，API Key 很容易泄露。正确做法是把调用放在你自己的后端或服务器里。</p>
+
+      <p><strong>Q4：中国用户用 API 最容易卡在哪？</strong></p>
+      <p>A：通常是网络环境、平台访问限制，以及对 Plus 和 API 计费关系的误解。很多人以为已经开了 Plus 就不用再管 API 账单，这一步最容易踩坑。</p>
+    </section>
+
+    <section class="card">
+      <div class="kicker">Next Step</div>
+      <h2>下一步怎么做</h2>
+      <p>如果你是普通用户，先决定自己到底需不需要 API；如果你是开发者，那么下一步就是创建 Key、充值，并把 Key 安全地接到你的后端服务里。</p>
+      <div class="cta-box">
+        <p><strong>推荐路径：</strong></p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px">
+          <a class="cta-btn" href="/pages/chatgpt-guide">先看 ChatGPT 主教程</a>
+          <a class="cta-btn" href="/pages/chatgpt-plus-guide" style="background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.1)">如果只是日常使用，看 Plus / Go 指南</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>本文档最后更新：2026 年 4 月</p>
+      <nav aria-label="相关教程" style="margin-top:12px;font-size:12px;line-height:2">
+        <strong>更多教程：</strong>
+        <a href="/">首页</a> ·
+        <a href="/clash-subscription-guide">订阅申请</a> ·
+        <a href="/pages/chatgpt-guide">ChatGPT 主教程</a> ·
+        <a href="/pages/chatgpt-plus-guide">Plus / Go 充值</a> ·
+        <a href="/pages/openai-api-guide">OpenAI API</a> ·
+        <a href="/pages/windows-guide">Windows</a>
+      </nav>
+    </footer>
+  </main>
+</body>
+</html>
