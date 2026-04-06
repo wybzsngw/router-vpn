@@ -41,6 +41,8 @@
 | 场景 | 教程 |
 |------|------|
 | ChatGPT | [ChatGPT 注册与使用教程（中国用户）](https://www.aixiaobai168.com/pages/chatgpt-guide) |
+| ChatGPT Plus 充值 | [ChatGPT Plus / Go 充值与支付指南](https://www.aixiaobai168.com/pages/chatgpt-plus-guide) |
+| OpenAI API | [OpenAI API 申请与计费指南](https://www.aixiaobai168.com/pages/openai-api-guide) |
 | Netflix | [Netflix 解锁观看教程](https://www.aixiaobai168.com/pages/netflix-guide) |
 
 ### 通用参考
