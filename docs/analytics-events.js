@@ -3,7 +3,7 @@
   if (typeof gtag !== 'function') return;
 
   var AIRPORT_DOMAINS = [
-    'yftg1.com',
+    'yawtt.net',
     'lanpangyun.me',
     'ewanwtt.net',
     'jif637.net',
@@ -11,7 +11,7 @@
   ];
 
   var AIRPORT_NAMES = {
-    'yftg1.com': '扬帆云',
+    'yawtt.net': '扬帆云',
     'lanpangyun.me': '蓝胖云',
     'ewanwtt.net': '尔湾云',
     'jif637.net': '疾风云',
