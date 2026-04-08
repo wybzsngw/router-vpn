@@ -94,6 +94,32 @@
 
 ---
 
+## 🔎 IndexNow 提交
+
+站点已预留 IndexNow 所需的根目录 key 文件：
+
+- `docs/cecc9e5f37a34ece8705857a3a31b0ca.txt`
+
+如果 Cloudflare Pages 发布的是 `docs/` 目录，那么线上可访问地址应为：
+
+- `https://www.aixiaobai168.com/cecc9e5f37a34ece8705857a3a31b0ca.txt`
+
+手动提交方式：
+
+```bash
+node scripts/indexnow-submit.js
+```
+
+只提交单个或少量规范 URL：
+
+```bash
+node scripts/indexnow-submit.js --url https://www.aixiaobai168.com/pages/chatgpt-guide --url https://www.aixiaobai168.com/clash-subscription-guide
+```
+
+脚本会默认读取 `docs/sitemap.xml`，并向 `https://api.indexnow.org/indexnow` 发送批量提交。
+
+---
+
 ## 📝 更新日志
 
 ### v2.5（2026 年 4 月）

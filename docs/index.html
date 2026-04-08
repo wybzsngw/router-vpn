@@ -64,7 +64,7 @@
       background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
                   radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
                   linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
-      background-attachment: fixed;
+      background-attachment: scroll;
       min-height: 100vh;
     }
     .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px }
@@ -176,6 +176,8 @@
       border-radius: 18px;
       box-shadow: var(--shadow);
       padding: 18px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 220px;
     }
     .path-card h3 { font-size: 16px; margin-bottom: 8px }
     .path-card p { color: var(--muted); font-size: 14px; line-height: 1.8; margin-bottom: 12px }
@@ -195,6 +197,8 @@
       border-radius: 18px;
       box-shadow: var(--shadow);
       padding: 18px 18px 16px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 280px;
     }
     .notice h3 { font-size: 16px; margin-bottom: 8px }
     .notice p, .notice li { color: var(--muted); font-size: 14px; line-height: 1.8 }
@@ -209,6 +213,8 @@
       border-radius: 18px;
       box-shadow: var(--shadow);
       padding: 24px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 360px;
     }
     .quick-card h3 { font-size: 20px; margin: 6px 0 10px }
     .quick-card p { color: var(--muted); line-height: 1.8; font-size: 14px }
@@ -480,7 +486,7 @@
             <span>Linux 教程</span>
             <span>桌面版 + 服务器版</span>
           </a>
-          <a class="mini-link" href="/pages/asus-router-guide.html#downloads">
+          <a class="mini-link" href="/pages/asus-router-guide#downloads">
             <span>MerlinClash 插件下载</span>
             <span>ARM64 / ARM32</span>
           </a>
@@ -652,6 +658,30 @@
       </div>
     </div>
 
+    <h2 class="section-title" id="topics">热门专题 · 搜索高频问题直达</h2>
+    <div class="notice-grid">
+      <div class="notice">
+        <h3>ChatGPT Plus / Go 充值</h3>
+        <p>适合已经完成注册、下一步想解决订阅、付款方式和支付失败排查的用户。</p>
+        <p><a href="/pages/chatgpt-plus-guide">查看 ChatGPT Plus / Go 充值指南 →</a></p>
+      </div>
+      <div class="notice">
+        <h3>OpenAI API 申请与计费</h3>
+        <p>面向开发者，覆盖 API Key 获取、按量计费、充值方式以及 Plus 和 API 的区别。</p>
+        <p><a href="/pages/openai-api-guide">查看 OpenAI API 指南 →</a></p>
+      </div>
+      <div class="notice">
+        <h3>旁路由与多设备分流</h3>
+        <p>适合想把游戏机、电视、NAS 和办公设备分别走不同代理策略的用户。</p>
+        <p><a href="/pages/bypass-router-guide">查看旁路由设置教程 →</a></p>
+      </div>
+      <div class="notice">
+        <h3>Clash for Windows 替代方案</h3>
+        <p>如果你在寻找 CFW 停更后的替代客户端，可以直接查看新方案的安装与迁移建议。</p>
+        <p><a href="/pages/clash-for-windows-alternative">查看替代方案专题 →</a></p>
+      </div>
+    </div>
+
     <!-- ==================== 资源下载 ==================== -->
     <h2 class="section-title" id="more">资源下载</h2>
     <div class="grid">
@@ -668,7 +698,7 @@
           <a href="downloads/MC2_0.4.6_ARM32.tar.gz" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,rgba(124,77,255,.08),rgba(14,165,233,.08));color:var(--text);text-decoration:none;border:1px solid rgba(124,77,255,.16);font-size:14px;font-weight:500">⬇ MC2_0.4.6_ARM32.tar.gz（ARM32）</a>
           <a href="downloads/MC2_0.3_ARM64.tar.gz" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:rgba(0,0,0,.04);color:var(--text);text-decoration:none;border:1px solid rgba(0,0,0,.08);font-size:14px">⬇ MC2_0.3_ARM64.tar.gz</a>
         </div>
-        <p class="src-note">更多版本与适配机型说明：<a href="/pages/asus-router-guide.html#downloads">华硕路由器专题页</a> · <a href="https://t.me/merlinclashcat" target="_blank" rel="noopener">Telegram 频道</a></p>
+        <p class="src-note">更多版本与适配机型说明：<a href="/pages/asus-router-guide#downloads">华硕路由器专题页</a> · <a href="https://t.me/merlinclashcat" target="_blank" rel="noopener">Telegram 频道</a></p>
       </div>
 
       <div class="card">
@@ -682,7 +712,7 @@
         </div>
         <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
           <a href="downloads/fancyss_hnd_full.tar.gz" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,rgba(251,191,36,.12),rgba(14,165,233,.1));color:var(--text);text-decoration:none;border:1px solid rgba(251,191,36,.25);font-size:14px;font-weight:500">⬇ fancyss_hnd_full.tar.gz</a>
-          <a href="/pages/asus-router-guide.html#fancyss" style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:rgba(0,0,0,.04);color:var(--text);text-decoration:none;border:1px solid rgba(0,0,0,.08);font-size:14px">查看 Fancyss 路由器说明</a>
+          <a href="/pages/asus-router-guide#fancyss" style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:rgba(0,0,0,.04);color:var(--text);text-decoration:none;border:1px solid rgba(0,0,0,.08);font-size:14px">查看 Fancyss 路由器说明</a>
         </div>
         <p class="src-note">引用：<a href="https://github.com/hq450/fancyss_history_package/blob/master/README.md" target="_blank" rel="noopener">Fancyss README</a> · <a href="https://github.com/hq450/fancyss" target="_blank" rel="noopener">源码仓库</a></p>
       </div>
