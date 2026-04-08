@@ -118,6 +118,8 @@ node scripts/indexnow-submit.js --url https://www.aixiaobai168.com/pages/chatgpt
 
 脚本会默认读取 `docs/sitemap.xml`，并向 `https://api.indexnow.org/indexnow` 发送批量提交。
 
+**部署后习惯（2026-04-08）**：内容上线后**优先**在仓库根目录执行一次 `node scripts/indexnow-submit.js`（全量或按需 `--url`）。成功时终端会出现 **`Response status: 200`**（实测曾一次提交 16 个 URL）。Bing Webmaster 的**手动 URL 提交**仅作加快重抓的**补充**，不是长期必做步骤。细节与口径见 `private/youhua/traffic-growth-strategy.md`「2026-04-08 更新」。
+
 ---
 
 ## 📝 更新日志
