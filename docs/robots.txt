@@ -2,16 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /downloads/*.tar.gz
 
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 2
-
 Sitemap: https://www.aixiaobai168.com/sitemap.xml
