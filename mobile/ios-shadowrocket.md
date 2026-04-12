@@ -1,8 +1,8 @@
-# iOS 翻墙教程 — Shadowrocket & Stash
+# 手机怎么科学上网 2026 — iOS Shadowrocket & Stash 翻墙教程
 
-> 📄 本文对应 HTML 页面：[手机教程](../docs/pages/mobile-guide.html)
+> 📄 本文对应 HTML 页面：[手机教程](../docs/pages/mobile-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/mobile-guide>
 
-本教程将指导您在 iPhone 或 iPad 上使用 Shadowrocket、Stash 等工具实现科学上网，适用于需要绕过网络审查、访问境外网站的场景。
+2026 最新 iPhone / iPad 科学上网教程。本文指导您在 iOS 上使用 Shadowrocket、Stash 等工具实现科学上网，适用于需要绕过网络审查、访问境外网站的场景。
 
 ---
 
@@ -78,6 +78,8 @@
 - 一个邮箱只能注册一个 Apple ID
 - 国家/地区一旦选定，**更改较麻烦**，建议选择美区或港区
 - 请妥善保管 Apple ID 和密码，勿与他人共享
+
+> **不想自己注册外区 ID？** 也可以直接购买现成的外区 Apple ID（¥22.8 起）或 Apple 礼品卡，支持支付宝：[前往账号星球](https://aixiaobai.accboy.com)。购买后建议修改密码和安全问题。
 
 ---
 

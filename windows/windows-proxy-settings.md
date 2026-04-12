@@ -1,6 +1,6 @@
-# Windows 系统代理配置指南
+# Windows 系统代理配置指南 2026
 
-> 📄 本文对应 HTML 页面：[Windows 教程](../docs/pages/windows-guide.html)
+> 📄 本文对应 HTML 页面：[Windows 教程](../docs/pages/windows-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/windows-guide>
 
 本指南介绍 Windows 系统下各类代理配置方法，作为 [Clash Verge Rev 教程](./clash-verge-rev.md) 的补充，帮助您在不同场景下正确使用代理。
 

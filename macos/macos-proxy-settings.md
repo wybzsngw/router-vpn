@@ -1,6 +1,6 @@
-# macOS 系统代理配置指南
+# macOS 系统代理配置指南 2026
 
-> 📄 本文对应 HTML 页面：[macOS 教程](../docs/pages/macos-guide.html)
+> 📄 本文对应 HTML 页面：[macOS 教程](../docs/pages/macos-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/macos-guide>
 
 本指南介绍 macOS 系统下各类代理配置方法，作为 [ClashX Meta 教程](./clashx-meta.md) 的补充，帮助您在不同场景下正确使用代理。
 

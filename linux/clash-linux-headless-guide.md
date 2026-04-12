@@ -1,8 +1,8 @@
-# Clash 无GUI Linux系统完整安装教程
+# Linux 翻墙教程 2026 — 无 GUI 服务器版 Clash 完整安装教程
 
-> 📄 本文对应 HTML 页面：[Linux 教程](../docs/pages/linux-guide.html)
+> 📄 本文对应 HTML 页面：[Linux 教程](../docs/pages/linux-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/linux-guide>
 
-本教程专为**无图形界面（Headless）的Linux服务器**设计，提供完整的命令行安装和配置指南。
+2026 最新 Linux 服务器科学上网教程。本文专为**无图形界面（Headless）的 Linux 服务器**设计，提供完整的命令行安装和配置指南。
 
 - **适用系统**: Ubuntu Server、Debian、CentOS、Rocky Linux、Fedora等无GUI Linux发行版
 - **架构支持**: amd64、arm64、armv7、armv5等

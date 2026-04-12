@@ -1,8 +1,8 @@
-# Clash Linux 安装教程
+# Linux 翻墙教程 2026 — Clash 桌面版科学上网安装指南
 
-> 📄 本文对应 HTML 页面：[Linux 教程](../docs/pages/linux-guide.html)
+> 📄 本文对应 HTML 页面：[Linux 教程](../docs/pages/linux-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/linux-guide>
 
-本教程将指导您在Linux系统上安装和配置Clash代理工具。
+2026 最新 Linux 科学上网教程。本文指导您在 Linux 桌面系统上安装和配置 Clash 代理工具。
 
 - **适用系统**: Ubuntu、Debian、CentOS、Rocky Linux、Fedora等主流Linux发行版
 - **架构支持**: amd64、arm64、armv7、armv5等

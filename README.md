@@ -1,11 +1,11 @@
-# Clash 全平台科学上网教程 — 翻墙指南 2026
+# Clash 全平台科学上网教程 2026 — 路由器/软路由/iStoreOS/Windows/macOS/Linux/手机翻墙指南
 
 [![在线阅读](https://img.shields.io/badge/📖_在线阅读-主站-0ea5e9?style=for-the-badge)](https://www.aixiaobai168.com/)
 [![GitHub stars](https://img.shields.io/github/stars/EI-ie/router-vpn?style=for-the-badge&logo=github&color=f59e0b)](https://github.com/EI-ie/router-vpn/stargazers)
 [![License](https://img.shields.io/badge/license-Apache_2.0-10b981?style=for-the-badge)](LICENSE)
 [![Last Updated](https://img.shields.io/badge/更新-2026.04-7c4dff?style=for-the-badge)]()
 
-> **一站式 Clash 全平台科学上网教程** — 覆盖华硕路由器 MerlinClash、软路由 OpenWrt + OpenClash、iStoreOS PassWall、Windows Clash Verge Rev、macOS ClashX Meta、Linux、Android、iOS。含订阅申请、机场推荐、ChatGPT 注册、Netflix 解锁、节点配置、分流规则、TUN 模式、旁路由等完整教程。
+> **2026 最新 Clash 全平台科学上网教程** — 覆盖华硕路由器 MerlinClash、软路由 OpenWrt + OpenClash、iStoreOS PassWall、Windows Clash Verge Rev、macOS ClashX Meta、Linux、Android Clash Meta、iOS Shadowrocket。含 VPN 节点订阅申请、机场推荐与价格对比、ChatGPT 注册登录、Netflix 解锁、节点配置、分流规则、TUN 模式、旁路由等完整教程。
 >
 > 🌐 **在线文档**：<https://www.aixiaobai168.com/>  ·  ⭐ 觉得有用？**Star 一下支持我们！**
 
@@ -41,10 +41,10 @@
 
 | 场景 | 教程 |
 |------|------|
-| ChatGPT | [ChatGPT 注册与使用教程（中国用户）](https://www.aixiaobai168.com/pages/chatgpt-guide) |
-| ChatGPT Plus 充值 | [ChatGPT Plus / Go 充值与支付指南](https://www.aixiaobai168.com/pages/chatgpt-plus-guide) |
-| OpenAI API | [OpenAI API 申请与计费指南](https://www.aixiaobai168.com/pages/openai-api-guide) |
-| Netflix | [Netflix 解锁观看教程](https://www.aixiaobai168.com/pages/netflix-guide) |
+| ChatGPT | [ChatGPT 注册与使用教程（中国用户）](chatgpt/chatgpt-guide.md) |
+| ChatGPT Plus 充值 | [ChatGPT Plus / Go 充值与支付指南](chatgpt/chatgpt-plus-guide.md) |
+| OpenAI API | [OpenAI API 申请与计费指南](chatgpt/openai-api-guide.md) |
+| Netflix | [Netflix 解锁观看教程](netflix/netflix-guide.md) |
 
 ### 通用参考
 
@@ -74,6 +74,8 @@
 ├── macos/           macOS（ClashX Meta）
 ├── mobile/          Android + iOS
 ├── subscription/    订阅申请 & 机场推荐
+├── chatgpt/         ChatGPT 注册、Plus 充值、OpenAI API
+├── netflix/         Netflix 解锁观看教程
 ├── common/          故障排除、分流规则、术语表
 ├── extras/          Tailscale、部署指南等扩展
 ├── docs/            在线文档（HTML）& 静态资源
@@ -95,6 +97,14 @@
 ---
 
 ## 📝 更新日志
+
+### v2.6（2026 年 4 月）
+
+- 全站 SEO 深度优化：标题关键词、描述、结构化数据（FAQPage / HowTo）
+- 标题层级修正（H3→H2）、affiliate 链接 `rel="sponsored"` 规范化
+- Markdown 文档与 HTML 页面标题同步，统一 2026 年版关键词
+- 新增杨帆云重要通知页面 SEO 元素
+- Bing / Google 索引管理与流量分析
 
 ### v2.5（2026 年 4 月）
 
@@ -128,4 +138,4 @@
 
 ---
 
-**在线文档**：<https://www.aixiaobai168.com/>　|　**版本**：v2.5　|　**最后更新**：2026 年 4 月
+**在线文档**：<https://www.aixiaobai168.com/>　|　**版本**：v2.6　|　**最后更新**：2026 年 4 月

@@ -1,8 +1,8 @@
-# iStoreOS 科学上网完整专题
+# iStoreOS 科学上网教程 2026 — PassWall / OpenClash 安装 + Are-u-ok 插件
 
-> 📄 本文对应 HTML 页面：[iStoreOS 专题页](../docs/pages/istoreos-guide.html)
+> 📄 本文对应 HTML 页面：[iStoreOS 专题页](../docs/pages/istoreos-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/istoreos-guide>
 
-本专题的核心目标：**在 iStoreOS 上实现科学上网**——通过 iStore 软件中心 + 第三方插件包 [Are-u-ok](https://github.com/AUK9527/Are-u-ok) 安装 PassWall / OpenClash / SSR-Plus 等代理工具，让局域网内设备无需逐一配置即可翻墙。
+2026 最新 iStoreOS 科学上网教程。本专题的核心目标：**在 iStoreOS 上实现科学上网**——通过 iStore 软件中心 + 第三方插件包 [Are-u-ok](https://github.com/AUK9527/Are-u-ok) 安装 PassWall / OpenClash / SSR-Plus 等代理工具，让局域网内设备无需逐一配置即可翻墙。
 
 ---
 

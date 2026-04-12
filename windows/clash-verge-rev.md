@@ -1,8 +1,8 @@
-# Windows Clash 翻墙教程 — Clash Verge Rev
+# Windows 翻墙教程 2026 — Clash Verge Rev 下载安装与科学上网配置
 
-> 📄 本文对应 HTML 页面：[Windows 教程](../docs/pages/windows-guide.html)
+> 📄 本文对应 HTML 页面：[Windows 教程](../docs/pages/windows-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/windows-guide>
 
-本教程将指导您在 Windows 系统上使用 Clash Verge Rev 实现科学上网，适用于需要绕过网络审查、访问境外网站的场景。
+2026 最新 Windows 科学上网教程。本文指导您在 Windows 系统上使用 Clash Verge Rev 实现科学上网，适用于需要绕过网络审查、访问境外网站的场景。
 
 ---
 

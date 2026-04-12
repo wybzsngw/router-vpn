@@ -1,8 +1,8 @@
-# 软路由翻墙教程 — iKuai + Clash 旁路由
+# 软路由翻墙教程 2026 — iKuai + Clash 旁路由科学上网
 
-> 📄 本文对应 HTML 页面：[软路由教程](../docs/pages/soft-router-guide.html)
+> 📄 本文对应 HTML 页面：[软路由教程](../docs/pages/soft-router-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/soft-router-guide>
 
-本教程介绍如何以 **iKuai 爱快** 作为主路由，**OpenWrt + OpenClash** 作为旁路由，实现多 WAN、流控、行为管理等功能与翻墙代理的分离部署。
+2026 最新 iKuai 旁路由科学上网教程。本文介绍如何以 **iKuai 爱快** 作为主路由，**OpenWrt + OpenClash** 作为旁路由，实现多 WAN、流控、行为管理等功能与翻墙代理的分离部署。
 
 ---
 

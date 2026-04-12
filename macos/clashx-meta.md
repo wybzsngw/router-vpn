@@ -1,8 +1,8 @@
-# macOS Clash 翻墙教程 — ClashX Meta
+# macOS 翻墙教程 2026 — ClashX Meta 下载安装与科学上网配置
 
-> 📄 本文对应 HTML 页面：[macOS 教程](../docs/pages/macos-guide.html)
+> 📄 本文对应 HTML 页面：[macOS 教程](../docs/pages/macos-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/macos-guide>
 
-本教程将指导您在 macOS 上使用 ClashX Meta 实现科学上网，适用于需要绕过网络审查、访问境外网站的场景。
+2026 最新 macOS 科学上网教程。本文指导您在 macOS 上使用 ClashX Meta 实现科学上网，适用于需要绕过网络审查、访问境外网站的场景。
 
 ---
 

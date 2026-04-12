@@ -1,8 +1,8 @@
-# 软路由翻墙教程 — OpenWrt + OpenClash
+# 软路由翻墙教程 2026 — OpenWrt + OpenClash 科学上网
 
-> 📄 本文对应 HTML 页面：[软路由教程](../docs/pages/soft-router-guide.html)
+> 📄 本文对应 HTML 页面：[软路由教程](../docs/pages/soft-router-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/soft-router-guide>
 
-本教程介绍如何在 OpenWrt 软路由上使用 OpenClash 实现全家设备自动翻墙，适用于需要绕过网络审查、访问国际互联网的用户。
+2026 最新软路由科学上网教程。本文介绍如何在 OpenWrt 软路由上使用 OpenClash 实现全家设备自动翻墙，适用于需要绕过网络审查、访问国际互联网的用户。
 
 ---
 

@@ -1,8 +1,8 @@
-# 华硕路由器高级功能配置
+# 华硕路由器翻墙教程 2026 — MerlinClash 高级功能与 Fancyss 配置
 
-> 📄 本文对应 HTML 页面：[华硕路由器教程](../docs/pages/asus-router-guide.html)
+> 📄 本文对应 HTML 页面：[华硕路由器教程](../docs/pages/asus-router-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/asus-router-guide>
 
-本教程介绍 MerlinClash 的高级功能配置，包括分流规则、游戏加速、流媒体解锁、广告过滤、性能监控、日志分析、常见故障排除以及安全与隐私设置，帮助用户充分发挥路由器科学上网方案的潜力。
+2026 最新华硕路由器全屋科学上网教程（第 3 部分：高级功能）。本文介绍 MerlinClash 的高级功能配置，包括分流规则、游戏加速、流媒体解锁、广告过滤、性能监控、日志分析、常见故障排除以及安全与隐私设置，帮助用户充分发挥路由器科学上网方案的潜力。
 
 ---
 

@@ -1,8 +1,8 @@
-# Android Clash 翻墙教程 — Clash Meta for Android
+# 手机怎么科学上网 2026 — Android Clash Meta 翻墙教程
 
-> 📄 本文对应 HTML 页面：[手机教程](../docs/pages/mobile-guide.html)
+> 📄 本文对应 HTML 页面：[手机教程](../docs/pages/mobile-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/mobile-guide>
 
-本教程将指导您在 Android 手机上使用 Clash Meta for Android 实现科学上网，适用于需要绕过网络审查、访问境外网站的场景。
+2026 最新手机科学上网教程。本文指导您在 Android 手机上使用 Clash Meta for Android 实现科学上网，适用于需要绕过网络审查、访问境外网站的场景。
 
 ---
 

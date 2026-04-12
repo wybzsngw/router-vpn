@@ -1,8 +1,8 @@
-# MerlinClash 安装与配置教程
+# 华硕路由器翻墙教程 2026 — MerlinClash 安装与配置
 
-> 📄 本文对应 HTML 页面：[华硕路由器教程](../docs/pages/asus-router-guide.html)
+> 📄 本文对应 HTML 页面：[华硕路由器教程](../docs/pages/asus-router-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/asus-router-guide>
 
-本教程介绍如何在已刷梅林固件的华硕路由器上安装并配置 MerlinClash，实现全屋透明代理与科学上网。MerlinClash 专为华硕梅林固件开发，支持多种代理协议，配置灵活，运行稳定。
+2026 最新华硕路由器全屋科学上网教程（第 2 部分：配置）。本文介绍如何在已刷梅林固件的华硕路由器上安装并配置 MerlinClash，实现全屋透明代理与科学上网。MerlinClash 专为华硕梅林固件开发，支持多种代理协议，配置灵活，运行稳定。
 
 ---
 
