@@ -1,6 +1,6 @@
 # Clash 订阅申请指南 2026 — 机场推荐与价格对比 | VPN 节点订阅
 
-> 📄 本文对应 HTML 页面：[订阅申请指南](../docs/clash-subscription-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/clash-subscription-guide>
+> 📄 本文对应 HTML 页面：[订阅申请指南](https://www.aixiaobai168.com/clash-subscription-guide)　·　🌐 在线阅读：<https://www.aixiaobai168.com/clash-subscription-guide>
 
 2026 最新 Clash 订阅与 VPN 节点订阅申请指南。本文帮助你了解什么是机场订阅、如何选择合适的机场服务，以及如何获取并配置 Clash 订阅链接。含蓝胖云、扬帆云、尔湾云等机场推荐与价格对比。
 
