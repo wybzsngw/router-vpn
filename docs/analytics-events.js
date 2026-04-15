@@ -6,7 +6,7 @@
     'yawtt.net',
     'lanpangyun.me',
     'ewanwtt.net',
-    'jif637.net',
+    'j134.net',
     'dgy02.com'
   ];
 
@@ -14,7 +14,7 @@
     'yawtt.net': '扬帆云',
     'lanpangyun.me': '蓝胖云',
     'ewanwtt.net': '尔湾云',
-    'jif637.net': '疾风云',
+    'j134.net': '疾风云',
     'dgy02.com': '大哥云'
   };
 
