@@ -1,6 +1,8 @@
 # 私密运营文件 - 绝不允许提交到公开仓库
 private/
 @private/
+private*/
+
 
 # 系统文件
 .DS_Store
