@@ -1,7 +1,7 @@
 # Clash 全平台科学上网教程 2026 — 路由器/软路由/iStoreOS/Windows/macOS/Linux/手机翻墙指南
 
 [![在线阅读](https://img.shields.io/badge/📖_在线阅读-主站-0ea5e9?style=for-the-badge)](https://www.aixiaobai168.com/)
-[![GitHub stars](https://img.shields.io/github/stars/EI-ie/router-vpn?style=for-the-badge&logo=github&color=f59e0b)](https://github.com/EI-ie/router-vpn/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/mowei-ie/router-vpn?style=for-the-badge&logo=github&color=f59e0b)](https://github.com/mowei-ie/router-vpn/stargazers)
 [![License](https://img.shields.io/badge/license-Apache_2.0-10b981?style=for-the-badge)](LICENSE)
 [![Last Updated](https://img.shields.io/badge/更新-2026.04-7c4dff?style=for-the-badge)]()
 
@@ -132,7 +132,7 @@
 
 ## 📞 反馈与贡献
 
-- 遇到问题？查看 [故障排除](common/troubleshooting.md) 或提交 [Issue](https://github.com/EI-ie/router-vpn/issues)
+- 遇到问题？查看 [故障排除](common/troubleshooting.md) 或提交 [Issue](https://github.com/mowei-ie/router-vpn/issues)
 - 想贡献内容？欢迎提交 Pull Request
 - 参考资源：[Clash 文档](https://clash.gitbook.io/) · [iStoreOS 文档](https://doc.linkease.com/zh/guide/istoreos/) · [Are-u-ok 插件](https://github.com/AUK9527/Are-u-ok)
 
