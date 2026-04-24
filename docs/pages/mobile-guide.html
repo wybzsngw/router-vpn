@@ -158,11 +158,63 @@
       <a href="/pages/netflix-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Netflix</a>
     </nav>
 
+    <!-- ========== 系统选择器 ========== -->
+    <section aria-label="选择你的手机系统" style="margin-bottom:32px">
+      <p style="text-align:center;font-size:15px;color:var(--muted);margin:0 0 16px">👇 你用什么手机？点击对应卡片直达本系统的教程目录</p>
+      <div class="os-picker" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <a href="#android-toc" data-os="android" class="os-card" style="display:block;padding:24px 22px;background:linear-gradient(135deg,#f0fdf4,#ecfeff);border:2px solid rgba(34,197,94,.2);border-radius:18px;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <span style="font-size:36px;line-height:1">🤖</span>
+            <div>
+              <div style="font-size:20px;font-weight:700;color:#0f172a">Android</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:2px">Clash Meta for Android · 8 个章节</div>
+            </div>
+          </div>
+          <p style="font-size:13.5px;color:#374151;line-height:1.6;margin:8px 0 0">开源免费、社区活跃。从下载安装到分应用代理一篇看完。</p>
+          <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;background:rgba(34,197,94,.12);border-radius:8px;font-size:13px;color:#16a34a;font-weight:600">查看 Android 目录 →</div>
+        </a>
+        <a href="#ios-toc" data-os="ios" class="os-card" style="display:block;padding:24px 22px;background:linear-gradient(135deg,#eff6ff,#faf5ff);border:2px solid rgba(124,77,255,.2);border-radius:18px;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <span style="font-size:36px;line-height:1">🍎</span>
+            <div>
+              <div style="font-size:20px;font-weight:700;color:#0f172a">iPhone / iPad</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:2px">ShadowClash 免费推荐 · 9 个章节</div>
+            </div>
+          </div>
+          <p style="font-size:13.5px;color:#374151;line-height:1.6;margin:8px 0 0">外区 Apple ID + 免费 ShadowClash + 蓝胖云订阅，月成本 ¥10。</p>
+          <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;background:rgba(124,77,255,.12);border-radius:8px;font-size:13px;color:#7c4dff;font-weight:600">查看 iOS 目录 →</div>
+        </a>
+      </div>
+      <style>
+        .os-card:hover { transform:translateY(-3px); box-shadow:0 14px 32px rgba(17,24,39,.10); border-color:currentColor }
+        @media (max-width: 640px) {
+          .os-picker { grid-template-columns: 1fr !important }
+        }
+      </style>
+    </section>
 
     <!-- ========== Android 部分 ========== -->
-    <h2 class="section-title">Android</h2>
+    <h2 class="section-title" id="android-section">Android</h2>
 
-    <section class="card">
+    <!-- Android 目录卡 -->
+    <section class="card" id="android-toc" style="border-left:4px solid #22c55e">
+      <div class="kicker" style="color:#16a34a">Android · 目录</div>
+      <h2>🤖 Android 教程导航</h2>
+      <p style="color:var(--muted);font-size:14px;margin:6px 0 14px">Android 端使用 <strong>Clash Meta for Android</strong>（开源、免费）。下面是本系统的全部章节，点击直达。</p>
+      <ul style="columns:2;column-gap:24px;padding-left:20px">
+        <li><a href="#android-1">01. Clash Meta for Android 介绍</a></li>
+        <li><a href="#android-2">02. 下载安装</a></li>
+        <li><a href="#android-3">03. 导入订阅</a></li>
+        <li><a href="#android-4">04. 启动连接</a></li>
+        <li><a href="#android-5">05. 代理模式</a></li>
+        <li><a href="#android-6">06. 分应用代理</a></li>
+        <li><a href="#android-7">07. 节点选择与测速</a></li>
+        <li><a href="#android-8">08. 常见问题</a></li>
+      </ul>
+      <p style="margin-top:14px;font-size:13px;color:var(--muted)">👉 用 iPhone / iPad？<a href="#ios-toc" style="color:var(--accent);font-weight:600">直接跳到 iOS 目录</a></p>
+    </section>
+
+    <section class="card" id="android-1">
       <div class="kicker">Android 01</div>
       <h2>Clash Meta for Android 介绍</h2>
       <p><strong>Clash Meta for Android</strong>（简称 CMA）是一款基于 Clash Meta 内核的 Android 代理客户端。它完全开源，代码透明可审计，支持订阅管理、规则分流、TUN 模式、分应用代理等功能。</p>
@@ -176,7 +228,7 @@
       <p>官方发布页：<a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" rel="noopener">GitHub Releases</a>。建议从官方 GitHub 或 F-Droid 下载，确保安全可靠。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="android-2">
       <div class="kicker">Android 02</div>
       <h2>下载安装</h2>
       <p><strong>1. 从 GitHub 下载 APK</strong></p>
@@ -192,7 +244,7 @@
       <p>打开文件管理器，找到下载的 APK 文件，点击安装即可。Clash Meta for Android 未在 Google Play 上架，需从 GitHub 或 F-Droid 获取。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="android-3">
       <div class="kicker">Android 03</div>
       <h2>导入订阅</h2>
       <p><strong>步骤：</strong></p>
@@ -208,7 +260,7 @@
       <p>添加后应用会自动拉取订阅内容。若需手动更新，在 Profile 列表中长按该配置 → 选择 <strong>Update</strong>，或点击配置右侧的刷新图标。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="android-4">
       <div class="kicker">Android 04</div>
       <h2>启动连接</h2>
       <p><strong>1. 选择配置</strong></p>
@@ -223,7 +275,7 @@
       <p>再次点击大按钮或开关即可断开代理。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="android-5">
       <div class="kicker">Android 05</div>
       <h2>代理模式</h2>
       <p>Clash Meta for Android 支持多种代理模式：</p>
@@ -236,7 +288,7 @@
       <p>在主界面或 <strong>Proxies</strong> 标签中找到顶部的模式选择器，点击即可切换。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="android-6">
       <div class="kicker">Android 06</div>
       <h2>分应用代理</h2>
       <p>分应用代理可指定哪些应用走代理、哪些直连，节省流量并提升体验。</p>
@@ -254,7 +306,7 @@
       <p>在分应用代理设置中点击「添加应用」或「+」，从应用列表中选择要加入的应用即可。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="android-7">
       <div class="kicker">Android 07</div>
       <h2>节点选择与测速</h2>
       <p><strong>1. 进入 Proxy 标签</strong></p>
@@ -270,7 +322,7 @@
       <p>测速后节点通常会自动按延迟从低到高排序，可手动选择延迟低、稳定性好的节点使用。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="android-8">
       <div class="kicker">Android 08</div>
       <h2>常见问题</h2>
       <p><strong>1. 电池优化导致后台被杀</strong> — 进入 <strong>设置 → 应用 → Clash Meta for Android → 电池</strong>，选择「无限制」或「不限制后台」；部分厂商需在「自启动管理」中允许应用自启动。</p>
@@ -280,9 +332,28 @@
     </section>
 
     <!-- ========== iOS 部分 ========== -->
-    <h2 class="section-title">iOS</h2>
+    <h2 class="section-title" id="ios-section">iOS</h2>
 
-    <section class="card">
+    <!-- iOS 目录卡 -->
+    <section class="card" id="ios-toc" style="border-left:4px solid #7c4dff">
+      <div class="kicker" style="color:#7c4dff">iOS · 目录</div>
+      <h2>🍎 iPhone / iPad 教程导航</h2>
+      <p style="color:var(--muted);font-size:14px;margin:6px 0 14px">iOS 端推荐<strong>免费的 ShadowClash</strong>（外区 Apple ID 即可下载，0 元上手）。下面是本系统的全部章节，点击直达。</p>
+      <ul style="columns:2;column-gap:24px;padding-left:20px">
+        <li><a href="#ios-1">01. iOS 工具概述（4 款对比）</a></li>
+        <li><a href="#ios-2">02. 获取外区 Apple ID</a></li>
+        <li><a href="#ios-3"><strong style="color:#16a34a">03. ShadowClash 教程（推荐）</strong></a></li>
+        <li><a href="#ios-4">04. Shadowrocket 使用</a></li>
+        <li><a href="#ios-5">05. Stash 使用</a></li>
+        <li><a href="#ios-6"><strong style="color:#d97706">06. ⚠️ 避开「一键 VPN」陷阱</strong></a></li>
+        <li><a href="#ios-7">07. 按需连接</a></li>
+        <li><a href="#ios-8"><strong style="color:#0ea5e9">08. 最低成本一条龙路径</strong></a></li>
+        <li><a href="#ios-9">09. 常见问题</a></li>
+      </ul>
+      <p style="margin-top:14px;font-size:13px;color:var(--muted)">👉 用 Android？<a href="#android-toc" style="color:var(--accent);font-weight:600">直接跳到 Android 目录</a> · 🚀 想最快上手？直接看 <a href="#ios-8" style="color:#0ea5e9;font-weight:600">第 08 节一条龙路径</a></p>
+    </section>
+
+    <section class="card" id="ios-1">
       <div class="kicker">iOS 01</div>
       <h2>iOS 工具概述</h2>
       <p>iOS 上的 Clash 类代理工具均需从非中国大陆 App Store 下载，下面四款是 2026 年最常用的选择。三款付费 App 都是 <strong>一次性买断</strong>（不是订阅制），下载后永久所有：</p>
@@ -299,7 +370,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card" id="ios-2">
       <div class="kicker">iOS 02</div>
       <h2>获取外区 Apple ID</h2>
       <p><strong>方法一：在网页上注册（推荐）</strong></p>
@@ -319,7 +390,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card" id="ios-3">
       <div class="kicker">iOS 03 · 推荐</div>
       <h2>ShadowClash 使用教程（免费方案）</h2>
       <p><strong>ShadowClash</strong> 是 iOS 上完全免费的 Clash 兼容客户端，对新手最友好，也是本教程推荐的首选方案。</p>
@@ -391,7 +462,7 @@
       </table>
     </section>
 
-    <section class="card">
+    <section class="card" id="ios-4">
       <div class="kicker">iOS 04</div>
       <h2>Shadowrocket 使用</h2>
       <p>适合愿意一次性付 $2.99 换更全协议支持和更成熟社区教程的用户。</p>
@@ -410,7 +481,7 @@
       <p>在配置标签中确保已选中您的订阅；点击底部「首页」或「代理」标签；在节点列表或策略组中选择要使用的节点，点击即可切换。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="ios-5">
       <div class="kicker">iOS 05</div>
       <h2>Stash 使用</h2>
       <p><strong>Stash</strong> 基于 Clash 内核，与 Clash 桌面端配置兼容性最好，适合 Clash 桌面老用户。</p>
@@ -420,7 +491,8 @@
       <p>若订阅返回的是 Clash 格式，ShadowClash / Shadowrocket / Stash 三者均可使用同一订阅链接，互不冲突，可同时安装择优使用。</p>
     </section>
 
-    <section class="card" id="vpn-trap">
+    <section class="card" id="ios-6">
+      <a id="vpn-trap" style="position:relative;visibility:hidden"></a>
       <div class="kicker" style="color:#d97706">iOS 06 · 避坑</div>
       <h2>⚠️ 避开「一键 VPN」App 的付款陷阱</h2>
       <p>App Store 里有大量包装成「一键连接、无限速度」的 VPN App，<strong>它们不是 Clash 客户端，而是商业 VPN 服务</strong>：你下载后无法导入自己的机场订阅，必须订阅它们自己卖的服务。这类 App 在中国用户场景下基本都是坑，下面是一个真实案例。</p>
@@ -460,7 +532,7 @@
       <p style="background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.25);border-radius:12px;padding:14px 16px;margin-top:14px;font-size:14px;line-height:1.7"><strong style="color:var(--success)">📌 结论</strong>：在 iOS 上，正确路径永远是「<strong>外区 Apple ID 下载 Clash 客户端 → 机场订阅 URL 导入</strong>」，<strong>绝不需要在 App 内付费 / 绑信用卡</strong>。任何要求你在 App 内绑卡的「VPN」App 直接卸载即可。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="ios-7">
       <div class="kicker">iOS 07</div>
       <h2>按需连接</h2>
       <p><strong>按需连接</strong>：在特定 Wi-Fi 下自动连接代理，适用于在家或公司 Wi-Fi 自动开代理的场景。</p>
@@ -474,7 +546,8 @@
       <p>若路由器已部署 Clash，可设置「在家 Wi-Fi 不自动连接」；出门使用移动网络或公共 Wi-Fi 时，可手动连接或设置按需连接。</p>
     </section>
 
-    <section class="card" id="lowest-cost">
+    <section class="card" id="ios-8">
+      <a id="lowest-cost" style="position:relative;visibility:hidden"></a>
       <div class="kicker" style="color:var(--success)">iOS 08 · 一条龙路径</div>
       <h2>最低成本 iOS 翻墙路径总结</h2>
       <p>如果你只想用最低的钱、最少的步骤把 iPhone 配通，按下面顺序操作即可。这是一条<strong>已经被验证可用</strong>的完整路径。</p>
@@ -504,7 +577,7 @@
       </ul>
     </section>
 
-    <section class="card">
+    <section class="card" id="ios-9">
       <div class="kicker">iOS 09</div>
       <h2>常见问题</h2>
       <p><strong>1. 中国区 App Store 找不到应用</strong> — Shadowrocket / Stash 等未在中国区上架（ShadowClash 当前可见，但部分时段可能下架），建议使用外区（美区、港区）Apple ID 登录 App Store 后下载。</p>
@@ -618,6 +691,54 @@
       if (event.key === 'Escape') {
         closeShareMenu();
       }
+    });
+
+    // 根据 UA 自动滚到对应系统目录（仅首次访问、无锚点时触发，不影响 SEO）
+    (function autoScrollByOS() {
+      try {
+        if (window.location.hash) return;
+        var ua = (navigator.userAgent || '').toLowerCase();
+        var isIOS = /iphone|ipad|ipod/.test(ua) || (ua.indexOf('mac') >= 0 && navigator.maxTouchPoints > 1);
+        var isAndroid = /android/.test(ua);
+        if (!isIOS && !isAndroid) return;
+        var targetId = isIOS ? 'ios-toc' : 'android-toc';
+        var target = document.getElementById(targetId);
+        if (!target) return;
+        setTimeout(function() {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      } catch (e) {}
+    })();
+
+    // 修正 hash 锚点定位偏移
+    // 原因：页面内 lazy-load 图片在锚点跳转时还没确定真实尺寸，浏览器按当前布局滚动后位置会偏
+    // 方案：hash 变化时多次校正，覆盖图片陆续加载导致的高度变化
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        var opts = { block: 'start', behavior: smooth ? 'smooth' : 'auto' };
+        target.scrollIntoView(opts);
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
+
+    // 系统选择卡片点击埋点（可选）
+    document.querySelectorAll('.os-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        try {
+          if (window.gtag) window.gtag('event', 'os_picker_click', { os: card.dataset.os });
+        } catch (e) {}
+      });
     });
   </script>
   <script src="../analytics-events.js" defer></script>
