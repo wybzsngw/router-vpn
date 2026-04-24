@@ -2,7 +2,7 @@
 private/
 @private/
 private*/
-
+.cursor/
 
 # 系统文件
 .DS_Store
