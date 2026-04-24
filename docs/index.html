@@ -90,6 +90,7 @@
       position: relative;
       overflow: hidden;
     }
+    .hero-panel .header { margin-bottom: 0 }
     .hero-panel::before {
       content: "";
       position: absolute;
@@ -329,6 +330,46 @@
     }
     .card .btn:hover { box-shadow: 0 6px 20px rgba(14,165,233,.18); transform: translateY(-2px); border-color: rgba(14,165,233,.35) }
     .card .btn.secondary { background: rgba(0,0,0,.03) }
+    .card .btn.accent-green { background: rgba(16,185,129,.1) }
+    .card .btn.accent-purple { background: rgba(124,77,255,.1) }
+    .card .tag.red { background: rgba(229,9,20,.1); color: #e50914; border-color: rgba(229,9,20,.2) }
+
+    /* Quick Start 内联链接 + 卡片小标题 */
+    .quick-link { color: var(--accent); text-decoration: none }
+    .quick-link:hover { text-decoration: underline }
+    .quick-card .quick-eyebrow {
+      margin: 0 0 8px; font-size: 12px; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--accent);
+    }
+
+    /* 资源下载按钮 */
+    .download-list { display: flex; flex-direction: column; gap: 8px; margin-top: 14px }
+    .download-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 16px; border-radius: 10px;
+      color: var(--text); text-decoration: none;
+      background: rgba(0,0,0,.04); border: 1px solid rgba(0,0,0,.08);
+      font-size: 14px; transition: all .2s;
+    }
+    .download-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(17,24,39,.08) }
+    .download-btn.primary {
+      background: linear-gradient(135deg, rgba(16,185,129,.12), rgba(14,165,233,.12));
+      border-color: rgba(16,185,129,.25); font-weight: 500;
+    }
+    .download-btn.purple {
+      background: linear-gradient(135deg, rgba(124,77,255,.08), rgba(14,165,233,.08));
+      border-color: rgba(124,77,255,.16); font-weight: 500;
+    }
+    .download-btn.warn {
+      background: linear-gradient(135deg, rgba(251,191,36,.12), rgba(14,165,233,.1));
+      border-color: rgba(251,191,36,.25); font-weight: 500;
+    }
+
+    /* Footer */
+    .footer-nav { margin-top: 12px; font-size: 12px; line-height: 2 }
+    .footer-line-1 { margin-top: 8px }
+    .footer-line-2 { margin-top: 4px }
+
     .src-note { font-size: 11px; color: var(--muted); margin-top: 1.5rem; padding-top: 0.6rem; border-top: 1px solid rgba(0,0,0,.06); }
     .src-note a { color: var(--muted); text-decoration: underline dotted; }
 
@@ -354,7 +395,7 @@
   <main class="container">
 
     <div class="hero-panel">
-      <div class="header" style="margin-bottom:0">
+      <div class="header">
         <div class="eyebrow">订阅申请 · 教程配置 · 插件下载</div>
         <h1><span>Clash 订阅、配置与下载入口</span></h1>
         <p class="sub">首页只保留最常用的核心功能：先获取订阅，再按设备选择教程，最后下载对应插件或客户端，尽量让你少走弯路。</p>
@@ -420,7 +461,7 @@
     <h2 class="section-title" id="start">Quick Start · 快速开始</h2>
     <div class="quick-grid">
       <div class="quick-card">
-        <div class="section-title" style="margin:0 0 8px;font-size:12px">常见故障</div>
+        <div class="quick-eyebrow">常见故障</div>
         <h3>90% 问题的 3 个快速排查点</h3>
         <p>导入订阅后连不上、节点速度慢、流媒体被识别，先从下面三条看起，大多不用翻技术文档。</p>
         <div class="step-list">
@@ -428,28 +469,28 @@
             <div class="step-badge">!</div>
             <div>
               <strong>订阅下载失败 / 导入后空白</strong>
-              多数是订阅链接过期或网络未放行。<a href="/pages/soft-router-guide#subscription-download-failure" style="color:var(--accent);text-decoration:none">查看排查步骤 →</a>
+              多数是订阅链接过期或网络未放行。<a class="quick-link" href="/pages/soft-router-guide#subscription-download-failure">查看排查步骤 →</a>
             </div>
           </div>
           <div class="step-item">
             <div class="step-badge">?</div>
             <div>
               <strong>节点全绿但打不开 Google / YouTube</strong>
-              通常是 DNS 或 TUN 模式未开。<a href="/clash-subscription-guide" style="color:var(--accent);text-decoration:none">对比机场解锁能力 →</a>
+              通常是 DNS 或 TUN 模式未开。<a class="quick-link" href="/clash-subscription-guide">对比机场解锁能力 →</a>
             </div>
           </div>
           <div class="step-item">
             <div class="step-badge">×</div>
             <div>
               <strong>Netflix / Disney+ 显示「仅限部分内容」</strong>
-              节点被判定代理，需要解锁线路。<a href="/pages/netflix-guide" style="color:var(--accent);text-decoration:none">查看流媒体解锁 →</a>
+              节点被判定代理，需要解锁线路。<a class="quick-link" href="/pages/netflix-guide">查看流媒体解锁 →</a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="quick-card">
-        <div class="section-title" style="margin:0 0 8px;font-size:12px">热门入口</div>
+        <div class="quick-eyebrow">热门入口</div>
         <h3>常用页面直达</h3>
         <p>下面这些是最常被访问的入口，适合直接收藏。</p>
         <div class="mini-links">
@@ -503,7 +544,7 @@
         </div>
         <div class="btns">
           <a class="btn" href="/pages/soft-router-guide">查看教程 →</a>
-          <a class="btn" href="/pages/bypass-router-guide" style="background:rgba(16,185,129,.1)">旁路由教程 →</a>
+          <a class="btn accent-green" href="/pages/bypass-router-guide">旁路由教程 →</a>
         </div>
       </div>
 
@@ -603,7 +644,7 @@
         <h3>iOS · ShadowClash（免费）</h3>
         <p class="desc">2026 年 iOS 免费翻墙推荐方案。只需一个外区 Apple ID，无需订阅 Shadowrocket，Guest 模式直接 URL 导入订阅即可，附避坑警示。</p>
         <div class="tags">
-          <span class="tag" style="background:rgba(16,185,129,.1);color:var(--success);border-color:rgba(16,185,129,.2)">免费</span>
+          <span class="tag green">免费</span>
           <span class="tag purple">ShadowClash</span>
           <span class="tag">外区 Apple ID</span>
         </div>
@@ -627,8 +668,8 @@
         </div>
         <div class="btns">
           <a class="btn" href="/pages/chatgpt-guide">注册教程 →</a>
-          <a class="btn" href="/pages/chatgpt-plus-guide" style="background:rgba(124,77,255,.1)">Plus 充值指南 →</a>
-          <a class="btn" href="/pages/openai-api-guide" style="background:rgba(16,185,129,.1)">API 指南 →</a>
+          <a class="btn accent-purple" href="/pages/chatgpt-plus-guide">Plus 充值指南 →</a>
+          <a class="btn accent-green" href="/pages/openai-api-guide">API 指南 →</a>
         </div>
       </div>
 
@@ -637,7 +678,7 @@
         <h3>Netflix 解锁观看</h3>
         <p class="desc">Netflix 中国观看完整攻略，含注册流程、全区内容解锁、低价区订阅、合租方案、4K 画质设置，以及 Disney+、YouTube Premium 等流媒体推荐。</p>
         <div class="tags">
-          <span class="tag" style="background:rgba(229,9,20,.1);color:#e50914;border-color:rgba(229,9,20,.2)">Netflix</span>
+          <span class="tag red">Netflix</span>
           <span class="tag purple">流媒体解锁</span>
           <span class="tag green">4K HDR</span>
         </div>
@@ -682,10 +723,10 @@
           <span class="tag green">ARM64</span>
           <span class="tag">ARM32</span>
         </div>
-        <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
-          <a href="downloads/MC2_0.4.6_ARM64.tar.gz" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(14,165,233,.12));color:var(--text);text-decoration:none;border:1px solid rgba(16,185,129,.25);font-size:14px;font-weight:500">⬇ MC2_0.4.6_ARM64.tar.gz（推荐）</a>
-          <a href="downloads/MC2_0.4.6_ARM32.tar.gz" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,rgba(124,77,255,.08),rgba(14,165,233,.08));color:var(--text);text-decoration:none;border:1px solid rgba(124,77,255,.16);font-size:14px;font-weight:500">⬇ MC2_0.4.6_ARM32.tar.gz（ARM32）</a>
-          <a href="downloads/MC2_0.3_ARM64.tar.gz" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:rgba(0,0,0,.04);color:var(--text);text-decoration:none;border:1px solid rgba(0,0,0,.08);font-size:14px">⬇ MC2_0.3_ARM64.tar.gz</a>
+        <div class="download-list">
+          <a class="download-btn primary" href="downloads/MC2_0.4.6_ARM64.tar.gz" download>⬇ MC2_0.4.6_ARM64.tar.gz（推荐）</a>
+          <a class="download-btn purple" href="downloads/MC2_0.4.6_ARM32.tar.gz" download>⬇ MC2_0.4.6_ARM32.tar.gz（ARM32）</a>
+          <a class="download-btn" href="downloads/MC2_0.3_ARM64.tar.gz" download>⬇ MC2_0.3_ARM64.tar.gz</a>
         </div>
         <p class="src-note">更多版本与适配机型说明：<a href="/pages/asus-router-guide#downloads">华硕路由器专题页</a> · <a href="https://t.me/merlinclashcat" target="_blank" rel="noopener">Telegram 频道</a></p>
       </div>
@@ -699,9 +740,9 @@
           <span class="tag purple">Full</span>
           <span class="tag green">需核对平台</span>
         </div>
-        <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
-          <a href="downloads/fancyss_hnd_full.tar.gz" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,rgba(251,191,36,.12),rgba(14,165,233,.1));color:var(--text);text-decoration:none;border:1px solid rgba(251,191,36,.25);font-size:14px;font-weight:500">⬇ fancyss_hnd_full.tar.gz</a>
-          <a href="/pages/asus-router-guide#fancyss" style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:rgba(0,0,0,.04);color:var(--text);text-decoration:none;border:1px solid rgba(0,0,0,.08);font-size:14px">查看 Fancyss 路由器说明</a>
+        <div class="download-list">
+          <a class="download-btn warn" href="downloads/fancyss_hnd_full.tar.gz" download>⬇ fancyss_hnd_full.tar.gz</a>
+          <a class="download-btn" href="/pages/asus-router-guide#fancyss">查看 Fancyss 路由器说明</a>
         </div>
         <p class="src-note">引用：<a href="https://github.com/hq450/fancyss_history_package/blob/master/README.md" target="_blank" rel="noopener">Fancyss README</a> · <a href="https://github.com/hq450/fancyss" target="_blank" rel="noopener">源码仓库</a></p>
       </div>
@@ -709,7 +750,7 @@
 
     <footer>
       <p>本站内容仅用作学习与技术指引，请遵守当地法律法规，合理合规使用网络服务。</p>
-      <nav aria-label="站点全局导航" style="margin-top:12px;font-size:12px;line-height:2">
+      <nav class="footer-nav" aria-label="站点全局导航">
         <a href="/clash-subscription-guide">Clash 订阅申请</a> ·
         <a href="/pages/asus-router-guide">华硕路由器教程</a> ·
         <a href="/pages/soft-router-guide">软路由教程</a> ·
@@ -723,8 +764,8 @@
         <a href="/pages/openai-api-guide">OpenAI API</a> ·
         <a href="/pages/netflix-guide">Netflix 解锁</a>
       </nav>
-      <p style="margin-top:8px">推荐收藏首页：<a href="https://www.aixiaobai168.com/">www.aixiaobai168.com</a></p>
-      <p style="margin-top:4px"><a href="https://github.com/mowei-ie/router-vpn">GitHub 项目主页</a> · 更新日期：2026-04-06</p>
+      <p class="footer-line-1">推荐收藏首页：<a href="https://www.aixiaobai168.com/">www.aixiaobai168.com</a></p>
+      <p class="footer-line-2"><a href="https://github.com/mowei-ie/router-vpn">GitHub 项目主页</a> · 更新日期：2026-04-06</p>
     </footer>
 
   </main>
