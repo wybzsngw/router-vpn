@@ -391,12 +391,11 @@
     </div>
 
     <nav class="nav" aria-label="页面导航">
-      <a href="#subscribe">订阅申请</a>
       <a href="#start">快速开始</a>
       <a href="#router">路由器</a>
       <a href="#desktop">桌面端</a>
       <a href="#mobile">移动端</a>
-      <a href="#scenes">使用场景</a>
+      <a href="#scenes">热门用法</a>
       <a href="#more">资源下载</a>
     </nav>
 
@@ -418,51 +417,32 @@
       </div>
     </div>
 
-    <div class="notice-grid">
-      <div class="notice">
-        <h3>新用户建议</h3>
-        <ul>
-          <li>先申请订阅，再选择设备教程</li>
-          <li>优先使用规则模式，完成后再调高级功能</li>
-          <li>导入后先测试延迟、流媒体和常用网站访问</li>
-        </ul>
-      </div>
-      <div class="notice">
-        <h3>老用户入口</h3>
-        <p>老地址 <code>clash-subscription-guide.html</code> 仍然保留可访问。你也可以直接把本首页加入收藏，后续入口会持续在这里集中更新。</p>
-      </div>
-      <div class="notice">
-        <h3>站点定位</h3>
-        <p>这个首页不是项目介绍页，而是你的功能入口页。重点就是 3 件事：订阅、教程、下载。</p>
-      </div>
-    </div>
-
     <h2 class="section-title" id="start">Quick Start · 快速开始</h2>
     <div class="quick-grid">
       <div class="quick-card">
-        <div class="section-title" style="margin:0 0 8px;font-size:12px">推荐路径</div>
-        <h3>3 步完成配置</h3>
-        <p>如果你是第一次接触 Clash，可以按下面的顺序完成，从订阅获取到设备落地会更清晰。</p>
+        <div class="section-title" style="margin:0 0 8px;font-size:12px">常见故障</div>
+        <h3>90% 问题的 3 个快速排查点</h3>
+        <p>导入订阅后连不上、节点速度慢、流媒体被识别，先从下面三条看起，大多不用翻技术文档。</p>
         <div class="step-list">
           <div class="step-item">
-            <div class="step-badge">01</div>
+            <div class="step-badge">!</div>
             <div>
-              <strong>先申请订阅</strong>
-              通过机场获取 Clash 订阅链接，完成套餐选择、注册与订阅地址复制。
+              <strong>订阅下载失败 / 导入后空白</strong>
+              多数是订阅链接过期或网络未放行。<a href="/pages/soft-router-guide#subscription-download-failure" style="color:var(--accent);text-decoration:none">查看排查步骤 →</a>
             </div>
           </div>
           <div class="step-item">
-            <div class="step-badge">02</div>
+            <div class="step-badge">?</div>
             <div>
-              <strong>按设备选择教程</strong>
-              路由器适合全屋覆盖，桌面端适合个人设备，手机端适合移动场景。
+              <strong>节点全绿但打不开 Google / YouTube</strong>
+              通常是 DNS 或 TUN 模式未开。<a href="/clash-subscription-guide" style="color:var(--accent);text-decoration:none">对比机场解锁能力 →</a>
             </div>
           </div>
           <div class="step-item">
-            <div class="step-badge">03</div>
+            <div class="step-badge">×</div>
             <div>
-              <strong>导入订阅并测试连通性</strong>
-              导入后优先测试节点延迟、流媒体解锁与常用服务访问情况。
+              <strong>Netflix / Disney+ 显示「仅限部分内容」</strong>
+              节点被判定代理，需要解锁线路。<a href="/pages/netflix-guide" style="color:var(--accent);text-decoration:none">查看流媒体解锁 →</a>
             </div>
           </div>
         </div>
@@ -481,9 +461,9 @@
             <span>华硕路由器教程</span>
             <span>MerlinClash</span>
           </a>
-          <a class="mini-link" href="/pages/linux-guide">
-            <span>Linux 教程</span>
-            <span>桌面版 + 服务器版</span>
+          <a class="mini-link" href="/pages/mobile-guide#ios-3">
+            <span>iOS 免费方案 ShadowClash</span>
+            <span>外区 Apple ID + 蓝胖云</span>
           </a>
           <a class="mini-link" href="/pages/asus-router-guide#downloads">
             <span>MerlinClash 插件下载</span>
@@ -493,27 +473,9 @@
       </div>
     </div>
 
-    <!-- ==================== 订阅申请 ==================== -->
-    <h2 class="section-title" id="subscribe">Step 1 · 获取订阅</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="card-icon">🎫</div>
-        <h3>Clash 订阅申请指南</h3>
-        <p class="desc">机场推荐与价格对比，含蓝胖云、扬帆云、大哥云、尔湾云等，一键获取 Clash 订阅链接。</p>
-        <div class="tags">
-          <span class="tag">机场推荐</span>
-          <span class="tag purple">价格对比</span>
-          <span class="tag green">流媒体解锁</span>
-        </div>
-        <div class="btns">
-          <a class="btn" href="/clash-subscription-guide">查看指南 →</a>
-        </div>
-      </div>
-    </div>
-
     <!-- ==================== 路由器 ==================== -->
-    <h2 class="section-title" id="device-entry">按设备选择教程</h2>
-    <h2 class="section-title" id="router">路由器方案 · 全屋翻墙</h2>
+    <a id="device-entry" aria-hidden="true"></a>
+    <h2 class="section-title" id="router">按设备选择教程 · 路由器方案（全屋翻墙）</h2>
     <div class="grid">
       <div class="card">
         <div class="card-icon">📡</div>
@@ -548,7 +510,7 @@
       <div class="card">
         <div class="card-icon">🧰</div>
         <h3>iStoreOS + iStore 插件（Are-u-ok）</h3>
-        <p class="desc">开源“路由 + 存储”系统 iStoreOS：用 iStore 软件中心安装/维护科学上网插件，结合 Are-u-ok 第三方插件包解决平台与版本问题。</p>
+        <p class="desc">开源「路由 + 存储」系统 iStoreOS：用 iStore 软件中心安装/维护科学上网插件，结合 Are-u-ok 第三方插件包解决平台与版本问题。</p>
         <div class="tags">
           <span class="tag">iStoreOS</span>
           <span class="tag purple">iStore</span>
@@ -609,22 +571,50 @@
     <h2 class="section-title" id="mobile">移动端 · 随身翻墙</h2>
     <div class="grid">
       <div class="card">
-        <div class="card-icon">📱</div>
-        <h3>Android / iOS 手机</h3>
-        <p class="desc">Android 使用 Clash Meta for Android，iOS 使用 Shadowrocket / Stash。含订阅导入、规则模式、分应用代理、外区 Apple ID 获取等。</p>
+        <div class="card-icon">🤖</div>
+        <h3>Android · Clash Meta</h3>
+        <p class="desc">使用开源免费的 Clash Meta for Android，支持订阅导入、规则模式、TUN、分应用代理，国内应用商店无法直装，教程提供 GitHub 直链。</p>
         <div class="tags">
-          <span class="tag">Android</span>
-          <span class="tag purple">iOS</span>
+          <span class="tag">Clash Meta</span>
+          <span class="tag purple">TUN 模式</span>
           <span class="tag green">分应用代理</span>
         </div>
         <div class="btns">
-          <a class="btn" href="/pages/mobile-guide">查看教程 →</a>
+          <a class="btn" href="/pages/mobile-guide#android-toc">Android 教程 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>iOS · Shadowrocket / Stash</h3>
+        <p class="desc">iPhone / iPad 付费方案，稳定性和生态最成熟。需要外区 Apple ID 购买，教程含 App Store 充值、URL 订阅导入、常用规则配置。</p>
+        <div class="tags">
+          <span class="tag">Shadowrocket</span>
+          <span class="tag purple">Stash</span>
+          <span class="tag green">外区 Apple ID</span>
+        </div>
+        <div class="btns">
+          <a class="btn" href="/pages/mobile-guide#ios-toc">iOS 付费教程 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🎁</div>
+        <h3>iOS · ShadowClash（免费）</h3>
+        <p class="desc">2026 年 iOS 免费翻墙推荐方案。只需一个外区 Apple ID，无需订阅 Shadowrocket，Guest 模式直接 URL 导入订阅即可，附避坑警示。</p>
+        <div class="tags">
+          <span class="tag" style="background:rgba(16,185,129,.1);color:var(--success);border-color:rgba(16,185,129,.2)">免费</span>
+          <span class="tag purple">ShadowClash</span>
+          <span class="tag">外区 Apple ID</span>
+        </div>
+        <div class="btns">
+          <a class="btn" href="/pages/mobile-guide#ios-3">查看方案 →</a>
         </div>
       </div>
     </div>
 
     <!-- ==================== 使用场景 ==================== -->
-    <h2 class="section-title" id="scenes">使用场景 · 科学上网能做什么</h2>
+    <h2 class="section-title" id="scenes">热门用法 · AI 与流媒体</h2>
     <div class="grid">
       <div class="card">
         <div class="card-icon">🤖</div>
@@ -657,7 +647,7 @@
       </div>
     </div>
 
-    <h2 class="section-title" id="topics">热门专题 · 搜索高频问题直达</h2>
+    <h2 class="section-title" id="topics">进阶专题 · 常见深度问题</h2>
     <div class="notice-grid">
       <div class="notice">
         <h3>ChatGPT Plus / Go 充值</h3>
