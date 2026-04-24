@@ -287,32 +287,59 @@ opkg install iptables dnsmasq-full coreutils coreutils-nohup bash curl ca-certif
     <section class="card" id="subscription-download-failure">
       <div class="kicker">OpenWrt 10</div>
       <h2>订阅下载失败排查</h2>
-      <p>OpenClash 日志提示「配置文件订阅失败」「下载失败」，但手动上传 YAML 能正常使用时，通常不是 OpenClash 本身的 bug，而是「HTTP 下载」这一步被拦截。按以下四种原因依次排查。</p>
+      <p>OpenClash 日志提示「配置文件订阅失败」「下载失败」，但手动上传 YAML 能正常使用时，通常不是 OpenClash 本身的 bug，而是「HTTP 下载」这一步被拦截。按以下五种原因依次排查。</p>
 
       <p><strong>原因一：User-Agent 被机场拦截（v0.47 起最常见）</strong></p>
       <p>OpenClash v0.47 起，默认订阅下载 UA 从 <code class="inline">ClashforWindows</code> 改为 <code class="inline">clash.meta</code>，部分机场后端白名单尚未放行新 UA，会直接返回 403 / 401。日志中可见：<code class="inline">订阅的 User-Agent 为【clash.meta】</code>。</p>
+      <p><strong>UA 配置入口</strong>（注意：OpenClash 并没有「覆盖设置 → 流量控制 → 自定义订阅下载 UA」这个全局入口，UA 只能逐条在订阅条目里设置）：</p>
       <ol style="padding-left:20px;list-style:decimal">
-        <li>进入 <strong>OpenClash → 覆盖设置 → 流量控制</strong></li>
-        <li>「自定义订阅下载的 User-Agent」填入 <code class="inline">ClashforWindows/0.20.39</code></li>
-        <li>保存后回到订阅管理点击「立即更新」</li>
+        <li>进入 <strong>OpenClash → 配置订阅 → 编辑该条订阅</strong></li>
+        <li>在「User-Agent」字段填入兼容度最高的值，推荐按以下顺序尝试：
+          <ul>
+            <li><code class="inline">mihomo/1.19.20</code>（2026 年测试覆盖面最广，多数新版机场都会按此 UA 返回可用节点）</li>
+            <li><code class="inline">ClashforWindows/0.20.39</code>（老牌白名单 UA，兼容老机场）</li>
+            <li><code class="inline">clash.meta/v1.18.0</code>（Meta 内核官方 UA）</li>
+          </ul>
+        </li>
+        <li>保存后点击「立即更新」</li>
       </ol>
-      <p>多数机场这样就能恢复。若仍失败，继续看原因二。</p>
+      <p><strong>填了 UA 还是显示 smart 核心版本号？</strong> 如果你当前使用的是 <strong>Smart 内核</strong>，下载订阅时核心二进制可能会**覆盖**你手填的 UA，导致机场后台记录里仍是 <code class="inline">smart-xxxx</code>。此时两种方案：① 临时切回 <strong>Mihomo Meta 内核</strong> 更新订阅成功后再切回 Smart；② 改用原因二的「URL 参数法」绕过 UA 机制。</p>
 
-      <p><strong>原因二：TLS 握手 / SNI 被运营商阻断</strong></p>
+      <p><strong>原因二：URL 参数法（最省事，无视 UA 限制）</strong></p>
+      <p>大多数机场在订阅链接后追加参数即可强制返回指定格式，<strong>该参数优先级高于 UA</strong>：</p>
+      <ul>
+        <li>若链接中<strong>无</strong> <code class="inline">?</code>，在末尾接 <code class="inline">?flag=clash</code>，如：<br><code class="inline">https://airport.example.com/link/abcd1234?flag=clash</code></li>
+        <li>若链接已带 <code class="inline">?</code>，则用 <code class="inline">&amp;flag=clash</code> 追加，如：<br><code class="inline">https://airport.example.com/sub?token=xxx&amp;flag=clash</code></li>
+        <li>机场实现各异，参数名也可能是 <code class="inline">flag=meta</code> / <code class="inline">flag=clashmeta</code> / <code class="inline">target=clash</code>，具体以机场文档或客服说明为准</li>
+      </ul>
+
+      <p><strong>原因三：TLS 握手 / SNI 被运营商阻断</strong></p>
       <p>部分地区运营商对机场域名做 SNI 阻断，表现为 TLS 握手直接失败。SSH 到路由器上直接用 curl 验证：</p>
-      <pre><code>curl -v -A "ClashforWindows/0.20.39" "你的订阅URL" -o /tmp/test.yaml</code></pre>
+      <pre><code>curl -v -A "mihomo/1.19.20" "你的订阅URL" -o /tmp/test.yaml</code></pre>
       <p>对照输出：</p>
       <ul>
         <li><code class="inline">HTTP/1.1 403</code> / <code class="inline">401</code> → 机场 UA 或 IP 拦截，联系机场客服加白名单</li>
         <li><code class="inline">TLS handshake failed</code> / <code class="inline">Connection reset by peer</code> → 运营商 SNI 阻断，把 DNS 上游改成 <code class="inline">1.1.1.1</code>、<code class="inline">8.8.8.8</code> 或启用 DoH；或在订阅管理中勾选「使用代理下载订阅」（需先手动上传一次 YAML 启动代理）</li>
-        <li><code class="inline">Could not resolve host</code> → 看原因三</li>
+        <li><code class="inline">Could not resolve host</code> → 看原因四</li>
       </ul>
+      <p><strong>UA 是否真的生效</strong>，可用以下命令直接验证（看请求头里发出去的 UA 字符串）：</p>
+      <pre><code>curl -v -A "mihomo/1.19.20" "你的订阅URL" 2>&amp;1 | grep -i "user-agent"</code></pre>
 
-      <p><strong>原因三：DNS 污染 / 上游未通</strong></p>
+      <p><strong>原因四：DNS 污染 / 上游未通</strong></p>
       <p>curl 报 <code class="inline">Could not resolve host</code> 说明路由器根本解析不到机场域名。检查 <strong>OpenClash → DNS 设置 → 上游 DNS</strong> 是否正常；或在路由器临时执行 <code class="inline">echo "nameserver 1.1.1.1" &gt;&gt; /etc/resolv.conf</code> 后重试订阅。</p>
 
-      <p><strong>原因四：订阅链接已过期或流量耗尽</strong></p>
+      <p><strong>原因五：订阅链接已过期或流量耗尽</strong></p>
       <p>登录机场面板确认订阅链接是否仍有效、本月流量是否充足。部分机场每月更换订阅地址或对超流量账号直接拒绝返回配置。</p>
+
+      <p><strong>终极方案：SSH curl 拉到本地 + cron 自动更新</strong></p>
+      <p>若以上方法全部失败但 curl 能拿到正确 yaml，可以绕过 OpenClash 的下载逻辑，用 curl 直接把 yaml 写入配置目录，然后在 OpenClash 里选择该本地文件作为配置：</p>
+      <pre><code># 立即拉取一次
+curl -L -A "mihomo/1.19.20" "你的订阅URL" -o /etc/openclash/config/yizhihongxing.yaml
+
+# 定时任务：每 6 小时自动更新一次
+# OpenWrt: 系统 → 计划任务，加入
+0 */6 * * * curl -L -A "mihomo/1.19.20" "你的订阅URL" -o /etc/openclash/config/yizhihongxing.yaml &amp;&amp; /etc/init.d/openclash restart</code></pre>
+      <p>等效于自己实现了一套订阅更新逻辑，完全规避 OpenClash 的 HTTP 下载模块。</p>
 
       <p><strong>应急方案</strong> — 以上问题修复前，可继续使用「<a href="#import-subscription">导入订阅 · 方式二：手动上传 YAML</a>」过渡，不影响代理正常使用。</p>
     </section>
