@@ -669,6 +669,25 @@
         closeShareMenu();
       }
     });
+
+    // 修正 hash 锚点定位偏移
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
   </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"ChatGPT 注册与使用教程","description":"中国用户注册并使用 ChatGPT 的完整图文教程","url":"https://www.aixiaobai168.com/pages/chatgpt-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"配置网络环境","text":"使用 Clash 等代理工具连接到支持 OpenAI 的地区节点"},{"@type":"HowToStep","name":"注册 OpenAI 账号","text":"访问 chatgpt.com 使用邮箱注册或 Google/Microsoft 账号登录"},{"@type":"HowToStep","name":"开始使用 ChatGPT","text":"登录后即可使用 GPT-5.3 免费版，或升级 Go/Plus/Pro 获取更高额度和 GPT-5.4 模型"},{"@type":"HowToStep","name":"升级 Plus（可选）","text":"通过虚拟信用卡或代充服务升级到 ChatGPT Plus 获取完整功能"}]}</script>

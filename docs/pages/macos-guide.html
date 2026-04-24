@@ -157,10 +157,31 @@
       <a href="/pages/netflix-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Netflix</a>
     </nav>
 
+    <!-- ========== 快速导航目录 ========== -->
+    <section class="card">
+      <div class="kicker">目录</div>
+      <h2>快速导航</h2>
+      <p style="color:var(--muted);font-size:14px;margin:6px 0 14px">本页共 12 章，覆盖 <strong>ClashX Meta</strong> 从安装到进阶使用全流程。点击章节直达：</p>
+      <ul style="columns:2;column-gap:24px;padding-left:20px">
+        <li><a href="#mac-1">1. 软件介绍</a></li>
+        <li><a href="#mac-2">2. 系统要求</a></li>
+        <li><a href="#mac-3">3. 下载安装</a></li>
+        <li><a href="#mac-4">4. 导入订阅</a></li>
+        <li><a href="#mac-5">5. 启动代理</a></li>
+        <li><a href="#mac-6">6. 增强模式</a></li>
+        <li><a href="#mac-7">7. 代理模式</a></li>
+        <li><a href="#mac-8">8. 终端代理配置</a></li>
+        <li><a href="#mac-9">9. 与 Homebrew 协同</a></li>
+        <li><a href="#mac-10">10. Dashboard 面板</a></li>
+        <li><a href="#mac-11">11. 开机自启</a></li>
+        <li><a href="#mac-12">12. 常见问题</a></li>
+      </ul>
+    </section>
+
     <!-- 1. 软件介绍 -->
     <section class="card">
       <div class="kicker">Section 01</div>
-      <h2>软件介绍</h2>
+      <h2 id="mac-1">软件介绍</h2>
       <p><strong>ClashX Meta</strong> 是 macOS 上基于 <strong>Clash.Meta</strong> 内核的图形化代理客户端，是原 <strong>ClashX</strong> 的继任者。ClashX 项目已停止维护，ClashX Meta 由社区持续更新，支持更多现代特性。</p>
       <table>
         <tr><th>特性</th><th>ClashX</th><th>ClashX Meta</th></tr>
@@ -181,7 +202,7 @@
     <!-- 2. 系统要求 -->
     <section class="card">
       <div class="kicker">Section 02</div>
-      <h2>系统要求</h2>
+      <h2 id="mac-2">系统要求</h2>
       <table>
         <tr><th>项目</th><th>要求</th></tr>
         <tr><td>操作系统</td><td>macOS 10.15 (Catalina) 及以上</td></tr>
@@ -197,7 +218,7 @@ sw_vers</code></pre>
     <!-- 3. 下载安装 -->
     <section class="card">
       <div class="kicker">Section 03</div>
-      <h2>下载安装</h2>
+      <h2 id="mac-3">下载安装</h2>
       <p><strong>方法一：GitHub 发布页</strong></p>
       <p>打开 <a href="https://github.com/MetaCubeX/ClashX.Meta/releases" target="_blank" rel="noopener">ClashX Meta 官方发布页</a>，在 Assets 区域选择：</p>
       <ul>
@@ -214,7 +235,7 @@ brew install --cask clashx-meta</code></pre>
     <!-- 4. 导入订阅 -->
     <section class="card">
       <div class="kicker">Section 04</div>
-      <h2>导入订阅</h2>
+      <h2 id="mac-4">导入订阅</h2>
       <p><strong>1. 获取订阅链接</strong></p>
       <p>从您的机场/代理服务商获取订阅链接（通常为 <code class="inline">https://xxx.com/api/v1/client/subscribe?token=xxx</code> 格式）。</p>
       <p><strong>2. 通过菜单导入</strong></p>
@@ -230,7 +251,7 @@ brew install --cask clashx-meta</code></pre>
     <!-- 5. 启动代理 -->
     <section class="card">
       <div class="kicker">Section 05</div>
-      <h2>启动代理</h2>
+      <h2 id="mac-5">启动代理</h2>
       <p><strong>设置系统代理</strong></p>
       <ol style="padding-left:20px;list-style:decimal">
         <li>点击菜单栏 ClashX Meta 图标</li>
@@ -243,7 +264,7 @@ brew install --cask clashx-meta</code></pre>
     <!-- 6. 增强模式 -->
     <section class="card">
       <div class="kicker">Section 06</div>
-      <h2>增强模式</h2>
+      <h2 id="mac-6">增强模式</h2>
       <p><strong>什么是增强模式？</strong></p>
       <p><strong>增强模式</strong>（Enhanced Mode）即 <strong>TUN 模式</strong>，通过虚拟网卡接管系统全部网络流量，实现真正的全局代理。与仅设置系统代理不同，增强模式可让<strong>终端、Git、npm、pip</strong> 等不读取系统代理的工具也走代理。</p>
       <p><strong>启用增强模式</strong></p>
@@ -257,7 +278,7 @@ brew install --cask clashx-meta</code></pre>
     <!-- 7. 代理模式 -->
     <section class="card">
       <div class="kicker">Section 07</div>
-      <h2>代理模式</h2>
+      <h2 id="mac-7">代理模式</h2>
       <p>在菜单栏 ClashX Meta 图标下，<strong>代理模式</strong> 可切换分流策略：</p>
       <table>
         <tr><th>模式</th><th>说明</th></tr>
@@ -270,7 +291,7 @@ brew install --cask clashx-meta</code></pre>
     <!-- 8. 终端代理配置 -->
     <section class="card">
       <div class="kicker">Section 08</div>
-      <h2>终端代理配置</h2>
+      <h2 id="mac-8">终端代理配置</h2>
       <p>若未开启增强模式，终端默认<strong>不走</strong>系统代理，需手动配置环境变量。</p>
       <p><strong>临时设置（当前会话）</strong></p>
       <pre><code>export http_proxy="http://127.0.0.1:7890"
@@ -300,7 +321,7 @@ proxy-off  # 关闭代理</code></pre>
     <!-- 9. 与 Homebrew 协同 -->
     <section class="card">
       <div class="kicker">Section 09</div>
-      <h2>与 Homebrew 协同</h2>
+      <h2 id="mac-9">与 Homebrew 协同</h2>
       <p>Homebrew 安装软件时，若网络受限，可通过代理加速。</p>
       <p><strong>临时使用代理安装</strong></p>
       <pre><code>export ALL_PROXY="http://127.0.0.1:7890"
@@ -321,7 +342,7 @@ unset HOMEBREW_ALL_PROXY</code></pre>
     <!-- 10. Dashboard 面板 -->
     <section class="card">
       <div class="kicker">Section 10</div>
-      <h2>Dashboard 面板</h2>
+      <h2 id="mac-10">Dashboard 面板</h2>
       <p><strong>内置 Dashboard</strong></p>
       <p>点击菜单栏 ClashX Meta 图标 → 选择 <strong>Dashboard</strong> 或 <strong>打开控制面板</strong>。默认地址通常为 <code class="inline">http://127.0.0.1:9090</code>。</p>
       <p><strong>外部 Dashboard：Yacd</strong></p>
@@ -337,7 +358,7 @@ unset HOMEBREW_ALL_PROXY</code></pre>
     <!-- 11. 开机自启 -->
     <section class="card">
       <div class="kicker">Section 11</div>
-      <h2>开机自启</h2>
+      <h2 id="mac-11">开机自启</h2>
       <p><strong>方法一：系统设置</strong></p>
       <p>打开 <strong>系统设置</strong> → <strong>通用</strong> → <strong>登录项</strong> → 点击 <strong>+</strong>，在应用程序中找到 <strong>ClashX Meta</strong>，添加。</p>
       <p><strong>方法二：应用内设置</strong></p>
@@ -347,7 +368,7 @@ unset HOMEBREW_ALL_PROXY</code></pre>
     <!-- 12. 常见问题 -->
     <section class="card">
       <div class="kicker">Section 12</div>
-      <h2>常见问题</h2>
+      <h2 id="mac-12">常见问题</h2>
       <p><strong>1. 提示「无法验证开发者」或「已损坏」</strong></p>
       <pre><code># 在终端执行（将路径替换为实际应用路径）
 xattr -cr /Applications/ClashX\ Meta.app</code></pre>
@@ -464,6 +485,25 @@ xattr -cr /Applications/ClashX\ Meta.app</code></pre>
         closeShareMenu();
       }
     });
+
+    // 修正 hash 锚点定位偏移（长页面多次校正）
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
   </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"macOS ClashX Meta 翻墙教程","description":"macOS 系统使用 ClashX Meta 实现科学上网","url":"https://www.aixiaobai168.com/pages/macos-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"下载安装","text":"从 GitHub 或 Homebrew 安装 ClashX Meta"},{"@type":"HowToStep","name":"导入订阅","text":"通过菜单栏添加远程配置文件"},{"@type":"HowToStep","name":"启动代理","text":"勾选设置为系统代理"},{"@type":"HowToStep","name":"增强模式","text":"开启 TUN 模式实现全局代理"}]}</script>

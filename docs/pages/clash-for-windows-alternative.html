@@ -112,6 +112,21 @@
       <a href="/pages/clash-for-windows-alternative" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">CFW 替代方案</a>
     </nav>
 
+    <!-- ========== 快速导航目录 ========== -->
+    <section class="card">
+      <div class="kicker">目录</div>
+      <h2>快速导航</h2>
+      <p style="color:var(--muted);font-size:14px;margin:6px 0 14px">全文 6 章，覆盖 CFW 停更背景、替代工具对比、无损迁移步骤与常见问题。点击章节直达：</p>
+      <ul style="columns:2;column-gap:24px;padding-left:20px">
+        <li><a href="#section-1">一、Clash for Windows 发生了什么</a></li>
+        <li><a href="#section-2">二、2026 年 Windows 翻墙工具推荐</a></li>
+        <li><a href="#section-3">三、从 CFW 迁移到 Clash Verge Rev</a></li>
+        <li><a href="#section-4">四、没有 Clash 订阅？</a></li>
+        <li><a href="#section-5">五、常见问题</a></li>
+        <li><a href="#section-6">六、推荐阅读</a></li>
+      </ul>
+    </section>
+
     <section class="card" id="section-1">
       <div class="kicker">背景</div>
       <h2>Clash for Windows 发生了什么</h2>
@@ -250,6 +265,26 @@
       </nav>
     </footer>
   </main>
+  <script>
+    // 修正 hash 锚点定位偏移
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
+  </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"从 Clash for Windows 迁移到 Clash Verge Rev","description":"CFW 停更后，将配置无损迁移到 Clash Verge Rev 的完整步骤","url":"https://www.aixiaobai168.com/pages/clash-for-windows-alternative","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"备份 CFW 数据","text":"从 CFW 的 Profiles 页面复制订阅 URL，备份本地 YAML 配置文件"},{"@type":"HowToStep","name":"下载 Clash Verge Rev","text":"从 GitHub Releases 下载最新版 .exe 安装包并安装"},{"@type":"HowToStep","name":"导入订阅","text":"打开 Clash Verge Rev，在订阅标签中粘贴订阅链接并导入"},{"@type":"HowToStep","name":"启用代理","text":"选择节点，开启系统代理，测试连通性"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"Windows 教程","item":"https://www.aixiaobai168.com/pages/windows-guide"},{"@type":"ListItem","position":3,"name":"CFW 替代方案","item":"https://www.aixiaobai168.com/pages/clash-for-windows-alternative"}]}</script>

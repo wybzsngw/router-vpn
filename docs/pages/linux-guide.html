@@ -165,18 +165,67 @@
       <a href="/pages/netflix-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Netflix</a>
     </nav>
 
+    <!-- ========== 场景选择器 ========== -->
+    <section aria-label="选择你的 Linux 使用场景" style="margin-bottom:32px">
+      <p style="text-align:center;font-size:15px;color:var(--muted);margin:0 0 16px">👇 你在什么样的 Linux 环境？点击卡片直达对应目录</p>
+      <div class="os-picker" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <a href="#gui-toc" data-os="gui" class="os-card" style="display:block;padding:24px 22px;background:linear-gradient(135deg,#eff6ff,#faf5ff);border:2px solid rgba(124,77,255,.2);border-radius:18px;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <span style="font-size:36px;line-height:1">🖥️</span>
+            <div>
+              <div style="font-size:20px;font-weight:700;color:#0f172a">GUI 桌面版</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:2px">Clash Verge Rev · 5 个章节</div>
+            </div>
+          </div>
+          <p style="font-size:13.5px;color:#374151;line-height:1.6;margin:8px 0 0">Ubuntu / Fedora / Arch 桌面环境，图形化管理订阅、规则、TUN 模式。</p>
+          <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;background:rgba(124,77,255,.12);border-radius:8px;font-size:13px;color:#7c4dff;font-weight:600">查看 GUI 目录 →</div>
+        </a>
+        <a href="#headless-toc" data-os="headless" class="os-card" style="display:block;padding:24px 22px;background:linear-gradient(135deg,#f0fdf4,#ecfeff);border:2px solid rgba(34,197,94,.2);border-radius:18px;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <span style="font-size:36px;line-height:1">⚙️</span>
+            <div>
+              <div style="font-size:20px;font-weight:700;color:#0f172a">Headless 服务器版</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:2px">命令行 + systemd · 8 个章节</div>
+            </div>
+          </div>
+          <p style="font-size:13.5px;color:#374151;line-height:1.6;margin:8px 0 0">无桌面 VPS / 服务器（Ubuntu Server / CentOS 等），命令行安装 + systemd 守护 + REST API。</p>
+          <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;background:rgba(34,197,94,.12);border-radius:8px;font-size:13px;color:#16a34a;font-weight:600">查看 Headless 目录 →</div>
+        </a>
+      </div>
+      <style>
+        .os-card:hover { transform:translateY(-3px); box-shadow:0 14px 32px rgba(17,24,39,.10); border-color:currentColor }
+        @media (max-width: 640px) {
+          .os-picker { grid-template-columns: 1fr !important }
+        }
+      </style>
+    </section>
+
     <!-- GUI DESKTOP SECTION -->
 
-    <div class="section-divider">一、GUI 桌面版</div>
+    <div class="section-divider" id="gui-section">一、GUI 桌面版</div>
 
-    <section class="card">
+    <!-- GUI 目录卡 -->
+    <section class="card" id="gui-toc" style="border-left:4px solid #7c4dff">
+      <div class="kicker" style="color:#7c4dff">GUI · 目录</div>
+      <h2>🖥️ Linux GUI 桌面版教程导航</h2>
+      <p style="color:var(--muted);font-size:14px;margin:6px 0 14px">使用 <strong>Clash Verge Rev for Linux</strong>（AppImage / deb / rpm / AUR），图形化管理。点击章节直达：</p>
+      <ul style="columns:2;column-gap:24px;padding-left:20px">
+        <li><a href="#gui-1">01. 方案概述</a></li>
+        <li><a href="#gui-2">02. 下载安装</a></li>
+        <li><a href="#gui-3">03. 导入订阅</a></li>
+        <li><a href="#gui-4">04. 启动代理</a></li>
+        <li><a href="#gui-5">05. 桌面环境代理</a></li>
+      </ul>
+    </section>
+
+    <section class="card" id="gui-1">
       <div class="kicker">GUI 01</div>
       <h2>1. 方案概述</h2>
       <p><strong>Clash Verge Rev for Linux</strong> 与 Windows、macOS 版本功能一致，提供图形化界面，支持订阅管理、规则分流、TUN 模式等。</p>
       <p><strong>支持发行版</strong>：Debian、Ubuntu、Fedora、Arch Linux 等主流桌面发行版。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="gui-2">
       <div class="kicker">GUI 02</div>
       <h2>2. 下载安装</h2>
       <p>从 GitHub 发布页下载对应格式：</p>
@@ -189,7 +238,7 @@
       <p>发布页：<a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener">clash-verge-rev releases</a></p>
     </section>
 
-    <section class="card">
+    <section class="card" id="gui-3">
       <div class="kicker">GUI 03</div>
       <h2>3. 导入订阅</h2>
       <p>与 Windows 操作相同：</p>
@@ -201,14 +250,14 @@
       </ol>
     </section>
 
-    <section class="card">
+    <section class="card" id="gui-4">
       <div class="kicker">GUI 04</div>
       <h2>4. 启动代理</h2>
       <p><strong>系统代理（System Proxy）</strong>：打开主界面的 System Proxy 开关，系统代理将指向 Clash（默认 <code class="inline">127.0.0.1:7897</code>）。</p>
       <p><strong>TUN 模式</strong>：开启 TUN 开关可实现全局代理，首次使用可能需安装依赖或授予权限。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="gui-5">
       <div class="kicker">GUI 05</div>
       <h2>5. 桌面环境代理</h2>
       <p>若系统代理未自动生效，可手动配置：</p>
@@ -220,15 +269,32 @@
 
     <!-- HEADLESS SERVER SECTION -->
 
-    <div class="section-divider">二、无 GUI 服务器版（Headless）</div>
+    <div class="section-divider" id="headless-section">二、无 GUI 服务器版（Headless）</div>
 
-    <section class="card">
+    <!-- Headless 目录卡 -->
+    <section class="card" id="headless-toc" style="border-left:4px solid #16a34a">
+      <div class="kicker" style="color:#16a34a">Headless · 目录</div>
+      <h2>⚙️ Linux Headless 服务器版教程导航</h2>
+      <p style="color:var(--muted);font-size:14px;margin:6px 0 14px">无桌面环境（Ubuntu Server / CentOS / Debian 等），命令行安装 Clash 二进制 + systemd 服务。点击章节直达：</p>
+      <ul style="columns:2;column-gap:24px;padding-left:20px">
+        <li><a href="#headless-1">06. 方案概述</a></li>
+        <li><a href="#headless-2">07. 下载安装</a></li>
+        <li><a href="#headless-3">08. 配置文件</a></li>
+        <li><a href="#headless-4">09. systemd 服务</a></li>
+        <li><a href="#headless-5">10. 环境变量代理</a></li>
+        <li><a href="#headless-6">11. REST API</a></li>
+        <li><a href="#headless-7">12. 一键安装脚本</a></li>
+        <li><a href="#headless-8">13. 常见问题</a></li>
+      </ul>
+    </section>
+
+    <section class="card" id="headless-1">
       <div class="kicker">Headless 01</div>
       <h2>6. 方案概述</h2>
       <p>适用于<strong>无图形界面的 Linux 服务器</strong>，如 Ubuntu Server、CentOS、Debian 等。通过命令行安装 Clash 二进制，配合 systemd 服务与配置文件实现代理。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="headless-2">
       <div class="kicker">Headless 02</div>
       <h2>7. 下载安装</h2>
       <p>根据架构下载 Clash 二进制：</p>
@@ -246,7 +312,7 @@ clash -v</code></pre>
       <p>架构对应：<code class="inline">x86_64</code>→amd64，<code class="inline">aarch64</code>→arm64，<code class="inline">armv7l</code>→armv7。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="headless-3">
       <div class="kicker">Headless 03</div>
       <h2>8. 配置文件</h2>
       <p>配置文件路径：<code class="inline">~/.config/clash/config.yaml</code></p>
@@ -269,7 +335,7 @@ rules: [...]            # 分流规则</code></pre>
       <p>可使用订阅链接下载配置：<code class="inline">curl -L "订阅URL" -o ~/.config/clash/config.yaml</code></p>
     </section>
 
-    <section class="card">
+    <section class="card" id="headless-4">
       <div class="kicker">Headless 04</div>
       <h2>9. systemd 服务</h2>
       <p>创建 <code class="inline">/etc/systemd/system/clash.service</code>：</p>
@@ -293,7 +359,7 @@ sudo systemctl enable clash
 sudo systemctl status clash</code></pre>
     </section>
 
-    <section class="card">
+    <section class="card" id="headless-5">
       <div class="kicker">Headless 05</div>
       <h2>10. 环境变量代理</h2>
       <p>临时设置（当前会话）：</p>
@@ -304,7 +370,7 @@ export no_proxy=localhost,127.0.0.1,::1</code></pre>
       <p>永久设置：将上述内容追加到 <code class="inline">~/.bashrc</code> 或 <code class="inline">/etc/environment</code>，然后执行 <code class="inline">source ~/.bashrc</code>。</p>
     </section>
 
-    <section class="card">
+    <section class="card" id="headless-6">
       <div class="kicker">Headless 06</div>
       <h2>11. REST API</h2>
       <p>Clash 提供 External Controller，默认 <code class="inline">127.0.0.1:9090</code>，可用 curl 管理：</p>
@@ -320,7 +386,7 @@ curl -X PUT http://127.0.0.1:9090/proxies/selector-name \
   -d '{"name":"proxy-name"}'</code></pre>
     </section>
 
-    <section class="card">
+    <section class="card" id="headless-7">
       <div class="kicker">Headless 07</div>
       <h2>12. 一键安装脚本</h2>
       <p>项目提供一键安装脚本，可自动完成下载、安装、配置目录创建、systemd 服务等步骤：</p>
@@ -329,7 +395,7 @@ curl -X PUT http://127.0.0.1:9090/proxies/selector-name \
       <p>脚本路径：<code class="inline">scripts/install-clash-headless.sh</code></p>
     </section>
 
-    <section class="card">
+    <section class="card" id="headless-8">
       <div class="kicker">Headless 08</div>
       <h2>13. 常见问题</h2>
       <p><strong>Permission denied</strong> — 确保 clash 二进制有执行权限：<code class="inline">chmod +x /usr/local/bin/clash</code></p>
@@ -442,6 +508,34 @@ curl -X PUT http://127.0.0.1:9090/proxies/selector-name \
       if (event.key === 'Escape') {
         closeShareMenu();
       }
+    });
+
+    // 修正 hash 锚点定位偏移
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
+
+    // 场景选择卡片点击埋点（可选）
+    document.querySelectorAll('.os-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        try {
+          if (window.gtag) window.gtag('event', 'os_picker_click', { os: card.dataset.os });
+        } catch (e) {}
+      });
     });
   </script>
   <script src="../analytics-events.js" defer></script>

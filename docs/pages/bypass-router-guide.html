@@ -444,6 +444,25 @@
     function favoritePage(){const a=/Mac|iPhone|iPad|iPod/i.test(navigator.platform);try{if(window.external&&'AddFavorite' in window.external){window.external.AddFavorite(window.location.href,document.title);closeShareMenu();return}if(window.sidebar&&window.sidebar.addPanel){window.sidebar.addPanel(document.title,window.location.href,'');closeShareMenu();return}}catch(e){}closeShareMenu();alert('请使用快捷键 '+(a?'Command/Cmd + D':'Ctrl + D')+' 收藏当前页面。')}
     document.addEventListener('click',function(e){const w=document.getElementById('floating-share');if(w&&!w.contains(e.target))closeShareMenu()});
     document.addEventListener('keydown',function(e){if(e.key==='Escape')closeShareMenu()});
+
+    // 修正 hash 锚点定位偏移（本页 39 个 h2/h3，长页面多次校正）
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
   </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"旁路由设置教程 — OpenWrt / iStoreOS 旁路由科学上网","description":"在局域网中部署旁路由实现部分设备精准翻墙的完整教程","url":"https://www.aixiaobai168.com/pages/bypass-router-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"设置旁路由静态 IP","text":"将旁路由 LAN 口 IP 设为与主路由同网段，网关指向主路由"},{"@type":"HowToStep","name":"关闭 DHCP","text":"在旁路由上关闭 DHCP 服务，避免与主路由冲突"},{"@type":"HowToStep","name":"配置防火墙","text":"设置入站/出站/转发为接受，添加 NAT 伪装规则"},{"@type":"HowToStep","name":"安装代理工具","text":"安装 OpenClash 或 PassWall 并导入订阅链接"},{"@type":"HowToStep","name":"客户端指向旁路由","text":"将需要翻墙的设备网关改为旁路由 IP"}]}</script>

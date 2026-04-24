@@ -167,12 +167,37 @@
       <a href="/pages/netflix-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Netflix</a>
     </nav>
 
+    <!-- ========== 快速导航目录 ========== -->
+    <section class="card">
+      <div class="kicker">目录</div>
+      <h2>快速导航</h2>
+      <p style="color:var(--muted);font-size:14px;margin:6px 0 14px">全篇分 <strong>刷机</strong>（1-7）+ <strong>MerlinClash 使用</strong>（8-16）+ <strong>Fancyss 可选</strong>（17）三部分，共 17 章。点击章节直达：</p>
+      <ul style="columns:2;column-gap:24px;padding-left:20px">
+        <li><a href="#asus-1">1. 硬件准备</a></li>
+        <li><a href="#asus-2">2. 固件下载</a></li>
+        <li><a href="#asus-3">3. 备份设置</a></li>
+        <li><a href="#asus-4">4. 刷入固件</a></li>
+        <li><a href="#asus-5">5. 恢复出厂</a></li>
+        <li><a href="#asus-6">6. 验证版本</a></li>
+        <li><a href="#asus-7">7. 软件中心</a></li>
+        <li><a href="#asus-8">8. 安装 MerlinClash</a></li>
+        <li><a href="#asus-9">9. 订阅导入</a></li>
+        <li><a href="#asus-10">10. 节点选择</a></li>
+        <li><a href="#asus-11">11. 分流规则</a></li>
+        <li><a href="#asus-12">12. 游戏加速</a></li>
+        <li><a href="#asus-13">13. 流媒体解锁</a></li>
+        <li><a href="#asus-14">14. 广告过滤</a></li>
+        <li><a href="#asus-15">15. 监控与日志</a></li>
+        <li><a href="#asus-16">16. 常见问题</a></li>
+        <li><a href="#asus-17">17. Fancyss 可选方案</a></li>
+      </ul>
+    </section>
 
     <!-- PART 1: 梅林固件刷机 -->
 
     <section class="card">
       <div class="kicker">Part 1</div>
-      <h2>1. 硬件准备</h2>
+      <h2 id="asus-1">1. 硬件准备</h2>
       <p>推荐使用以下华硕路由器型号，均支持梅林固件与 MerlinClash：</p>
       <table>
         <tr><th>型号</th><th>CPU</th><th>内存</th><th>接口</th><th>Wi-Fi</th></tr>
@@ -187,7 +212,7 @@
 
     <section class="card">
       <div class="kicker">Part 1</div>
-      <h2>2. 固件下载</h2>
+      <h2 id="asus-2">2. 固件下载</h2>
       <p><strong>KoolCenter（推荐）</strong>：<a href="https://fw.koolcenter.com/" target="_blank" rel="noopener">fw.koolcenter.com</a> — 提供官改与梅林改版固件，按机型选择对应版本。</p>
       <p><strong>梅林官方</strong>：<a href="https://www.asuswrt-merlin.net/" target="_blank" rel="noopener">www.asuswrt-merlin.net</a> — 原版梅林固件。</p>
       <p><strong>常用机型直达</strong>：<a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX86U_PRO/?C=M&O=D" target="_blank" rel="noopener">RT-AX86U Pro</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX86U/?C=M&O=D" target="_blank" rel="noopener">RT-AX86U</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX88U_PRO/?C=M&O=D" target="_blank" rel="noopener">RT-AX88U Pro</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/RT-AX68U/?C=M&O=D" target="_blank" rel="noopener">RT-AX68U</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/TUF-AX3000/?C=M&O=D" target="_blank" rel="noopener">TUF-AX3000</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_388/TUF-AX5400/?C=M&O=D" target="_blank" rel="noopener">TUF-AX5400</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_102/RT-BE86U/?C=M&O=D" target="_blank" rel="noopener">RT-BE86U</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_102/RT-BE88U/" target="_blank" rel="noopener">RT-BE88U</a> · <a href="https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_102/RT-BE96U/?C=M&O=D" target="_blank" rel="noopener">RT-BE96U</a></p>
@@ -205,7 +230,7 @@
 
     <section class="card">
       <div class="kicker">Part 1</div>
-      <h2>3. 备份设置</h2>
+      <h2 id="asus-3">3. 备份设置</h2>
       <p>刷机前务必备份当前配置，避免丢失宽带账号、Wi-Fi 密码等设置。</p>
       <ol style="list-style:decimal">
         <li>登录路由器管理界面（如 <code class="inline">http://192.168.50.1</code> 或 <code class="inline">http://router.asus.com</code>）</li>
@@ -216,7 +241,7 @@
 
     <section class="card">
       <div class="kicker">Part 1</div>
-      <h2>4. 刷入固件</h2>
+      <h2 id="asus-4">4. 刷入固件</h2>
       <ol style="list-style:decimal">
         <li>进入 <strong>系统管理</strong> → <strong>固件升级</strong></li>
         <li>点击「选择文件」，选择下载的 <code class="inline">.w</code> 固件文件</li>
@@ -228,7 +253,7 @@
 
     <section class="card">
       <div class="kicker">Part 1</div>
-      <h2>5. 恢复出厂</h2>
+      <h2 id="asus-5">5. 恢复出厂</h2>
       <p>刷机完成后建议执行一次恢复出厂设置，以避免旧配置与新固件冲突。</p>
       <ol style="list-style:decimal">
         <li>进入 <strong>系统管理</strong> → <strong>恢复/导出/上传设置</strong></li>
@@ -239,7 +264,7 @@
 
     <section class="card">
       <div class="kicker">Part 1</div>
-      <h2>6. 验证版本</h2>
+      <h2 id="asus-6">6. 验证版本</h2>
       <p>登录路由器管理界面，确认固件版本字符串显示为「Merlin」或「koolshare」字样，说明梅林固件已成功刷入。</p>
       <p>同时检查是否出现「软件中心」入口，这是安装 MerlinClash 的前提。</p>
       <img src="../images/asus/asus-1.png" alt="固件版本校验页面示意" loading="lazy" decoding="async" style="width:100%;border-radius:12px;border:1px solid rgba(0,0,0,.08);margin-top:12px;" />
@@ -249,7 +274,7 @@
 
     <section class="card">
       <div class="kicker">Part 2</div>
-      <h2>7. 软件中心</h2>
+      <h2 id="asus-7">7. 软件中心</h2>
       <p>若固件来自 KoolCenter，通常已自带软件中心。若未显示或需更新：</p>
       <ul>
         <li>进入 KoolCenter 官网，按机型下载对应软件中心安装包</li>
@@ -262,7 +287,7 @@
 
     <section class="card" id="downloads">
       <div class="kicker">Part 2</div>
-      <h2>8. 安装 MerlinClash</h2>
+      <h2 id="asus-8">8. 安装 MerlinClash</h2>
       <p><strong>离线安装步骤：</strong></p>
       <p>根据路由器型号和 CPU 架构选择对应版本下载：</p>
       <table>
@@ -290,7 +315,7 @@
 
     <section class="card">
       <div class="kicker">Part 2</div>
-      <h2>9. 订阅导入</h2>
+      <h2 id="asus-9">9. 订阅导入</h2>
       <p>在 MerlinClash 中配置订阅：</p>
       <ol style="list-style:decimal">
         <li>打开 MerlinClash 主界面</li>
@@ -303,7 +328,7 @@
 
     <section class="card">
       <div class="kicker">Part 2</div>
-      <h2>10. 节点选择</h2>
+      <h2 id="asus-10">10. 节点选择</h2>
       <p>在 MerlinClash 的节点列表中：</p>
       <ul>
         <li>可对节点进行延迟测试，选择延迟最低、稳定性最好的节点</li>
@@ -314,7 +339,7 @@
 
     <section class="card">
       <div class="kicker">Part 2</div>
-      <h2>11. 分流规则</h2>
+      <h2 id="asus-11">11. 分流规则</h2>
       <p>MerlinClash 支持规则分流，可按需配置：</p>
       <ul>
         <li><strong>流媒体</strong>：Netflix、Disney+、HBO 等走专用节点</li>
@@ -327,7 +352,7 @@
 
     <section class="card">
       <div class="kicker">Part 2</div>
-      <h2>12. 游戏加速</h2>
+      <h2 id="asus-12">12. 游戏加速</h2>
       <p>在 MerlinClash 中配置游戏模式：</p>
       <ul>
         <li>选择低延迟、专线游戏节点</li>
@@ -338,7 +363,7 @@
 
     <section class="card">
       <div class="kicker">Part 2</div>
-      <h2>13. 流媒体解锁</h2>
+      <h2 id="asus-13">13. 流媒体解锁</h2>
       <p>针对 Netflix、Disney+ 等流媒体：</p>
       <ul>
         <li>选择支持对应地区解锁的节点（如美区、港区等）</li>
@@ -349,7 +374,7 @@
 
     <section class="card">
       <div class="kicker">Part 2</div>
-      <h2>14. 广告过滤</h2>
+      <h2 id="asus-14">14. 广告过滤</h2>
       <p>MerlinClash 支持广告过滤规则：</p>
       <ul>
         <li>在规则配置中添加 REJECT 规则屏蔽广告域名</li>
@@ -360,7 +385,7 @@
 
     <section class="card">
       <div class="kicker">Part 2</div>
-      <h2>15. 监控与日志</h2>
+      <h2 id="asus-15">15. 监控与日志</h2>
       <p>MerlinClash 提供：</p>
       <ul>
         <li><strong>状态监控</strong>：连接状态、流量统计</li>
@@ -372,7 +397,7 @@
 
     <section class="card">
       <div class="kicker">Part 2</div>
-      <h2>16. 常见问题</h2>
+      <h2 id="asus-16">16. 常见问题</h2>
       <p><strong>节点列表为空</strong> — 检查订阅链接是否有效；检查网络；部分机场需在网页端重新生成订阅。</p>
       <p><strong>订阅更新失败</strong> — 确认路由器可访问外网；检查订阅链接格式；尝试手动更新。</p>
       <p><strong>速度下降</strong> — 更换节点；检查节点是否过载；确认宽带带宽是否充足。</p>
@@ -381,7 +406,7 @@
 
     <section class="card" id="fancyss">
       <div class="kicker">Part 3</div>
-      <h2>17. Fancyss 可选方案</h2>
+      <h2 id="asus-17">17. Fancyss 可选方案</h2>
       <p><strong>Fancyss</strong> 是华硕官改 / 梅林固件软件中心生态中的另一套科学上网插件方案，可视作 MerlinClash 之外的补充选择。</p>
       <p>根据其公开 README，Fancyss 支持较多平台代理包和协议组合，常见平台包括 <code class="inline">arm</code>、<code class="inline">hnd</code>、<code class="inline">hnd_v8</code>、<code class="inline">qca</code>、<code class="inline">mtk</code>，并区分 <code class="inline">full</code> 与 <code class="inline">lite</code> 两类版本。</p>
       <ul>
@@ -502,6 +527,25 @@
         closeShareMenu();
       }
     });
+
+    // 修正 hash 锚点定位偏移（本页 6 张 lazy 图片会导致初始高度不准）
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
   </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"华硕路由器 Clash 翻墙教程","description":"华硕路由器使用梅林固件与 MerlinClash 实现全屋科学上网","url":"https://www.aixiaobai168.com/pages/asus-router-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"硬件准备","text":"选择支持梅林固件的华硕路由器型号"},{"@type":"HowToStep","name":"下载梅林固件","text":"从 KoolCenter 或梅林官方下载对应型号固件"},{"@type":"HowToStep","name":"备份与刷机","text":"备份路由器设置后刷入梅林固件"},{"@type":"HowToStep","name":"安装 MerlinClash","text":"通过软件中心离线安装 MerlinClash 插件"},{"@type":"HowToStep","name":"导入订阅","text":"在 MerlinClash 中粘贴订阅链接并更新节点"},{"@type":"HowToStep","name":"配置分流规则","text":"按需配置流媒体、AI服务、游戏加速等分流规则"}]}</script>

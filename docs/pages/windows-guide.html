@@ -562,6 +562,25 @@ Invoke-WebRequest -Uri "http://127.0.0.1:9090/configs" -UseBasicParsing</code></
         closeShareMenu();
       }
     });
+
+    // 修正 hash 锚点定位偏移（本页 11 张 lazy 图片会导致初始高度不准，首次跳转必偏）
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
   </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Windows Clash Verge Rev 翻墙教程","description":"Windows 系统使用 Clash Verge Rev 实现科学上网","url":"https://www.aixiaobai168.com/pages/windows-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"下载安装","text":"从 GitHub 下载 Clash Verge Rev 安装包并安装"},{"@type":"HowToStep","name":"导入订阅","text":"在 Profiles 中粘贴订阅链接并导入"},{"@type":"HowToStep","name":"启动代理","text":"开启 System Proxy 或 TUN 模式"},{"@type":"HowToStep","name":"选择代理模式","text":"根据需求选择 Rule / Global / Direct 模式"}]}</script>

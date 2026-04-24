@@ -605,6 +605,25 @@
         closeShareMenu();
       }
     });
+
+    // 修正 hash 锚点定位偏移（本页 29 个 h2/h3，长页面多次校正）
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
   </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"iStoreOS 科学上网完整专题","description":"在 iStoreOS 上通过 iStore + Are-u-ok 安装 PassWall/OpenClash 等代理工具实现科学上网","url":"https://www.aixiaobai168.com/pages/istoreos-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"下载固件并安装 iStoreOS","text":"从 fw.koolcenter.com 下载对应设备的固件并刷入"},{"@type":"HowToStep","name":"确认平台架构","text":"通过 uname -m 确认 x86_64 或 aarch64"},{"@type":"HowToStep","name":"下载科学上网插件","text":"从 Are-u-ok 仓库下载对应平台的 .run 安装包"},{"@type":"HowToStep","name":"安装插件","text":"在 iStore 手动安装或 SSH 执行 sh 包名.run"},{"@type":"HowToStep","name":"配置旁路由与代理","text":"配置网络、防火墙、导入订阅"}]}</script>

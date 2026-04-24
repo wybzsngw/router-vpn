@@ -317,6 +317,26 @@
       </nav>
     </footer>
   </main>
+  <script>
+    // 修正 hash 锚点定位偏移
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
+  </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"ChatGPT Plus / Go 充值指南","description":"中国用户升级 ChatGPT Go 或 Plus 的完整支付流程","url":"https://www.aixiaobai168.com/pages/chatgpt-plus-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"准备网络环境","text":"连接到支持 OpenAI 的地区节点，建议日本、新加坡或美国"},{"@type":"HowToStep","name":"选择方案","text":"根据预算和用途，在 Go、Plus、Pro 之间选择合适的订阅方案"},{"@type":"HowToStep","name":"选择支付方式","text":"可使用国际信用卡、虚拟信用卡或 iPhone 外区订阅完成付款"},{"@type":"HowToStep","name":"完成升级","text":"在 ChatGPT 的订阅入口中选择目标方案并完成支付"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"ChatGPT 教程","item":"https://www.aixiaobai168.com/pages/chatgpt-guide"},{"@type":"ListItem","position":3,"name":"ChatGPT Plus / Go 充值指南","item":"https://www.aixiaobai168.com/pages/chatgpt-plus-guide"}]}</script>

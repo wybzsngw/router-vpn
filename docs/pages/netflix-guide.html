@@ -641,6 +641,25 @@
         closeShareMenu();
       }
     });
+
+    // 修正 hash 锚点定位偏移
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
   </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Netflix 解锁观看教程","description":"中国用户注册并解锁观看 Netflix 全区内容的完整教程","url":"https://www.aixiaobai168.com/pages/netflix-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"配置网络环境","text":"使用支持流媒体解锁的 Clash 节点连接到目标地区"},{"@type":"HowToStep","name":"注册 Netflix 账号","text":"访问 netflix.com 注册账号并选择订阅套餐"},{"@type":"HowToStep","name":"解锁地区内容","text":"切换不同地区节点观看该地区独占内容"},{"@type":"HowToStep","name":"优化观看体验","text":"设置 4K 画质、中文字幕等偏好"}]}</script>

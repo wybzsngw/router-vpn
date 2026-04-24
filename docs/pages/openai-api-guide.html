@@ -294,6 +294,26 @@
       </nav>
     </footer>
   </main>
+  <script>
+    // 修正 hash 锚点定位偏移
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
+  </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"OpenAI API 申请与计费指南","description":"开发者申请 OpenAI API Key 并开始按量调用的完整流程","url":"https://www.aixiaobai168.com/pages/openai-api-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"准备账号与网络环境","text":"确保能够稳定访问 ChatGPT 和 platform.openai.com，并完成 OpenAI 账号注册"},{"@type":"HowToStep","name":"进入开发者平台","text":"登录 platform.openai.com，进入 API 平台查看项目、账单和密钥管理"},{"@type":"HowToStep","name":"创建 API Key","text":"在控制台中创建新的 API Key，并仅在本地或服务器环境变量中保存"},{"@type":"HowToStep","name":"充值并开始调用","text":"为 API 账户充值后，再按模型和 Token 用量进行调用和计费"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"ChatGPT 教程","item":"https://www.aixiaobai168.com/pages/chatgpt-guide"},{"@type":"ListItem","position":3,"name":"OpenAI API 指南","item":"https://www.aixiaobai168.com/pages/openai-api-guide"}]}</script>
