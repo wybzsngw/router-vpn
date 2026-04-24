@@ -102,6 +102,7 @@
 - **售后**：工单 24 小时内回复 · 隧道加密
 - **补充**：套餐名与价格以官网下单页为准，下表为当前 New_2026 系列常见档位
 - **节点变化**：新增 `IEPL 01|5倍流量`、`02|5倍流量`、`03|5倍流量` 等节点，并可见家宽、直连、优化线路等标签
+- **iOS 客户端**：推荐**免费**的 [ShadowClash](https://apps.apple.com/us/app/shadowclash/id6760091330)（需外区 Apple ID）或付费的 Shadowrocket / Stash，Guest mode 直接 URL 导入订阅，详见 [iOS 教程](../mobile/ios-shadowrocket.md#四shadowclash-使用教程免费方案推荐)
 
 以下为常见三档套餐（名称与价格以官网下单页为准，示例为 New_2026 系列）：
 
