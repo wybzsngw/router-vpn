@@ -1,11 +1,9 @@
-"""处理 ShadowClash 教程的 5 张截图：保留原尺寸 (471x1024)，只精确打码隐私字段。
+"""处理 ShadowClash 教程的 3 张截图：保留原尺寸 (471x1024)，只精确打码隐私字段。
 
 源图 hash 与文件名对应：
 1. d203b4729c78e530b3fe03121c2d7ef9 -> shadowclash-1-connect.png
 2. b51b04d8614d356d4d58b3db7e47418f -> shadowclash-2-dashboard.png  (打码 IP)
 3. 50e8958dfb762a4ef05d580040648fcf -> shadowclash-3-add-profile.png
-4. 08592466cbc4480f45a383b9fbd934d3 -> warning-vpn-card-form.png    (打码地址)
-5. 9493e9677deb81fbd70c5010a97ee249 -> warning-vpn-upgrade-modal.png
 """
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
@@ -65,28 +63,10 @@ def process_3():
     img.save(DST_DIR / "shadowclash-3-add-profile.png", "PNG", optimize=True)
 
 
-def process_4():
-    """打码美国地址 SilverAaron / 238 Grey Fox Ln Dover DE（深色 dark mode 背景）。"""
-    src = find_source("08592466cbc4480f45a383b9fbd934d3")
-    img = Image.open(src).convert("RGB")
-    box = (40, 750, 425, 835)
-    fill_rect(img, box, (52, 52, 56))
-    draw_centered_text(img, box, "*** Billing Address Hidden ***", (160, 160, 170))
-    img.save(DST_DIR / "warning-vpn-card-form.png", "PNG", optimize=True)
-
-
-def process_5():
-    src = find_source("9493e9677deb81fbd70c5010a97ee249")
-    img = Image.open(src).convert("RGB")
-    img.save(DST_DIR / "warning-vpn-upgrade-modal.png", "PNG", optimize=True)
-
-
 def main():
     process_1()
     process_2()
     process_3()
-    process_4()
-    process_5()
     print("完成。输出到:", DST_DIR)
     for p in sorted(DST_DIR.glob("*.png")):
         sz = Image.open(p).size

@@ -35,7 +35,7 @@
 | macOS | [ClashX Meta 教程](macos/clashx-meta.md) · [系统代理配置](macos/macos-proxy-settings.md) |
 | Linux | [桌面版](linux/clash-linux-install-guide.md) · [无 GUI 服务器版](linux/clash-linux-headless-guide.md) |
 | Android | [Clash Meta for Android](mobile/android-clash-meta.md) |
-| iOS | [Shadowrocket & Stash](mobile/ios-shadowrocket.md) |
+| iOS | [ShadowClash / Shadowrocket / Stash](mobile/ios-shadowrocket.md) · [ShadowClash 微信直连规则](mobile/shadowclash-wechat-direct.md) |
 
 ### 使用场景教程
 
