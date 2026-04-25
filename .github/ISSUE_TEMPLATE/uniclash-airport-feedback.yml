@@ -1,0 +1,91 @@
+name: UniClash 机场支持反馈
+description: 反馈某家机场是否支持 UniClash，帮助我们补充机场目录
+title: "[UniClash] 机场支持反馈：<请填机场名>"
+labels: ["uniclash", "airport-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！本表单用于收集"哪些机场支持 UniClash 客户端"，最终会整理到
+        <https://www.aixiaobai168.com/pages/uniclash-guide>。
+
+        提交前请确认：
+        - 你已经在该机场购买套餐并尝试过 UniClash；或
+        - 你在机场官网看到了官方提供的 UniClash 下载页。
+
+        敏感信息（订单号、邮箱、订阅链接等）**请不要填写**。
+
+  - type: input
+    id: airport_name
+    attributes:
+      label: 机场名称
+      description: 例如：杨帆云、尔湾云、蓝胖云、白马云……
+      placeholder: 蓝胖云
+    validations:
+      required: true
+
+  - type: input
+    id: airport_site
+    attributes:
+      label: 机场官网域名
+      description: 只填主域名，不要带订阅链接或邀请码
+      placeholder: example.com
+    validations:
+      required: true
+
+  - type: input
+    id: uniclash_download
+    attributes:
+      label: UniClash 官方下载页 URL
+      description: 通常是 tusmartchat.com/uniclash-XXX.html，或机场官网内的下载页。没有就留空。
+      placeholder: https://tusmartchat.com/uniclash-XXX.html
+
+  - type: input
+    id: site_code
+    attributes:
+      label: 网站代码（Site Code）
+      description: 在 UniClash 登录界面"网站代码"输入框需要填写的字符串。例如杨帆云填 yangfan，尔湾云填 erwan。
+      placeholder: yangfan
+
+  - type: dropdown
+    id: verified
+    attributes:
+      label: 你是否亲测能正常登录连接？
+      options:
+        - 是，已亲测可登录并连接节点
+        - 否，仅看到机场官网公告，未亲测
+        - 部分平台可用（请在下方说明哪些平台 OK）
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: platforms
+    attributes:
+      label: 已验证的平台
+      description: 勾选你实际测试过且能用的平台
+      options:
+        - label: Android
+        - label: Windows
+        - label: macOS（M 芯片）
+        - label: macOS（Intel）
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 补充说明（可选）
+      description: 节点情况、解锁能力（ChatGPT / Netflix）、套餐特点、需要注意的坑等。请勿包含订单号 / 邮箱 / 订阅链接。
+      placeholder: |
+        - 套餐价格大致区间：
+        - 节点是否解锁 ChatGPT / Netflix：
+        - 是否支持私人定制 / 家宽线路：
+        - 已知坑点：
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已确认本反馈不包含订单号、邮箱、订阅链接等敏感信息
+          required: true
+        - label: 我同意本反馈被整理后公开发布在 aixiaobai168.com
+          required: true

@@ -58,6 +58,15 @@ UniClash 是部分机场服务商提供的官方/定制 Clash 客户端，登录
 
 > 💡 **为什么先注册再下载？** UniClash 登录界面要求"网站代码 + 邮箱 + 密码"，没有对应服务商账号即使装了客户端也无法登录；如果误点"使用默认站点"，原账号和购买记录就找不到了。
 
+### 你在用的机场也支持 UniClash？
+
+我们正在持续整理 UniClash 机场目录。如果你的机场也提供官方 UniClash 下载页和网站代码（且亲测可用），欢迎通过 GitHub Issues 反馈：
+
+- 📝 [提交机场反馈](https://github.com/mowei-ie/router-vpn/issues/new?template=uniclash-airport-feedback.yml)（需 GitHub 账号）
+- 👀 [查看已收到的反馈](https://github.com/mowei-ie/router-vpn/issues?q=is%3Aissue+label%3Auniclash)
+
+> ⚠️ 提交时请勿包含订单号、邮箱、订阅链接等敏感信息。
+
 ---
 
 ## 三、UniClash 正确使用顺序（6 步）
