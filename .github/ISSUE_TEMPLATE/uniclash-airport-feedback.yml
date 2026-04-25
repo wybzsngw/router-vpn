@@ -6,14 +6,28 @@ body:
   - type: markdown
     attributes:
       value: |
-        感谢反馈！本表单用于收集"哪些机场支持 UniClash 客户端"，最终会整理到
-        <https://www.aixiaobai168.com/pages/uniclash-guide>。
+        感谢花时间反馈！本表单收集到的内容会整理到
+        <https://www.aixiaobai168.com/pages/uniclash-guide>，帮助更多用户找到合适的机场。
+
+        ---
+
+        #### 💡 一个小提醒：保护你自己的账号
+
+        Issue 提交后所有人都能看到，所以下面这些**只属于你的信息**留给自己就好，不要填到表单里：
+
+        - 带 `?code=` `?ref=` `?invite=` 等参数的链接（这些是邀请码，别人复制就会绑定到你）
+        - 你的订阅链接（含 `token=` 或 `subscribe` 路径，等于把账号交出去了）
+        - 邮箱 / 手机号 / 订单号 / 支付截图 / 验证码
+
+        各字段填**主域名**和**公开下载页**就够了，剩下的我们会自己去机场官网核对 ✅
+
+        > 万一不小心写多了也不用担心：直接点 issue 上方 **Edit** 改一下，或者评论一句让我帮忙处理。
+
+        ---
 
         提交前请确认：
-        - 你已经在该机场购买套餐并尝试过 UniClash；或
+        - 你已经在该机场购买套餐并亲测过 UniClash；或
         - 你在机场官网看到了官方提供的 UniClash 下载页。
-
-        敏感信息（订单号、邮箱、订阅链接等）**请不要填写**。
 
   - type: input
     id: airport_name
@@ -27,8 +41,11 @@ body:
   - type: input
     id: airport_site
     attributes:
-      label: 机场官网域名
-      description: 只填主域名，不要带订阅链接或邀请码
+      label: 机场官网主域名
+      description: |
+        只填主域名就好，我们会自己去访问。
+        ✅ 这样填：`example.com`
+        🤔 不建议：带 `?code=`、`/register?code=` 等参数的完整链接（会带上你的邀请关系）
       placeholder: example.com
     validations:
       required: true
@@ -37,7 +54,9 @@ body:
     id: uniclash_download
     attributes:
       label: UniClash 官方下载页 URL
-      description: 通常是 tusmartchat.com/uniclash-XXX.html，或机场官网内的下载页。没有就留空。
+      description: |
+        通常是 `https://tusmartchat.com/uniclash-XXX.html`，或机场官网内对所有人开放的下载页；没有就留空。
+        💡 这里需要的是公开下载页，不是你自己的订阅链接哦。
       placeholder: https://tusmartchat.com/uniclash-XXX.html
 
   - type: input
@@ -73,7 +92,7 @@ body:
     id: notes
     attributes:
       label: 补充说明（可选）
-      description: 节点情况、解锁能力（ChatGPT / Netflix）、套餐特点、需要注意的坑等。请勿包含订单号 / 邮箱 / 订阅链接。
+      description: 节点情况、解锁能力（ChatGPT / Netflix）、套餐特点、需要注意的坑等。
       placeholder: |
         - 套餐价格大致区间：
         - 节点是否解锁 ChatGPT / Netflix：
@@ -83,9 +102,12 @@ body:
   - type: checkboxes
     id: terms
     attributes:
-      label: 提交前确认
+      label: 提交前再看一眼
+      description: 都对的话就可以提交啦
       options:
-        - label: 我已确认本反馈不包含订单号、邮箱、订阅链接等敏感信息
+        - label: 我填的是机场**主域名**，没有带 `?code=` 这类邀请参数
           required: true
-        - label: 我同意本反馈被整理后公开发布在 aixiaobai168.com
+        - label: 表单里没有我自己的订阅链接、邮箱、手机号、订单号
+          required: true
+        - label: 我同意这条反馈被整理后公开发布在 aixiaobai168.com
           required: true
