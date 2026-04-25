@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){if(location.hostname==='mowei-ie.github.io'){var p=location.pathname.replace(/^\/router-vpn/,'').replace(/\/?index\.html$/,'').replace(/\.html$/,'')||'/';location.replace('https://www.aixiaobai168.com'+p+location.search+location.hash);}})();</script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.clarity.ms" />
+  <title>UniClash 下载与使用教程 2026 — 网站代码与安装排障指南</title>
+  <meta name="description" content="2026 UniClash 下载与使用教程：先确认哪些机场支持 UniClash，再注册账号并购买套餐，最后下载对应客户端登录。整理杨帆云网站代码 yangfan、尔湾云网站代码 erwan、Windows/Mac/Android 下载入口、节点测速切换、登录界面截图、Windows 安全提示、Mac 无法验证开发者、安卓未知来源安装、误用默认站点找回与全节点无信号排查。" />
+  <meta name="keywords" content="UniClash,UniClash下载,UniClash教程,UniClash网站代码,UniClash怎么用,UniClash Windows,UniClash Mac,UniClash安卓,UniClash yangfan,UniClash erwan,杨帆云UniClash,尔湾云UniClash,Clash官方客户端,机场客户端,科学上网客户端" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta property="og:title" content="UniClash 下载与使用教程 2026 — 网站代码与安装排障指南" />
+  <meta property="og:description" content="UniClash 下载、网站代码与常见问题排查：杨帆云填 yangfan，尔湾云填 erwan，适合 Windows、Mac、安卓新手使用。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.aixiaobai168.com/pages/uniclash-guide" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="article:published_time" content="2026-04-25" />
+  <meta property="article:modified_time" content="2026-04-25" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="UniClash 下载与使用教程 2026" />
+  <meta name="twitter:description" content="整理杨帆云、尔湾云 UniClash 下载入口、网站代码、安装登录和打不开问题排查。" />
+  <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <link rel="canonical" href="https://www.aixiaobai168.com/pages/uniclash-guide" />
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', '客户端教程');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: scroll;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .section-title { margin: 36px 0 16px; font-size: 14px; letter-spacing: .15em; text-transform: uppercase; color: var(--accent) }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker { letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-size: 12px; margin-bottom: 8px }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card h3 { font-size: 16px; margin: 14px 0 8px }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul, .card ol { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08); vertical-align: top }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    pre, code { background: rgba(0,0,0,.04); border-radius: 8px; padding: 16px; overflow-x: auto; font-size: 13px; line-height: 1.6 }
+    code.inline { padding: .2em .5em; display: inline; background: #eef2ff; color: #4338ca; border: 1px solid #e0e7ff; font-weight: 600 }
+    pre { margin: 12px 0 }
+    pre code { padding: 0; background: none }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .callout { background: linear-gradient(135deg, rgba(14,165,233,.08), rgba(124,77,255,.08)); border: 1px solid rgba(14,165,233,.2); border-radius: 12px; padding: 16px; margin: 14px 0 }
+    .callout strong { color: var(--brand) }
+    .tip-box { background: rgba(16,185,129,.08); border: 1px solid rgba(16,185,129,.2); border-radius: 12px; padding: 14px 16px; margin: 14px 0; font-size: 14px }
+    .tip-box strong { color: #059669 }
+    .warn-box { background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.25); border-radius: 12px; padding: 14px 16px; margin: 14px 0; font-size: 14px }
+    .warn-box strong { color: #b45309 }
+    .danger-box { background: rgba(220,38,38,.06); border: 1px solid rgba(220,38,38,.2); border-radius: 12px; padding: 14px 16px; margin: 14px 0; font-size: 14px }
+    .danger-box strong { color: #b91c1c }
+    .btn-row { display:flex; gap:10px; flex-wrap:wrap; margin: 14px 0 6px }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:11px 16px; border-radius:10px; text-decoration:none; font-weight:700; font-size:14px; border:1px solid rgba(0,0,0,.06); background:#fff; color:var(--text); transition: all .2s }
+    .btn:hover { transform: translateY(-1px); box-shadow:0 8px 20px rgba(15,23,42,.12); text-decoration:none }
+    .btn.primary { background: linear-gradient(135deg,#7c4dff,#0ea5e9); color:#fff; border-color: transparent }
+    .btn.green { background: linear-gradient(135deg,#10b981,#0e9f6e); color:#fff; border-color: transparent }
+    .btn.orange { background: linear-gradient(135deg,#f97316,#ea580c); color:#fff; border-color: transparent }
+    .btn.ghost { background:#fff; color: var(--text) }
+    .provider-card { display:grid; grid-template-columns: 1fr; gap:14px; padding:18px; border-radius:14px; border:1px solid rgba(0,0,0,.06); background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(248,250,252,.95)); margin: 14px 0 }
+    .provider-card .head { display:flex; flex-wrap:wrap; align-items:center; gap:10px; justify-content:space-between }
+    .provider-card .name { font-size:18px; font-weight:700 }
+    .provider-card .pill { display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:700; background: rgba(124,77,255,.1); color: var(--brand); border:1px solid rgba(124,77,255,.2) }
+    .figure { margin: 14px 0; text-align: center }
+    .figure img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid rgba(0,0,0,.06); box-shadow: 0 8px 24px rgba(15,23,42,.08); background:#fff }
+    .figure .cap { margin-top: 8px; color: var(--muted); font-size: 13px }
+    .figure-row { display: grid; gap: 14px; grid-template-columns: 1fr; margin: 14px 0 }
+    @media(min-width:720px) { .figure-row.two { grid-template-columns: 1fr 1fr } }
+    .floating-share { position:fixed; right:18px; bottom:92px; z-index:999; display:flex; flex-direction:column; align-items:flex-end; gap:10px }
+    .floating-share-panel { display:none; flex-direction:column; gap:8px; padding:10px; border-radius:16px; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 14px 34px rgba(17,24,39,.12); backdrop-filter:blur(10px) }
+    .floating-share.is-open .floating-share-panel { display:flex }
+    .floating-share-main, .floating-share-btn { appearance:none; border:1px solid rgba(0,0,0,.08); display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:999px; background:rgba(255,255,255,.94); color:var(--text); font-size:13px; font-weight:700; cursor:pointer; transition:all .2s; box-shadow:0 8px 22px rgba(17,24,39,.1) }
+    .floating-share-main { min-width:92px; padding:12px 16px }
+    .floating-share-btn { min-width:96px; padding:10px 14px; justify-content:flex-start }
+    .floating-share-main:hover, .floating-share-btn:hover { transform:translateY(-2px); border-color:rgba(124,77,255,.28); box-shadow:0 12px 28px rgba(17,24,39,.14) }
+    .floating-share-main.primary { background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(240,244,255,.96)) }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px"><a href="/" style="color:var(--accent);text-decoration:none">首页</a> <span style="margin:0 6px">›</span> <a href="/clash-subscription-guide" style="color:var(--accent);text-decoration:none">订阅申请</a> <span style="margin:0 6px">›</span> <span style="color:var(--text)">UniClash 下载与使用教程</span></nav>
+    <h1>UniClash 下载与使用教程 — 网站代码与安装排障</h1>
+    <p class="subtitle">先确认机场支持 UniClash，再注册账号、购买套餐，最后下载对应客户端登录</p>
+
+    <nav aria-label="站内导航" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="/" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="/clash-subscription-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="/pages/uniclash-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">UniClash</a>
+      <a href="/pages/windows-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows</a>
+      <a href="/pages/macos-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">macOS</a>
+      <a href="/pages/mobile-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
+      <a href="/pages/asus-router-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
+      <a href="/pages/soft-router-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">软路由</a>
+      <a href="/pages/chatgpt-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">ChatGPT</a>
+      <a href="/pages/netflix-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Netflix</a>
+    </nav>
+
+    <!-- 目录 -->
+    <section class="card">
+      <div class="kicker">目录</div>
+      <h2>快速导航</h2>
+      <ul>
+        <li><a href="#what">一、UniClash 是什么</a></li>
+        <li><a href="#providers">二、哪些机场支持 UniClash（含注册与下载入口）</a></li>
+        <li><a href="#flow">三、UniClash 正确使用顺序</a></li>
+        <li><a href="#code">四、网站代码怎么填</a></li>
+        <li><a href="#install">五、Windows / Mac / Android 安装登录</a></li>
+        <li><a href="#nodes">六、节点切换与连接状态</a></li>
+        <li><a href="#compare">七、UniClash 和 Clash Verge / OpenClash 区别</a></li>
+        <li><a href="#troubleshooting">八、打不开与无信号排查</a></li>
+        <li><a href="#faq">九、常见问题 FAQ</a></li>
+      </ul>
+    </section>
+
+    <!-- 一、什么是 UniClash -->
+    <section class="card" id="what">
+      <div class="kicker">Section 01</div>
+      <h2>UniClash 是什么？适合谁用？</h2>
+      <p><strong>UniClash 是部分机场服务商提供的官方/定制 Clash 客户端</strong>，登录界面会要求输入"网站代码 + 邮箱 + 密码"。它不是开源 Clash 的全平台通用版本，每家服务商都会绑定自己的网站代码（例如杨帆云填 <code class="inline">yangfan</code>，尔湾云填 <code class="inline">erwan</code>），登录后即可一键连接，不需要再手动导入订阅链接。</p>
+      <div class="tip-box">
+        <strong>一句话：</strong>UniClash 适合"已经在杨帆云 / 尔湾云这类机场买了套餐、只想登录账号即用"的新手；想自己导入订阅、改规则、玩 TUN 模式，仍建议使用 <a href="/pages/windows-guide">Clash Verge Rev</a>、<a href="/pages/asus-router-guide">MerlinClash</a>、OpenClash 等通用客户端。
+      </div>
+      <div class="warn-box">
+        <strong>注意边界：</strong>不要把 UniClash 理解成"所有机场通用的官方 Clash"。不同服务商的下载页、网站代码、可用线路、客服入口都不同。本文只按已确认的<strong>杨帆云</strong>与<strong>尔湾云</strong>整理。
+      </div>
+    </section>
+
+    <!-- 二、哪些机场支持 UniClash -->
+    <section class="card" id="providers">
+      <div class="kicker">Section 02</div>
+      <h2>哪些机场支持 UniClash？</h2>
+      <p>截至 2026 年 4 月，本站<strong>已确认</strong>同时提供官方 UniClash 下载页 + 网站代码的机场是：</p>
+
+      <table>
+        <tr><th>服务商</th><th>网站代码</th><th>注册入口</th><th>客户端下载</th><th>支持平台</th></tr>
+        <tr>
+          <td><strong>杨帆云</strong></td>
+          <td><code class="inline">yangfan</code></td>
+          <td><a href="https://yawtt.net/register?code=BnJcjUjE" target="_blank" rel="sponsored noopener">注册杨帆云 →</a></td>
+          <td><a href="https://tusmartchat.com/uniclash.html" target="_blank" rel="noopener">官方下载页 →</a></td>
+          <td>Android / Windows / Mac</td>
+        </tr>
+        <tr>
+          <td><strong>尔湾云</strong></td>
+          <td><code class="inline">erwan</code></td>
+          <td><a href="https://ewanwtt.net/auth/register?code=EGi8tb" target="_blank" rel="sponsored noopener">注册尔湾云 →</a></td>
+          <td><a href="https://tusmartchat.com/uniclash-erwan.html" target="_blank" rel="noopener">官方下载页 →</a></td>
+          <td>Android / Windows / Mac</td>
+        </tr>
+      </table>
+
+      <h3>方案 A：杨帆云 UniClash</h3>
+      <div class="provider-card">
+        <div class="head">
+          <span class="name">杨帆云（网站代码 <code class="inline">yangfan</code>）</span>
+          <span class="pill">AI 解锁能力强</span>
+        </div>
+        <p>家宽专线 + 中转双线，已验证可解锁 ChatGPT / Claude / Gemini 等主流 AI 服务。年付七折、支持私人定制。注册和下载分开两步：</p>
+        <div class="btn-row">
+          <a class="btn green" href="https://yawtt.net/register?code=BnJcjUjE" target="_blank" rel="sponsored noopener">① 注册杨帆云账号</a>
+          <a class="btn ghost" href="https://tusmartchat.com/uniclash.html" target="_blank" rel="noopener">② 杨帆云 UniClash 下载</a>
+          <a class="btn primary" href="/clash-subscription-guide#yangfan-cloud">查看套餐与节点</a>
+        </div>
+        <div class="figure">
+          <img src="/images/uniclash/download-yangfan.png" alt="杨帆云 UniClash 官方下载页：Android APK / Windows EXE / Mac M 芯片 / Mac Intel 多个直链" loading="lazy" />
+          <div class="cap">▲ 杨帆云 UniClash 官方下载页（同时提供 Android、Windows、Mac M 芯片与 Intel 版本）</div>
+        </div>
+      </div>
+
+      <h3>方案 B：尔湾云 UniClash</h3>
+      <div class="provider-card">
+        <div class="head">
+          <span class="name">尔湾云（网站代码 <code class="inline">erwan</code>）</span>
+          <span class="pill">套餐梯度清晰</span>
+        </div>
+        <p>官方下载页明确要求安装后在 App 里把网站代码填为 <code class="inline">erwan</code>，否则会找不到尔湾云账号体系。注册与下载入口：</p>
+        <div class="btn-row">
+          <a class="btn orange" href="https://ewanwtt.net/auth/register?code=EGi8tb" target="_blank" rel="sponsored noopener">① 注册尔湾云账号</a>
+          <a class="btn ghost" href="https://tusmartchat.com/uniclash-erwan.html" target="_blank" rel="noopener">② 尔湾云 UniClash 下载</a>
+          <a class="btn primary" href="/clash-subscription-guide">对比更多机场</a>
+        </div>
+        <div class="figure">
+          <img src="/images/uniclash/download-erwan-block.png" alt="尔湾云官网推荐使用 UniClash 客户端区块：明确提示下载安装后请在网站代码处填写 erwan" loading="lazy" />
+          <div class="cap">▲ 尔湾云官网"推荐使用 UniClash"区块，下方红色提示：网站代码必须填 <code class="inline">erwan</code></div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>为什么先注册再下载？</strong>UniClash 登录界面要求"网站代码 + 邮箱 + 密码"，没有对应服务商账号时，即使装好了客户端也无法登录；如果不小心点了"使用默认站点"，原服务商账号和购买记录就找不到了。
+      </div>
+    </section>
+
+    <!-- 三、正确使用顺序 -->
+    <section class="card" id="flow">
+      <div class="kicker">Section 03</div>
+      <h2>UniClash 正确使用顺序：先账号，后客户端</h2>
+      <p>按下面 6 步操作即可顺利登录使用，不要跳过注册和购买直接下载客户端，否则会卡在"网站代码不知道填什么""登录后没有节点"。</p>
+      <ol style="list-style:decimal">
+        <li><strong>选支持 UniClash 的服务商：</strong>本站已确认 <a href="https://yawtt.net/register?code=BnJcjUjE" target="_blank" rel="sponsored noopener">杨帆云</a>、<a href="https://ewanwtt.net/auth/register?code=EGi8tb" target="_blank" rel="sponsored noopener">尔湾云</a> 都有独立 UniClash 下载页。</li>
+        <li><strong>注册账号：</strong>点上一步的服务商名称跳到注册页，按提示填邮箱和密码。</li>
+        <li><strong>购买合适套餐：</strong>付款完成后，登录服务商官网确认账号有有效套餐和剩余流量。</li>
+        <li><strong>下载对应 UniClash：</strong>杨帆云走 <a href="https://tusmartchat.com/uniclash.html" target="_blank" rel="noopener">tusmartchat.com/uniclash.html</a>，尔湾云走 <a href="https://tusmartchat.com/uniclash-erwan.html" target="_blank" rel="noopener">tusmartchat.com/uniclash-erwan.html</a>。</li>
+        <li><strong>填写网站代码：</strong>杨帆云填 <code class="inline">yangfan</code>，尔湾云填 <code class="inline">erwan</code>，看到绿色 ✓ 和服务商名再继续。</li>
+        <li><strong>输入邮箱密码登录：</strong>用刚刚注册的服务商账号，登录后点中间的电源按钮即可连接。</li>
+      </ol>
+      <div class="warn-box">
+        <strong>不要随手点"使用默认站点"：</strong>"默认站点"不是杨帆云或尔湾云的账号体系，点了就会找不到你之前的购买记录，需要回来用正确的网站代码重新登录。
+      </div>
+    </section>
+
+    <!-- 四、网站代码 -->
+    <section class="card" id="code">
+      <div class="kicker">Section 04</div>
+      <h2>网站代码怎么填？看到绿色 ✓ 才算对</h2>
+      <p>打开 UniClash 后第一步就会要求填网站代码。<strong>正确填写后，输入框右侧会显示绿色对勾和服务商名称</strong>（"扬帆云"或"尔湾云"），这时再继续输入邮箱密码登录。</p>
+
+      <div class="figure-row two">
+        <div class="figure">
+          <img src="/images/uniclash/login-yangfan.png" alt="UniClash 登录界面：网站代码 yangfan 后右侧出现绿色 ✓ 扬帆云" loading="lazy" />
+          <div class="cap">▲ 杨帆云：网站代码填 <code class="inline">yangfan</code>，绿色 ✓ 后显示"扬帆云"</div>
+        </div>
+        <div class="figure">
+          <img src="/images/uniclash/login-erwan.png" alt="UniClash 登录界面：网站代码 erwan 后右侧出现绿色 ✓ 尔湾云" loading="lazy" />
+          <div class="cap">▲ 尔湾云：网站代码填 <code class="inline">erwan</code>，绿色 ✓ 后显示"尔湾云"</div>
+        </div>
+      </div>
+
+      <h3>填写要点</h3>
+      <ul>
+        <li>只在 App 弹出"网站代码"输入框时填；如果 App 没问，直接输邮箱密码登录即可。</li>
+        <li>账号密码用<strong>对应服务商官网</strong>的，不是本站账号。</li>
+        <li>不确定时，<strong>不要点"使用默认站点"</strong>——那是另一个账号体系。</li>
+      </ul>
+
+      <div class="figure">
+        <img src="/images/uniclash/default-site-warning.png" alt="UniClash 弹出'不知道网站代码？您可以使用默认站点继续使用'的弹窗，明确提示使用默认站点后原账号和购买记录无法找回" loading="lazy" />
+        <div class="cap">▲ 这个弹窗看到后请点"取消"，回去用正确的网站代码登录</div>
+      </div>
+
+      <div class="danger-box">
+        <strong>误用默认站点怎么办？</strong>退出登录，重新打开 UniClash → 重新输入正确的网站代码（<code class="inline">yangfan</code> 或 <code class="inline">erwan</code>），原账号和套餐就回来了。
+      </div>
+    </section>
+
+    <!-- 五、安装登录 -->
+    <section class="card" id="install">
+      <div class="kicker">Section 05</div>
+      <h2>Windows / Mac / Android 安装登录</h2>
+      <p>三大平台都从对应服务商的下载页直接下载安装包，<strong>不要从第三方网盘或二次打包站下载</strong>，避免账号信息泄露或安装包被改。</p>
+
+      <h3>1. Android</h3>
+      <ol style="list-style:decimal">
+        <li>用浏览器打开 <a href="https://tusmartchat.com/uniclash.html" target="_blank" rel="noopener">杨帆云 UniClash 下载页</a> 或 <a href="https://tusmartchat.com/uniclash-erwan.html" target="_blank" rel="noopener">尔湾云 UniClash 下载页</a>。</li>
+        <li>选 <strong>下载 UniClash APK（线路一）</strong>，速度慢就换线路二。</li>
+        <li>提示"未知来源"时，去系统设置允许当前浏览器或文件管理器安装。</li>
+        <li>下载页还提供<em>改名 zip 版</em>，下载后把 <code class="inline">.zip</code> 改回 <code class="inline">.apk</code> 再安装。</li>
+      </ol>
+
+      <h3>2. Windows（10 及以上）</h3>
+      <ol style="list-style:decimal">
+        <li>建议用 Chrome / Edge 下载；如果浏览器提示"通常不会下载"，点"保留"。</li>
+        <li>双击 EXE 安装；若 Defender / 360 拦截，先关闭实时监控再装。</li>
+        <li>下载页另提供"EXE 改名 zip 版"，下载后改回 <code class="inline">.exe</code> 再运行。</li>
+      </ol>
+
+      <h3>3. Mac</h3>
+      <ol style="list-style:decimal">
+        <li>先确认芯片：左上角苹果菜单 → <strong>关于本机</strong>，看到"Apple M1/M2/M3" 就选 <strong>Mac M 芯片</strong>，看到"Intel" 就选 <strong>Mac Intel</strong>。</li>
+        <li>下载 <code class="inline">.dmg</code> 后拖到"应用程序"。</li>
+        <li>提示"无法验证开发者"：按住 <strong>Control 单击</strong> App 图标 → 打开。</li>
+        <li>仍打不开：执行 <code class="inline">sudo xattr -cr /Applications/UniClash.app</code> 解除隔离属性。</li>
+      </ol>
+
+      <div class="tip-box">
+        <strong>iPhone 用户：</strong>UniClash 目前只覆盖 Android / Windows / Mac，iOS 用户请使用 <a href="/pages/mobile-guide">Shadowrocket / Stash</a>，需要外区 Apple ID 下载。
+      </div>
+    </section>
+
+    <!-- 六、节点切换 -->
+    <section class="card" id="nodes">
+      <div class="kicker">Section 06</div>
+      <h2>登录后界面与节点切换</h2>
+      <p>登录成功后界面非常简单：中间一个大圆按钮控制连接，下方显示当前线路，底部三个 Tab 分别是"首页 / 商城 / 我的"。</p>
+
+      <div class="figure-row two">
+        <div class="figure">
+          <img src="/images/uniclash/idle-yangfan.png" alt="UniClash 主界面未连接状态：灰色电源按钮、提示'点击启动'" loading="lazy" />
+          <div class="cap">▲ 未连接：灰色电源按钮，点击即可启动连接</div>
+        </div>
+        <div class="figure">
+          <img src="/images/uniclash/connected-yangfan.png" alt="UniClash 主界面已连接状态：绿色电源按钮、当前线路显示 level3-新加坡02-NF" loading="lazy" />
+          <div class="cap">▲ 已连接：绿色按钮，下方显示当前节点，再点一次即断开</div>
+        </div>
+      </div>
+
+      <h3>切换节点</h3>
+      <ol style="list-style:decimal">
+        <li>点底部"当前线路"那一栏的箭头，弹出"选择线路"面板。</li>
+        <li>点右上角 <strong>测速</strong>，等延迟数字刷新出来。</li>
+        <li>选延迟最低（一般 60–150 ms 比较稳）的节点即可，点击后会自动切换。</li>
+        <li>解锁 Netflix / ChatGPT 等流媒体优先选择带 <code class="inline">-NF</code> 标记的高级节点。</li>
+      </ol>
+
+      <div class="figure">
+        <img src="/images/uniclash/nodes-list.png" alt="UniClash 选择线路面板：列出香港 01/02、新加坡 01/02、日本 01/02 等节点，右侧显示延迟（68 ms / 106 ms / 111 ms 等）" loading="lazy" />
+        <div class="cap">▲ 选择线路：测速后挑延迟最低的节点；带 -NF 后缀的通常用于流媒体解锁</div>
+      </div>
+
+      <div class="callout">
+        <strong>右上角"回退"按钮：</strong>点亮时表示开启自动备用切换；如果你只想固定某个节点，把它关掉即可。"规则"则用来切换全局/规则/直连模式。
+      </div>
+    </section>
+
+    <!-- 七、对比 -->
+    <section class="card" id="compare">
+      <div class="kicker">Section 07</div>
+      <h2>UniClash 和 Clash Verge / OpenClash 怎么选？</h2>
+      <p>UniClash 偏"省心"，通用 Clash 偏"可控"，两者各有适用场景。简单的判断方法：</p>
+      <table>
+        <tr><th>方案</th><th>优点</th><th>限制</th><th>推荐人群</th></tr>
+        <tr>
+          <td>UniClash</td>
+          <td>登录账号即可用，无需手动导入订阅，更新和切节点都很简单。</td>
+          <td>绑定服务商生态，并非所有机场通用。</td>
+          <td>Windows / Mac / Android 新手。</td>
+        </tr>
+        <tr>
+          <td><a href="/pages/windows-guide">Clash Verge Rev</a></td>
+          <td>多订阅、规则编辑、TUN 模式都灵活。</td>
+          <td>需要理解系统代理、TUN、订阅链接等概念。</td>
+          <td>桌面端长期用户、多机场用户。</td>
+        </tr>
+        <tr>
+          <td><a href="/pages/asus-router-guide">MerlinClash</a> / OpenClash</td>
+          <td>路由器全屋代理，一次配置全家用。</td>
+          <td>排障成本更高，依赖路由器性能。</td>
+          <td>软路由、华硕梅林、旁路由用户。</td>
+        </tr>
+        <tr>
+          <td><a href="/pages/mobile-guide">Shadowrocket / Stash</a></td>
+          <td>iPhone / iPad 端最常见的 Clash 客户端。</td>
+          <td>需要外区 Apple ID 下载。</td>
+          <td>iOS 用户。</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- 八、排障 -->
+    <section class="card" id="troubleshooting">
+      <div class="kicker">Section 08</div>
+      <h2>UniClash 打不开 / 登录不上 / 全节点无信号</h2>
+      <p>遇到问题不要反复重装，按下面顺序排查更省时间。</p>
+
+      <h3>1. Windows 打不开</h3>
+      <ul>
+        <li>SmartScreen 安全警告：点"更多信息" → "仍要运行"。</li>
+        <li>双击没反应：换 Chrome / Edge 重新下载，临时关 360、电脑管家等拦截。</li>
+        <li>安装包打不开：右键属性 → 勾选"解除锁定"。</li>
+        <li>Win7 / Win8：UniClash 需要 Windows 10 及以上系统。</li>
+      </ul>
+
+      <h3>2. Mac 打不开</h3>
+      <ul>
+        <li>"无法验证开发者"：按住 <strong>Control 单击</strong> App → 打开。</li>
+        <li>"无法检查恶意软件"：系统设置 → 隐私与安全性 → 仍要打开。</li>
+        <li>磁盘映像打不开：先拖到"应用程序"，仍失败执行 <code class="inline">sudo xattr -cr /Applications/UniClash.app</code>。</li>
+        <li>M 芯片不要下 Intel 版本，反之亦然。</li>
+      </ul>
+
+      <h3>3. 登录后没有节点 / 全节点无信号</h3>
+      <ul>
+        <li>检查是否登录的是<strong>正确的服务商账号</strong>。</li>
+        <li>检查网站代码：杨帆云 <code class="inline">yangfan</code>，尔湾云 <code class="inline">erwan</code>。</li>
+        <li>到服务商官网确认套餐没过期、流量没用完。</li>
+        <li>更新到最新 UniClash，再测速换低延迟节点。</li>
+        <li>本地网络问题：换手机热点测试，排除运营商或路由器 DNS 异常。</li>
+      </ul>
+
+      <div class="danger-box">
+        <strong>仍然异常：</strong>去服务商官网首页查看公告（可能正在做线路维护），或在右下角联系在线客服；路由器全屋代理用户额外检查 MerlinClash / OpenClash 插件是否有版本兼容问题。
+      </div>
+    </section>
+
+    <!-- 九、FAQ -->
+    <section class="card" id="faq">
+      <div class="kicker">Section 09</div>
+      <h2>UniClash 常见问题</h2>
+
+      <h3>Q1：UniClash 网站代码填什么？</h3>
+      <p>按服务商填。杨帆云填 <code class="inline">yangfan</code>，尔湾云填 <code class="inline">erwan</code>。如果 App 没提示网站代码，直接用服务商账号邮箱密码登录即可。</p>
+
+      <h3>Q2：UniClash 支持 iPhone / iPad 吗？</h3>
+      <p>目前两家下载页都<strong>只提供 Android / Windows / Mac</strong>。iOS 用户请改用 <a href="/pages/mobile-guide">Shadowrocket / Stash</a>，需要外区 Apple ID 下载。</p>
+
+      <h3>Q3：UniClash 和 Clash Verge Rev 哪个更适合新手？</h3>
+      <p>买的是支持 UniClash 的机场（杨帆云 / 尔湾云）就用 UniClash 更省心；如果你用多个机场或者要改规则、开 TUN 模式，<a href="/pages/windows-guide">Clash Verge Rev</a> 更灵活。</p>
+
+      <h3>Q4：UniClash 登录成功但没有节点怎么办？</h3>
+      <p>先确认：服务商账号正确 + 网站代码正确 + 套餐未过期 + 还有剩余流量。再更新客户端 + 测速选低延迟节点；只有部分节点不可用就换其它节点或线路。</p>
+
+      <h3>Q5：可以从第三方网盘下载 UniClash 吗？</h3>
+      <p>不建议。UniClash 涉及账号登录和网络代理，请优先走服务商官方下载页，避免下载到二次打包或被植入广告 / 后门的版本。</p>
+
+      <h3>Q6：之前点了"使用默认站点"，账号找不到了怎么办？</h3>
+      <p>退出登录，重新打开 UniClash，把网站代码改回 <code class="inline">yangfan</code> 或 <code class="inline">erwan</code>，再用原邮箱密码登录即可。原服务商账号和套餐数据都还在。</p>
+    </section>
+
+    <section style="margin-top:40px;padding:24px;background:linear-gradient(135deg,rgba(14,165,233,.06),rgba(124,77,255,.06));border-radius:16px;border:1px solid rgba(14,165,233,.15)">
+      <h3 style="font-size:16px;margin-bottom:16px">📌 你可能还需要</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <a href="/clash-subscription-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🔗</span><div><strong style="font-size:14px">订阅申请指南</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">机场对比 + 套餐价格 + 节点解锁能力</p></div></a>
+        <a href="/pages/yangfan-important-notice" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">📢</span><div><strong style="font-size:14px">杨帆云重要通知</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">官网域名更新与 UniClash 客户端说明</p></div></a>
+        <a href="/pages/windows-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🖥️</span><div><strong style="font-size:14px">Windows Clash 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">Clash Verge Rev 全平台通用方案</p></div></a>
+        <a href="/pages/mobile-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">📱</span><div><strong style="font-size:14px">手机翻墙教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">Android Clash Meta + iOS Shadowrocket</p></div></a>
+      </div>
+    </section>
+
+    <footer>
+      <nav aria-label="相关教程" style="margin-top:12px;font-size:12px;line-height:2">
+        <strong>更多教程：</strong>
+        <a href="/">首页</a> ·
+        <a href="/clash-subscription-guide">订阅申请</a> ·
+        <a href="/pages/uniclash-guide">UniClash</a> ·
+        <a href="/pages/yangfan-important-notice">杨帆云通知</a> ·
+        <a href="/pages/asus-router-guide">华硕路由器</a> ·
+        <a href="/pages/soft-router-guide">软路由</a> ·
+        <a href="/pages/istoreos-guide">iStoreOS</a> ·
+        <a href="/pages/windows-guide">Windows</a> ·
+        <a href="/pages/macos-guide">macOS</a> ·
+        <a href="/pages/mobile-guide">手机</a> ·
+        <a href="/pages/chatgpt-guide">ChatGPT</a> ·
+        <a href="/pages/netflix-guide">Netflix</a>
+      </nav>
+      <p style="margin-top:8px">文档更新：2026 年 4 月 · 本文只做客户端使用说明与下载入口整理，请以服务商官网公告为准。</p>
+    </footer>
+  </main>
+
+  <div class="floating-share" id="floating-share" aria-label="悬浮分享">
+    <div class="floating-share-panel" aria-label="分享菜单">
+      <button class="floating-share-btn" type="button" onclick="sharePage()">分享</button>
+      <button class="floating-share-btn" type="button" onclick="favoritePage()">收藏</button>
+      <button class="floating-share-btn" type="button" onclick="copyPageLink()">复制链接</button>
+    </div>
+    <button class="floating-share-main primary" id="floating-share-toggle" type="button" aria-expanded="false" onclick="toggleShareMenu()">分享</button>
+  </div>
+  <script>
+    function toggleShareMenu(){const w=document.getElementById('floating-share'),t=document.getElementById('floating-share-toggle'),o=w.classList.toggle('is-open');t.setAttribute('aria-expanded',o?'true':'false')}
+    function closeShareMenu(){const w=document.getElementById('floating-share'),t=document.getElementById('floating-share-toggle');w.classList.remove('is-open');t.setAttribute('aria-expanded','false')}
+    function getSharePayload(){return{title:document.title,text:'UniClash 下载与使用教程，分享给你：',url:window.location.href}}
+    async function copyPageLink(){const p=getSharePayload(),t=p.title+'\n'+p.text+'\n'+p.url;try{await navigator.clipboard.writeText(t);closeShareMenu();alert('链接和分享文案已复制，打开微信后可直接粘贴发送。')}catch(e){window.prompt('请复制下面的内容并分享：',t)}}
+    async function sharePage(){const p=getSharePayload();if(navigator.share){try{await navigator.share(p);closeShareMenu();return}catch(e){}}await copyPageLink()}
+    function favoritePage(){const a=/Mac|iPhone|iPad|iPod/i.test(navigator.platform);try{if(window.external&&'AddFavorite' in window.external){window.external.AddFavorite(window.location.href,document.title);closeShareMenu();return}if(window.sidebar&&window.sidebar.addPanel){window.sidebar.addPanel(document.title,window.location.href,'');closeShareMenu();return}}catch(e){}closeShareMenu();alert('请使用快捷键 '+(a?'Command/Cmd + D':'Ctrl + D')+' 收藏当前页面。')}
+    document.addEventListener('click',function(e){const w=document.getElementById('floating-share');if(w&&!w.contains(e.target))closeShareMenu()});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeShareMenu()});
+
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
+  </script>
+  <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"UniClash 下载与使用教程 2026","description":"整理 UniClash 下载入口、网站代码、安装登录步骤与常见问题排查，覆盖杨帆云 yangfan、尔湾云 erwan、Windows、Mac、Android。","author":{"@type":"Organization","name":"Router VPN Guide"},"publisher":{"@type":"Organization","name":"Router VPN Guide"},"datePublished":"2026-04-25","dateModified":"2026-04-25","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.aixiaobai168.com/pages/uniclash-guide"},"inLanguage":"zh-CN","image":"https://www.aixiaobai168.com/images/uniclash/login-yangfan.png"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"UniClash","applicationCategory":"NetworkApplication","operatingSystem":"Android, Windows, macOS","description":"UniClash 是部分机场服务商提供的官方或定制客户端，可用对应服务商账号登录并连接节点。","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"},"url":"https://www.aixiaobai168.com/pages/uniclash-guide"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"UniClash 网站代码填什么？","acceptedAnswer":{"@type":"Answer","text":"按服务商填写。杨帆云填 yangfan，尔湾云填 erwan。如果 App 没提示网站代码，直接用服务商账号邮箱密码登录即可。"}},{"@type":"Question","name":"UniClash 支持 iPhone 吗？","acceptedAnswer":{"@type":"Answer","text":"目前杨帆云和尔湾云下载页主要提供 Android、Windows、Mac 版本。iPhone 和 iPad 通常仍使用 Shadowrocket 或 Stash，需要外区 Apple ID 下载。"}},{"@type":"Question","name":"UniClash 和 Clash Verge Rev 哪个更适合新手？","acceptedAnswer":{"@type":"Answer","text":"如果购买的是支持 UniClash 的服务商套餐，UniClash 更省心；如果需要手动导入多个订阅、调整规则、开启 TUN 模式，Clash Verge Rev 更灵活。"}},{"@type":"Question","name":"UniClash 登录成功但没有节点怎么办？","acceptedAnswer":{"@type":"Answer","text":"先确认服务商账号、网站代码、套餐状态和剩余流量，再更新客户端并测速。如果只有某些地区节点不可用，优先换直连或低延迟节点。"}},{"@type":"Question","name":"可以从第三方网盘下载 UniClash 吗？","acceptedAnswer":{"@type":"Answer","text":"不建议。客户端涉及账号登录和网络代理，优先使用服务商官方下载页，避免下载到二次打包或被篡改的安装包。"}},{"@type":"Question","name":"之前点了使用默认站点，账号找不到了怎么办？","acceptedAnswer":{"@type":"Answer","text":"退出登录，重新打开 UniClash，把网站代码改回 yangfan 或 erwan，再用原邮箱密码登录即可。原服务商账号和套餐数据都还在。"}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"订阅申请","item":"https://www.aixiaobai168.com/clash-subscription-guide"},{"@type":"ListItem","position":3,"name":"UniClash 下载与使用教程","item":"https://www.aixiaobai168.com/pages/uniclash-guide"}]}</script>
+</body>
+</html>

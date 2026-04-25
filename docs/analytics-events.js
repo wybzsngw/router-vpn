@@ -18,6 +18,11 @@
     'dgy02.com': '大哥云'
   };
 
+  var UNICLASH_DOWNLOAD_PAGES = {
+    'https://tusmartchat.com/uniclash.html': '扬帆云',
+    'https://tusmartchat.com/uniclash-erwan.html': '尔湾云'
+  };
+
   function getAirportName(url) {
     for (var i = 0; i < AIRPORT_DOMAINS.length; i++) {
       if (url.indexOf(AIRPORT_DOMAINS[i]) !== -1) {
@@ -29,6 +34,16 @@
 
   function isDownloadLink(url) {
     return /\.(tar\.gz|zip|run|apk|dmg|exe|deb|rpm|AppImage)(\?|$)/i.test(url);
+  }
+
+  function getUniclashProvider(url) {
+    var cleanUrl = (url || '').split('?')[0].replace(/\/$/, '');
+    for (var pageUrl in UNICLASH_DOWNLOAD_PAGES) {
+      if (cleanUrl === pageUrl) {
+        return UNICLASH_DOWNLOAD_PAGES[pageUrl];
+      }
+    }
+    return null;
   }
 
   document.addEventListener('click', function(e) {
@@ -43,6 +58,17 @@
     if (airportName) {
       gtag('event', 'clash_register_click', {
         airport_name: airportName,
+        source_page: page,
+        link_url: href,
+        link_text: text
+      });
+      return;
+    }
+
+    var uniclashProvider = getUniclashProvider(href);
+    if (uniclashProvider) {
+      gtag('event', 'uniclash_download_click', {
+        provider_name: uniclashProvider,
         source_page: page,
         link_url: href,
         link_text: text

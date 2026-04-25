@@ -150,7 +150,7 @@
 <details>
 <summary>官方客户端与 iOS</summary>
 
-- **Windows / Mac / Android**：客户端 **uniclash**，邀请码 **`erwan`**，下载：<https://smartchat.pao1.top/uniclash-erwan.html>
+- **Windows / Mac / Android**：客户端 **UniClash**，网站代码 **`erwan`**，下载：<https://tusmartchat.com/uniclash-erwan.html>；使用与排障教程：<https://www.aixiaobai168.com/pages/uniclash-guide>
 - **iOS**：国区无法直接安装 Shadowrocket 时需自备外区 Apple ID；第三方示例：<http://tuzifaka.net/>（请自行判断风险）
 
 </details>

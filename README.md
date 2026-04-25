@@ -36,6 +36,7 @@
 | Linux | [桌面版](linux/clash-linux-install-guide.md) · [无 GUI 服务器版](linux/clash-linux-headless-guide.md) |
 | Android | [Clash Meta for Android](mobile/android-clash-meta.md) |
 | iOS | [ShadowClash / Shadowrocket / Stash](mobile/ios-shadowrocket.md) · [ShadowClash 微信直连规则](mobile/shadowclash-wechat-direct.md) |
+| UniClash | [UniClash 下载与使用教程](subscription/uniclash-guide.md)（[在线版](https://www.aixiaobai168.com/pages/uniclash-guide)） |
 
 ### 使用场景教程
 
