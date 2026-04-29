@@ -77,9 +77,48 @@
     return null;
   }
 
+  var CLIENT_EVENTS = ['client_download_click', 'client_compare_click', 'client_migration_click'];
+
+  // 客户端矩阵专用事件分发：CFW 替代页与后续 Karing/Mihomo Party/FlClash 页面共用。
+  // 命中 data-event=client_* 时单独打点，并在下方主分发器跳过该链接，避免重复上报 outbound/cross_page 等事件。
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[data-event]');
+    if (!a) return;
+    var ev = a.getAttribute('data-event');
+    if (CLIENT_EVENTS.indexOf(ev) === -1) return;
+    if (typeof gtag !== 'function') return;
+    gtag('event', ev, {
+      client_name: a.getAttribute('data-client') || '',
+      target_platform: a.getAttribute('data-platform') || '',
+      source_module: a.getAttribute('data-source-module') || getSourceModule(),
+      link_url: a.href || '',
+      link_text: (a.innerText || '').trim().slice(0, 60),
+      step: a.getAttribute('data-step') || ''
+    });
+  });
+
+  // 占位链接（待发布的客户端教程等）拦截：阻止 href="#" 把页面跳到顶部，并把点击意图作为产品信号单独上报，
+  // 便于通过 GA4 评估"哪个待发布专题用户最期待"。
+  document.addEventListener('click', function(e) {
+    var pending = e.target.closest('a[data-pending="true"]');
+    if (!pending) return;
+    e.preventDefault();
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'pending_link_click', {
+      client_name: pending.getAttribute('data-client') || '',
+      source_module: pending.getAttribute('data-source-module') || getSourceModule(),
+      source_page: document.title,
+      link_text: (pending.innerText || '').trim().slice(0, 60)
+    });
+  });
+
   document.addEventListener('click', function(e) {
     var link = e.target.closest('a[href]');
     if (!link) return;
+
+    // 已被客户端矩阵分发器或占位链接拦截器处理过的链接，跳过主分发，避免一次点击触发多条事件。
+    if (link.hasAttribute('data-event') && CLIENT_EVENTS.indexOf(link.getAttribute('data-event')) !== -1) return;
+    if (link.getAttribute('data-pending') === 'true') return;
 
     var href = link.getAttribute('href') || '';
     var text = (link.textContent || '').trim().substring(0, 80);
