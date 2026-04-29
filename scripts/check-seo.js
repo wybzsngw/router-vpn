@@ -4,7 +4,9 @@
  *
  * 校验 docs/**\/*.html 是否符合 .cursor/rules/seo-geo-standards.mdc 的规范：
  *   1. <title>            显示宽度 50-65（超出会被搜索结果截断）
- *   2. <meta description> 显示宽度 280-320（中文页面 Bing/Google 阈值）
+ *   2. <meta description> 同时满足：
+ *      - 显示宽度 150-320（避免中文摘要过短或过长）
+ *      - 字符数 150-160（Bing Webmaster Tools Recommendations 建议区间）
  *   3. 必填 meta 标签：keywords / robots / canonical / og:* / twitter:*
  *   4. 至少存在 1 个 application/ld+json 结构化数据
  *
@@ -24,8 +26,10 @@ const docsDir = path.join(repoRoot, "docs");
 const RULES = {
   titleMin: 50,
   titleMax: 65,
-  descMin: 280,
+  descMin: 150,
   descMax: 320,
+  descCharMin: 150,
+  descCharMax: 160,
   requiredMeta: [
     { name: "keywords", attr: "name" },
     { name: "robots", attr: "name" },
@@ -136,8 +140,11 @@ function checkFile(file) {
     errors.push("缺少 <meta name=description>");
   } else {
     const w = displayWidth(desc);
+    const chars = desc.length;
     if (w < RULES.descMin) errors.push(`description 显示宽度 ${w} 太短 (<${RULES.descMin}, Bing 会标记)`);
     else if (w > RULES.descMax) warnings.push(`description 显示宽度 ${w} 偏长 (>${RULES.descMax})`);
+    if (chars < RULES.descCharMin) warnings.push(`description 字符数 ${chars} 太短 (<${RULES.descCharMin}, Bing 会标记)`);
+    else if (chars > RULES.descCharMax) warnings.push(`description 字符数 ${chars} 太长 (>${RULES.descCharMax}, Bing 会标记)`);
   }
 
   for (const r of RULES.requiredMeta) {
@@ -158,6 +165,7 @@ function checkFile(file) {
     titleWidth: title ? displayWidth(title) : 0,
     desc,
     descWidth: desc ? displayWidth(desc) : 0,
+    descChars: desc ? desc.length : 0,
     ldJsonCount: ldJson,
     errors,
     warnings,
@@ -178,11 +186,11 @@ function main() {
     console.log(JSON.stringify(results, null, 2));
   } else {
     const pad = (s, n) => String(s).padStart(n);
-    console.log(`${"title".padEnd(5)} | ${"desc".padEnd(5)} | status | file`);
-    console.log("-".repeat(90));
+    console.log(`${"title".padEnd(5)} | ${"desc".padEnd(5)} | ${"chars".padEnd(5)} | status | file`);
+    console.log("-".repeat(100));
     for (const r of results.sort((a, b) => a.descWidth - b.descWidth)) {
       const status = r.errors.length ? "ERROR " : r.warnings.length ? "WARN  " : "OK    ";
-      console.log(`${pad(r.titleWidth, 5)} | ${pad(r.descWidth, 5)} | ${status} | ${r.file}`);
+      console.log(`${pad(r.titleWidth, 5)} | ${pad(r.descWidth, 5)} | ${pad(r.descChars, 5)} | ${status} | ${r.file}`);
       for (const e of r.errors) console.log(`        - [error] ${e}`);
       for (const w of r.warnings) console.log(`        - [warn]  ${w}`);
     }
