@@ -10,7 +10,7 @@
   <link rel="dns-prefetch" href="https://www.clarity.ms" />
   <title>软路由翻墙教程 2026 — OpenWrt + OpenClash / iKuai 旁路由科学上网</title>
   <meta name="description" content="软路由科学上网教程，适合开放固件、爱快、iStoreOS、小主机和旁路由用户。本文讲清插件安装、订阅导入、域名解析防污染、虚假地址模式、透明代理、增强模式、回滚方案、全屋代理排查和新手常见断网原因，并给出家庭网络配置建议、设备选择和升级注意事项。同时提供实测经验。适合新手按步骤操作。避免常见配置错误。" />
-  <meta name="keywords" content="软路由翻墙,OpenWrt翻墙,OpenClash教程,iKuai旁路由,软路由科学上网,透明代理,全屋翻墙,x86软路由,N5105,N100,OpenWrt安装,DNS防泄漏,旁路由设置,Clash订阅" />
+  <meta name="keywords" content="软路由翻墙,OpenWrt翻墙,OpenClash教程,iKuai旁路由,软路由科学上网,透明代理,全屋翻墙,x86软路由,N5105,N100,OpenWrt安装,DNS防泄漏,旁路由设置,Clash订阅,OpenClash禁用QUIC,UDP转发tproxy,Claude无法访问,makerworld访问异常" />
   <meta name="author" content="Router VPN Guide" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
@@ -21,7 +21,7 @@
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:site_name" content="Clash 全平台科学上网教程" />
   <meta property="article:published_time" content="2026-03-10" />
-  <meta property="article:modified_time" content="2026-04-06" />
+  <meta property="article:modified_time" content="2026-04-30" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="软路由翻墙教程 — OpenWrt + OpenClash / iKuai" />
   <meta name="twitter:description" content="OpenWrt + OpenClash 与 iKuai 旁路由翻墙方案完整教程。" />
@@ -212,6 +212,7 @@
         <li><a href="#openwrt-8">08. DNS 配置</a></li>
         <li><a href="#openwrt-9">09. 故障排除</a></li>
         <li><a href="#subscription-download-failure" style="color:#dc2626;font-weight:600">⭐ 10. 订阅下载失败排查</a></li>
+        <li><a href="#openwrt-ai-access" style="color:#7c3aed;font-weight:600">11. AI / makerworld 访问异常</a></li>
       </ul>
     </section>
 
@@ -397,6 +398,16 @@ curl -L -A "mihomo/1.19.20" "你的订阅URL" -o /etc/openclash/config/yizhihong
       <p><strong>应急方案</strong> — 以上问题修复前，可继续使用「<a href="#import-subscription">导入订阅 · 方式二：手动上传 YAML</a>」过渡，不影响代理正常使用。</p>
     </section>
 
+    <section class="card" id="openwrt-ai-access">
+      <div class="kicker">OpenWrt 11</div>
+      <h2>AI / makerworld 等海外站点访问受限专项</h2>
+      <p>如果 Claude、ChatGPT、Grok、makerworld 国际站等在全屋代理下仍提示地区不可用，优先按以下顺序检查：OpenClash 是否开启 <strong>UDP 流量转发 (tproxy)</strong>、是否在开启 UDP 后启用 <strong>禁用 QUIC</strong>、DNS 是否使用 <strong>Fake-IP</strong> 或强制 DNS 劫持、IPv6 是否关闭或完整代理。</p>
+      <p>OpenClash 的「禁用 QUIC」通常需要配合 UDP 转发才能对局域网客户端的 forward 流量生效；未开启时容易出现浏览器 QUIC / UDP 443 直连。完整排查步骤、Merlin Clash 2 和 iStoreOS 对照设置见 <a href="/pages/proxy-access-issues">代理模式 AI / makerworld 访问异常排查教程</a>。</p>
+      <pre><code>- DOMAIN-SUFFIX,claude.ai,🚀 节点选择
+- DOMAIN-SUFFIX,anthropic.com,🚀 节点选择
+- DOMAIN-SUFFIX,makerworld.com,🚀 节点选择</code></pre>
+    </section>
+
     <!-- ========== iKuai 部分 ========== -->
     <h2 class="section-title" id="ikuai-section">iKuai + 旁路由</h2>
 
@@ -484,6 +495,7 @@ curl -L -A "mihomo/1.19.20" "你的订阅URL" -o /etc/openclash/config/yizhihong
         <a href="/clash-subscription-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🔗</span><div><strong style="font-size:14px">订阅申请指南</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">还没有订阅链接？获取机场推荐</p></div></a>
         <a href="/pages/asus-router-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">📡</span><div><strong style="font-size:14px">华硕路由器教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">梅林固件 + MerlinClash 全屋翻墙</p></div></a>
         <a href="/pages/istoreos-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🧰</span><div><strong style="font-size:14px">iStoreOS 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">iStore 插件 + Are-u-ok 第三方包</p></div></a>
+        <a href="/pages/proxy-access-issues" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🧭</span><div><strong style="font-size:14px">AI / makerworld 排查</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">QUIC、IPv6、DNS 泄漏专项</p></div></a>
       </div>
     </section>
 

@@ -16,7 +16,8 @@
 - [六、旁路由最佳实践](#六旁路由最佳实践)
 - [七、稳定性清单：DNS / IPv6 / 防火墙](#七稳定性清单dns--ipv6--防火墙)
 - [八、常见坑与排查](#八常见坑与排查)
-- [九、参考链接](#九参考链接)
+- [九、AI 网站 / makerworld 等海外站点访问受限专项](#istoreos-proxy-ai-sites)
+- [十、参考链接](#十参考链接)
 
 ---
 
@@ -313,7 +314,34 @@ iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
 
 ---
 
-## 九、参考链接
+<!-- markdownlint-disable-next-line MD033 -->
+<a id="istoreos-proxy-ai-sites"></a>
+
+## 九、AI 网站 / makerworld 等海外站点访问受限专项
+
+参考：[代理访问受限完整排查教程](../common/proxy-access-issues.md)
+
+### 9.1 OpenClash 用户
+
+配置步骤与 OpenClash 专项一致，请直接按 [软路由教程 · 十二、AI 网站 / makerworld 等海外站点访问受限专项](../soft-router/openwrt-clash.md#openclash-proxy-ai-sites) 操作（UDP 转发、禁用 QUIC、Fake-IP、自定义规则、Issue #5116）。
+
+### 9.2 PassWall / SSR-Plus 用户
+
+- **PassWall**：**基本设置** 中开启 **「QUIC 拦截」**。
+- **DNS 模式**：选择 **pdnsd** 或 **chinadns-ng + 重定向** 等与分流、防污染配合较好的选项（以当前 PassWall 版本界面为准）。
+- **节点订阅 → 分流**：添加目标域名（如 `claude.ai`、`makerworld.com`）**走代理** / 强制代理。
+
+### 9.3 iStoreOS 关闭 IPv6 路径
+
+**网络** → **接口** → **wan6** → **删除** 或 **禁用**（若需彻底避免 IPv6 泄漏，可结合主路由侧 IPv6 策略一并检查）。
+
+### 9.4 验证
+
+浏览器访问 `https://browserleaks.com/ip`、`https://browserleaks.com/dns`、`https://ipinfo.io`，确认 IP 为节点国家、无异常国内 IPv6、DNS 非国内公共解析商；详见 [代理访问受限教程](../common/proxy-access-issues.md) 第九节。
+
+---
+
+## 十、参考链接
 
 - iStoreOS 官方文档：[doc.linkease.com/zh/guide/istoreos/](https://doc.linkease.com/zh/guide/istoreos/)
 - iStoreOS 安装指南：[doc.linkease.com/zh/guide/istoreos/install.html](https://doc.linkease.com/zh/guide/istoreos/install.html)

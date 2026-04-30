@@ -46,6 +46,7 @@
 | ChatGPT Plus 充值 | [ChatGPT Plus / Go 充值与支付指南](chatgpt/chatgpt-plus-guide.md) |
 | OpenAI API | [OpenAI API 申请与计费指南](chatgpt/openai-api-guide.md) |
 | Netflix | [Netflix 解锁观看教程](netflix/netflix-guide.md) |
+| AI / makerworld 访问异常 | [代理模式下 AI/makerworld/国外网站访问受限排查](common/proxy-access-issues.md) |
 
 ### 通用参考
 

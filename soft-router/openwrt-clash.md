@@ -19,7 +19,8 @@
 - [九、DNS 配置](#九dns-配置)
 - [十、性能优化](#十性能优化)
 - [十一、故障排除](#十一故障排除)
-- [十二、维护与更新](#十二维护与更新)
+- [十二、AI 网站 / makerworld 等海外站点访问受限专项](#openclash-proxy-ai-sites)
+- [十三、维护与更新](#十三维护与更新)
 
 ---
 
@@ -340,7 +341,38 @@ echo 65535 > /proc/sys/net/netfilter/nf_conntrack_max
 
 ---
 
-## 十二、维护与更新
+<!-- markdownlint-disable-next-line MD033 -->
+<a id="openclash-proxy-ai-sites"></a>
+
+## 十二、AI 网站 / makerworld 等海外站点访问受限专项
+
+参考：[代理访问受限完整排查教程](../common/proxy-access-issues.md)
+
+### 12.1 OpenClash 必做配置
+
+- **插件设置** → **常规设置** → 启用 **UDP 流量转发(tproxy)**。
+- **覆写设置** → **常规设置** → 启用 **「禁用 QUIC」**（须先开启 UDP 转发，否则规则多仅在 input 链生效，对客户端 forward 流量无效）。
+- **覆写设置** → **DNS 设置** → 启用 **Fake-IP**（推荐）或 **Redir-Host** + **强制 DNS 劫持**。
+- **IPv6**：关闭路由器 IPv6，或确认 IPv6 已被代理全链路接管。
+
+### 12.2 自定义规则示例
+
+将 `🚀 节点选择` 替换为你订阅里实际的策略组名称，写入 **编辑规则** 或 **自定义规则一**：
+
+```yaml
+- DOMAIN-SUFFIX,claude.ai,🚀 节点选择
+- DOMAIN-SUFFIX,anthropic.com,🚀 节点选择
+- DOMAIN-SUFFIX,chatgpt.com,🚀 节点选择
+- DOMAIN-SUFFIX,makerworld.com,🚀 节点选择
+```
+
+### 12.3 已知问题
+
+OpenClash 的「禁用 QUIC」依赖 **UDP 流量转发(tproxy)** 才能对局域网设备流量正确生效；未开 UDP 转发时易出现「开了禁用 QUIC 仍像直连」的现象。权威讨论见：[vernesong/OpenClash Issue #5116](https://github.com/vernesong/OpenClash/issues/5116)。
+
+---
+
+## 十三、维护与更新
 
 ### 订阅自动更新
 

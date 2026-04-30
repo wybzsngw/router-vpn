@@ -15,6 +15,7 @@
 - [五、节点选择与延迟测试](#五节点选择与延迟测试)
 - [六、基本配置](#六基本配置)
 - [七、状态监控](#七状态监控)
+- [八、AI 网站 / makerworld 等海外站点访问受限专项](#merlin-proxy-ai-sites)
 
 ---
 
@@ -196,6 +197,32 @@ MerlinClash 管理面板通常提供：
 - **规则管理**：自定义分流规则
 - **日志查看**：查看运行日志和错误信息
 - **性能监控**：监控 CPU、内存使用情况
+
+---
+
+<!-- markdownlint-disable-next-line MD033 -->
+<a id="merlin-proxy-ai-sites"></a>
+
+## 八、AI 网站 / makerworld 等海外站点访问受限专项
+
+参考：[代理访问受限完整排查教程](../common/proxy-access-issues.md)
+
+### 8.1 必做的 4 项配置（GUI）
+
+- **DNS 设置**（`Merlin Clash 2` → `DNS 设置`）：DNS 方案改为 **Fake-IP**，DNS 劫持改为 **强制**；开启 Sniffer 域名嗅探、清除缓存自定义 DNS。
+- **高级设置**：Tproxy 模式选 **「同时开启 TCP&UDP」**。
+- **IPv6**（路由器主菜单）：**IPv6** → 联机类型设为 **关闭**。
+- **前置分流**（`Merlin Clash 2` → `前置分流`）：在 **「IPtables 转发白名单 — 强制转发到 Clash」** 中追加 AI、makerworld 等相关域名（**一行一个**）。
+
+### 8.2 强调（避免搞反）
+
+> ⚠️ **「IPtables 转发白名单 — 强制转发到 Clash」= 强制走代理**（Claude、ChatGPT、makerworld 等应填这里）。
+> **「IPtables 转发黑名单 — 强制绕行 Clash」= 强制直连**。
+> 切勿把 AI 域名写进黑名单。编辑前勾选右上角 **【开启编辑】**，修改后点 **修改提交**，回到主页 **保存&启动**。
+
+### 8.3 验证
+
+在已走全屋代理的浏览器中打开 `https://browserleaks.com/ip`、`https://browserleaks.com/dns`、`https://ipinfo.io`，确认出口 IP 为节点国家、无国内 IPv6 裸奔、DNS 非 114/阿里/腾讯/运营商。更完整的五类根因与 OpenClash 对照见上文链接教程。
 
 ---
 

@@ -10,7 +10,7 @@
   <link rel="dns-prefetch" href="https://www.clarity.ms" />
   <title>iStoreOS 翻墙教程 2026 — PassWall/OpenClash + Are-u-ok 插件</title>
   <meta name="description" content="iStoreOS 科学上网教程，覆盖软路由安装、插件选择、订阅导入、旁路由网关、域名解析防污染、虚假地址模式、透明代理、规则分流和常见断网排查，适合新手在家庭网络中配置稳定的全屋代理环境，并减少 DNS、网关、插件冲突和更新失误。同时提供实测经验。适合新手按步骤操作。避免常见配置错误。便于快速定位问题。" />
-  <meta name="keywords" content="iStoreOS翻墙,iStoreOS科学上网,iStore插件,Are-u-ok插件,PassWall安装,OpenClash安装,SSR-Plus,iStoreOS旁路由,ESXi iStoreOS,iStoreOS固件下载,iStoreOS安装教程,x86软路由,aarch64,离线安装" />
+  <meta name="keywords" content="iStoreOS翻墙,iStoreOS科学上网,iStore插件,Are-u-ok插件,PassWall安装,OpenClash安装,SSR-Plus,iStoreOS旁路由,ESXi iStoreOS,iStoreOS固件下载,iStoreOS安装教程,x86软路由,aarch64,离线安装,PassWall QUIC拦截,OpenClash禁用QUIC,AI访问异常,makerworld访问异常" />
   <meta name="author" content="Router VPN Guide" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
@@ -21,7 +21,7 @@
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:site_name" content="Clash 全平台科学上网教程" />
   <meta property="article:published_time" content="2026-03-11" />
-  <meta property="article:modified_time" content="2026-04-06" />
+  <meta property="article:modified_time" content="2026-04-30" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="iStoreOS 科学上网教程 — PassWall + Are-u-ok" />
   <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
@@ -478,7 +478,11 @@
       <div class="callout">
         <strong>通用排查文档：</strong>
         <a href="/pages/soft-router-guide">OpenWrt + OpenClash 教程（DNS/拓扑思路通用）</a>
+        · <a href="/pages/proxy-access-issues">AI / makerworld 访问异常专项</a>
         · 优先结合本页「常见坑与排查」章节
+      </div>
+      <div class="tip-box">
+        <strong>Claude / Grok / makerworld 仍提示地区不可用？</strong>如果你在 iStoreOS 上使用 OpenClash，请优先开启 UDP 流量转发、禁用 QUIC、Fake-IP / DNS 强制劫持，并确认 IPv6 未泄漏；如果使用 PassWall / SSR-Plus，请检查 QUIC 拦截与强制代理域名。完整步骤见 <a href="/pages/proxy-access-issues">代理模式访问异常排查教程</a>。
       </div>
     </section>
 
@@ -488,6 +492,7 @@
         <a href="/clash-subscription-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🔗</span><div><strong style="font-size:14px">订阅申请指南</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">还没有订阅链接？获取机场推荐</p></div></a>
         <a href="/pages/soft-router-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🖥️</span><div><strong style="font-size:14px">软路由教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">OpenWrt + OpenClash / iKuai 方案</p></div></a>
         <a href="/pages/asus-router-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">📡</span><div><strong style="font-size:14px">华硕路由器教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">梅林固件 + MerlinClash 全屋翻墙</p></div></a>
+        <a href="/pages/proxy-access-issues" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🧭</span><div><strong style="font-size:14px">AI / makerworld 排查</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">OpenClash / PassWall 泄漏排查</p></div></a>
       </div>
     </section>
 

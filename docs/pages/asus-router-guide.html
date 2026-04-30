@@ -10,7 +10,7 @@
   <link rel="dns-prefetch" href="https://www.clarity.ms" />
   <title>华硕路由器翻墙教程 2026 — 梅林刷机 + MerlinClash 全屋科学上网</title>
   <meta name="description" content="华硕路由器科学上网教程，覆盖梅林固件刷机、插件安装、订阅导入、域名解析防污染、规则分流、全屋代理、旁路由对比、故障回滚、节点测速、人工智能服务和流媒体解锁排查，适合想在家庭网络中稳定使用 MerlinClash 的用户，并补充常见型号选择、固件风险和恢复方法。同时提供实测经验。适合新手按步骤操作。避免常见配置错误。" />
-  <meta name="keywords" content="华硕路由器翻墙,梅林固件,MerlinClash,华硕路由器科学上网,ASUS路由器刷机,梅林固件刷机教程,KoolCenter,全屋翻墙,路由器VPN,RT-AX86U,RT-AX88U,GT-AX6000,MerlinClash下载,分流规则,游戏加速,流媒体解锁" />
+  <meta name="keywords" content="华硕路由器翻墙,梅林固件,MerlinClash,华硕路由器科学上网,ASUS路由器刷机,梅林固件刷机教程,KoolCenter,全屋翻墙,路由器VPN,RT-AX86U,RT-AX88U,GT-AX6000,MerlinClash下载,分流规则,游戏加速,流媒体解锁,Claude无法访问,Grok地区限制,makerworld访问异常,QUIC拦截" />
   <meta name="author" content="Router VPN Guide" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
@@ -21,7 +21,7 @@
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:site_name" content="Clash 全平台科学上网教程" />
   <meta property="article:published_time" content="2026-03-10" />
-  <meta property="article:modified_time" content="2026-04-06" />
+  <meta property="article:modified_time" content="2026-04-30" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="华硕路由器翻墙教程 — 梅林固件 + MerlinClash" />
   <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
@@ -348,6 +348,9 @@
         <li><strong>国内直连</strong>：GEOIP CN、国内域名直连</li>
       </ul>
       <p>规则从上到下匹配，命中即执行对应动作。</p>
+      <div class="tip-box">
+        <strong>AI / makerworld 地区限制排查：</strong>如果 Claude、Grok、ChatGPT 或 makerworld 国际站仍提示地区不可用，优先检查 Tproxy 是否同时开启 TCP&UDP、DNS 是否使用 Fake-IP + 强制劫持，以及前置分流白名单是否填入相关域名。完整步骤见 <a href="/pages/proxy-access-issues">代理模式访问异常排查教程</a>。
+      </div>
     </section>
 
     <section class="card">
@@ -428,6 +431,7 @@
         <a href="/clash-subscription-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🔗</span><div><strong style="font-size:14px">订阅申请指南</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">还没有订阅链接？获取机场推荐</p></div></a>
         <a href="/pages/soft-router-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🖥️</span><div><strong style="font-size:14px">软路由教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">OpenWrt + OpenClash / iKuai 方案</p></div></a>
         <a href="/pages/istoreos-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🧰</span><div><strong style="font-size:14px">iStoreOS 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">iStore 插件 + Are-u-ok 第三方包</p></div></a>
+        <a href="/pages/proxy-access-issues" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🧭</span><div><strong style="font-size:14px">AI / makerworld 排查</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">QUIC、IPv6、DNS 泄漏专项</p></div></a>
       </div>
     </section>
 
