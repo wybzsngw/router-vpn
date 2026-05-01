@@ -26,6 +26,7 @@
   // 将当前页面 pathname 归类到一个稳定的 source_module 标识，便于在 GA4 中按"来源页面模块"细分转化漏斗。
   var SOURCE_MODULE_RULES = [
     { pattern: /\/pages\/uniclash-guide/, module: 'uniclash_guide' },
+    { pattern: /\/pages\/karing-guide/, module: 'karing_guide' },
     { pattern: /\/pages\/yangfan-important-notice/, module: 'yangfan_notice' },
     { pattern: /\/pages\/chatgpt-plus-guide/, module: 'chatgpt_plus_guide' },
     { pattern: /\/pages\/openai-api-guide/, module: 'openai_api_guide' },
