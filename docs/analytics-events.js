@@ -27,6 +27,8 @@
   var SOURCE_MODULE_RULES = [
     { pattern: /\/pages\/uniclash-guide/, module: 'uniclash_guide' },
     { pattern: /\/pages\/karing-guide/, module: 'karing_guide' },
+    { pattern: /\/pages\/mihomo-party-guide/, module: 'mihomo_party_guide' },
+    { pattern: /\/pages\/flclash-guide/, module: 'flclash_guide' },
     { pattern: /\/pages\/yangfan-important-notice/, module: 'yangfan_notice' },
     { pattern: /\/pages\/chatgpt-plus-guide/, module: 'chatgpt_plus_guide' },
     { pattern: /\/pages\/openai-api-guide/, module: 'openai_api_guide' },

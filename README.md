@@ -38,6 +38,8 @@
 | iOS | [ShadowClash / Shadowrocket / Stash](mobile/ios-shadowrocket.md) · [ShadowClash 微信直连规则](mobile/shadowclash-wechat-direct.md) |
 | UniClash | [UniClash 下载教程：杨帆云 yangfan、尔湾云 erwan 网站代码](subscription/uniclash-guide.md)（[在线版](https://www.aixiaobai168.com/pages/uniclash-guide)） |
 | Karing | [Karing 下载与使用教程：免费的 Shadowrocket 替代客户端](subscription/karing-guide.md)（[在线版](https://www.aixiaobai168.com/pages/karing-guide)） |
+| Mihomo Party | [Mihomo Party / Clash Party 下载教程](subscription/mihomo-party-guide.md)（[在线版](https://www.aixiaobai168.com/pages/mihomo-party-guide)） |
+| FlClash | [FlClash 下载与使用教程：安卓与桌面端 ClashMeta 客户端](subscription/flclash-guide.md)（[在线版](https://www.aixiaobai168.com/pages/flclash-guide)） |
 
 ### 使用场景教程
 
