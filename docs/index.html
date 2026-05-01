@@ -116,6 +116,79 @@
       line-height: 1.8;
       text-align: center;
     }
+    .promo-banner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      margin: -8px 0 28px;
+      padding: 22px 24px;
+      border-radius: 20px;
+      background:
+        radial-gradient(320px 180px at 12% 10%, rgba(255,255,255,.72), transparent 68%),
+        linear-gradient(135deg, #fff1f2 0%, #fff7ed 56%, #fef3c7 100%);
+      border: 1px solid rgba(220,38,38,.24);
+      box-shadow: 0 16px 36px rgba(220,38,38,.12);
+    }
+    .promo-banner .promo-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+      color: #b91c1c;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .promo-banner h2 {
+      font-size: 22px;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      color: #991b1b;
+    }
+    .promo-banner p {
+      color: #7f1d1d;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .promo-codes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .promo-code {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(220,38,38,.18);
+      color: #991b1b;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .promo-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ef4444, #f97316);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(239,68,68,.22);
+      transition: all .2s;
+    }
+    .promo-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(239,68,68,.3);
+    }
     .hero-focus {
       display: grid;
       gap: 14px;
@@ -386,6 +459,8 @@
       .grid { grid-template-columns: 1fr }
       .quick-grid { grid-template-columns: 1fr }
       .hero-panel { padding: 26px 18px }
+      .promo-banner { grid-template-columns: 1fr; margin-top: -4px; padding: 18px }
+      .promo-action { width: 100% }
       .floating-share { right: 14px; bottom: 84px }
       .floating-share-main { min-width: 82px; padding: 11px 14px }
     }
@@ -430,6 +505,20 @@
         </div>
       </div>
     </div>
+
+    <section class="promo-banner" aria-label="尔湾云五一限时优惠">
+      <div>
+        <div class="promo-kicker">May Day Deal · 5/1-5/8</div>
+        <h2>尔湾云五一特惠：年付 6.9 折，两年付 6.5 折，三年付 6.0 折</h2>
+        <p>假期专属限时 8 天，适合准备长期使用 Clash 订阅、需要多设备与影音/AI 场景的用户；优惠码以下单页实际可用为准。</p>
+        <div class="promo-codes" aria-label="优惠码">
+          <span class="promo-code">year69 年付 6.9 折</span>
+          <span class="promo-code">2year65 两年付 6.5 折</span>
+          <span class="promo-code">3year60 三年付 6.0 折</span>
+        </div>
+      </div>
+      <a class="promo-action" href="https://ewanwtt.net/auth/register?code=EGi8tb" target="_blank" rel="sponsored noopener">领取五一优惠</a>
+    </section>
 
     <nav class="nav" aria-label="页面导航">
       <a href="#start">快速开始</a>
