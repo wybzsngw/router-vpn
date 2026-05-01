@@ -462,8 +462,8 @@
     <div class="quick-grid">
       <div class="quick-card">
         <div class="quick-eyebrow">常见故障</div>
-        <h3>90% 问题的 3 个快速排查点</h3>
-        <p>导入订阅后连不上、节点速度慢、流媒体被识别，先从下面三条看起，大多不用翻技术文档。</p>
+        <h3>90% 问题的 4 个快速排查点</h3>
+        <p>导入订阅后连不上、节点速度慢、AI 工具地区限制、流媒体被识别，先从下面四条看起，大多不用翻技术文档。</p>
         <div class="step-list">
           <div class="step-item">
             <div class="step-badge">!</div>
@@ -477,6 +477,13 @@
             <div>
               <strong>节点全绿但打不开 Google / YouTube</strong>
               通常是 DNS 或 TUN 模式未开。<a class="quick-link" href="/clash-subscription-guide">对比机场解锁能力 →</a>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-badge">AI</div>
+            <div>
+              <strong>Claude / Grok / makerworld 提示地区不可用</strong>
+              重点查 QUIC、IPv6、DNS 泄漏和规则未命中。<a class="quick-link" href="/pages/proxy-access-issues">查看地区限制排查 →</a>
             </div>
           </div>
           <div class="step-item">
@@ -502,9 +509,9 @@
             <span>UniClash 下载教程</span>
             <span>网站代码 + 安装排障</span>
           </a>
-          <a class="mini-link" href="/pages/karing-guide">
-            <span>Karing 下载教程</span>
-            <span>免费 iOS 跨平台代理客户端</span>
+          <a class="mini-link" href="/pages/clash-for-windows-alternative">
+            <span>CFW 停更后怎么办</span>
+            <span>替代客户端 + 迁移步骤</span>
           </a>
           <a class="mini-link" href="/pages/asus-router-guide">
             <span>华硕路由器教程</span>
@@ -514,9 +521,9 @@
             <span>iOS 免费方案 ShadowClash</span>
             <span>外区 Apple ID + 蓝胖云</span>
           </a>
-          <a class="mini-link" href="/pages/asus-router-guide#downloads">
-            <span>MerlinClash 插件下载</span>
-            <span>ARM64 / ARM32</span>
+          <a class="mini-link" href="/pages/istoreos-guide">
+            <span>iStoreOS 科学上网专题</span>
+            <span>iStore 插件 + Are-u-ok</span>
           </a>
         </div>
       </div>
@@ -738,9 +745,9 @@
         <p><a href="/pages/proxy-access-issues">查看 AI 与 makerworld 访问异常排查 →</a></p>
       </div>
       <div class="notice">
-        <h3>CFW 停更后怎么办 — 2026 替代品对比</h3>
-        <p>如果你在寻找 CFW 停更后的替代客户端，可以直接查看新方案的安装与迁移建议。</p>
-        <p><a href="/pages/clash-for-windows-alternative">查看替代方案专题 →</a></p>
+        <h3>新客户端专题：Karing / Mihomo Party / FlClash</h3>
+        <p>围绕 CFW 停更后的新客户端选择：iOS 免费跨平台看 Karing，桌面端新手看 Mihomo Party / Clash Party，安卓与桌面多设备看 FlClash。</p>
+        <p><a href="/pages/karing-guide">Karing 教程 →</a> · <a href="/pages/mihomo-party-guide">Mihomo Party 教程 →</a> · <a href="/pages/flclash-guide">FlClash 教程 →</a></p>
       </div>
     </div>
 
@@ -796,10 +803,13 @@
         <a href="/pages/openai-api-guide">OpenAI API</a> ·
         <a href="/pages/netflix-guide">Netflix 解锁</a> ·
         <a href="/pages/uniclash-guide">UniClash 教程</a> ·
-        <a href="/pages/karing-guide">Karing 教程</a>
+        <a href="/pages/clash-for-windows-alternative">CFW 替代</a> ·
+        <a href="/pages/karing-guide">Karing 教程</a> ·
+        <a href="/pages/mihomo-party-guide">Mihomo Party</a> ·
+        <a href="/pages/flclash-guide">FlClash</a>
       </nav>
       <p class="footer-line-1">推荐收藏首页：<a href="https://www.aixiaobai168.com/">www.aixiaobai168.com</a></p>
-      <p class="footer-line-2"><a href="https://github.com/mowei-ie/router-vpn">GitHub 项目主页</a> · 更新日期：2026-04-25</p>
+      <p class="footer-line-2"><a href="https://github.com/mowei-ie/router-vpn">GitHub 项目主页</a> · 更新日期：2026-05-01</p>
     </footer>
 
   </main>
@@ -896,6 +906,6 @@
   <script src="analytics-events.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Clash 全平台科学上网教程","alternateName":["Clash 翻墙指南","Router VPN Guide"],"url":"https://www.aixiaobai168.com/","description":"2026 最新 Clash 全平台科学上网配置教程，覆盖华硕路由器、软路由、iStoreOS、Windows、macOS、Linux、Android、iOS。","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Clash 是什么？怎么用 Clash 科学上网？","acceptedAnswer":{"@type":"Answer","text":"Clash 是一款开源的多平台代理工具，支持规则分流、TUN 模式、订阅管理等。通过导入机场订阅链接即可实现科学上网。本站提供 Windows、macOS、Linux、Android、iOS、路由器全平台的 Clash 配置教程。"}},{"@type":"Question","name":"路由器怎么翻墙？华硕路由器和软路由哪个好？","acceptedAnswer":{"@type":"Answer","text":"华硕路由器可刷梅林固件安装 MerlinClash 实现全屋翻墙；软路由（如 OpenWrt + OpenClash 或 iStoreOS + PassWall）性能更强、可定制性更高。追求稳定选华硕，追求性能选软路由。"}},{"@type":"Question","name":"iStoreOS 怎么安装科学上网插件？","acceptedAnswer":{"@type":"Answer","text":"在 iStoreOS 上可通过 iStore 软件中心安装科学上网插件，也可从 Are-u-ok 第三方插件包下载 PassWall、OpenClash 等 .run 安装包手动安装。需先确认设备架构（x86_64 或 aarch64）再选择对应平台包。"}},{"@type":"Question","name":"Windows 上用什么 Clash 客户端？","acceptedAnswer":{"@type":"Answer","text":"推荐使用 Clash Verge Rev，它是基于 Rust 重写的开源 Clash 客户端，支持订阅管理、规则分流、TUN 模式，是已停更的 Clash for Windows 的继任者。"}}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Clash 全平台教程列表","itemListElement":[{"@type":"ListItem","position":1,"name":"Clash 订阅申请指南","url":"https://www.aixiaobai168.com/clash-subscription-guide"},{"@type":"ListItem","position":2,"name":"华硕路由器 MerlinClash 教程","url":"https://www.aixiaobai168.com/pages/asus-router-guide"},{"@type":"ListItem","position":3,"name":"软路由 OpenWrt / iKuai 教程","url":"https://www.aixiaobai168.com/pages/soft-router-guide"},{"@type":"ListItem","position":4,"name":"Windows Clash Verge Rev 教程","url":"https://www.aixiaobai168.com/pages/windows-guide"},{"@type":"ListItem","position":5,"name":"Linux Clash 教程","url":"https://www.aixiaobai168.com/pages/linux-guide"},{"@type":"ListItem","position":6,"name":"macOS ClashX Meta 教程","url":"https://www.aixiaobai168.com/pages/macos-guide"},{"@type":"ListItem","position":7,"name":"手机 Android & iOS Clash 教程","url":"https://www.aixiaobai168.com/pages/mobile-guide"},{"@type":"ListItem","position":8,"name":"iStoreOS 科学上网专题","url":"https://www.aixiaobai168.com/pages/istoreos-guide"},{"@type":"ListItem","position":9,"name":"ChatGPT 注册使用教程","url":"https://www.aixiaobai168.com/pages/chatgpt-guide"},{"@type":"ListItem","position":10,"name":"ChatGPT Plus / Go 充值指南","url":"https://www.aixiaobai168.com/pages/chatgpt-plus-guide"},{"@type":"ListItem","position":11,"name":"OpenAI API 申请与计费指南","url":"https://www.aixiaobai168.com/pages/openai-api-guide"},{"@type":"ListItem","position":12,"name":"代理模式 AI / makerworld 访问异常排查","url":"https://www.aixiaobai168.com/pages/proxy-access-issues"},{"@type":"ListItem","position":13,"name":"旁路由设置教程","url":"https://www.aixiaobai168.com/pages/bypass-router-guide"},{"@type":"ListItem","position":14,"name":"Netflix 解锁观看教程","url":"https://www.aixiaobai168.com/pages/netflix-guide"},{"@type":"ListItem","position":15,"name":"UniClash 下载与使用教程","url":"https://www.aixiaobai168.com/pages/uniclash-guide"},{"@type":"ListItem","position":16,"name":"Karing 下载与使用教程","url":"https://www.aixiaobai168.com/pages/karing-guide"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Clash 全平台教程列表","itemListElement":[{"@type":"ListItem","position":1,"name":"Clash 订阅申请指南","url":"https://www.aixiaobai168.com/clash-subscription-guide"},{"@type":"ListItem","position":2,"name":"华硕路由器 MerlinClash 教程","url":"https://www.aixiaobai168.com/pages/asus-router-guide"},{"@type":"ListItem","position":3,"name":"软路由 OpenWrt / iKuai 教程","url":"https://www.aixiaobai168.com/pages/soft-router-guide"},{"@type":"ListItem","position":4,"name":"Windows Clash Verge Rev 教程","url":"https://www.aixiaobai168.com/pages/windows-guide"},{"@type":"ListItem","position":5,"name":"Linux Clash 教程","url":"https://www.aixiaobai168.com/pages/linux-guide"},{"@type":"ListItem","position":6,"name":"macOS ClashX Meta 教程","url":"https://www.aixiaobai168.com/pages/macos-guide"},{"@type":"ListItem","position":7,"name":"手机 Android & iOS Clash 教程","url":"https://www.aixiaobai168.com/pages/mobile-guide"},{"@type":"ListItem","position":8,"name":"iStoreOS 科学上网专题","url":"https://www.aixiaobai168.com/pages/istoreos-guide"},{"@type":"ListItem","position":9,"name":"ChatGPT 注册使用教程","url":"https://www.aixiaobai168.com/pages/chatgpt-guide"},{"@type":"ListItem","position":10,"name":"ChatGPT Plus / Go 充值指南","url":"https://www.aixiaobai168.com/pages/chatgpt-plus-guide"},{"@type":"ListItem","position":11,"name":"OpenAI API 申请与计费指南","url":"https://www.aixiaobai168.com/pages/openai-api-guide"},{"@type":"ListItem","position":12,"name":"代理模式 AI / makerworld 访问异常排查","url":"https://www.aixiaobai168.com/pages/proxy-access-issues"},{"@type":"ListItem","position":13,"name":"旁路由设置教程","url":"https://www.aixiaobai168.com/pages/bypass-router-guide"},{"@type":"ListItem","position":14,"name":"Netflix 解锁观看教程","url":"https://www.aixiaobai168.com/pages/netflix-guide"},{"@type":"ListItem","position":15,"name":"UniClash 下载与使用教程","url":"https://www.aixiaobai168.com/pages/uniclash-guide"},{"@type":"ListItem","position":16,"name":"Karing 下载与使用教程","url":"https://www.aixiaobai168.com/pages/karing-guide"},{"@type":"ListItem","position":17,"name":"Clash for Windows 停更替代指南","url":"https://www.aixiaobai168.com/pages/clash-for-windows-alternative"},{"@type":"ListItem","position":18,"name":"Mihomo Party / Clash Party 下载教程","url":"https://www.aixiaobai168.com/pages/mihomo-party-guide"},{"@type":"ListItem","position":19,"name":"FlClash 下载与使用教程","url":"https://www.aixiaobai168.com/pages/flclash-guide"}]}</script>
 </body>
 </html>
