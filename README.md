@@ -31,7 +31,7 @@
 
 | 设备 | 教程 |
 |------|------|
-| Windows | [Clash Verge Rev 教程](windows/clash-verge-rev.md) · [系统代理配置](windows/windows-proxy-settings.md) · [CFW 替代方案](https://www.aixiaobai168.com/pages/clash-for-windows-alternative) |
+| Windows | [Clash Verge Rev 教程](windows/clash-verge-rev.md) · [系统代理配置](windows/windows-proxy-settings.md) · [CFW 替代方案](windows/clash-for-windows-alternative.md)（[在线版](https://www.aixiaobai168.com/pages/clash-for-windows-alternative)） |
 | macOS | [ClashX Meta 教程](macos/clashx-meta.md) · [系统代理配置](macos/macos-proxy-settings.md) |
 | Linux | [桌面版](linux/clash-linux-install-guide.md) · [无 GUI 服务器版](linux/clash-linux-headless-guide.md) |
 | Android | [Clash Meta for Android](mobile/android-clash-meta.md) |

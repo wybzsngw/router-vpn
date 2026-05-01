@@ -38,7 +38,7 @@
 
 ### 关于 Clash for Windows (CFW)
 
-**Clash for Windows** 曾是 Windows 上最流行的 Clash 图形客户端，但项目已于 2023 年 11 月停止维护。Clash Verge Rev 是 CFW 的继任者之一，采用 Rust 重写，性能更好、资源占用更低，建议新用户直接使用 Clash Verge Rev。
+**Clash for Windows** 曾是 Windows 上最流行的 Clash 图形客户端，但项目已于 2023 年 11 月停止维护。Clash Verge Rev 是 CFW 的继任者之一，采用 Rust 重写，性能更好、资源占用更低，建议新用户直接使用 Clash Verge Rev。需要完整替代品对比和迁移思路，可先看 [CFW 停更后怎么办：替代品对比与迁移指南](clash-for-windows-alternative.md)。
 
 ---
 

@@ -116,7 +116,7 @@ Karing 的优势之一是 iOS 端免费，但需要注意：
 | [FlClash](../docs/pages/flclash-guide.html) | Windows / Android / macOS 多设备用户 | 安卓和桌面端一致体验 |
 | [Mihomo Party / Clash Party](../docs/pages/mihomo-party-guide.html) | 桌面端新手用户 | 适合 Windows / macOS / Linux |
 
-如果你是从 Clash for Windows 迁移过来，不确定该选哪个客户端，可以先看 [CFW 停更后替代品对比](../docs/pages/clash-for-windows-alternative.html)。
+如果你是从 Clash for Windows 迁移过来，不确定该选哪个客户端，可以先看 [CFW 停更后替代品对比](../windows/clash-for-windows-alternative.md)。
 
 ---
 
@@ -148,7 +148,7 @@ Karing 的优势之一是 iOS 端免费，但需要注意：
 
 - [Clash 订阅与机场推荐指南](../docs/clash-subscription-guide.html)
 - [UniClash 下载教程](../docs/pages/uniclash-guide.html)
-- [Clash for Windows 停更替代指南](../docs/pages/clash-for-windows-alternative.html)
+- [Clash for Windows 停更替代指南](../windows/clash-for-windows-alternative.md)（[在线版](https://www.aixiaobai168.com/pages/clash-for-windows-alternative)）
 - [Mihomo Party / Clash Party 教程](../docs/pages/mihomo-party-guide.html)
 - [FlClash 下载教程](../docs/pages/flclash-guide.html)
 - [手机科学上网教程](../docs/pages/mobile-guide.html)

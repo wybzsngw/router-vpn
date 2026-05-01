@@ -121,5 +121,5 @@ Windows 10/11 新手优先下载安装版；Windows 7/8 需要选择 Release 中
 ## 相关教程
 
 - [FlClash 下载教程](../docs/pages/flclash-guide.html)
-- [Clash for Windows 停更替代指南](../docs/pages/clash-for-windows-alternative.html)
+- [Clash for Windows 停更替代指南](../windows/clash-for-windows-alternative.md)（[在线版](https://www.aixiaobai168.com/pages/clash-for-windows-alternative)）
 - [Clash 订阅申请指南](../docs/clash-subscription-guide.html)

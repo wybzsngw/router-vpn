@@ -132,5 +132,5 @@ Windows 单设备且从 CFW 迁移，可优先看 Clash Verge Rev；如果你同
 ## 相关教程
 
 - [Mihomo Party / Clash Party 教程](../docs/pages/mihomo-party-guide.html)
-- [Clash for Windows 停更替代指南](../docs/pages/clash-for-windows-alternative.html)
+- [Clash for Windows 停更替代指南](../windows/clash-for-windows-alternative.md)（[在线版](https://www.aixiaobai168.com/pages/clash-for-windows-alternative)）
 - [手机科学上网教程](../docs/pages/mobile-guide.html)
