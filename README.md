@@ -3,7 +3,7 @@
 [![在线阅读](https://img.shields.io/badge/📖_在线阅读-主站-0ea5e9?style=for-the-badge)](https://www.aixiaobai168.com/)
 [![GitHub stars](https://img.shields.io/github/stars/mowei-ie/router-vpn?style=for-the-badge&logo=github&color=f59e0b)](https://github.com/mowei-ie/router-vpn/stargazers)
 [![License](https://img.shields.io/badge/license-Apache_2.0-10b981?style=for-the-badge)](LICENSE)
-[![Last Updated](https://img.shields.io/badge/更新-2026.04-7c4dff?style=for-the-badge)]()
+[![Last Updated](https://img.shields.io/badge/更新-2026.05-7c4dff?style=for-the-badge)](https://www.aixiaobai168.com/)
 
 > **2026 最新 Clash 全平台科学上网教程** — 覆盖华硕路由器 MerlinClash、软路由 OpenWrt + OpenClash、iStoreOS PassWall、Windows Clash Verge Rev、macOS ClashX Meta、Linux、Android Clash Meta、iOS Shadowrocket。含 VPN 节点订阅申请、机场推荐与价格对比、ChatGPT 注册登录、Netflix 解锁、节点配置、分流规则、TUN 模式、旁路由等完整教程。
 >
@@ -103,31 +103,17 @@
 
 ## 📝 更新日志
 
-### v2.6（2026 年 4 月）
+### 2026 年 5 月
 
-- 全站 SEO 深度优化：标题关键词、描述、结构化数据（FAQPage / HowTo）
-- 标题层级修正（H3→H2）、affiliate 链接 `rel="sponsored"` 规范化
-- Markdown 文档与 HTML 页面标题同步，统一 2026 年版关键词
-- 新增杨帆云重要通知页面 SEO 元素
-- Bing / Google 索引管理与流量分析
+- 新增 Karing、Mihomo Party、FlClash 与 Clash for Windows 替代方案，完善主流客户端入口。
 
-### v2.5（2026 年 4 月）
+### 2026 年 4 月
 
-- 全站 URL 切换至 clean URL，修复 Google 索引问题
-- 蓝胖云套餐信息完善（分档定价 + 设备同时在线数）
-- 全站 LCP 性能优化
+- 完成全站 SEO 与 clean URL 优化，并补充 UniClash、移动端和访问异常排查内容。
 
-### v2.4（2026 年 3 月）
+### 2026 年 3 月
 
-- 新增 ChatGPT 注册使用教程、Netflix 解锁观看教程
-- 首页新增「使用场景」板块
-- 自定义域名 `www.aixiaobai168.com` 上线（Cloudflare Pages）
-
-### v2.3（2026 年 3 月）
-
-- 全站 SEO 优化：结构化数据、sitemap、Open Graph
-- 新增 iStoreOS 科学上网完整专题
-- 新增 Clash 订阅申请指南（机场推荐与价格对比）
+- 重构为全平台 Clash 教程体系，上线 iStoreOS、ChatGPT、Netflix、华硕路由器和软路由等核心指南。
 
 ---
 
@@ -143,4 +129,4 @@
 
 ---
 
-**在线文档**：<https://www.aixiaobai168.com/>　|　**版本**：v2.6　|　**最后更新**：2026 年 4 月
+**在线文档**：<https://www.aixiaobai168.com/>　|　**版本**：v2.7　|　**最后更新**：2026 年 5 月
