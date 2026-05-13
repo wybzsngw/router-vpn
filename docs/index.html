@@ -454,6 +454,62 @@
     footer { margin-top: 48px; text-align: center; color: var(--muted); font-size: 13px; line-height: 1.8 }
     footer a { color: var(--accent); text-decoration: none }
 
+    /* 双向方案选择区（翻墙出国 vs 回国加速） */
+    .direction-switch {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: -4px 0 28px;
+    }
+    .direction-card {
+      position: relative;
+      display: block;
+      padding: 22px 24px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: var(--shadow);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      overflow: hidden;
+    }
+    .direction-card.outbound {
+      background: linear-gradient(135deg, rgba(14,165,233,.08), rgba(124,77,255,.08));
+      border-color: rgba(14,165,233,.2);
+    }
+    .direction-card.inbound {
+      background: linear-gradient(135deg, rgba(245,158,11,.1), rgba(220,38,38,.08));
+      border-color: rgba(220,38,38,.18);
+    }
+    .direction-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(17,24,39,.1);
+    }
+    .direction-card .dir-tag {
+      display: inline-block; padding: 4px 10px; border-radius: 999px;
+      font-size: 11px; font-weight: 800; letter-spacing: .12em;
+      margin-bottom: 10px;
+    }
+    .direction-card.outbound .dir-tag { background: rgba(14,165,233,.14); color: #0369a1 }
+    .direction-card.inbound .dir-tag { background: rgba(220,38,38,.12); color: var(--brand) }
+    .direction-card h3 { font-size: 19px; margin-bottom: 6px }
+    .direction-card p { color: var(--muted); font-size: 13px; line-height: 1.7; margin-bottom: 10px }
+    .direction-card .dir-meta { font-size: 12px; color: var(--muted) }
+    .direction-card .dir-meta strong { color: var(--text); font-weight: 700 }
+    .direction-card .dir-cta {
+      margin-top: 12px;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 700; color: var(--accent);
+    }
+    .direction-card.inbound .dir-cta { color: #b91c1c }
+    .direction-card .dir-badge-new {
+      position: absolute; top: 14px; right: 14px;
+      padding: 3px 8px; border-radius: 6px;
+      background: linear-gradient(135deg, #ef4444, #f59e0b);
+      color: #fff; font-size: 10px; font-weight: 800;
+      letter-spacing: .08em;
+    }
+
     @media(max-width:700px){
       .header h1 { font-size: 24px }
       .grid { grid-template-columns: 1fr }
@@ -463,6 +519,7 @@
       .promo-action { width: 100% }
       .floating-share { right: 14px; bottom: 84px }
       .floating-share-main { min-width: 82px; padding: 11px 14px }
+      .direction-switch { grid-template-columns: 1fr }
     }
   </style>
 </head>
@@ -506,6 +563,24 @@
       </div>
     </div>
 
+    <section class="direction-switch" aria-label="按方向选择教程">
+      <a class="direction-card outbound" href="/clash-subscription-guide">
+        <div class="dir-tag">国内 → 海外</div>
+        <h3>翻墙出国教程</h3>
+        <p>身在中国大陆，想访问 Google / ChatGPT / Claude / YouTube / Netflix / GitHub。</p>
+        <div class="dir-meta">覆盖：<strong>路由器 / 软路由 / Windows / macOS / Android / iOS</strong></div>
+        <div class="dir-cta">查看订阅与教程 →</div>
+      </a>
+      <a class="direction-card inbound" href="/pages/return-china-guide">
+        <span class="dir-badge-new">NEW</span>
+        <div class="dir-tag">海外 → 国内</div>
+        <h3>回国加速专题</h3>
+        <p>身在海外，想看爱奇艺 / B站 / 网易云音乐 / 玩国服游戏 / 用钉钉企业微信。</p>
+        <div class="dir-meta">方案：<strong>商业加速器 / 回国机场 / 自建节点</strong></div>
+        <div class="dir-cta">查看回国加速指南 →</div>
+      </a>
+    </section>
+
     <section class="promo-banner" aria-label="五一限时优惠">
       <div>
         <div class="promo-kicker">May Day Deal · 5/1-5/15 · 限时 15 天</div>
@@ -541,6 +616,7 @@
       <a href="#desktop">桌面端</a>
       <a href="#mobile">移动端</a>
       <a href="#scenes">热门用法</a>
+      <a href="/pages/return-china-guide">回国加速</a>
       <a href="#more">资源下载</a>
     </nav>
 
@@ -910,7 +986,8 @@
         <a href="/pages/clash-for-windows-alternative">CFW 替代</a> ·
         <a href="/pages/karing-guide">Karing 教程</a> ·
         <a href="/pages/mihomo-party-guide">Mihomo Party</a> ·
-        <a href="/pages/flclash-guide">FlClash</a>
+        <a href="/pages/flclash-guide">FlClash</a> ·
+        <a href="/pages/return-china-guide">回国加速专题</a>
       </nav>
       <p class="footer-line-1">推荐收藏首页：<a href="https://www.aixiaobai168.com/">www.aixiaobai168.com</a></p>
       <p class="footer-line-2"><a href="https://github.com/mowei-ie/router-vpn">GitHub 项目主页</a> · 更新日期：2026-05-01</p>

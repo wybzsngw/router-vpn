@@ -23,6 +23,41 @@
     'https://tusmartchat.com/uniclash-erwan.html': '尔湾云'
   };
 
+  // 回国加速专题：商业回国加速器联盟域名白名单。
+  // 命中后触发 return_accelerator_click 事件，参数与 clash_register_click 对齐，便于 GA4 漏斗复用。
+  // 注：穿梭、番茄、UU 暂不挂联盟（穿梭无法注册推广员、番茄无开放计划、UU 大厂直营），
+  // 仍可能出现在文章对比表中，但不进入此白名单（即出现仅记 outbound_click，不算转化）。
+  var RETURN_ACCELERATOR_DOMAINS = {
+    'getmalus.com': 'Malus'
+    // 'speedin.co': '快帆 SpeedIn'  // 待推广员审核通过后启用
+  };
+
+  // 回国加速专题：VPS 服务商联盟（自建党 self-hosted 教程引导用）。
+  // 用于"海外 VPS + CN2 GIA 优质回国线路"推荐位，避免国内云服务器违规问题。
+  var VPS_AFFILIATE_DOMAINS = {
+    'bandwagonhost.com': '搬瓦工 BandwagonHost',
+    'dmit.io':           'DMIT'
+  };
+
+  // 回国加速专题：海外华人横向联盟（机票/酒店）。
+  // 用于回国机票预订引导，仅在 overview / 工具箱 卡片露出，不在主线评测中混杂。
+  var TRAVEL_AFFILIATE_DOMAINS = {
+    // 'trip.com':       'Trip.com',
+    // 'booking.com':    'Booking',
+    // 'skyscanner.com': 'Skyscanner',
+    // 'agoda.com':      'Agoda'
+  };
+
+  // 回国加速专题：海外华人横向联盟（金融/汇款）。
+  // 仅导向持牌机构（券商需 SEC/FINRA/SFC 牌照，汇款需 FCA/MSB 牌照）。
+  // 涉及金融的文章必须独立成段并加风险提示。
+  var FINANCE_AFFILIATE_DOMAINS = {
+    // 'futunn.com':       '富途',
+    // 'tigerbrokers.com.sg': '老虎证券',
+    // 'longbridge.com':   '长桥证券',
+    // 'wise.com':         'Wise'
+  };
+
   // 将当前页面 pathname 归类到一个稳定的 source_module 标识，便于在 GA4 中按"来源页面模块"细分转化漏斗。
   var SOURCE_MODULE_RULES = [
     { pattern: /\/pages\/uniclash-guide/, module: 'uniclash_guide' },
@@ -44,6 +79,20 @@
     { pattern: /\/pages\/linux-guide/, module: 'linux_guide' },
     { pattern: /\/pages\/mobile-guide/, module: 'mobile_guide' },
     { pattern: /\/clash-subscription-guide/, module: 'subscription_guide' },
+    // 回国加速专题（按文件名前缀归类，便于后续场景页/横评页加入时统一识别）
+    { pattern: /\/pages\/return-china-guide/, module: 'return_overview' },
+    { pattern: /\/pages\/return-accelerator-comparison/, module: 'return_comparison' },
+    { pattern: /\/pages\/return-transocks-guide/, module: 'return_transocks' },
+    { pattern: /\/pages\/return-speedin-guide/, module: 'return_speedin' },
+    { pattern: /\/pages\/return-fanqie-guide/, module: 'return_fanqie' },
+    { pattern: /\/pages\/return-uu-guide/, module: 'return_uu' },
+    { pattern: /\/pages\/return-streaming/, module: 'return_streaming' },
+    { pattern: /\/pages\/return-music/, module: 'return_music' },
+    { pattern: /\/pages\/return-gaming/, module: 'return_gaming' },
+    { pattern: /\/pages\/return-office/, module: 'return_office' },
+    { pattern: /\/pages\/return-wechat/, module: 'return_wechat' },
+    { pattern: /\/pages\/return-self-hosted/, module: 'return_self_hosted' },
+    { pattern: /\/pages\/return-clash-rules/, module: 'return_client_rules' },
     { pattern: /^\/$|\/index\.html$/, module: 'home' }
   ];
 
@@ -61,6 +110,18 @@
     for (var i = 0; i < AIRPORT_DOMAINS.length; i++) {
       if (url.indexOf(AIRPORT_DOMAINS[i]) !== -1) {
         return AIRPORT_NAMES[AIRPORT_DOMAINS[i]];
+      }
+    }
+    return null;
+  }
+
+  // 通过域名字典做包含匹配，命中返回品牌名称。url 已是 a.href（完整 URL），无需再 parse。
+  // 用于回国加速专题各类联盟域名识别，统一在主分发器里复用。
+  function matchAffiliateName(url, dict) {
+    if (!url) return null;
+    for (var domain in dict) {
+      if (Object.prototype.hasOwnProperty.call(dict, domain) && url.indexOf(domain) !== -1) {
+        return dict[domain];
       }
     }
     return null;
@@ -145,6 +206,56 @@
     if (airportName) {
       gtag('event', 'clash_register_click', {
         airport_name: airportName,
+        source_page: page,
+        source_module: sourceModule,
+        link_url: href,
+        link_text: text
+      });
+      return;
+    }
+
+    // 回国加速专题：四类联盟点击事件分发。命中后直接 return，避免再触发 outbound_click。
+    // product_name / vps_brand / travel_brand / finance_brand 等参数与 airport_name 同位置，便于 GA4 报表统一切分。
+    var returnAcceleratorName = matchAffiliateName(href, RETURN_ACCELERATOR_DOMAINS);
+    if (returnAcceleratorName) {
+      gtag('event', 'return_accelerator_click', {
+        product_name: returnAcceleratorName,
+        source_page: page,
+        source_module: sourceModule,
+        link_url: href,
+        link_text: text
+      });
+      return;
+    }
+
+    var vpsBrand = matchAffiliateName(href, VPS_AFFILIATE_DOMAINS);
+    if (vpsBrand) {
+      gtag('event', 'vps_affiliate_click', {
+        vps_brand: vpsBrand,
+        source_page: page,
+        source_module: sourceModule,
+        link_url: href,
+        link_text: text
+      });
+      return;
+    }
+
+    var travelBrand = matchAffiliateName(href, TRAVEL_AFFILIATE_DOMAINS);
+    if (travelBrand) {
+      gtag('event', 'travel_affiliate_click', {
+        travel_brand: travelBrand,
+        source_page: page,
+        source_module: sourceModule,
+        link_url: href,
+        link_text: text
+      });
+      return;
+    }
+
+    var financeBrand = matchAffiliateName(href, FINANCE_AFFILIATE_DOMAINS);
+    if (financeBrand) {
+      gtag('event', 'finance_affiliate_click', {
+        finance_brand: financeBrand,
         source_page: page,
         source_module: sourceModule,
         link_url: href,

@@ -51,6 +51,18 @@
 | Netflix | [Netflix 解锁观看教程](netflix/netflix-guide.md) |
 | AI / makerworld 访问异常 | [代理模式下 AI/makerworld/国外网站访问受限排查](common/proxy-access-issues.md) |
 
+### 🇨🇳 回国加速专题（海外华人 / 留学生 / 外派员工）
+
+> 身在海外，想访问国内服务？本专题面向**海外 → 国内**方向，与上述"翻墙出国"教程互为镜像。
+
+| 主题 | 教程 |
+|------|------|
+| 专题入口 | [回国加速专题首页](return-china/README.md)（[在线版](https://www.aixiaobai168.com/pages/return-china-guide)） |
+| 方案对比 | [商业加速器 vs 回国机场 vs 自建节点 三大方向对比](return-china/overview.md) |
+| 商业加速器 | 穿梭 / 快帆 / 番茄 / 网易 UU 海外版 评测（陆续上线） |
+| 使用场景 | 爱奇艺 / B站 / 网易云音乐 / 国服游戏 / 钉钉 / 微信支付（陆续上线） |
+| 客户端配置 | Clash / Shadowrocket 反向分流规则（陆续上线） |
+
 ### 通用参考
 
 - [故障排除](common/troubleshooting.md)　·　[分流规则详解](common/proxy-rules.md)　·　[术语表](common/glossary.md)
@@ -81,6 +93,7 @@
 ├── subscription/    订阅申请 & 机场推荐
 ├── chatgpt/         ChatGPT 注册、Plus 充值、OpenAI API
 ├── netflix/         Netflix 解锁观看教程
+├── return-china/    回国加速专题（海外 → 国内方向）
 ├── common/          故障排除、分流规则、术语表
 ├── extras/          Tailscale、部署指南等扩展
 ├── docs/            在线文档（HTML）& 静态资源
@@ -105,6 +118,7 @@
 
 ### 2026 年 5 月
 
+- 新增 **🇨🇳 回国加速专题骨架**：面向海外华人/留学生，规划商业加速器评测、回国线路机场、自建节点、场景教程与客户端反向分流规则集。
 - 新增 Karing、Mihomo Party、FlClash 与 Clash for Windows 替代方案，完善主流客户端入口。
 
 ### 2026 年 4 月
