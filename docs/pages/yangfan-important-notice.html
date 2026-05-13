@@ -9,7 +9,7 @@
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <link rel="dns-prefetch" href="https://www.clarity.ms" />
   <title>杨帆云重要通知｜Merlin Clash 使用提醒与 UniClash 说明</title>
-  <meta name="description" content="杨帆云重要通知：订阅在 Merlin Clash 等主流客户端上运行正常。本文说明 UniClash 官方客户端下载与使用方式，并提醒新用户首次购买建议从短周期开始，确认稳定后再考虑长期续费。同时提供实测经验。" />
+  <meta name="description" content="杨帆云重要通知：订阅在 Merlin Clash 等主流客户端上运行正常。官方推荐 UniClash 客户端，账号密码登录即用、无需导入订阅，不只适合新手，不需要全屋代理的用户同样省心。三番云老用户可直接用原邮箱加原密码登录，登不上在邮箱后加 .sanfan 再试。新用户建议先短周期体验，稳定后再考虑长期续费。" />
   <meta name="keywords" content="杨帆云,扬帆云,Merlin Clash,UniClash,机场推荐,VPN订阅,Clash 订阅,梅林固件,全屋代理,科学上网,故障排查,机场跑路,订阅稳定性,扬帆云价格,UniClash 客户端" />
   <meta name="author" content="Router VPN Guide" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -21,7 +21,7 @@
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:site_name" content="Clash 全平台科学上网教程" />
   <meta property="article:published_time" content="2026-03-20" />
-  <meta property="article:modified_time" content="2026-05-04" />
+  <meta property="article:modified_time" content="2026-05-13" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="杨帆云重要通知｜Merlin Clash 使用提醒与 UniClash 说明" />
   <meta name="twitter:description" content="杨帆云重要通知：订阅在 Merlin Clash 等主流客户端上运行正常，新用户建议先短周期试用再考虑长期续费。" />
@@ -115,6 +115,13 @@
       display:block;
     }
     .gallery-note{font-size:13px;color:var(--muted)}
+    .info-box{
+      background:#eff6ff;
+      border:1px solid #93c5fd;
+      border-radius:14px;
+      padding:16px;
+    }
+    .info-title{color:#1d4ed8;font-weight:800;margin:0 0 8px}
   </style>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
@@ -160,10 +167,27 @@
     </section>
 
 
+    <section class="card info-box">
+      <h2 class="info-title">ℹ️ 三番云老用户登录说明</h2>
+      <p>杨帆云与三番云完成合并后，<strong>三番云老用户</strong>可直接用原主邮箱 + 三番云原密码登录杨帆云。</p>
+      <ul>
+        <li>登录仍有问题时，请尝试在邮箱后拼接 <strong><code>.sanfan</code></strong> 再试一次</li>
+        <li>示例：<code>123@qq.com</code> 登不上 → 改用 <code>123@qq.com.sanfan</code></li>
+        <li>仍无法登录可发邮件至 <a href="mailto:cs@yfmail.net">cs@yfmail.net</a> 或在站内发工单，也可点页面右下角"智能客服"气泡联系官方</li>
+      </ul>
+    </section>
+
     <section class="card ok-box">
       <h2 class="ok-title">✅ 建议使用官方客户端 UniClash</h2>
       <p>下载安装后可直接启动，登录杨帆云账号即可使用（如提示网站代码，可填写：<a href="/pages/uniclash-guide#code"><strong>yangfan</strong></a>，详细界面截图见 <a href="/pages/uniclash-guide#code">UniClash 网站代码说明</a>）。</p>
-      <p>支持 Windows / Mac / 安卓。无需手动导入订阅，稳定性更好，排障流程也更简单；如果你希望少折腾、少踩坑，这会是更省心的选择。完整的下载链接、安装截图与登录排障思路，已整理在 <a href="/pages/uniclash-guide">UniClash 下载教程</a>。</p>
+      <p>支持 Windows / Mac / 安卓。<strong>不只适合新手</strong>，同样适合不需要全屋代理、只想在自己电脑或手机上省心上网的用户：</p>
+      <ul>
+        <li>账号密码登录即用，零配置，无需手动导入订阅链接</li>
+        <li>官方维护，版本更新及时，运行稳定</li>
+        <li>排障流程简单，遇到问题对照官方教程即可解决</li>
+        <li>不折腾路由器、不改规则的用户，这是最省心的选择</li>
+      </ul>
+      <p>完整的下载链接、安装截图与登录排障思路，已整理在 <a href="/pages/uniclash-guide">UniClash 下载教程</a>。</p>
       <div class="btns">
         <a class="btn primary" href="https://yawtt.net/register?code=BnJcjUjE" target="_blank" rel="sponsored noopener">前往官方网址注册</a>
         <a class="btn" href="https://tusmartchat.com/uniclash.html" target="_blank" rel="noopener">下载 UniClash 客户端</a>
@@ -202,7 +226,7 @@
     window.addEventListener('load', function() { alignToHash(false); });
     window.addEventListener('hashchange', function() { alignToHash(true); });
   </script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"杨帆云重要通知｜Merlin Clash 使用提醒与 UniClash 说明","description":"杨帆云重要通知：订阅在 Merlin Clash 等主流客户端上运行正常，新用户建议先短周期试用再考虑长期续费。","author":{"@type":"Organization","name":"Router VPN Guide","url":"https://www.aixiaobai168.com/"},"publisher":{"@type":"Organization","name":"Router VPN Guide","logo":{"@type":"ImageObject","url":"https://www.aixiaobai168.com/favicon.ico"}},"datePublished":"2026-03-20T12:00:00+08:00","dateModified":"2026-05-04T12:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.aixiaobai168.com/pages/yangfan-important-notice"},"inLanguage":"zh-CN","image":["https://www.aixiaobai168.com/images/yangfan-price-adjust-notice.png","https://www.aixiaobai168.com/images/yangfan-notice-red.png"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"杨帆云重要通知｜Merlin Clash 使用提醒与 UniClash 说明","description":"杨帆云重要通知：订阅在 Merlin Clash 等主流客户端上运行正常，新用户建议先短周期试用再考虑长期续费。","author":{"@type":"Organization","name":"Router VPN Guide","url":"https://www.aixiaobai168.com/"},"publisher":{"@type":"Organization","name":"Router VPN Guide","logo":{"@type":"ImageObject","url":"https://www.aixiaobai168.com/favicon.ico"}},"datePublished":"2026-03-20T12:00:00+08:00","dateModified":"2026-05-13T12:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.aixiaobai168.com/pages/yangfan-important-notice"},"inLanguage":"zh-CN","image":["https://www.aixiaobai168.com/images/yangfan-price-adjust-notice.png","https://www.aixiaobai168.com/images/yangfan-notice-red.png"]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"订阅申请","item":"https://www.aixiaobai168.com/clash-subscription-guide"},{"@type":"ListItem","position":3,"name":"杨帆云重要通知"}]}</script>
   <script src="../analytics-events.js" defer></script>
 </body>
