@@ -51,6 +51,16 @@
 | Netflix | [Netflix 解锁观看教程](netflix/netflix-guide.md) |
 | AI / makerworld 访问异常 | [代理模式下 AI/makerworld/国外网站访问受限排查](common/proxy-access-issues.md) |
 
+### 🤖 AI 编程与对话工具
+
+| 工具 | 教程 | 适用场景 |
+|------|------|----------|
+| Cursor | [完整指南](cursor/cursor-guide.md) · [实战连载](cursor/practice/) | AI 编程 IDE |
+| ChatGPT | [使用教程](chatgpt/chatgpt-guide.md) · [Plus 充值](chatgpt/chatgpt-plus-guide.md) · [API 指南](chatgpt/openai-api-guide.md) | 对话 / 写作 / 翻译 |
+| Claude Code | （陆续上线） | AI 命令行编程 |
+| Windsurf | （陆续上线） | AI 编程 IDE |
+| Codex / Gemini CLI | （陆续上线） | AI 命令行 |
+
 ### 🇨🇳 回国加速专题（海外华人 / 留学生 / 外派员工）
 
 > 身在海外，想访问国内服务？本专题面向**海外 → 国内**方向，与上述"翻墙出国"教程互为镜像。
@@ -92,6 +102,7 @@
 ├── mobile/          Android + iOS
 ├── subscription/    订阅申请 & 机场推荐
 ├── chatgpt/         ChatGPT 注册、Plus 充值、OpenAI API
+├── cursor/          Cursor 教程（Pillar 完整指南 + 实战连载）
 ├── netflix/         Netflix 解锁观看教程
 ├── return-china/    回国加速专题（海外 → 国内方向）
 ├── common/          故障排除、分流规则、术语表
@@ -140,6 +151,13 @@
 - 遇到问题？查看 [故障排除](common/troubleshooting.md) 或提交 [Issue](https://github.com/mowei-ie/router-vpn/issues)
 - 想贡献内容？欢迎提交 Pull Request
 - 参考资源：[Clash 文档](https://clash.gitbook.io/) · [iStoreOS 文档](https://doc.linkease.com/zh/guide/istoreos/) · [Are-u-ok 插件](https://github.com/AUK9527/Are-u-ok)
+
+---
+
+### 🤝 作者邀请
+
+本仓库的所有教程页面均由 Cursor 协助编写。如果你也想试试 Cursor，
+可以通过 [作者邀请通道](https://cursor.com/referral?code=3CSFK9I9QDKE) 注册，**首月 5 折**。
 
 ---
 
