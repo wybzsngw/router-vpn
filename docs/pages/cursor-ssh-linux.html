@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){if(location.hostname==='mowei-ie.github.io'){var p=location.pathname.replace(/^\/router-vpn/,'').replace(/\/?index\.html$/,'').replace(/\.html$/,'')||'/';location.replace('https://www.aixiaobai168.com'+p+location.search+location.hash);}})();</script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.clarity.ms" />
+  <title>Cursor SSH 远程开发教程 — 连接自建 Linux 与云服务器开发</title>
+  <meta name="description" content="2026 Cursor Remote-SSH 完整实战：树莓派 / 虚拟机 / LXC / 阿里云 / 腾讯云 / AWS 通用配置；ed25519 Key 免密登录；Cursor 添加 Remote 主机；远程跑 Composer Agent；Permission denied / Connection refused / Host key 三大报错速查。" />
+  <meta name="keywords" content="Cursor SSH,Cursor 远程开发,Cursor 连 Linux,Cursor Remote SSH,Cursor 服务器开发,Cursor 阿里云,Cursor 腾讯云,Cursor 树莓派,ed25519,SSH 免密登录" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta property="og:title" content="Cursor SSH 远程开发实战 — 连接自建 Linux 与云服务器完整指南" />
+  <meta property="og:description" content="树莓派到云服务器通用 SSH 配置，ed25519 免密登录，Cursor Remote-SSH 添加主机，远程 Composer Agent，三大报错速查。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.aixiaobai168.com/pages/cursor-ssh-linux" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="article:published_time" content="2026-05-16" />
+  <meta property="article:modified_time" content="2026-05-16" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cursor SSH 远程开发教程 — 连接 Linux 完整指南" />
+  <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:description" content="从零配置 SSH Key 到 Cursor Remote-SSH 连接云服务器，附九章实战与报错速查。" />
+  <link rel="canonical" href="https://www.aixiaobai168.com/pages/cursor-ssh-linux" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', 'AI 编程工具');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+      --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: scroll;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker {
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card h3 { font-size: 16px; margin: 16px 0 8px; color: var(--text) }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul, .card ol { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    code.inline { padding: .2em .5em; display: inline; background: rgba(0,0,0,.04); border-radius: 6px; font-size: 13px }
+    pre {
+      background: rgba(0,0,0,.04);
+      border-radius: 12px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      margin: 12px 0;
+      line-height: 1.55;
+    }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .cta-box {
+      margin: 16px 0;
+      padding: 18px 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(14,165,233,.2);
+      background: linear-gradient(135deg, rgba(14,165,233,.06), rgba(124,77,255,.06));
+    }
+    .cta-box p { margin-bottom: 8px }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(14,165,233,.14), rgba(124,77,255,.14));
+      color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600;
+      border: 1px solid rgba(14,165,233,.2);
+      transition: all .2s;
+    }
+    .cta-btn:hover { box-shadow: 0 8px 20px rgba(14,165,233,.18); transform: translateY(-2px); text-decoration: none }
+    .tip-box {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px dashed rgba(16,185,129,.3);
+      background: rgba(16,185,129,.04);
+      font-size: 14px;
+    }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px"><a href="/" style="color:var(--accent);text-decoration:none">首页</a> <span style="margin:0 6px">›</span> <span>AI 编程工具</span> <span style="margin:0 6px">›</span> <span style="color:var(--text)">Cursor SSH 远程开发</span></nav>
+    <h1>Cursor 远程开发实战：通过 SSH 连接 Linux（自建 + 云服务器通用篇）</h1>
+    <p class="subtitle">树莓派 / 虚拟机 / LXC / 阿里云 / 腾讯云 / AWS — ed25519 免密登录 → Remote-SSH 添加主机 → 远程 Composer Agent → 报错速查</p>
+
+    <div class="cta-box">
+      <p><strong>通过邀请链接注册 Cursor，首月 Pro / Pro+ / Ultra 立享 5 折：</strong></p>
+      <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即注册（首月 5 折）</a>
+    </div>
+
+    <article class="card" id="intro">
+      <div class="kicker">章节一</div>
+      <h2>Cursor Remote-SSH 是什么</h2>
+      <p>Cursor 的远程开发能力建立在 <strong>VS Code Remote - SSH</strong> 协议之上：本地只跑轻量客户端 UI，语言服务器、文件系统、终端进程全部在远端 Linux 机器上运行，体验上几乎与本地开发无异。</p>
+      <table>
+        <tr><th>场景</th><th>是否适合</th></tr>
+        <tr><td>本地资源不够（编译慢、内存少）</td><td>✅ 适合</td></tr>
+        <tr><td>需要在 Linux 调试但本机是 Windows/macOS</td><td>✅ 适合</td></tr>
+        <tr><td>服务跑在远端，直接改代码不走 CI</td><td>✅ 适合</td></tr>
+        <tr><td>远端机器在内网无公网 IP</td><td>⚠️ 需跳板机或内网穿透</td></tr>
+      </table>
+      <div class="tip-box">💡 <strong>API 调用路径说明</strong>：Tab / Cmd+K 的模型请求走本地网络出口，与远端机器网络无关。若在远端机器上运行 Background Agent / Cloud Agent，远端机需能访问外部 API 端点。</div>
+    </article>
+
+    <article class="card" id="prereq">
+      <div class="kicker">章节二</div>
+      <h2>前置准备</h2>
+      <h3>检查 SSH 客户端</h3>
+      <pre>ssh -V
+# macOS/Linux 通常已内置；Windows 10 1809+ 内置 OpenSSH</pre>
+      <h3>生成 SSH Key（ed25519，当前推荐）</h3>
+      <pre>ssh-keygen -t ed25519 -C "your-email@example.com"
+# 路径直接回车使用默认 ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+# 复制整行，后续写入远端 authorized_keys</pre>
+      <p>不再推荐 <code class="inline">-t rsa -b 2048</code>：ed25519 在安全性和性能两个维度均优于 RSA 2048，且密钥文件更短。</p>
+      <h3>known_hosts 说明</h3>
+      <p>首次连接新主机会弹出指纹确认。输入 <code class="inline">yes</code> 后指纹写入 <code class="inline">~/.ssh/known_hosts</code>；Cursor Remote-SSH 在后台建立连接时同样触发此流程。</p>
+    </article>
+
+    <article class="card" id="selfhosted">
+      <div class="kicker">章节三</div>
+      <h2>自建 Linux 配置（树莓派 / 本地虚拟机 / LXC）</h2>
+      <h3>树莓派</h3>
+      <pre># 方式一：raspi-config
+sudo raspi-config  # → Interface Options → SSH → Enable
+
+# 方式二：boot 分区放空文件（无头安装）
+touch /boot/ssh
+
+# 确认 SSH 监听
+sudo systemctl status ssh
+sudo ss -tlnp | grep :22</pre>
+      <p>建议在路由器设置 DHCP 静态绑定，把树莓派 MAC 地址绑定到固定 IP，避免重启后 IP 变化。</p>
+      <h3>本地虚拟机网卡模式</h3>
+      <table>
+        <tr><th>网卡模式</th><th>能否直接 SSH</th><th>说明</th></tr>
+        <tr><td>NAT（默认）</td><td>⚠️ 需端口转发</td><td>host:2222 → guest:22</td></tr>
+        <tr><td>桥接模式</td><td>✅ 直连</td><td>推荐，虚拟机获取同网段 IP</td></tr>
+        <tr><td>Host-Only</td><td>⚠️ 仅宿主机</td><td>跨机器场景不适用</td></tr>
+      </table>
+      <h3>LXC 容器（Proxmox / 软路由）</h3>
+      <pre>pct exec &lt;容器ID&gt; -- apt install openssh-server -y
+pct exec &lt;容器ID&gt; -- systemctl enable --now ssh</pre>
+    </article>
+
+    <article class="card" id="cloud">
+      <div class="kicker">章节四</div>
+      <h2>云服务器配置（阿里云、腾讯云、AWS 通用）</h2>
+      <h3>安全组开放 22 端口</h3>
+      <table>
+        <tr><th>字段</th><th>值</th></tr>
+        <tr><td>协议</td><td>TCP</td></tr>
+        <tr><td>端口范围</td><td>22（或自定义端口）</td></tr>
+        <tr><td>来源 IP</td><td>你的本地公网 IP（最安全）或 0.0.0.0/0（调试期）</td></tr>
+      </table>
+      <h3>上传公钥到远端</h3>
+      <pre># 方式 A — ssh-copy-id
+ssh-copy-id -i ~/.ssh/id_ed25519.pub user@your-server-ip
+
+# 方式 B — 手动复制（通过 web shell）
+mkdir -p ~/.ssh && chmod 700 ~/.ssh
+echo "粘贴你的公钥内容" >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys</pre>
+      <h3>关闭密码登录（可选但推荐）</h3>
+      <pre>sudo nano /etc/ssh/sshd_config
+# PasswordAuthentication no
+# PubkeyAuthentication yes
+sudo systemctl restart sshd</pre>
+      <div class="tip-box">⚠️ 确认 SSH Key 可用后再关闭密码登录，否则会把自己锁在门外。</div>
+    </article>
+
+    <article class="card" id="keyauth">
+      <div class="kicker">章节五</div>
+      <h2>SSH Key 免密登录</h2>
+      <h3>本地 SSH Config 配置（关键）</h3>
+      <p>在 <code class="inline">~/.ssh/config</code> 里为每台服务器建立别名，Cursor Remote-SSH 会自动读取：</p>
+      <pre>Host my-rpi
+  HostName 192.168.1.88
+  User pi
+  IdentityFile ~/.ssh/id_ed25519
+  Port 22
+
+Host my-cloud
+  HostName your-server-ip
+  User ubuntu
+  IdentityFile ~/.ssh/id_ed25519
+  Port 22
+  ServerAliveInterval 60
+  ServerAliveCountMax 3</pre>
+      <p><code class="inline">ServerAliveInterval</code> / <code class="inline">ServerAliveCountMax</code> 保活设置，防止长时间编辑后连接断开。</p>
+      <h3>跳板机（Bastion / Jump Host）场景</h3>
+      <pre>Host bastion
+  HostName public-bastion-ip
+  User ec2-user
+  IdentityFile ~/.ssh/id_ed25519
+
+Host private-server
+  HostName 10.0.1.100
+  User ubuntu
+  ProxyJump bastion
+  IdentityFile ~/.ssh/id_ed25519</pre>
+      <p>Cursor Remote-SSH 会自动走 <code class="inline">ProxyJump</code> 透明建立连接，使用体验与直连无异。</p>
+    </article>
+
+    <article class="card" id="addhost">
+      <div class="kicker">章节六</div>
+      <h2>Cursor 中添加 Remote 主机</h2>
+      <ol>
+        <li>按 <code class="inline">Ctrl+Shift+P</code>（macOS：<code class="inline">Cmd+Shift+P</code>），搜索选择 <strong>Remote-SSH: Connect to Host…</strong></li>
+        <li>或点击左下角状态栏 <strong><code class="inline">>&lt;</code> 图标</strong> → Connect to Host</li>
+        <li>列表显示 <code class="inline">~/.ssh/config</code> 中已配置的别名（如 <code class="inline">my-rpi</code>）</li>
+        <li>选中后 Cursor 在后台安装远端服务组件（<code class="inline">~/.cursor-server/</code>），首次约 1-3 分钟，此后缓存秒开</li>
+      </ol>
+      <h3>验证连接状态</h3>
+      <p>左下角状态栏显示 <code class="inline">SSH: my-cloud</code> 即表示当前工作在远端。终端执行：</p>
+      <pre>hostname && uname -a</pre>
+      <p>看到服务器名称确认无误。</p>
+    </article>
+
+    <article class="card" id="workspace">
+      <div class="kicker">章节七</div>
+      <h2>远程项目目录与终端</h2>
+      <h3>推荐目录约定</h3>
+      <pre>~/projects/
+  my-api/      # Git 项目
+  my-scripts/  # 独立运维脚本
+  tmp/         # 临时实验，不提交</pre>
+      <p>打开远端目录后，所有文件操作（创建、编辑、保存）直接发生在远端，无需手动同步。</p>
+      <h3>终端常用操作</h3>
+      <pre>tail -f /var/log/nginx/access.log
+sudo systemctl restart my-app
+git pull && npm run build</pre>
+      <p><strong>实测建议</strong>：在远端启动 tmux / screen 跑长任务（编译、测试），即使 Cursor 断开连接任务仍在后台运行。</p>
+      <h3>文件权限陷阱</h3>
+      <pre># 检查权限
+ls -la ~/projects/my-api
+# 修正（谨慎在生产使用）
+sudo chown -R $USER:$USER ~/projects/my-api</pre>
+      <p>Cursor 里保存文件时弹出"没有权限"，通常是文件由 root 创建而当前用户无写权限。</p>
+    </article>
+
+    <article class="card" id="agent">
+      <div class="kicker">章节八</div>
+      <h2>远程跑 Composer Agent（注意：远程机需要外网才能调模型 API）</h2>
+      <table>
+        <tr><th>操作</th><th>可行性</th><th>说明</th></tr>
+        <tr><td>用 Chat 分析远端日志文件</td><td>✅ 完全可行</td><td>@引用远端文件，本地网络出口</td></tr>
+        <tr><td>用 Cmd+K 改远端代码</td><td>✅ 完全可行</td><td>同上</td></tr>
+        <tr><td>用 Composer 批量改远端多文件</td><td>✅ 完全可行</td><td>工作区在远端，操作自然落远端</td></tr>
+        <tr><td>用 Background Agent 在远端机上跑长任务</td><td>⚠️ 需远端外网</td><td>Agent 云端发起，远端机需能访问 API</td></tr>
+      </table>
+      <h3>可复用的 Composer 提示词（远端场景）</h3>
+      <pre>目标：帮我在这台远端 Linux 机器上写一个部署脚本 deploy.sh，
+      完成「拉取最新代码 → 安装依赖 → 构建 → 重启服务」全流程。
+
+约束：
+1. #!/bin/bash，出错立即退出（set -e）
+2. 目标项目在 ~/projects/my-api，构建命令 npm run build
+3. 服务管理使用 systemd，单元名 my-api.service
+4. 脚本末尾输出"Deploy done at $(date)"
+5. 不要硬编码任何密码或 token
+
+验收：bash deploy.sh 可执行；systemctl status my-api 显示 active (running)</pre>
+      <h3>Chat + @引用远端文件排障</h3>
+      <pre>@nginx.conf 帮我检查这份 Nginx 配置有没有可能导致 502 的写法</pre>
+      <p>Cursor 会读取远端文件内容后再给出回答，不需要把文件复制到本地。</p>
+    </article>
+
+    <article class="card" id="troubleshoot">
+      <div class="kicker">章节九</div>
+      <h2>常见报错速查</h2>
+      <h3>Q1：Permission denied (publickey)</h3>
+      <p><strong>根因</strong>：服务器没有你的公钥，或公钥路径 / 权限有问题。</p>
+      <pre># 1. 确认私钥可用
+ssh-add -l
+# 若无输出：ssh-add ~/.ssh/id_ed25519
+
+# 2. 检查远端 authorized_keys 权限（关键）
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+
+# 3. 开启详细日志
+ssh -vvv user@host 2>&1 | grep -i "key\|auth"</pre>
+      <h3>Q2：Connection refused</h3>
+      <p><strong>根因</strong>：SSH 服务未启动，或端口不对，或安全组未放行。</p>
+      <pre># 在远端（通过 web shell）
+sudo systemctl status sshd
+sudo systemctl enable --now sshd
+sudo ss -tlnp | grep sshd
+
+# 若有 ufw
+sudo ufw allow 22/tcp</pre>
+      <p>云服务器还需在控制台安全组入方向规则确认 22 端口已开放。</p>
+      <h3>Q3：Host key verification failed</h3>
+      <p><strong>根因</strong>：服务器重装系统或 IP 被复用，known_hosts 指纹与当前不匹配。</p>
+      <pre># 删除旧指纹
+ssh-keygen -R your-server-ip
+
+# 重新连接，输入 yes 接受新指纹
+ssh user@your-server-ip</pre>
+      <div class="tip-box">⚠️ 如果不确定服务器是否真的重装，不要盲目接受新指纹——这个警告有时也出现在中间人攻击场景。确认服务器身份后再操作。</div>
+    </article>
+
+    <article class="card" id="related">
+      <h2>相关教程</h2>
+      <ul>
+        <li><a href="/pages/cursor-guide">Cursor 国内使用完整教程（注册 / 充值 / 模型 / 功能 / 故障排查）</a></li>
+        <li><a href="/pages/cursor-build-static-site">Cursor + GitHub + Cloudflare 静态站实战</a></li>
+        <li><a href="/clash-subscription-guide">机场订阅与节点选型</a></li>
+        <li><a href="/pages/proxy-access-issues">代理访问异常通用排查</a></li>
+      </ul>
+    </article>
+
+    <div class="cta-box" style="margin-top:8px">
+      <p><strong>通过邀请通道注册 Cursor，首月 Pro / Pro+ / Ultra 立享 5 折</strong>——Pro 仅需 $10、Pro+ 仅需 $30、Ultra 仅需 $100。</p>
+      <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即开通（首月 5 折）</a>
+      <p style="margin-top:10px;font-size:13px;color:var(--muted)">邀请通道仅对首月生效，次月起恢复原价；可随时取消订阅。</p>
+    </div>
+
+    <footer>
+      <a href="/">首页</a> · <a href="/pages/cursor-guide">Cursor 完整指南</a> · <a href="/pages/cursor-build-static-site">静态站实战</a>
+      <p style="margin-top:8px">© 2026 Router VPN Guide · <em>本文仅供学习参考，请在当地法律法规范围内使用相关工具。</em></p>
+    </footer>
+  </main>
+
+  <script defer>
+    (function() {
+      function alignToHash(smooth) {
+        var hash = location.hash.replace('#','');
+        if (!hash) return;
+        try {
+          var target = document.getElementById(hash);
+          if (!target) return;
+          target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+          [80, 300, 800].forEach(function(delay) {
+            setTimeout(function() {
+              var el = document.getElementById(hash);
+              if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+            }, delay);
+          });
+        } catch (e) {}
+      }
+      window.addEventListener('load', function() { alignToHash(false); });
+      window.addEventListener('hashchange', function() { alignToHash(true); });
+    })();
+  </script>
+  <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Cursor 远程开发实战：通过 SSH 连接 Linux（自建 + 云服务器通用篇）","description":"树莓派到云服务器通用 SSH 配置，ed25519 免密登录，Cursor Remote-SSH 添加主机，远程 Composer Agent，三大报错速查。","url":"https://www.aixiaobai168.com/pages/cursor-ssh-linux","author":{"@type":"Organization","name":"Router VPN Guide"},"datePublished":"2026-05-16","dateModified":"2026-05-16","inLanguage":"zh-CN"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HowTo","name":"Cursor Remote-SSH 连接 Linux 完整配置","description":"从生成 ed25519 Key 到 Cursor 远端开发的九步实战。","url":"https://www.aixiaobai168.com/pages/cursor-ssh-linux","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"了解 Remote-SSH 原理","text":"Cursor 基于 VS Code Remote-SSH 协议，本地跑 UI，计算在远端执行。"},{"@type":"HowToStep","name":"前置准备","text":"确认 SSH 客户端可用；生成 ed25519 Key 对；了解 known_hosts 机制。"},{"@type":"HowToStep","name":"自建 Linux 配置","text":"树莓派开启 SSH；虚拟机用桥接模式；LXC 容器安装 sshd。"},{"@type":"HowToStep","name":"云服务器配置","text":"安全组开放 22 端口；上传公钥到 authorized_keys；可选关闭密码登录。"},{"@type":"HowToStep","name":"SSH Key 免密登录","text":"在 ~/.ssh/config 配置 Host 别名，含 IdentityFile 和 ServerAliveInterval。"},{"@type":"HowToStep","name":"Cursor 添加 Remote 主机","text":"命令面板 Remote-SSH: Connect to Host，选别名后自动安装远端组件。"},{"@type":"HowToStep","name":"远程项目目录与终端","text":"打开远端文件夹，终端直接在远端 shell 执行，可搭配 tmux 保活长任务。"},{"@type":"HowToStep","name":"远程跑 Composer Agent","text":"Tab/Cmd+K 走本地网络；Background Agent 需远端机有外网访问能力。"},{"@type":"HowToStep","name":"常见报错排查","text":"Permission denied 检查 authorized_keys 权限；Connection refused 检查 sshd 状态与安全组；Host key 变化则删除旧指纹重连。"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"Cursor SSH 远程开发","item":"https://www.aixiaobai168.com/pages/cursor-ssh-linux"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Permission denied (publickey) 怎么排查？","acceptedAnswer":{"@type":"Answer","text":"先用 ssh-add -l 确认私钥已加载；在远端检查 ~/.ssh 目录权限为 700、authorized_keys 权限为 600；用 ssh -vvv 开启详细日志确认密钥匹配链路。"}},{"@type":"Question","name":"Cursor Remote-SSH 首次连接很慢是正常的吗？","acceptedAnswer":{"@type":"Answer","text":"是正常的。首次连接时 Cursor 需要在远端安装服务组件（~/.cursor-server/），耗时约 1-3 分钟；此后组件缓存在远端，再次连接秒级完成。"}},{"@type":"Question","name":"用 Remote-SSH 开发时 Cursor 的 AI 功能是否需要远端机器联网？","acceptedAnswer":{"@type":"Answer","text":"Tab 补全和 Cmd+K 的 API 请求由本地 Cursor 进程发起，走本地网络出口，与远端机器网络无关。若使用 Background Agent 在远端机器上执行命令，则远端机需要能访问外部 API 端点。"}}]}
+  </script>
+</body>
+</html>

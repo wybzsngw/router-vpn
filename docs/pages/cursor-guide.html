@@ -8,23 +8,24 @@
   <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <link rel="dns-prefetch" href="https://www.clarity.ms" />
-  <title>Cursor 教程 2026 — 中国用户注册、充值与模型选型完整指南</title>
-  <meta name="description" content="2026 最新 Cursor 中国用户完整教程：注册、充值、模型选型、功能详解与故障排查一篇打通。含 20 章节锚点导航与首月 5 折邀请通道。" />
-  <meta name="keywords" content="Cursor 教程,Cursor 注册,Cursor 国内能用吗,Cursor 充值,Cursor 模型选型,Cursor Agent,Cursor Debug Mode,Cursor 故障排查,Cursor Pro,Cursor Auto" />
+  <title>Cursor 教程 2026 — 普通人用 AI 写代码建网站完整指南</title>
+  <meta name="description" content="2026 Cursor 完整教程：不懂代码也能用 Cursor Agent 建网站、写程序、解决技术问题。含注册、套餐选择、主流模型（Sonnet 4.6 / Opus 4.7 / GPT-5.5 / Codex / Gemini）介绍、Agent 模式详解、GitHub 推送、国内充值方式与常见故障排查。首月 5 折邀请通道。" />
+  <meta name="keywords" content="Cursor 教程,Cursor 注册,Cursor 国内能用吗,Cursor 充值,Cursor Agent,Cursor 模型选型,Cursor Sonnet,Cursor GPT-5,Cursor 建站,Cursor 写网站,Cursor 小白教程" />
   <meta name="author" content="Router VPN Guide" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
-  <meta property="og:title" content="Cursor 国内使用完整教程 2026 — 注册 / 充值 / 模型选型一篇通" />
-  <meta property="og:description" content="基础 + 功能 + 故障排查三合一 Pillar 长文，附 20 个锚点与实战延伸导航。" />
+  <meta property="og:title" content="Cursor 教程 2026 — 不懂代码也能用 AI 写代码建网站" />
+  <meta property="og:description" content="普通人视角的 Cursor 完整指南：注册、模型选择、Agent 对话建站、GitHub 推送、国内充值，一篇看懂。" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.aixiaobai168.com/pages/cursor-guide" />
   <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
   <meta property="article:published_time" content="2026-05-15" />
   <meta property="article:modified_time" content="2026-05-16" />
   <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cursor 国内使用完整教程 2026" />
-  <meta name="twitter:description" content="注册、充值、模型、功能、排障五大模块一篇看全。" />
+  <meta name="twitter:title" content="Cursor 教程 2026 — 普通人用 AI 写代码建网站" />
+  <meta name="twitter:description" content="注册、模型选择、Agent 对话建站、国内充值，一篇看懂。" />
   <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
   <link rel="canonical" href="https://www.aixiaobai168.com/pages/cursor-guide" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
@@ -48,12 +49,13 @@
       --card: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
-      --accent: #0ea5e9;
       --brand: #7c4dff;
-      --border: rgba(0,0,0,.08);
+      --accent: #0ea5e9;
+      --success: #10b981;
+      --warn: #f59e0b;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
     body {
       font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
       color: var(--text);
@@ -62,475 +64,335 @@
                   linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
       min-height: 100vh;
     }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 28px 20px 80px;
-      display: grid;
-      grid-template-columns: 280px minmax(0, 1fr);
-      gap: 20px;
-      align-items: start;
-    }
-    .hero {
-      grid-column: 1 / -1;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.06);
-    }
-    .hero h1 { font-size: 30px; line-height: 1.3; margin-bottom: 8px; }
-    .hero .subtitle { color: var(--muted); font-size: 15px; }
-    .cta-box {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 12px;
-      border: 1px solid rgba(14,165,233,.25);
-      background: linear-gradient(135deg, rgba(14,165,233,.06), rgba(124,77,255,.06));
-    }
-    .cta-box p { margin-bottom: 8px; line-height: 1.7; }
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 16px;
-      border-radius: 10px;
-      border: 1px solid rgba(14,165,233,.25);
-      background: linear-gradient(135deg, rgba(14,165,233,.14), rgba(124,77,255,.14));
-      color: var(--text);
-      font-weight: 600;
-      text-decoration: none;
-      transition: all .2s;
-    }
-    .cta-btn:hover { text-decoration: none; box-shadow: 0 8px 18px rgba(14,165,233,.18); transform: translateY(-2px); }
-    .pillar-toc {
-      position: sticky;
-      top: 80px;
-      max-height: calc(100vh - 100px);
-      overflow: auto;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.06);
-    }
-    .pillar-toc__title { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
-    .pillar-toc__list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-    .pillar-toc__item a {
-      display: block;
-      padding: 6px 8px;
-      border-radius: 8px;
-      font-size: 13px;
-      color: #334155;
-      line-height: 1.4;
-    }
-    .pillar-toc__item.is-active a {
-      background: linear-gradient(135deg, rgba(14,165,233,.12), rgba(124,77,255,.12));
-      color: #1e293b;
-      font-weight: 600;
-    }
-    .pillar-toc__group {
-      margin-top: 10px;
-      font-size: 12px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-    .pillar-toc__cta {
-      position: sticky;
-      bottom: 0;
-      margin-top: 12px;
-      padding-top: 12px;
-      background: var(--card);
-      border-top: 1px dashed var(--border);
-    }
-    .content {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .mobile-toc { display: none; }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
     .card {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(0,0,0,.06);
       border-radius: 16px;
-      padding: 22px;
+      padding: 24px;
+      margin-bottom: 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,.06);
-      content-visibility: auto;
-      contain-intrinsic-size: auto 540px;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
     }
-    .card h2 { font-size: 23px; margin-bottom: 10px; }
-    .card h3 { font-size: 18px; margin: 14px 0 8px; }
-    .card p, .card li { line-height: 1.75; margin-bottom: 8px; color: #111827; }
-    .card ul, .card ol { padding-left: 20px; margin-bottom: 10px; }
-    .card table { width: 100%; border-collapse: collapse; margin: 10px 0; }
-    .card th, .card td { border-bottom: 1px solid var(--border); padding: 9px 10px; text-align: left; font-size: 14px; }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .card.highlight {
+      border-color: rgba(124,77,255,.25);
+      background: linear-gradient(135deg, rgba(124,77,255,.03), rgba(14,165,233,.03));
+    }
+    .kicker {
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--accent); font-size: 12px; margin-bottom: 8px;
+    }
+    .kicker.purple { color: var(--brand); }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card h3 { font-size: 16px; margin: 16px 0 8px; color: var(--text) }
+    .card p, .card li { color: var(--text); line-height: 1.75; margin-bottom: 10px }
+    .card ul, .card ol { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.07); font-size: 14px }
     .card th { color: var(--muted); font-weight: 600; }
-    .section-anchor { scroll-margin-top: 80px; }
-    .hint {
-      margin-top: 8px;
-      padding: 10px 12px;
-      border-radius: 10px;
-      border: 1px dashed rgba(14,165,233,.3);
-      background: rgba(14,165,233,.05);
-      font-size: 14px;
+    code { background: rgba(0,0,0,.05); padding: .15em .45em; border-radius: 5px; font-size: 13px }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .cta-box {
+      margin: 16px 0;
+      padding: 18px 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(14,165,233,.2);
+      background: linear-gradient(135deg, rgba(14,165,233,.06), rgba(124,77,255,.06));
     }
-    .mobile-fold details { border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; background: #fff; }
-    .mobile-fold summary { cursor: pointer; font-weight: 600; }
-    .footer-nav { font-size: 13px; color: var(--muted); line-height: 1.8; }
-    .back-to-top {
-      position: fixed;
-      right: 24px;
-      bottom: 22px;
-      display: none;
-      padding: 10px 14px;
-      border-radius: 10px;
-      border: 1px solid rgba(14,165,233,.25);
-      background: rgba(255,255,255,.95);
-      color: #0f172a;
-      text-decoration: none;
-      box-shadow: 0 6px 16px rgba(0,0,0,.12);
-      z-index: 30;
+    .cta-box p { margin-bottom: 8px }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(14,165,233,.14), rgba(124,77,255,.14));
+      color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600;
+      border: 1px solid rgba(14,165,233,.2); transition: all .2s;
     }
-    .back-to-top.show { display: inline-flex; }
-    @media (max-width: 1023px) {
-      .container { grid-template-columns: 1fr; }
-      .pillar-toc { display: none; }
-      .mobile-toc { display: block; }
-      .mobile-toc details { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; }
-      .mobile-toc summary { cursor: pointer; font-weight: 600; }
+    .cta-btn:hover { box-shadow: 0 8px 20px rgba(14,165,233,.18); transform: translateY(-2px); text-decoration: none }
+    .tip-box {
+      margin: 12px 0; padding: 14px 16px; border-radius: 12px;
+      border: 1px dashed rgba(16,185,129,.3); background: rgba(16,185,129,.04); font-size: 14px;
     }
+    .warn-box {
+      margin: 12px 0; padding: 14px 16px; border-radius: 12px;
+      border: 1px dashed rgba(245,158,11,.3); background: rgba(245,158,11,.04); font-size: 14px;
+    }
+    .model-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 14px 0 }
+    .model-card {
+      padding: 14px 16px; border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.07); background: #fff;
+    }
+    .model-card .name { font-weight: 700; font-size: 14px; margin-bottom: 4px }
+    .model-card .tag { font-size: 11px; padding: 2px 8px; border-radius: 999px; display: inline-block; margin-bottom: 6px }
+    .model-card .tag.blue { background: rgba(14,165,233,.12); color: #0ea5e9 }
+    .model-card .tag.purple { background: rgba(124,77,255,.12); color: #7c4dff }
+    .model-card .tag.green { background: rgba(16,185,129,.12); color: #10b981 }
+    .model-card .tag.orange { background: rgba(245,158,11,.12); color: #d97706 }
+    .model-card p { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.55 }
+    .scene-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin: 14px 0 }
+    .scene-item {
+      padding: 14px; border-radius: 12px; border: 1px solid rgba(0,0,0,.06);
+      background: #fff; text-align: center;
+    }
+    .scene-item .emoji { font-size: 24px; margin-bottom: 6px }
+    .scene-item p { font-size: 13px; color: var(--muted); margin: 0 }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
   </style>
 </head>
-<body id="top">
+<body>
   <main class="container">
-    <section class="hero">
-      <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:12px">
-        <a href="/">首页</a> <span style="margin:0 6px">›</span> <span>Cursor 完整指南</span>
-      </nav>
-      <h1>Cursor 国内使用完整教程 2026 — 注册 / 充值 / 模型选型一篇通</h1>
-      <p class="subtitle">基础 + 功能 + 故障排查三合一 Pillar 页，20 章节锚点导航，适合新手到进阶用户按需跳读。</p>
-      <div class="cta-box">
-        <p><strong>通过本站邀请链接注册 Cursor，首月 Pro / Pro+ / Ultra 立享 5 折：</strong></p>
-        <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即注册（首月 5 折）</a>
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px">
+      <a href="/" style="color:var(--accent);text-decoration:none">首页</a>
+      <span style="margin:0 6px">›</span>
+      <span style="color:var(--text)">Cursor 完整指南</span>
+    </nav>
+
+    <h1>Cursor 2026 — 不懂代码也能用 AI 写代码、建网站、做任何事</h1>
+    <p class="subtitle">从零开始到用 AI 对话搞定网站上线，全程不需要懂编程</p>
+
+    <div class="cta-box">
+      <p><strong>通过邀请链接注册 Cursor，首月 Pro / Pro+ / Ultra 立享 5 折：</strong></p>
+      <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即注册（首月 5 折）</a>
+    </div>
+
+    <!-- ① 是什么 -->
+    <article class="card highlight" id="intro">
+      <div class="kicker purple">第一步了解</div>
+      <h2>Cursor 是什么？一句话说清楚</h2>
+      <p>Cursor 是一个带 AI 的代码编辑器。你跟它说话，它帮你写代码、改网站、解决问题。</p>
+      <p>你不需要懂编程——就像你雇了一个全职程序员，你说需求，它来干活，你来验收。</p>
+      <div class="scene-grid">
+        <div class="scene-item"><div class="emoji">🌐</div><strong>建网站</strong><p>跟 AI 描述你想要什么，它帮你生成并部署</p></div>
+        <div class="scene-item"><div class="emoji">📝</div><strong>写博客</strong><p>让 AI 帮你写文章、排版、生成 SEO 摘要</p></div>
+        <div class="scene-item"><div class="emoji">🔧</div><strong>修 Bug</strong><p>复制报错给 AI，它告诉你哪里错了怎么改</p></div>
+        <div class="scene-item"><div class="emoji">📂</div><strong>整理文件</strong><p>让 AI 写脚本批量处理、重命名、转换格式</p></div>
+        <div class="scene-item"><div class="emoji">🚀</div><strong>上线部署</strong><p>AI 帮你写部署脚本，服务器配置一起搞定</p></div>
+        <div class="scene-item"><div class="emoji">💬</div><strong>看文档</strong><p>把英文文档丢给它，让它用中文解释给你听</p></div>
       </div>
-    </section>
+    </article>
 
-    <aside class="pillar-toc" aria-label="目录导航">
-      <p class="pillar-toc__title">Pillar 目录</p>
-      <p class="pillar-toc__group">注册与开通</p>
-      <ul class="pillar-toc__list">
-        <li class="pillar-toc__item"><a href="#intro">① Cursor 是什么</a></li>
-        <li class="pillar-toc__item"><a href="#register">② 下载与注册</a></li>
-        <li class="pillar-toc__item"><a href="#network">③ 网络环境</a></li>
-        <li class="pillar-toc__item"><a href="#pricing">④ 套餐与价格</a></li>
-        <li class="pillar-toc__item"><a href="#payment">⑤ 国内充值</a></li>
-        <li class="pillar-toc__item"><a href="#models">⑥ 模型选型</a></li>
+    <!-- ② 下载注册 -->
+    <article class="card" id="register">
+      <div class="kicker">第二步</div>
+      <h2>下载、注册、开通</h2>
+      <ol>
+        <li>下载 Cursor 安装包（支持 Windows / macOS / Linux），安装后打开</li>
+        <li>点击「Sign In」用 Google 账号或邮箱注册</li>
+        <li>通过邀请链接注册可享首月 5 折：<a class="cta-btn" style="font-size:13px;padding:6px 12px" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">首月 5 折注册</a></li>
+        <li>进入 Settings → Models，确认你想使用的模型已开启</li>
+      </ol>
+      <div class="tip-box">💡 免费版（Free）可以试用，但 Agent 任务量有限。想流畅做网站，建议开通 <strong>Pro 档（首月 $10）</strong>，用一个月后随时可以取消。</div>
+    </article>
+
+    <!-- ③ 套餐 -->
+    <article class="card" id="pricing">
+      <div class="kicker">费用</div>
+      <h2>套餐与价格</h2>
+      <table>
+        <tr><th>套餐</th><th>原价</th><th>首月 5 折</th><th>适合谁</th></tr>
+        <tr><td><strong>Pro</strong></td><td>$20/月</td><td><strong>$10</strong></td><td>个人建站、日常开发的主力选择</td></tr>
+        <tr><td><strong>Pro+</strong></td><td>$60/月</td><td><strong>$30</strong></td><td>需要大量 Opus 4.7 / GPT-5.5 调用</td></tr>
+        <tr><td><strong>Ultra</strong></td><td>$200/月</td><td><strong>$100</strong></td><td>重度 AI 开发者，无限量高端模型</td></tr>
+      </table>
+      <h3>国内怎么充值？</h3>
+      <ul>
+        <li><strong>支付宝（最方便）</strong>：Cursor 官方结账页直接支持支付宝。选套餐 → 支付方式选「支付宝」→ 填写中国账单地址 → 付款。汇率按当日实时汇率换算成人民币，无论在国内还是挂节点（如新加坡）均可正常使用。</li>
+        <li><strong>国内银行 Visa / Mastercard 双标卡</strong>：招商、建设、工商等主流银行的双币信用卡，在结算页选「银行卡」直接填卡号。最稳定，适合长期订阅用户。付款前确认已开通「境外线上支付」功能。</li>
+        <li><strong>虚拟信用卡</strong>：WildCard 等平台可开具虚拟 Visa 卡，适合没有双标卡的用户，注意核对综合费率。</li>
+        <li><strong>Apple 订阅（iOS）</strong>：通过苹果中国区内购订阅，可用绑定的国内支付方式付款。本文作者未亲测，操作前请确认 App Store 中 Cursor 有可用内购选项。</li>
+        <li><strong>教育优惠</strong>：在校学生凭 .edu 邮箱申请，有折扣。</li>
       </ul>
-      <p class="pillar-toc__group">功能详解</p>
-      <ul class="pillar-toc__list">
-        <li class="pillar-toc__item"><a href="#interactions">⑦ 交互入口总览</a></li>
-        <li class="pillar-toc__item"><a href="#tab">⑧ Tab</a></li>
-        <li class="pillar-toc__item"><a href="#cmdk">⑨ Cmd+K</a></li>
-        <li class="pillar-toc__item"><a href="#chat">⑩ Chat</a></li>
-        <li class="pillar-toc__item"><a href="#composer">⑪ Composer</a></li>
-        <li class="pillar-toc__item"><a href="#agent">⑫ Agent</a></li>
-        <li class="pillar-toc__item"><a href="#rules">⑬ Rules</a></li>
-        <li class="pillar-toc__item"><a href="#mcp">⑭ MCP</a></li>
-        <li class="pillar-toc__item"><a href="#compare">⑮ 横向对比</a></li>
-      </ul>
-      <p class="pillar-toc__group">故障排查</p>
-      <ul class="pillar-toc__list">
-        <li class="pillar-toc__item"><a href="#fix-login">⑯ 登录账号</a></li>
-        <li class="pillar-toc__item"><a href="#fix-network">⑰ 网络节点</a></li>
-        <li class="pillar-toc__item"><a href="#fix-models">⑱ 模型配额</a></li>
-        <li class="pillar-toc__item"><a href="#fix-billing">⑲ 订阅支付</a></li>
-        <li class="pillar-toc__item"><a href="#fix-privacy">⑳ 隐私企业教育</a></li>
-        <li class="pillar-toc__item"><a href="#practice">实战延伸</a></li>
-        <li class="pillar-toc__item"><a href="#related">相关教程</a></li>
-      </ul>
-      <div class="pillar-toc__cta">
-        <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">🎁 首月 5 折开通</a>
+      <p style="font-size:13px;color:var(--muted)">📋 实际价格以 Cursor 收银台显示为准。</p>
+    </article>
+
+    <!-- ④ 模型 -->
+    <article class="card" id="models">
+      <div class="kicker">核心知识</div>
+      <h2>主流模型介绍：选哪个？</h2>
+      <p>Cursor 里可以调用多个顶级 AI 模型，每个模型的强项不同。你不需要全搞懂，记住下面的选用规则就行：</p>
+      <div class="model-grid">
+        <div class="model-card">
+          <div class="name">Claude Sonnet 4.6</div>
+          <span class="tag blue">日常主力 ⭐</span>
+          <p>Pro 档的主力模型。速度快、理解准确、能写代码也能写文章。<strong>90% 的任务用这个就够了。</strong></p>
+        </div>
+        <div class="model-card">
+          <div class="name">Claude Opus 4.7</div>
+          <span class="tag purple">复杂任务</span>
+          <p>Anthropic 最强大的模型，思考更深、更谨慎。适合架构设计、复杂 bug 排查、需要长时间规划的任务。比 Sonnet 慢，但更可靠。</p>
+        </div>
+        <div class="model-card">
+          <div class="name">GPT-5.5</div>
+          <span class="tag purple">代码专家</span>
+          <p>OpenAI 顶级模型，代码生成能力极强，对复杂算法和系统设计有出色表现。需要稳定的海外网络。</p>
+        </div>
+        <div class="model-card">
+          <div class="name">Codex</div>
+          <span class="tag green">轻量快速</span>
+          <p>OpenAI 代码专项模型，响应速度快，适合简单的代码补全和小修小改。资源消耗少。</p>
+        </div>
+        <div class="model-card">
+          <div class="name">Gemini Pro</div>
+          <span class="tag orange">超大上下文</span>
+          <p>Google 的模型，上下文窗口极大，适合需要一次处理大量代码或文档的场景（如分析整个大型项目）。</p>
+        </div>
+        <div class="model-card">
+          <div class="name">Auto / Composer-2</div>
+          <span class="tag green">免费可用</span>
+          <p>Cursor 自研的基础模型，无需开通 Pro 也可使用。适合简单任务，复杂场景能力有限，不需要海外网络。</p>
+        </div>
       </div>
-    </aside>
+      <h3>网络要求</h3>
+      <table>
+        <tr><th>操作</th><th>是否需要海外网络</th></tr>
+        <tr><td>安装、登录、基本使用</td><td>❌ 不需要，国内直连</td></tr>
+        <tr><td>Composer-2 / Auto 模型</td><td>❌ 不需要，国内直连</td></tr>
+        <tr><td>Claude Sonnet 4.6 / Opus 4.7</td><td>✅ 通常需要稳定海外网络</td></tr>
+        <tr><td>GPT-5.5 / Codex / Gemini</td><td>✅ 需要海外网络</td></tr>
+        <tr><td>cursor.com 网页后台</td><td>⚠️ 建议挂（偶尔访问不稳）</td></tr>
+      </table>
+      <p>节点选型可参考 <a href="/clash-subscription-guide">机场订阅指南</a>。</p>
+    </article>
 
-    <section class="content">
-      <section class="mobile-toc">
-        <details>
-          <summary>展开移动端目录</summary>
-          <ul style="padding-left:18px;margin-top:8px">
-            <li><a href="#intro">① Cursor 是什么</a></li>
-            <li><a href="#interactions">⑦ 四种交互入口</a></li>
-            <li><a href="#fix-login">⑯ 登录与账号问题</a></li>
-            <li><a href="#practice">实战延伸</a></li>
-          </ul>
-        </details>
-      </section>
+    <!-- ⑤ Agent -->
+    <article class="card highlight" id="agent">
+      <div class="kicker purple">最重要的功能</div>
+      <h2>Agent 模式：跟 AI 聊天，就能搞定网站</h2>
+      <p>这是 Cursor 最强大、也最适合普通人的功能。<strong>你说需求，AI 自己规划步骤、写代码、修 bug、直到完成任务。</strong></p>
+      <p>传统的 AI 聊天（比如 ChatGPT）是一问一答——你问一个问题，它给你一段回答，你还得自己把代码复制粘贴进去，还要自己搞清楚哪里出了问题。</p>
+      <p><strong>Cursor Agent 不一样</strong>：它可以直接读你电脑上的文件、写进去、改掉、还能自己运行命令验证结果——你只需要看它干完后说"OK"或"这里不对，改一下"。</p>
+      <h3>怎么用 Agent？</h3>
+      <ol>
+        <li>按 <code>Ctrl+Shift+I</code>（macOS：<code>Cmd+Shift+I</code>）打开 <strong>Composer</strong></li>
+        <li>在输入框里用中文描述你想做的事（任务越具体越好）</li>
+        <li>Agent 会列出计划，开始逐步执行，你在旁边看着</li>
+        <li>如果有步骤不对，直接在输入框里说"这里不对，应该..."</li>
+        <li>完成后检查结果，觉得 OK 就接受，不对就让它改</li>
+      </ol>
+      <h3>实际使用例子</h3>
+      <table>
+        <tr><th>你说的话</th><th>Agent 做了什么</th></tr>
+        <tr><td>「帮我建一个个人主页，简洁风格，有自我介绍和联系方式」</td><td>生成 HTML/CSS 文件，自动格式化，可直接上传 GitHub</td></tr>
+        <tr><td>「把这个网站的导航栏颜色改成深蓝色」</td><td>找到 CSS 文件，定位导航栏样式，修改颜色值，保存</td></tr>
+        <tr><td>「我的网站点了按钮没反应，帮我找原因」</td><td>读取 JS 文件，找到事件绑定问题，告诉你哪行出错，直接帮你修</td></tr>
+        <tr><td>「帮我写一个读取 Excel 文件并转成网页表格的 Python 脚本」</td><td>写脚本、列出需要安装的库、给出运行方法</td></tr>
+      </table>
+      <div class="tip-box">💡 <strong>提示词技巧</strong>：任务描述越具体，结果越好。告诉 Agent：你想要什么（目标）、有什么限制（约束）、怎么判断做好了（验收标准）。三段式结构效果最佳。</div>
+    </article>
 
-      <article class="card section-anchor" id="intro">
-        <h2>① Cursor 是什么</h2>
-        <p>Cursor 是把 AI 深度融合进工程工作流的编程环境。它通过 Tab、Cmd+K、Chat、Composer/Agent 四类入口，把需求、实现、验证串成一个更短闭环。</p>
-        <p>官方模型文档将个人用量分为 Auto + Composer 池与 API 池，这也是我们建议按任务阶段选模型的重要依据。</p>
-      </article>
+    <!-- ⑥ 其他功能 -->
+    <article class="card" id="features">
+      <div class="kicker">其他常用功能</div>
+      <h2>Chat / Tab / Cmd+K — 三个轻量助手</h2>
+      <table>
+        <tr><th>功能</th><th>快捷键</th><th>最适合的场景</th></tr>
+        <tr>
+          <td><strong>Tab 补全</strong></td>
+          <td>写代码时按 Tab</td>
+          <td>AI 根据上下文自动预测你下一行要写什么，按 Tab 接受。不想要就继续打字忽略。</td>
+        </tr>
+        <tr>
+          <td><strong>Cmd+K 快改</strong></td>
+          <td>选中代码 → Ctrl/Cmd+K</td>
+          <td>选中一段代码，告诉 AI 你想怎么改（如"把这个函数改成用英文注释"），它直接在原地改好。</td>
+        </tr>
+        <tr>
+          <td><strong>Chat 问答</strong></td>
+          <td>右侧 Chat 面板</td>
+          <td>问问题、让 AI 解释代码、分析问题、给建议。不会直接改文件，只给你回答。</td>
+        </tr>
+      </table>
+      <h3>@ 引用 — 让 AI 看你的文件</h3>
+      <p>在 Chat 或 Composer 里，输入 <code>@</code> 可以引用：</p>
+      <ul>
+        <li><code>@文件名</code> — 让 AI 读取某个文件的内容再回答</li>
+        <li><code>@文件夹</code> — 让 AI 了解整个目录结构</li>
+        <li><code>@代码片段</code> — 引用当前光标位置的函数或类</li>
+      </ul>
+      <p>例如：<code>@index.html 帮我找一下这个文件里有没有写重复的 CSS 类</code></p>
+    </article>
 
-      <article class="card section-anchor" id="register">
-        <h2>② 下载与注册</h2>
-        <ol>
-          <li>安装对应系统版本并完成登录；</li>
-          <li>进入设置页确认模型与套餐可见性；</li>
-          <li>用小项目测试 Tab、Cmd+K、Chat 三种基础流程。</li>
-        </ol>
-        <p class="hint">建议先固定提示词模板和验证清单，后续效率会更稳定。</p>
-      </article>
+    <!-- ⑦ 实战延伸 -->
+    <article class="card" id="practice">
+      <div class="kicker">实战</div>
+      <h2>实战场景教程</h2>
+      <table>
+        <tr><th>教程</th><th>你能学到什么</th><th>状态</th></tr>
+        <tr><td><a href="/pages/cursor-build-static-site">用 Cursor 上线个人网站</a></td><td>AI 生成网站 → GitHub 推送 → 域名绑定全流程</td><td>✅ 已上线</td></tr>
+        <tr><td><a href="/pages/cursor-ssh-linux">Cursor SSH 连接 Linux 远程开发</a></td><td>树莓派 / 云服务器远程编辑，跑 Agent</td><td>✅ 已上线</td></tr>
+        <tr><td>Cursor + 阿里云 ECS 部署 Web 应用</td><td>从代码到上线服务器，Agent 全程陪跑</td><td>即将上线</td></tr>
+        <tr><td>Cursor Agent 全栈小应用实战</td><td>从需求到前后端全栈应用，不写一行代码</td><td>即将上线</td></tr>
+      </table>
+    </article>
 
-      <article class="card section-anchor" id="network">
-        <h2>③ 网络环境</h2>
-        <table>
-          <tr><th>场景</th><th>节点需求</th><th>口径</th></tr>
-          <tr><td>下载安装 / 登录</td><td>不需要</td><td>国内可直连</td></tr>
-          <tr><td>Composer-2 / Auto</td><td>不需要</td><td>日常任务可直连</td></tr>
-          <tr><td>Claude / GPT-5 / Cloud Agent</td><td>通常需要</td><td>复杂任务更依赖稳定海外网络</td></tr>
-          <tr><td>cursor.com Web 后台</td><td>建议挂</td><td>后台访问偶发不稳</td></tr>
-        </table>
-        <p>节点选型可参考 <a href="/clash-subscription-guide">机场订阅指南</a>。</p>
-      </article>
+    <!-- ⑧ 故障排查 -->
+    <article class="card" id="troubleshoot">
+      <div class="kicker">遇到问题</div>
+      <h2>常见故障排查</h2>
+      <h3>登录不进去 / 反复要求验证</h3>
+      <p>清除 Cursor 缓存（Help → Reset App Data），用无痕窗口重新登录；确认代理软件没有拦截 Cursor 的请求。</p>
+      <h3>模型不响应 / 一直转圈</h3>
+      <p>先检查网络：切换到 Composer-2（免费模型）试试。如果 Composer-2 正常，说明海外模型（Claude/GPT）需要稳定海外网络。切换节点后再试。</p>
+      <h3>用了很多次后提示「额度用完」</h3>
+      <p>Free 档有月度用量上限。Pro 档对 Sonnet 4.6 有大量配额，偶尔切 Composer-2 可以省下高端模型额度用于关键任务。</p>
+      <h3>付款后权益没更新</h3>
+      <p>先刷新页面、重新登录。等 5 分钟仍未更新，进入 Settings → Account 查看订阅状态，或通过 Cursor 官方支持渠道提交订单号。</p>
+      <h3>GitHub 推送时提示认证失败</h3>
+      <p>在 Cursor 里重新授权 GitHub：Settings → 搜索「GitHub」→ 重新登录授权，再尝试推送。</p>
+    </article>
 
-      <article class="card section-anchor" id="pricing">
-        <h2>④ 套餐与价格</h2>
-        <table>
-          <tr><th>方案</th><th>原价</th><th>通过本站邀请首月价</th><th>入口</th></tr>
-          <tr><td>Pro</td><td>$20/月</td><td><strong>$10</strong></td><td><a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">立即开通</a></td></tr>
-          <tr><td>Pro+</td><td>$60/月</td><td><strong>$30</strong></td><td><a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">立即开通</a></td></tr>
-          <tr><td>Ultra</td><td>$200/月</td><td><strong>$100</strong></td><td><a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">立即开通</a></td></tr>
-        </table>
-        <p>📋 套餐价格与限额以 Cursor 官方最新口径为准，开通时请以收银台显示金额为准。</p>
-      </article>
+    <div class="cta-box" style="margin-top:8px">
+      <p><strong>准备开始用 Cursor？</strong>通过邀请通道注册，首月 Pro / Pro+ / Ultra 立享 5 折——Pro 仅需 $10，完成网站上线绰绰有余，随时可取消。</p>
+      <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即开通（首月 5 折）</a>
+      <p style="margin-top:10px;font-size:13px;color:var(--muted)">邀请通道仅对首月生效，次月起恢复原价；可随时取消订阅。</p>
+    </div>
 
-      <article class="card section-anchor" id="payment">
-        <h2>⑤ 国内充值</h2>
-        <ul>
-          <li>双标卡：长期最稳；</li>
-          <li>支付宝路径：门槛低，注意核对权益同步；</li>
-          <li>虚拟卡：适合有支付经验用户；</li>
-          <li>Apple 订阅：苹果生态管理更统一；</li>
-          <li>教育优惠：注意资格周期与复核。</li>
-        </ul>
-        <p class="hint">实测建议：先小额验证，再锁定长期路径，能显著减少重复扣款风险。</p>
-      </article>
+    <article class="card" style="margin-top:8px" id="related">
+      <h2>相关教程</h2>
+      <p>
+        <a href="/pages/cursor-build-static-site">用 Cursor 上线个人网站</a> ·
+        <a href="/pages/cursor-ssh-linux">Cursor SSH 远程开发</a> ·
+        <a href="/clash-subscription-guide">机场订阅指南</a> ·
+        <a href="/pages/chatgpt-guide">ChatGPT 使用教程</a> ·
+        <a href="/pages/proxy-access-issues">代理访问异常排查</a>
+      </p>
+    </article>
 
-      <article class="card section-anchor" id="models">
-        <h2>⑥ 模型选型</h2>
-        <p>Cursor 官方将 Auto 定义为在智能、成本与可靠性间平衡的策略入口；Composer 2 是针对 agentic coding 强化训练的自研模型。</p>
-        <ol>
-          <li>需求澄清阶段：Auto / Composer 2；</li>
-          <li>关键实现阶段：Claude 4.5 / GPT-5；</li>
-          <li>回归修补阶段：切回 Auto 或 Composer 2。</li>
-        </ol>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="interactions">
-        <h2>⑦ 四种交互入口总览</h2>
-        <table>
-          <tr><th>入口</th><th>适用任务</th><th>输出粒度</th></tr>
-          <tr><td>Tab</td><td>续写与补全</td><td>行级</td></tr>
-          <tr><td>Cmd+K</td><td>定向改写</td><td>函数级</td></tr>
-          <tr><td>Chat</td><td>推理与定位</td><td>解释 + 片段</td></tr>
-          <tr><td>Composer</td><td>多文件批改</td><td>模块级</td></tr>
-        </table>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="tab">
-        <h2>⑧ Tab 自动补全实操</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <ul>
-            <li>命名清晰、上下文干净时命中率更高；</li>
-            <li>先写正确样本再让 Tab 扩展；</li>
-            <li>每个函数改完就做最小验证。</li>
-          </ul>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="cmdk">
-        <h2>⑨ Cmd+K 内联编辑</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>推荐指令结构：目标 + 约束 + 保留项 + 验收项。改完一定看 diff 并跑最小测试。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="chat">
-        <h2>⑩ Chat 与 @ 引用</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>三段式提问：先目标、再约束、最后输出格式；@文件/@目录/@符号可显著提升回答稳定性。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="composer">
-        <h2>⑪ Composer 多文件编辑</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>跨 3+ 文件任务建议分批执行，每批后看 diff，偏离就中断重述约束。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="agent">
-        <h2>⑫ Agent 模式与 Debug Mode</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>Cursor 官方对 Debug Mode 的定义是：先生成假设、添加日志埋点、复现 bug、分析运行时证据，再做有针对性的修复并清理埋点。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="rules">
-        <h2>⑬ `.cursorrules` 与 `AGENTS.md`</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>把团队约束写成可执行规则，能显著降低“模型忽好忽坏”的协作波动。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="mcp">
-        <h2>⑭ MCP 配置入门</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>MCP 用于连接外部工具和数据源。实操建议：先只读验证，再逐步开放写操作，并坚持最小权限。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="compare">
-        <h2>⑮ 横向对比表</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>Cursor 适合多入口协同和全链路开发，Copilot 适合 GitHub 生态增强，Claude Code 更贴近终端自动化。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="fix-login">
-        <h2>⑯ 登录与账号问题</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>登录循环、验证码延迟、多设备会话冲突等问题，优先按“清缓存 -> 单一网络复现 -> 再提交支持”的顺序排查。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="fix-network">
-        <h2>⑰ 网络与节点问题</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>超时和 429 不一定是账号问题，常见原因是并发节奏或网络链路波动。先做 Composer 2 对照。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="fix-models">
-        <h2>⑱ 模型与配额问题</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>Auto 是策略入口，表现波动是预期现象；关键任务建议手动切指定模型并缩小上下文。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="fix-billing">
-        <h2>⑲ 订阅与支付问题</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>扣款成功但权益未更新时，先刷新并重登；超过合理等待窗口再提交订单号与时间线。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor mobile-fold" id="fix-privacy">
-        <h2>⑳ 隐私、企业、教育优惠</h2>
-        <details open>
-          <summary>展开阅读</summary>
-          <p>企业场景优先做身份与访问控制、隐私模式治理和审计策略，再逐步扩大范围。</p>
-          <p class="hint">本文综合官方文档与站内长期实测经验。涉及 Cursor 自身行为的具体描述以 Cursor 官方最新文档为准；遇到未覆盖问题，建议通过本站 <a href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 邀请通道</a> 注册 Pro 享首月 5 折后，使用 Cursor 内置帮助渠道获取支持。</p>
-        </details>
-      </article>
-
-      <article class="card section-anchor" id="practice">
-        <h2>实战延伸（W2 起陆续上线）</h2>
-        <table>
-          <tr><th>实战</th><th>主题</th><th>状态</th></tr>
-          <tr><td>W2</td><td>Cursor + GitHub + Cloudflare 静态站</td><td>陆续上线</td></tr>
-          <tr><td>W3</td><td>Cursor SSH 远程开发 Linux</td><td>陆续上线</td></tr>
-          <tr><td>W4</td><td>Cursor + 阿里云 ECS 部署</td><td>陆续上线</td></tr>
-          <tr><td>W5</td><td>Cursor Agent 全栈小应用</td><td>陆续上线</td></tr>
-        </table>
-        <p><a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">🚀 先开通 Pro（首月 5 折）</a></p>
-      </article>
-
-      <article class="card">
-        <div class="cta-box">
-          <p><strong>准备开始用 Cursor？</strong>通过本站邀请通道注册，首月 Pro / Pro+ / Ultra 立享 5 折。</p>
-          <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即开通（首月 5 折）</a>
-          <p style="font-size:13px;color:var(--muted)">邀请通道仅对首月生效，次月起恢复原价；可随时取消订阅。</p>
-        </div>
-      </article>
-
-      <article class="card section-anchor" id="related">
-        <h2>相关教程</h2>
-        <div class="footer-nav">
-          <a href="/clash-subscription-guide">机场订阅指南</a> ·
-          <a href="/pages/proxy-access-issues">代理模式访问异常排查</a> ·
-          <a href="/pages/chatgpt-guide">ChatGPT 使用教程</a>
-        </div>
-      </article>
-    </section>
+    <footer>
+      <a href="/">首页</a> · <a href="/pages/cursor-build-static-site">Cursor 建站实战</a> · <a href="/pages/cursor-ssh-linux">SSH 远程开发</a>
+      <p style="margin-top:8px">© 2026 Router VPN Guide · <em>本文仅供学习参考，请在当地法律法规范围内使用相关工具。</em></p>
+    </footer>
   </main>
-
-  <a href="#top" class="back-to-top" id="backToTop">↑ 回到顶部</a>
 
   <script defer>
     (function() {
-      var ids = [
-        "intro","register","network","pricing","payment","models","interactions","tab","cmdk","chat","composer","agent","rules","mcp","compare","fix-login","fix-network","fix-models","fix-billing","fix-privacy","practice","related"
-      ];
-      var linkMap = {};
-      document.querySelectorAll(".pillar-toc__item a").forEach(function(a){
-        var id = (a.getAttribute("href") || "").replace("#","");
-        linkMap[id] = a.parentElement;
-      });
-      var observer = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if (entry.isIntersecting) {
-            Object.keys(linkMap).forEach(function(key){ linkMap[key].classList.remove("is-active"); });
-            if (linkMap[entry.target.id]) linkMap[entry.target.id].classList.add("is-active");
-          }
-        });
-      }, { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 });
-      ids.forEach(function(id){
-        var el = document.getElementById(id);
-        if (el) observer.observe(el);
-      });
-      var back = document.getElementById("backToTop");
-      window.addEventListener("scroll", function() {
-        if (window.scrollY > 600) back.classList.add("show");
-        else back.classList.remove("show");
-      });
+      function alignToHash(smooth) {
+        var hash = location.hash.replace('#','');
+        if (!hash) return;
+        try {
+          var target = document.getElementById(hash);
+          if (!target) return;
+          target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        } catch(e) {}
+      }
+      window.addEventListener('load', function() { alignToHash(false); });
+      window.addEventListener('hashchange', function() { alignToHash(true); });
     })();
   </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Cursor 国内使用完整教程 2026 — 注册 / 充值 / 模型选型一篇通",
-    "description": "基础 + 功能 + 故障排查三合一 Pillar 长文，附 20 章节锚点导航。",
-    "url": "https://www.aixiaobai168.com/pages/cursor-guide",
-    "author": { "@type": "Organization", "name": "Router VPN Guide" },
-    "datePublished": "2026-05-15",
-    "dateModified": "2026-05-16",
-    "inLanguage": "zh-CN",
-    "provider": { "@type": "Organization", "name": "Router VPN Guide", "url": "https://cursor.com/referral?code=Y3RXKKUGMJ2G" },
-    "hasPart": [
-      { "@type": "WebPageElement", "name": "注册与开通", "url": "https://www.aixiaobai168.com/pages/cursor-guide#register" },
-      { "@type": "WebPageElement", "name": "功能完全详解", "url": "https://www.aixiaobai168.com/pages/cursor-guide#interactions" },
-      { "@type": "WebPageElement", "name": "故障排查与 FAQ", "url": "https://www.aixiaobai168.com/pages/cursor-guide#fix-login" }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"Article","headline":"Cursor 2026 — 不懂代码也能用 AI 写代码、建网站、做任何事","description":"普通人视角的 Cursor 完整指南：注册、模型选择、Agent 对话建站、GitHub 推送、国内充值，一篇看懂。","url":"https://www.aixiaobai168.com/pages/cursor-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"datePublished":"2026-05-15","dateModified":"2026-05-16","inLanguage":"zh-CN"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cursor 免费版够用吗？","acceptedAnswer":{"@type":"Answer","text":"免费版（Free）可以试用 Composer-2 和 Auto 模式，适合感受基本功能。但 Agent 任务量有限，想流畅完成建站等复杂任务，建议开通 Pro 档（首月 $10）。"}},{"@type":"Question","name":"Cursor 在国内不用VPN能用吗？","acceptedAnswer":{"@type":"Answer","text":"安装、登录、Composer-2 / Auto 模式均可国内直连使用。Claude Sonnet 4.6、Opus 4.7、GPT-5.5 等高端模型通常需要稳定的海外网络环境。"}},{"@type":"Question","name":"哪个模型最适合建网站？","acceptedAnswer":{"@type":"Answer","text":"Claude Sonnet 4.6 是 Pro 档的主力模型，速度快、理解准确，90% 的建站任务用它就够了。复杂架构设计可以切 Opus 4.7，代码生成任务可以尝试 GPT-5.5。"}},{"@type":"Question","name":"Cursor 如何推送代码到 GitHub？","acceptedAnswer":{"@type":"Answer","text":"打开 Cursor 左侧源代码管理面板（Ctrl+Shift+G），输入提交说明后点击「提交并推送」即可，全程不需要命令行。首次发布会引导你连接 GitHub 账号。"}}]}
   </script>
 </body>
 </html>

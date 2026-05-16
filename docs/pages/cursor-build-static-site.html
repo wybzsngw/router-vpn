@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){if(location.hostname==='mowei-ie.github.io'){var p=location.pathname.replace(/^\/router-vpn/,'').replace(/\/?index\.html$/,'').replace(/\.html$/,'')||'/';location.replace('https://www.aixiaobai168.com'+p+location.search+location.hash);}})();</script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.clarity.ms" />
+  <title>用 Cursor 上线个人网站 — GitHub Pages + 自定义域名全流程教程</title>
+  <meta name="description" content="手把手教你用 Cursor AI 写网站，通过 Cursor 界面推送到 GitHub，开启 GitHub Pages 免费托管，在 Cloudflare 注册域名并正确绑定——不需要懂代码，全程 Cursor 对话完成。含成本说明：GitHub 免费、域名约 ¥70/年、Cursor Pro 首月 $10。" />
+  <meta name="keywords" content="Cursor 写网站,GitHub Pages,自定义域名,Cursor GitHub,Cloudflare 域名,AI 建站,Cursor 建站教程,GitHub Pages 自定义域名,Cloudflare DNS" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta property="og:title" content="用 Cursor 上线个人网站 — GitHub Pages + 自定义域名全流程" />
+  <meta property="og:description" content="AI 对话写网站，Cursor 界面推送 GitHub，GitHub Pages 免费托管，Cloudflare 注册域名正确绑定，清晰成本说明。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.aixiaobai168.com/pages/cursor-build-static-site" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="article:published_time" content="2026-05-16" />
+  <meta property="article:modified_time" content="2026-05-16" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="用 Cursor 上线个人网站 — GitHub Pages + 域名绑定" />
+  <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:description" content="不懂代码也能做，Cursor AI 写网站，GitHub Pages 免费托管，Cloudflare 域名绑定全流程。" />
+  <link rel="canonical" href="https://www.aixiaobai168.com/pages/cursor-build-static-site" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', 'AI 编程工具');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
+  <style>
+    :root {
+      --bg: #f7f8fc; --card: #ffffff; --text: #0f172a;
+      --muted: #64748b; --brand: #7c4dff; --accent: #0ea5e9;
+      --success: #10b981; --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .card {
+      background: var(--card); border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px; padding: 24px; margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover { transform: translateY(-4px); border-color: rgba(14,165,233,.35); box-shadow: 0 12px 28px rgba(14,165,233,.12); }
+    .kicker { letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-size: 12px; margin-bottom: 8px; }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card h3 { font-size: 16px; margin: 16px 0 8px }
+    .card p, .card li { line-height: 1.75; margin-bottom: 10px }
+    .card ul, .card ol { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.07); font-size: 14px }
+    .card th { color: var(--muted); font-weight: 600 }
+    code { background: rgba(0,0,0,.05); padding: .15em .45em; border-radius: 5px; font-size: 13px }
+    pre { background: rgba(0,0,0,.04); border-radius: 12px; padding: 14px 16px; overflow-x: auto; font-size: 13px; margin: 12px 0; line-height: 1.55 }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .cta-box { margin: 16px 0; padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(14,165,233,.2); background: linear-gradient(135deg, rgba(14,165,233,.06), rgba(124,77,255,.06)); }
+    .cta-box p { margin-bottom: 8px }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 12px; background: linear-gradient(135deg, rgba(14,165,233,.14), rgba(124,77,255,.14)); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600; border: 1px solid rgba(14,165,233,.2); transition: all .2s; }
+    .cta-btn:hover { box-shadow: 0 8px 20px rgba(14,165,233,.18); transform: translateY(-2px); text-decoration: none }
+    .tip-box { margin: 12px 0; padding: 14px 16px; border-radius: 12px; border: 1px dashed rgba(16,185,129,.3); background: rgba(16,185,129,.04); font-size: 14px; }
+    .warn-box { margin: 12px 0; padding: 14px 16px; border-radius: 12px; border: 1px dashed rgba(245,158,11,.3); background: rgba(245,158,11,.04); font-size: 14px; }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px">
+      <a href="/" style="color:var(--accent);text-decoration:none">首页</a>
+      <span style="margin:0 6px">›</span><span>AI 编程工具</span>
+      <span style="margin:0 6px">›</span><span style="color:var(--text)">Cursor 建站实战</span>
+    </nav>
+    <h1>用 Cursor 上线自己的网站：GitHub Pages + 自定义域名全流程</h1>
+    <p class="subtitle">全程不需要懂代码 — AI 写网站 → Cursor 界面推送 GitHub → 免费托管 → 域名绑定</p>
+
+    <div class="cta-box">
+      <p><strong>通过邀请链接注册 Cursor，首月 Pro / Pro+ / Ultra 立享 5 折：</strong></p>
+      <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即注册（首月 5 折）</a>
+    </div>
+
+    <article class="card" id="cost">
+      <div class="kicker">先说清楚</div>
+      <h2>成本说明（不骗人）</h2>
+      <table>
+        <tr><th>项目</th><th>费用</th><th>说明</th></tr>
+        <tr><td>GitHub 账号</td><td><strong>免费</strong></td><td>GitHub Pages 公开仓库免费托管</td></tr>
+        <tr><td>Cursor Pro</td><td><strong>首月 $10</strong>（5 折后）→ 次月 $20</td><td>Sonnet 4.6 才能流畅完成建站；免费版 Composer-2 能力有限</td></tr>
+        <tr><td>域名（可选）</td><td><strong>约 ¥70–100 / 年</strong></td><td>想用 yourdomain.com 就要买；用 yourname.github.io 完全免费</td></tr>
+        <tr><td>Cloudflare DNS / CDN</td><td><strong>免费</strong></td><td>DNS 管理、CDN 加速</td></tr>
+      </table>
+      <p><strong>只做技术展示的话，一分钱不花也能上线</strong>（yourname.github.io 免费子域名）。想用自己的域名，全年成本约 ¥70–300。</p>
+      <div class="tip-box">💡 为什么推荐 Cursor Pro 而不用免费版？Composer-2（免费版默认模型）可以做简单修改，但在「规划网站结构 → 批量生成页面 → 调试 → 排错」的完整链路里能力有限。<strong>Sonnet 4.6</strong> 是 Pro 档主力，首月 5 折仅需 $10，建完网站可随时取消。</div>
+    </article>
+
+    <article class="card" id="prereq">
+      <div class="kicker">准备工作</div>
+      <h2>第一步：准备工具</h2>
+      <ol>
+        <li><strong>注册 GitHub 账号</strong>：访问 github.com，用邮箱注册，取一个英文用户名（这将成为你免费子域名的一部分：<code>https://你的用户名.github.io</code>）</li>
+        <li><strong>安装并开通 Cursor</strong>：下载安装后通过邀请链接注册（首月 Pro 只需 $10）</li>
+        <li><strong>连接 GitHub 账号</strong>：Cursor 设置里搜索「GitHub」，按提示完成授权（会弹出浏览器让你登录并授权）</li>
+      </ol>
+    </article>
+
+    <article class="card" id="build">
+      <div class="kicker">第二步</div>
+      <h2>用 Cursor 创建网站（不用写代码）</h2>
+      <h3>新建文件夹并用 Cursor 打开</h3>
+      <p>在电脑上建一个文件夹（例如 <code>my-website</code>），Cursor → <strong>文件 → 打开文件夹</strong>，选中它。</p>
+      <h3>打开 Composer，直接说你要什么</h3>
+      <p>按 <code>Ctrl+Shift+I</code>（macOS：<code>Cmd+Shift+I</code>）打开 <strong>Composer</strong>，把下面这段话粘贴进去：</p>
+      <pre>我想做一个个人展示网站，用纯 HTML/CSS，不需要任何构建工具，
+可以直接在 GitHub Pages 上托管。
+
+请帮我生成：
+1. index.html：个人主页，包含自我介绍、技能、联系方式
+2. style.css：现代简洁的样式，有响应式布局
+3. README.md：说明文件
+
+网站风格：简洁专业，暂时用占位文字，后面我自己改。</pre>
+      <p>Cursor 会自动在文件夹里生成这三个文件。</p>
+      <h3>让 Cursor 帮你改内容</h3>
+      <p>在 <strong>Chat 面板</strong>（右侧）直接用中文说：</p>
+      <pre>把 index.html 里的自我介绍改成：我是一名摄影爱好者，喜欢旅行和记录生活……</pre>
+      <p>或者选中 HTML 文件里某段文字，按 <code>Ctrl+K</code> / <code>Cmd+K</code>，输入修改指令，Cursor 直接在文件里改好。</p>
+      <h3>本地预览效果</h3>
+      <p>在 Cursor 扩展市场安装 <strong>Live Server</strong> 插件，右键 <code>index.html</code> → Open with Live Server，浏览器自动打开预览。或者直接双击 <code>index.html</code> 用浏览器查看。</p>
+    </article>
+
+    <article class="card" id="push">
+      <div class="kicker">第三步</div>
+      <h2>通过 Cursor 界面推送到 GitHub（不用命令行）</h2>
+      <ol>
+        <li>点击左侧 <strong>源代码管理图标</strong>（树枝分叉图标，快捷键 <code>Ctrl+Shift+G</code>）</li>
+        <li>点击 <strong>「初始化仓库」</strong></li>
+        <li>在消息框输入提交说明，例如：<code>网站首版</code></li>
+        <li>点击 <strong>「提交」</strong> 旁的下拉箭头 → <strong>「提交并推送」</strong></li>
+        <li>首次弹出「发布分支」选项：选 <strong>「发布到 GitHub」</strong> → 输入仓库名（例如 <code>my-website</code>）→ 选「公开仓库」→ 确认</li>
+      </ol>
+      <div class="tip-box">✅ Cursor 会自动在你的 GitHub 账号下创建仓库并推送所有文件，不需要打开终端。后续每次修改只需要：输入说明 → 点「提交并推送」，两步搞定。</div>
+    </article>
+
+    <article class="card" id="pages">
+      <div class="kicker">第四步</div>
+      <h2>开启 GitHub Pages（免费托管上线）</h2>
+      <ol>
+        <li>打开 GitHub，进入你的仓库（<code>github.com/你的用户名/my-website</code>）</li>
+        <li>点击上方 <strong>Settings</strong> 标签</li>
+        <li>左侧找到 <strong>Pages</strong></li>
+        <li><strong>Source</strong> 选 <code>Deploy from a branch</code></li>
+        <li><strong>Branch</strong> 选 <code>main</code>，目录选 <code>/ (root)</code></li>
+        <li>点击 <strong>Save</strong></li>
+      </ol>
+      <p>等 1–2 分钟，GitHub 会给你一个 URL：<code>https://你的用户名.github.io/my-website</code>，用这个 URL 就能访问你的网站了，完全免费。</p>
+      <div class="tip-box">💡 如果仓库名就叫 <code>你的用户名.github.io</code>（格式完全一致），访问地址会直接是 <code>https://你的用户名.github.io</code>，更简洁。</div>
+    </article>
+
+    <article class="card" id="domain">
+      <div class="kicker">第五步（可选）</div>
+      <h2>注册域名</h2>
+      <p>如果想用自己的域名，推荐在 <strong>Cloudflare Registrar</strong> 注册：价格透明无加价（成本价转售），DNS 管理与域名在同一个面板，后续绑定最省事。</p>
+      <ol>
+        <li>访问 cloudflare.com 注册免费账号</li>
+        <li>左侧菜单 → <strong>Domain Registration</strong> → 搜索你想要的域名</li>
+        <li>选择 .com（约 $10/年）或其他后缀，结账付款</li>
+        <li>注册完成后，该域名的 DNS 管理自动在 Cloudflare</li>
+      </ol>
+      <p style="font-size:13px;color:var(--muted)">国内支付：Cloudflare 支持 Visa / Mastercard 双标卡、PayPal。国内银行开通的 Visa 卡可以直接用。</p>
+    </article>
+
+    <article class="card" id="custom-domain">
+      <div class="kicker">第六步（可选）</div>
+      <h2>绑定自定义域名到 GitHub Pages</h2>
+      <div class="warn-box">⚠️ <strong>重要原则：只用一套托管系统。</strong>不要同时开 Cloudflare Pages 和 GitHub Pages，会造成两套系统并行、域名指向混乱。我们的做法：域名 → Cloudflare DNS → GitHub Pages（托管）。</div>
+      <h3>第一步：GitHub 仓库设置自定义域名</h3>
+      <ol>
+        <li>进入 GitHub 仓库 → <strong>Settings → Pages</strong></li>
+        <li>在 <strong>Custom domain</strong> 栏填入你的域名，例如 <code>www.yourdomain.com</code></li>
+        <li>点击 <strong>Save</strong></li>
+        <li>勾选 <strong>Enforce HTTPS</strong></li>
+      </ol>
+      <p>GitHub 会自动为你申请 SSL 证书（Let's Encrypt），等几分钟即可。</p>
+      <h3>第二步：在 Cloudflare DNS 添加 CNAME 记录</h3>
+      <p>登录 Cloudflare → 选中你的域名 → <strong>DNS → 记录 → 添加记录</strong>：</p>
+      <table>
+        <tr><th>类型</th><th>名称</th><th>内容</th><th>代理状态</th></tr>
+        <tr><td>CNAME</td><td>www</td><td>你的用户名.github.io</td><td><strong>仅 DNS（灰色云朵）</strong></td></tr>
+      </table>
+      <div class="warn-box">⚠️ <strong>代理状态必须设为「仅 DNS」（灰色云朵），不要开橙色代理云朵！</strong>开启橙色代理后 Cloudflare 会接管流量，导致 GitHub 无法验证你的域名，HTTPS 证书申请失败。</div>
+      <h3>验证绑定成功</h3>
+      <p>等 5–10 分钟 DNS 生效后，访问 <code>https://www.yourdomain.com</code> 能看到你的网站，浏览器显示锁头图标（HTTPS 正常）即成功。</p>
+      <h3>根域名（不带 www）</h3>
+      <p>同时想让 <code>yourdomain.com</code>（不带 www）也能访问，在 Cloudflare DNS 再添加：</p>
+      <table>
+        <tr><th>类型</th><th>名称</th><th>内容</th><th>代理状态</th></tr>
+        <tr><td>CNAME</td><td>@</td><td>你的用户名.github.io</td><td>仅 DNS</td></tr>
+      </table>
+      <p>并在 GitHub Pages Custom domain 里填 <code>yourdomain.com</code>（不带 www），GitHub 会自动将带 www 和不带 www 都指向同一页面。</p>
+    </article>
+
+    <article class="card" id="maintain">
+      <div class="kicker">持续运营</div>
+      <h2>用 Cursor 持续维护网站</h2>
+      <p>网站上线只是开始，后续维护同样不需要会写代码：</p>
+      <ul>
+        <li><strong>添加新页面</strong>：Composer 里说「帮我添加一个 blog.html 博客列表页」，改好后在源代码管理面板提交推送</li>
+        <li><strong>修改样式</strong>：Chat 里说「把导航栏背景改成深蓝色」，Cursor 直接帮你改</li>
+        <li><strong>排查问题</strong>：描述问题让 Cursor 找原因并修复</li>
+      </ul>
+      <h3>常用提示词模板</h3>
+      <pre>帮我在 index.html 里添加一个作品展示区域，用网格布局，
+每个作品卡片有图片、标题和描述，最多展示 6 个，
+样式和现有页面保持一致。</pre>
+    </article>
+
+    <article class="card" id="related">
+      <h2>相关教程</h2>
+      <ul>
+        <li><a href="/pages/cursor-guide">Cursor 完整教程（注册 / 模型选型 / Agent 详解）</a></li>
+        <li><a href="/pages/cursor-ssh-linux">Cursor 通过 SSH 连接 Linux 远程开发</a></li>
+        <li><a href="/clash-subscription-guide">机场订阅指南（配合高端模型使用）</a></li>
+      </ul>
+    </article>
+
+    <div class="cta-box" style="margin-top:8px">
+      <p><strong>通过邀请通道注册，首月 Pro 仅需 $10</strong>（原价 $20，5 折优惠）。用完一个月后可随时取消。</p>
+      <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即开通（首月 5 折）</a>
+      <p style="margin-top:10px;font-size:13px;color:var(--muted)">邀请通道仅对首月生效，次月起恢复原价；可随时取消订阅。</p>
+    </div>
+
+    <footer>
+      <a href="/">首页</a> · <a href="/pages/cursor-guide">Cursor 完整指南</a> · <a href="/pages/cursor-ssh-linux">SSH 远程开发</a>
+      <p style="margin-top:8px">© 2026 Router VPN Guide · <em>本文仅供学习参考，请在当地法律法规范围内使用相关工具。</em></p>
+    </footer>
+  </main>
+
+  <script defer>
+    (function() {
+      function alignToHash(smooth) {
+        var hash = location.hash.replace('#','');
+        if (!hash) return;
+        try {
+          var target = document.getElementById(hash);
+          if (!target) return;
+          target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        } catch(e) {}
+      }
+      window.addEventListener('load', function() { alignToHash(false); });
+      window.addEventListener('hashchange', function() { alignToHash(true); });
+    })();
+  </script>
+  <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"用 Cursor 上线自己的网站：GitHub Pages + 自定义域名全流程","description":"手把手教你用 Cursor AI 写网站，通过 Cursor 界面推送到 GitHub，开启 GitHub Pages 免费托管，Cloudflare 注册域名并正确绑定。","url":"https://www.aixiaobai168.com/pages/cursor-build-static-site","author":{"@type":"Organization","name":"Router VPN Guide"},"datePublished":"2026-05-16","dateModified":"2026-05-16","inLanguage":"zh-CN"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HowTo","name":"用 Cursor 上线个人网站完整流程","description":"从 Cursor AI 生成网站到 GitHub Pages 托管，再到 Cloudflare 自定义域名绑定的全流程教程。","url":"https://www.aixiaobai168.com/pages/cursor-build-static-site","step":[{"@type":"HowToStep","name":"了解成本","text":"GitHub Pages 免费，域名约 ¥70/年，Cursor Pro 首月 $10（5 折）。"},{"@type":"HowToStep","name":"准备工具","text":"注册 GitHub 账号，安装并开通 Cursor Pro，在 Cursor 里连接 GitHub 账号。"},{"@type":"HowToStep","name":"用 Cursor 创建网站","text":"打开 Composer，用中文描述你想要的网站，AI 自动生成 HTML/CSS 文件。"},{"@type":"HowToStep","name":"通过 Cursor 界面推送到 GitHub","text":"点击源代码管理图标，输入提交说明，点击「提交并推送」，选择发布到 GitHub。"},{"@type":"HowToStep","name":"开启 GitHub Pages","text":"在 GitHub 仓库 Settings → Pages，选择 main 分支部署，等 1-2 分钟获得免费网址。"},{"@type":"HowToStep","name":"注册域名","text":"在 Cloudflare Registrar 注册域名，成本价约 $10/年，DNS 管理自动在 Cloudflare。"},{"@type":"HowToStep","name":"绑定自定义域名","text":"GitHub Pages Custom domain 填入域名，Cloudflare DNS 添加 CNAME 记录（仅 DNS，灰色云朵），等 5-10 分钟生效。"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"AI 编程工具","item":"https://www.aixiaobai168.com/pages/cursor-guide"},{"@type":"ListItem","position":3,"name":"Cursor 建站实战","item":"https://www.aixiaobai168.com/pages/cursor-build-static-site"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"GitHub Pages 托管网站需要花钱吗？","acceptedAnswer":{"@type":"Answer","text":"公开仓库的 GitHub Pages 完全免费。只有域名需要购买（约 ¥70-100/年），如果用 yourname.github.io 子域名则一分钱不花。"}},{"@type":"Question","name":"绑定自定义域名后 Cloudflare 的代理（橙色云朵）要开吗？","acceptedAnswer":{"@type":"Answer","text":"不要开！Cloudflare 代理（橙色云朵）会接管流量，导致 GitHub 无法验证域名所有权，HTTPS 证书申请失败。DNS 记录必须设为「仅 DNS」（灰色云朵）。"}},{"@type":"Question","name":"Cursor 可以不用命令行直接推送到 GitHub 吗？","acceptedAnswer":{"@type":"Answer","text":"可以。打开 Cursor 左侧源代码管理面板（Ctrl+Shift+G），输入提交说明后点击「提交并推送」即可，全程不需要打开终端。首次发布会引导你连接 GitHub 账号。"}}]}
+  </script>
+</body>
+</html>
