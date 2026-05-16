@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){if(location.hostname==='mowei-ie.github.io'){var p=location.pathname.replace(/^\/router-vpn/,'').replace(/\/?index\.html$/,'').replace(/\.html$/,'')||'/';location.replace('https://www.aixiaobai168.com'+p+location.search+location.hash);}})();</script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.clarity.ms" />
+  <title>Cursor 阿里云部署教程 — ECS 上线 Node.js Web 应用全流程</title>
+  <meta name="description" content="Cursor + 阿里云 ECS 完整实战教程：Remote-SSH 连接云服务器，用 Cursor AI（Claude / GPT-5）写 Node.js Express 应用，配置 Nginx 反向代理、PM2 守护进程、Let's Encrypt HTTPS，最后用 GitHub Actions 实现代码推送自动部署。含 ICP 备案合规说明，全程无需记忆命令行，让 AI 写脚本和配置。" />
+  <meta name="keywords" content="Cursor 阿里云,Cursor ECS 部署,Cursor Web 应用,Cursor Node 部署,Cursor Python 部署,阿里云 Cursor 开发,Nginx Cursor,Let's Encrypt Cursor,Cursor GitHub Actions,PM2 Cursor" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta property="og:title" content="Cursor + 阿里云 ECS 实战 — 从写代码到上线 Web 应用全流程" />
+  <meta property="og:description" content="Remote-SSH 连 ECS，AI 写 Node.js 应用，Nginx 反代 + PM2 + HTTPS，GitHub Actions 自动部署，含备案要点。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.aixiaobai168.com/pages/cursor-aliyun-deploy" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="article:published_time" content="2026-05-16" />
+  <meta property="article:modified_time" content="2026-05-16" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cursor + 阿里云 ECS 部署教程" />
+  <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:description" content="Cursor AI 写 Node.js 应用，Nginx + PM2 + HTTPS + GitHub Actions 自动部署全流程。" />
+  <link rel="canonical" href="https://www.aixiaobai168.com/pages/cursor-aliyun-deploy" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', 'AI 编程工具');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
+  <style>
+    :root { --bg:#f7f8fc;--card:#ffffff;--text:#0f172a;--muted:#64748b;--brand:#7c4dff;--accent:#0ea5e9;--success:#10b981;--warn:#f59e0b }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:system-ui,"Microsoft YaHei","PingFang SC",sans-serif;color:var(--text);background:radial-gradient(900px 400px at 15% 0%,rgba(14,165,233,.1),transparent 60%),radial-gradient(600px 400px at 85% 100%,rgba(124,77,255,.08),transparent 50%),linear-gradient(180deg,var(--bg) 0%,#eef1f7 50%,#fff 100%);min-height:100vh}
+    .container{max-width:860px;margin:0 auto;padding:40px 24px 80px}
+    h1{font-size:28px;line-height:1.3;margin-bottom:8px}
+    .subtitle{color:var(--muted);font-size:15px;margin-bottom:28px}
+    .card{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:0 4px 12px rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s,border-color .25s}
+    .card:hover{transform:translateY(-4px);border-color:rgba(14,165,233,.35);box-shadow:0 12px 28px rgba(14,165,233,.12)}
+    .kicker{letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-size:12px;margin-bottom:8px}
+    .card h2{font-size:20px;margin-bottom:12px}
+    .card h3{font-size:16px;margin:16px 0 8px}
+    .card p,.card li{line-height:1.75;margin-bottom:10px}
+    .card ul,.card ol{padding-left:20px;margin-bottom:12px}
+    .card table{width:100%;border-collapse:collapse;margin:12px 0}
+    .card th,.card td{padding:10px 12px;text-align:left;border-bottom:1px solid rgba(0,0,0,.07);font-size:14px}
+    .card th{color:var(--muted);font-weight:600}
+    code{background:rgba(0,0,0,.05);padding:.15em .45em;border-radius:5px;font-size:13px}
+    pre{background:rgba(0,0,0,.04);border-radius:12px;padding:14px 16px;overflow-x:auto;font-size:13px;margin:12px 0;line-height:1.55}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .cta-box{margin:16px 0;padding:18px 20px;border-radius:14px;border:1px solid rgba(14,165,233,.2);background:linear-gradient(135deg,rgba(14,165,233,.06),rgba(124,77,255,.06))}
+    .cta-box p{margin-bottom:8px}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:12px;background:linear-gradient(135deg,rgba(14,165,233,.14),rgba(124,77,255,.14));color:var(--text);text-decoration:none;font-size:14px;font-weight:600;border:1px solid rgba(14,165,233,.2);transition:all .2s}
+    .cta-btn:hover{box-shadow:0 8px 20px rgba(14,165,233,.18);transform:translateY(-2px);text-decoration:none}
+    .tip-box{margin:12px 0;padding:14px 16px;border-radius:12px;border:1px dashed rgba(16,185,129,.3);background:rgba(16,185,129,.04);font-size:14px}
+    .warn-box{margin:12px 0;padding:14px 16px;border-radius:12px;border:1px dashed rgba(245,158,11,.3);background:rgba(245,158,11,.04);font-size:14px}
+    footer{margin-top:40px;padding-top:24px;border-top:1px solid rgba(0,0,0,.08);color:var(--muted);font-size:13px}
+    footer a{color:var(--accent)}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px">
+      <a href="/" style="color:var(--accent);text-decoration:none">首页</a>
+      <span style="margin:0 6px">›</span><span>AI 编程工具</span>
+      <span style="margin:0 6px">›</span><span style="color:var(--text)">Cursor 阿里云实战</span>
+    </nav>
+    <h1>Cursor + 阿里云 ECS 实战：从写代码到上线 Web 应用全流程</h1>
+    <p class="subtitle">Remote-SSH 连接 ECS → AI 写 Node.js 应用 → Nginx 反代 → PM2 守护 → HTTPS → GitHub Actions 自动部署</p>
+
+    <nav aria-label="站内导航" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="/" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="/clash-subscription-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="/pages/windows-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows</a>
+      <a href="/pages/macos-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">macOS</a>
+      <a href="/pages/chatgpt-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">ChatGPT</a>
+      <a href="/pages/cursor-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Cursor 指南</a>
+      <a href="/pages/cursor-build-static-site" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">建站实战</a>
+      <a href="/pages/cursor-ssh-linux" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">SSH 实战</a>
+      <a href="/pages/cursor-aliyun-deploy" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">阿里云实战</a>
+    </nav>
+
+    <div class="cta-box">
+      <p><strong>通过邀请链接注册 Cursor，首月 Pro / Pro+ / Ultra 立享 5 折：</strong></p>
+      <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即注册（首月 5 折）</a>
+    </div>
+
+    <article class="card" id="ecs">
+      <div class="kicker">第一步</div>
+      <h2>阿里云 ECS 选型与购买</h2>
+      <h3>推荐配置</h3>
+      <table>
+        <tr><th>配置项</th><th>推荐选择</th><th>说明</th></tr>
+        <tr><td>实例规格</td><td>2 核 2G（ecs.t6-c1m2.large）</td><td>静态站 1 核 1G 也够，有动态逻辑建议 2 核 2G</td></tr>
+        <tr><td>操作系统</td><td>Ubuntu 22.04 LTS 64 位</td><td>本教程基于此版本</td></tr>
+        <tr><td>系统盘</td><td>40 GB 高效云盘</td><td>个人应用足够</td></tr>
+        <tr><td>带宽</td><td>1–3 Mbps 或按流量计费</td><td>个人用按流量通常更划算</td></tr>
+      </table>
+      <h3>安全组配置</h3>
+      <table>
+        <tr><th>协议</th><th>端口</th><th>来源</th><th>用途</th></tr>
+        <tr><td>TCP</td><td>22</td><td>你的本地 IP</td><td>SSH 登录</td></tr>
+        <tr><td>TCP</td><td>80</td><td>0.0.0.0/0</td><td>HTTP</td></tr>
+        <tr><td>TCP</td><td>443</td><td>0.0.0.0/0</td><td>HTTPS</td></tr>
+      </table>
+      <div class="tip-box">💡 22 端口来源限制为你的 IP，能大幅减少暴力破解日志。本地 IP 变化时进控制台调整一次即可。</div>
+    </article>
+
+    <article class="card" id="ssh">
+      <div class="kicker">第二步</div>
+      <h2>用 Cursor Remote-SSH 连接 ECS</h2>
+      <h3>配置 SSH Key 免密登录</h3>
+      <pre>ssh-keygen -t ed25519 -C "your-email@example.com"
+ssh-copy-id -i ~/.ssh/id_ed25519.pub root@你的ECS公网IP</pre>
+      <h3>本地 SSH Config</h3>
+      <pre>Host my-ecs
+  HostName 47.xxx.xxx.xxx
+  User root
+  IdentityFile ~/.ssh/id_ed25519
+  Port 22
+  ServerAliveInterval 60</pre>
+      <p>在 Cursor 里：<code>Ctrl+Shift+P</code> → <strong>Remote-SSH: Connect to Host</strong> → 选 <code>my-ecs</code>。左下角显示 <code>SSH: my-ecs</code> 即成功。详细配置见 <a href="/pages/cursor-ssh-linux">Cursor SSH 远程开发教程</a>。</p>
+    </article>
+
+    <article class="card" id="app">
+      <div class="kicker">第三步</div>
+      <h2>用 Cursor 写 Node.js Web 应用</h2>
+      <p>连接 ECS 后，在 Cursor 终端安装 Node.js：</p>
+      <pre>curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+apt-get install -y nodejs</pre>
+      <p>新建项目目录，用 Cursor 打开，然后在 <strong>Composer</strong> 里粘贴：</p>
+      <pre>目标：生成一个最小的 Node.js + Express Web 应用
+- server.js：监听 3000 端口，/（首页）和 /api/health（健康检查）
+- package.json：包含 start 和 dev 脚本
+- public/index.html：简洁欢迎页
+
+约束：CommonJS require，不用前端框架，不用数据库
+
+验收：npm install && npm start 后，
+curl http://localhost:3000/api/health 返回 {"status":"ok"}</pre>
+      <p>生成后在终端验证：</p>
+      <pre>npm install && npm start
+# 新开终端
+curl http://localhost:3000/api/health</pre>
+    </article>
+
+    <article class="card" id="nginx">
+      <div class="kicker">第四步</div>
+      <h2>Nginx 反向代理</h2>
+      <p>在 Chat 里说：</p>
+      <pre>帮我写一个 Nginx 配置，把 80 端口反向代理到本机 3000 端口（Node.js 应用）。
+域名暂用 your-domain.com，先不配 HTTPS。</pre>
+      <p>Cursor 生成配置后部署：</p>
+      <pre>apt-get install -y nginx
+# 把配置写入
+nano /etc/nginx/sites-available/my-app
+ln -sf /etc/nginx/sites-available/my-app /etc/nginx/sites-enabled/
+nginx -t && systemctl reload nginx</pre>
+      <p>访问 <code>http://ECS公网IP</code>，看到 Node.js 欢迎页即成功。</p>
+    </article>
+
+    <article class="card" id="pm2">
+      <div class="kicker">第五步</div>
+      <h2>PM2 守护进程</h2>
+      <p>在 Chat 里说：</p>
+      <pre>帮我用 PM2 启动并守护当前目录的 Node.js 应用（入口 server.js），并设置开机自启。</pre>
+      <p>Cursor 给出的命令序列：</p>
+      <pre>npm install -g pm2
+pm2 start server.js --name my-app
+pm2 startup    # 复制并执行输出的 sudo 命令
+pm2 save
+pm2 status</pre>
+      <div class="tip-box">💡 重启 ECS 后 <code>pm2 status</code> 仍显示 <code>online</code> 即成功。</div>
+      <h3>常用 PM2 命令</h3>
+      <pre>pm2 logs my-app      # 查看实时日志
+pm2 reload my-app    # 零停机热重载（更新代码后用）
+pm2 restart my-app   # 重启</pre>
+    </article>
+
+    <article class="card" id="https">
+      <div class="kicker">第六步</div>
+      <h2>Let's Encrypt SSL（HTTPS）</h2>
+      <p>先完成第七章域名解析，确认域名能解析到 ECS 公网 IP 后，在 Chat 里说：</p>
+      <pre>域名 your-domain.com 已经 DNS 解析到这台 ECS，帮我用 certbot 申请 Let's Encrypt SSL，
+并自动更新 Nginx 配置为 HTTPS（80 自动跳转 443）。</pre>
+      <pre>apt-get install -y certbot python3-certbot-nginx
+certbot --nginx -d your-domain.com -d www.your-domain.com
+# 按提示输入邮箱，同意条款
+# certbot 自动修改 Nginx 配置并重载</pre>
+      <p>访问 <code>https://your-domain.com</code>，浏览器锁头图标即成功。</p>
+      <pre>certbot renew --dry-run   # 测试自动续期是否正常</pre>
+    </article>
+
+    <article class="card" id="dns">
+      <div class="kicker">第七步</div>
+      <h2>域名解析与备案要点</h2>
+      <h3>DNS 解析</h3>
+      <table>
+        <tr><th>记录类型</th><th>名称</th><th>内容</th><th>代理状态</th></tr>
+        <tr><td>A</td><td>@</td><td>ECS 公网 IP</td><td>仅 DNS（关闭 CDN 代理）</td></tr>
+        <tr><td>A</td><td>www</td><td>ECS 公网 IP</td><td>仅 DNS</td></tr>
+      </table>
+      <h3>ICP 备案（国内服务器必须）</h3>
+      <div class="warn-box">⚠️ 如果 ECS 在中国大陆区域，通过域名提供 Web 服务必须完成 ICP 备案，否则阿里云会封停 80/443 端口。</div>
+      <p>备案流程：进入阿里云「ICP 备案」控制台 → 填写网站与主办单位信息 → 上传身份证 → 初审（1–3 工作日）→ 管局审核（3–20 工作日）。</p>
+      <p><strong>实测建议</strong>：备案期间可先在境外服务器（如阿里云新加坡节点）过渡，完成后再迁回。个人站信息准确时 1–2 周可完成。</p>
+    </article>
+
+    <article class="card" id="ci">
+      <div class="kicker">第八步</div>
+      <h2>GitHub Actions 自动部署</h2>
+      <p>配好后，推代码到 GitHub → ECS 自动拉取并重启，无需手动 SSH。</p>
+      <h3>1. ECS 上生成 CI 专用 Key</h3>
+      <pre>ssh-keygen -t ed25519 -f ~/.ssh/github-actions -N ""
+cat ~/.ssh/github-actions.pub >> ~/.ssh/authorized_keys
+cat ~/.ssh/github-actions   # 复制私钥备用</pre>
+      <h3>2. GitHub 仓库添加 Secrets</h3>
+      <table>
+        <tr><th>Secret 名称</th><th>值</th></tr>
+        <tr><td>ECS_HOST</td><td>ECS 公网 IP</td></tr>
+        <tr><td>ECS_USER</td><td>root</td></tr>
+        <tr><td>ECS_SSH_KEY</td><td>上一步复制的私钥内容</td></tr>
+      </table>
+      <h3>3. 让 Cursor 生成 Workflow 文件</h3>
+      <pre>帮我在 .github/workflows/deploy.yml 生成一个 GitHub Actions 工作流：
+推送到 main 分支时，SSH 登录生产服务器（用 Secrets 里的 ECS_HOST、ECS_USER、ECS_SSH_KEY），
+在 /root/my-app 执行：git pull && npm install && pm2 reload my-app</pre>
+      <p>提交推送后，在 GitHub <strong>Actions</strong> 标签里看到绿色对勾即成功。</p>
+      <div class="tip-box">✅ 验证：本地改一行代码，commit 推送，等 1–2 分钟访问网站看到新内容，即自动部署成功。</div>
+    </article>
+
+    <article class="card" id="related">
+      <h2>相关教程</h2>
+      <ul>
+        <li><a href="/pages/cursor-guide">Cursor 完整指南（注册 / 模型 / Agent）</a></li>
+        <li><a href="/pages/cursor-ssh-linux">Cursor SSH 远程开发（本教程前置）</a></li>
+        <li><a href="/pages/cursor-build-static-site">Cursor + GitHub Pages 上线静态站</a></li>
+        <li><a href="/clash-subscription-guide">机场订阅指南</a></li>
+      </ul>
+    </article>
+
+    <div class="cta-box" style="margin-top:8px">
+      <p><strong>通过邀请通道注册，首月 Pro / Pro+ / Ultra 立享 5 折</strong>——Pro 仅需 $10、Pro+ 仅需 $30、Ultra 仅需 $100。</p>
+      <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即开通（首月 5 折）</a>
+      <p style="margin-top:10px;font-size:13px;color:var(--muted)">邀请通道仅对首月生效，次月起恢复原价；可随时取消订阅。</p>
+    </div>
+
+    <footer>
+      <a href="/">首页</a> · <a href="/pages/cursor-guide">Cursor 完整指南</a> · <a href="/pages/cursor-ssh-linux">SSH 远程开发</a> · <a href="/pages/cursor-build-static-site">静态站实战</a>
+      <p style="margin-top:8px">© 2026 Router VPN Guide · <em>本文仅供学习参考，请在当地法律法规范围内使用相关工具。</em></p>
+    </footer>
+  </main>
+
+  <script defer>
+    (function(){
+      function alignToHash(smooth){var h=location.hash.replace('#','');if(!h)return;try{var t=document.getElementById(h);if(!t)return;t.scrollIntoView({block:'start',behavior:smooth?'smooth':'auto'});}catch(e){}}
+      window.addEventListener('load',function(){alignToHash(false);});
+      window.addEventListener('hashchange',function(){alignToHash(true);});
+    })();
+  </script>
+  <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Cursor + 阿里云 ECS 实战：从写代码到上线 Web 应用全流程","description":"Remote-SSH 连 ECS，AI 写 Node.js 应用，Nginx 反代 + PM2 + HTTPS，GitHub Actions 自动部署，含备案要点。","url":"https://www.aixiaobai168.com/pages/cursor-aliyun-deploy","author":{"@type":"Organization","name":"Router VPN Guide"},"datePublished":"2026-05-16","dateModified":"2026-05-16","inLanguage":"zh-CN"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HowTo","name":"Cursor + 阿里云 ECS 部署 Web 应用","description":"从购买 ECS 到自动化部署的八步完整流程。","url":"https://www.aixiaobai168.com/pages/cursor-aliyun-deploy","step":[{"@type":"HowToStep","name":"ECS 选型与购买","text":"选择 Ubuntu 22.04，配置安全组放行 22/80/443 端口。"},{"@type":"HowToStep","name":"Cursor Remote-SSH 连接","text":"配置 ed25519 Key，写 SSH Config 别名，Cursor 命令面板连接主机。"},{"@type":"HowToStep","name":"AI 写 Node.js 应用","text":"Cursor Composer 三段式提示词生成 Express 应用骨架，终端验证。"},{"@type":"HowToStep","name":"Nginx 反向代理","text":"让 Cursor Chat 生成 Nginx 配置，部署到 sites-available，reload Nginx。"},{"@type":"HowToStep","name":"PM2 守护进程","text":"PM2 启动应用，设置开机自启，pm2 save 保存进程列表。"},{"@type":"HowToStep","name":"Let's Encrypt SSL","text":"certbot --nginx 申请证书，自动配置 HTTPS 和 80→443 跳转。"},{"@type":"HowToStep","name":"域名解析与 ICP 备案","text":"DNS A 记录指向 ECS 公网 IP，国内服务器必须完成 ICP 备案。"},{"@type":"HowToStep","name":"GitHub Actions 自动部署","text":"ECS 生成 CI 专用 Key，GitHub 配置 Secrets，Cursor 生成 deploy.yml workflow。"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"AI 编程工具","item":"https://www.aixiaobai168.com/pages/cursor-guide"},{"@type":"ListItem","position":3,"name":"Cursor 阿里云实战","item":"https://www.aixiaobai168.com/pages/cursor-aliyun-deploy"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"阿里云 ECS 国内区域必须 ICP 备案吗？","acceptedAnswer":{"@type":"Answer","text":"是的。如果 ECS 在中国大陆区域（华东、华北、华南等），通过域名提供 Web 服务必须完成 ICP 备案，否则阿里云会封停 80/443 端口。备案通常需要 1-2 周，期间可在境外节点过渡。"}},{"@type":"Question","name":"Cursor 可以远程编辑阿里云 ECS 上的代码吗？","acceptedAnswer":{"@type":"Answer","text":"可以。通过 Cursor 的 Remote-SSH 功能，连接 ECS 后可以直接在 Cursor 里编辑远端文件、使用 AI 功能（Tab/Chat/Composer）、在内置终端运行命令，体验与本地开发几乎相同。"}},{"@type":"Question","name":"PM2 和直接 npm start 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"直接 npm start 的问题是终端关闭后进程结束，应用崩溃也不会自动重启。PM2 是进程守护工具，可以让应用在后台稳定运行，崩溃时自动重启，并支持开机自启。"}}]}
+  </script>
+</body>
+</html>

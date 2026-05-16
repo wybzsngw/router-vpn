@@ -21,8 +21,8 @@
 | --- | --- | --- |
 | 实战 1 | [Cursor + GitHub + Cloudflare 上线静态站](./practice/cursor-build-static-site.md) | ✅ 已上线 |
 | 实战 2 | [Cursor 通过 SSH 连接 Linux 远程开发](./practice/cursor-ssh-linux.md) | ✅ 已上线 |
-| 实战 3 | [Cursor + 阿里云 ECS 部署 Web 应用](./practice/cursor-aliyun-deploy.md) | 陆续上线 |
-| 实战 4 | [Cursor Agent 全栈小应用](./practice/cursor-fullstack-app.md) | 陆续上线 |
+| 实战 3 | [Cursor + 阿里云 ECS 部署 Web 应用](./practice/cursor-aliyun-deploy.md) | ✅ 已上线 |
+| 实战 4 | [Cursor Agent 全栈小应用](./practice/cursor-fullstack-app.md) | ✅ 已上线 |
 
 ---
 
@@ -56,4 +56,5 @@
 ---
 
 *本文档仅供学习与效率提升参考，请在当地法律法规与服务条款范围内使用相关工具。*
+
 
