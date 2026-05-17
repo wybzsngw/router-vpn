@@ -3,7 +3,7 @@
 [![在线阅读](https://img.shields.io/badge/📖_在线阅读-主站-0ea5e9?style=for-the-badge)](https://www.aixiaobai168.com/)
 [![GitHub stars](https://img.shields.io/github/stars/mowei-ie/router-vpn?style=for-the-badge&logo=github&color=f59e0b)](https://github.com/mowei-ie/router-vpn/stargazers)
 [![License](https://img.shields.io/badge/license-Apache_2.0-10b981?style=for-the-badge)](LICENSE)
-[![Last Updated](https://img.shields.io/badge/更新-2026.05-7c4dff?style=for-the-badge)](https://www.aixiaobai168.com/)
+[![Last Updated](https://img.shields.io/badge/v2.7_更新-2026.05.17-7c4dff?style=for-the-badge)](https://www.aixiaobai168.com/)
 
 > **2026 最新 Clash 全平台科学上网教程** — 覆盖华硕路由器 MerlinClash、软路由 OpenWrt + OpenClash、iStoreOS PassWall、Windows Clash Verge Rev、macOS ClashX Meta、Linux、Android Clash Meta、iOS Shadowrocket。含 VPN 节点订阅申请、机场推荐与价格对比、ChatGPT 注册登录、Netflix 解锁、节点配置、分流规则、TUN 模式、旁路由等完整教程。
 >
@@ -127,18 +127,20 @@
 
 ## 📝 更新日志
 
-### 2026 年 5 月
+### v2.7 — 2026 年 5 月
 
-- 新增 **🇨🇳 回国加速专题骨架**：面向海外华人/留学生，规划商业加速器评测、回国线路机场、自建节点、场景教程与客户端反向分流规则集。
-- 新增 Karing、Mihomo Party、FlClash 与 Clash for Windows 替代方案，完善主流客户端入口。
+- 新增 **Cursor AI 编程系列**：完整指南 + 4 篇实战（建站 / SSH 远程 / 阿里云部署 / 全栈 App）
+- **ChatGPT 内容保鲜**：依据 OpenAI 官网核对套餐（Go / Plus / Pro）与最新模型（GPT-5.2 / GPT-5.5），扩展 OpenAI 解锁节点、UniClash、杨帆云章节，移除账号星球导向
+- 新增回国加速专题骨架；补充 Karing / Mihomo Party / FlClash 客户端入口
 
-### 2026 年 4 月
+### v2.6 — 2026 年 4 月
 
-- 完成全站 SEO 与 clean URL 优化，并补充 UniClash、移动端和访问异常排查内容。
+- 新增 ChatGPT Plus 充值、OpenAI API、CFW 替代方案三篇指南
+- 完成全站 SEO 与 clean URL 优化，补充 UniClash 与移动端内容
 
-### 2026 年 3 月
+### v2.5 — 2026 年 3 月
 
-- 重构为全平台 Clash 教程体系，上线 iStoreOS、ChatGPT、Netflix、华硕路由器和软路由等核心指南。
+- 重构为全平台 Clash 教程体系，上线 iStoreOS、ChatGPT、Netflix、路由器等核心指南
 
 ---
 
@@ -161,4 +163,4 @@
 
 ---
 
-**在线文档**：<https://www.aixiaobai168.com/>　|　**版本**：v2.7　|　**最后更新**：2026 年 5 月
+**在线文档**：<https://www.aixiaobai168.com/>　|　**版本**：v2.7　|　**最后更新**：2026 年 5 月 17 日
