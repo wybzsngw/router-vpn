@@ -9,7 +9,7 @@
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <link rel="dns-prefetch" href="https://www.clarity.ms" />
   <title>ChatGPT 注册登录使用教程 2026 — 中国用户完整指南（账号 + 充值）</title>
-  <meta name="description" content="ChatGPT 注册与使用教程，面向中国大陆用户讲清海外邮箱、手机号验证、节点选择、账号风控、会员订阅、支付失败、Claude 与 Gemini 访问、成品号替代方案和常见注册失败排查，帮助新手判断是自助注册、购买账号还是使用 API，并补充常见地区限制和解锁建议。同时提供实测经验。适合新手按步骤操作。" />
+  <meta name="description" content="2026 ChatGPT 注册与使用教程，面向中国大陆用户讲清 OpenAI 解锁节点、美国直连、AI 解锁、UniClash、杨帆云/扬帆云、蓝胖云、账号注册、Go/Plus/Pro 套餐、GPT-5.2 与 GPT-5.5 系列模型、支付失败排查与 Cursor IDE 使用 OpenAI 模型的方法。" />
   <meta name="keywords" content="ChatGPT注册,ChatGPT教程,ChatGPT中国能用吗,ChatGPT怎么注册,GPT-5注册,ChatGPT Plus充值,ChatGPT Go,OpenAI注册,AI工具教程,ChatGPT使用指南,科学上网,翻墙,Claude,Gemini,Perplexity,ChatGPT API" />
   <meta name="author" content="Router VPN Guide" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -21,7 +21,7 @@
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:site_name" content="Clash 全平台科学上网教程" />
   <meta property="article:published_time" content="2026-03-12" />
-  <meta property="article:modified_time" content="2026-04-06" />
+  <meta property="article:modified_time" content="2026-05-17" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ChatGPT 注册登录与使用教程 2026 — 中国用户指南" />
   <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
@@ -165,7 +165,7 @@
   <main class="container">
     <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px"><a href="/" style="color:var(--accent);text-decoration:none">首页</a> <span style="margin:0 6px">›</span> <span>使用场景</span> <span style="margin:0 6px">›</span> <span style="color:var(--text)">ChatGPT 教程</span></nav>
     <h1>ChatGPT 注册与使用教程 — 中国用户完整指南</h1>
-    <p class="subtitle">从网络环境配置到 GPT-5 使用，一文搞定 ChatGPT 注册、充值与进阶技巧</p>
+    <p class="subtitle">从网络环境配置到 GPT-5.2 / GPT-5.5 系列使用，一文搞定 ChatGPT 注册、套餐选择与进阶技巧</p>
 
     <nav aria-label="站内导航" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
       <a href="/" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
@@ -193,9 +193,10 @@
         <li><a href="#section-5">五、ChatGPT 方案对比</a></li>
         <li><a href="#section-6">六、升级 ChatGPT 付费方案</a></li>
         <li><a href="#section-7">七、高级功能与使用技巧</a></li>
-        <li><a href="#section-8">八、其他 AI 工具推荐</a></li>
-        <li><a href="#section-9">九、常见问题 FAQ</a></li>
-        <li><a href="#section-10">十、总结与推荐配置</a></li>
+        <li><a href="#section-8">八、通过 Cursor IDE 使用 OpenAI 最新模型（推荐）</a></li>
+        <li><a href="#section-9">九、其他 AI 工具推荐</a></li>
+        <li><a href="#section-10">十、常见问题 FAQ</a></li>
+        <li><a href="#section-11">十一、总结与推荐配置</a></li>
       </ul>
     </section>
 
@@ -212,7 +213,7 @@
         <li><strong>数据分析</strong>：上传文件进行数据处理、图表生成、报告撰写</li>
         <li><strong>日常助手</strong>：旅行规划、食谱推荐、职业建议等</li>
       </ul>
-      <p>截至 2026 年 4 月，ChatGPT 的最新旗舰模型为 <strong>GPT-5.4</strong>，支持文本、图片、语音多模态输入和最高 100 万 Token 上下文，是当前最强大的通用 AI 助手之一。免费用户可使用 GPT-5.3，付费用户（Plus/Pro）可使用 GPT-5.4 及其思维推理模式。</p>
+      <p>2026 年 5 月，OpenAI 主推 <strong>GPT-5.2</strong>（官方定位：为专业工作、编程和长时运行智能体而打造，已向所有人开放）。模型按能力分为三档：<strong>GPT-5.5 Instant</strong>（日常快速，免费/Go 可用）→ <strong>GPT-5.5 Thinking</strong>（高级推理，Plus 起）→ <strong>GPT-5.5 Pro</strong>（专业推理，Pro 专属）。付费用户还可使用 Codex 智能体和 Deep Research 深度研究模式。除了在 ChatGPT 网页端使用，你也可以通过 <strong>Cursor IDE</strong> 直接调用 OpenAI 最新模型——这也是目前性价比最高的使用方式之一，详见<a href="#section-8">第八节</a>。</p>
     </section>
 
     <!-- 2. 前置准备 -->
@@ -242,13 +243,51 @@
         <li><strong>连接到支持的节点</strong> — 选择日本或新加坡节点，确认可访问 <code class="inline">chatgpt.com</code></li>
       </ol>
 
+      <h3>OpenAI 解锁节点怎么选</h3>
+      <p>现在用户最容易卡住的不是“有没有代理”，而是“这个节点能不能稳定解锁 OpenAI”。建议按下面顺序测试：</p>
+      <table>
+        <tr><th>节点类型</th><th>适合场景</th><th>注意事项</th></tr>
+        <tr><td><strong>美国直连 / 美国原生 / AI 解锁</strong></td><td>ChatGPT、OpenAI API、Claude、Gemini、Plus 付款</td><td>延迟可能较高，但地区兼容性通常更好</td></tr>
+        <tr><td><strong>新加坡节点</strong></td><td>日常对话、上传文件、Go / Plus 订阅</td><td>亚洲用户延迟低，适合长期使用</td></tr>
+        <tr><td><strong>日本节点</strong></td><td>问答、翻译、写作、普通网页端使用</td><td>速度快，但部分节点可能被 OpenAI 风控</td></tr>
+        <tr><td><strong>香港节点</strong></td><td>不推荐用于 OpenAI</td><td>更容易出现地区不可用、登录循环、模型加载失败</td></tr>
+      </table>
+      <p>如果节点名里带 <code class="inline">AI</code>、<code class="inline">OpenAI</code>、<code class="inline">直连</code>、<code class="inline">原生</code>、<code class="inline">NF</code>、<code class="inline">解锁</code>，可以优先测速。但节点名不是绝对保证，最终还是以能否登录、切换模型、上传文件、完成 Go / Plus 付款为准。</p>
+
+      <h3>杨帆云、蓝胖云和 UniClash 怎么选</h3>
+      <table>
+        <tr><th>需求</th><th>推荐</th><th>说明</th></tr>
+        <tr><td>优先解锁 OpenAI / Claude / Gemini</td><td><a href="https://yawtt.net/register?code=BnJcjUjE" target="_blank" rel="sponsored noopener">杨帆云 / 扬帆云</a></td><td>美国节点可解锁主流 AI 服务，支持 UniClash，适合把 AI 工具当主力使用</td></tr>
+        <tr><td>预算敏感、轻量使用 ChatGPT</td><td><a href="https://jpp.lanpangyun.me/#/register?code=30Y2Sexl" target="_blank" rel="sponsored noopener">蓝胖云</a></td><td>New_2026 系列当前月付 ¥10 起，日本/新加坡等线路可用于 ChatGPT</td></tr>
+        <tr><td>想少折腾客户端</td><td>杨帆云/尔湾云 + <a href="/pages/uniclash-guide">UniClash</a></td><td>登录账号即可同步节点，不需要手动导入订阅链接</td></tr>
+        <tr><td>全家设备都要用</td><td>华硕路由器 / 软路由</td><td>适合电视、电脑、手机、NAS 同时走代理，但排障成本更高</td></tr>
+      </table>
+
+      <div class="tip-box">
+        <strong>UniClash 适合谁：</strong>如果你买的是杨帆云或尔湾云，Windows / Mac / Android 新手可以直接用 UniClash。杨帆云网站代码填 <code class="inline">yangfan</code>，尔湾云网站代码填 <code class="inline">erwan</code>。如果你需要多机场订阅、复杂规则、TUN 模式或路由器全屋代理，仍建议使用 Clash Verge / OpenClash / MerlinClash。
+      </div>
+
+      <h3>OpenAI 解锁失败怎么排查</h3>
+      <ol>
+        <li>从香港节点切换到美国、新加坡或日本节点。</li>
+        <li>优先测试“美国直连 / AI 解锁 / 原生 IP”节点。</li>
+        <li>清除 <code class="inline">chatgpt.com</code> Cookie，或使用浏览器无痕模式。</li>
+        <li>付款时不要中途切换节点，节点地区尽量和付款环境一致。</li>
+        <li>UniClash 用户先更新到最新版客户端，再重新测速选择低延迟节点。</li>
+        <li>仍失败时换另一个服务商节点测试，不要反复在同一个失败节点上提交付款。</li>
+      </ol>
+      <div class="warn-box">
+        <strong>验证标准：</strong>访问 <code class="inline">chatgpt.com</code> 能看到登录页只是第一步；能登录、能切换模型、能上传文件、能完成 Go / Plus 付款，才算这个节点对 OpenAI 比较稳定。
+      </div>
+
       <div class="cta-box">
         <p><strong>还没有 Clash 订阅？</strong>可参考我们整理的机场推荐，多家机场均支持 ChatGPT 解锁：</p>
         <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px">
           <a class="cta-btn" href="/clash-subscription-guide">查看订阅申请指南</a>
-          <a class="cta-btn" href="https://jpp.lanpangyun.me/#/register?code=30Y2Sexl" target="_blank" rel="sponsored noopener" style="background:linear-gradient(135deg,rgba(16,185,129,.14),rgba(14,165,233,.14));border-color:rgba(16,185,129,.2)">蓝胖云 — ¥8/月起 · 解锁 ChatGPT</a>
+          <a class="cta-btn" href="https://yawtt.net/register?code=BnJcjUjE" target="_blank" rel="sponsored noopener" style="background:linear-gradient(135deg,rgba(16,185,129,.14),rgba(14,165,233,.14));border-color:rgba(16,185,129,.2)">杨帆云 / 扬帆云 — OpenAI 解锁优先推荐</a>
+          <a class="cta-btn" href="/pages/uniclash-guide" style="background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.1)">UniClash 一键登录教程</a>
         </div>
-        <p style="font-size:13px;color:var(--muted);margin-top:10px">蓝胖云日本/新加坡线路已验证可解锁 ChatGPT，爆款套餐 ¥8/月 168GB 流量，性价比极高。</p>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px">OpenAI 解锁优先测试杨帆云/扬帆云美国节点、美国直连或 AI 解锁线路；预算敏感可选蓝胖云 New_2026 系列（月付 ¥10 起），价格和节点以官网实时页面为准。</p>
       </div>
 
       <p><strong>已有订阅但不知道怎么配置？</strong>请根据你的设备查看对应教程：</p>
@@ -293,8 +332,8 @@
         <strong>注册建议：</strong>优先使用 Gmail 注册，后续升级 Plus、使用 API 都更方便。避免使用 QQ 邮箱、163 邮箱等国内邮箱，部分可能被识别拦截。
       </div>
 
-      <div style="background:rgba(124,77,255,.05);border:1px solid rgba(124,77,255,.15);border-radius:12px;padding:14px 16px;margin:14px 0;font-size:14px;line-height:1.7">
-        <strong style="color:var(--brand)">不想自己注册？</strong> 如果你觉得注册流程太麻烦，也可以直接购买 ChatGPT 成品账号（¥48.8 起，支持支付宝），3 分钟内发货：<a href="https://aixiaobai.accboy.com" target="_blank" rel="sponsored noopener" style="color:var(--accent)">前往账号星球</a>。<span style="color:var(--muted)">成品号适合临时体验，长期使用仍建议自行注册。</span>
+      <div class="tip-box">
+        💡 注册后不知道选哪个套餐？免费版先用起来，够用就免费，不够用再升级 Plus（$20/月）解锁 GPT-5.5。
       </div>
 
       <div class="warn-box">
@@ -323,7 +362,7 @@
         <li><strong>左侧边栏</strong> — 历史对话列表，可新建、搜索、归档对话</li>
         <li><strong>中间主区域</strong> — 对话窗口，输入问题即可获得 AI 回答</li>
         <li><strong>底部输入框</strong> — 支持文字输入、文件上传、图片上传、语音输入</li>
-        <li><strong>模型切换</strong> — 顶部可切换 GPT-5.3 / GPT-5.4 等模型（付费用户可用更多模型）</li>
+        <li><strong>模型切换</strong> — 顶部可切换模型：Free/Go 默认 GPT-5.5 Instant；Plus 用户可切换 GPT-5.5 Thinking（推理模式）；Pro 用户可用 GPT-5.5 Pro</li>
       </ul>
 
       <p><strong>快速上手示例：</strong></p>
@@ -345,27 +384,29 @@
     <!-- 5. ChatGPT 方案对比 -->
     <section class="card" id="section-5">
       <div class="kicker">Section 05</div>
-      <h2>ChatGPT 方案对比（2026 年 4 月）</h2>
+      <h2>ChatGPT 方案对比（2026）</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:12px">数据来源：OpenAI 官方定价页面（2026 年 5 月）。价格因地区而异，以官网结账时显示的实时价格为准。</p>
       <table>
-        <tr><th>功能</th><th>Free（免费）</th><th>Go（$8/月）</th><th>Plus（$20/月）</th><th>Pro（$200/月）</th></tr>
-        <tr><td>可用模型</td><td>GPT-5.3（有限额度）</td><td>GPT-5.3 Instant</td><td>GPT-5.3 + GPT-5.4 Thinking</td><td>全部模型含 GPT-5.4 Pro</td></tr>
-        <tr><td>消息额度</td><td>~15-20 条/3 小时</td><td>免费版 10 倍</td><td>免费版 5 倍（~80 条/3h）</td><td>无限</td></tr>
-        <tr><td>DALL-E 绘图</td><td>~3 张/天</td><td>更高额度</td><td>大幅提升</td><td>无限</td></tr>
-        <tr><td>文件上传</td><td>3 个/天</td><td>更高额度</td><td>大幅提升</td><td>无限</td></tr>
-        <tr><td>上下文窗口</td><td>16K Token</td><td>32K Token</td><td>32K Token</td><td>128K Token</td></tr>
-        <tr><td>自定义 GPT</td><td>使用他人创建的</td><td>使用他人创建的</td><td>可创建自定义 GPT</td><td>可创建自定义 GPT</td></tr>
-        <tr><td>高级语音模式</td><td>有限</td><td>有限</td><td>完整</td><td>完整</td></tr>
-        <tr><td>Deep Research</td><td>—</td><td>—</td><td>支持</td><td>支持</td></tr>
+        <tr><th>功能</th><th>Free（免费）</th><th>Go（约 $8/月）</th><th>Plus（约 $20/月）</th><th>Pro（约 $100/月）</th></tr>
+        <tr><td>主力模型</td><td>GPT-5.5 Instant（有限）</td><td>GPT-5.5 Instant（更多）</td><td>GPT-5.5 Thinking（高级推理）</td><td>GPT-5.5 Pro（专业推理）+ GPT-5.3 无限</td></tr>
+        <tr><td>消息额度</td><td>有限</td><td>较高</td><td>大幅提升</td><td>5–20 倍配额</td></tr>
+        <tr><td>图像生成</td><td>有限且较慢</td><td>更高额度</td><td>更高 + 思维驱动生成</td><td>无限且更快</td></tr>
+        <tr><td>文件上传</td><td>有限</td><td>更高</td><td>大幅提升</td><td>GPT-5.3 无限制</td></tr>
+        <tr><td>记忆与上下文</td><td>有限</td><td>更长</td><td>更强</td><td>最大支持</td></tr>
+        <tr><td>Codex 智能体</td><td>有限</td><td>—</td><td>✅ 更高额度</td><td>✅ 最大额度</td></tr>
+        <tr><td>Deep Research</td><td>有限</td><td>—</td><td>✅ 更高额度</td><td>✅ 最大支持</td></tr>
+        <tr><td>自定义 GPT</td><td>仅使用</td><td>仅使用</td><td>可创建 + 共享</td><td>可创建 + 共享</td></tr>
+        <tr><td>新功能体验</td><td>—</td><td>—</td><td>✅ 抢先体验</td><td>✅ 研究预览</td></tr>
       </table>
       <p><strong>选哪个？</strong></p>
       <ul>
-        <li><strong>免费版</strong>：偶尔提问、翻译、写简单文案足够</li>
-        <li><strong>Go</strong>：每天都用但预算有限，¥58/月性价比最高的入门付费方案</li>
-        <li><strong>Plus</strong>：日常工作依赖 AI（编程、写作、数据分析），需要 GPT-5.4 思维推理能力</li>
-        <li><strong>Pro</strong>：重度用户、研究人员，需要无限额度和最大上下文</li>
+        <li><strong>Free</strong>：偶尔提问、翻译、写简单文案，够用</li>
+        <li><strong>Go（约 $8/月）</strong>：每天都用但无需推理模型，比 Free 更高额度的 GPT-5.5 Instant</li>
+        <li><strong>Plus（约 $20/月）</strong>：解锁 GPT-5.5 Thinking 推理模型、Codex 智能体、Deep Research，适合日常工作/写作/编程</li>
+        <li><strong>Pro（约 $100/月）</strong>：5–20 倍配额 + GPT-5.5 Pro 专业推理，适合重度用户和专业开发者</li>
       </ul>
       <div class="tip-box">
-        <strong>还在犹豫选 Go 还是 Plus？</strong>可以直接查看我们的 <a href="/pages/chatgpt-plus-guide">ChatGPT Plus / Go 充值指南</a>，里面把价格、适合人群、支付方式和支付失败排查写得更细。
+        💡 <strong>性价比提示：</strong>通过 <a href="#section-8">Cursor IDE</a> 订阅（首月 5 折 $10），可同时调用 GPT-5.5、Claude Sonnet 4.6、Codex 5.3 等多个顶级模型，综合成本往往低于单独订阅 ChatGPT Plus。详见<a href="#section-8">第八节</a>。
       </div>
     </section>
 
@@ -373,9 +414,9 @@
     <section class="card" id="section-6">
       <div class="kicker">Section 06</div>
       <h2>升级 ChatGPT 付费方案</h2>
-      <p>如果免费版额度不够，可以升级到 Go、Plus 或 Pro。大多数普通用户只需要在 <strong>Go（$8/月）</strong> 和 <strong>Plus（$20/月）</strong> 之间做选择；下面以更常见的 Plus 升级流程为例说明。</p>
+      <p>如果免费版额度不够，可以升级到 Go、Plus 或 Pro。大多数普通用户只需要在 <strong>Go（约 $8/月）</strong> 和 <strong>Plus（约 $20/月）</strong> 之间做选择——Go 提供更多 GPT-5.5 Instant 额度，Plus 解锁 GPT-5.5 Thinking 推理模式和 Codex 智能体。下面以 Plus 升级流程为例说明。</p>
       <div class="tip-box">
-        <strong>最后核验：</strong>本节涉及的价格、模型和订阅入口信息最后核验于 2026-04-06。OpenAI 后续可能调整界面文案，但整体流程通常不变。
+        <strong>价格说明：</strong>OpenAI 按地区收费，本节参考价格为 USD 近似值（官方新加坡定价：Go S$11/月 / Plus S$30/月 / Pro S$138/月）。以 OpenAI 官网结账时显示的实时价格为准。
       </div>
 
       <p><strong>付款方式：</strong></p>
@@ -384,7 +425,7 @@
         <tr><td>国际信用卡</td><td>Visa / Mastercard 国际信用卡直接支付</td><td>简单（需有国际信用卡）</td></tr>
         <tr><td>虚拟信用卡</td><td>WildCard / Depay 等平台开卡后支付</td><td>中等（需注册虚拟卡平台）</td></tr>
         <tr><td>Apple Pay</td><td>在 iOS ChatGPT App 中通过 Apple 订阅</td><td>简单（需外区 Apple ID）</td></tr>
-        <tr><td>代充服务</td><td>通过淘宝等平台代充</td><td>最简单（但有账号风险）</td></tr>
+        <tr><td>Cursor 订阅替代</td><td>主要用于 GPT-5.5 / Codex 处理文档、代码和故障排查时，可直接使用 Cursor IDE</td><td>适合办公与开发场景，不等同于 ChatGPT 网页会员</td></tr>
       </table>
 
       <p><strong>使用虚拟信用卡升级步骤：</strong></p>
@@ -448,7 +489,7 @@
       <p>开发者可通过 API 将 ChatGPT 集成到自己的产品中：</p>
       <ul>
         <li>访问 <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a> 获取 API Key</li>
-        <li>按 Token 用量计费，GPT-5.4 mini $0.75/百万输入 Token，GPT-5.4 价格更高</li>
+        <li>按 Token 用量计费：GPT-5.4 mini 当前为 $0.75/百万输入 Token，GPT-5.4 为 $2.50/百万输入 Token，GPT-5.5 为 $5.00/百万输入 Token</li>
         <li>API 同样需要在支持 OpenAI 的地区网络环境下使用</li>
       </ul>
       <div class="tip-box">
@@ -456,9 +497,52 @@
       </div>
     </section>
 
-    <!-- 8. 其他 AI 工具 -->
+    <!-- 8. 通过 Cursor IDE 使用 GPT-5.5 -->
     <section class="card" id="section-8">
-      <div class="kicker">Section 08</div>
+      <div class="kicker">Section 08 · 推荐</div>
+      <h2>通过 Cursor IDE 使用 OpenAI 最新模型（性价比最高的方式）</h2>
+      <p>除了在 ChatGPT 网页端使用，<strong>Cursor IDE</strong> 是目前调用 OpenAI 最新模型的另一种高效方式。Cursor 内置多家大模型接入（OpenAI、Anthropic、Google），在 Settings → Models 里开启 GPT-5.5 或 Codex，即可在 IDE 内直接使用。</p>
+
+      <h3>Cursor 内可用的 OpenAI 模型</h3>
+      <table>
+        <tr><th>模型</th><th>定位</th><th>适合场景</th></tr>
+        <tr><td><strong>GPT-5.5</strong></td><td>旗舰，综合能力最强</td><td>复杂任务、高质量推理、长对话</td></tr>
+        <tr><td><strong>Codex 5.3</strong></td><td>代码专项</td><td>编程、调试、代码审查</td></tr>
+        <tr><td><strong>GPT-5.4 / Mini</strong></td><td>轻量快速</td><td>日常问答、简单修改</td></tr>
+      </table>
+
+      <h3>五种工作模式，覆盖 AI 办公全场景</h3>
+      <table>
+        <tr><th>模式</th><th>快捷键</th><th>能干什么</th></tr>
+        <tr><td><strong>Agent</strong></td><td>Ctrl+I</td><td>直接操作文件、执行命令、自动修改多个文档——完全的 AI 自动办公</td></tr>
+        <tr><td><strong>Ask</strong></td><td>—</td><td>针对当前文件进行问答，不修改文件，相当于 ChatGPT 对话</td></tr>
+        <tr><td><strong>Plan</strong></td><td>—</td><td>先规划再执行：AI 列步骤让你确认，确认后再操作</td></tr>
+        <tr><td><strong>Debug</strong></td><td>—</td><td>系统排查运行时错误，自动分析报错堆栈</td></tr>
+        <tr><td><strong>Multitask</strong></td><td>—</td><td>并行运行多个 Agent 任务，同时推进不同工作</td></tr>
+      </table>
+
+      <h3>用 Cursor + GPT-5.5 能做什么</h3>
+      <ul>
+        <li><strong>AI 办公</strong>：Agent 模式批量修改文档、整理数据、生成报告，全程不需要手动操作</li>
+        <li><strong>排查故障</strong>：把报错日志复制给 Debug 模式，AI 自动分析原因并给出修复方案</li>
+        <li><strong>问答对话</strong>：Ask 模式对任何文件内容提问，无需手动粘贴——比网页 ChatGPT 更高效</li>
+        <li><strong>操作文件</strong>：Agent 直接在项目里写文件、跑命令、检查结果，真正的"帮你干活"</li>
+        <li><strong>代码开发</strong>：Codex 5.3 + Agent = 从需求描述到可运行代码，全程对话驱动</li>
+      </ul>
+
+      <div class="cta-box">
+        <p><strong>通过邀请链接注册 Cursor，首月 Pro / Pro+ / Ultra 立享 5 折。</strong>Cursor Pro 首月 $10（约 ¥72），同时获得 GPT-5.5、Claude Sonnet 4.6、Codex 5.3 等多个顶级模型的使用权限，综合性价比优于单独订阅 ChatGPT Plus（$20/月）。</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px">
+          <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 注册 Cursor（首月 5 折）</a>
+          <a class="cta-btn" href="/pages/cursor-guide" style="background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.1)">查看 Cursor 完整教程</a>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px">邀请通道仅对首月生效，次月起恢复原价，可随时取消。</p>
+      </div>
+    </section>
+
+    <!-- 9. 其他 AI 工具 -->
+    <section class="card" id="section-9">
+      <div class="kicker">Section 09</div>
       <h2>其他 AI 工具推荐</h2>
       <p>除了 ChatGPT，以下 AI 工具也值得尝试。它们大多在国内无法直接访问，且不同服务对代理节点的地区要求不同——选择一个<strong>节点覆盖广、解锁能力强的机场</strong>尤为重要。</p>
       <table>
@@ -468,19 +552,19 @@
         <tr><td><strong>Perplexity AI</strong></td><td>AI 搜索引擎，带来源引用的实时回答</td><td><a href="https://perplexity.ai" target="_blank" rel="noopener">perplexity.ai</a></td></tr>
         <tr><td><strong>Midjourney</strong></td><td>AI 绘图标杆，通过 Discord 使用</td><td><a href="https://midjourney.com" target="_blank" rel="noopener">midjourney.com</a></td></tr>
         <tr><td><strong>GitHub Copilot</strong></td><td>AI 编程辅助，集成在 VS Code / JetBrains 中</td><td><a href="https://github.com/features/copilot" target="_blank" rel="noopener">github.com/features/copilot</a></td></tr>
-        <tr><td><strong>Cursor</strong></td><td>AI 代码编辑器，内置 GPT-5 / Claude / Gemini 多模型，支持 Agent 模式自动编程</td><td><a href="https://www.cursor.com" target="_blank" rel="noopener">cursor.com</a>（部分模型可能需要代理）</td></tr>
+        <tr><td><strong>Cursor</strong></td><td>AI 代码编辑器，内置 GPT-5.5 / Claude / Codex 多模型，Agent 模式可直接操作文件/办公/排障——<a href="#section-8">详见第八节</a></td><td><a href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">注册（首月 5 折）</a></td></tr>
         <tr><td><strong>Suno AI</strong></td><td>AI 音乐生成，输入描述即可创作歌曲</td><td><a href="https://suno.com" target="_blank" rel="noopener">suno.com</a></td></tr>
       </table>
 
       <div style="background:rgba(124,77,255,.06);border:1px solid rgba(124,77,255,.15);border-radius:12px;padding:14px 16px;margin:16px 0;font-size:14px;line-height:1.7">
-        <strong style="color:var(--brand)">实测解锁情况（2026 年 4 月）：</strong><br/>
-        · <strong>扬帆云</strong>：可解锁 ChatGPT、Claude、Gemini 等主流 AI 服务<br/>
-        · <strong>蓝胖云</strong>：可稳定解锁 ChatGPT<br/>
+        <strong style="color:var(--brand)">实测解锁情况（2026 年 5 月）：</strong><br/>
+        · <strong>杨帆云 / 扬帆云</strong>：OpenAI 解锁优先推荐，美国节点可解锁 ChatGPT、Claude、Gemini 等主流 AI 服务，并支持 UniClash<br/>
+        · <strong>蓝胖云</strong>：New_2026 系列月付 ¥10 起，日本/新加坡等线路可用于 ChatGPT，适合预算敏感用户<br/>
         更多机场对比与注册方法，请查看 <a href="/clash-subscription-guide">订阅申请指南</a>。
       </div>
 
-      <div style="background:rgba(124,77,255,.05);border:1px solid rgba(124,77,255,.15);border-radius:12px;padding:14px 16px;margin:14px 0;font-size:14px;line-height:1.7">
-        <strong style="color:var(--brand)">不想折腾注册？</strong> 以上工具的成品账号也可以直接购买（支持支付宝）：ChatGPT ¥48.8 起、Gemini ¥28 起、Claude Code ¥34 起、Cursor ¥199 起、Suno ¥39.9 起 → <a href="https://aixiaobai.accboy.com" target="_blank" rel="sponsored noopener" style="color:var(--accent)">前往账号星球</a>
+      <div class="tip-box">
+        💡 <strong>使用 Cursor 一次开通多模型：</strong>通过 Cursor IDE 订阅（首月 5 折），可同时调用 GPT-5.5、Claude Sonnet 4.6、Codex 5.3、Gemini Pro 等多个主流模型，无需分别注册各平台账号。<a href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">立即注册 Cursor（首月 5 折）</a>
       </div>
 
       <div class="cta-box">
@@ -492,15 +576,15 @@
     </section>
 
     <!-- 9. FAQ -->
-    <section class="card" id="section-9">
-      <div class="kicker">Section 09</div>
+    <section class="card" id="section-10">
+      <div class="kicker">Section 10</div>
       <h2>常见问题 FAQ</h2>
 
       <p><strong>Q1：注册时提示 "OpenAI's services are not available in your country"</strong></p>
-      <p>A：切换到日本/新加坡/美国节点，清除浏览器 Cookie 和缓存后重试。使用浏览器无痕模式效果更好。</p>
+      <p>A：先从香港节点切换到美国、新加坡或日本节点，优先测试带“美国直连 / AI 解锁 / 原生 IP”标识的线路。切换后清除浏览器 Cookie 和缓存，使用无痕模式重试。</p>
 
       <p><strong>Q2：登录后响应特别慢或经常断开</strong></p>
-      <p>A：通常是节点质量问题。尝试切换到延迟更低的节点（优先日本/新加坡），或升级到带宽更大的机场套餐。</p>
+      <p>A：通常是节点质量问题。普通问答优先日本/新加坡低延迟节点；如果是 Plus 付款、OpenAI API、Claude、Gemini 等场景，优先测试美国直连或 AI 解锁节点。使用杨帆云/尔湾云的新手可用 UniClash 登录后测速切换。</p>
 
       <p><strong>Q3：ChatGPT 回答到一半突然停止</strong></p>
       <p>A：这是长回答的正常现象。在输入框输入"继续"或"continue"即可让它继续输出。</p>
@@ -509,10 +593,10 @@
       <p>A：检查垃圾邮箱。如果使用国内邮箱（QQ/163/126），建议换用 Gmail 或 Outlook 注册。</p>
 
       <p><strong>Q5：ChatGPT Plus 支付失败</strong></p>
-      <p>A：确保支付时的节点 IP 地区与信用卡账单地址匹配。推荐付款全程使用美国节点。如果反复失败，可尝试更换虚拟信用卡平台，或改用 iPhone 外区订阅。更完整的排查可以看 <a href="/pages/chatgpt-plus-guide">Plus / Go 充值指南</a>。</p>
+      <p>A：确保支付时的节点 IP 地区与信用卡账单地址匹配。推荐付款全程使用稳定的美国或新加坡节点，优先测试美国直连 / AI 解锁线路。反复失败时可换无痕窗口、更换卡片，或改用 iPhone 外区订阅。更完整的排查可以看 <a href="/pages/chatgpt-plus-guide">Plus / Go 充值指南</a>。</p>
 
       <p><strong>Q6：已有订阅但看不到高级模型选项</strong></p>
-      <p>A：确认 Plus/Pro 订阅已生效（Settings → Subscription 查看状态）。如果刚刚订阅，稍等几分钟刷新页面。Go 方案不包含 GPT-5.4 Thinking，需 Plus 或更高方案。</p>
+      <p>A：确认订阅已生效（Settings → Subscription 查看状态）。如果刚订阅，稍等几分钟刷新页面。Go 套餐使用 GPT-5.5 Instant（更高额度），GPT-5.5 Thinking（推理模式）需 Plus 及以上方案。</p>
 
       <p><strong>Q7：ChatGPT App 在中国 App Store 找不到</strong></p>
       <p>A：ChatGPT App 仅在受支持地区的 App Store 上架。iOS 用户需使用<strong>美区 Apple ID</strong> 下载。详见我们的 <a href="/pages/mobile-guide">手机教程</a>中外区 Apple ID 注册部分。</p>
@@ -523,11 +607,11 @@
       <p><strong>Q9：ChatGPT 和 Claude 哪个更好用？</strong></p>
       <p>A：各有所长。ChatGPT 在通用对话、多模态能力、GPTs 与工具生态上更成熟；Claude 在长文本处理和代码理解方面通常表现更强。两者在国内均需科学上网，但 Claude 门槛更高：注册不支持中国手机号（需海外邮箱），且香港节点无法访问（推荐美国节点）。建议选择节点覆盖广的<a href="/clash-subscription-guide">机场服务</a>。</p>
 
-      <p><strong>Q10：不想自己注册，可以直接买成品号吗？</strong></p>
-      <p>A：可以。<a href="https://aixiaobai.accboy.com" target="_blank" rel="sponsored noopener">账号星球</a>提供 ChatGPT 成品账号（¥48.8 起）和 Plus 会员账号（¥98 起），支持支付宝付款，3 分钟内发货。但需注意：成品号存在被封风险，且无法绑定自己的手机/邮箱。如果是长期使用，<strong>强烈建议按本教程自行注册</strong>，更安全也更稳定。</p>
+      <p><strong>Q10：想用 GPT-5.5 最省钱的方式是什么？</strong></p>
+      <p>A：通过 Cursor IDE 订阅（首月 5 折约 $10），可同时使用 GPT-5.5、Claude Sonnet 4.6、Codex 5.3 等多个顶级模型，综合成本往往低于单独订阅 ChatGPT Plus（$20/月）。详见<a href="#section-8">第八节</a>。</p>
 
       <p><strong>Q11：ChatGPT 免费版够日常使用吗？</strong></p>
-      <p>A：轻度使用（偶尔提问、翻译、写简短文案）免费版完全够用，每 3 小时约 15-20 条消息。如果每天都用但预算有限，Go（$8/月）提供 10 倍额度，性价比极高。需要 GPT-5.4 推理能力或 Deep Research 的重度用户建议 Plus（$20/月）。详见<a href="#section-5">方案对比</a>。</p>
+      <p>A：轻度使用（偶尔提问、翻译、写简短文案）免费版够用，可以使用 GPT-5.5 Instant 有限额度。每天都用建议升级 Go（约 $8/月）或 Plus（约 $20/月，解锁 GPT-5.5 Thinking 推理模式）。详见<a href="#section-5">方案对比</a>。</p>
 
       <p><strong>Q12：ChatGPT Go 值不值得买？</strong></p>
       <p>A：值得，尤其适合“每天都在用，但还没必要上 Plus”的用户。Go 的价格比 Plus 低很多，但比免费版有更高的消息和工具额度。如果你主要是写文案、翻译、问问题、做轻量办公，Go 往往已经够用了。</p>
@@ -537,17 +621,18 @@
     </section>
 
     <!-- 10. 总结 -->
-    <section class="card" id="section-10">
-      <div class="kicker">Section 10</div>
+    <section class="card" id="section-11">
+      <div class="kicker">Section 11</div>
       <h2>总结与推荐配置</h2>
       <p>对于中国用户来说，使用 ChatGPT 的核心门槛就是<strong>网络环境</strong>。一旦网络打通，注册和使用过程非常流畅。以下是我们的推荐配置：</p>
       <table>
         <tr><th>需求</th><th>推荐方案</th></tr>
-        <tr><td>个人偶尔使用</td><td>蓝胖云 ¥8/月 + ChatGPT 免费版</td></tr>
-        <tr><td>每天使用、预算有限</td><td>蓝胖云/扬帆云 + ChatGPT Go（$8/月）</td></tr>
-        <tr><td>日常工作/编程/写作</td><td>蓝胖云/扬帆云 + ChatGPT Plus（$20/月，解锁 GPT-5.4）</td></tr>
+        <tr><td>个人偶尔使用</td><td>蓝胖云 ¥10/月起 + ChatGPT 免费版（GPT-5.5 Instant 有限额度）</td></tr>
+        <tr><td>每天都用、预算有限</td><td>杨帆云/扬帆云或蓝胖云 + ChatGPT Go（约 $8/月，更高 GPT-5.5 Instant 额度）</td></tr>
+        <tr><td>日常工作/写作/编程</td><td>杨帆云/扬帆云或蓝胖云 + ChatGPT Plus（约 $20/月，解锁 GPT-5.5 Thinking + Codex）</td></tr>
+        <tr><td>性价比多模型方案</td><td>蓝胖云 + Cursor Pro（首月 5 折约 $10，同时用 GPT-5.5 / Claude / Codex）</td></tr>
         <tr><td>全家多设备</td><td>华硕路由器 + MerlinClash 全屋翻墙 + ChatGPT</td></tr>
-        <tr><td>开发者</td><td>稳定机场 + ChatGPT API / Cursor + GitHub Copilot</td></tr>
+        <tr><td>专业开发者</td><td>稳定机场 + ChatGPT Pro / OpenAI API + Cursor + GitHub Copilot</td></tr>
       </table>
 
       <div class="cta-box">
@@ -562,7 +647,7 @@
     <section style="margin-top:40px;padding:24px;background:linear-gradient(135deg,rgba(14,165,233,.06),rgba(124,77,255,.06));border-radius:16px;border:1px solid rgba(14,165,233,.15)">
       <h3 style="font-size:16px;margin-bottom:16px">📌 你可能还需要</h3>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
-        <a href="/clash-subscription-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🔗</span><div><strong style="font-size:14px">订阅申请指南</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">机场推荐与价格对比，¥8/月起</p></div></a>
+        <a href="/clash-subscription-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🔗</span><div><strong style="font-size:14px">订阅申请指南</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">机场推荐与价格对比，蓝胖云 ¥10/月起</p></div></a>
         <a href="/pages/windows-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🪟</span><div><strong style="font-size:14px">Windows 翻墙教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">Clash Verge Rev 安装配置</p></div></a>
         <a href="/pages/mobile-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">📱</span><div><strong style="font-size:14px">手机翻墙教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">Android / iOS Clash 配置</p></div></a>
         <a href="/pages/netflix-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🎬</span><div><strong style="font-size:14px">Netflix 解锁教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">全区解锁、4K 画质观看</p></div></a>
@@ -571,7 +656,7 @@
     </section>
 
     <footer>
-      <p>本文档最后更新：2026 年 4 月</p>
+      <p>本文档最后更新：2026 年 5 月 17 日（已核对 OpenAI 官网数据）</p>
       <nav aria-label="相关教程" style="margin-top:12px;font-size:12px;line-height:2">
         <strong>更多教程：</strong>
         <a href="/">首页</a> ·
@@ -690,8 +775,8 @@
     window.addEventListener('hashchange', function() { alignToHash(true); });
   </script>
   <script src="../analytics-events.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"ChatGPT 注册与使用教程","description":"中国用户注册并使用 ChatGPT 的完整图文教程","url":"https://www.aixiaobai168.com/pages/chatgpt-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"配置网络环境","text":"使用 Clash 等代理工具连接到支持 OpenAI 的地区节点"},{"@type":"HowToStep","name":"注册 OpenAI 账号","text":"访问 chatgpt.com 使用邮箱注册或 Google/Microsoft 账号登录"},{"@type":"HowToStep","name":"开始使用 ChatGPT","text":"登录后即可使用 GPT-5.3 免费版，或升级 Go/Plus/Pro 获取更高额度和 GPT-5.4 模型"},{"@type":"HowToStep","name":"升级 Plus（可选）","text":"通过虚拟信用卡或代充服务升级到 ChatGPT Plus 获取完整功能"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"ChatGPT 注册与使用教程","description":"中国用户注册并使用 ChatGPT 的完整图文教程","url":"https://www.aixiaobai168.com/pages/chatgpt-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"配置网络环境","text":"使用 Clash、UniClash 等代理工具连接到支持 OpenAI 的地区节点，优先测试美国直连、AI 解锁、日本或新加坡节点"},{"@type":"HowToStep","name":"注册 OpenAI 账号","text":"访问 chatgpt.com 使用邮箱注册或 Google/Microsoft 账号登录"},{"@type":"HowToStep","name":"开始使用 ChatGPT","text":"登录后即可使用 GPT-5.5 Instant 免费版（有限额度），或升级 Go/Plus/Pro 解锁更高额度和 GPT-5.5 Thinking/Pro 高级模型"},{"@type":"HowToStep","name":"升级 Plus（可选）","text":"通过信用卡、虚拟信用卡或 Apple 订阅升级到 ChatGPT Go / Plus / Pro"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"ChatGPT 教程","item":"https://www.aixiaobai168.com/pages/chatgpt-guide"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ChatGPT 中国能用吗？","acceptedAnswer":{"@type":"Answer","text":"ChatGPT 在中国大陆无法直接访问，需要通过科学上网工具（如 Clash）连接到支持 OpenAI 的地区节点后才能正常注册和使用。推荐使用日本、新加坡、美国等地区的节点。"}},{"@type":"Question","name":"ChatGPT 注册需要手机号吗？","acceptedAnswer":{"@type":"Answer","text":"2024 年底 OpenAI 已取消强制手机号验证。现在可以直接使用邮箱注册，也支持 Google、Microsoft、Apple 账号一键登录，无需海外手机号。"}},{"@type":"Question","name":"ChatGPT Plus 怎么充值？","acceptedAnswer":{"@type":"Answer","text":"ChatGPT Plus 月费 $20，可使用国际信用卡（Visa/Mastercard）、虚拟信用卡（如 WildCard、Depay）直接在 OpenAI 官网订阅。需确保付款时 IP 地址所在地区支持 OpenAI 服务。"}},{"@type":"Question","name":"ChatGPT 免费版和 Plus 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"免费版可使用 GPT-5.3（有限额度），Go（$8/月）提供 10 倍消息额度，Plus（$20/月）可用 GPT-5.4 Thinking 模型、DALL-E 绘图、Deep Research 等高级功能，Pro（$200/月）提供无限使用。"}},{"@type":"Question","name":"ChatGPT Plus 支付失败怎么办？","acceptedAnswer":{"@type":"Answer","text":"优先检查付款时的节点地区、信用卡账单地区和浏览器登录环境是否一致。建议全程使用稳定的美国或新加坡节点，必要时更换虚拟信用卡平台或改用 iOS 外区订阅。"}},{"@type":"Question","name":"ChatGPT App 为什么在中国 App Store 搜不到？","acceptedAnswer":{"@type":"Answer","text":"ChatGPT App 只在受支持地区的 App Store 上架。中国区商店通常无法直接下载，iPhone 用户一般需要切换到美区等外区 Apple ID 后再安装。"}},{"@type":"Question","name":"ChatGPT Go 值得买吗？","acceptedAnswer":{"@type":"Answer","text":"如果你每天都用 ChatGPT，但预算有限，Go 是很值得的入门付费方案。它的价格明显低于 Plus，但消息额度比免费版高很多，适合高频轻量使用。"}},{"@type":"Question","name":"ChatGPT Plus 和 OpenAI API 是一回事吗？","acceptedAnswer":{"@type":"Answer","text":"不是。ChatGPT Plus 是网页和 App 里的会员订阅，OpenAI API 是开发者按调用量单独计费的服务。开通 Plus 不会自动赠送 API 额度，使用 API 也不能代替 Plus 会员。"}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ChatGPT 中国能用吗？","acceptedAnswer":{"@type":"Answer","text":"ChatGPT 在中国大陆无法直接访问，需要通过 Clash、UniClash 等工具连接到支持 OpenAI 的地区节点。普通使用可测试日本、新加坡节点，付款和 API 场景优先测试美国直连、AI 解锁或原生 IP 节点。"}},{"@type":"Question","name":"ChatGPT 注册需要手机号吗？","acceptedAnswer":{"@type":"Answer","text":"2024 年底 OpenAI 已取消强制手机号验证。现在可以直接使用邮箱注册，也支持 Google、Microsoft、Apple 账号一键登录，无需海外手机号。"}},{"@type":"Question","name":"ChatGPT Plus 怎么充值？","acceptedAnswer":{"@type":"Answer","text":"ChatGPT Plus 月费 $20，可使用国际信用卡（Visa/Mastercard）、虚拟信用卡（如 WildCard、Depay）直接在 OpenAI 官网订阅。需确保付款时 IP 地址所在地区支持 OpenAI 服务，并尽量使用稳定的美国、新加坡或 AI 解锁节点。"}},{"@type":"Question","name":"ChatGPT 免费版和 Plus 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"Free 免费使用 GPT-5.5 Instant（有限额度）；Go（约 $8/月）提供更多 GPT-5.5 Instant 额度；Plus（约 $20/月）解锁 GPT-5.5 Thinking 推理模型、Codex 智能体、Deep Research；Pro（约 $100/月）提供 5-20 倍配额和 GPT-5.5 Pro 专业推理。"}},{"@type":"Question","name":"ChatGPT Plus 支付失败怎么办？","acceptedAnswer":{"@type":"Answer","text":"优先检查付款时的节点地区、信用卡账单地区和浏览器登录环境是否一致。建议全程使用稳定的美国或新加坡节点，必要时更换虚拟信用卡平台或改用 iOS 外区订阅。"}},{"@type":"Question","name":"ChatGPT App 为什么在中国 App Store 搜不到？","acceptedAnswer":{"@type":"Answer","text":"ChatGPT App 只在受支持地区的 App Store 上架。中国区商店通常无法直接下载，iPhone 用户一般需要切换到美区等外区 Apple ID 后再安装。"}},{"@type":"Question","name":"ChatGPT Go 值得买吗？","acceptedAnswer":{"@type":"Answer","text":"如果你每天都用 ChatGPT，但预算有限，Go 是很值得的入门付费方案。它的价格明显低于 Plus，但消息额度比免费版高很多，适合高频轻量使用。"}},{"@type":"Question","name":"ChatGPT Plus 和 OpenAI API 是一回事吗？","acceptedAnswer":{"@type":"Answer","text":"不是。ChatGPT Plus 是网页和 App 里的会员订阅，OpenAI API 是开发者按调用量单独计费的服务。开通 Plus 不会自动赠送 API 额度，使用 API 也不能代替 Plus 会员。"}}]}</script>
 </body>
 </html>
