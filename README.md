@@ -1,11 +1,19 @@
-# Clash 全平台科学上网教程 2026 — 路由器/软路由/iStoreOS/Windows/macOS/Linux/手机翻墙指南
+# Clash 全平台科学上网教程 2026 — 路由器 / 软路由 / Windows / macOS / Linux / 手机翻墙 + Cursor AI 编程 + 回国加速综合指南
 
 [![在线阅读](https://img.shields.io/badge/📖_在线阅读-主站-0ea5e9?style=for-the-badge)](https://www.aixiaobai168.com/)
 [![GitHub stars](https://img.shields.io/github/stars/mowei-ie/router-vpn?style=for-the-badge&logo=github&color=f59e0b)](https://github.com/mowei-ie/router-vpn/stargazers)
 [![License](https://img.shields.io/badge/license-Apache_2.0-10b981?style=for-the-badge)](LICENSE)
 [![Last Updated](https://img.shields.io/badge/v2.7_更新-2026.05.17-7c4dff?style=for-the-badge)](https://www.aixiaobai168.com/)
 
-> **2026 最新 Clash 全平台科学上网教程** — 覆盖华硕路由器 MerlinClash、软路由 OpenWrt + OpenClash、iStoreOS PassWall、Windows Clash Verge Rev、macOS ClashX Meta、Linux、Android Clash Meta、iOS Shadowrocket。含 VPN 节点订阅申请、机场推荐与价格对比、ChatGPT 注册登录、Netflix 解锁、节点配置、分流规则、TUN 模式、旁路由等完整教程。
+> **2026 最新全平台综合指南** — 一个仓库覆盖三大专题：
+>
+> 🌍 **科学上网（翻墙出国）** — 华硕路由器 MerlinClash、软路由 OpenWrt + OpenClash、iKuai 旁路由、iStoreOS PassWall / SSR-Plus / Are-u-ok、Windows Clash Verge Rev、macOS ClashX Meta、Linux 桌面 / 无 GUI 服务器版、Android Clash Meta、iOS Shadowrocket / Stash，新增 **UniClash / Karing / Mihomo Party / FlClash** 等新一代客户端
+>
+> 🤖 **AI 编程与对话工具** — Cursor 完整指南 + 4 篇实战连载（建站 / SSH 远程开发 / 阿里云部署 / 全栈 App）、ChatGPT 注册登录 / Plus 与 Go 充值 / OpenAI API 申请计费
+>
+> 🇨🇳 **回国加速（海外华人 / 留学生 / 外派员工）** — 商业加速器评测（穿梭 / 快帆 / 番茄 / 网易 UU 海外版）、回国线路机场推荐、自建 Hysteria2 / Trojan 节点、爱奇艺 / B 站 / 网易云音乐 / 国服游戏 / 微信 / 钉钉 等场景解锁
+>
+> 含 VPN 节点订阅申请、机场推荐与价格对比、Netflix 解锁、节点配置、分流规则、TUN 模式、旁路由、Tailscale 内网穿透等完整教程。
 >
 > 🌐 **在线文档**：<https://www.aixiaobai168.com/>  ·  ⭐ 觉得有用？**Star 一下支持我们！**
 
@@ -82,11 +90,12 @@
 
 ## ✨ 为什么选择本教程
 
-- **全平台覆盖** — 从路由器到手机，一个仓库解决所有设备的翻墙需求
-- **持续更新** — 跟踪 Clash 生态最新变化（Clash Verge Rev 2.x、iStoreOS 24.10 等）
-- **中文友好** — 全中文图文教程，适合新手入门
-- **在线阅读** — 除 Markdown 外还提供 [精美的在线文档](https://www.aixiaobai168.com/)，手机也能舒适阅读
-- **开源免费** — 所有内容完全开源，欢迎贡献和反馈
+- **三大专题一站覆盖** — 科学上网 + AI 编程 + 回国加速，一个仓库解决"翻墙出国 / 高效写代码 / 海外回国"三大刚需
+- **全平台 & 全客户端** — 从路由器到手机、从 Clash Verge Rev 到 UniClash / Karing / Mihomo Party / FlClash，覆盖所有主流方案
+- **持续更新** — 跟踪 Clash 生态最新变化（Clash Verge Rev 2.x、iStoreOS 24.10、Mihomo 新版）、AI 工具最新动态（Cursor、ChatGPT GPT-5.x 套餐）
+- **中文友好 + 在线阅读** — 全中文图文教程，除 Markdown 外还提供 [精美的在线文档](https://www.aixiaobai168.com/)，手机也能舒适阅读
+- **真实评测 不夸大** — 商业加速器 / 机场 / API 服务均基于真实体验，标注限制范围，不收"删帖费"
+- **开源免费** — 所有内容完全开源（Apache 2.0），欢迎贡献和反馈
 
 ---
 
