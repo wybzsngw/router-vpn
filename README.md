@@ -156,11 +156,4 @@
 
 ---
 
-### 🤝 作者邀请
-
-本仓库的所有教程页面均由 Cursor 协助编写。如果你也想试试 Cursor，
-可以通过 [作者邀请通道](https://cursor.com/referral?code=3CSFK9I9QDKE) 注册，**首月 5 折**。
-
----
-
 **在线文档**：<https://www.aixiaobai168.com/>　|　**版本**：v2.7　|　**最后更新**：2026 年 5 月 17 日
