@@ -104,7 +104,6 @@
 ```
 return-china/
 ├── README.md                    本入口
-├── ROADMAP.md                   迭代路线图（待办、内容原则、SEO 规范、联盟管理）
 ├── overview.md                  回国加速三大方案对比（主专题 Markdown 源）
 ├── commercial/                  商业加速器评测
 ├── airport/                     回国线路机场推荐
@@ -113,12 +112,6 @@ return-china/
 │   └── worldcup-2026.md         2026 美加墨世界杯海外观看专题
 └── client/                      客户端反向分流配置
 ```
-
----
-
-## 🗺️ 后续迭代
-
-完整待办清单、内容原则、SEO 规范、联盟链接管理请见 [ROADMAP.md](./ROADMAP.md)。
 
 ---
 
