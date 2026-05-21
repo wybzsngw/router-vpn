@@ -28,8 +28,9 @@
   // 注：穿梭、番茄、UU 暂不挂联盟（穿梭无法注册推广员、番茄无开放计划、UU 大厂直营），
   // 仍可能出现在文章对比表中，但不进入此白名单（即出现仅记 outbound_click，不算转化）。
   var RETURN_ACCELERATOR_DOMAINS = {
-    'getmalus.com': 'Malus'
-    // 'speedin.co': '快帆 SpeedIn'  // 待推广员审核通过后启用
+    'getmalus.com':    'Malus',
+    'kuaifan.co':      '快帆',         // 快帆官网与子域（vip.kuaifan.co、download 等）
+    'af.kuaifan.club': '快帆'          // 快帆推广员跳转短链域名
   };
 
   // 回国加速专题：VPS 服务商联盟（自建党 self-hosted 教程引导用）。
