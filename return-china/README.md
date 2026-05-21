@@ -104,13 +104,21 @@
 ```
 return-china/
 ├── README.md                    本入口
-├── overview.md                  回国加速三大方案对比
+├── ROADMAP.md                   迭代路线图（待办、内容原则、SEO 规范、联盟管理）
+├── overview.md                  回国加速三大方案对比（主专题 Markdown 源）
 ├── commercial/                  商业加速器评测
 ├── airport/                     回国线路机场推荐
 ├── self-hosted/                 自建回国节点
 ├── scenarios/                   按使用场景分类教程
+│   └── worldcup-2026.md         2026 美加墨世界杯海外观看专题
 └── client/                      客户端反向分流配置
 ```
+
+---
+
+## 🗺️ 后续迭代
+
+完整待办清单、内容原则、SEO 规范、联盟链接管理请见 [ROADMAP.md](./ROADMAP.md)。
 
 ---
 
@@ -118,8 +126,10 @@ return-china/
 
 ### 2026 年 5 月
 
-- 上线回国加速专题骨架，规划商业加速器评测、场景教程、客户端反向分流规则
+- **2026-05-21**：新增 2026 世界杯海外观看专题（[/pages/return-worldcup-2026](https://www.aixiaobai168.com/pages/return-worldcup-2026)），含 8 大模块、5 个联盟 CTA、Article + BreadcrumbList + SportsEvent 结构化数据
+- **2026-05-21**：快帆联盟正式接入主专题（CTA 卡、横评表、决策树同步更新）；含蓄化合作披露文案
+- **2026-05-13**：上线回国加速主专题 v1.0（[/pages/return-china-guide](https://www.aixiaobai168.com/pages/return-china-guide)），含 Malus 详细评测、横评、Clash 反向分流、CN2 GIA 自建警示与方案
 
 ---
 
-**在线文档**：<https://www.aixiaobai168.com/return-china-guide>　|　**版本**：v0.1 (骨架)　|　**最后更新**：2026 年 5 月
+**在线文档**：<https://www.aixiaobai168.com/return-china-guide>　|　**版本**：v1.1　|　**最后更新**：2026 年 5 月 21 日
