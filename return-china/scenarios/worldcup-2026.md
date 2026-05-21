@@ -45,10 +45,19 @@
 
 ### 3.1 方法 1：商业回国加速器（推荐 · 一键即用）
 
-- **Malus 加速器 · 影音 + 游戏综合首选**：影音线路峰值 50 Mbps（4K），支持 5 台设备，含 Android TV 客户端。通过本站链接首充优惠 + **3 天 VIP 体验**，最长 30 天退款。
-  - 链接：<https://getmalus.com/buy?affid=A328344556F>
-- **快帆 · 多平台覆盖 + 30 天月付灵活**：老牌回国加速器，覆盖 Android / iOS / Windows / macOS / Android TV，宣称 150+ 加速线路。**30 天月付 ¥45** 正好覆盖整个赛事周期，7 天内可退款。
-  - 链接：<https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&a_bid=b9bf8033>
+> 🏆 **Malus 加速器 · 影音 + 游戏综合首选**
+>
+> 影音线路峰值 50 Mbps（4K），支持 5 台设备，含 Android TV 客户端。通过本站链接首充优惠 + **3 天 VIP 体验**，最长 30 天退款。
+>
+> **👉 [前往 Malus 官网](https://getmalus.com/buy?affid=A328344556F&utm_source=github&utm_medium=affiliate&utm_campaign=return_worldcup&utm_content=worldcup_md_method1_malus)**
+
+<!-- -->
+
+> 🏆 **快帆 · 多平台覆盖 + 30 天月付灵活**
+>
+> 老牌回国加速器，覆盖 Android / iOS / Windows / macOS / Android TV，宣称 150+ 加速线路。**30 天月付 ¥45** 正好覆盖整个赛事周期，7 天内可退款。
+>
+> **👉 [前往快帆官网](https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&a_bid=b9bf8033&utm_source=github&utm_medium=affiliate&utm_campaign=return_worldcup&utm_content=worldcup_md_method1_kuaifan)**
 
 **实战提示**：
 
@@ -78,10 +87,19 @@
 
 适合"全家观赛 + 多设备并发"的家庭场景。一台 VPS + Hysteria2 协议 + 路由器配置后，家里所有手机/电视/平板看央视频都不限设备数。
 
-- **搬瓦工 BandwagonHost（入门首选）**：CN2 GIA 套餐，北美→国内延迟 120–180ms，年付 $50–200，赛事 1 个月分摊约 ¥30–120。
-  - 链接：<https://bandwagonhost.com/aff.php?aff=81911>
-- **DMIT（进阶之选）**：CN2 GIA Premium，4K 画质带宽够用，年付 $200–800+，EPYC 平台 + 独立 IP，QoS 干扰极低。
-  - 链接：<https://www.dmit.io/aff.php?aff=22076>
+> ⚙️ **搬瓦工 BandwagonHost（入门首选）**
+>
+> CN2 GIA 套餐，北美→国内延迟 120–180ms，年付 $50–200，赛事 1 个月分摊约 ¥30–120。世界杯期间也可作为家庭路由器全屋回国出口。
+>
+> **👉 [前往搬瓦工](https://bandwagonhost.com/aff.php?aff=81911&utm_source=github&utm_medium=affiliate&utm_campaign=return_worldcup&utm_content=worldcup_md_method3_bwh)**
+
+<!-- -->
+
+> ⚙️ **DMIT（进阶之选）**
+>
+> CN2 GIA Premium，4K 画质带宽够用，年付 $200–800+，EPYC 平台 + 独立 IP，QoS 干扰极低。
+>
+> **👉 [前往 DMIT](https://www.dmit.io/aff.php?aff=22076&utm_source=github&utm_medium=affiliate&utm_campaign=return_worldcup&utm_content=worldcup_md_method3_dmit)**
 
 ### 3.4 方法 4：英语转播替代（免费但无中文解说）
 
@@ -219,6 +237,16 @@ Malus 高级会员 5 台、快帆 3 台是硬上限。如果家庭观赛会有 6
 **Q8：手机蜂窝数据能看吗？**
 
 可以但要注意：海外蜂窝套餐多数有月度流量上限，1080P 一场比赛约 4–6GB 流量；蜂窝网络回国延迟通常比 WiFi 高 30–50ms。**建议家里 WiFi 看直播，外出补看回放。**
+
+---
+
+## 🏆 准备好观赛了？
+
+距离 **6 月 11 日开幕** 还有几周，**现在**是开通加速器的最佳时机——留出时间测试节点，避免开幕式临场抓瞎。先选月付试用，看完赛事再决定是否续约。
+
+> **👉 [立即开通 Malus](https://getmalus.com/buy?affid=A328344556F&utm_source=github&utm_medium=affiliate&utm_campaign=return_worldcup&utm_content=worldcup_md_footer_cta)** （含 3 天 VIP 体验，最长 30 天退款）
+
+如果想先对比快帆，可回到 [3.1 节](#31-方法-1商业回国加速器推荐--一键即用) 查看。
 
 ---
 
