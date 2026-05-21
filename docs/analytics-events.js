@@ -94,6 +94,8 @@
     { pattern: /\/pages\/return-wechat/, module: 'return_wechat' },
     { pattern: /\/pages\/return-self-hosted/, module: 'return_self_hosted' },
     { pattern: /\/pages\/return-clash-rules/, module: 'return_client_rules' },
+    // 回国加速场景专题（按事件/赛事独立成页，单独归类便于 GA4 看不同专题的转化差异）
+    { pattern: /\/pages\/return-worldcup-2026/, module: 'return_worldcup_2026' },
     { pattern: /^\/$|\/index\.html$/, module: 'home' }
   ];
 

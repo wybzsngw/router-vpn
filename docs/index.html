@@ -515,6 +515,42 @@
       .return-banner .rb-cta { width: 100%; justify-content: center }
     }
 
+    /* 世界杯专题快入口 —— 赛事季节性流量优化 */
+    .worldcup-banner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 18px; margin: 0 0 28px;
+      padding: 18px 24px; border-radius: 16px;
+      background: linear-gradient(135deg, rgba(16,185,129,.1) 0%, rgba(245,158,11,.14) 100%);
+      border: 1px solid rgba(16,185,129,.22);
+      text-decoration: none; color: var(--text);
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 8px 22px rgba(16,185,129,.08);
+    }
+    .worldcup-banner:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(16,185,129,.14) }
+    .worldcup-banner .wb-icon {
+      flex-shrink: 0; font-size: 32px; line-height: 1;
+      filter: drop-shadow(0 4px 8px rgba(245,158,11,.3));
+    }
+    .worldcup-banner .wb-body { flex: 1; min-width: 0 }
+    .worldcup-banner .wb-tag {
+      display: inline-block; padding: 3px 10px; border-radius: 6px;
+      font-size: 11px; font-weight: 800; letter-spacing: .1em;
+      background: rgba(16,185,129,.16); color: #047857;
+      margin-bottom: 6px;
+    }
+    .worldcup-banner h3 { font-size: 17px; line-height: 1.45; margin-bottom: 4px }
+    .worldcup-banner p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0 }
+    .worldcup-banner .wb-cta {
+      flex-shrink: 0; font-size: 14px; font-weight: 800; color: #047857;
+      padding: 10px 18px; border-radius: 10px;
+      background: rgba(16,185,129,.12); border: 1px solid rgba(16,185,129,.22);
+      white-space: nowrap;
+    }
+    @media(max-width:700px){
+      .worldcup-banner { flex-wrap: wrap; padding: 16px 18px }
+      .worldcup-banner .wb-cta { width: 100%; text-align: center }
+    }
+
     @media(max-width:700px){
       .header h1 { font-size: 24px }
       .grid { grid-template-columns: 1fr }
@@ -576,6 +612,16 @@
         <div class="rb-meta">方案：<strong>Malus · 穿梭 Transocks · 快帆 SpeedIn · 网易 UU 海外版 · Clash 反向分流 · CN2 GIA 自建</strong></div>
       </div>
       <div class="rb-cta">查看回国加速指南 →</div>
+    </a>
+
+    <a class="worldcup-banner" href="/pages/return-worldcup-2026" aria-label="海外看 2026 世界杯中文解说专题">
+      <div class="wb-icon">🏆</div>
+      <div class="wb-body">
+        <div class="wb-tag">赛事专题 · 6/11 开幕</div>
+        <h3>海外看 2026 世界杯中文解说完整攻略</h3>
+        <p>CCTV5 / 央视频 / 咪咕海外观看方法 · 按设备 + 按地区配置 · 含赛程时差对照表</p>
+      </div>
+      <div class="wb-cta">查看观赛攻略 →</div>
     </a>
 
     <section class="promo-banner" aria-label="扬帆云月底优惠">
