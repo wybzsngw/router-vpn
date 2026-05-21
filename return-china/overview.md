@@ -56,7 +56,7 @@
 
 > **官网**：<https://getmalus.com/>　·　**主体**：STARBUFFER PTE. LTD.（新加坡）
 >
-> **立即购买（含 3 天 VIP 体验）**：<https://getmalus.com/buy?affid=A328344556F>
+> **立即购买（含 3 天 VIP 体验）**：<https://getmalus.com/buy?affid=A328344556F&utm_source=github&utm_medium=affiliate&utm_campaign=return_overview&utm_content=overview_md_malus_intro>
 
 Malus 是 2026 年海外华人圈口碑较稳定的回国加速器之一，覆盖 Windows、macOS、iOS、Android、Android TV 与浏览器扩展，支持影音、游戏、直播、办公多场景。本站将其列为主推产品，原因：① 平台覆盖全（含 Android TV，海外家庭常用）；② 分"标准 / 高级"两档可按需选择；③ 官网首充优惠力度大；④ 公开退款政策清晰可查。
 
@@ -140,7 +140,7 @@ Malus 的退款条款较为"分层且严格"：
 - 口碑：iOS 评分约 4.8/5（约 926 评）、Google Play 约 4.5/5（约 885 评，10 万+ 下载）
 - **本站建议**：先选 **30 天月付（¥45）** 试跑你的实际使用场景，确认网络环境匹配后再续长期套餐
 
-**前往快帆官网**：<https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&a_bid=b9bf8033>
+**前往快帆官网**：<https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&a_bid=b9bf8033&utm_source=github&utm_medium=affiliate&utm_campaign=return_overview&utm_content=overview_md_kuaifan_section>
 
 ### 4.3 番茄加速器
 
@@ -159,9 +159,9 @@ Malus 的退款条款较为"分层且严格"：
 
 | 产品 | 定位 | 月付起步 | 设备数 | 国服游戏 | 退款 | 本站推广 |
 | ---- | ---- | -------- | ------ | -------- | ---- | -------- |
-| **Malus（主推）** | 影音 + 游戏综合 | $4.99（约 ¥36） | 3 / 5 台 | ✅ 高级/游戏会员 | 分层 7–30 天 | ✅ [立即注册](https://getmalus.com/buy?affid=A328344556F) |
+| **Malus（主推）** | 影音 + 游戏综合 | $4.99（约 ¥36） | 3 / 5 台 | ✅ 高级/游戏会员 | 分层 7–30 天 | ✅ [立即注册](https://getmalus.com/buy?affid=A328344556F&utm_source=github&utm_medium=affiliate&utm_campaign=return_overview&utm_content=overview_md_malus_comparison) |
 | 穿梭 Transocks | 影音、办公、证券 | 约 ¥0.78/天 | 3 台 | ❌ 明确不支持 | 3 天 | — |
-| 快帆 | 影音 + 按应用代理 | ¥45 | 3 台 | ⚠️ 效果一般 | 7 天（扣 6%） | ✅ [前往官网](https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&a_bid=b9bf8033) |
+| 快帆 | 影音 + 按应用代理 | ¥45 | 3 台 | ⚠️ 效果一般 | 7 天（扣 6%） | ✅ [前往官网](https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&a_bid=b9bf8033&utm_source=github&utm_medium=affiliate&utm_campaign=return_overview&utm_content=overview_md_kuaifan_comparison) |
 | 番茄加速器 | 游戏 + 影音 | 免费档 + 付费 | 视套餐 | ✅ 主打 | 视套餐 | — |
 | 网易 UU 海外版 | 国服游戏专业 | 视套餐 | 视套餐 | ✅✅ 权威 | 视渠道 | — 大厂直营 |
 
@@ -291,7 +291,7 @@ rules:
 - **适合人群**：自建入门、单家庭 4–6 设备
 - **协议建议**：Hysteria2 / TUIC v5（UDP 抗 QoS 强）
 - **支付方式**：信用卡、PayPal、加密货币
-- **推广链接**：<https://bandwagonhost.com/aff.php?aff=81911>
+- **推广链接**：<https://bandwagonhost.com/aff.php?aff=81911&utm_source=github&utm_medium=affiliate&utm_campaign=return_overview&utm_content=overview_md_bwh>
 
 #### DMIT（进阶之选）
 
@@ -300,7 +300,7 @@ rules:
 - **适合人群**：长期重度用户、技术博客作者、小型创业团队
 - **线路特色**：Premium 端口、独立 IP、低 QoS 干扰
 - **支付方式**：信用卡、PayPal、加密货币、支付宝
-- **推广链接**：<https://www.dmit.io/aff.php?aff=22076>
+- **推广链接**：<https://www.dmit.io/aff.php?aff=22076&utm_source=github&utm_medium=affiliate&utm_campaign=return_overview&utm_content=overview_md_dmit>
 
 ### 7.3 协议选型建议
 
