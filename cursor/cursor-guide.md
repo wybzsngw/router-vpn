@@ -181,6 +181,7 @@ Cursor 里可以调用多个顶级 AI 模型，每个模型的强项不同。记
 | [Cursor SSH 连接 Linux 远程开发](./practice/cursor-ssh-linux.md) | 树莓派 / 云服务器远程编辑，跑 Agent |
 | Cursor + 阿里云 ECS 部署 Web 应用 | 从代码到上线服务器，Agent 全程陪跑（即将上线） |
 | Cursor Agent 全栈小应用实战 | 从需求到前后端全栈应用，不写一行代码（即将上线） |
+| [用 Cursor Agent 修 Windows 系统](./system-ops/cursor-fix-windows-system.md) | Defender 被策略关停 + Windows Update 更新源被劫持的双线排查实录 |
 
 ---
 
