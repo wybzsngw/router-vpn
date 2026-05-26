@@ -1,8 +1,8 @@
-# UniClash 下载教程｜杨帆云 yangfan、尔湾云 erwan 网站代码
+# UniClash 下载教程｜yangfan 杨帆云 · erwan 尔湾云 · jifeng 疾风云网站代码
 
 > 📄 本文对应 HTML 页面：[UniClash 教程](../docs/pages/uniclash-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/uniclash-guide>
 
-UniClash 是杨帆云、尔湾云等机场推出的**定制版 Clash 客户端**。登录时除了邮箱密码，还要填一个"网站代码"——**杨帆云填 `yangfan`，尔湾云填 `erwan`**。本文按"先注册账号 → 再下载客户端 → 网站代码登录"的顺序，把 Windows / Mac / 安卓三端的下载入口、登录截图、常见报错（打不开 / 全节点无信号 / 误点默认站点）整理在一起，对照排查即可。
+UniClash 是杨帆云、尔湾云、疾风云等机场推出的**定制版 Clash 客户端**。登录时除了邮箱密码，还要填一个"网站代码"——**杨帆云填 `yangfan`，尔湾云填 `erwan`，疾风云填 `jifeng`**。本文按"先注册账号 → 再下载客户端 → 网站代码登录"的顺序，把 Windows / Mac / 安卓三端的下载入口、登录截图、常见报错（打不开 / 全节点无信号 / 误点默认站点）整理在一起，对照排查即可。
 
 ---
 
@@ -28,18 +28,19 @@ UniClash 是杨帆云、尔湾云等机场推出的**定制版 Clash 客户端**
 - **适合**：已经在杨帆云 / 尔湾云这类机场买了套餐、只想登录账号即用的新手。
 - **不适合**：想自己导入多个订阅、改规则、玩 TUN 模式 → 请使用 [Clash Verge Rev](../windows/clash-verge-rev.md)、[MerlinClash](../asus-router/asus-merlinclash-setup.md)、OpenClash 等通用客户端。
 
-> ⚠️ **不要把 UniClash 理解成"所有机场通用的官方 Clash"**，每家的下载页、网站代码、可用线路都不一样。
+> ⚠️ **不要把 UniClash 理解成"所有机场通用的官方 Clash"**，每家的下载页、网站代码、可用线路都不一样。本站已确认的服务商为杨帆云、尔湾云与疾风云。
 
 ---
 
 ## 二、哪些机场支持 UniClash？
 
-截至 2026 年 4 月，本站**已确认**同时提供官方 UniClash 下载页 + 网站代码的机场：
+截至 2026 年 5 月，本站**已确认**同时提供官方 UniClash 下载页 + 网站代码的机场：
 
 | 服务商 | 网站代码 | 注册入口 | 客户端下载 | 支持平台 |
 |--------|---------|---------|----------|---------|
 | **杨帆云** | `yangfan` | [注册杨帆云](https://yawtt.net/register?code=BnJcjUjE) | [杨帆云 UniClash 下载](https://tusmartchat.com/uniclash.html) | Android / Windows / Mac |
 | **尔湾云** | `erwan` | [注册尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) | [尔湾云 UniClash 下载](https://tusmartchat.com/uniclash-erwan.html) | Android / Windows / Mac |
+| **疾风云** | `jifeng` | [注册疾风云](https://j134.net/?code=1p7r) | [疾风云官网获取下载](https://j134.net/?code=1p7r) | Android / Windows / Mac |
 
 ### 方案 A：杨帆云 UniClash
 
@@ -55,6 +56,14 @@ UniClash 是杨帆云、尔湾云等机场推出的**定制版 Clash 客户端**
 - 操作两步：① [注册尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb)；② [下载尔湾云 UniClash](https://tusmartchat.com/uniclash-erwan.html)。
 
 ![尔湾云官网"推荐使用 UniClash 客户端"区块](../docs/images/uniclash/download-erwan-block.png)
+
+### 方案 C：疾风云 UniClash
+
+- 疾风云（JFCLOUD）节点按 V1–V4 分层，套餐分入门级至旗舰级；年费 7 折码 `JF1111`，半年 9 折码 `JF888`。
+- UniClash 网站代码填 `jifeng`，输入后右侧显示绿色 ✓ 和"疾风云"字样，确认后继续输入邮箱密码登录。
+- 操作两步：① [注册疾风云](https://j134.net/?code=1p7r)；② [疾风云官网获取 UniClash 下载](https://j134.net/?code=1p7r)。
+
+![疾风云 UniClash 登录界面：网站代码 jifeng 后右侧出现绿色 ✓ 疾风云](../docs/images/uniclash/login-jifeng.png)
 
 > 💡 **为什么先注册再下载？** UniClash 登录界面要求"网站代码 + 邮箱 + 密码"，没有对应服务商账号即使装了客户端也无法登录；如果误点"使用默认站点"，原账号和购买记录就找不到了。
 
@@ -73,29 +82,30 @@ UniClash 是杨帆云、尔湾云等机场推出的**定制版 Clash 客户端**
 
 按以下 6 步操作即可顺利登录使用，不要跳过注册和购买直接下载客户端：
 
-1. **选服务商**：[杨帆云](https://yawtt.net/register?code=BnJcjUjE) 或 [尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb)。
+1. **选服务商**：[杨帆云](https://yawtt.net/register?code=BnJcjUjE)、[尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) 或 [疾风云](https://j134.net/?code=1p7r)。
 2. **注册账号**：点上面的服务商名称跳到注册页，填邮箱和密码。
 3. **购买套餐**：付款后登录服务商官网确认账号有有效套餐和剩余流量。
-4. **下载客户端**：杨帆云走 <https://tusmartchat.com/uniclash.html>，尔湾云走 <https://tusmartchat.com/uniclash-erwan.html>。
-5. **填写网站代码**：杨帆云填 `yangfan`，尔湾云填 `erwan`，看到绿色 ✓ 和服务商名再继续。
+4. **下载客户端**：杨帆云走 <https://tusmartchat.com/uniclash.html>，尔湾云走 <https://tusmartchat.com/uniclash-erwan.html>，疾风云从[官网](https://j134.net/?code=1p7r)获取 UniClash 下载链接。
+5. **填写网站代码**：杨帆云填 `yangfan`，尔湾云填 `erwan`，疾风云填 `jifeng`，看到绿色 ✓ 和服务商名再继续。
 6. **输入邮箱密码登录**：用刚刚注册的服务商账号（不是本站账号），登录后点中间电源按钮即可连接。
 
-> ⚠️ **不要随手点"使用默认站点"**：那不是杨帆云或尔湾云的账号体系，点了就会找不到购买记录。
+> ⚠️ **不要随手点"使用默认站点"**：那不是杨帆云、尔湾云或疾风云的账号体系，点了就会找不到购买记录。
 
 ---
 
 ## 四、网站代码怎么填？
 
-打开 UniClash 后第一步就是填网站代码。**正确填写后，输入框右侧会显示绿色对勾和服务商名称**（"扬帆云"或"尔湾云"），这时再继续输入邮箱密码登录。
+打开 UniClash 后第一步就是填网站代码。**正确填写后，输入框右侧会显示绿色对勾和服务商名称**（"扬帆云""尔湾云"或"疾风云"），这时再继续输入邮箱密码登录。
 
 | 服务商 | 网站代码 | 输入正确后显示 |
 |--------|---------|---------------|
 | 杨帆云 | `yangfan` | ✅ 扬帆云 |
 | 尔湾云 | `erwan` | ✅ 尔湾云 |
+| 疾风云 | `jifeng` | ✅ 疾风云 |
 
-| ![网站代码 yangfan](../docs/images/uniclash/login-yangfan.png) | ![网站代码 erwan](../docs/images/uniclash/login-erwan.png) |
-|:---:|:---:|
-| 杨帆云：填 `yangfan`，绿色 ✓ 后显示"扬帆云" | 尔湾云：填 `erwan`，绿色 ✓ 后显示"尔湾云" |
+| ![网站代码 yangfan](../docs/images/uniclash/login-yangfan.png) | ![网站代码 erwan](../docs/images/uniclash/login-erwan.png) | ![网站代码 jifeng](../docs/images/uniclash/login-jifeng.png) |
+|:---:|:---:|:---:|
+| 杨帆云：填 `yangfan`，绿色 ✓ 后显示"扬帆云" | 尔湾云：填 `erwan`，绿色 ✓ 后显示"尔湾云" | 疾风云：填 `jifeng`，绿色 ✓ 后显示"疾风云" |
 
 ### 填写要点
 
@@ -105,7 +115,7 @@ UniClash 是杨帆云、尔湾云等机场推出的**定制版 Clash 客户端**
 
 ![不知道网站代码弹窗：使用默认站点会找不到原账号和购买记录](../docs/images/uniclash/default-site-warning.png)
 
-> 🚨 **误用默认站点怎么办？** 退出登录 → 重新打开 UniClash → 重新输入正确的网站代码（`yangfan` 或 `erwan`），原账号和套餐就回来了。
+> 🚨 **误用默认站点怎么办？** 退出登录 → 重新打开 UniClash → 重新输入正确的网站代码（`yangfan`、`erwan` 或 `jifeng`），原账号和套餐就回来了。
 
 ---
 
@@ -190,7 +200,7 @@ UniClash 是杨帆云、尔湾云等机场推出的**定制版 Clash 客户端**
 ### 登录后没有节点 / 全节点无信号
 
 1. 检查是否登录的是**正确的服务商账号**。
-2. 检查网站代码：杨帆云 `yangfan`，尔湾云 `erwan`。
+2. 检查网站代码：杨帆云 `yangfan`，尔湾云 `erwan`，疾风云 `jifeng`。
 3. 服务商官网确认套餐没过期、流量没用完。
 4. 更新到最新 UniClash，再测速换低延迟节点。
 5. 换手机热点测试，排除运营商或路由器 DNS 异常。
@@ -203,7 +213,7 @@ UniClash 是杨帆云、尔湾云等机场推出的**定制版 Clash 客户端**
 
 ### Q1：UniClash 网站代码填什么？
 
-按服务商填。杨帆云填 `yangfan`，尔湾云填 `erwan`。如果 App 没提示网站代码，直接用服务商账号邮箱密码登录即可。
+按服务商填。杨帆云填 `yangfan`，尔湾云填 `erwan`，疾风云填 `jifeng`。如果 App 没提示网站代码，直接用服务商账号邮箱密码登录即可。
 
 ### Q2：UniClash 支持 iPhone / iPad 吗？
 
@@ -211,7 +221,7 @@ UniClash 是杨帆云、尔湾云等机场推出的**定制版 Clash 客户端**
 
 ### Q3：UniClash 和 Clash Verge Rev 哪个更适合新手？
 
-买的是支持 UniClash 的机场（杨帆云 / 尔湾云）就用 UniClash 更省心；用多个机场或要改规则、开 TUN 模式 → [Clash Verge Rev](../windows/clash-verge-rev.md) 更灵活。
+买的是支持 UniClash 的机场（杨帆云 / 尔湾云 / 疾风云）就用 UniClash 更省心；用多个机场或要改规则、开 TUN 模式 → [Clash Verge Rev](../windows/clash-verge-rev.md) 更灵活。
 
 ### Q4：UniClash 登录成功但没有节点怎么办？
 
@@ -223,7 +233,7 @@ UniClash 是杨帆云、尔湾云等机场推出的**定制版 Clash 客户端**
 
 ### Q6：之前点了"使用默认站点"，账号找不到了怎么办？
 
-退出登录，重新打开 UniClash，把网站代码改回 `yangfan` 或 `erwan`，再用原邮箱密码登录即可。原服务商账号和套餐数据都还在。
+退出登录，重新打开 UniClash，把网站代码改回对应的 `yangfan`、`erwan` 或 `jifeng`，再用原邮箱密码登录即可。原服务商账号和套餐数据都还在。
 
 ---
 
@@ -236,4 +246,4 @@ UniClash 是杨帆云、尔湾云等机场推出的**定制版 Clash 客户端**
 
 ---
 
-> 📌 本文只做客户端使用说明与下载入口整理，请以服务商官网公告为准。
+> 📌 本文只做客户端使用说明与下载入口整理，请以服务商官网公告为准。文档更新：2026 年 5 月（新增疾风云 jifeng）。
