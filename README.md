@@ -61,9 +61,11 @@
 
 ### 🤖 AI 编程与对话工具
 
+> Cursor 不只是 AI 编程 IDE——挂上 Claude / GPT 后，**编程、建站、对话、写作、翻译、写提示词、读英文文档**都能在同一个窗口里完成，是普通人也用得起的全能 AI 工作台。
+
 | 工具 | 教程 | 适用场景 |
 |------|------|----------|
-| Cursor | [完整指南](cursor/cursor-guide.md) · [实战连载](cursor/practice/) | AI 编程 IDE |
+| Cursor | [完整指南](cursor/cursor-guide.md) · [实战连载](cursor/practice/) | 编程 / 建站 / 写作 / 翻译 / 对话 / 提示词 — 全能 AI 工作台 |
 | ChatGPT | [使用教程](chatgpt/chatgpt-guide.md) · [Plus 充值](chatgpt/chatgpt-plus-guide.md) · [API 指南](chatgpt/openai-api-guide.md) | 对话 / 写作 / 翻译 |
 | Claude Code | （陆续上线） | AI 命令行编程 |
 | Windsurf | （陆续上线） | AI 编程 IDE |
