@@ -1,4 +1,4 @@
-# Clash 订阅申请指南 2026 — 机场推荐与价格对比 | VPN 节点订阅
+﻿# Clash 订阅申请指南 2026 — 机场推荐与价格对比 | VPN 节点订阅
 
 > 📄 本文对应 HTML 页面：[订阅申请指南](https://www.aixiaobai168.com/clash-subscription-guide)　·　🌐 在线阅读：<https://www.aixiaobai168.com/clash-subscription-guide>
 
@@ -60,7 +60,7 @@
 - **设备数**：2–6 台
 - **特色**：全球节点、流媒体解锁，支持私人定制套餐；**包年 7 折优惠码 `618`，两年付 6.9 折优惠码 `yf69`**
 - **路由器提醒**：目前仍可用于 `Merlin Clash`，但实测偶尔会出现“全节点无信号”；若主要用于路由器全屋代理，建议先按短周期谨慎测试
-- **官网**：<https://yawtt.net/register?code=BnJcjUjE>
+- **官网**：<https://ml.yfqz1.net/register?code=BnJcjUjE>
 
 <details>
 <summary>查看套餐明细（LV1 – 旗舰版 + 私人定制）</summary>

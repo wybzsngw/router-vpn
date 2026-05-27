@@ -1,9 +1,9 @@
-(function() {
+﻿(function() {
   'use strict';
   if (typeof gtag !== 'function') return;
 
   var AIRPORT_DOMAINS = [
-    'yawtt.net',
+    'ml.yfqz1.net',
     'lanpangyun.me',
     'ewanwtt.net',
     'j134.net',
@@ -11,7 +11,7 @@
   ];
 
   var AIRPORT_NAMES = {
-    'yawtt.net': '扬帆云',
+    'ml.yfqz1.net': '扬帆云',
     'lanpangyun.me': '蓝胖云',
     'ewanwtt.net': '尔湾云',
     'j134.net': '疾风云',

@@ -1,4 +1,4 @@
-# UniClash 下载教程｜yangfan 杨帆云 · erwan 尔湾云 · jifeng 疾风云网站代码
+﻿# UniClash 下载教程｜yangfan 杨帆云 · erwan 尔湾云 · jifeng 疾风云网站代码
 
 > 📄 本文对应 HTML 页面：[UniClash 教程](../docs/pages/uniclash-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/uniclash-guide>
 
@@ -38,7 +38,7 @@ UniClash 是杨帆云、尔湾云、疾风云等机场推出的**定制版 Clash
 
 | 服务商 | 网站代码 | 注册入口 | 客户端下载 | 支持平台 |
 |--------|---------|---------|----------|---------|
-| **杨帆云** | `yangfan` | [注册杨帆云](https://yawtt.net/register?code=BnJcjUjE) | [杨帆云 UniClash 下载](https://tusmartchat.com/uniclash.html) | Android / Windows / Mac |
+| **杨帆云** | `yangfan` | [注册杨帆云](https://ml.yfqz1.net/register?code=BnJcjUjE) | [杨帆云 UniClash 下载](https://tusmartchat.com/uniclash.html) | Android / Windows / Mac |
 | **尔湾云** | `erwan` | [注册尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) | [尔湾云 UniClash 下载](https://tusmartchat.com/uniclash-erwan.html) | Android / Windows / Mac |
 | **疾风云** | `jifeng` | [注册疾风云](https://j134.net/?code=1p7r) | [疾风云官网获取下载](https://j134.net/?code=1p7r) | Android / Windows / Mac |
 
@@ -46,7 +46,7 @@ UniClash 是杨帆云、尔湾云、疾风云等机场推出的**定制版 Clash
 
 - AI 解锁能力强：已验证可解锁 ChatGPT / Claude / Gemini 等主流 AI。
 - 家宽专线 + 中转双线，年付七折，支持私人定制。
-- 操作两步：① [注册杨帆云](https://yawtt.net/register?code=BnJcjUjE)；② [下载杨帆云 UniClash](https://tusmartchat.com/uniclash.html)。
+- 操作两步：① [注册杨帆云](https://ml.yfqz1.net/register?code=BnJcjUjE)；② [下载杨帆云 UniClash](https://tusmartchat.com/uniclash.html)。
 
 ![杨帆云 UniClash 官方下载页](../docs/images/uniclash/download-yangfan.png)
 
@@ -82,7 +82,7 @@ UniClash 是杨帆云、尔湾云、疾风云等机场推出的**定制版 Clash
 
 按以下 6 步操作即可顺利登录使用，不要跳过注册和购买直接下载客户端：
 
-1. **选服务商**：[杨帆云](https://yawtt.net/register?code=BnJcjUjE)、[尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) 或 [疾风云](https://j134.net/?code=1p7r)。
+1. **选服务商**：[杨帆云](https://ml.yfqz1.net/register?code=BnJcjUjE)、[尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) 或 [疾风云](https://j134.net/?code=1p7r)。
 2. **注册账号**：点上面的服务商名称跳到注册页，填邮箱和密码。
 3. **购买套餐**：付款后登录服务商官网确认账号有有效套餐和剩余流量。
 4. **下载客户端**：杨帆云走 <https://tusmartchat.com/uniclash.html>，尔湾云走 <https://tusmartchat.com/uniclash-erwan.html>，疾风云从[官网](https://j134.net/?code=1p7r)获取 UniClash 下载链接。
