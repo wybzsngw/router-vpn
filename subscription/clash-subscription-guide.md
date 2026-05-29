@@ -204,7 +204,7 @@
 ### 3.5 大哥云
 
 - **定位**：稳定优先、专线优化
-- **官网**：<https://aff02.dgy02.com/#/register?code=1CAfWNQC>
+- **官网**：<https://aff02.dgy02.com/#/register?code=dhnlgfXc>
 - **协议**：Trojan
 - **峰值速度**：500–1000Mbps
 - **价格**：月付 ¥19.90/¥29.90；季付 ¥69；年付 ¥88/¥199/¥299/¥699
