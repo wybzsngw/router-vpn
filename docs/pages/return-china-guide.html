@@ -15,7 +15,7 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
   <meta property="og:title" content="回国加速器 2026 — 海外华人翻墙回国完整指南" />
-  <meta property="og:description" content="海外华人回国加速完整指南：Malus、穿梭、快帆等主流加速器横评，覆盖视频、音乐、游戏、办公、微信、12306 全场景，含 Clash 反向分流配置与 CN2 GIA VPS 自建方案。" />
+  <meta property="og:description" content="海外华人回国加速完整指南：Malus、穿梭、快帆等主流加速器横评，覆盖视频、音乐、游戏、办公、微信、12306 全场景，含 Clash 反向分流配置与大陆家宽自建方案。" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.aixiaobai168.com/pages/return-china-guide" />
   <meta property="og:locale" content="zh_CN" />
@@ -404,7 +404,7 @@
           身在海外却想看爱奇艺、B 站、腾讯视频，听网易云音乐、QQ 音乐，玩 LOL/王者/原神国服，用钉钉/企业微信开会，刷抖音/小红书？
           本文系统对比 <strong>Malus、穿梭 Transocks、快帆 SpeedIn、番茄加速器、网易 UU 海外版</strong> 五大主流回国加速器，
           覆盖 <strong>视频 / 音乐 / 金融 / 政务 / 国服游戏 / 账号注册</strong> 六大场景，
-          含 Clash 反向分流配置与 CN2 GIA 海外 VPS 自建方案，所有产品均以独立第三方角度评测，<strong>不夸大效果</strong>。
+          含 Clash 反向分流配置与大陆家宽自建方案，所有产品均以独立第三方角度评测，<strong>不夸大效果</strong>。
         </p>
         <div class="meta-line">
           适合人群：<strong>海外华人 / 留学生 / 外派员工 / 在外做中国生意的外国人</strong>　·　最后更新：2026 年 5 月
@@ -424,7 +424,7 @@
           <li><a href="#alt-products" data-num="3">同类产品中立对比</a></li>
           <li><a href="#clash-reverse" data-num="4">Clash 反向分流配置</a></li>
           <li><a href="#scenarios" data-num="5">六大使用场景详解</a></li>
-          <li><a href="#self-hosted" data-num="6">自建警示与 CN2 GIA 替代方案</a></li>
+          <li><a href="#self-hosted" data-num="6">自建回国节点（大陆家宽正解）</a></li>
           <li><a href="#faq" data-num="7">常见问题 FAQ</a></li>
         </ol>
       </nav>
@@ -529,12 +529,12 @@
                 <td>已经用 Clash 翻墙出国的进阶用户</td>
               </tr>
               <tr>
-                <td><strong>C. 自建回国节点</strong><br/><span style="color:var(--muted);font-size:12px">海外 CN2 GIA VPS + Hysteria2/Trojan</span></td>
-                <td>⭐⭐⭐⭐⭐ Linux 运维</td>
-                <td>¥80–300</td>
+                <td><strong>C. 自建回国节点</strong><br/><span style="color:var(--muted);font-size:12px">大陆家宽 Tailscale 出口</span></td>
+                <td>⭐⭐⭐⭐ 需大陆落地点</td>
+                <td>仅电费</td>
                 <td>不限</td>
-                <td>★★★★★ 独享</td>
-                <td>极客、长期重度用户、有隐私需求</td>
+                <td>★★★★★ 家宽真实 IP</td>
+                <td>在大陆有常开网络/设备的人</td>
               </tr>
             </tbody>
           </table>
@@ -553,10 +553,12 @@
 │  └─→ <strong>方案 B：回国线路机场 + Clash 反向分流</strong>
 │      └─ 配置方法见 <a href="#clash-reverse" style="color:#86efac">第 4 节</a>
 │
-└─ <span class="k">追求自控、隐私、极致性能</span>
-   └─→ <strong>方案 C：海外 CN2 GIA VPS + Hysteria2</strong>
-       <span class="c"># ⛔ 严禁在国内云服务器（阿里云/腾讯云 ECS）部署</span>
-       └─ VPS 选购见 <a href="#self-hosted" style="color:#86efac">第 6 节</a></pre>
+└─ <span class="k">在大陆有常开网络/设备，想用自家真实 IP</span>
+   └─→ <strong>方案 C：大陆家宽 Tailscale 出口节点</strong>
+       <span class="c"># ⛔ 不要用国内云服务器（阿里云/腾讯云 ECS）当出口</span>
+       <span class="c"># ⚠️ 海外 VPS（CN2 GIA）出口 IP 在海外，解锁不了锁区</span>
+       └─ 配置见 <a href="#self-hosted" style="color:#86efac">第 6 节</a>
+       └─ 在大陆没有落地点 → 回到方案 A 商业加速器</pre>
       </section>
 
       <!-- ==================== Section 2: Malus 详细评测（主推） ==================== -->
@@ -901,62 +903,82 @@ rules:
 
       <!-- ==================== Section 6: 自建警示 + VPS 推荐 ==================== -->
       <section class="block" id="self-hosted">
-        <div class="section-eyebrow">自建方案 · 合规警示</div>
-        <h2 class="section-h">自建回国节点：先看警示，再看方案</h2>
+        <div class="section-eyebrow">自建方案 · 技术真相</div>
+        <h2 class="section-h">自建回国节点：能做什么，不能做什么</h2>
 
         <div class="info-card danger">
-          <div class="ic-eyebrow">⛔ 严肃警告</div>
-          <h4>绝对不要在国内云服务器（阿里云 / 腾讯云 / 华为云等 ECS）上部署任何代理软件</h4>
-          <p>这不是法律问题的恐吓，而是 <strong>合规与实操层面的真实风险</strong>：</p>
+          <div class="ic-eyebrow">⚠️ 先纠正一个常见误区</div>
+          <h4>"买台海外 VPS + CN2 GIA 就能自建回国节点解锁国内视频"——这个说法是错的</h4>
+          <p>很多教程（包括本站此前版本）都这么写，但它会误导人，必须讲清楚：</p>
           <ul>
-            <li><strong>违反云厂商《用户协议》</strong>：阿里云、腾讯云、华为云等的服务条款均明确禁止使用云服务搭建翻墙类代理。一旦触发监测，工单告警 → 实例封禁 → 账号关停是常规流程</li>
-            <li><strong>带宽成本极高</strong>：国内云服务器出口带宽约 ¥20/Mbps/月，跑视频流至少需要 5–8 Mbps，月成本 ¥100–160，已经远高于商业加速器</li>
-            <li><strong>稳定性差</strong>：即使短期可用，长期来看会因监管波动随时下线（多个用户在公开论坛反馈过此情况）</li>
-            <li><strong>实名风险</strong>：国内云账号是实名认证的，违规操作的责任直接关联到个人/企业身份</li>
+            <li><strong>锁区内容只认"真正的中国大陆 IP"</strong>：爱奇艺、央视频、咪咕、腾讯视频版权剧等，校验的是你的公网出口 IP 归属地</li>
+            <li><strong>海外 VPS 无论线路多优，公网 IP 仍在海外</strong>：CN2 GIA / CMI / 9929 优化的只是"大陆 ↔ 海外服务器之间的链路质量（延迟、丢包）"，并<strong>不会</strong>把你的出口 IP 变成大陆 IP</li>
+            <li>所以<strong>单靠海外 VPS 解锁不了锁区内容</strong>，结果依旧是"该内容仅限中国大陆地区观看"</li>
           </ul>
-          <p><strong>合规且高效的替代方案</strong>：购买<strong>海外 VPS 中的"回国优化线路"产品</strong>（落地节点本身在海外，通过 CN2 GIA / 移动 CMI / 联通 9929 等国际优质线路与国内互联）。这条路径既不踩国内云厂商红线，又能获得接近直连国内的速度。</p>
+          <p>✅ <strong>结论</strong>：能"自建解锁锁区"的方案，唯一前提是你<strong>在中国大陆有一个真实的落地出口 IP</strong>。</p>
         </div>
 
-        <h3 class="sub-h">推荐方案：海外 VPS + CN2 GIA 优化线路</h3>
-        <p>下面两家是海外华人圈"自建回国节点"长期被推荐的 VPS 服务商，二者主体均合规、运营时间均超过 8 年。</p>
+        <h3 class="sub-h">唯一能解锁锁区的自建正解：大陆家宽出口节点</h3>
+        <p><strong>原理</strong>：在中国大陆的家里（或父母家 / 公司）放一台常开的小设备（软路由 / 树莓派 / NAS / 旧安卓手机皆可），作为"出口节点"。你在海外的设备通过内网穿透连回它，<strong>用大陆家庭宽带的真实 IP 出网</strong>——平台看到的就是一个正常的大陆家庭 IP，锁区内容自然解锁。</p>
+        <ul>
+          <li><strong>前提</strong>：在大陆有一处常开的网络 + 一台可常开的小设备</li>
+          <li><strong>推荐工具</strong>：<a href="https://tailscale.com/" target="_blank" rel="noopener">Tailscale</a> 的 <strong>Exit Node（出口节点）</strong> 功能，配置最简单，自带 NAT 打洞，无需公网 IP</li>
+          <li><strong>替代工具</strong>：WireGuard（需大陆侧有公网 IP 或中转）、frp（端口转发）、ZeroTier</li>
+          <li><strong>适合人群</strong>：在大陆有房 / 父母家 / 公司网络可借用的海外华人、留学生</li>
+          <li><strong>不适合</strong>：在大陆<strong>完全没有</strong>落地点的人——这条路走不通，请看下方"商业加速器"</li>
+        </ul>
+        <p>详细配置全流程见配套教程：<a href="https://github.com/mowei-ie/router-vpn/blob/main/return-china/self-hosted/home-exit-node.md" target="_blank" rel="noopener">大陆家宽 Tailscale Exit Node 部署指南</a>。</p>
+
+        <h3 class="sub-h">严肃警告：不要用"国内云服务器"当出口</h3>
+        <p>有人会想"国内云服务器（阿里云 / 腾讯云 / 华为云 ECS）也是大陆 IP，拿它当出口不就行了？"——技术上确实是大陆 IP，<strong>但绝对不要这么做</strong>：</p>
+        <ul>
+          <li><strong>违反云厂商《用户协议》</strong>：各大云厂商服务条款均明确禁止用云服务器搭建代理类应用。触发监测后，工单告警 → 实例封禁 → 账号关停是常规流程</li>
+          <li><strong>带宽成本极高</strong>：国内云服务器出口带宽约 ¥20/Mbps/月，跑视频流至少 5–8 Mbps，月成本 ¥100–160，远高于商业加速器</li>
+          <li><strong>实名风险</strong>：国内云账号实名认证，违规责任直接关联个人/企业身份</li>
+        </ul>
+        <p>合规的大陆 IP 来源只有一个：<strong>你自己的家庭宽带</strong>。云服务器这条路请直接放弃。</p>
+
+        <h3 class="sub-h">没有大陆落地点怎么办？→ 用商业加速器</h3>
+        <p>如果你在大陆没有任何可借用的网络/设备，<strong>自建解锁这条路对你不成立</strong>，不要在这上面浪费时间和金钱。正确选择是商业回国加速器（Malus / 快帆 等）——它们的本质，就是<strong>运营商租用并维护了一批合规的大陆住宅/机房 IP 池</strong>，相当于"按月租用别人的大陆落地点"，省去你自建的全部成本和维护。选购参考回到本文 <a href="#three-plans">三大方案对比</a> 与 <a href="#malus-review">Malus 产品评测</a>。</p>
+
+        <h3 class="sub-h">海外 VPS（搬瓦工 / DMIT）在回国场景里的真实定位</h3>
+        <p>把它讲清楚，避免再有人买错：<strong>海外 VPS 不能解锁锁区内容</strong>（原因见上方技术真相）。但它在以下两类需求里确实有价值：</p>
+        <ul>
+          <li><strong>翻墙出国</strong>：身在大陆访问 Google / ChatGPT / GitHub 等海外服务，海外 VPS + CN2 GIA 优质线路正是为此而生（参考本站 <a href="/clash-subscription-guide">翻墙出国订阅指南</a>）</li>
+          <li><strong>低延迟中转（非锁区）</strong>：海外用户访问<strong>不做地理封锁</strong>的大陆资源——SSH 登录国内服务器、访问自建/企业内部系统、浏览国内普通网站——优质回国线路能显著降低延迟、减少丢包。<strong>这类用途不涉及版权锁区，纯粹是"链路加速"</strong></li>
+        </ul>
+        <p>满足上述需求时，下面两家是海外华人圈口碑长期较好的 VPS 服务商，主体均合规、运营时间均超过 8 年。</p>
 
         <div class="vps-grid">
           <div class="vps-card featured">
             <h4>搬瓦工 BandwagonHost <span class="badge-pick">入门首选</span></h4>
             <div class="vps-tag">运营商：IT7 Networks Inc.（加拿大注册）</div>
-            <p>海外华人圈最广为人知的 VPS 提供商之一，CN2 GIA 套餐是其招牌产品，单线程回国延迟在主流地区（北美西海岸/日韩/东南亚）可压到 120–180ms。KVM 虚拟化、KiwiVM 自研面板，重装/快照/数据中心迁移均自助完成。</p>
+            <p>海外华人圈最广为人知的 VPS 提供商之一，CN2 GIA 套餐是其招牌产品，主流地区（北美西海岸/日韩/东南亚）链路延迟可压到 120–180ms。KVM 虚拟化、KiwiVM 自研面板，重装/快照/数据中心迁移均自助完成。</p>
             <ul>
               <li><strong>价格区间</strong>：CN2 GIA 套餐年付 $50–200（按配置）</li>
-              <li><strong>适合人群</strong>：自建入门、单家庭 4–6 设备</li>
-              <li><strong>协议建议</strong>：Hysteria2 / TUIC v5（UDP 抗 QoS 强）</li>
+              <li><strong>适合场景</strong>：翻墙出国 / 低延迟中转入门</li>
               <li><strong>支付方式</strong>：信用卡、PayPal、加密货币</li>
             </ul>
-            <a class="cta-vps" href="https://bandwagonhost.com/aff.php?aff=81911&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_self_hosted&amp;utm_content=bwh_recommended_cta" target="_blank" rel="sponsored noopener">前往搬瓦工 BandwagonHost →</a>
+            <a class="cta-vps" href="https://bandwagonhost.com/aff.php?aff=81911&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_self_hosted&amp;utm_content=bwh_transit_cta" target="_blank" rel="sponsored noopener">前往搬瓦工 BandwagonHost →</a>
           </div>
 
           <div class="vps-card featured-dmit">
             <h4>DMIT <span class="badge-pick">进阶之选</span></h4>
-            <div class="vps-tag">面向追求极致回国速度的进阶用户</div>
-            <p>主打 <strong>CN2 GIA Premium</strong> 高端线路，硬件用 EPYC 平台，回国速度优于搬瓦工普通 GIA 套餐，主流地区延迟可压到 100–150ms。客单价更高（年付 $200+），适合长期重度使用或开源圈/技术博客作者自用。</p>
+            <div class="vps-tag">面向对延迟敏感的进阶用户</div>
+            <p>主打 <strong>CN2 GIA Premium</strong> 高端线路，硬件用 EPYC 平台，链路质量优于普通 GIA 套餐，主流地区延迟可压到 100–150ms。客单价更高（年付 $200+），适合长期重度翻墙出国或开源圈/技术博客作者自用。</p>
             <ul>
               <li><strong>价格区间</strong>：年付 $200–800+（按配置）</li>
-              <li><strong>适合人群</strong>：长期重度用户、技术博客作者、小型创业团队</li>
+              <li><strong>适合场景</strong>：长期重度翻墙出国 / 对延迟敏感的中转</li>
               <li><strong>线路特色</strong>：Premium 端口、独立 IP、低 QoS 干扰</li>
               <li><strong>支付方式</strong>：信用卡、PayPal、加密货币、支付宝</li>
             </ul>
-            <a class="cta-vps dmit" href="https://www.dmit.io/aff.php?aff=22076&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_self_hosted&amp;utm_content=dmit_premium_cta" target="_blank" rel="sponsored noopener">前往 DMIT →</a>
+            <a class="cta-vps dmit" href="https://www.dmit.io/aff.php?aff=22076&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_self_hosted&amp;utm_content=dmit_transit_cta" target="_blank" rel="sponsored noopener">前往 DMIT →</a>
           </div>
         </div>
 
-        <h3 class="sub-h">协议选型建议</h3>
-        <ul>
-          <li><strong>Hysteria2（首选）</strong>：基于 QUIC 的 UDP 协议，抗运营商 QoS 限速能力强，回国方向尤其明显，单线程能跑满 100Mbps+</li>
-          <li><strong>TUIC v5</strong>：与 Hysteria2 类似的 QUIC 衍生，配置稍复杂</li>
-          <li><strong>Trojan</strong>：TLS 伪装成 HTTPS，抗审计能力强，但 TCP 在国际链路上速度上限低于 Hysteria2</li>
-          <li><strong>VLESS + Reality</strong>：新兴抗封锁方案，回国场景下不是必需</li>
-          <li>⚠️ <strong>不推荐</strong>：Shadowsocks 老协议在 2026 年已不再适合回国场景</li>
-        </ul>
-        <p>详细的部署教程、客户端配置、性能测试将在后续独立文章中陆续上线。</p>
+        <div class="info-card danger">
+          <p>⚠️ <strong>再次强调</strong>：若你的目标是在海外看爱奇艺 / 央视频等<strong>锁区内容</strong>，购买上述 VPS <strong>无法实现</strong>，请用"大陆家宽出口节点"或"商业加速器"。</p>
+        </div>
       </section>
 
       <!-- ==================== Section 7: FAQ ==================== -->

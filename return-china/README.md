@@ -36,12 +36,14 @@
 - [Clash 反向分流配置与一键规则集](client/clash-reverse-rules.md)（已上线）
 - 回国线路机场推荐：规划中（[airport/](airport/)，需先与机场确认是否支持反向线路）
 
-### 自建回国节点（极客向）
+### 自建回国节点（需大陆落地点）
 
-> 强烈提示：**不要在国内云服务器（阿里云 / 腾讯云 ECS）上部署代理软件**，这违反国内云厂商服务条款且存在合规风险。推荐使用海外 VPS + CN2 GIA / 移动 CMI / 联通 9929 等优质回国线路。
+> 关键认知：锁区内容只认**真正的大陆 IP**。海外 VPS（哪怕 CN2 GIA）出口 IP 在海外，**解锁不了**锁区内容。能"自建解锁"的唯一前提是你在大陆有一处真实家宽出口。
 
-- 自建方案警示、VPS 选购（搬瓦工 / DMIT）、协议选型已收录在 [综述 · 第七节](overview.md)
-- 各协议分步部署教程（Hysteria2 / Trojan / Reality）：规划中（[self-hosted/](self-hosted/)）
+- ✅ 正解教程：[大陆家宽 Tailscale Exit Node 部署指南](self-hosted/home-exit-node.md)（含 WireGuard / frp 备选）
+- 技术真相、合规边界、海外 VPS 的真实定位（翻墙出国 / 低延迟中转）已收录在 [综述 · 第七节](overview.md)
+- ⛔ 不要用国内云服务器（阿里云 / 腾讯云 ECS）当出口：违反云厂商条款、会被封号
+- 在大陆没有落地点 → 直接用商业加速器（见综述第三、四节）
 
 ---
 
@@ -112,7 +114,8 @@ return-china/
 ├── overview.md                  回国加速三大方案对比（主专题 Markdown 源）
 ├── commercial/                  商业加速器评测（规划中）
 ├── airport/                     回国线路机场推荐（规划中）
-├── self-hosted/                 自建回国节点（规划中）
+├── self-hosted/                 自建回国节点（大陆家宽 Tailscale 出口）
+│   └── home-exit-node.md         大陆家宽 Exit Node 部署正解
 ├── scenarios/                   按使用场景分类教程
 │   └── worldcup-2026.md         2026 美加墨世界杯海外观看专题
 └── client/                      客户端反向分流配置
@@ -128,6 +131,7 @@ docs/
 
 ### 2026 年 5 月
 
+- **2026-05-31**：**重要技术修正**——纠正"海外 VPS（CN2 GIA）可自建解锁回国锁区内容"的错误表述（海外 VPS 出口 IP 在海外，解锁不了锁区）；自建章节改为唯一正解 [大陆家宽 Tailscale 出口节点](self-hosted/home-exit-node.md)，搬瓦工/DMIT 重新定位为"翻墙出国 / 低延迟中转"；同步修正综述、世界杯专题、首页、规则集说明
 - **2026-05-31**：上线 [Clash 反向分流一键规则集](client/clash-reverse-rules.md)（`docs/return-china-rules.yaml`）；修正 README 主专题 URL 死链，刷新各栏目状态以匹配实际上线进度
 - **2026-05-21**：新增 2026 世界杯海外观看专题（[/pages/return-worldcup-2026](https://www.aixiaobai168.com/pages/return-worldcup-2026)），含 8 大模块、5 个联盟 CTA、Article + BreadcrumbList + SportsEvent 结构化数据
 - **2026-05-21**：快帆联盟正式接入主专题（CTA 卡、横评表、决策树同步更新）；含蓄化合作披露文案

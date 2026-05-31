@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){if(location.hostname==='mowei-ie.github.io'){var p=location.pathname.replace(/^\/router-vpn/,'').replace(/\/?index\.html$/,'').replace(/\.html$/,'')||'/';location.replace('https://www.aixiaobai168.com'+p+location.search+location.hash);}})();</script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.clarity.ms" />
+  <title>Shadowrocket 回国配置教程 2026｜iPhone iPad 访问爱奇艺 B站 国服游戏</title>
+  <meta name="description" content="Shadowrocket（小火箭）iOS 回国分流配置全流程：一键导入本站维护的回国规则集，与翻墙出国订阅共存互不干扰，覆盖爱奇艺、B站、优酷、腾讯视频、网易云、国服游戏、钉钉。含 Rule-Set 导入、.conf 手动规则、常见问题排障。" />
+  <meta name="keywords" content="Shadowrocket回国,小火箭回国配置,iOS回国加速,iPhone看爱奇艺,Shadowrocket分流,回国规则集,Shadowrocket教程,海外华人iPhone" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta property="og:title" content="Shadowrocket 回国配置教程 2026｜iPhone 访问爱奇艺 B站 国服游戏" />
+  <meta property="og:description" content="iOS Shadowrocket 回国分流配置全流程，与出国订阅共存互不干扰，一键导入规则集。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.aixiaobai168.com/pages/shadowrocket-return" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shadowrocket 回国配置教程 2026｜iPhone 访问爱奇艺 B站" />
+  <meta name="twitter:description" content="iOS Shadowrocket 回国分流配置全流程，一键导入规则集，与出国订阅共存。" />
+  <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <link rel="canonical" href="https://www.aixiaobai168.com/pages/shadowrocket-return" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Shadowrocket iOS 回国分流配置教程",
+    "description": "在 Shadowrocket（小火箭）上配置回国分流规则，让 iPhone / iPad 访问爱奇艺、B站、网易云等国内服务，与出国订阅互不干扰。",
+    "step": [
+      {"@type": "HowToStep", "name": "准备回国节点", "text": "获取机场提供的回国专线或搭建大陆家宽出口节点。"},
+      {"@type": "HowToStep", "name": "添加节点到 Shadowrocket", "text": "通过订阅链接或手动添加回国节点。"},
+      {"@type": "HowToStep", "name": "导入回国分流规则集", "text": "在配置文件 Rules 里添加本站维护的 return-china 规则集。"},
+      {"@type": "HowToStep", "name": "验证配置", "text": "访问 ip.cn 确认显示大陆 IP，打开爱奇艺验证锁区内容可播放。"}
+    ],
+    "tool": [{"@type": "HowToTool", "name": "Shadowrocket（iOS App，约 $2.99）"}],
+    "inLanguage": "zh-CN",
+    "author": {"@type": "Organization", "name": "Router VPN Guide", "url": "https://www.aixiaobai168.com/"},
+    "datePublished": "2026-05-31",
+    "dateModified": "2026-05-31"
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"回国加速专题","item":"https://www.aixiaobai168.com/pages/return-china-guide"},{"@type":"ListItem","position":3,"name":"Shadowrocket 回国配置","item":"https://www.aixiaobai168.com/pages/shadowrocket-return"}]}
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', '回国加速');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
+  <style>
+    :root {
+      --bg: #fff7ed;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #dc2626;
+      --brand-2: #ea580c;
+      --accent: #f59e0b;
+      --info: #0ea5e9;
+      --success: #10b981;
+      --warn: #f59e0b;
+      --shadow: 0 6px 20px rgba(17,24,39,.07);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(245,158,11,.12), transparent 60%),
+                  radial-gradient(700px 400px at 85% 30%, rgba(220,38,38,.06), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #fff 50%, #fff 100%);
+      min-height: 100vh;
+      line-height: 1.75;
+    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 32px 22px 80px }
+    .nav-bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; margin-bottom: 16px }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 14px; border-radius: 999px;
+      background: rgba(14,165,233,.08); border: 1px solid rgba(14,165,233,.18);
+      color: #0369a1; text-decoration: none; font-size: 13px; font-weight: 600;
+    }
+    .nav-back:hover { background: rgba(14,165,233,.14) }
+    .breadcrumb { color: var(--muted); font-size: 13px; margin-bottom: 14px }
+    .breadcrumb a { color: var(--muted); text-decoration: none }
+    .breadcrumb a:hover { color: var(--brand) }
+    .hero {
+      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.9));
+      border: 1px solid rgba(220,38,38,.14); border-radius: 22px;
+      box-shadow: 0 18px 46px rgba(220,38,38,.08);
+      padding: 36px 30px; margin-bottom: 24px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: auto -100px -120px auto;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(245,158,11,.22), transparent 65%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 14px; border-radius: 999px;
+      background: rgba(220,38,38,.08); color: var(--brand);
+      border: 1px solid rgba(220,38,38,.18); font-size: 12px; font-weight: 700;
+      letter-spacing: .08em; margin-bottom: 14px;
+    }
+    .hero h1 { font-size: 30px; line-height: 1.35; margin-bottom: 12px }
+    .hero h1 span { background: linear-gradient(135deg, var(--brand), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero .lead { color: var(--text); font-size: 16px; line-height: 1.85; margin-bottom: 14px }
+    .hero .meta-line { color: var(--muted); font-size: 13px; line-height: 1.7 }
+    .ad-disclosure {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 11px 16px; border-radius: 10px;
+      background: rgba(0,0,0,.025); border: 1px solid rgba(0,0,0,.06);
+      color: var(--muted); font-size: 12px; line-height: 1.7; margin: 16px 0 0;
+    }
+    .toc {
+      background: var(--card); border: 1px solid rgba(0,0,0,.06); border-radius: 18px;
+      padding: 22px 24px; box-shadow: var(--shadow); margin-bottom: 28px;
+    }
+    .toc h2 { font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--brand); margin-bottom: 12px; }
+    .toc ol { list-style: none; padding-left: 0; display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .toc li { font-size: 14px; line-height: 1.7 }
+    .toc li a { display: inline-flex; align-items: baseline; gap: 8px; color: var(--text); text-decoration: none; }
+    .toc li a::before { content: attr(data-num); flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px; background: rgba(220,38,38,.08); color: var(--brand); font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+    .toc li a:hover { color: var(--brand) }
+    section.block { margin: 36px 0; scroll-margin-top: 20px }
+    .section-eyebrow { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; background: rgba(220,38,38,.1); color: var(--brand); margin-bottom: 8px; }
+    h2.section-h { font-size: 24px; line-height: 1.4; margin-bottom: 14px; padding-left: 14px; border-left: 4px solid var(--brand); }
+    h3.sub-h { font-size: 18px; line-height: 1.45; margin: 22px 0 10px; color: var(--text); }
+    h4.minor-h { font-size: 15px; line-height: 1.5; margin: 16px 0 8px; color: var(--text); font-weight: 700; }
+    section.block p, section.block li { font-size: 15px; line-height: 1.85; color: var(--text); }
+    section.block p { margin-bottom: 12px }
+    section.block ul, section.block ol { padding-left: 22px; margin: 8px 0 14px; }
+    section.block li { margin-bottom: 6px }
+    section.block strong { color: var(--text); font-weight: 700 }
+    .tbl-wrap { overflow-x: auto; margin: 12px 0 20px }
+    table.tbl { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); font-size: 14px; }
+    table.tbl th, table.tbl td { padding: 12px 14px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.06); vertical-align: top; }
+    table.tbl th { background: linear-gradient(135deg, rgba(220,38,38,.06), rgba(245,158,11,.06)); font-weight: 700; color: var(--text); font-size: 13px; }
+    table.tbl tr:last-child td { border-bottom: none }
+    a.cta-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 12px; background: linear-gradient(135deg, var(--brand), var(--accent)); color: #fff; text-decoration: none; font-size: 15px; font-weight: 800; box-shadow: 0 12px 24px rgba(220,38,38,.22); transition: all .2s; }
+    a.cta-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 30px rgba(220,38,38,.3) }
+    a.cta-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 18px; border-radius: 12px; background: rgba(0,0,0,.04); color: var(--text); border: 1px solid rgba(0,0,0,.08); text-decoration: none; font-size: 14px; font-weight: 700; transition: all .2s; }
+    a.cta-secondary:hover { background: rgba(0,0,0,.06) }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px }
+    .cta-card {
+      background: linear-gradient(135deg, rgba(220,38,38,.06), rgba(245,158,11,.08));
+      border: 1px solid rgba(220,38,38,.18); border-radius: 18px; padding: 22px 24px; margin: 20px 0;
+    }
+    .cta-card .cc-title { font-size: 17px; font-weight: 800; margin-bottom: 6px }
+    .cta-card .cc-desc { color: var(--muted); font-size: 14px; line-height: 1.75; margin-bottom: 14px }
+    .info-card { background: var(--card); border: 1px solid rgba(0,0,0,.06); border-radius: 14px; padding: 18px 20px; margin: 12px 0; box-shadow: var(--shadow); }
+    .info-card .ic-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .1em; color: var(--info); text-transform: uppercase; margin-bottom: 6px; }
+    .info-card.warn { border-color: rgba(245,158,11,.3); background: linear-gradient(135deg, rgba(245,158,11,.05), rgba(255,255,255,1)) }
+    .info-card.warn .ic-eyebrow { color: #b45309 }
+    .info-card.danger { border-color: rgba(220,38,38,.3); background: linear-gradient(135deg, rgba(220,38,38,.05), rgba(255,255,255,1)) }
+    .info-card.danger .ic-eyebrow { color: var(--brand) }
+    .info-card h4 { font-size: 16px; margin-bottom: 6px }
+    .info-card p, .info-card li { font-size: 14px; color: var(--text); line-height: 1.75 }
+    .info-card p { margin-bottom: 8px }
+    .info-card ul { padding-left: 22px; margin: 4px 0 }
+    pre.code { background: #0f172a; color: #e2e8f0; border-radius: 12px; padding: 18px 22px; overflow-x: auto; font-size: 13px; line-height: 1.7; margin: 12px 0 18px; font-family: "Fira Code", "SF Mono", "Consolas", monospace; }
+    pre.code .c { color: #94a3b8 }
+    pre.code .k { color: #f59e0b }
+    pre.code .s { color: #86efac }
+    .step-list { list-style: none; padding: 0; counter-reset: step; }
+    .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 14px; align-items: flex-start; }
+    .step-list li::before { content: counter(step); flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--brand), var(--accent)); color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+    .step-list li p { margin: 0; font-size: 15px; line-height: 1.8 }
+    .related-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px }
+    .related-links a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; background: rgba(14,165,233,.08); border: 1px solid rgba(14,165,233,.18); color: #0369a1; text-decoration: none; font-size: 13px; font-weight: 600; transition: background .2s; }
+    .related-links a:hover { background: rgba(14,165,233,.14) }
+    footer { text-align: center; padding: 40px 0 20px; color: var(--muted); font-size: 13px; }
+    footer a { color: var(--muted); text-decoration: none }
+    footer a:hover { color: var(--brand) }
+    @media (max-width: 600px) {
+      .hero { padding: 26px 18px }
+      .hero h1 { font-size: 23px }
+      h2.section-h { font-size: 20px }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- 顶部导航 -->
+    <nav class="nav-bar" aria-label="页面导航">
+      <a class="nav-back" href="/pages/return-china-guide">← 回国加速综述</a>
+      <a class="nav-back" href="/">← 返回首页</a>
+    </nav>
+    <div class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a> / <a href="/pages/return-china-guide">回国加速</a> / Shadowrocket 配置教程
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="eyebrow">📱 iOS · Shadowrocket · 客户端配置</div>
+      <h1>Shadowrocket 回国分流配置教程<br/><span>2026 最新版 — iPhone / iPad</span></h1>
+      <p class="lead">
+        已经在用小火箭翻墙出国？本文带你<strong>在同一个 Shadowrocket 里追加回国分流规则</strong>，让爱奇艺、B 站、优酷、腾讯视频、网易云音乐、国服游戏走国内节点，海外流量继续走出国代理，<strong>互不干扰</strong>。
+      </p>
+      <p class="meta-line">
+        <strong>适合：</strong>已有回国节点（机场回国专线 / 大陆家宽出口）的进阶用户 ·
+        <strong>难度：</strong>⭐⭐⭐ · 阅读时长约 8 分钟
+      </p>
+      <div class="ad-disclosure">
+        <span>ℹ️</span>
+        <span>本文部分链接为合作推广链接，不影响你的实际价格，亦不影响本站评测立场。</span>
+      </div>
+    </header>
+
+    <!-- TOC -->
+    <nav class="toc" aria-label="目录">
+      <h2>目 录</h2>
+      <ol>
+        <li><a href="#prereq" data-num="1">前置条件</a></li>
+        <li><a href="#no-node" data-num="2">没有回国节点怎么办</a></li>
+        <li><a href="#method-a" data-num="3">方法 A：导入机场订阅</a></li>
+        <li><a href="#method-b" data-num="4">方法 B：手动添加节点 + 规则</a></li>
+        <li><a href="#caveats" data-num="5">注意事项与兼容性</a></li>
+        <li><a href="#verify" data-num="6">验证与排障</a></li>
+        <li><a href="#faq" data-num="7">常见问题</a></li>
+      </ol>
+    </nav>
+
+    <!-- Section 1 -->
+    <section class="block" id="prereq">
+      <div class="section-eyebrow">前置条件</div>
+      <h2 class="section-h">你需要准备什么</h2>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>准备项</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Shadowrocket App</strong></td><td>App Store 美区购买，约 $2.99；国区无售。需 iOS 15+</td></tr>
+            <tr><td><strong>回国节点</strong></td><td>机场提供的回国专线，<strong>或</strong>自建的<a href="https://github.com/mowei-ie/router-vpn/blob/main/return-china/self-hosted/home-exit-node.md" target="_blank" rel="noopener">大陆家宽 Tailscale 出口节点</a></td></tr>
+            <tr><td><strong>现有出国订阅（可选）</strong></td><td>已有出国机场订阅的用户，可在同一 Shadowrocket 里兼容并存</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="block" id="no-node">
+      <div class="section-eyebrow">没有节点？</div>
+      <h2 class="section-h">没有回国节点的用户怎么办</h2>
+      <p>如果你手边<strong>没有任何回国节点来源</strong>（在大陆也没有常开设备、也没有支持回国专线的机场），Shadowrocket 分流方案对你不成立——它只是路由工具，没有内置节点。</p>
+      <p>这种情况直接用<strong>商业回国加速器</strong>更省心：下载 App → 注册 → 开加速，三步搞定，无需任何技术配置。</p>
+      <div class="cta-card">
+        <div class="cc-title">🎯 不想折腾？商业加速器一键搞定</div>
+        <div class="cc-desc">Malus 加速器：支持爱奇艺 / B站 / 优酷 / 腾讯视频 / 网易云 / 国服游戏 / 钉钉 / 企业微信，iOS App Store 国区直接下载，首月 ¥9.9 起。快帆：3 天免费试用，多协议，支持 iOS / Android / 路由器全平台。</div>
+        <div class="cta-row">
+          <a class="cta-primary" href="https://getmalus.com/buy?affid=A328344556F&utm_source=aixiaobai168&utm_medium=affiliate&utm_campaign=shadowrocket_guide&utm_content=no_node_malus_cta" target="_blank" rel="sponsored noopener">前往 Malus · 首月 ¥9.9 →</a>
+          <a class="cta-secondary" href="https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&a_bid=b9bf8033&utm_source=aixiaobai168&utm_medium=affiliate&utm_campaign=shadowrocket_guide&utm_content=no_node_kuaifan_cta" target="_blank" rel="sponsored noopener">快帆 3 天免费试用 →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="block" id="method-a">
+      <div class="section-eyebrow">方法 A · 推荐</div>
+      <h2 class="section-h">方法 A：导入机场回国专线订阅</h2>
+      <p>如果你的机场提供<strong>独立的回国线路订阅链接</strong>，这是最简单的方式。</p>
+
+      <h3 class="sub-h">添加订阅</h3>
+      <ol class="step-list">
+        <li><p>打开 Shadowrocket → 右上角 <strong>+</strong> → 选 <strong>Subscribe</strong></p></li>
+        <li><p>粘贴机场提供的<strong>回国专线订阅 URL</strong>，输入备注名（如「回国线路」）→ Save</p></li>
+        <li><p>点右上角 <strong>Update</strong> 更新节点，确认回国节点已出现在节点列表</p></li>
+      </ol>
+
+      <h3 class="sub-h">追加回国分流规则</h3>
+      <p>把本站维护的回国规则集加入 Shadowrocket 的配置文件，让国内服务流量自动走回国节点：</p>
+      <ol class="step-list">
+        <li><p>底部 <strong>Config（配置）</strong> → 找到当前生效的 <code>.conf</code> 文件 → 右侧 <strong>Edit</strong> → <strong>Rules</strong></p></li>
+        <li><p>点右上角 <strong>+</strong> → 类型选 <strong>RULE-SET</strong>，填入规则集 URL：</p>
+          <pre class="code">https://raw.githubusercontent.com/mowei-ie/router-vpn/main/docs/return-china-rules.yaml</pre>
+          <p>策略选你的<strong>回国节点或代理组</strong>，行为选 <code>classical</code></p>
+        </li>
+        <li><p>将该规则<strong>拖到规则列表最上方</strong>（优先级最高）→ Save</p></li>
+      </ol>
+
+      <h3 class="sub-h">开启并测试</h3>
+      <ol class="step-list">
+        <li><p>主屏幕开关打开 VPN，连接模式选 <strong>Rule（规则）</strong></p></li>
+        <li><p>Safari 访问 <a href="https://ip.cn" target="_blank" rel="noopener">ip.cn</a> → 应显示大陆 IP 归属地（因为 ip.cn 被规则集命中，走了回国节点）</p></li>
+        <li><p>打开爱奇艺 / B 站 / 央视频验证锁区内容可播放</p></li>
+      </ol>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="block" id="method-b">
+      <div class="section-eyebrow">方法 B · 手动配置</div>
+      <h2 class="section-h">方法 B：手动添加节点 + .conf 规则</h2>
+      <p>如果你有独立的回国节点链接（SS / VMess / Trojan / VLESS 格式），或者想精确控制每条规则，用 <code>.conf</code> 配置文件方式更灵活。</p>
+
+      <h3 class="sub-h">添加单条节点</h3>
+      <ol class="step-list">
+        <li><p>Shadowrocket → <strong>+</strong> → 选对应协议（SS / VMess / Trojan 等）</p></li>
+        <li><p>填入服务器地址、端口、密码/UUID、加密方式，备注填「🇨🇳 回国节点」方便识别</p></li>
+      </ol>
+
+      <h3 class="sub-h">在 .conf 配置文件中添加回国规则</h3>
+      <p>在 Shadowrocket 的 <code>.conf</code> 文件 <strong>[Rule]</strong> 段最前面加入（把 <code>回国节点</code> 替换为你实际的备注名）：</p>
+      <pre class="code"><span class="c"># ===== 回国分流规则（放在所有规则最前面）=====</span>
+<span class="c"># 视频</span>
+DOMAIN-SUFFIX,bilibili.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,iqiyi.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,youku.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,v.qq.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,yangshipin.cn,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,migu.cn,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,miguvideo.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,mgtv.com,<span class="s">回国节点</span>
+<span class="c"># 音乐</span>
+DOMAIN-SUFFIX,music.163.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,y.qq.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,kugou.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,kuwo.cn,<span class="s">回国节点</span>
+<span class="c"># 游戏</span>
+DOMAIN-SUFFIX,game.qq.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,lol.qq.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,mihoyo.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,yuanshen.com,<span class="s">回国节点</span>
+<span class="c"># 办公 / 通信</span>
+DOMAIN-SUFFIX,dingtalk.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,aliwork.com,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,wecom.tencent.com,<span class="s">回国节点</span>
+<span class="c"># 12306 / 支付</span>
+DOMAIN-SUFFIX,12306.cn,<span class="s">回国节点</span>
+DOMAIN-SUFFIX,alipay.com,<span class="s">回国节点</span>
+<span class="c"># 通用兜底</span>
+GEOIP,CN,<span class="s">回国节点</span>
+<span class="c"># ===== 你原有的出国规则继续在后面 =====</span>
+FINAL,<span class="k">出国代理</span></pre>
+
+      <div class="info-card warn">
+        <div class="ic-eyebrow">⚠️ 提示</div>
+        <p>如果加了 <code>GEOIP,CN,回国节点</code> 后发现访问 Google / YouTube 变慢，说明部分 Google 的 CDN IP 被判定为 CN。解决方法：把出国代理的规则（<code>GEOSITE,google</code> 等）<strong>放在 <code>GEOIP,CN</code> 之前</strong>，或直接去掉 <code>GEOIP,CN</code> 兜底，只靠精确域名规则。</p>
+      </div>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="block" id="caveats">
+      <div class="section-eyebrow">注意事项</div>
+      <h2 class="section-h">注意事项与兼容性</h2>
+
+      <h3 class="sub-h">Rule-Set 格式兼容性</h3>
+      <p>Shadowrocket 的 Rule-Set 语法与 Clash <code>rule-provider</code> 的 <code>classical</code> 格式<strong>不完全相同</strong>：</p>
+      <ul>
+        <li>Clash 格式：每行 <code>DOMAIN-SUFFIX,example.com</code>（无策略字段）</li>
+        <li>Shadowrocket 格式：每行 <code>DOMAIN-SUFFIX,example.com,POLICY_NAME</code></li>
+      </ul>
+      <p>在 Shadowrocket 里通过 Rule-Set UI 导入时，可以在导入步骤里<strong>单独指定策略</strong>（即选到哪个代理节点），此时规则集无需携带策略名，两种格式均可兼容。如遇解析失败，退回<strong>方法 B 手动写规则</strong>。</p>
+
+      <h3 class="sub-h">出国 + 回国订阅共存</h3>
+      <ul>
+        <li>Shadowrocket 支持多个订阅同时激活，出国节点和回国节点可以并存</li>
+        <li>建议把回国节点归到一个独立的<strong>代理组</strong>（Proxy Group），命名「🇨🇳 回国」，与出国代理组隔开</li>
+        <li>Rules 模式下，流量按规则分别走对应代理组，互不干扰</li>
+      </ul>
+
+      <h3 class="sub-h">使用规则模式，不要用全局模式</h3>
+      <p>主屏幕 → 代理选项 → <strong>Rule（规则）</strong> 模式才能做分流。<strong>Global（全局）</strong> 模式会把所有流量走单一节点，不适合同时管出国 + 回国。</p>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="block" id="verify">
+      <div class="section-eyebrow">验证</div>
+      <h2 class="section-h">验证与排障</h2>
+
+      <h3 class="sub-h">验证步骤</h3>
+      <ol class="step-list">
+        <li><p>Safari 访问 <a href="https://ip.cn" target="_blank" rel="noopener">ip.cn</a> 或 <a href="https://ip.skk.moe" target="_blank" rel="noopener">ip.skk.moe</a>，应显示<strong>大陆 IP 归属地</strong>（中国 某省 某运营商）</p></li>
+        <li><p>打开爱奇艺 / B 站锁区内容 → 应可正常播放，不再出现"该内容仅限中国大陆观看"</p></li>
+        <li><p>打开 YouTube / Google → 应<strong>仍然走出国代理</strong>，确认出国分流未被破坏</p></li>
+      </ol>
+
+      <h3 class="sub-h">常见故障</h3>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>症状</th><th>可能原因</th><th>解决方法</th></tr></thead>
+          <tbody>
+            <tr><td>ip.cn 仍显示海外 IP</td><td>规则未命中 / 节点未选中 / 未开 Rule 模式</td><td>检查代理组是否选了回国节点；确认连接模式为 Rule</td></tr>
+            <tr><td>爱奇艺仍提示"仅限大陆"</td><td>ip.cn 已大陆 IP 但平台还有 DRM 检测</td><td>DRM 检测无法靠 IP 切换绕过，建议换用 App 版加速器</td></tr>
+            <tr><td>YouTube / Google 变慢</td><td>GEOIP,CN 规则误把 Google CDN IP 导到回国节点</td><td>把 GEOSITE,google 规则放在 GEOIP,CN 之前；或删除 GEOIP,CN 兜底规则</td></tr>
+            <tr><td>规则集下载失败</td><td>Shadowrocket 访问 GitHub Raw URL 失败</td><td>先手动用 Safari 测试 URL 是否可访问；若不通则手动复制规则到 .conf</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 7 FAQ -->
+    <section class="block" id="faq">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-h">常见问题</h2>
+
+      <h3 class="sub-h">Q1：Shadowrocket 在中国区 App Store 能下载吗？</h3>
+      <p>不能。Shadowrocket 仅在美区 App Store 上架，售价约 $2.99。需要使用美区 Apple ID 购买，或找已购账号买断。</p>
+
+      <h3 class="sub-h">Q2：Malus / 快帆 App 可以和 Shadowrocket 同时开吗？</h3>
+      <p>不可以。iOS 同一时间只能有一个 VPN 连接活跃，开第二个会自动断开第一个。选其中一种使用即可。</p>
+
+      <h3 class="sub-h">Q3：海外 VPS（CN2 GIA）能当回国节点用吗？</h3>
+      <p>不能解锁锁区内容。海外 VPS 无论线路多优，出口 IP 仍在海外，爱奇艺 / 央视频等锁区内容只认真正的大陆 IP。详情见<a href="/pages/return-china-guide#self-hosted">回国加速综述第六节</a>。</p>
+
+      <h3 class="sub-h">Q4：配置好后可以同时翻墙出国和访问国内吗？</h3>
+      <p>可以。在 Rule（规则）模式下，Shadowrocket 按规则把国内域名走回国节点，其他流量走出国代理，两条路同时工作，互不干扰。</p>
+
+      <h3 class="sub-h">Q5：我的机场没有回国专线，怎么获得回国节点？</h3>
+      <p>两条路：① 咨询你现在使用的机场，询问是否提供双向（IEPL/IPLC 回国）线路；② 如果在大陆有家庭宽带 + 常开设备，用 <a href="https://github.com/mowei-ie/router-vpn/blob/main/return-china/self-hosted/home-exit-node.md" target="_blank" rel="noopener">Tailscale Exit Node</a> 自建——这是唯一能解锁锁区内容的自建方案。若两条路都不具备，直接用商业加速器。</p>
+    </section>
+
+    <!-- 底部 CTA -->
+    <section class="block" id="bottom-cta">
+      <div class="cta-card">
+        <div class="cc-title">🎯 没有节点来源？商业加速器更省心</div>
+        <div class="cc-desc">无需自己配置规则和节点，下载 App 即用。Malus 覆盖主流国内服务，首月 ¥9.9；快帆支持全平台，3 天免费试用。</div>
+        <div class="cta-row">
+          <a class="cta-primary" href="https://getmalus.com/buy?affid=A328344556F&utm_source=aixiaobai168&utm_medium=affiliate&utm_campaign=shadowrocket_guide&utm_content=bottom_malus_cta" target="_blank" rel="sponsored noopener">前往 Malus 注册 →</a>
+          <a class="cta-secondary" href="https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&a_bid=b9bf8033&utm_source=aixiaobai168&utm_medium=affiliate&utm_campaign=shadowrocket_guide&utm_content=bottom_kuaifan_cta" target="_blank" rel="sponsored noopener">快帆免费试用 →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关阅读 -->
+    <section class="block">
+      <div class="section-eyebrow">相关阅读</div>
+      <h2 class="section-h">配套资源</h2>
+      <div class="related-links">
+        <a href="/pages/return-china-guide">↩ 回国加速综述（选产品看这里）</a>
+        <a href="/pages/android-return">🤖 Android 回国配置指南</a>
+        <a href="/pages/return-worldcup-2026">🏆 2026 世界杯海外观看指南</a>
+        <a href="https://github.com/mowei-ie/router-vpn/blob/main/return-china/client/clash-reverse-rules.md" target="_blank" rel="noopener">📋 Clash 反向分流指南（桌面端）</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 <a href="/">Router VPN Guide</a> · 内容仅供参考，请遵守所在国家/地区法律法规</p>
+    </footer>
+
+  </div>
+</body>
+</html>

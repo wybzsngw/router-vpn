@@ -96,6 +96,9 @@
     { pattern: /\/pages\/return-clash-rules/, module: 'return_client_rules' },
     // 回国加速场景专题（按事件/赛事独立成页，单独归类便于 GA4 看不同专题的转化差异）
     { pattern: /\/pages\/return-worldcup-2026/, module: 'return_worldcup_2026' },
+    // 回国加速客户端配置专题
+    { pattern: /\/pages\/shadowrocket-return/, module: 'return_client_shadowrocket' },
+    { pattern: /\/pages\/android-return/, module: 'return_client_android' },
     { pattern: /^\/$|\/index\.html$/, module: 'home' }
   ];
 

@@ -28,7 +28,7 @@
 1. 已有一个支持自定义规则的 Clash 内核客户端（Clash Verge Rev / Mihomo Party / OpenClash / ClashMetaForAndroid 等）
 2. 已有一个**回国节点**，来源二选一：
    - 商业回国加速器导出的节点（部分加速器支持，见 [综述第三节](../overview.md)）
-   - 自建海外 CN2 GIA VPS + Hysteria2/Trojan 节点（见 [综述第七节](../overview.md)）
+   - 自建大陆家宽 Tailscale 出口节点（见 [综述第七节](../overview.md) 与 [home-exit-node.md](../self-hosted/home-exit-node.md)）
 3. 你原有的"翻墙出国"订阅与规则保持不动
 
 > ⚠️ 注意：商业加速器（Malus / 快帆等）多数是封闭 App，**不一定提供可导入 Clash 的节点链接**。如果你的加速器不支持导出节点，本方案不适用，请直接用它自带的 App。

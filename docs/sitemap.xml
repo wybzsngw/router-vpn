@@ -174,4 +174,16 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://www.aixiaobai168.com/pages/shadowrocket-return</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.aixiaobai168.com/pages/android-return</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>

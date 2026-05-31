@@ -2,14 +2,19 @@
 
 本目录提供**通用 Clash / Mihomo / Shadowrocket 等客户端**的反向分流配置方法，让已经用过翻墙出国的用户能快速加上"回国"分流，互不干扰。
 
+## 已上线文章
+
+| 文件 | 平台 | HTML 在线 |
+|------|------|-----------|
+| [`clash-reverse-rules.md`](clash-reverse-rules.md) | Clash Verge Rev / Mihomo Party / OpenClash（桌面/软路由） | [/pages/return-china-guide#clash-reverse](https://www.aixiaobai168.com/pages/return-china-guide#clash-reverse) |
+| [`shadowrocket-return.md`](shadowrocket-return.md) | iOS Shadowrocket（iPhone / iPad） | [/pages/shadowrocket-return](https://www.aixiaobai168.com/pages/shadowrocket-return) |
+| [`android-return.md`](android-return.md) | Android FlClash / ClashMeta for Android | [/pages/android-return](https://www.aixiaobai168.com/pages/android-return) |
+
 ## 计划文章
 
 | 文件 | 平台 | 状态 |
 |------|------|------|
-| [`clash-reverse-rules.md`](clash-reverse-rules.md) | Clash Verge Rev / Mihomo Party / OpenClash | ✅ 已上线（含一键规则集） |
-| `shadowrocket-return.md` | iOS Shadowrocket | 待施工 |
-| `android-return.md` | Android Clash Meta / FlClash | 待施工 |
-| `platform-difference.md` | 各平台 GeoSite/GeoIP 数据源差异 | 待施工 |
+| `platform-difference.md` | 各平台 GeoSite/GeoIP 数据源差异对比 | 规划中 |
 
 > ✅ 规则集已交付：[`docs/return-china-rules.yaml`](../../docs/return-china-rules.yaml)，
 > GitHub Raw 一键引用 `https://raw.githubusercontent.com/mowei-ie/router-vpn/main/docs/return-china-rules.yaml`，
