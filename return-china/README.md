@@ -1,6 +1,6 @@
 # 回国加速专题 2026 — 海外华人访问国内视频 / 音乐 / 游戏 / 微信 / 办公完整指南
 
-> 📄 本文对应 HTML 页面：[回国加速专题](https://www.aixiaobai168.com/return-china-guide)　·　🌐 在线阅读：<https://www.aixiaobai168.com/return-china-guide>
+> 📄 本文对应 HTML 页面：[回国加速专题](https://www.aixiaobai168.com/pages/return-china-guide)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/return-china-guide>
 
 面向**身在海外**的华人、留学生、外派员工、外籍学习者，提供访问国内服务（爱奇艺 / 优酷 / 腾讯视频 / B站 / 芒果TV / 网易云音乐 / QQ 音乐 / 国服游戏 / 微信小程序 / 钉钉 / 企业微信 / 抖音 / 小红书 / 淘宝 / 12306 / 国内银行 App 等）的完整解决方案。
 
@@ -18,41 +18,47 @@
 
 ### 商业加速器（最简单，下载 App 即可用）
 
-> 适合非技术用户，所有方案均为有公司主体的合规商业产品。
+> 适合非技术用户，所有方案均为有公司主体的合规商业产品。下方产品的评测、价格、退款政策与解锁能力，均已收录在 [综述长文](overview.md) 中。
 
-| 产品 | 适合人群 | 教程 |
+| 产品 | 适合人群 | 评测 |
 |------|---------|------|
-| 穿梭 Transocks | 海外华人通用，UI 最友好 | 即将上线 |
-| 快帆 SpeedIn | 留学生圈口碑稳 | 即将上线 |
-| 番茄加速器 | 免费试用档位长 | 即将上线 |
-| 网易 UU 海外版 | 国服游戏权威方案 | 即将上线 |
-| **横评对比** | 选不动？看这里 | 即将上线 |
+| Malus（主推） | 影音 + 国服游戏综合 | [综述 · 第三节](overview.md) |
+| 穿梭 Transocks | 海外华人通用，UI 友好 | [综述 · 4.1](overview.md) |
+| 快帆 SpeedIn | 留学生圈口碑稳、月付灵活 | [综述 · 4.2](overview.md) |
+| 番茄加速器 | 免费试用档位长 | [综述 · 4.3](overview.md) |
+| 网易 UU 海外版 | 国服游戏权威方案 | [综述 · 4.4](overview.md) |
+| **五款横评** | 选不动？一表看清 | [综述 · 4.5](overview.md) |
 
 ### 回国线路机场（已有 Clash 客户端的进阶玩家）
 
 > 适合已经在用 Clash / Mihomo 的用户，加一份回国节点订阅即可。
 
-- 即将上线：[回国线路机场推荐](airport/) · [Clash 反向分流规则配置](client/)
+- [Clash 反向分流配置与一键规则集](client/clash-reverse-rules.md)（已上线）
+- 回国线路机场推荐：规划中（[airport/](airport/)，需先与机场确认是否支持反向线路）
 
 ### 自建回国节点（极客向）
 
 > 强烈提示：**不要在国内云服务器（阿里云 / 腾讯云 ECS）上部署代理软件**，这违反国内云厂商服务条款且存在合规风险。推荐使用海外 VPS + CN2 GIA / 移动 CMI / 联通 9929 等优质回国线路。
 
-- 即将上线：[VPS 选购指南](self-hosted/vps-selection.md) · [Hysteria2 自建](self-hosted/hysteria2-return.md) · [Trojan 自建](self-hosted/trojan-return.md)
+- 自建方案警示、VPS 选购（搬瓦工 / DMIT）、协议选型已收录在 [综述 · 第七节](overview.md)
+- 各协议分步部署教程（Hysteria2 / Trojan / Reality）：规划中（[self-hosted/](self-hosted/)）
 
 ---
 
 ## 🎬 按使用场景查看
 
+下面六大场景的解锁可行性、限制范围与产品建议，已收录在 [综述 · 第六节](overview.md)；赛事类场景已独立成专题。
+
 | 场景 | 痛点 | 教程 |
 |------|------|------|
-| **视频流媒体** | 爱奇艺 / 优酷 / 腾讯视频 / B站 / 芒果TV 海外提示「该地区不可观看」 | 即将上线 |
-| **音乐** | 网易云音乐 / QQ 音乐 灰色不能播 | 即将上线 |
-| **国服游戏** | LOL 国服 / 原神国服 / 王者荣耀 海外延迟过高 | 即将上线 |
-| **办公协作** | 钉钉 / 企业微信 / 飞书 海外访问慢、视频会议卡顿 | 即将上线 |
-| **微信生态** | 微信小程序 / 微信支付 / 视频号 海外功能受限 | 即将上线 |
-| **抖音 / 小红书** | 海外检测到非国行设备，部分内容无法播放 | 即将上线 |
-| **电商 / 政务** | 淘宝直播 / 拼多多 / 12306 / 国内银行 App 海外异常 | 即将上线 |
+| **视频流媒体** | 爱奇艺 / 优酷 / 腾讯视频 / B站 / 芒果TV 海外提示「该地区不可观看」 | [综述 · 6.1](overview.md) |
+| **音乐** | 网易云音乐 / QQ 音乐 灰色不能播 | [综述 · 6.2](overview.md) |
+| **国服游戏** | LOL 国服 / 原神国服 / 王者荣耀 海外延迟过高 | [综述 · 6.3](overview.md) |
+| **办公协作** | 钉钉 / 企业微信 / 飞书 海外访问慢、视频会议卡顿 | [综述 · 6.4](overview.md) |
+| **微信 / 金融** | 微信支付 / 支付宝 / 手机银行 / 证券 海外功能受限 | [综述 · 6.5](overview.md) |
+| **政务 / 教育** | 学信网 / 12306 / 社保 / 教务系统 仅大陆 IP 可访问 | [综述 · 6.6](overview.md) |
+| **抖音 / 小红书 / 电商** | 海外检测到非国行设备，部分内容无法播放 | [综述 · 6.7](overview.md) |
+| 🏆 **2026 世界杯** | 海外看 CCTV5 / 央视频 / 咪咕 中文解说 | [世界杯专题](scenarios/worldcup-2026.md) |
 
 ---
 
@@ -60,9 +66,8 @@
 
 > 如果你已经在用 Clash 翻墙出国，可以在同一个客户端里**额外加一组回国分流规则**，让海外网站走代理出国、国内网站走回国节点，互不干扰。
 
-- 即将上线：[Clash 反向分流规则集](client/clash-reverse-rules.md)（提供 GitHub Raw 链接一键导入）
-- 即将上线：[Shadowrocket 回国分流配置](client/shadowrocket-return.md)
-- 即将上线：[各平台客户端差异说明](client/platform-difference.md)
+- ✅ [Clash 反向分流配置与一键规则集](client/clash-reverse-rules.md)（含 `return-china-rules.yaml`，GitHub Raw 一键导入）
+- 规划中：[Shadowrocket 回国分流配置](client/) · [各平台客户端差异说明](client/)
 
 ---
 
@@ -105,12 +110,16 @@
 return-china/
 ├── README.md                    本入口
 ├── overview.md                  回国加速三大方案对比（主专题 Markdown 源）
-├── commercial/                  商业加速器评测
-├── airport/                     回国线路机场推荐
-├── self-hosted/                 自建回国节点
+├── commercial/                  商业加速器评测（规划中）
+├── airport/                     回国线路机场推荐（规划中）
+├── self-hosted/                 自建回国节点（规划中）
 ├── scenarios/                   按使用场景分类教程
 │   └── worldcup-2026.md         2026 美加墨世界杯海外观看专题
 └── client/                      客户端反向分流配置
+    └── clash-reverse-rules.md   Clash 反向分流 + 一键规则集说明
+
+docs/
+└── return-china-rules.yaml      回国分流规则集（Clash/Mihomo rule-provider，可一键导入）
 ```
 
 ---
@@ -119,10 +128,11 @@ return-china/
 
 ### 2026 年 5 月
 
+- **2026-05-31**：上线 [Clash 反向分流一键规则集](client/clash-reverse-rules.md)（`docs/return-china-rules.yaml`）；修正 README 主专题 URL 死链，刷新各栏目状态以匹配实际上线进度
 - **2026-05-21**：新增 2026 世界杯海外观看专题（[/pages/return-worldcup-2026](https://www.aixiaobai168.com/pages/return-worldcup-2026)），含 8 大模块、5 个联盟 CTA、Article + BreadcrumbList + SportsEvent 结构化数据
 - **2026-05-21**：快帆联盟正式接入主专题（CTA 卡、横评表、决策树同步更新）；含蓄化合作披露文案
 - **2026-05-13**：上线回国加速主专题 v1.0（[/pages/return-china-guide](https://www.aixiaobai168.com/pages/return-china-guide)），含 Malus 详细评测、横评、Clash 反向分流、CN2 GIA 自建警示与方案
 
 ---
 
-**在线文档**：<https://www.aixiaobai168.com/return-china-guide>　|　**版本**：v1.1　|　**最后更新**：2026 年 5 月 21 日
+**在线文档**：<https://www.aixiaobai168.com/pages/return-china-guide>　|　**版本**：v1.2　|　**最后更新**：2026 年 5 月 31 日

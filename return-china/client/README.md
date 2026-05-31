@@ -6,10 +6,14 @@
 
 | 文件 | 平台 | 状态 |
 |------|------|------|
-| `clash-reverse-rules.md` | Clash Verge Rev / Mihomo Party / OpenClash | 待施工 |
+| [`clash-reverse-rules.md`](clash-reverse-rules.md) | Clash Verge Rev / Mihomo Party / OpenClash | ✅ 已上线（含一键规则集） |
 | `shadowrocket-return.md` | iOS Shadowrocket | 待施工 |
 | `android-return.md` | Android Clash Meta / FlClash | 待施工 |
 | `platform-difference.md` | 各平台 GeoSite/GeoIP 数据源差异 | 待施工 |
+
+> ✅ 规则集已交付：[`docs/return-china-rules.yaml`](../../docs/return-china-rules.yaml)，
+> GitHub Raw 一键引用 `https://raw.githubusercontent.com/mowei-ie/router-vpn/main/docs/return-china-rules.yaml`，
+> 用法见 [`clash-reverse-rules.md`](clash-reverse-rules.md)。
 
 ## 核心资产：本站维护的回国分流规则集
 
