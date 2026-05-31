@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /downloads/*.tar.gz
+
+Sitemap: https://www.aixiaobai168.com/sitemap.xml

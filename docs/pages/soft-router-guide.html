@@ -1,0 +1,631 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){if(location.hostname==='mowei-ie.github.io'){var p=location.pathname.replace(/^\/router-vpn/,'').replace(/\/?index\.html$/,'').replace(/\.html$/,'')||'/';location.replace('https://www.aixiaobai168.com'+p+location.search+location.hash);}})();</script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.clarity.ms" />
+  <title>软路由翻墙教程 2026 — OpenWrt + OpenClash / iKuai 旁路由科学上网</title>
+  <meta name="description" content="软路由科学上网教程，适合开放固件、爱快、iStoreOS、小主机和旁路由用户。本文讲清插件安装、订阅导入、域名解析防污染、虚假地址模式、透明代理、增强模式、回滚方案、全屋代理排查和新手常见断网原因，并给出家庭网络配置建议、设备选择和升级注意事项。同时提供实测经验。适合新手按步骤操作。避免常见配置错误。" />
+  <meta name="keywords" content="软路由翻墙,OpenWrt翻墙,OpenClash教程,iKuai旁路由,软路由科学上网,透明代理,全屋翻墙,x86软路由,N5105,N100,OpenWrt安装,DNS防泄漏,旁路由设置,Clash订阅,OpenClash禁用QUIC,UDP转发tproxy,Claude无法访问,makerworld访问异常" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta property="og:title" content="软路由翻墙教程 2026 — OpenWrt + OpenClash / iKuai 旁路由" />
+  <meta property="og:description" content="软路由科学上网完整教程，含 OpenWrt + OpenClash 与 iKuai 旁路由方案，覆盖硬件推荐、网络拓扑、透明代理配置。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.aixiaobai168.com/pages/soft-router-guide" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="article:published_time" content="2026-03-10" />
+  <meta property="article:modified_time" content="2026-04-30" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="软路由翻墙教程 — OpenWrt + OpenClash / iKuai" />
+  <meta name="twitter:description" content="OpenWrt + OpenClash 与 iKuai 旁路由翻墙方案完整教程。" />
+  <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <link rel="canonical" href="https://www.aixiaobai168.com/pages/soft-router-guide" />
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', '路由器教程');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: scroll;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .section-title { margin: 36px 0 16px; font-size: 14px; letter-spacing: .15em; text-transform: uppercase; color: var(--accent) }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker {
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    pre, code {
+      background: rgba(0,0,0,.04);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    code.inline { padding: .2em .5em; display: inline }
+    pre { margin: 12px 0 }
+    pre code { padding: 0; background: none }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .floating-share {
+      position:fixed; right:18px; bottom:92px; z-index:999;
+      display:flex; flex-direction:column; align-items:flex-end; gap:10px;
+    }
+    .floating-share-panel {
+      display:none; flex-direction:column; gap:8px; padding:10px; border-radius:16px;
+      background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 14px 34px rgba(17,24,39,.12); backdrop-filter:blur(10px);
+    }
+    .floating-share.is-open .floating-share-panel { display:flex }
+    .floating-share-main, .floating-share-btn {
+      appearance:none; border:1px solid rgba(0,0,0,.08); display:inline-flex; align-items:center;
+      justify-content:center; gap:8px; border-radius:999px; background:rgba(255,255,255,.94);
+      color:var(--text); font-size:13px; font-weight:700; cursor:pointer; transition:all .2s;
+      box-shadow:0 8px 22px rgba(17,24,39,.1);
+    }
+    .floating-share-main { min-width:92px; padding:12px 16px }
+    .floating-share-btn { min-width:96px; padding:10px 14px; justify-content:flex-start }
+    .floating-share-main:hover, .floating-share-btn:hover {
+      transform:translateY(-2px); border-color:rgba(124,77,255,.28); box-shadow:0 12px 28px rgba(17,24,39,.14);
+    }
+    .floating-share-main.primary { background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(240,244,255,.96)) }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px"><a href="/" style="color:var(--accent);text-decoration:none">首页</a> <span style="margin:0 6px">›</span> <span>路由器教程</span> <span style="margin:0 6px">›</span> <span style="color:var(--text)">软路由教程</span></nav>
+    <h1>软路由翻墙教程 — OpenWrt + OpenClash / iKuai</h1>
+    <p class="subtitle">在软路由上使用 OpenClash 实现全家设备自动翻墙</p>
+
+    <nav aria-label="站内导航" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="/" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="/clash-subscription-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="/pages/asus-router-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">华硕路由器</a>
+      <a href="/pages/soft-router-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">软路由</a>
+      <a href="/pages/istoreos-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">iStoreOS</a>
+      <a href="/pages/windows-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows</a>
+      <a href="/pages/linux-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Linux</a>
+      <a href="/pages/macos-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">macOS</a>
+      <a href="/pages/mobile-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">手机</a>
+      <a href="/pages/chatgpt-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">ChatGPT</a>
+      <a href="/pages/netflix-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Netflix</a>
+    </nav>
+
+    <!-- ========== 方案选择器 ========== -->
+    <section aria-label="选择你的软路由方案" style="margin-bottom:32px">
+      <p style="text-align:center;font-size:15px;color:var(--muted);margin:0 0 16px">👇 你要部署哪种方案？点击卡片直达对应目录</p>
+      <div class="os-picker" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <a href="#openwrt-toc" data-os="openwrt" class="os-card" style="display:block;padding:24px 22px;background:linear-gradient(135deg,#eff6ff,#ecfeff);border:2px solid rgba(14,165,233,.2);border-radius:18px;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <span style="font-size:36px;line-height:1">🧭</span>
+            <div>
+              <div style="font-size:20px;font-weight:700;color:#0f172a">OpenWrt + OpenClash</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:2px">主力方案 · 10 个章节</div>
+            </div>
+          </div>
+          <p style="font-size:13.5px;color:#374151;line-height:1.6;margin:8px 0 0">从硬件选型、OpenWrt 刷机、OpenClash 安装到订阅下载失败排查一篇看完，适合大多数家庭。</p>
+          <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;background:rgba(14,165,233,.12);border-radius:8px;font-size:13px;color:#0284c7;font-weight:600">查看 OpenWrt 目录 →</div>
+        </a>
+        <a href="#ikuai-toc" data-os="ikuai" class="os-card" style="display:block;padding:24px 22px;background:linear-gradient(135deg,#fffbeb,#fef2f2);border:2px solid rgba(249,115,22,.2);border-radius:18px;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <span style="font-size:36px;line-height:1">🚦</span>
+            <div>
+              <div style="font-size:20px;font-weight:700;color:#0f172a">iKuai + 旁路由</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:2px">企业/高级方案 · 4 个章节</div>
+            </div>
+          </div>
+          <p style="font-size:13.5px;color:#374151;line-height:1.6;margin:8px 0 0">主路由 iKuai 负责多 WAN、流控、行为管理；旁路由 OpenWrt 专注 Clash 代理，职责分离、稳定性高。</p>
+          <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;background:rgba(249,115,22,.12);border-radius:8px;font-size:13px;color:#ea580c;font-weight:600">查看 iKuai 目录 →</div>
+        </a>
+      </div>
+      <style>
+        .os-card:hover { transform:translateY(-3px); box-shadow:0 14px 32px rgba(17,24,39,.10); border-color:currentColor }
+        @media (max-width: 640px) {
+          .os-picker { grid-template-columns: 1fr !important }
+        }
+      </style>
+    </section>
+
+    <!-- ========== OpenWrt 部分 ========== -->
+    <h2 class="section-title" id="openwrt-section">OpenWrt + OpenClash</h2>
+
+    <!-- OpenWrt 目录卡 -->
+    <section class="card" id="openwrt-toc" style="border-left:4px solid #0ea5e9">
+      <div class="kicker" style="color:#0284c7">OpenWrt · 目录</div>
+      <h2>🧭 OpenWrt + OpenClash 教程导航</h2>
+      <p style="color:var(--muted);font-size:14px;margin:6px 0 14px">使用 <strong>OpenWrt</strong> 作为主/旁路由，加装 <strong>OpenClash</strong> 插件实现全屋自动翻墙。点击章节直达：</p>
+      <ul style="columns:2;column-gap:24px;padding-left:20px">
+        <li><a href="#openwrt-1">01. 方案概述</a></li>
+        <li><a href="#openwrt-2">02. 硬件推荐</a></li>
+        <li><a href="#openwrt-3">03. OpenWrt 安装</a></li>
+        <li><a href="#openwrt-4">04. 网络拓扑</a></li>
+        <li><a href="#openwrt-5">05. 安装 OpenClash</a></li>
+        <li><a href="#import-subscription">06. 导入订阅</a></li>
+        <li><a href="#openwrt-7">07. 运行模式</a></li>
+        <li><a href="#openwrt-8">08. DNS 配置</a></li>
+        <li><a href="#openwrt-9">09. 故障排除</a></li>
+        <li><a href="#subscription-download-failure" style="color:#dc2626;font-weight:600">⭐ 10. 订阅下载失败排查</a></li>
+        <li><a href="#openwrt-ai-access" style="color:#7c3aed;font-weight:600">11. AI / makerworld 访问异常</a></li>
+      </ul>
+    </section>
+
+    <section class="card" id="openwrt-1">
+      <div class="kicker">OpenWrt 01</div>
+      <h2>方案概述</h2>
+      <p><strong>什么是软路由？</strong></p>
+      <p>软路由（Soft Router）是指使用通用 x86/ARM 硬件配合路由固件（如 OpenWrt）实现的路由功能，与传统的硬路由（购买成品路由器）相对。软路由通常性能更强、可定制性更高。</p>
+      <p><strong>为什么选择 OpenWrt + OpenClash？</strong></p>
+      <ul>
+        <li><strong>OpenWrt</strong>：开源、稳定、可扩展的 Linux 路由系统，社区活跃，插件丰富</li>
+        <li><strong>OpenClash</strong>：基于 Clash 内核的 OpenWrt 插件，支持订阅、分流、TUN 等完整功能</li>
+      </ul>
+      <p><strong>方案优势</strong>：全家设备自动代理、细粒度控制（按域名/IP 分流）、高性能、统一管理。</p>
+    </section>
+
+    <section class="card" id="openwrt-2">
+      <div class="kicker">OpenWrt 02</div>
+      <h2>硬件推荐</h2>
+      <p><strong>x86 迷你主机</strong>（首选）：常见型号 N100、N5105、J4125、J1900 等，功耗低、体积小、性能足够。建议选择双网口版本（WAN + LAN）。</p>
+      <p>其他选择：旧电脑（加装双网卡）、虚拟机（ESXi、Proxmox VE、Hyper-V 等）。</p>
+      <table>
+        <tr><th>项目</th><th>最低配置</th><th>推荐配置</th></tr>
+        <tr><td>CPU</td><td>2 核</td><td>4 核及以上</td></tr>
+        <tr><td>内存</td><td>2GB</td><td>4GB 及以上</td></tr>
+        <tr><td>网口</td><td>双网口（WAN + LAN）</td><td>双千兆或 2.5G</td></tr>
+        <tr><td>存储</td><td>512MB</td><td>1GB 及以上</td></tr>
+      </table>
+    </section>
+
+    <section class="card" id="openwrt-3">
+      <div class="kicker">OpenWrt 03</div>
+      <h2>OpenWrt 安装</h2>
+      <p><strong>1. 下载固件</strong></p>
+      <ul>
+        <li><strong>官方 OpenWrt</strong>：<a href="https://openwrt.org/" target="_blank" rel="noopener">openwrt.org</a> 选择对应设备型号</li>
+        <li><strong>ImmortalWrt</strong>：国内用户推荐，预装更多中文支持，<a href="https://immortalwrt.org/" target="_blank" rel="noopener">immortalwrt.org</a></li>
+      </ul>
+      <p>x86 设备通常选择 <code class="inline">combined-ext4.img.gz</code> 或 <code class="inline">generic-ext4-combined.img.gz</code>。</p>
+      <p><strong>2. 写入存储</strong></p>
+      <p>Windows 用户：使用 Rufus 或 balenaEtcher 将 .img 镜像写入 U 盘或硬盘，选择「原始磁盘镜像」模式。</p>
+      <pre><code># Linux 用户：解压后写入 U 盘（替换 /dev/sdX 为实际设备）
+gunzip openwrt-xxx.img.gz
+sudo dd if=openwrt-xxx.img of=/dev/sdX bs=4M status=progress</code></pre>
+      <p><strong>3. 首次启动</strong>：将 U 盘/硬盘插入设备，从该存储启动。默认 LAN IP 多为 <code class="inline">192.168.1.1</code>，用网线连接电脑访问 <code class="inline">http://192.168.1.1</code>。</p>
+    </section>
+
+    <section class="card" id="openwrt-4">
+      <div class="kicker">OpenWrt 04</div>
+      <h2>网络拓扑</h2>
+      <p><strong>模式一：软路由作为主路由</strong></p>
+      <pre><code>互联网 → 光猫 → [软路由 WAN] OpenWrt [LAN] → 交换机/设备</code></pre>
+      <p>软路由负责拨号、NAT、DHCP；所有流量经软路由，OpenClash 可全局代理。</p>
+      <p><strong>模式二：软路由作为旁路由（旁路网关）</strong></p>
+      <pre><code>互联网 → 主路由 → 交换机 → 设备
+                   ↓
+             [旁路由 OpenWrt]（仅 LAN，同网段）</code></pre>
+      <p>主路由负责拨号、DHCP；旁路由只做代理网关，不参与拨号；客户端需将网关设为旁路由 IP，或由主路由 DHCP 推送。</p>
+      <p><strong>旁路由配置要点</strong>：旁路由 LAN IP 与主路由同网段（如 <code class="inline">192.168.1.2</code>）；网关指向主路由；关闭 DHCP。</p>
+      <div class="tip-box" style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:12px;padding:14px 16px;margin:14px 0;font-size:14px">
+        <strong style="color:#059669">旁路由详细教程：</strong>如果你打算使用旁路由模式，推荐阅读 <a href="/pages/bypass-router-guide">旁路由设置完整教程</a>，涵盖通用配置步骤、客户端指向方法、DHCP 标签分组和故障排查。
+      </div>
+    </section>
+
+    <section class="card" id="openwrt-5">
+      <div class="kicker">OpenWrt 05</div>
+      <h2>安装 OpenClash</h2>
+      <p><strong>1. 更新软件源</strong> — 进入 <strong>系统 → 软件包</strong>，点击「更新列表」。</p>
+      <p><strong>2. 安装依赖</strong> — 在「软件包」中搜索并安装：<code class="inline">iptables</code>、<code class="inline">dnsmasq-full</code>、<code class="inline">coreutils</code>、<code class="inline">bash</code>、<code class="inline">curl</code>、<code class="inline">ca-certificates</code>、<code class="inline">ipset</code>、<code class="inline">libcap</code>、<code class="inline">kmod-tun</code> 等。</p>
+      <pre><code># 或通过 SSH 安装
+opkg update
+opkg install iptables dnsmasq-full coreutils coreutils-nohup bash curl ca-certificates ipset libcap libcap-bin kmod-tun kmod-inet-diag</code></pre>
+      <p><strong>3. 下载 OpenClash ipk</strong> — 访问 <a href="https://github.com/vernesong/OpenClash/releases" target="_blank" rel="noopener">OpenClash GitHub Releases</a>，根据 CPU 架构选择 x86_64 或 ARM 版本。</p>
+      <p><strong>4. 安装</strong> — 在「系统 → 软件包」中点击「上传软件包」选择 ipk 安装，或 SSH 执行：<code class="inline">opkg install /tmp/luci-app-openclash_xxx.ipk</code></p>
+      <p>安装完成后，在 <strong>服务 → OpenClash</strong> 中即可看到管理界面。</p>
+    </section>
+
+    <section class="card" id="import-subscription">
+      <div class="kicker">OpenWrt 06</div>
+      <h2>导入订阅</h2>
+      <p><strong>方式一：订阅链接（推荐）</strong></p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>进入 <strong>OpenClash → 配置管理 → 订阅管理</strong></li>
+        <li>点击「添加」，填入订阅 URL</li>
+        <li>点击「更新配置」下载节点列表</li>
+        <li>在「配置订阅」中选择刚更新的配置，点击「使用配置」</li>
+      </ol>
+      <p><strong>方式二：手动上传 YAML</strong></p>
+      <p>从机场面板导出 Clash 配置，在 <strong>配置管理</strong> 中点击「上传」，选择 .yaml 文件，上传后选择该配置并「使用配置」。</p>
+    </section>
+
+    <section class="card" id="openwrt-7">
+      <div class="kicker">OpenWrt 07</div>
+      <h2>运行模式</h2>
+      <p><strong>Fake-IP 模式 vs Redir-Host 模式</strong></p>
+      <table>
+        <tr><th>模式</th><th>说明</th><th>适用场景</th></tr>
+        <tr><td>Fake-IP</td><td>用虚拟 IP 解析域名，减少 DNS 请求，降低延迟</td><td><strong>推荐大多数用户</strong>，兼容性好</td></tr>
+        <tr><td>Redir-Host</td><td>真实 DNS 解析，再根据 IP 分流</td><td>部分老旧应用、特殊场景</td></tr>
+      </table>
+      <p>建议默认使用 Fake-IP，若遇到某些应用异常再尝试 Redir-Host。</p>
+      <p><strong>TUN / Mixed 模式</strong>：TUN 模式接管系统网络栈，可代理所有流量（含 UDP、游戏）；Mixed 模式兼顾兼容性与游戏加速。游戏加速、UDP 需求建议开启 TUN 或 Mixed。</p>
+    </section>
+
+    <section class="card" id="openwrt-8">
+      <div class="kicker">OpenWrt 08</div>
+      <h2>DNS 配置</h2>
+      <p>在 <strong>OpenClash → DNS 设置</strong> 中：</p>
+      <ul>
+        <li><strong>本地 DNS 劫持</strong>：建议开启，避免 DNS 泄露</li>
+        <li><strong>Fake-IP 范围</strong>：默认 <code class="inline">198.18.0.1/16</code> 即可</li>
+        <li><strong>上游 DNS</strong>：选择可靠的公共 DNS（如 8.8.8.8、1.1.1.1、DoH）</li>
+      </ul>
+      <p><strong>避免 DNS 泄露</strong>：开启「DNS 劫持」，确保所有 DNS 请求经 OpenClash 处理；使用 DoH/DoT 加密上游；可访问 <a href="https://dnsleaktest.com/" target="_blank" rel="noopener">dnsleaktest.com</a> 检查是否泄露。</p>
+    </section>
+
+    <section class="card" id="openwrt-9">
+      <div class="kicker">OpenWrt 09</div>
+      <h2>故障排除</h2>
+      <p><strong>OpenClash 无法启动</strong> — 检查依赖是否完整安装；查看 <strong>系统 → 系统日志</strong> 或 OpenClash 日志；确认内核版本与 OpenClash 兼容。</p>
+      <p><strong>核心下载失败</strong> — 检查 OpenWrt 能否访问 GitHub；可手动从 <a href="https://github.com/MetaCubeX/Clash.Meta/releases" target="_blank" rel="noopener">Clash Meta Releases</a> 下载对应架构的 clash-meta，上传到 <code class="inline">/etc/openclash/core/</code>。</p>
+      <p><strong>DNS 解析循环</strong> — 关闭主路由或旁路由上的重复 DNS 劫持；确保 dnsmasq 与 OpenClash 的 DNS 端口不冲突。</p>
+      <p><strong>客户端无法上网</strong> — 检查客户端网关是否指向 OpenWrt（旁路由模式）；确认 OpenClash 已启动且运行模式正确；检查防火墙规则是否放行。</p>
+    </section>
+
+    <section class="card" id="subscription-download-failure">
+      <div class="kicker">OpenWrt 10</div>
+      <h2>订阅下载失败排查</h2>
+      <p>OpenClash 日志提示「配置文件订阅失败」「下载失败」，但手动上传 YAML 能正常使用时，通常不是 OpenClash 本身的 bug，而是「HTTP 下载」这一步被拦截。按以下五种原因依次排查。</p>
+
+      <p><strong>原因一：User-Agent 被机场拦截（v0.47 起最常见）</strong></p>
+      <p>OpenClash v0.47 起，默认订阅下载 UA 从 <code class="inline">ClashforWindows</code> 改为 <code class="inline">clash.meta</code>，部分机场后端白名单尚未放行新 UA，会直接返回 403 / 401。日志中可见：<code class="inline">订阅的 User-Agent 为【clash.meta】</code>。</p>
+      <p><strong>UA 配置入口</strong>（注意：OpenClash 并没有「覆盖设置 → 流量控制 → 自定义订阅下载 UA」这个全局入口，UA 只能逐条在订阅条目里设置）：</p>
+      <ol style="padding-left:20px;list-style:decimal">
+        <li>进入 <strong>OpenClash → 配置订阅 → 编辑该条订阅</strong></li>
+        <li>在「User-Agent」字段填入兼容度最高的值，推荐按以下顺序尝试：
+          <ul>
+            <li><code class="inline">mihomo/1.19.20</code>（2026 年测试覆盖面最广，多数新版机场都会按此 UA 返回可用节点）</li>
+            <li><code class="inline">ClashforWindows/0.20.39</code>（老牌白名单 UA，兼容老机场）</li>
+            <li><code class="inline">clash.meta/v1.18.0</code>（Meta 内核官方 UA）</li>
+          </ul>
+        </li>
+        <li>保存后点击「立即更新」</li>
+      </ol>
+      <p><strong>填了 UA 还是显示 smart 核心版本号？</strong> 如果你当前使用的是 <strong>Smart 内核</strong>，下载订阅时核心二进制可能会**覆盖**你手填的 UA，导致机场后台记录里仍是 <code class="inline">smart-xxxx</code>。此时两种方案：① 临时切回 <strong>Mihomo Meta 内核</strong> 更新订阅成功后再切回 Smart；② 改用原因二的「URL 参数法」绕过 UA 机制。</p>
+
+      <p><strong>原因二：URL 参数法（最省事，无视 UA 限制）</strong></p>
+      <p>大多数机场在订阅链接后追加参数即可强制返回指定格式，<strong>该参数优先级高于 UA</strong>：</p>
+      <ul>
+        <li>若链接中<strong>无</strong> <code class="inline">?</code>，在末尾接 <code class="inline">?flag=clash</code>，如：<br><code class="inline">https://airport.example.com/link/abcd1234?flag=clash</code></li>
+        <li>若链接已带 <code class="inline">?</code>，则用 <code class="inline">&amp;flag=clash</code> 追加，如：<br><code class="inline">https://airport.example.com/sub?token=xxx&amp;flag=clash</code></li>
+        <li>机场实现各异，参数名也可能是 <code class="inline">flag=meta</code> / <code class="inline">flag=clashmeta</code> / <code class="inline">target=clash</code>，具体以机场文档或客服说明为准</li>
+      </ul>
+
+      <p><strong>原因三：TLS 握手 / SNI 被运营商阻断</strong></p>
+      <p>部分地区运营商对机场域名做 SNI 阻断，表现为 TLS 握手直接失败。SSH 到路由器上直接用 curl 验证：</p>
+      <pre><code>curl -v -A "mihomo/1.19.20" "你的订阅URL" -o /tmp/test.yaml</code></pre>
+      <p>对照输出：</p>
+      <ul>
+        <li><code class="inline">HTTP/1.1 403</code> / <code class="inline">401</code> → 机场 UA 或 IP 拦截，联系机场客服加白名单</li>
+        <li><code class="inline">TLS handshake failed</code> / <code class="inline">Connection reset by peer</code> → 运营商 SNI 阻断，把 DNS 上游改成 <code class="inline">1.1.1.1</code>、<code class="inline">8.8.8.8</code> 或启用 DoH；或在订阅管理中勾选「使用代理下载订阅」（需先手动上传一次 YAML 启动代理）</li>
+        <li><code class="inline">Could not resolve host</code> → 看原因四</li>
+      </ul>
+      <p><strong>UA 是否真的生效</strong>，可用以下命令直接验证（看请求头里发出去的 UA 字符串）：</p>
+      <pre><code>curl -v -A "mihomo/1.19.20" "你的订阅URL" 2>&amp;1 | grep -i "user-agent"</code></pre>
+
+      <p><strong>原因四：DNS 污染 / 上游未通</strong></p>
+      <p>curl 报 <code class="inline">Could not resolve host</code> 说明路由器根本解析不到机场域名。检查 <strong>OpenClash → DNS 设置 → 上游 DNS</strong> 是否正常；或在路由器临时执行 <code class="inline">echo "nameserver 1.1.1.1" &gt;&gt; /etc/resolv.conf</code> 后重试订阅。</p>
+
+      <p><strong>原因五：订阅链接已过期或流量耗尽</strong></p>
+      <p>登录机场面板确认订阅链接是否仍有效、本月流量是否充足。部分机场每月更换订阅地址或对超流量账号直接拒绝返回配置。</p>
+
+      <p><strong>终极方案：SSH curl 拉到本地 + cron 自动更新</strong></p>
+      <p>若以上方法全部失败但 curl 能拿到正确 yaml，可以绕过 OpenClash 的下载逻辑，用 curl 直接把 yaml 写入配置目录，然后在 OpenClash 里选择该本地文件作为配置：</p>
+      <pre><code># 立即拉取一次
+curl -L -A "mihomo/1.19.20" "你的订阅URL" -o /etc/openclash/config/yizhihongxing.yaml
+
+# 定时任务：每 6 小时自动更新一次
+# OpenWrt: 系统 → 计划任务，加入
+0 */6 * * * curl -L -A "mihomo/1.19.20" "你的订阅URL" -o /etc/openclash/config/yizhihongxing.yaml &amp;&amp; /etc/init.d/openclash restart</code></pre>
+      <p>等效于自己实现了一套订阅更新逻辑，完全规避 OpenClash 的 HTTP 下载模块。</p>
+
+      <p><strong>应急方案</strong> — 以上问题修复前，可继续使用「<a href="#import-subscription">导入订阅 · 方式二：手动上传 YAML</a>」过渡，不影响代理正常使用。</p>
+    </section>
+
+    <section class="card" id="openwrt-ai-access">
+      <div class="kicker">OpenWrt 11</div>
+      <h2>AI / makerworld 等海外站点访问受限专项</h2>
+      <p>如果 Claude、ChatGPT、Grok、makerworld 国际站等在全屋代理下仍提示地区不可用，优先按以下顺序检查：OpenClash 是否开启 <strong>UDP 流量转发 (tproxy)</strong>、是否在开启 UDP 后启用 <strong>禁用 QUIC</strong>、DNS 是否使用 <strong>Fake-IP</strong> 或强制 DNS 劫持、IPv6 是否关闭或完整代理。</p>
+      <p>OpenClash 的「禁用 QUIC」通常需要配合 UDP 转发才能对局域网客户端的 forward 流量生效；未开启时容易出现浏览器 QUIC / UDP 443 直连。完整排查步骤、Merlin Clash 2 和 iStoreOS 对照设置见 <a href="/pages/proxy-access-issues">代理模式 AI / makerworld 访问异常排查教程</a>。</p>
+      <pre><code>- DOMAIN-SUFFIX,claude.ai,🚀 节点选择
+- DOMAIN-SUFFIX,anthropic.com,🚀 节点选择
+- DOMAIN-SUFFIX,makerworld.com,🚀 节点选择</code></pre>
+    </section>
+
+    <!-- ========== iKuai 部分 ========== -->
+    <h2 class="section-title" id="ikuai-section">iKuai + 旁路由</h2>
+
+    <!-- iKuai 目录卡 -->
+    <section class="card" id="ikuai-toc" style="border-left:4px solid #f97316">
+      <div class="kicker" style="color:#ea580c">iKuai · 目录</div>
+      <h2>🚦 iKuai + 旁路由教程导航</h2>
+      <p style="color:var(--muted);font-size:14px;margin:6px 0 14px">主路由 <strong>iKuai</strong>（企业级流控） + 旁路由 <strong>OpenWrt</strong>（专注 Clash 代理），职责分离，稳定性更高。点击章节直达：</p>
+      <ul style="columns:2;column-gap:24px;padding-left:20px">
+        <li><a href="#ikuai-1">01. 方案概述</a></li>
+        <li><a href="#ikuai-2">02. 网络拓扑图</a></li>
+        <li><a href="#ikuai-3">03. 配置要点</a></li>
+        <li><a href="#ikuai-4">04. 客户端指向方法</a></li>
+      </ul>
+    </section>
+
+    <section class="card" id="ikuai-1">
+      <div class="kicker">iKuai 01</div>
+      <h2>iKuai + 旁路由方案概述</h2>
+      <p>本方案以 <strong>iKuai 爱快</strong> 作为主路由，<strong>OpenWrt + OpenClash</strong> 作为旁路由，实现多 WAN、流控、行为管理等功能与翻墙代理的分离部署。</p>
+      <table>
+        <tr><th>组件</th><th>职责</th><th>优势</th></tr>
+        <tr><td>iKuai 主路由</td><td>拨号、多 WAN 负载均衡、QoS 流控、行为管理、认证计费</td><td>企业级功能，适合多线接入、带宽管理</td></tr>
+        <tr><td>OpenWrt 旁路由</td><td>仅负责 Clash 代理</td><td>专注翻墙，主路由故障不影响代理；可单独重启升级</td></tr>
+      </table>
+      <p><strong>职责分离的好处</strong>：主路由稳定、代理独立、灵活切换（需要代理的设备指向旁路由，不需要的走主路由直连）。</p>
+    </section>
+
+    <section class="card" id="ikuai-2">
+      <div class="kicker">iKuai 02</div>
+      <h2>网络拓扑图</h2>
+      <pre><code>                        互联网
+                           │
+                           ▼
+              ┌─────────────────────────┐
+              │   iKuai 主路由           │
+              │   - WAN 拨号/多线        │
+              │   - LAN: 192.168.1.1    │
+              │   - DHCP 服务器          │
+              └───────────┬─────────────┘
+                          │
+                          ▼
+              ┌─────────────────────────┐
+              │       交换机 / LAN       │
+              │   192.168.1.0/24         │
+              └───┬─────────────────┬───┘
+                  │                 │
+        ┌─────────┘                 └─────────┐
+        ▼                                     ▼
+┌───────────────┐                   ┌─────────────────┐
+│  OpenWrt 旁路由 │                   │  客户端设备      │
+│  192.168.1.2   │◄── 网关指向 ──────│  网关: 192.168.1.2 │
+│  仅 LAN，无 WAN │                   │  (需代理的设备)   │
+│  OpenClash     │                   └─────────────────┘
+└───────────────┘
+
+说明：
+- 主路由 iKuai 负责拨号、DHCP、流控
+- 旁路由 OpenWrt 与主路由同网段，网关指向 iKuai
+- 需要翻墙的设备：手动设置网关为 192.168.1.2，或由 iKuai DHCP 推送</code></pre>
+    </section>
+
+    <section class="card" id="ikuai-3">
+      <div class="kicker">iKuai 03</div>
+      <h2>配置要点</h2>
+      <p><strong>iKuai 主路由</strong>：WAN 口配置拨号；LAN 口 IP 如 <code class="inline">192.168.1.1</code>；DHCP 服务端地址池如 <code class="inline">192.168.1.100</code>～<code class="inline">192.168.1.200</code>；可选：DHCP 推送旁路由为网关。</p>
+      <p><strong>旁路由 OpenWrt</strong>：仅保留 LAN，删除或禁用 WAN；LAN 配置：IP <code class="inline">192.168.1.2</code>、网关 <code class="inline">192.168.1.1</code>、DNS <code class="inline">192.168.1.1</code> 或 <code class="inline">8.8.8.8</code>；关闭 DHCP；安装 OpenClash 并导入订阅。</p>
+      <p><strong>避免路由循环</strong>：确认旁路由网关指向主路由，主路由 DHCP 的网关不要出现交叉指向。</p>
+    </section>
+
+    <section class="card" id="ikuai-4">
+      <div class="kicker">iKuai 04</div>
+      <h2>客户端指向方法</h2>
+      <p><strong>方法 A：单设备手动设置网关</strong></p>
+      <p>在需要翻墙的设备上：Windows 网络适配器 → IPv4 → 手动设置网关为 <code class="inline">192.168.1.2</code>；手机/平板在 WiFi 高级设置中修改网关；智能电视若支持静态 IP，网关填 <code class="inline">192.168.1.2</code>。</p>
+      <p><strong>方法 B：iKuai DHCP 推送网关</strong></p>
+      <p>在 iKuai 的 DHCP 中，为指定客户端或地址池设置网关为 <code class="inline">192.168.1.2</code>，则这些设备会自动通过旁路由上网。</p>
+      <p><strong>方法 C：iKuai 策略路由</strong></p>
+      <p>使用 iKuai 的 <strong>流控分流 → 分流设置</strong> 或 <strong>端口分流</strong>，将特定 IP、MAC 或端口的流量指向旁路由 <code class="inline">192.168.1.2</code>，适合按用户、按应用精细控制。</p>
+    </section>
+
+    <section style="margin-top:40px;padding:24px;background:linear-gradient(135deg,rgba(14,165,233,.06),rgba(124,77,255,.06));border-radius:16px;border:1px solid rgba(14,165,233,.15)">
+      <h3 style="font-size:16px;margin-bottom:16px">📌 你可能还需要</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <a href="/clash-subscription-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🔗</span><div><strong style="font-size:14px">订阅申请指南</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">还没有订阅链接？获取机场推荐</p></div></a>
+        <a href="/pages/asus-router-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">📡</span><div><strong style="font-size:14px">华硕路由器教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">梅林固件 + MerlinClash 全屋翻墙</p></div></a>
+        <a href="/pages/istoreos-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🧰</span><div><strong style="font-size:14px">iStoreOS 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">iStore 插件 + Are-u-ok 第三方包</p></div></a>
+        <a href="/pages/proxy-access-issues" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🧭</span><div><strong style="font-size:14px">AI / makerworld 排查</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">QUIC、IPv6、DNS 泄漏专项</p></div></a>
+      </div>
+    </section>
+
+    <footer>
+      <p>📄 本文档对应 Markdown 源文件：soft-router/openwrt-clash.md、soft-router/ikuai-clash.md</p>
+      <nav aria-label="相关教程" style="margin-top:12px;font-size:12px;line-height:2">
+        <strong>更多教程：</strong>
+        <a href="/">首页</a> ·
+        <a href="/clash-subscription-guide">订阅申请</a> ·
+        <a href="/pages/asus-router-guide">华硕路由器</a> ·
+        <a href="/pages/soft-router-guide">软路由</a> ·
+        <a href="/pages/istoreos-guide">iStoreOS</a> ·
+        <a href="/pages/windows-guide">Windows</a> ·
+        <a href="/pages/macos-guide">macOS</a> ·
+        <a href="/pages/linux-guide">Linux</a> ·
+        <a href="/pages/mobile-guide">手机</a> ·
+        <a href="/pages/chatgpt-guide">ChatGPT</a> ·
+        <a href="/pages/netflix-guide">Netflix</a>
+      </nav>
+    </footer>
+  </main>
+  <div class="floating-share" id="floating-share" aria-label="悬浮分享">
+    <div class="floating-share-panel" aria-label="分享菜单">
+      <button class="floating-share-btn" type="button" onclick="sharePage()">分享</button>
+      <button class="floating-share-btn" type="button" onclick="favoritePage()">收藏</button>
+      <button class="floating-share-btn" type="button" onclick="copyPageLink()">复制链接</button>
+    </div>
+    <button class="floating-share-main primary" id="floating-share-toggle" type="button" aria-expanded="false" onclick="toggleShareMenu()">分享</button>
+  </div>
+  <script>
+    function toggleShareMenu() {
+      const widget = document.getElementById('floating-share');
+      const toggle = document.getElementById('floating-share-toggle');
+      const isOpen = widget.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    function closeShareMenu() {
+      const widget = document.getElementById('floating-share');
+      const toggle = document.getElementById('floating-share-toggle');
+      widget.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    function getSharePayload() {
+      return {
+        title: document.title,
+        text: '我在看这个 Clash 教程，整理得很清晰，分享给你：',
+        url: window.location.href
+      };
+    }
+    async function copyPageLink() {
+      const payload = getSharePayload();
+      const text = payload.title + '\n' + payload.text + '\n' + payload.url;
+      try {
+        await navigator.clipboard.writeText(text);
+        closeShareMenu();
+        alert('链接和分享文案已复制，打开微信后可直接粘贴发送或转发到朋友圈。');
+      } catch (error) {
+        window.prompt('请复制下面的内容并分享：', text);
+      }
+    }
+    async function sharePage() {
+      const payload = getSharePayload();
+      if (navigator.share) {
+        try {
+          await navigator.share(payload);
+          closeShareMenu();
+          return;
+        } catch (error) {}
+      }
+      await copyPageLink();
+    }
+    function favoritePage() {
+      const isApple = /Mac|iPhone|iPad|iPod/i.test(navigator.platform);
+      try {
+        if (window.external && 'AddFavorite' in window.external) {
+          window.external.AddFavorite(window.location.href, document.title);
+          closeShareMenu();
+          return;
+        }
+        if (window.sidebar && window.sidebar.addPanel) {
+          window.sidebar.addPanel(document.title, window.location.href, '');
+          closeShareMenu();
+          return;
+        }
+      } catch (error) {}
+      closeShareMenu();
+      alert('请使用快捷键 ' + (isApple ? 'Command/Cmd + D' : 'Ctrl + D') + ' 收藏当前页面；移动端请使用浏览器菜单中的“收藏/加入书签”。');
+    }
+    document.addEventListener('click', function(event) {
+      const widget = document.getElementById('floating-share');
+      if (widget && !widget.contains(event.target)) {
+        closeShareMenu();
+      }
+    });
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeShareMenu();
+      }
+    });
+
+    // 修正 hash 锚点定位偏移（图片懒加载或长页面渲染导致的错位）
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
+
+    // 方案选择卡片点击埋点（可选）
+    document.querySelectorAll('.os-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        try {
+          if (window.gtag) window.gtag('event', 'os_picker_click', { os: card.dataset.os });
+        } catch (e) {}
+      });
+    });
+  </script>
+  <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"软路由翻墙教程 — OpenWrt + OpenClash / iKuai","description":"在软路由上使用 OpenClash 或 iKuai 旁路由实现全家设备自动翻墙","url":"https://www.aixiaobai168.com/pages/soft-router-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"硬件准备","text":"选择 x86 迷你主机或其他软路由硬件"},{"@type":"HowToStep","name":"安装 OpenWrt","text":"下载固件并写入存储设备"},{"@type":"HowToStep","name":"配置网络拓扑","text":"选择主路由或旁路由模式"},{"@type":"HowToStep","name":"安装 OpenClash","text":"更新软件源并安装 OpenClash 插件"},{"@type":"HowToStep","name":"导入订阅","text":"添加订阅链接或上传 YAML 配置"},{"@type":"HowToStep","name":"配置 DNS","text":"设置 DNS 劫持与上游 DNS 避免泄露"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"软路由教程","item":"https://www.aixiaobai168.com/pages/soft-router-guide"}]}</script>
+</body>
+</html>

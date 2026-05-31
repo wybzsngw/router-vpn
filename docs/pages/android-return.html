@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){if(location.hostname==='mowei-ie.github.io'){var p=location.pathname.replace(/^\/router-vpn/,'').replace(/\/?index\.html$/,'').replace(/\.html$/,'')||'/';location.replace('https://www.aixiaobai168.com'+p+location.search+location.hash);}})();</script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.clarity.ms" />
+  <title>Android 手机回国加速配置教程 2026｜FlClash 看爱奇艺 B站 国服游戏</title>
+  <meta name="description" content="安卓手机回国加速完整教程：FlClash / ClashMeta for Android 导入回国分流规则集，一键访问爱奇艺、B站、优酷、腾讯视频、网易云、国服游戏；含一键加速器推荐（Malus / 快帆），及 Tailscale 大陆家宽出口方案。覆盖全部安卓用户场景。" />
+  <meta name="keywords" content="Android回国加速,安卓手机回国,FlClash回国配置,ClashMeta回国,安卓看爱奇艺海外,安卓回国加速器,海外华人安卓,Malus安卓,快帆安卓" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta property="og:title" content="Android 手机回国加速配置教程 2026｜FlClash / ClashMeta 分流" />
+  <meta property="og:description" content="安卓回国加速三种方案：商业加速器 App / FlClash 分流规则 / Tailscale 家宽出口，覆盖全部场景。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.aixiaobai168.com/pages/android-return" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Android 手机回国加速配置教程 2026｜FlClash / ClashMeta" />
+  <meta name="twitter:description" content="安卓回国加速三种方案全覆盖：一键 App / FlClash 分流 / Tailscale 家宽出口。" />
+  <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <link rel="canonical" href="https://www.aixiaobai168.com/pages/android-return" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Android 手机回国加速配置教程",
+    "description": "在安卓设备上配置回国加速：含商业加速器一键方案、FlClash/ClashMeta 分流规则方案、Tailscale 大陆家宽出口方案。",
+    "step": [
+      {"@type": "HowToStep", "name": "选择方案", "text": "根据是否有技术基础和大陆落地点选择适合的方案。"},
+      {"@type": "HowToStep", "name": "安装客户端", "text": "下载 FlClash 或 CMFA，或直接安装 Malus / 快帆 App。"},
+      {"@type": "HowToStep", "name": "导入分流规则集", "text": "在 Clash 配置文件中添加 return-china 规则集和回国代理组。"},
+      {"@type": "HowToStep", "name": "验证", "text": "访问 ip.cn 确认大陆 IP，打开锁区内容验证可播放。"}
+    ],
+    "tool": [
+      {"@type": "HowToTool", "name": "FlClash（免费，GitHub APK）"},
+      {"@type": "HowToTool", "name": "ClashMeta for Android（免费，GitHub APK）"}
+    ],
+    "inLanguage": "zh-CN",
+    "author": {"@type": "Organization", "name": "Router VPN Guide", "url": "https://www.aixiaobai168.com/"},
+    "datePublished": "2026-05-31",
+    "dateModified": "2026-05-31"
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"回国加速专题","item":"https://www.aixiaobai168.com/pages/return-china-guide"},{"@type":"ListItem","position":3,"name":"Android 回国配置","item":"https://www.aixiaobai168.com/pages/android-return"}]}
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', '回国加速');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
+  <style>
+    :root {
+      --bg: #fff7ed;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #dc2626;
+      --accent: #f59e0b;
+      --info: #0ea5e9;
+      --success: #10b981;
+      --shadow: 0 6px 20px rgba(17,24,39,.07);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(245,158,11,.12), transparent 60%),
+                  radial-gradient(700px 400px at 85% 30%, rgba(220,38,38,.06), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #fff 50%, #fff 100%);
+      min-height: 100vh; line-height: 1.75;
+    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 32px 22px 80px }
+    .nav-bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; margin-bottom: 16px }
+    .nav-back { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; background: rgba(14,165,233,.08); border: 1px solid rgba(14,165,233,.18); color: #0369a1; text-decoration: none; font-size: 13px; font-weight: 600; }
+    .nav-back:hover { background: rgba(14,165,233,.14) }
+    .breadcrumb { color: var(--muted); font-size: 13px; margin-bottom: 14px }
+    .breadcrumb a { color: var(--muted); text-decoration: none }
+    .breadcrumb a:hover { color: var(--brand) }
+    .hero { background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.9)); border: 1px solid rgba(220,38,38,.14); border-radius: 22px; box-shadow: 0 18px 46px rgba(220,38,38,.08); padding: 36px 30px; margin-bottom: 24px; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: auto -100px -120px auto; width: 280px; height: 280px; background: radial-gradient(circle, rgba(245,158,11,.22), transparent 65%); pointer-events: none; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; background: rgba(220,38,38,.08); color: var(--brand); border: 1px solid rgba(220,38,38,.18); font-size: 12px; font-weight: 700; letter-spacing: .08em; margin-bottom: 14px; }
+    .hero h1 { font-size: 30px; line-height: 1.35; margin-bottom: 12px }
+    .hero h1 span { background: linear-gradient(135deg, var(--brand), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero .lead { color: var(--text); font-size: 16px; line-height: 1.85; margin-bottom: 14px }
+    .hero .meta-line { color: var(--muted); font-size: 13px; line-height: 1.7 }
+    .ad-disclosure { display: flex; gap: 10px; align-items: flex-start; padding: 11px 16px; border-radius: 10px; background: rgba(0,0,0,.025); border: 1px solid rgba(0,0,0,.06); color: var(--muted); font-size: 12px; line-height: 1.7; margin: 16px 0 0; }
+    .toc { background: var(--card); border: 1px solid rgba(0,0,0,.06); border-radius: 18px; padding: 22px 24px; box-shadow: var(--shadow); margin-bottom: 28px; }
+    .toc h2 { font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--brand); margin-bottom: 12px; }
+    .toc ol { list-style: none; padding-left: 0; display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .toc li { font-size: 14px; line-height: 1.7 }
+    .toc li a { display: inline-flex; align-items: baseline; gap: 8px; color: var(--text); text-decoration: none; }
+    .toc li a::before { content: attr(data-num); flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px; background: rgba(220,38,38,.08); color: var(--brand); font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+    .toc li a:hover { color: var(--brand) }
+    section.block { margin: 36px 0; scroll-margin-top: 20px }
+    .section-eyebrow { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; background: rgba(220,38,38,.1); color: var(--brand); margin-bottom: 8px; }
+    h2.section-h { font-size: 24px; line-height: 1.4; margin-bottom: 14px; padding-left: 14px; border-left: 4px solid var(--brand); }
+    h3.sub-h { font-size: 18px; line-height: 1.45; margin: 22px 0 10px; color: var(--text); }
+    section.block p, section.block li { font-size: 15px; line-height: 1.85; color: var(--text); }
+    section.block p { margin-bottom: 12px }
+    section.block ul, section.block ol { padding-left: 22px; margin: 8px 0 14px; }
+    section.block li { margin-bottom: 6px }
+    section.block strong { color: var(--text); font-weight: 700 }
+    .tbl-wrap { overflow-x: auto; margin: 12px 0 20px }
+    table.tbl { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); font-size: 14px; }
+    table.tbl th, table.tbl td { padding: 12px 14px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.06); vertical-align: top; }
+    table.tbl th { background: linear-gradient(135deg, rgba(220,38,38,.06), rgba(245,158,11,.06)); font-weight: 700; color: var(--text); font-size: 13px; }
+    table.tbl tr:last-child td { border-bottom: none }
+    a.cta-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 12px; background: linear-gradient(135deg, var(--brand), var(--accent)); color: #fff; text-decoration: none; font-size: 15px; font-weight: 800; box-shadow: 0 12px 24px rgba(220,38,38,.22); transition: all .2s; }
+    a.cta-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 30px rgba(220,38,38,.3) }
+    a.cta-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 18px; border-radius: 12px; background: rgba(0,0,0,.04); color: var(--text); border: 1px solid rgba(0,0,0,.08); text-decoration: none; font-size: 14px; font-weight: 700; transition: all .2s; }
+    a.cta-secondary:hover { background: rgba(0,0,0,.06) }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px }
+    .cta-card { background: linear-gradient(135deg, rgba(220,38,38,.06), rgba(245,158,11,.08)); border: 1px solid rgba(220,38,38,.18); border-radius: 18px; padding: 22px 24px; margin: 20px 0; }
+    .cta-card .cc-title { font-size: 17px; font-weight: 800; margin-bottom: 6px }
+    .cta-card .cc-desc { color: var(--muted); font-size: 14px; line-height: 1.75; margin-bottom: 14px }
+    .info-card { background: var(--card); border: 1px solid rgba(0,0,0,.06); border-radius: 14px; padding: 18px 20px; margin: 12px 0; box-shadow: var(--shadow); }
+    .info-card .ic-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .1em; color: var(--info); text-transform: uppercase; margin-bottom: 6px; }
+    .info-card.warn { border-color: rgba(245,158,11,.3); background: linear-gradient(135deg, rgba(245,158,11,.05), rgba(255,255,255,1)) }
+    .info-card.warn .ic-eyebrow { color: #b45309 }
+    .info-card.danger { border-color: rgba(220,38,38,.3); background: linear-gradient(135deg, rgba(220,38,38,.05), rgba(255,255,255,1)) }
+    .info-card.danger .ic-eyebrow { color: var(--brand) }
+    .info-card h4 { font-size: 16px; margin-bottom: 6px }
+    .info-card p, .info-card li { font-size: 14px; color: var(--text); line-height: 1.75 }
+    .info-card p { margin-bottom: 8px }
+    .info-card ul { padding-left: 22px; margin: 4px 0 }
+    pre.code { background: #0f172a; color: #e2e8f0; border-radius: 12px; padding: 18px 22px; overflow-x: auto; font-size: 13px; line-height: 1.7; margin: 12px 0 18px; font-family: "Fira Code", "SF Mono", "Consolas", monospace; }
+    pre.code .c { color: #94a3b8 }
+    pre.code .k { color: #f59e0b }
+    pre.code .s { color: #86efac }
+    .step-list { list-style: none; padding: 0; counter-reset: step; }
+    .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 14px; align-items: flex-start; }
+    .step-list li::before { content: counter(step); flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--brand), var(--accent)); color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+    .step-list li p { margin: 0; font-size: 15px; line-height: 1.8 }
+    .method-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin: 16px 0; }
+    .method-card { background: var(--card); border: 1px solid rgba(0,0,0,.06); border-radius: 14px; padding: 18px 20px; box-shadow: var(--shadow); }
+    .method-card .mc-label { font-size: 11px; font-weight: 800; letter-spacing: .1em; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+    .method-card h4 { font-size: 16px; font-weight: 800; margin-bottom: 6px }
+    .method-card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 0 }
+    .related-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px }
+    .related-links a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; background: rgba(14,165,233,.08); border: 1px solid rgba(14,165,233,.18); color: #0369a1; text-decoration: none; font-size: 13px; font-weight: 600; transition: background .2s; }
+    .related-links a:hover { background: rgba(14,165,233,.14) }
+    footer { text-align: center; padding: 40px 0 20px; color: var(--muted); font-size: 13px; }
+    footer a { color: var(--muted); text-decoration: none }
+    footer a:hover { color: var(--brand) }
+    @media (max-width: 600px) {
+      .hero { padding: 26px 18px }
+      .hero h1 { font-size: 23px }
+      h2.section-h { font-size: 20px }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <nav class="nav-bar" aria-label="页面导航">
+      <a class="nav-back" href="/pages/return-china-guide">← 回国加速综述</a>
+      <a class="nav-back" href="/">← 返回首页</a>
+    </nav>
+    <div class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a> / <a href="/pages/return-china-guide">回国加速</a> / Android 回国配置教程
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="eyebrow">🤖 Android · FlClash / CMFA · 客户端配置</div>
+      <h1>Android 手机回国加速配置教程<br/><span>2026 — FlClash / ClashMeta / Tailscale 全方案</span></h1>
+      <p class="lead">
+        海外安卓手机访问爱奇艺、B 站、优酷、腾讯视频、网易云、国服游戏的完整解决方案。覆盖三条路：<strong>商业一键加速器 App</strong>（最省心）、<strong>FlClash / ClashMeta 分流规则</strong>（进阶）、<strong>Tailscale 大陆家宽出口</strong>（有大陆落地点的极客）。
+      </p>
+      <p class="meta-line">
+        <strong>适合：</strong>所有海外安卓用户 · <strong>难度：</strong>⭐（方案 A）至 ⭐⭐⭐（方案 B） · 阅读时长约 10 分钟
+      </p>
+      <div class="ad-disclosure">
+        <span>ℹ️</span>
+        <span>本文部分链接为合作推广链接，不影响你的实际价格，亦不影响本站评测立场。</span>
+      </div>
+    </header>
+
+    <!-- TOC -->
+    <nav class="toc" aria-label="目录">
+      <h2>目 录</h2>
+      <ol>
+        <li><a href="#choose" data-num="1">三种方案速览</a></li>
+        <li><a href="#method-a" data-num="2">方案 A：商业加速器 App（推荐）</a></li>
+        <li><a href="#method-b" data-num="3">方案 B：FlClash / ClashMeta 分流</a></li>
+        <li><a href="#method-c" data-num="4">方案 C：Tailscale 大陆家宽出口</a></li>
+        <li><a href="#verify" data-num="5">验证与排障</a></li>
+        <li><a href="#faq" data-num="6">常见问题</a></li>
+      </ol>
+    </nav>
+
+    <!-- Section 1 -->
+    <section class="block" id="choose">
+      <div class="section-eyebrow">方案速览</div>
+      <h2 class="section-h">三种方案，按需选一种</h2>
+      <div class="method-grid">
+        <div class="method-card">
+          <div class="mc-label">⭐ 推荐给大多数人</div>
+          <h4>方案 A · 商业加速器 App</h4>
+          <p>下载 Malus / 快帆 App，注册开加速，无需任何技术知识。不需要节点，不用配置规则，三步搞定。</p>
+        </div>
+        <div class="method-card">
+          <div class="mc-label">⭐⭐⭐ 已在用 Clash 翻墙的用户</div>
+          <h4>方案 B · FlClash / ClashMeta 分流</h4>
+          <p>在现有 Clash 配置里追加回国规则集，出国 + 回国一套客户端搞定，需要有回国节点来源。</p>
+        </div>
+        <div class="method-card">
+          <div class="mc-label">⭐⭐⭐⭐ 在大陆有常开设备</div>
+          <h4>方案 C · Tailscale 大陆家宽</h4>
+          <p>已在大陆家里配置好 Tailscale Exit Node 的用户，手机 App 直接选出口节点即可。</p>
+        </div>
+      </div>
+      <div class="info-card warn">
+        <div class="ic-eyebrow">⚠️ 海外 VPS 能当回国节点吗？</div>
+        <p>不能解锁锁区内容。海外 VPS（哪怕 CN2 GIA 优化线路）出口 IP 在海外，平台锁区只认真正的大陆 IP。把海外 VPS 加进 Clash 当"回国节点"，打开爱奇艺依旧报"该内容仅限中国大陆"。若想自建解锁方案，只有<strong>大陆家宽出口（方案 C）</strong>这一条正解。</p>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="block" id="method-a">
+      <div class="section-eyebrow">方案 A · 最省心</div>
+      <h2 class="section-h">方案 A：商业回国加速器 App</h2>
+      <p>无需技术基础，没有节点、不用配置，下载 App 注册即用。这是<strong>大多数海外华人的最优选择</strong>。</p>
+
+      <h3 class="sub-h">Malus 加速器（主推）</h3>
+      <p>支持爱奇艺 / B 站 / 优酷 / 腾讯视频 / 网易云音乐 / 国服游戏 / 钉钉 / 企业微信全场景，拥有独立维护的大陆 IP 池。</p>
+      <ul>
+        <li><strong>Android 安装</strong>：Google Play 没有上架，从官网 <code>getmalus.com</code> 下载 APK 侧载安装（设置 → 安全 → 允许安装未知来源）</li>
+        <li><strong>价格</strong>：首月 ¥9.9，季付 / 年付更优惠，支持支付宝 / 微信支付</li>
+        <li><strong>设备数</strong>：3–5 台同时使用</li>
+        <li><strong>退款政策</strong>：24 小时内未使用可退款，详见官网条款</li>
+      </ul>
+      <div class="cta-row">
+        <a class="cta-primary" href="https://getmalus.com/buy?affid=A328344556F&utm_source=aixiaobai168&utm_medium=affiliate&utm_campaign=android_guide&utm_content=malus_top_cta" target="_blank" rel="sponsored noopener">前往 Malus 官网下载 →</a>
+      </div>
+
+      <h3 class="sub-h">快帆加速器</h3>
+      <p>多协议支持，提供 3 天免费试用，Google Play 在部分地区有上架（如无，从官网下载 APK）。</p>
+      <ul>
+        <li><strong>特色</strong>：支持 iOS / Android / Windows / macOS / 路由器全平台</li>
+        <li><strong>免费试用</strong>：注册后 3 天免费，无需先付款</li>
+      </ul>
+      <div class="cta-row">
+        <a class="cta-secondary" href="https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&a_bid=b9bf8033&utm_source=aixiaobai168&utm_medium=affiliate&utm_campaign=android_guide&utm_content=kuaifan_top_cta" target="_blank" rel="sponsored noopener">快帆 3 天免费试用 →</a>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="block" id="method-b">
+      <div class="section-eyebrow">方案 B · 进阶</div>
+      <h2 class="section-h">方案 B：FlClash / ClashMeta + 回国节点分流</h2>
+      <p>如果你已经有 Clash 内核客户端和<strong>回国节点来源</strong>（机场回国专线 / 大陆家宽出口），可以在现有配置里直接追加回国分流规则。</p>
+
+      <div class="info-card warn">
+        <div class="ic-eyebrow">⚠️ 前提</div>
+        <p>商业加速器（Malus / 快帆）多数是<strong>封闭 App，不提供可导入 Clash 的节点链接</strong>，不能走此方案。需要从支持导出节点的机场或自建大陆家宽出口获取回国节点。</p>
+      </div>
+
+      <h3 class="sub-h">3.1 选择并安装客户端</h3>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>客户端</th><th>推荐度</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr class="highlight">
+              <td><strong>FlClash</strong></td>
+              <td>⭐⭐⭐⭐⭐ 首选</td>
+              <td>UI 最现代（Material 3），配置兼容性好，规则集自动更新，GitHub 持续维护。<br/><a href="https://github.com/chen08209/FlClash/releases" target="_blank" rel="noopener">下载 APK →</a></td>
+            </tr>
+            <tr>
+              <td><strong>ClashMeta for Android（CMFA）</strong></td>
+              <td>⭐⭐⭐⭐</td>
+              <td>老牌稳定，适合从 Clash for Android 迁移的用户，功能完整。<br/><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" rel="noopener">下载 APK →</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>两款均在 GitHub Releases 发布 <code>.apk</code>，下载后侧载安装（设置 → 安全 → 允许安装未知来源）。</p>
+
+      <h3 class="sub-h">3.2 在配置文件中追加回国规则</h3>
+      <p>打开你现有的 Clash 配置文件（<code>.yaml</code>），分两步追加：</p>
+
+      <h4 class="minor-h">步骤 1：添加 rule-providers</h4>
+      <pre class="code"><span class="k">rule-providers</span>:
+  <span class="s">return-china</span>:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "<span class="s">https://raw.githubusercontent.com/mowei-ie/router-vpn/main/docs/return-china-rules.yaml</span>"
+    path: ./ruleset/return-china.yaml
+    interval: 86400</pre>
+
+      <h4 class="minor-h">步骤 2：在 rules 最前面添加（优先级最高）</h4>
+      <pre class="code"><span class="k">rules</span>:
+  - RULE-SET,return-china,<span class="s">🇨🇳回国</span>          <span class="c"># 放在所有规则最前面</span>
+  - GEOSITE,cn,<span class="s">🇨🇳回国</span>                      <span class="c"># 可选：通用大陆兜底</span>
+  - GEOIP,CN,<span class="s">🇨🇳回国</span>,no-resolve             <span class="c"># 可选：大陆 IP 兜底</span>
+  <span class="c"># --- 你原有的出国规则继续在后面 ---</span>
+  - GEOSITE,google,出国代理
+  - MATCH,出国代理</pre>
+
+      <h4 class="minor-h">步骤 3：新增「🇨🇳回国」代理组</h4>
+      <pre class="code"><span class="k">proxy-groups</span>:
+  - name: "<span class="s">🇨🇳回国</span>"
+    type: select
+    proxies:
+      - <span class="s">回国节点A</span>
+      - <span class="s">回国节点B</span>
+      - DIRECT</pre>
+
+      <h3 class="sub-h">3.3 在 FlClash 中导入配置</h3>
+      <ol class="step-list">
+        <li><p>底部导航 → <strong>Profile（配置）</strong> → <strong>+</strong> → 选择本地文件或 URL 导入</p></li>
+        <li><p>点击导入的配置条目 → 确认激活（变为蓝色高亮）</p></li>
+        <li><p>主页开关打开 VPN → 在「🇨🇳回国」代理组<strong>选择具体的回国节点</strong>（不能选 DIRECT，否则走本地出网）</p></li>
+        <li><p>代理模式确认为 <strong>Rule（规则）</strong>，不要用 Global</p></li>
+      </ol>
+
+      <h3 class="sub-h">3.4 在 CMFA 中导入配置</h3>
+      <ol class="step-list">
+        <li><p>主页 → <strong>配置</strong> → <strong>+</strong> → 从 URL 导入 / 从本地文件导入</p></li>
+        <li><p>长按配置条目 → <strong>选为当前配置</strong></p></li>
+        <li><p>主页 <strong>Enable TUN</strong> 开关打开 → 代理模式选 <strong>Rule（规则）</strong></p></li>
+        <li><p>在代理页 → 找到「🇨🇳回国」代理组 → 选择具体的回国节点</p></li>
+      </ol>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="block" id="method-c">
+      <div class="section-eyebrow">方案 C · 有大陆落地点</div>
+      <h2 class="section-h">方案 C：Tailscale 客户端（大陆家宽出口）</h2>
+      <p>如果你已经按照 <a href="https://github.com/mowei-ie/router-vpn/blob/main/return-china/self-hosted/home-exit-node.md" target="_blank" rel="noopener">大陆家宽 Tailscale Exit Node 教程</a> 配好了大陆出口设备：</p>
+      <ol class="step-list">
+        <li><p>Google Play / APK 安装 <strong>Tailscale</strong> Android App</p></li>
+        <li><p>登录与大陆出口设备<strong>同一个 Tailscale 账户</strong></p></li>
+        <li><p>App 主界面 → 点 <strong>Exit Node</strong> → 选择大陆那台设备</p></li>
+        <li><p>手机所有流量从大陆家宽真实 IP 出网 → 锁区内容自然解锁</p></li>
+      </ol>
+      <div class="info-card warn">
+        <div class="ic-eyebrow">⚠️ 注意</div>
+        <p>Tailscale 全局出口会让所有流量（包括访问 YouTube / Google 等海外服务）都绕回大陆，<strong>会显著增加海外网站访问延迟</strong>。如需同时流畅访问海外服务，建议用方案 B 的 FlClash 分流（精确控制哪些流量走回国），而不是 Tailscale 全局出口。</p>
+      </div>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="block" id="verify">
+      <div class="section-eyebrow">验证</div>
+      <h2 class="section-h">验证配置是否生效</h2>
+      <ol class="step-list">
+        <li><p>手机浏览器访问 <a href="https://ip.cn" target="_blank" rel="noopener">ip.cn</a> 或 <a href="https://ip.skk.moe" target="_blank" rel="noopener">ip.skk.moe</a>，应显示<strong>大陆 IP 归属地</strong>（中国 某省 某运营商）</p></li>
+        <li><p>打开爱奇艺 / B 站锁区内容 → 应<strong>可正常播放</strong>，不再报"该内容仅限中国大陆观看"</p></li>
+        <li><p>打开 YouTube / Google → 应<strong>仍然走出国代理</strong>（验证出国分流未被破坏，仅适用方案 B）</p></li>
+      </ol>
+
+      <h3 class="sub-h">常见故障排查</h3>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>症状</th><th>可能原因</th><th>解决方法</th></tr></thead>
+          <tbody>
+            <tr><td>ip.cn 仍显示海外 IP</td><td>代理组「🇨🇳回国」未选择具体节点 / 选了 DIRECT / 未开 Rule 模式</td><td>进入代理组页面选一个真实的回国节点；确认代理模式为 Rule</td></tr>
+            <tr><td>爱奇艺仍报"仅限大陆"</td><td>IP 已切为大陆但平台有 DRM 或客户端检测</td><td>DRM 无法靠 IP 绕过；尝试清除爱奇艺缓存并重新打开；部分内容需用国行 App</td></tr>
+            <tr><td>YouTube / Google 访问慢</td><td>GEOIP,CN 误把 CDN IP 导到回国节点</td><td>把 Google 规则（GEOSITE,google）放在 GEOIP,CN 之前；或删去 GEOIP,CN 兜底</td></tr>
+            <tr><td>规则集无法下载更新</td><td>FlClash 无法访问 GitHub Raw URL</td><td>先确保出国代理正常工作；规则集地址走出国代理下载</td></tr>
+            <tr><td>Malus / 快帆 App 装不上</td><td>手机拒绝安装未知来源 APK</td><td>设置 → 安全/隐私 → 安装未知应用 → 允许对应浏览器 / 文件管理器安装</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 6 FAQ -->
+    <section class="block" id="faq">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-h">常见问题</h2>
+
+      <h3 class="sub-h">Q1：Malus / 快帆 和 FlClash 可以同时开吗？</h3>
+      <p>不可以。Android 同一时间只允许一个 VPN 连接，开第二个会自动断开第一个。选其中一种方案使用即可。</p>
+
+      <h3 class="sub-h">Q2：FlClash 和 ClashMeta for Android 哪个更好？</h3>
+      <p>推荐 <strong>FlClash</strong>：UI 更现代，Material 3 设计，规则集自动刷新逻辑更完善，新项目维护活跃。如果你原来就用 CMFA，继续用也没问题。</p>
+
+      <h3 class="sub-h">Q3：机场没有回国专线，哪里获取回国节点？</h3>
+      <p>两条路：① 联系机场确认是否提供 IEPL/IPLC 双向回国线路；② 在大陆有常开设备的话，用 <a href="https://github.com/mowei-ie/router-vpn/blob/main/return-china/self-hosted/home-exit-node.md" target="_blank" rel="noopener">Tailscale Exit Node</a> 自建（参考方案 C）。若两条路都不具备，直接用方案 A 商业加速器。</p>
+
+      <h3 class="sub-h">Q4：海外 VPS（CN2 GIA）能作为回国节点解锁爱奇艺吗？</h3>
+      <p>不能。海外 VPS 出口 IP 在海外，爱奇艺 / 央视频 / B 站等锁区内容只认大陆 IP。把海外 VPS 加进「🇨🇳回国」代理组，锁区内容仍会报"该内容仅限中国大陆"，不会有任何改善。</p>
+
+      <h3 class="sub-h">Q5：配置回国分流后，访问淘宝 / 微信速度变慢了？</h3>
+      <p>正常现象。流量绕经了回国节点（可能有额外延迟），取决于节点线路质量。若节点质量差，访问大陆服务反而会比直连慢。解决方法：换更好的回国节点，或对影响不大的服务在规则里改为 DIRECT。</p>
+    </section>
+
+    <!-- 底部 CTA -->
+    <section class="block" id="bottom-cta">
+      <div class="cta-card">
+        <div class="cc-title">🎯 没有节点 / 不想折腾配置？商业加速器更省心</div>
+        <div class="cc-desc">Malus 加速器：官网下载 APK，首月 ¥9.9，覆盖爱奇艺 / B站 / 腾讯视频 / 网易云 / 国服游戏。快帆：3 天免费试用，多协议，全平台支持。</div>
+        <div class="cta-row">
+          <a class="cta-primary" href="https://getmalus.com/buy?affid=A328344556F&utm_source=aixiaobai168&utm_medium=affiliate&utm_campaign=android_guide&utm_content=bottom_malus_cta" target="_blank" rel="sponsored noopener">前往 Malus 注册 →</a>
+          <a class="cta-secondary" href="https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&a_bid=b9bf8033&utm_source=aixiaobai168&utm_medium=affiliate&utm_campaign=android_guide&utm_content=bottom_kuaifan_cta" target="_blank" rel="sponsored noopener">快帆免费试用 →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关阅读 -->
+    <section class="block">
+      <div class="section-eyebrow">相关阅读</div>
+      <h2 class="section-h">配套资源</h2>
+      <div class="related-links">
+        <a href="/pages/return-china-guide">↩ 回国加速综述（选产品看这里）</a>
+        <a href="/pages/shadowrocket-return">📱 iOS Shadowrocket 配置教程</a>
+        <a href="/pages/return-worldcup-2026">🏆 2026 世界杯海外观看指南</a>
+        <a href="https://github.com/mowei-ie/router-vpn/blob/main/return-china/client/clash-reverse-rules.md" target="_blank" rel="noopener">📋 Clash 桌面端反向分流指南</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 <a href="/">Router VPN Guide</a> · 内容仅供参考，请遵守所在国家/地区法律法规</p>
+    </footer>
+
+  </div>
+</body>
+</html>

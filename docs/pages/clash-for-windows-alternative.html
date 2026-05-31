@@ -1,0 +1,477 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){if(location.hostname==='mowei-ie.github.io'){var p=location.pathname.replace(/^\/router-vpn/,'').replace(/\/?index\.html$/,'').replace(/\.html$/,'')||'/';location.replace('https://www.aixiaobai168.com'+p+location.search+location.hash);}})();</script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.clarity.ms" />
+  <title>Clash for Windows 停更怎么办｜2026 替代品对比与迁移指南</title>
+  <meta name="description" content="CFW停更后怎么办？本文说明旧版还能不能继续用，建议优先迁移Clash Verge Rev，并给出替代客户端选择、订阅导入、官方源校验、假冒官网识别、系统代理开启与三步迁移流程，帮助用户避开捆绑安装包，适合正在寻找可靠Clash替代方案的Windows桌面用户，同时解释为什么不要下载复活版和网盘二次打包版本。" />
+  <meta name="keywords" content="Clash for Windows替代,CFW替代方案,Clash for Windows停更,Clash跑路,Clash删库,Clash停更,Clash Verge Rev,Mihomo Party,FlClash,Karing,UniClash,V2RayN,Windows翻墙,Windows科学上网,Clash迁移,CFW下架,Clash客户端推荐2026" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta property="og:title" content="Clash for Windows 停更怎么办｜2026 替代品对比与迁移指南" />
+  <meta property="og:description" content="CFW 还能用但不建议长期继续，优先迁移 Clash Verge Rev，并对比 Mihomo Party、FlClash、UniClash、Karing、v2rayN。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.aixiaobai168.com/pages/clash-for-windows-alternative" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="article:published_time" content="2026-04-06" />
+  <meta property="article:modified_time" content="2026-04-30" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Clash for Windows 停更怎么办｜2026 替代品对比" />
+  <meta name="twitter:description" content="CFW 还能用但不建议长期继续，首选 Clash Verge Rev，并附替代品对比与迁移步骤。" />
+  <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <link rel="canonical" href="https://www.aixiaobai168.com/pages/clash-for-windows-alternative" />
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', '桌面客户端');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 10px }
+    .subtitle { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 28px }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
+    }
+    .kicker { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); font-weight: 700; margin-bottom: 6px }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card p, .card li { font-size: 15px; line-height: 1.8; color: var(--muted) }
+    .card ul, .card ol { padding-left: 20px; margin-top: 8px }
+    .card li { margin-bottom: 6px }
+    .card a { color: var(--accent); text-decoration: none }
+    .card a:hover { text-decoration: underline }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px }
+    th { background: rgba(14,165,233,.06); text-align: left; padding: 10px 12px; font-weight: 600 }
+    td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,.06) }
+    .warn-box { background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.2); border-radius: 12px; padding: 14px 16px; margin: 14px 0; font-size: 14px; line-height: 1.7; color: var(--text) }
+    .tip-box { background: rgba(16,185,129,.08); border: 1px solid rgba(16,185,129,.2); border-radius: 12px; padding: 14px 16px; margin: 14px 0; font-size: 14px; line-height: 1.7; color: var(--text) }
+    .danger-box { background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.2); border-radius: 12px; padding: 14px 16px; margin: 14px 0; font-size: 14px; line-height: 1.7; color: var(--text) }
+    .lead { font-size: 16px; font-weight: 700; line-height: 1.8; color: var(--text); border-left: 4px solid var(--success); padding: 10px 12px; background: rgba(16,185,129,.08); border-radius: 10px }
+    .cta-box { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 }
+    .cta-btn { display: inline-block; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600; color: var(--text); background: linear-gradient(135deg, rgba(14,165,233,.1), rgba(124,77,255,.1)); border: 1px solid rgba(14,165,233,.15); transition: all .2s }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(14,165,233,.12); text-decoration: none }
+    .btn-row { display:flex; gap:10px; flex-wrap:wrap; margin: 14px 0 6px }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:11px 16px; border-radius:10px; text-decoration:none; font-weight:700; font-size:14px; border:1px solid rgba(0,0,0,.06); background:#fff; color:var(--text); transition: all .2s }
+    .btn:hover { transform: translateY(-1px); box-shadow:0 8px 20px rgba(15,23,42,.12); text-decoration:none }
+    .btn.primary { background: linear-gradient(135deg,#7c4dff,#0ea5e9); color:#fff; border-color: transparent }
+    .btn.ghost { background:#fff; color: var(--text) }
+    a[data-pending="true"] { color: var(--muted) !important; text-decoration: underline dotted; cursor: not-allowed }
+    a[data-pending="true"]:hover { text-decoration: underline dotted }
+    code.inline { background: rgba(0,0,0,.05); padding: 2px 6px; border-radius: 4px; font-size: 13px }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px"><a href="/" style="color:var(--accent);text-decoration:none">首页</a> <span style="margin:0 6px">›</span> <a href="/pages/windows-guide" style="color:var(--accent);text-decoration:none">Windows 教程</a> <span style="margin:0 6px">›</span> <span style="color:var(--text)">CFW 替代方案</span></nav>
+
+    <h1>Clash for Windows 停更怎么办 — 2026 替代品对比与迁移指南</h1>
+    <p class="subtitle">CFW 目前还能打开，但已停更删库，不建议继续作为主力客户端。新用户优先选 Clash Verge Rev；本文再按场景对比 Mihomo Party、FlClash、UniClash、Karing、v2rayN。</p>
+
+    <section class="card" style="border-left:5px solid var(--success);background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(14,165,233,.04));margin-bottom:20px">
+      <p class="lead">结论先说：<strong>CFW 可以临时用，但不建议长期继续</strong>。如果你只想快速迁移且保留原本使用习惯，首选 <strong>Clash Verge Rev</strong>，订阅链接可以平移导入。</p>
+      <div class="warn-box">
+        <strong>别先搜下载站：</strong>先认准官方 Releases 与官方文档站，再下载。页面后文有「假冒官网识别」清单，避免点进仿域名和捆绑安装包。
+      </div>
+    </section>
+
+    <nav aria-label="站内导航" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="/" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="/clash-subscription-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="/pages/windows-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Windows 教程</a>
+      <a href="/pages/clash-for-windows-alternative" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">CFW 替代方案</a>
+    </nav>
+
+    <!-- ========== 快速导航目录 ========== -->
+    <section class="card">
+      <div class="kicker">目录</div>
+      <h2>快速导航</h2>
+      <p style="color:var(--muted);font-size:14px;margin:6px 0 14px">全文按问题顺序整理，覆盖 CFW 停更背景、安全下载、替代工具对比、无损迁移步骤与常见问题。点击章节直达：</p>
+      <ul style="columns:2;column-gap:24px;padding-left:20px">
+        <li><a href="#section-1">一、Clash for Windows 发生了什么</a></li>
+        <li><a href="#section-3-6">二、假冒官网识别</a></li>
+        <li><a href="#section-2">三、2026 年 Windows 翻墙工具推荐</a></li>
+        <li><a href="#scenario">四、按场景选择客户端</a></li>
+        <li><a href="#section-3">五、从 CFW 迁移到 Clash Verge Rev</a></li>
+        <li><a href="#section-3-5">六、替代品全景对比表</a></li>
+        <li><a href="#section-4">七、没有 Clash 订阅？</a></li>
+        <li><a href="#section-5">八、常见问题</a></li>
+        <li><a href="#section-6">九、推荐阅读</a></li>
+      </ul>
+    </section>
+
+    <section class="card" id="section-1">
+      <div class="kicker">背景</div>
+      <h2>Clash for Windows 发生了什么</h2>
+      <p>2023 年 11 月，CFW 开发者 Fndroid 突然宣布停止维护，随后删除了 GitHub 仓库。最后的公开版本是 <strong>0.20.39</strong>。</p>
+      <div class="danger-box">
+        <strong>继续使用 CFW 的风险：</strong>
+        <ul style="margin-top:8px;padding-left:18px">
+          <li>底层 Electron 框架不再更新安全补丁，漏洞持续累积</li>
+          <li>Clash 核心版本停滞，无法支持新协议和新系统特性</li>
+          <li>官方仓库已删除，市面上流通的安装包来源不可控，存在被篡改的风险</li>
+        </ul>
+      </div>
+      <p style="margin-top:12px">简言之：<strong>CFW 已经不适合在 2026 年继续作为主力工具使用</strong>。好消息是，社区已经有成熟的替代方案，迁移过程也很顺畅。</p>
+    </section>
+
+    <section class="card" id="section-3-6">
+      <div class="kicker">安全下载</div>
+      <h2>假冒官网识别：先确认下载源再安装</h2>
+      <div class="danger-box">
+        <p><strong>真实下载源：</strong></p>
+        <ul style="margin-top:8px;padding-left:18px">
+          <li>https://github.com/clash-verge-rev/clash-verge-rev/releases（Verge Rev 官方 Releases）</li>
+          <li>https://www.clashverge.dev/（Verge Rev 文档站）</li>
+        </ul>
+        <p style="margin-top:10px"><strong>常见假冒特征：</strong>搜索广告位置顶、类似 clash-windows.com 的仿域名、页面写「独家版本」、安装包带捆绑、引导你关闭杀毒软件后再安装。</p>
+      </div>
+      <p>任何来源不明的 CFW 复活版或魔改安装包都不建议使用，先看域名和仓库归属再点击下载按钮。</p>
+    </section>
+
+    <section class="card" id="section-2">
+      <div class="kicker">对比</div>
+      <h2>2026 年 Windows 翻墙工具推荐</h2>
+      <table>
+        <thead>
+          <tr><th>工具</th><th>内核</th><th>特点</th><th>推荐度</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Clash Verge Rev</strong></td>
+            <td>Mihomo（Clash.Meta）</td>
+            <td>CFW 最自然的继任者，基于 Rust + Tauri 构建，支持 Clash 订阅直接导入、TUN 模式、规则分流，界面与 CFW 相似</td>
+            <td style="color:var(--success);font-weight:700">首选</td>
+          </tr>
+          <tr>
+            <td><strong>V2RayN</strong></td>
+            <td>V2Ray / Xray / sing-box</td>
+            <td>多核心多协议支持，社区活跃、文档丰富，适合需要灵活切换协议的用户</td>
+            <td style="color:var(--accent);font-weight:700">备选</td>
+          </tr>
+          <tr>
+            <td><strong>Hiddify</strong></td>
+            <td>sing-box</td>
+            <td>跨平台（Windows/macOS/Android/iOS），界面简洁，sing-box 路线，支持较新的协议</td>
+            <td style="color:var(--muted)">可选</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tip-box">
+        <strong>如果你之前习惯了 CFW 的操作方式</strong>（导入订阅 → 选节点 → 规则分流），迁移到 Clash Verge Rev 几乎零学习成本，工作流完全一致。
+      </div>
+      <div class="btn-row">
+        <a class="btn primary"
+           href="https://github.com/clash-verge-rev/clash-verge-rev/releases"
+           target="_blank" rel="noopener"
+           data-event="client_download_click"
+           data-client="clash-verge-rev"
+           data-platform="windows"
+           data-source-module="cfw_alternative">下载 Clash Verge Rev</a>
+        <a class="btn ghost"
+           href="https://www.clashverge.dev/"
+           target="_blank" rel="noopener"
+           data-event="client_download_click"
+           data-client="clash-verge-rev-docs"
+           data-platform="windows"
+           data-source-module="cfw_alternative">打开官方文档站</a>
+      </div>
+    </section>
+
+    <section class="card" id="scenario">
+      <div class="kicker">按需求选</div>
+      <h2>不知道选哪个？按你的使用场景来</h2>
+      <table class="compare-table">
+        <thead>
+          <tr><th>你的情况</th><th>推荐客户端</th><th>推荐理由</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>从 CFW 直接迁移</td>
+            <td><a href="/pages/windows-guide" data-event="client_compare_click" data-client="clash-verge-rev" data-source-module="cfw_alternative">Clash Verge Rev</a></td>
+            <td>UI 最像、订阅可平移</td>
+          </tr>
+          <tr>
+            <td>用杨帆云 / 尔湾云</td>
+            <td><a href="/pages/uniclash-guide" data-event="client_compare_click" data-client="uniclash" data-source-module="cfw_alternative">UniClash</a></td>
+            <td>一键登录免导入订阅</td>
+          </tr>
+          <tr>
+            <td>iPhone / 全平台一致</td>
+            <td><a href="/pages/karing-guide" data-event="client_compare_click" data-client="karing" data-source-module="cfw_alternative">Karing</a></td>
+            <td>iOS 免费可用</td>
+          </tr>
+          <tr>
+            <td>新手桌面端</td>
+            <td><a href="/pages/mihomo-party-guide" data-event="client_compare_click" data-client="mihomo-party" data-source-module="cfw_alternative">Mihomo Party / Clash Party</a></td>
+            <td>中文界面友好</td>
+          </tr>
+          <tr>
+            <td>多设备 Win+安卓+Mac</td>
+            <td><a href="/pages/flclash-guide" data-event="client_compare_click" data-client="flclash" data-source-module="cfw_alternative">FlClash</a></td>
+            <td>三端一致体验</td>
+          </tr>
+          <tr>
+            <td>路由器全屋代理</td>
+            <td><a href="/pages/asus-router-guide" data-event="client_compare_click" data-client="merlinclash" data-source-module="cfw_alternative">MerlinClash</a> / <a href="/pages/soft-router-guide" data-event="client_compare_click" data-client="openclash" data-source-module="cfw_alternative">OpenClash</a></td>
+            <td>不依赖每台设备装客户端</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" id="section-3">
+      <div class="kicker">迁移</div>
+      <h2>从 CFW 迁移到 Clash Verge Rev</h2>
+      <h3 style="font-size:16px;margin:12px 0 8px">第一步：备份 CFW 数据</h3>
+      <p>迁移之前，先从 CFW 中保存以下信息：</p>
+      <ol>
+        <li><strong>订阅链接</strong>：在 CFW 的 Profiles 页面，右键你的订阅条目 → 复制 URL</li>
+        <li><strong>本地配置（可选）</strong>：如果你有自定义规则，备份 <code class="inline">profiles/</code> 文件夹中的 YAML 文件</li>
+      </ol>
+      <div class="btn-row">
+        <a class="btn"
+           href="/pages/windows-guide#section-4"
+           data-event="client_migration_click"
+           data-step="backup_subscription"
+           data-source-module="cfw_alternative">备份订阅链接参考</a>
+      </div>
+
+      <h3 style="font-size:16px;margin:16px 0 8px">第二步：下载 Clash Verge Rev</h3>
+      <p>前往 <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener" data-event="client_download_click" data-client="clash-verge-rev" data-platform="windows" data-source-module="cfw_alternative">GitHub Releases</a> 下载最新版安装包（Windows 用户选 <code class="inline">.exe</code> 安装程序）。安装过程与普通 Windows 软件一样。</p>
+
+      <h3 style="font-size:16px;margin:16px 0 8px">第三步：导入订阅</h3>
+      <ol>
+        <li>打开 Clash Verge Rev</li>
+        <li>点击左侧「订阅」标签</li>
+        <li>将之前复制的订阅链接粘贴到输入框，点击「导入」</li>
+        <li>等待节点列表加载完成</li>
+      </ol>
+      <div class="btn-row">
+        <a class="btn"
+           href="/pages/windows-guide#section-4"
+           data-event="client_migration_click"
+           data-step="import_subscription"
+           data-source-module="cfw_alternative">导入订阅操作图文</a>
+      </div>
+
+      <h3 style="font-size:16px;margin:16px 0 8px">第四步：启用代理</h3>
+      <ol>
+        <li>切换到「代理」标签，选择一个节点</li>
+        <li>在设置中打开「系统代理」</li>
+        <li>打开浏览器访问 <code class="inline">google.com</code> 测试是否生效</li>
+      </ol>
+
+      <div class="tip-box">
+        <strong>想了解 TUN 模式、分应用代理、开机自启等进阶配置？</strong>请查看我们的 <a href="/pages/windows-guide">Windows Clash Verge Rev 完整教程</a>，从安装到高级功能全部覆盖。
+      </div>
+    </section>
+
+    <section class="card" id="section-3-5">
+      <div class="kicker">全景对比</div>
+      <h2>替代品全景对比表</h2>
+      <table class="compare-table">
+        <thead>
+          <tr><th>客户端</th><th>平台</th><th>内核</th><th>难度</th><th>推荐人群</th><th>本站教程链接</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Clash Verge Rev</td>
+            <td>Windows / macOS / Linux</td>
+            <td>Mihomo</td>
+            <td>低</td>
+            <td>从 CFW 迁移、桌面端主力用户</td>
+            <td><a href="/pages/windows-guide" data-event="client_compare_click" data-client="clash-verge-rev" data-source-module="cfw_alternative">Windows 教程</a></td>
+          </tr>
+          <tr>
+            <td>Mihomo Party</td>
+            <td>Windows / macOS / Linux</td>
+            <td>Mihomo</td>
+            <td>低</td>
+            <td>新手桌面端、偏好中文界面</td>
+            <td><a href="/pages/mihomo-party-guide" data-event="client_compare_click" data-client="mihomo-party" data-source-module="cfw_alternative">Mihomo Party 教程</a></td>
+          </tr>
+          <tr>
+            <td>FlClash</td>
+            <td>Windows / macOS / Android</td>
+            <td>Mihomo</td>
+            <td>中</td>
+            <td>多设备用户，希望三端一致</td>
+            <td><a href="/pages/flclash-guide" data-event="client_compare_click" data-client="flclash" data-source-module="cfw_alternative">FlClash 教程</a></td>
+          </tr>
+          <tr>
+            <td>UniClash</td>
+            <td>Windows / macOS / Android</td>
+            <td>服务商定制</td>
+            <td>低</td>
+            <td>杨帆云、尔湾云用户</td>
+            <td><a href="/pages/uniclash-guide" data-event="client_compare_click" data-client="uniclash" data-source-module="cfw_alternative">UniClash 教程</a></td>
+          </tr>
+          <tr>
+            <td>Karing</td>
+            <td>iOS / Android / Windows / macOS / Linux</td>
+            <td>多协议兼容</td>
+            <td>中</td>
+            <td>iPhone 用户、跨平台用户</td>
+            <td><a href="/pages/karing-guide" data-event="client_compare_click" data-client="karing" data-source-module="cfw_alternative">Karing 教程</a></td>
+          </tr>
+          <tr>
+            <td>v2rayN</td>
+            <td>Windows</td>
+            <td>Xray / sing-box</td>
+            <td>中</td>
+            <td>偏好 V2Ray/Xray 生态用户</td>
+            <td><a href="#" data-pending="true" data-event="client_compare_click" data-client="v2rayn" data-source-module="cfw_alternative">待发布</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" id="section-4">
+      <div class="kicker">补充</div>
+      <h2>没有 Clash 订阅？</h2>
+      <p>Clash Verge Rev 需要导入机场的订阅链接才能使用。如果你还没有订阅，可以先看看我们的机场推荐：</p>
+      <div class="cta-box">
+        <a class="cta-btn" href="/clash-subscription-guide">查看订阅申请指南（机场推荐与价格对比）</a>
+      </div>
+      <p style="margin-top:12px">订阅价格常见从 ¥10/月起，大多数机场同时提供 Clash 和 V2Ray 格式的订阅链接，实际以下单页为准。</p>
+    </section>
+
+    <section class="card" id="section-5">
+      <div class="kicker">FAQ</div>
+      <h2>常见问题</h2>
+
+      <p><strong>Q1：CFW 的订阅在 Clash Verge Rev 里能直接用吗？</strong></p>
+      <p>能。只要你的机场提供 Clash 格式订阅（绝大多数都支持），直接粘贴链接导入即可。规则和节点会自动加载。</p>
+
+      <p style="margin-top:16px"><strong>Q2：Clash Verge Rev 和 CFW 在使用上有什么区别？</strong></p>
+      <p>核心工作流几乎一样：导入订阅 → 选节点 → 开系统代理。主要改进在于 Clash Verge Rev 使用 Mihomo 内核（支持更多协议）、基于 Tauri 构建（比 Electron 轻量得多）、界面更现代。</p>
+
+      <p style="margin-top:16px"><strong>Q3：已经在用的 CFW 0.20.39 还能继续用吗？</strong></p>
+      <p>技术上可以，但不推荐。CFW 底层的 Electron 和 Clash 核心都已停止安全更新。短期使用问题不大，长期存在安全隐患。建议尽早迁移。</p>
+
+      <p style="margin-top:16px"><strong>Q4：macOS 用户用什么替代？</strong></p>
+      <p>macOS 推荐使用 ClashX Meta 或跨平台的 Clash Verge Rev。详见我们的 <a href="/pages/macos-guide">macOS 翻墙教程</a>。</p>
+
+      <p style="margin-top:16px"><strong>Q5：手机上有替代方案吗？</strong></p>
+      <p>Android 推荐 Clash Meta for Android，iOS 推荐 Shadowrocket 或 Stash。详见 <a href="/pages/mobile-guide">手机翻墙教程</a>。</p>
+
+      <p style="margin-top:16px"><strong>Q6：CFW 删库为什么会发生？</strong></p>
+      <p>公开信息显示 CFW 项目已停止维护并删除仓库。对普通用户来说，重点不是追溯细节，而是避免继续使用来源不明的安装包，尽快迁移到仍维护的客户端。</p>
+
+      <p style="margin-top:16px"><strong>Q7：旧配置 YAML 怎么导入 Clash Verge Rev？</strong></p>
+      <p>如果你原先用的是订阅链接，直接在 Verge Rev 粘贴订阅导入最稳；如果是本地 YAML，自行导入后再逐项检查代理组、规则集和端口设置，避免历史自定义导致冲突。</p>
+
+      <p style="margin-top:16px"><strong>Q8：Mihomo Party 和 Clash Verge Rev 怎么选？</strong></p>
+      <p>两者都走 Mihomo 路线。你要的是低学习成本迁移 CFW，就优先 Verge Rev；你更在意中文界面和新手体验，可以看 <a href="/pages/mihomo-party-guide">Mihomo Party / Clash Party 教程</a> 后再对比。</p>
+
+      <p style="margin-top:16px"><strong>Q9：iPhone 用户现在该用什么？</strong></p>
+      <p>当前常见方案仍是 Shadowrocket 或 Stash；如果不想付费买客户端，可先看 <a href="/pages/karing-guide">Karing 教程</a>。由于地区上架会变化，是否可直接下载请以 App Store 当时显示为准。</p>
+    </section>
+
+    <section class="card" id="section-6">
+      <div class="kicker">下一步</div>
+      <h2>推荐阅读</h2>
+      <div class="cta-box">
+        <a class="cta-btn" href="/pages/windows-guide">Clash Verge Rev 完整教程</a>
+        <a class="cta-btn" href="/clash-subscription-guide" style="background:linear-gradient(135deg,rgba(16,185,129,.14),rgba(14,165,233,.14));border-color:rgba(16,185,129,.2)">订阅申请指南</a>
+        <a class="cta-btn" href="/pages/uniclash-guide">UniClash 下载教程</a>
+        <a class="cta-btn" href="/pages/karing-guide">Karing 下载教程</a>
+        <a class="cta-btn" href="/pages/mihomo-party-guide">Mihomo Party 教程</a>
+        <a class="cta-btn" href="/pages/flclash-guide">FlClash 教程</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">
+        <a href="/pages/macos-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06)"><span style="font-size:24px">🍎</span><div><strong style="font-size:14px">macOS 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">ClashX Meta 配置指南</p></div></a>
+        <a href="/pages/mobile-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06)"><span style="font-size:24px">📱</span><div><strong style="font-size:14px">手机教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">Android / iOS 翻墙</p></div></a>
+        <a href="/pages/uniclash-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06)"><span style="font-size:24px">🧩</span><div><strong style="font-size:14px">UniClash 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">杨帆云 / 尔湾云一键登录</p></div></a>
+        <a href="/pages/karing-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06)"><span style="font-size:24px">📌</span><div><strong style="font-size:14px">Karing 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">iPhone 免费替代方案与订阅导入</p></div></a>
+        <a href="/pages/mihomo-party-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06)"><span style="font-size:24px">🖥️</span><div><strong style="font-size:14px">Mihomo Party 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">Clash Party 桌面端新手配置</p></div></a>
+        <a href="/pages/flclash-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06)"><span style="font-size:24px">⚡</span><div><strong style="font-size:14px">FlClash 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">Android 与桌面端 ClashMeta 客户端</p></div></a>
+      </div>
+    </section>
+
+    <footer>
+      <p>本站内容仅用作学习与技术指引，请遵守当地法律法规，合理合规使用网络服务。</p>
+      <p style="margin-top:4px">本文档最后更新：2026 年 4 月</p>
+      <nav aria-label="相关教程" style="margin-top:12px;font-size:12px;line-height:2">
+        <strong>更多教程：</strong>
+        <a href="/">首页</a> ·
+        <a href="/clash-subscription-guide">订阅申请</a> ·
+        <a href="/pages/windows-guide">Windows 教程</a> ·
+        <a href="/pages/macos-guide">macOS</a> ·
+        <a href="/pages/mobile-guide">手机</a> ·
+        <a href="/pages/chatgpt-guide">ChatGPT</a>
+      </nav>
+    </footer>
+  </main>
+  <script>
+    // 修正 hash 锚点定位偏移
+    function alignToHash(smooth) {
+      try {
+        if (!window.location.hash) return;
+        var id = decodeURIComponent(window.location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        [80, 300, 800, 1600].forEach(function(delay) {
+          setTimeout(function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+          }, delay);
+        });
+      } catch (e) {}
+    }
+    window.addEventListener('load', function() { alignToHash(false); });
+    window.addEventListener('hashchange', function() { alignToHash(true); });
+  </script>
+  <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","@id":"https://www.aixiaobai168.com/pages/clash-for-windows-alternative#howto","name":"从 Clash for Windows 迁移到 Clash Verge Rev","description":"CFW 停更后，按备份订阅、下载客户端、导入订阅、启用代理四步完成迁移。","url":"https://www.aixiaobai168.com/pages/clash-for-windows-alternative#section-3","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","position":1,"name":"备份旧订阅","text":"在 CFW 的 Profiles 页面复制订阅链接，如有自定义规则再备份本地 YAML 文件。"},{"@type":"HowToStep","position":2,"name":"下载 Clash Verge Rev","text":"从官方 GitHub Releases 下载最新版安装包，Windows 用户选择 exe 安装程序。"},{"@type":"HowToStep","position":3,"name":"导入订阅","text":"打开 Clash Verge Rev 后进入订阅页面，粘贴旧订阅链接并导入，等待节点加载完成。"},{"@type":"HowToStep","position":4,"name":"启用代理并测试","text":"选择节点后开启系统代理，访问 Google 或 YouTube 测试连通性。"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"Windows 教程","item":"https://www.aixiaobai168.com/pages/windows-guide"},{"@type":"ListItem","position":3,"name":"CFW 停更替代指南","item":"https://www.aixiaobai168.com/pages/clash-for-windows-alternative"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Clash for Windows 的订阅在 Clash Verge Rev 里能直接用吗？","acceptedAnswer":{"@type":"Answer","text":"能。只要机场提供 Clash 格式订阅，直接粘贴链接导入即可，规则和节点会自动加载。"}},{"@type":"Question","name":"Clash Verge Rev 和 CFW 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"核心工作流几乎一样。主要改进在于 Mihomo 内核支持更多协议，Tauri 框架更轻量，界面也更现代。"}},{"@type":"Question","name":"CFW 0.20.39 还能继续用吗？","acceptedAnswer":{"@type":"Answer","text":"技术上可以，但不推荐长期继续。底层组件已停止安全更新，来源不明安装包风险会越来越高。"}},{"@type":"Question","name":"macOS 用户用什么替代？","acceptedAnswer":{"@type":"Answer","text":"macOS 可以使用 ClashX Meta 或 Clash Verge Rev，按你是否需要跨平台统一体验来选。"}},{"@type":"Question","name":"手机上有替代方案吗？","acceptedAnswer":{"@type":"Answer","text":"Android 常见方案是 Clash Meta for Android，iOS 常见方案是 Shadowrocket 或 Stash。"}},{"@type":"Question","name":"CFW 删库为什么会发生？","acceptedAnswer":{"@type":"Answer","text":"公开信息显示 CFW 项目已经停更并删除仓库。普通用户更需要关注的是及时迁移，并避免下载来源不明的所谓复活版安装包。"}},{"@type":"Question","name":"旧配置 YAML 怎么导入 Clash Verge Rev？","acceptedAnswer":{"@type":"Answer","text":"优先使用旧订阅链接直接导入最稳。如果是本地 YAML，导入后请逐项检查代理组、规则集和端口，确认没有历史冲突。"}},{"@type":"Question","name":"Mihomo Party 和 Clash Verge Rev 怎么选？","acceptedAnswer":{"@type":"Answer","text":"两者都走 Mihomo 路线。你要低学习成本迁移 CFW，优先 Clash Verge Rev；你更看重新手中文界面，可等待 Mihomo Party 专题后再比较。"}},{"@type":"Question","name":"iPhone 用户该用什么？","acceptedAnswer":{"@type":"Answer","text":"当前常见方案是 Shadowrocket 或 Stash，也可以关注 Karing。是否能直接下载取决于地区上架状态，请以 App Store 当时显示为准。"}}]}</script>
+</body>
+</html>
