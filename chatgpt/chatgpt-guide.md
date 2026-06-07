@@ -54,7 +54,7 @@ ChatGPT 不对中国大陆直接开放，使用前需配置科学上网。现在
 | 需求 | 推荐 | 说明 |
 |------|------|------|
 | 优先解锁 OpenAI / Claude / Gemini | [杨帆云/扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE) | 美国节点可解锁主流 AI 服务，支持 UniClash，适合把 AI 工具当主力使用 |
-| 预算敏感、轻量使用 ChatGPT | [蓝胖云](https://jpp.lanpangyun.me/#/register?code=30Y2Sexl) | New_2026 系列当前月付 ¥10 起，日本/新加坡等线路可用于 ChatGPT |
+| 预算敏感、轻量使用 ChatGPT | [蓝胖云](https://u.lanpangyun.de/#/register?code=30Y2Sexl) | New_2026 系列当前月付 ¥10 起，日本/新加坡等线路可用于 ChatGPT |
 | 想少折腾客户端 | 杨帆云/尔湾云 + [UniClash](../subscription/uniclash-guide.md) | 登录账号即可同步节点，不需要手动导入订阅链接 |
 | 全家设备都要用 | 华硕路由器 / 软路由 | 适合电视、电脑、手机、NAS 同时走代理，但排障成本更高 |
 
