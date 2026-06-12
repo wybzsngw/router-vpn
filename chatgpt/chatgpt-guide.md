@@ -2,7 +2,7 @@
 
 > 📄 本文对应 HTML 页面：[ChatGPT 教程](../docs/pages/chatgpt-guide.html)　·　🌐 在线阅读：<https://www.aixiaobai168.com/pages/chatgpt-guide>
 
-2026 ChatGPT 国内注册登录完整教程：OpenAI 账号注册流程、科学上网网络环境配置、ChatGPT Go / Plus 充值方式、最新模型（GPT-5.2 / GPT-5.5 系列）使用、通过 Cursor IDE 调用 OpenAI 高级模型，附 UniClash、杨帆云/扬帆云、蓝胖云、Claude、Gemini 等实用建议。
+2026 ChatGPT 国内注册登录完整教程：OpenAI 账号注册流程、科学上网网络环境配置、ChatGPT Go / Plus 充值方式、最新模型（GPT-5.2 / GPT-5.5 系列）使用、通过 Cursor IDE 调用 OpenAI 高级模型，附 UniClash、疾风云、蓝胖云、Claude、Gemini 等实用建议。
 
 ---
 
@@ -53,19 +53,20 @@ ChatGPT 不对中国大陆直接开放，使用前需配置科学上网。现在
 
 | 需求 | 推荐 | 说明 |
 |------|------|------|
-| 优先解锁 OpenAI / Claude / Gemini | [杨帆云/扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE) | 美国节点可解锁主流 AI 服务，支持 UniClash，适合把 AI 工具当主力使用 |
+| 优先解锁 OpenAI / Claude / Gemini | [疾风云](https://j134.net/?code=1p7r) | 美国节点可解锁主流 AI 服务，支持 UniClash，基础版 ¥19.99/月（100GB），年付 7 折码 `JF1111` |
+| 多地区节点 / 长期套餐 | [扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE) | 美国节点可解锁 ChatGPT，节点按 LV1–LV4 分层，年付 6.9 折码 `yf6189`，两年付 6.5 折码 `yf6185` |
 | 预算敏感、轻量使用 ChatGPT | [蓝胖云](https://u.lanpangyun.de/#/register?code=30Y2Sexl) | New_2026 系列当前月付 ¥10 起，日本/新加坡等线路可用于 ChatGPT |
-| 想少折腾客户端 | 杨帆云/尔湾云 + [UniClash](../subscription/uniclash-guide.md) | 登录账号即可同步节点，不需要手动导入订阅链接 |
+| 想少折腾客户端 | 疾风云/尔湾云 + [UniClash](../subscription/uniclash-guide.md) | 登录账号即可同步节点，不需要手动导入订阅链接 |
 | 全家设备都要用 | 华硕路由器 / 软路由 | 适合电视、电脑、手机、NAS 同时走代理，但排障成本更高 |
 
-> 💡 **OpenAI 解锁优先推荐**：[杨帆云/扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE)。如果只是偶尔用 ChatGPT，蓝胖云也可以；如果你还要同时用 Claude、Gemini、Cursor 高级模型，优先选节点覆盖和 AI 解锁更明确的服务商。
+> 💡 **OpenAI 解锁优先推荐**：[疾风云](https://j134.net/?code=1p7r)（年付 7 折码 `JF1111`、半年 9 折码 `JF888`）。如果只是偶尔用 ChatGPT，蓝胖云也可以；如果你还要同时用 Claude、Gemini、Cursor 高级模型，优先选节点覆盖和 AI 解锁更明确的服务商。
 
 ### 2.3 UniClash 适合谁
 
-UniClash 是部分机场提供的定制客户端，适合已经购买杨帆云/尔湾云套餐的新手：
+UniClash 是部分机场提供的定制客户端，适合已经购买疾风云/尔湾云套餐的新手：
 
 - **优点**：不用复制订阅链接，输入网站代码 + 邮箱 + 密码即可同步节点。
-- **杨帆云网站代码**：`yangfan`
+- **疾风云网站代码**：`jifeng`
 - **尔湾云网站代码**：`erwan`
 - **适合人群**：Windows / Mac / Android 新手，想快速登录、测速、切换节点。
 - **不适合人群**：需要多机场订阅、复杂规则、TUN 模式、路由器全屋代理的用户。
@@ -217,7 +218,7 @@ A：切换到日本、新加坡或美国节点，优先测试带“美国直连 
 
 **Q2：登录后响应慢或经常断开？**
 
-A：先换低延迟节点（日本/新加坡通常更快），如果需要稳定解锁 OpenAI，可测试美国直连或服务商标注的 AI 解锁节点。使用杨帆云/尔湾云的新手可直接参考 [UniClash 教程](../subscription/uniclash-guide.md) 登录测速。
+A：先换低延迟节点（日本/新加坡通常更快），如果需要稳定解锁 OpenAI，可测试美国直连或服务商标注的 AI 解锁节点。使用疾风云/尔湾云的新手可直接参考 [UniClash 教程](../subscription/uniclash-guide.md) 登录测速。
 
 **Q3：回答到一半停了？**
 
