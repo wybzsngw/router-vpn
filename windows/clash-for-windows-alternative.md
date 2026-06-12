@@ -74,7 +74,7 @@ Clash for Windows（CFW）已经停更并删除公开仓库。旧版本短期还
 | 新手桌面端 | [Mihomo Party / Clash Party](../subscription/mihomo-party-guide.md) | 基于 Mihomo，适合 Windows / macOS / Linux |
 | 多设备 Win + 安卓 + Mac | [FlClash](../subscription/flclash-guide.md) | Android 与桌面端体验更一致 |
 | iPhone / 免费跨平台方案 | [Karing](../subscription/karing-guide.md) | 适合 iOS 免费方案和多端订阅导入 |
-| 杨帆云 / 尔湾云用户 | [UniClash](../subscription/uniclash-guide.md) | 服务商账号一键登录，不需要手动导入订阅 |
+| 疾风云 / 扬帆云 / 尔湾云用户 | [UniClash](../subscription/uniclash-guide.md) | 服务商账号一键登录，不需要手动导入订阅 |
 | 路由器全屋代理 | [华硕路由器](../asus-router/asus-merlinclash-setup.md) / [软路由 OpenClash](../soft-router/openwrt-clash.md) | 不依赖每台设备单独安装客户端 |
 
 新手建议：
@@ -82,7 +82,7 @@ Clash for Windows（CFW）已经停更并删除公开仓库。旧版本短期还
 - Windows 主力电脑：先用 Clash Verge Rev。
 - Android + 桌面多设备：可以看 FlClash。
 - iPhone 免费方案：可以看 Karing。
-- 已经买了杨帆云 / 尔湾云：看 UniClash。
+- 已经买了疾风云 / 扬帆云 / 尔湾云：看 UniClash。
 
 ---
 
@@ -127,7 +127,7 @@ Clash Verge Rev、Mihomo Party、FlClash、Karing 这类客户端本身不提供
 如果还没有订阅，先看：
 
 - [Clash 订阅申请指南](../docs/clash-subscription-guide.html)
-- [UniClash 下载教程](../subscription/uniclash-guide.md)（适合杨帆云 / 尔湾云用户）
+- [UniClash 下载教程](../subscription/uniclash-guide.md)（适合疾风云 / 扬帆云 / 尔湾云用户）
 
 ---
 

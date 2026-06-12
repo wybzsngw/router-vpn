@@ -112,7 +112,7 @@ Karing 的优势之一是 iOS 端免费，但需要注意：
 | 客户端 | 更适合谁 | 说明 |
 | --- | --- | --- |
 | Karing | 想要免费 iOS 方案、跨平台同步、多订阅统一管理 | 兼容多种配置格式，适合已有机场订阅的用户 |
-| [UniClash](../docs/pages/uniclash-guide.html) | 杨帆云、尔湾云等支持 UniClash 的服务商用户 | 网站代码 + 账号密码登录，不需要手动导入订阅 |
+| [UniClash](../docs/pages/uniclash-guide.html) | 疾风云、扬帆云、尔湾云等支持 UniClash 的服务商用户 | 网站代码 + 账号密码登录，不需要手动导入订阅 |
 | [FlClash](../docs/pages/flclash-guide.html) | Windows / Android / macOS 多设备用户 | 安卓和桌面端一致体验 |
 | [Mihomo Party / Clash Party](../docs/pages/mihomo-party-guide.html) | 桌面端新手用户 | 适合 Windows / macOS / Linux |
 
