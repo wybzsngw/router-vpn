@@ -62,7 +62,7 @@ rule-providers:
 # 3) 在 rules 顶部加入规则集引用 + 兜底
 rules:
   - RULE-SET,return-china,🇨🇳回国
-  - GEOSITE,category-games-cn,🇨🇳回国   # 国服游戏（域名分散，用 GEOSITE 兜底）
+  - GEOSITE,category-games@cn,🇨🇳回国   # 国服游戏（域名分散，用 GEOSITE 兜底；注意是 @cn 不是 -cn）
   # ……此处保留你原有的"翻墙出国"规则……
   - GEOSITE,cn,🇨🇳回国                  # 其余国内站点兜底（可选）
   - GEOIP,CN,🇨🇳回国                    # 国内 IP 兜底（可选）
@@ -80,7 +80,7 @@ rules:
 ```yaml
 rules:
   # 国服游戏
-  - GEOSITE,category-games-cn,🇨🇳回国
+  - GEOSITE,category-games@cn,🇨🇳回国
   # 视频
   - GEOSITE,bilibili,🇨🇳回国
   - GEOSITE,iqiyi,🇨🇳回国
@@ -101,7 +101,7 @@ rules:
   - MATCH,DIRECT
 ```
 
-> GeoSite 分类名（`category-games-cn`、`bilibili`、`tencent-video` 等）来自 Mihomo / v2ray-rules-dat 上游，Clash Verge Rev 与 Mihomo Party 默认数据源均包含这些子集。
+> GeoSite 分类名（`category-games@cn`、`bilibili`、`iqiyi`、`netease-music` 等）来自 Clash.Meta 内核默认加载的 MetaCubeX/meta-rules-dat 数据库，Clash Verge Rev 与 Mihomo Party 均内置。注意国服游戏是属性写法 `category-games@cn`（`@cn` 不是 `-cn`），写错会报 `list ... not found`；若你的客户端用了其它 geo 库导致分类名不识别，按该库命名调整即可。
 
 ---
 

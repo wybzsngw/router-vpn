@@ -32,7 +32,7 @@ proxy-groups:
 
 rules:
   # 国服游戏
-  - GEOSITE,category-games-cn,🇨🇳回国
+  - GEOSITE,category-games@cn,🇨🇳回国
   # 视频
   - GEOSITE,bilibili,🇨🇳回国
   - GEOSITE,iqiyi,🇨🇳回国
@@ -52,4 +52,4 @@ rules:
 
 1. 在 `docs/` 目录下提供 `return-china-rules.yaml` 文件
 2. 提供 GitHub Raw 链接，让用户一键导入 Clash Verge / Mihomo Party
-3. 通过 GitHub Actions 定期更新（GeoSite/GeoIP 数据源跟随 v2ray-rules-dat 上游）
+3. 通过 GitHub Actions 定期更新（本规则集为明确域名列表；GeoSite/GeoIP 分类由 Clash.Meta 内核默认加载的 MetaCubeX/meta-rules-dat 提供）

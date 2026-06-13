@@ -59,6 +59,14 @@
 >
 > **👉 [前往快帆官网](https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&a_bid=b9bf8033&utm_source=github&utm_medium=affiliate&utm_campaign=return_worldcup&utm_content=worldcup_md_method1_kuaifan)**
 
+<!-- -->
+
+> 🏆 **穿梭 Transocks · 影音/直播专用**
+>
+> 影音、办公、证券场景的常用选择，覆盖 iOS / Android / Windows / macOS / Android TV，3 台设备并发，iOS 商店页支持"3 天无忧退款"。纯观赛够用，**不支持国服游戏**。
+>
+> **👉 [前往穿梭 Transocks](https://www.transocks.com/payment?affiliate-code=77g5x5g&utm_source=github&utm_medium=affiliate&utm_campaign=return_worldcup&utm_content=worldcup_md_method1_transocks)**
+
 **实战提示**：
 
 - **开赛前 1 周开通**，留出时间测试节点与画质

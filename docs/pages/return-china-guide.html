@@ -228,18 +228,12 @@
       margin-left: 6px;
     }
 
-    /* 产品卡片（主推 Malus） */
+    /* 产品评测卡片 */
     .product-card {
       background: var(--card); border: 1px solid rgba(220,38,38,.18);
       border-radius: 20px; box-shadow: 0 14px 36px rgba(220,38,38,.08);
       padding: 26px 26px; margin: 18px 0;
       position: relative; overflow: hidden;
-    }
-    .product-card::before {
-      content: "★ 主推"; position: absolute; top: 14px; right: 14px;
-      padding: 4px 12px; border-radius: 999px;
-      background: linear-gradient(135deg, var(--brand), var(--accent));
-      color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .08em;
     }
     .product-card .pc-header {
       display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
@@ -330,7 +324,7 @@
     pre.code .k { color: #f59e0b }
     pre.code .s { color: #86efac }
 
-    /* CTA 卡片（主推位） */
+    /* CTA 卡片（产品转化位） */
     .cta-card {
       background: linear-gradient(135deg, rgba(220,38,38,.06), rgba(245,158,11,.08));
       border: 1px solid rgba(220,38,38,.18);
@@ -420,8 +414,8 @@
         <ol>
           <li><a href="#why-blocked" data-num="0">为什么海外访问国内服务受限</a></li>
           <li><a href="#three-plans" data-num="1">回国加速三大方案对比</a></li>
-          <li><a href="#malus-review" data-num="2">主推：Malus 详细评测</a></li>
-          <li><a href="#alt-products" data-num="3">同类产品中立对比</a></li>
+          <li><a href="#commercial" data-num="2">商业回国加速器横评</a></li>
+          <li><a href="#product-reviews" data-num="3">主流加速器逐款评测</a></li>
           <li><a href="#clash-reverse" data-num="4">Clash 反向分流配置</a></li>
           <li><a href="#scenarios" data-num="5">六大使用场景详解</a></li>
           <li><a href="#self-hosted" data-num="6">自建回国节点（大陆家宽正解）</a></li>
@@ -504,36 +498,36 @@
             <thead>
               <tr>
                 <th>方案</th>
-                <th>上手难度</th>
+                <th>本站推荐度</th>
+                <th>上手</th>
                 <th>月成本</th>
                 <th>设备数</th>
-                <th>速度上限</th>
                 <th>适合人群</th>
               </tr>
             </thead>
             <tbody>
               <tr class="highlight">
                 <td><strong>A. 商业回国加速器</strong><br/><span style="color:var(--muted);font-size:12px">Malus / 穿梭 / 快帆 / 番茄 / UU 海外版</span></td>
-                <td>⭐ 下载 App 即可</td>
+                <td><strong style="color:var(--brand)">★★★★★ 最推荐</strong></td>
+                <td>下载 App 即可</td>
                 <td>¥15–50</td>
                 <td>3–5 台</td>
-                <td>★★★ 共享带宽</td>
                 <td>普通用户、对技术不感兴趣</td>
               </tr>
               <tr>
                 <td><strong>B. 回国线路机场</strong><br/><span style="color:var(--muted);font-size:12px">支持 IEPL/IPLC 双向的机场</span></td>
-                <td>⭐⭐⭐ 需懂 Clash</td>
+                <td>★★★</td>
+                <td>需懂 Clash</td>
                 <td>¥10–40</td>
-                <td>不限</td>
-                <td>★★★★ 部分专线</td>
+                <td>3–5 台（视机场）</td>
                 <td>已经用 Clash 翻墙出国的进阶用户</td>
               </tr>
               <tr>
                 <td><strong>C. 自建回国节点</strong><br/><span style="color:var(--muted);font-size:12px">大陆家宽 Tailscale 出口</span></td>
-                <td>⭐⭐⭐⭐ 需大陆落地点</td>
+                <td>★★</td>
+                <td>需大陆落地点</td>
                 <td>仅电费</td>
-                <td>不限</td>
-                <td>★★★★★ 家宽真实 IP</td>
+                <td>不限（Tailscale 上限）</td>
                 <td>在大陆有常开网络/设备的人</td>
               </tr>
             </tbody>
@@ -546,8 +540,9 @@
 ├─ <span class="k">看视频/听歌/玩游戏，越简单越好</span>
 │  └─→ <strong>方案 A：商业加速器</strong>
 │      └─ 国服游戏优先 → 网易 UU 海外版（大厂权威，无开放联盟）
-│      └─ 影音 + 游戏混用 → <strong>Malus</strong>（本文主推）
-│      └─ 多平台 + 退款友好 → <strong>快帆</strong>（备选推荐）
+│      └─ 影音 + 游戏混用 → <strong>Malus</strong>（影音游戏综合）
+│      └─ 多平台 + 退款友好 → <strong>快帆</strong>（30 天月付试错成本低）
+│      └─ 影音/办公/证券，不玩国服游戏 → <strong>穿梭</strong>
 │
 ├─ <span class="k">已经用 Clash 翻墙出国，想一套客户端搞定</span>
 │  └─→ <strong>方案 B：回国线路机场 + Clash 反向分流</strong>
@@ -561,20 +556,92 @@
        └─ 在大陆没有落地点 → 回到方案 A 商业加速器</pre>
       </section>
 
-      <!-- ==================== Section 2: Malus 详细评测（主推） ==================== -->
-      <section class="block" id="malus-review">
-        <div class="section-eyebrow">主推产品 · 详细评测</div>
-        <h2 class="section-h">Malus 加速器：海外华人回国主推方案</h2>
+      <!-- ==================== Section 2: 商业加速器横评（总表置顶） ==================== -->
+      <section class="block" id="commercial">
+        <div class="section-eyebrow">方案 A · 最推荐</div>
+        <h2 class="section-h">商业回国加速器横评</h2>
+        <p>商业加速器是<strong>绝大多数海外华人最省事、也最值得优先考虑</strong>的方案：下载 App、登录即用，无需任何技术配置、无需大陆落地点。本站目前与 <strong>Malus、快帆、穿梭</strong> 三家建立了合作（可一键开通）；番茄、网易 UU 暂无开放联盟，仅作中立介绍。先看横评总表，再往下看逐款评测。</p>
 
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>产品</th>
+                <th>定位</th>
+                <th>月付起步</th>
+                <th>设备数</th>
+                <th>国服游戏</th>
+                <th>退款</th>
+                <th>本站推广</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight">
+                <td><strong>Malus</strong></td>
+                <td>影音 + 游戏综合</td>
+                <td>$4.99（约 ¥36）</td>
+                <td>3 / 5 台</td>
+                <td>✅ 高级/游戏会员</td>
+                <td>分层 7–30 天</td>
+                <td>✅ <a href="https://getmalus.com/buy?affid=A328344556F&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_overview&amp;utm_content=comparison_table_cta" target="_blank" rel="sponsored noopener" style="color:var(--brand);font-weight:700">立即注册 →</a></td>
+              </tr>
+              <tr>
+                <td>快帆</td>
+                <td>影音 + 按应用代理</td>
+                <td>¥45</td>
+                <td>3 台</td>
+                <td>⚠️ 效果一般</td>
+                <td>7 天（扣 6%）</td>
+                <td>✅ <a href="https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&amp;a_bid=b9bf8033&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_overview&amp;utm_content=kuaifan_table_cta" target="_blank" rel="sponsored noopener" style="color:#0369a1;font-weight:700">前往官网 →</a></td>
+              </tr>
+              <tr>
+                <td>穿梭 Transocks</td>
+                <td>影音、办公、证券</td>
+                <td>约 ¥0.78/天</td>
+                <td>3 台</td>
+                <td>❌ 明确不支持</td>
+                <td>3 天</td>
+                <td>✅ <a href="https://www.transocks.com/payment?affiliate-code=77g5x5g&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_overview&amp;utm_content=comparison_table_transocks" target="_blank" rel="sponsored noopener" style="color:#0369a1;font-weight:700">前往官网 →</a></td>
+              </tr>
+              <tr>
+                <td>番茄加速器</td>
+                <td>游戏 + 影音</td>
+                <td>免费档 + 付费</td>
+                <td>视套餐</td>
+                <td>✅ 主打</td>
+                <td>视套餐</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>网易 UU 海外版</td>
+                <td>国服游戏专业</td>
+                <td>视套餐</td>
+                <td>视套餐</td>
+                <td>✅✅ 权威</td>
+                <td>视渠道</td>
+                <td>— 大厂直营</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13px;color:var(--muted)">表中"本站推广"标 ✅ 的为合作链接，<strong>不影响你的购买价格</strong>；标"—"的产品本站未建立合作，与产品本身好坏无关。</p>
+      </section>
+
+      <!-- ==================== Section 3: 主流加速器逐款评测 ==================== -->
+      <section class="block" id="product-reviews">
+        <div class="section-eyebrow">逐款评测</div>
+        <h2 class="section-h">主流回国加速器逐款评测</h2>
+
+        <h3 class="sub-h" id="malus-review">Malus 加速器</h3>
         <div class="product-card">
           <div class="pc-header">
             <div class="pc-logo">🍎</div>
             <div>
               <div class="pc-name">Malus 加速器</div>
-              <div class="pc-tag">官网：getmalus.com · 主体：STARBUFFER PTE. LTD.（新加坡）</div>
+              <div class="pc-tag">主体：STARBUFFER PTE. LTD.（新加坡）</div>
             </div>
           </div>
-          <p>Malus 是 2026 年海外华人圈口碑较稳定的回国加速器之一，覆盖 Windows、macOS、iOS、Android、Android TV 与浏览器扩展，支持影音、游戏、直播、办公多场景。本站将其列为 <strong>主推产品</strong>，主要原因是：① 平台覆盖全（含 Android TV，海外华人家庭常用）；② 分"标准 / 高级"两档可按需选择；③ 官网首充优惠力度大；④ 公开的退款政策清晰可查。</p>
+          <p>Malus 是 2026 年海外华人圈口碑较稳定的回国加速器之一，覆盖 Windows、macOS、iOS、Android、Android TV 与浏览器扩展，支持影音、游戏、直播、办公多场景。本文把它作为重点介绍的产品之一，主要原因是：① 平台覆盖全（含 Android TV，海外华人家庭常用）；② 分"标准 / 高级"两档可按需选择；③ 首充优惠力度大；④ 公开的退款政策清晰可查。</p>
 
           <div class="cta-row">
             <a class="cta-primary" href="https://getmalus.com/buy?affid=A328344556F&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_overview&amp;utm_content=malus_hero_cta" target="_blank" rel="sponsored noopener">立即购买 Malus VIP · 首月 ¥9.9 起 →</a>
@@ -674,24 +741,8 @@
           </div>
           <a class="cta-primary" href="https://getmalus.com/buy?affid=A328344556F&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_overview&amp;utm_content=malus_section_cta" target="_blank" rel="sponsored noopener">前往 Malus 官网 →</a>
         </div>
-      </section>
 
-      <!-- ==================== Section 3: 同类产品中立对比 ==================== -->
-      <section class="block" id="alt-products">
-        <div class="section-eyebrow">同类对比</div>
-        <h2 class="section-h">同类回国加速器中立对比</h2>
-        <p>除 Malus 之外，海外华人圈还有几款常被提及的回国加速器，下面给出中立简介，帮你按需选择。不在此推荐位嵌入推广链接的产品，是因为本站暂未与其建立推广合作关系，<strong>这与产品本身好坏无关</strong>。</p>
-
-        <h3 class="sub-h">穿梭 Transocks</h3>
-        <p>面向海外用户，把出口"切到中国大陆"，访问视频、音乐、证券、办公等。客户端覆盖 iOS、Android、Windows、macOS、Android TV、Chrome/Edge 扩展，还有自家"穿梭路由器"。账户同时支持 3 台设备，PC 端可用本地 127.0.0.1:1080 代理。<strong>iOS 商店页明确说明不为中国大陆地区用户提供服务，且不支持国服游戏加速。</strong></p>
-        <ul>
-          <li><strong>参考价位</strong>（官网）：360 天 ¥260（≈¥0.72/天）、180 天 ¥135、90 天 ¥70。App 端价格略高（渠道抽成）</li>
-          <li><strong>退款</strong>：iOS 商店页"3 天无忧退款"</li>
-          <li><strong>口碑</strong>：Google Play 评分约 3.6–3.7，下载量"100 万+"。体验受地区/线路/时段波动较大</li>
-        </ul>
-        <p style="font-size:13px;color:var(--muted)">注：穿梭暂无可注册的推广员通道，本站不嵌入推广链接，仅做客观介绍。如需了解可前往 <a href="https://www.transocks.com/" target="_blank" rel="nofollow noopener" style="color:var(--muted);text-decoration:underline">穿梭官网</a> 查看最新信息。</p>
-
-        <h3 class="sub-h">快帆 <span class="badge-pick">备选推荐</span></h3>
+        <h3 class="sub-h">快帆 SpeedIn</h3>
         <p>老牌回国加速器（开发主体：BOHAN TECHNOLOGY LIMITED / KuaiFan Global），平台覆盖 Android / iOS / Windows / macOS / Android TV。Android 端支持"按应用走代理"，iOS 端强调 Fanster™ 专线，宣称 150+ 加速线路。同账号最多 3 台设备同时在线。是海外华人/留学生圈使用面较广的产品之一。</p>
         <ul>
           <li><strong>参考价位</strong>（官网，人民币）：360 天 ¥480、90 天 ¥125、<strong>30 天 ¥45</strong></li>
@@ -709,6 +760,22 @@
           <a class="cta-primary" style="background:linear-gradient(135deg,#10b981,#0ea5e9);box-shadow:0 12px 24px rgba(16,185,129,.22)" href="https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&amp;a_bid=b9bf8033&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_overview&amp;utm_content=kuaifan_section_cta" target="_blank" rel="sponsored noopener">前往快帆官网 →</a>
         </div>
 
+        <h3 class="sub-h">穿梭 Transocks</h3>
+        <p>面向海外用户，把出口"切到中国大陆"，访问视频、音乐、证券、办公等。客户端覆盖 iOS、Android、Windows、macOS、Android TV、Chrome/Edge 扩展，还有自家"穿梭路由器"。账户同时支持 3 台设备，PC 端可用本地 127.0.0.1:1080 代理。适合<strong>影音、办公、证券</strong>类需求。<strong>iOS 商店页明确说明不为中国大陆地区用户提供服务，且不支持国服游戏加速</strong>——玩国服游戏请看网易 UU 或 Malus。</p>
+        <ul>
+          <li><strong>参考价位</strong>（官网）：360 天 ¥260（≈¥0.72/天）、180 天 ¥135、90 天 ¥70。App 端价格略高（渠道抽成）</li>
+          <li><strong>退款</strong>：iOS 商店页"3 天无忧退款"</li>
+          <li><strong>口碑</strong>：Google Play 评分约 3.6–3.7，下载量"100 万+"。体验受地区/线路/时段波动较大</li>
+        </ul>
+
+        <div class="cta-card" style="background:linear-gradient(135deg,rgba(14,165,233,.06),rgba(124,77,255,.06));border-color:rgba(14,165,233,.22)">
+          <div class="cc-text">
+            <strong>想试试穿梭 Transocks？</strong>
+            <span>影音 / 办公 / 证券场景的常用选择，3 台设备并发，iOS 商店页支持"3 天无忧退款"。<strong>不支持国服游戏</strong>，游戏党请选 Malus 或网易 UU。</span>
+          </div>
+          <a class="cta-primary" style="background:linear-gradient(135deg,#0ea5e9,#6d28d9);box-shadow:0 12px 24px rgba(14,165,233,.22)" href="https://www.transocks.com/payment?affiliate-code=77g5x5g&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_overview&amp;utm_content=transocks_section_cta" target="_blank" rel="sponsored noopener">前往穿梭 Transocks →</a>
+        </div>
+
         <h3 class="sub-h">番茄加速器</h3>
         <p>主打游戏 + 影音的回国加速器，免费档时段较长适合上手试用，付费档分"游戏+影音会员"与"影音会员"两档。海外华人圈使用面较广，但市面上同名/山寨产品较多，<strong>需认准正版官网</strong>。本站暂未与其建立推广合作。</p>
 
@@ -719,82 +786,35 @@
           <li><strong>推广合作</strong>：大厂直营产品，无开放联盟政策。本站仅作权威背书介绍，不嵌入推广链接</li>
         </ul>
         <p>如果你的核心需求是 <strong>国服游戏</strong>，UU 海外版仍是首选；如果是影音/直播 + 游戏混合需求，可选 Malus 高级/游戏会员。</p>
-
-        <h3 class="sub-h">五款横评一表看清</h3>
-        <div class="tbl-wrap">
-          <table class="tbl">
-            <thead>
-              <tr>
-                <th>产品</th>
-                <th>定位</th>
-                <th>月付起步</th>
-                <th>设备数</th>
-                <th>国服游戏</th>
-                <th>退款</th>
-                <th>本站推广</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="highlight">
-                <td><strong>Malus</strong><span class="badge-pick">主推</span></td>
-                <td>影音 + 游戏综合</td>
-                <td>$4.99（约 ¥36）</td>
-                <td>3 / 5 台</td>
-                <td>✅ 高级/游戏会员</td>
-                <td>分层 7–30 天</td>
-                <td>✅ <a href="https://getmalus.com/buy?affid=A328344556F&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_overview&amp;utm_content=comparison_table_cta" target="_blank" rel="sponsored noopener" style="color:var(--brand);font-weight:700">立即注册 →</a></td>
-              </tr>
-              <tr>
-                <td>穿梭 Transocks</td>
-                <td>影音、办公、证券</td>
-                <td>约 ¥0.78/天</td>
-                <td>3 台</td>
-                <td>❌ 明确不支持</td>
-                <td>3 天</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td>快帆</td>
-                <td>影音 + 按应用代理</td>
-                <td>¥45</td>
-                <td>3 台</td>
-                <td>⚠️ 效果一般</td>
-                <td>7 天（扣 6%）</td>
-                <td>✅ <a href="https://af.kuaifan.club/scripts/chm1f4?a_aid=6a044b0c5acc0&amp;a_bid=b9bf8033&amp;utm_source=aixiaobai168&amp;utm_medium=affiliate&amp;utm_campaign=return_overview&amp;utm_content=kuaifan_table_cta" target="_blank" rel="sponsored noopener" style="color:#0369a1;font-weight:700">前往官网 →</a></td>
-              </tr>
-              <tr>
-                <td>番茄加速器</td>
-                <td>游戏 + 影音</td>
-                <td>免费档 + 付费</td>
-                <td>视套餐</td>
-                <td>✅ 主打</td>
-                <td>视套餐</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td>网易 UU 海外版</td>
-                <td>国服游戏专业</td>
-                <td>视套餐</td>
-                <td>视套餐</td>
-                <td>✅✅ 权威</td>
-                <td>视渠道</td>
-                <td>— 大厂直营</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </section>
 
       <!-- ==================== Section 4: Clash 反向分流 ==================== -->
       <section class="block" id="clash-reverse">
         <div class="section-eyebrow">技术配置</div>
         <h2 class="section-h">Clash 反向分流配置（已在用翻墙出国的用户）</h2>
-        <p>如果你已经在用 Clash Verge Rev / Mihomo Party / OpenClash 翻墙出国，可以在同一个客户端里 <strong>额外加一组回国节点 + 反向分流规则</strong>，让海外网站走出海代理，国内网站走回国节点，互不干扰。</p>
+        <p>如果你已经在用 Clash Verge Rev / Mihomo Party / OpenClash 翻墙出国，可以在同一个客户端里 <strong>额外加一组回国节点 + 反向分流规则</strong>，让海外网站走出海代理，国内网站走回国节点，互不干扰。<strong>第一步是先有一个"回国节点"，再谈分流配置。</strong></p>
 
-        <h3 class="sub-h">核心思路</h3>
+        <h3 class="sub-h">第一步：先准备一个回国节点（支持回国线路的机场）</h3>
+        <p>一个现实问题：<strong>大多数主流"翻墙出国"机场并不提供回国线路</strong>，能拿来当 Clash 回国节点的机场很少。回国节点主要来自三处：① <strong>明确提供回国专线的机场订阅</strong>（最省事，下面给例子）；② 部分商业加速器的协议导出（多数封闭 App 不支持）；③ 自建 Hysteria2/Trojan 节点（见第 6 节）。下面给出一个目前仍在运营、确实带回国线路的例子，<strong>并如实标注信息边界</strong>，请按需自行判断。</p>
+
+        <div class="info-card">
+          <div class="ic-eyebrow">🛫 回国机场示例</div>
+          <h4>EdNovas 云（含回国专线）</h4>
+          <p>少数明确提供回国线路的 Clash 机场之一。官方套餐页标注<strong>广港 IEPL 专线 + 沪日隧道 + 京德隧道</strong>直出回国，回国节点上白名单，主要用于网易云 / 爱奇艺等国内流媒体；Vmess 协议、5 台设备并发，另有多国海外节点可选。</p>
+          <ul>
+            <li><strong>海外用户须选"海外用户套餐（Foreign Customers Outside China）"</strong>：官方价月付 200G ¥30 / 500G ¥75 / 800G ¥100，年付 200G ¥90 / 500G ¥219；官方明确<strong>回国节点按 5 倍流量计费</strong>，请留意用量</li>
+            <li><strong>退款以官方"退款说明"页为准</strong>：当前该页标注暂停退款。建议先买<strong>最小月付套餐</strong>试用，再决定是否续费</li>
+            <li>我们仅整理其公开信息、<strong>未做线路实测</strong>，实际速度与稳定性请以你自己的试用结果为准；不会写分流规则的可在客户端用全局模式走回国节点</li>
+          </ul>
+          <div class="cta-row">
+            <a class="cta-secondary" href="https://ednovas.org/#/register?code=VVbLpTVi" target="_blank" rel="sponsored noopener">了解 EdNovas 云回国机场 →</a>
+          </div>
+        </div>
+
+        <h3 class="sub-h">第二步 · 核心思路</h3>
         <p>常规翻墙出国的规则是：国内网站直连，国外网站走代理。"回国分流"则相反：<strong>国内域名/IP 走回国代理</strong>，其它按你原有规则处理（继续走出海代理或直连）。</p>
 
-        <h3 class="sub-h">YAML 配置示例（Clash Verge / Mihomo）</h3>
+        <h3 class="sub-h">第三步 · YAML 配置示例（Clash Verge / Mihomo）</h3>
         <pre class="code"><span class="c"># 在原有 proxy-groups 基础上新增"🇨🇳回国"策略组</span>
 proxy-groups:
   <span class="k">- name:</span> <span class="s">"🇨🇳回国"</span>
@@ -807,7 +827,7 @@ proxy-groups:
 <span class="c"># 反向分流规则（放在原有规则前面，优先匹配）</span>
 rules:
   <span class="c"># 国服游戏</span>
-  - GEOSITE,category-games-cn,🇨🇳回国
+  - GEOSITE,category-games@cn,🇨🇳回国
   <span class="c"># 视频</span>
   - GEOSITE,bilibili,🇨🇳回国
   - GEOSITE,iqiyi,🇨🇳回国
@@ -829,8 +849,8 @@ rules:
           <h4>4 个常踩的坑</h4>
           <ul>
             <li><strong>规则顺序</strong>：回国规则必须放在 <code>GEOSITE,cn</code> 之前，否则会被原规则提前匹配为 DIRECT</li>
-            <li><strong>GeoSite 数据源</strong>：Mihomo Party / Clash Verge Rev 默认用 v2ray-rules-dat 上游，自动包含 <code>category-games-cn</code>、<code>bilibili</code> 等子集</li>
-            <li><strong>"回国节点"从哪来</strong>：可以来自 Malus 等加速器的协议导出（部分加速器支持），或来自自建 Hysteria2/Trojan 节点（见第 6 节）</li>
+            <li><strong>GeoSite 数据源</strong>：Clash.Meta 内核（Clash Verge Rev / Mihomo Party）默认加载 MetaCubeX/meta-rules-dat 数据库，包含 <code>category-games@cn</code>、<code>bilibili</code>、<code>iqiyi</code> 等分类（注意是属性写法 <code>@cn</code> 而非 <code>-cn</code>）；若客户端用的是其它 geo 库、报 <code>list ... not found</code> 时按该库命名调整即可</li>
+            <li><strong>"回国节点"从哪来</strong>：见本节第一步（机场订阅 / 加速器协议导出 / 自建），节点选错这套规则就没有意义</li>
             <li><strong>测试方法</strong>：开启分流后访问 <a href="https://www.ip138.com/" target="_blank" rel="noopener">ip138.com</a>，访问 B 站时 IP 应显示为中国大陆，访问 Google 时仍为海外</li>
           </ul>
         </div>
