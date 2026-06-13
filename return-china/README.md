@@ -22,19 +22,19 @@
 
 | 产品 | 适合人群 | 评测 |
 |------|---------|------|
-| Malus（主推） | 影音 + 国服游戏综合 | [综述 · 第三节](overview.md) |
-| 穿梭 Transocks | 海外华人通用，UI 友好 | [综述 · 4.1](overview.md) |
+| Malus | 影音 + 国服游戏综合 | [综述 · 4.1](overview.md) |
+| 穿梭 Transocks | 海外华人通用，UI 友好 | [综述 · 4.3](overview.md) |
 | 快帆 SpeedIn | 留学生圈口碑稳、月付灵活 | [综述 · 4.2](overview.md) |
-| 番茄加速器 | 免费试用档位长 | [综述 · 4.3](overview.md) |
-| 网易 UU 海外版 | 国服游戏权威方案 | [综述 · 4.4](overview.md) |
-| **五款横评** | 选不动？一表看清 | [综述 · 4.5](overview.md) |
+| 番茄加速器 | 免费试用档位长 | [综述 · 4.4](overview.md) |
+| 网易 UU 海外版 | 国服游戏权威方案 | [综述 · 4.5](overview.md) |
+| **五款横评** | 选不动？一表看清 | [综述 · 第三节](overview.md) |
 
 ### 回国线路机场（已有 Clash 客户端的进阶玩家）
 
 > 适合已经在用 Clash / Mihomo 的用户，加一份回国节点订阅即可。
 
 - [Clash 反向分流配置与一键规则集](client/clash-reverse-rules.md)（已上线）
-- 回国线路机场推荐：规划中（[airport/](airport/)，需先与机场确认是否支持反向线路）
+- 回国线路机场：已在 [综述 · 5.4](overview.md) 收录 EdNovas 云（少数明确提供回国专线的机场）；更多机场横评规划中（[airport/](airport/)）
 
 ### 自建回国节点（需大陆落地点）
 
@@ -129,6 +129,11 @@ docs/
 
 ## 📝 更新日志
 
+### 2026 年 6 月
+
+- **2026-06-13**：**Clash 配置纠错**——修正回国分流规则中的无效 GeoSite 分类名 `category-games-cn` 为正确的属性写法 `category-games@cn`（错误写法会导致 `list not found` 解析失败），同步订正"默认 geo 数据源"表述为 Clash.Meta 内核默认加载的 MetaCubeX/meta-rules-dat；涉及综述、主专题 HTML、客户端文档与规则集说明
+- **2026-06-13**：商业加速器章节重排——五款横评表上移至章节顶部，Malus / 快帆 / 穿梭 统一为同级逐款评测（不再分"主推 / 同类中立对比"）；三大方案对比表移除"速度上限"列；接入穿梭 Transocks 联盟链接；收录 EdNovas 回国机场（仅整理公开信息、未做线路实测）
+
 ### 2026 年 5 月
 
 - **2026-05-31**：**重要技术修正**——纠正"海外 VPS（CN2 GIA）可自建解锁回国锁区内容"的错误表述（海外 VPS 出口 IP 在海外，解锁不了锁区）；自建章节改为唯一正解 [大陆家宽 Tailscale 出口节点](self-hosted/home-exit-node.md)，搬瓦工/DMIT 重新定位为"翻墙出国 / 低延迟中转"；同步修正综述、世界杯专题、首页、规则集说明
@@ -139,4 +144,4 @@ docs/
 
 ---
 
-**在线文档**：<https://www.aixiaobai168.com/pages/return-china-guide>　|　**版本**：v1.2　|　**最后更新**：2026 年 5 月 31 日
+**在线文档**：<https://www.aixiaobai168.com/pages/return-china-guide>　|　**版本**：v1.3　|　**最后更新**：2026 年 6 月 13 日

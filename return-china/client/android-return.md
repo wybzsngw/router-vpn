@@ -26,7 +26,7 @@
 
 安装 App → 注册 → 开加速，无需任何配置。
 
-### Malus 加速器（主推）
+### Malus 加速器
 
 支持爱奇艺 / B 站 / 优酷 / 腾讯视频 / 网易云 / 国服游戏 / 钉钉 / 企业微信，Android APK 可从官网直接下载（Google Play 无上架）。
 
@@ -35,7 +35,7 @@
 > **👉 [前往 Malus 官网下载 →](https://getmalus.com/buy?affid=A328344556F&utm_source=github&utm_medium=affiliate&utm_campaign=client_android&utm_content=malus_top_cta)**
 
 **安装方式（Android）**：
-1. 手机浏览器打开 `getmalus.com` → 点击 Android APK 下载
+1. 通过上方按钮前往 Malus 官网 → 点击 Android APK 下载
 2. 安装时允许"未知来源"（设置 → 安全 → 安装未知应用）
 3. 注册账号 → 选购套餐 → 首页选"视频线路" → 开启加速
 

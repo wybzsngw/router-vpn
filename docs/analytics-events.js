@@ -23,14 +23,16 @@
     'https://tusmartchat.com/uniclash-erwan.html': '尔湾云'
   };
 
-  // 回国加速专题：商业回国加速器联盟域名白名单。
+  // 回国加速专题：商业回国加速器 / 回国机场联盟域名白名单。
   // 命中后触发 return_accelerator_click 事件，参数与 clash_register_click 对齐，便于 GA4 漏斗复用。
-  // 注：穿梭、番茄、UU 暂不挂联盟（穿梭无法注册推广员、番茄无开放计划、UU 大厂直营），
+  // 注：番茄、网易 UU 暂不挂联盟（番茄无开放计划、UU 官方明确个人版不做代理/分销/联盟），
   // 仍可能出现在文章对比表中，但不进入此白名单（即出现仅记 outbound_click，不算转化）。
   var RETURN_ACCELERATOR_DOMAINS = {
     'getmalus.com':    'Malus',
-    'kuaifan.co':      '快帆',         // 快帆官网与子域（vip.kuaifan.co、download 等）
-    'af.kuaifan.club': '快帆'          // 快帆推广员跳转短链域名
+    'kuaifan.co':      '快帆',           // 快帆官网与子域（vip.kuaifan.co、download 等）
+    'af.kuaifan.club': '快帆',           // 快帆推广员跳转短链域名
+    'transocks.com':   '穿梭 Transocks', // 穿梭推广链接（payment?affiliate-code=）
+    'ednovas.org':     'EdNovas 回国机场' // 少数提供回国线路的 Clash 机场（方案 B）
   };
 
   // 回国加速专题：VPS 服务商联盟（自建党 self-hosted 教程引导用）。

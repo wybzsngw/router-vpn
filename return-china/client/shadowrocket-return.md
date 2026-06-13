@@ -166,7 +166,7 @@ Shadowrocket 支持**多个订阅同时激活**，出国节点和回国节点可
 
 Shadowrocket 分流配置有一定门槛，如果你没有现成节点或不想手动维护规则，**商业回国加速器**是更省心的选择——下载 App、注册、开加速，三步搞定，不需要任何技术知识。
 
-> 🎯 **Malus 加速器** — 本站长期主推，支持爱奇艺 / B 站 / 优酷 / 腾讯视频 / 网易云 / 国服游戏，iOS App 国区可直接下载，首月 ¥9.9 起
+> 🎯 **Malus 加速器** — 支持爱奇艺 / B 站 / 优酷 / 腾讯视频 / 网易云 / 国服游戏，iOS App 国区可直接下载，首月 ¥9.9 起
 >
 > **👉 [前往 Malus 注册 →](https://getmalus.com/buy?affid=A328344556F&utm_source=github&utm_medium=affiliate&utm_campaign=client_shadowrocket&utm_content=bottom_cta_malus)**
 

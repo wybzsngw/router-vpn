@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){if(location.hostname==='mowei-ie.github.io'){var p=location.pathname.replace(/^\/router-vpn/,'').replace(/\/?index\.html$/,'').replace(/\.html$/,'')||'/';location.replace('https://www.aixiaobai168.com'+p+location.search+location.hash);}})();</script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.clarity.ms" />
+  <title>MCP vs CLI：Cursor Agent 工具怎么选 — 一个重度用户的取舍</title>
+  <meta name="description" content="MCP 没死，但大半 Agent 执行任务迁到 CLI 更划算：上下文开销、注意力稀释、运维复杂度三层成本详解；CLI 渐进发现、模型天然熟悉、管道组合五大优势；五类必须留 MCP 的场景；gh 安装 + AGENTS.md 规则模板完整落地指南。" />
+  <meta name="keywords" content="Cursor MCP,Cursor CLI,MCP vs CLI,Agent 工具,gh 命令,AGENTS.md,Cursor Agent,上下文开销,工具取舍,CLI 优先" />
+  <meta name="author" content="Router VPN Guide" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta property="og:title" content="MCP vs CLI：Cursor Agent 工具怎么选 — 一个重度用户的取舍" />
+  <meta property="og:description" content="MCP 没死，但大半 Agent 执行任务迁到 CLI 更划算。上下文开销、注意力稀释到底有多严重？哪五类场景必须留 MCP？gh + AGENTS.md 完整落地指南。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.aixiaobai168.com/pages/cursor-cli-vs-mcp" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="article:published_time" content="2026-06-12" />
+  <meta property="article:modified_time" content="2026-06-12" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MCP vs CLI：Cursor Agent 工具怎么选" />
+  <meta property="og:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:image" content="https://www.aixiaobai168.com/images/og-cover.png" />
+  <meta name="twitter:description" content="MCP 没死，但大半 Agent 执行任务迁到 CLI 更划算。上下文开销、注意力稀释到底有多严重？五类必须留 MCP 的场景逐一拆解。" />
+  <link rel="canonical" href="https://www.aixiaobai168.com/pages/cursor-cli-vs-mcp" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP252KCS5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TP252KCS5N');
+    gtag('set', 'content_group', 'AI 编程工具');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","vv628d2kyf");
+  </script>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #7c4dff;
+      --accent: #0ea5e9;
+      --success: #10b981;
+      --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 400px at 15% 0%, rgba(14,165,233,.1), transparent 60%),
+                  radial-gradient(600px 400px at 85% 100%, rgba(124,77,255,.08), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, #eef1f7 50%, #fff 100%);
+      background-attachment: scroll;
+      min-height: 100vh;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px }
+    h1 { font-size: 28px; line-height: 1.3; margin-bottom: 8px }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 28px }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 12px 28px rgba(14,165,233,.12);
+    }
+    .kicker {
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .card h2 { font-size: 20px; margin-bottom: 12px }
+    .card h3 { font-size: 16px; margin: 16px 0 8px; color: var(--text) }
+    .card p, .card li { color: var(--text); line-height: 1.7; margin-bottom: 10px }
+    .card ul, .card ol { padding-left: 20px; margin-bottom: 12px }
+    .card table { width: 100%; border-collapse: collapse; margin: 12px 0 }
+    .card th, .card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08) }
+    .card th { color: var(--muted); font-weight: 600; font-size: 13px }
+    code.inline { padding: .2em .5em; display: inline; background: rgba(0,0,0,.04); border-radius: 6px; font-size: 13px }
+    pre {
+      background: rgba(0,0,0,.04);
+      border-radius: 12px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      margin: 12px 0;
+      line-height: 1.55;
+    }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .cta-box {
+      margin: 16px 0;
+      padding: 18px 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(14,165,233,.2);
+      background: linear-gradient(135deg, rgba(14,165,233,.06), rgba(124,77,255,.06));
+    }
+    .cta-box p { margin-bottom: 8px }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(14,165,233,.14), rgba(124,77,255,.14));
+      color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600;
+      border: 1px solid rgba(14,165,233,.2);
+      transition: all .2s;
+    }
+    .cta-btn:hover { box-shadow: 0 8px 20px rgba(14,165,233,.18); transform: translateY(-2px); text-decoration: none }
+    .tip-box {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px dashed rgba(16,185,129,.3);
+      background: rgba(16,185,129,.04);
+      font-size: 14px;
+    }
+    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); font-size: 13px }
+    footer a { color: var(--accent) }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav aria-label="面包屑" style="font-size:13px;color:var(--muted);margin-bottom:16px"><a href="/" style="color:var(--accent);text-decoration:none">首页</a> <span style="margin:0 6px">›</span> <span>AI 编程工具</span> <span style="margin:0 6px">›</span> <span style="color:var(--text)">MCP vs CLI</span></nav>
+    <h1>MCP 没死，但我把大半 Agent 活儿换成了 CLI：Cursor 用户的工具取舍</h1>
+    <p class="subtitle">Skill / MCP / CLI 分层详解 — 上下文开销实测 — 五类必留 MCP 场景 — gh + AGENTS.md 完整落地指南</p>
+
+    <nav aria-label="站内导航" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;padding:12px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)">
+      <a href="/" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">首页</a>
+      <a href="/clash-subscription-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">订阅申请</a>
+      <a href="/pages/chatgpt-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">ChatGPT</a>
+      <a href="/pages/cursor-guide" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">Cursor 指南</a>
+      <a href="/pages/cursor-build-static-site" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">建站实战</a>
+      <a href="/pages/cursor-ssh-linux" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">SSH 实战</a>
+      <a href="/pages/cursor-aliyun-deploy" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">阿里云实战</a>
+      <a href="/pages/cursor-cli-vs-mcp" style="padding:7px 14px;border-radius:8px;text-decoration:none;font-size:13px;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(124,77,255,.12));color:#7c4dff;font-weight:600">MCP vs CLI</a>
+      <a href="/pages/cursor-fullstack-app" style="padding:7px 14px;border-radius:8px;text-decoration:none;color:#0f172a;font-size:13px">全栈实战</a>
+    </nav>
+
+    <div class="cta-box">
+      <p><strong>通过邀请链接注册 Cursor，首月 Pro / Pro+ / Ultra 立享 5 折：</strong></p>
+      <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即注册（首月 5 折）</a>
+    </div>
+
+    <article class="card" id="layers">
+      <div class="kicker">章节一</div>
+      <h2>先把三个词摆清楚：Skill、MCP、CLI 不是同一层的东西</h2>
+      <p>我在刚开始折腾 Cursor Agent 的时候，犯过一个很典型的错误：把这三样东西当成同类选项来比。其实它们根本不在一个维度上。</p>
+      <p>我现在用来解释它们的类比是：<strong>给 Agent 配工具，像给一个刚入职的聪明新同事配资源。</strong></p>
+      <p><strong>Skill（规则/知识层）</strong>相当于你给他准备了一份"内部操作手册"。这份手册里写着：我们这个项目有什么约定、危险操作要先确认、代码风格遵循哪个标准、提 PR 之前要跑哪些检查。这个同事会把手册里的规矩记住，以后做事就按这套来。常驻成本极低，消耗的上下文几乎可以忽略。</p>
+      <p><strong>MCP（协议接入层）</strong>相当于你给他办了一批门禁卡和内部系统账号。GitHub、数据库管理后台、云平台控制台——这些系统你提前帮他接好了。每次他需要用某个系统，直接刷卡进去，接口是标准化的。但有一个隐性成本：<strong>每办一张卡，那张卡的说明书——这个系统有哪些功能、每个功能接受什么参数——都得先塞进他的脑子里，不管今天用不用得到。</strong></p>
+      <p><strong>CLI（终端执行层）</strong>相当于给他配了一台电脑，让他自己开终端敲命令。他本来就会用电脑，不需要你额外教他 git 怎么用、curl 怎么发请求——这些他在学校就学过了，工作语料里也全是。你让他干什么，他自己想好命令，敲进去看结果，不行就换个姿势再试。</p>
+      <div class="tip-box">💡 <strong>这三层是分层协作的关系，不是互相替代。</strong>Skill 管"懂规矩"，MCP 管"接能力"，CLI 管"动手干"。一个配置完善的 Agent 工作流，三样可以同时在用——只是不同任务的主力工具不一样。</div>
+    </article>
+
+    <article class="card" id="mcp-cost">
+      <div class="kicker">章节二</div>
+      <h2>MCP 到底"贵"在哪里</h2>
+      <p>我说的"贵"不是钱，是上下文开销，以及随之而来的两个副效应。</p>
+      <h3>MCP 的运作机制</h3>
+      <p>MCP 是 Anthropic 提出的一套客户端-服务端协议，底层走 JSON-RPC。整个流程大概是这样：你启动一个 MCP Server（比如 GitHub 的、数据库的、某个 SaaS 的），Server 初始化完成后，会通过 <code class="inline">tools/list</code> 这个接口把它能提供的所有工具汇报给 Client——工具名字是什么、每个工具做什么、接受哪些参数、参数是什么类型，全部打包送过来。Client 拿到这份清单，把它注入到当前对话的上下文里。之后每轮对话，模型都能"看到"这些工具定义。当模型决定要用某个工具时，通过 <code class="inline">tools/call</code> 发起调用。</p>
+      <p>流程本身设计得很优雅。但代价就藏在"把工具定义注入上下文"这一步里。</p>
+      <h3>第一层代价：工具定义是全量常驻的</h3>
+      <p>不管你今天的任务用不用得到这个 Server 里的某个工具，只要你接了这个 Server，它所有工具的定义就先稳稳占住那块上下文预算。这个开销有多大？你自己可以去 Cursor 设置里看当前 MCP 工具定义吃掉了多少 token。如果你同时接了三四个功能丰富的 Server，上下文窗口里很大一块就被工具说明书占满了，留给真正的任务代码、对话历史和输出的空间就被压缩了。</p>
+      <h3>第二层代价：注意力稀释</h3>
+      <p>上下文里塞了大量和当前任务无关的工具定义，模型在"该用哪个工具"这件事上会变得更容易犯迷糊。假如你手边摆了 3 把工具，你拿对的概率很高；但如果摆了 30 把，其中还有几把功能描述相近，选错的概率就不是线性上升了。我自己遇到过好几次，Agent 明明可以直接用某个 MCP 工具做事，结果选了另一个参数不对的工具折腾半天——事后翻上下文，就是旁边有几个描述相近的工具把它给绕晕了。</p>
+      <h3>第三层代价：运维复杂度</h3>
+      <p>每个 MCP Server 是一个独立的进程或者网络服务。启动它需要配置，认证方式各家各异（有的是 API Key 塞环境变量，有的要 OAuth 流程，有的是本地文件 token），偶尔就是起不来——但起不来的原因可能是 Node 版本不对、端口被占、token 过期或者权限不够，要一层一层排查。这种排障链路对于"就想让 Agent 帮我查一下 PR"这种需求来说，实在是太重了。</p>
+    </article>
+
+    <article class="card" id="cli-friendly">
+      <div class="kicker">章节三</div>
+      <h2>CLI 为什么对 LLM 格外友好</h2>
+      <p>这是我把大半任务迁到 CLI 的核心原因，展开说一下。</p>
+      <img src="../images/cursor-cli-vs-mcp-mechanism.png" alt="MCP 工具定义全量注入 vs CLI 按需发现的对比示意" style="max-width:100%;border-radius:12px;margin:12px 0">
+      <p style="color:var(--muted);font-size:13px">MCP 把所有工具定义一次性塞进上下文（左）；CLI 让 Agent 按需一条条查、用完即走（右）。</p>
+      <h3>(a) 渐进式发现，信息按需加载</h3>
+      <p>CLI 工具的用法不需要提前全部塞进上下文。Agent 想用 <code class="inline">gh</code> 做点什么，先跑一下 <code class="inline">gh --help</code>，看到命令目录；发现自己要的是 PR 相关操作，再跑 <code class="inline">gh pr --help</code>，看子命令；确定要列出 PR，<code class="inline">gh pr list --help</code> 看参数。每次 <code class="inline">--help</code> 的输出只有几十行，加载的都是当前步骤需要的信息，用完就不占了。这和 MCP"开局把整本手册塞进去"的方式正好相反。</p>
+      <h3>(b) 模型对 CLI 工具天生熟悉</h3>
+      <p>LLM 的训练语料里有几十年积累的 Unix 文档、无数 Stack Overflow 问答、海量 shell 脚本和教程。<code class="inline">git</code>、<code class="inline">curl</code>、<code class="inline">grep</code>、<code class="inline">gh</code>、<code class="inline">docker</code>、<code class="inline">jq</code> 这些工具，模型见过太多遍了，不需要你额外教。相比之下，一个私有的 MCP Server 或者小众的 SaaS MCP，模型在训练时可能根本没见过，完全靠你在上下文里提供的工具描述来理解——描述写得模糊，理解就偏。</p>
+      <h3>(c) 管道组合，天然支持后处理</h3>
+      <p>Unix 管道这个设计实在是太好用了。<code class="inline">gh pr list</code> 出来的结果要按字段筛选？接个 <code class="inline">jq</code>。要统计行数？接个 <code class="inline">wc -l</code>。要格式化成表格？接个 <code class="inline">column</code>。这些后处理不需要 Agent 额外写程序，一个 <code class="inline">|</code> 就串起来了。如果是 MCP 返回了一坨结构化数据，Agent 要做后处理，通常得写段代码、存中间变量、再处理——链路更长，出错点也更多。</p>
+      <h3>(d) 可调试，出错直接复现</h3>
+      <p>这一点我自己感触特别深。Agent 用 MCP 调了个接口出错了，你要调试，得看 Client 日志、看 Server 日志、对比 JSON 请求和响应，整个链路是黑盒的。Agent 用 CLI 跑了条命令出错了，你把那条命令复制到自己终端敲一下，看到的结果和 Agent 看到的完全一样。问题一目了然。这种"我能直接复现 Agent 的视角"的能力，在排查问题时价值极大。</p>
+      <h3>(e) 生态成熟，工程惯例稳定</h3>
+      <p>成熟 CLI 工具有几十年的工程实践积累：退出码 0 代表成功，非 0 代表失败；正常输出走 stdout，错误信息走 stderr；不少现代工具还支持 <code class="inline">--json</code> 或者 <code class="inline">-o json</code> 输出机器可读的格式。这些惯例是稳定的，Agent 可以依赖它们做判断，不需要为每个工具单独处理输出格式的特殊情况。</p>
+    </article>
+
+    <article class="card" id="comparison">
+      <div class="kicker">章节四</div>
+      <h2>一个真实的对照：同一个需求，两条路</h2>
+      <p>说说一个我自己真实做过的对照。</p>
+      <p><strong>需求很简单</strong>：列出仓库里所有 open 状态的 PR，看看每个人有几条、分别是哪些。</p>
+      <img src="../images/cursor-cli-vs-mcp-routes.png" alt="同一需求下 MCP 路线与 CLI 路线的链路长短对比" style="max-width:100%;border-radius:12px;margin:12px 0">
+      <p style="color:var(--muted);font-size:13px">同一个需求：MCP 路线要走装 Server、配 key、注入工具、调用、拿结果五步；CLI 路线只要"已登录 → 一句命令 → 完成"。</p>
+      <h3>路线 A：MCP 方式</h3>
+      <p>当时我用的是 GitHub 的 MCP Server。步骤大概是：找到 MCP Server 的包、搞清楚认证方式（需要创建一个 Fine-grained token 并给对应仓库权限）、在 Cursor 的 MCP 配置文件里写好 Server 定义、重启 Cursor 让 Server 生效、确认 Agent 能看到工具列表。整个配置过程花了差不多二十分钟——主要时间在搞 token 权限，GitHub 的 Fine-grained token 权限选项挺细的，一项一项勾。配好以后能用，但上下文里多了一大块 GitHub 工具定义。</p>
+      <h3>路线 B：CLI 方式</h3>
+      <p>我本机的 <code class="inline">gh</code> 之前已经装好并且 <code class="inline">gh auth login</code> 过了。Agent 模式下，我直接说："用 gh 列出这个仓库所有 open 的 PR，按作者分组显示"。Agent 自己组了这条命令：</p>
+      <pre>gh pr list --state open --json number,title,author \
+  --jq 'group_by(.author.login)[] | "\(.[0].author.login): \(map("#" + (.number|tostring))|join(", "))"'</pre>
+      <p>跑完，输出直接就是我要的格式。从发出需求到拿到结果，不到一分钟。如果 <code class="inline">jq</code> 表达式写错了，我自己在终端把这条命令跑一下，能立刻看到报错信息，改起来也快。</p>
+      <div class="tip-box">⚠️ <strong>体感结论：</strong>对于"就这一个需求、本机 <code class="inline">gh</code> 已经装了"的场景，CLI 这条路配置几乎为零、上下文几乎不占、出错能当场复现。MCP 那条路每一步都是成本，而且配好之后那堆工具定义就常驻了，即便你今天只用了一个"列 PR"的功能。<strong>但这不代表 MCP 没用，也不代表应该全换成 CLI。</strong></div>
+    </article>
+
+    <div class="cta-box" style="margin-bottom:20px">
+      <p><strong>还没有 Cursor？通过邀请通道注册，首月 Pro / Pro+ / Ultra 立享 5 折</strong>（Pro 仅需 $10）：</p>
+      <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即注册（首月 5 折）</a>
+    </div>
+
+    <article class="card" id="division">
+      <div class="kicker">章节五</div>
+      <h2>我实际怎么分工：不是非此即彼</h2>
+      <h3>默认走 CLI 的场景</h3>
+      <p>以下这些，我基本不考虑 MCP，直接让 Agent 用 CLI：</p>
+      <ul>
+        <li><strong>Git 和 GitHub 操作</strong>：提交、推送、切分支、打 tag、开 PR、合并、查 PR 列表、看 CI 状态——全走 <code class="inline">gh</code> 和 <code class="inline">git</code>。这两个工具文档完整、Agent 极其熟悉，几乎不出错。</li>
+        <li><strong>文件批处理</strong>：批量改文件名、按条件筛文件、批量替换文本——<code class="inline">find</code>/<code class="inline">grep</code>/<code class="inline">sed</code>/<code class="inline">awk</code> 或者 PowerShell 的等价命令。</li>
+        <li><strong>日志排查</strong>：查应用日志、统计错误频次、找特定时间段的记录——<code class="inline">grep -E</code>、<code class="inline">awk</code>、<code class="inline">tail -f</code>。</li>
+        <li><strong>跑测试和构建</strong>：就是敲 <code class="inline">npm test</code>/<code class="inline">pytest</code>/<code class="inline">go test</code>/<code class="inline">make</code>——没什么特别的。</li>
+        <li><strong>容器操作</strong>：<code class="inline">docker ps</code>、<code class="inline">docker logs</code>、<code class="inline">docker exec</code>——这些 Agent 会。</li>
+        <li><strong>一次性脚本化任务</strong>：把若干条命令串起来做一件事，用完就扔——写成 shell 脚本或者 PowerShell 脚本，跑完存档，下次复用。</li>
+      </ul>
+      <p>这些场景的共同特点是：<strong>有成熟的 CLI 工具、操作是读取或者可以预期的写入、出错成本可控、需要的上下文轻</strong>。</p>
+      <h3>我反而坚持留 MCP 的场景</h3>
+      <p>以下这些场景，我用了 CLI 之后又退回到 MCP，因为 CLI 确实不够用：</p>
+      <p><strong>① 根本没有等价 CLI。</strong>浏览器自动化是最典型的例子。让 Agent 去打开某个页面、点按钮、读取 DOM 里的内容、截图做视觉验证——这件事没有 CLI 能干。你得用 Playwright 的 MCP Server 或者类似的浏览器自动化 MCP。还有一些 SaaS 工具只提供了 API 和 MCP，没有像样的命令行工具——这时候 MCP 也是没得选的选项。</p>
+      <p><strong>② 需要稳定的结构化返回。</strong>有些任务里 Agent 要基于返回结果的某几个字段做判断，比如"如果这次部署的状态是 failed，去取 failure_reason 字段的值再决定下一步"。MCP 工具的返回是有类型的结构，比 CLI 文本输出稳定得多。有些老命令行工具的输出格式每个版本可能都有细微差异，Agent 解析起来偶尔会翻车。</p>
+      <p><strong>③ 跨客户端、跨团队复用。</strong>如果你在团队里维护一套内部工具——比如封装了部署审批流程、或者数据库的受控查询接口——做成 MCP Server 的好处是：团队里用不同 Agent 客户端的人（Cursor、Claude Desktop 或其他 MCP 兼容客户端）都能用同一套接口，权限控制和审计也能集中做。</p>
+      <p><strong>④ 没有 shell 的运行环境。</strong>某些沙箱环境、某些 CI 步骤的 Agent 插件、某些受限的远程容器——根本不给你开终端。这时候 MCP 是接入外部能力的唯一方式。</p>
+      <p><strong>⑤ 危险操作需要收口和审计。</strong>对于真正危险的操作，把它封装成 MCP 工具——明确定义这个工具能做什么、参数边界是什么、每次调用有日志——比放开一个无边界的 shell 更可控。</p>
+      <h3>Skill 放哪层</h3>
+      <p>Skill（也就是 <code class="inline">.cursor/rules</code> 或者 <code class="inline">AGENTS.md</code> 里的规则文件）不和 MCP、CLI 抢活，它是完全不同的一层。Skill 解决的是"让 Agent 懂这个项目的规矩"——用哪种风格提交、危险命令怎么处理、这个仓库有哪些约定、优先用哪些工具。它的开销极轻（几百到几千 token 的规则文本），但收益明显：你不需要每次都在对话里重复交代背景。</p>
+      <div class="tip-box">💡 Skill 配合 CLI 用是最香的组合：用规则告诉 Agent"本项目优先走 CLI、陌生命令先 <code class="inline">--help</code> 再执行、涉及删除和修改的命令必须先停下来跟我确认"，然后让它用 CLI 动手——规矩在 Skill 里，手脚在 CLI 里。</div>
+    </article>
+
+    <article class="card" id="setup">
+      <div class="kicker">章节六</div>
+      <h2>在 Cursor 里怎么把这套跑起来</h2>
+      <h3>装 gh 并登录</h3>
+      <p><code class="inline">gh</code> 是 GitHub 官方命令行工具，是这套方案里最核心的一块：</p>
+      <pre># Windows（推荐用 winget）
+winget install --id GitHub.cli
+
+# 装完验证
+gh --version
+
+# macOS
+brew install gh</pre>
+      <p>装完之后：</p>
+      <pre>gh auth login</pre>
+      <p>按提示选 GitHub 官网、选 HTTPS、用浏览器完成 OAuth 登录。登录完跑一下 <code class="inline">gh auth status</code> 确认没问题。这一步必须提前做好，不能指望 Agent 帮你做——认证流程有交互式确认环节，Agent 替不了你。</p>
+      <h3>在 Cursor 里配 Agent 的命令执行策略</h3>
+      <p>Cursor Agent 模式自带终端能力，可以直接运行命令。但我强烈建议把命令的确认策略配清楚：</p>
+      <ul>
+        <li><strong>只读/查询类命令</strong>（<code class="inline">gh pr list</code>、<code class="inline">git log</code>、<code class="inline">docker ps</code>、<code class="inline">grep</code>——不改任何状态的）：可以放行自动执行。</li>
+        <li><strong>写入类命令</strong>（<code class="inline">git push</code>、<code class="inline">gh pr merge</code>、<code class="inline">docker rm</code>、任何 <code class="inline">rm</code>/<code class="inline">del</code>）：要求 Agent 在执行前向你展示命令并等确认。</li>
+        <li><strong>不可逆的危险操作</strong>（<code class="inline">git reset --hard</code>、<code class="inline">docker system prune</code>、数据库的 <code class="inline">DROP</code>）：直接告诉 Agent 不准自己执行，必须给你看命令让你手动敲。</li>
+      </ul>
+      <h3>给 Agent 立规矩（AGENTS.md 模板）</h3>
+      <p>在项目根放一份规则文件，我用的是 <code class="inline">AGENTS.md</code>（纯 Markdown，简单直接；老一点的 Cursor 版本也可以放成 <code class="inline">.cursor/rules/agent-cli.mdc</code>）。以下是我自己用的规则模板，可以直接拿去改：</p>
+      <pre># Agent CLI 操作规范
+
+## 工具优先级
+1. 优先使用 CLI 工具（gh、git、docker、curl 等）完成任务
+2. 使用前不熟悉的命令，先跑 `&lt;命令&gt; --help` 查看用法再执行
+3. 只有 CLI 无法覆盖时，才考虑使用 MCP 工具
+
+## 命令执行规则
+- 只读/查询命令可自动执行（gh pr list、git log 等）
+- 涉及写入、推送、合并的命令：执行前向用户展示命令并等待确认
+- 涉及删除、重置、不可逆操作的命令：禁止自动执行，必须由用户手动确认并执行
+
+## 跨平台注意
+- 当前环境是 Windows + PowerShell
+- 需要 Unix 命令时，优先找 PowerShell 等价写法
+- 不要假设 bash 命令在 PowerShell 里可以直接用
+
+## 输出处理
+- 优先在命令里直接用 --json + --jq 或 PowerShell 管道处理输出
+- 避免把大量原始输出塞回对话——先过滤再返回相关部分</pre>
+      <h3>把高频操作固化成脚本</h3>
+      <p>当你和 Agent 合作排查过一个问题、或者完成了一个需要多条命令配合的任务，让 Agent 把这次用到的命令整理成可重复运行的脚本，存进 <code class="inline">scripts/</code> 目录：</p>
+      <pre>scripts/
+  list-open-prs-by-author.sh
+  check-ci-status.sh
+  cleanup-merged-branches.sh</pre>
+      <p>下次有同样需求，一条命令搞定，不用重新教 Agent。把一次性经验固化成可复用工具，这是整套方案里投入产出比最高的操作。</p>
+    </article>
+
+    <article class="card" id="pitfalls">
+      <div class="kicker">章节七</div>
+      <h2>CLI 不是银弹：几个我踩过的坑</h2>
+      <h3>写入操作有副作用，失误了不一定能回滚</h3>
+      <p><code class="inline">git push --force</code> 是 Agent 如果理解错了需求很可能给出的命令。<code class="inline">docker system prune</code> 会清掉你所有没用的容器和镜像。文件删除更是直接的。Agent 组命令的思路不一定和你的完全一致——在你完全信任一条命令之前，自己读一遍，特别是带 <code class="inline">--force</code>、<code class="inline">-f</code>、<code class="inline">-r</code> 这类 flag 的。我的习惯是：凡是有副作用的命令，都在自己终端先 dry-run 一下，或者把命令参数再对一遍，确认没问题再执行。</p>
+      <h3>有些操作 CLI 也需要交互式确认，Agent 替不了你</h3>
+      <p><code class="inline">gh auth login</code>、很多包管理器的首次安装、交互式的 <code class="inline">git rebase -i</code>——这些流程里有交互式步骤，等你输入、等你在浏览器里点确认。Agent 跑到这一步会卡住，它没办法替你按键。你需要自己接手，把交互式的部分做完，让 Agent 接着往下。</p>
+      <h3>Windows + PowerShell 的跨平台坑</h3>
+      <p>这个在 Windows 上用 Cursor Agent 跑命令的时候很高频出现，单独说一下。最典型的坑之一：<code class="inline">sc</code> 命令。在 bash/zsh 环境里 <code class="inline">sc</code> 可能什么都不是，但在 PowerShell 里 <code class="inline">sc</code> 是 <code class="inline">Set-Content</code> 的别名。如果 Agent 想用 <code class="inline">sc.exe</code>（Windows 的服务控制工具），它得显式写 <code class="inline">sc.exe</code>——不然 PowerShell 会把它当成 <code class="inline">Set-Content</code> 执行，结果会很奇怪。</p>
+      <p>类似的坑还有：<code class="inline">ls</code> 在 PowerShell 里是 <code class="inline">Get-ChildItem</code> 的别名，输出格式和 Unix <code class="inline">ls</code> 完全不同，<code class="inline">ls -la</code> 这种 flag 在 PowerShell 里是不认的。<code class="inline">rm -rf</code> 在 PowerShell 里也得改写成 <code class="inline">Remove-Item -Recurse -Force</code>。在规则文件里专门加一条"当前环境是 Windows + PowerShell"来提醒 Agent，效果明显。</p>
+      <h3>文本输出解析不稳定</h3>
+      <p>有些老旧命令行工具的输出格式不是为机器解析设计的——列宽会随内容变化、字段之间用空格而不是分隔符、不同版本的输出格式可能略有差异。Agent 解析这种输出写的代码，有时候在你本地跑好的，换一台机器因为工具版本不同就挂了。遇到这种情况，老老实实上 <code class="inline">--json</code> 输出。大多数现代工具都支持。如果工具实在没有结构化输出选项，这反而是用 MCP 的好理由。</p>
+    </article>
+
+    <article class="card" id="summary">
+      <div class="kicker">小结</div>
+      <h2>分层，不是决赛</h2>
+      <p>回到最开始那个问题：MCP 死了吗？</p>
+      <p>没有。它解决了一类 CLI 解决不了或者解决得很别扭的问题。但对我自己的日常 Agent 工作流来说，<strong>把常用执行任务迁到 CLI 是一次非常值得的重构</strong>——更轻、更快、更透明、更容易调试。MCP 退到了它最擅长的位置：无 CLI 等价物的能力接入、需要结构化返回的复杂场景、需要权限收口的危险操作。</p>
+      <p>分层是关键词，不是非此即彼：</p>
+      <ul>
+        <li><strong>Skill（规则层）</strong>：把项目约定和操作规范喂给 Agent，让它懂规矩；常驻、轻量。</li>
+        <li><strong>CLI（执行层）</strong>：高频、简单、可探索的日常任务；按需、透明、可调试。</li>
+        <li><strong>MCP（能力接入层）</strong>：无 CLI 等价物、需要结构化/跨端复用/权限收口的场景；按需接入，不乱堆。</li>
+      </ul>
+      <p>如果你现在想把这套方案在自己的项目里跑起来，4 件事优先级最高：</p>
+      <ol>
+        <li><strong>装 <code class="inline">gh</code> 并完成登录</strong>。这是成本最低、收益最快的一步，装完你的 Agent 就能处理绝大多数 GitHub 工作流。</li>
+        <li><strong>给 Agent 立 <code class="inline">--help</code> 优先的规则</strong>。在规则文件里写明"陌生命令先 <code class="inline">--help</code> 查用法再执行"，能避免很多 Agent 因为参数猜错搞出意外的情况。</li>
+        <li><strong>涉及写入和删除的命令，要求 Agent 先展示再执行</strong>。无论如何，先看一眼，这个习惯值得养成。</li>
+        <li><strong>把高频排查操作固化成 <code class="inline">scripts/</code> 里的脚本</strong>。第一次合作解决了某个问题，让 Agent 整理成脚本存起来——下次直接用，经验变工具。</li>
+      </ol>
+      <div class="tip-box">💡 "2026 年最值得搭的 Agent 干活方式"——CLI + 一层薄薄的规则，MCP 按需补位。不追标题党，按场景选工具。</div>
+    </article>
+
+    <article class="card" id="related">
+      <h2>相关教程</h2>
+      <ul>
+        <li><a href="/pages/cursor-guide">Cursor 国内使用完整教程（注册 / 充值 / 模型 / 功能 / 故障排查）</a></li>
+        <li><a href="/pages/cursor-ssh-linux">Cursor SSH 远程开发实战（连接 Linux 自建 + 云服务器）</a></li>
+        <li><a href="/pages/cursor-aliyun-deploy">Cursor + 阿里云 ECS 部署 Node.js 应用全流程</a></li>
+        <li><a href="/pages/cursor-build-static-site">Cursor + GitHub Pages 上线静态站</a></li>
+      </ul>
+    </article>
+
+    <div class="cta-box" style="margin-top:8px">
+      <p><strong>通过邀请通道注册 Cursor，首月 Pro / Pro+ / Ultra 立享 5 折</strong>——Pro 仅需 $10、Pro+ 仅需 $30、Ultra 仅需 $100。</p>
+      <a class="cta-btn" href="https://cursor.com/referral?code=Y3RXKKUGMJ2G">👉 立即开通（首月 5 折）</a>
+      <p style="margin-top:10px;font-size:13px;color:var(--muted)">邀请通道仅对首月生效，次月起恢复原价；可随时取消订阅。</p>
+    </div>
+
+    <footer>
+      <a href="/">首页</a> · <a href="/pages/cursor-guide">Cursor 完整指南</a> · <a href="/pages/cursor-ssh-linux">SSH 实战</a> · <a href="/pages/cursor-aliyun-deploy">阿里云实战</a>
+      <p style="margin-top:8px">© 2026 Router VPN Guide · <em>本文仅供学习参考，请在当地法律法规范围内使用相关工具。</em></p>
+    </footer>
+  </main>
+
+  <script defer>
+    (function() {
+      function alignToHash(smooth) {
+        var hash = location.hash.replace('#','');
+        if (!hash) return;
+        try {
+          var target = document.getElementById(hash);
+          if (!target) return;
+          target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+          [80, 300, 800].forEach(function(delay) {
+            setTimeout(function() {
+              var el = document.getElementById(hash);
+              if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+            }, delay);
+          });
+        } catch (e) {}
+      }
+      window.addEventListener('load', function() { alignToHash(false); });
+      window.addEventListener('hashchange', function() { alignToHash(true); });
+    })();
+  </script>
+  <script src="../analytics-events.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"MCP 没死，但我把大半 Agent 活儿换成了 CLI：Cursor 用户的工具取舍","description":"MCP 没死，但大半 Agent 执行任务迁到 CLI 更划算。上下文开销、注意力稀释三层成本详解；CLI 渐进发现、模型天然熟悉五大优势；五类必留 MCP 场景；gh + AGENTS.md 完整落地指南。","url":"https://www.aixiaobai168.com/pages/cursor-cli-vs-mcp","author":{"@type":"Organization","name":"Router VPN Guide"},"datePublished":"2026-06-12","dateModified":"2026-06-12","inLanguage":"zh-CN"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"MCP vs CLI","item":"https://www.aixiaobai168.com/pages/cursor-cli-vs-mcp"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"MCP 和 CLI 哪个更适合 Cursor Agent 日常使用？","acceptedAnswer":{"@type":"Answer","text":"两者适合不同场景。高频执行任务（Git 操作、日志排查、跑测试）走 CLI 更轻、更快、更容易调试，且不占用额外上下文预算。浏览器自动化、需要稳定结构化返回、团队跨端复用、受限环境无 shell 以及危险操作权限收口这五类场景应保留 MCP。"}},{"@type":"Question","name":"Cursor Agent 使用 MCP 有什么上下文代价？","acceptedAnswer":{"@type":"Answer","text":"每个 MCP Server 启动后会通过 tools/list 把全部工具定义注入当前对话上下文，这部分 token 全程常驻、无论用不用得到。同时接了多个功能丰富的 Server 时，工具说明书会占用大量上下文窗口，压缩任务代码和对话历史的空间，并可能造成模型注意力稀释、选错工具。"}},{"@type":"Question","name":"AGENTS.md 和 .cursor/rules 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"两者都是给 Agent 提供项目规则的 Skill 文件，功能相同。AGENTS.md 是纯 Markdown 文件，放在项目根目录即可被较新版本 Cursor 识别；.cursor/rules/ 目录下的 .mdc 文件是老一点版本的做法。推荐新项目直接用 AGENTS.md，更简单直接。"}}]}
+  </script>
+</body>
+</html>
