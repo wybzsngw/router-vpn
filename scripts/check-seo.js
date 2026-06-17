@@ -71,12 +71,15 @@ function printHelp() {
 `);
 }
 
+/** docs/ 下这些子目录是 noindex 中转页，不参与 SEO 校验 */
+const SKIP_DIRS = new Set([path.join(docsDir, "go")]);
+
 function listHtmlFiles(dir) {
   const out = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      out.push(...listHtmlFiles(full));
+      if (!SKIP_DIRS.has(full)) out.push(...listHtmlFiles(full));
     } else if (entry.isFile() && entry.name.endsWith(".html")) {
       out.push(full);
     }
