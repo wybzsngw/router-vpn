@@ -194,6 +194,30 @@
 
     footer{margin-top:28px;color:var(--muted);font-size:13px}
     footer a{color:var(--accent);text-decoration:none}
+
+    .picker-q{margin:14px 0}
+    .picker-label{font-size:14px;font-weight:700;margin-bottom:8px}
+    .picker-opts{display:flex;flex-wrap:wrap;gap:8px}
+    .picker-opt{
+      appearance:none;cursor:pointer;font-size:13px;padding:8px 14px;border-radius:999px;
+      border:1px solid rgba(0,0,0,.12);background:#fff;color:var(--text);transition:all .2s;
+    }
+    .picker-opt:hover{border-color:rgba(14,165,233,.5);transform:translateY(-1px)}
+    .picker-opt.active{background:linear-gradient(135deg,var(--accent),var(--brand));color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(14,165,233,.25)}
+    .picker-actions{display:flex;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .picker-go{
+      appearance:none;cursor:pointer;border:none;font-size:14px;font-weight:800;color:#fff;
+      padding:11px 22px;border-radius:999px;background:linear-gradient(135deg,#0ea5e9,#7c4dff);
+      box-shadow:0 10px 24px rgba(14,165,233,.25);transition:all .2s;
+    }
+    .picker-go:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(14,165,233,.32)}
+    .picker-result-card{
+      margin-top:18px;padding:18px;border-radius:14px;
+      background:linear-gradient(135deg,rgba(14,165,233,.1),rgba(124,77,255,.1));
+      border:1px solid rgba(14,165,233,.28);
+    }
+    .picker-result-card h4{margin:0 0 6px;font-size:19px}
+    .picker-alt{margin-top:12px;font-size:13px;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -237,6 +261,7 @@
             <div class="promo-codes">
               <span class="promo-code">yf6189 年付 6.9 折</span>
               <span class="promo-code">yf6185 两年付 6.5 折</span>
+              <span class="promo-code">lucky9 半年付 9 折</span>
             </div>
           </div>
           <div>
@@ -255,13 +280,57 @@
               <span class="promo-code">3year60 三年付 6 折</span>
             </div>
           </div>
+          <div>
+            <div style="font-size:12px;font-weight:800;color:#991b1b;margin-bottom:6px">mojie 魔戒</div>
+            <div class="promo-codes">
+              <span class="promo-code">ItS1igEf 邀请码 1 元体验</span>
+            </div>
+          </div>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px;flex-shrink:0">
         <a class="promo-action" href="https://ml.yfqz1.net/register?code=BnJcjUjE" target="_blank" rel="sponsored noopener">扬帆云领取</a>
         <a class="promo-action" href="https://j134.net/?code=1p7r" target="_blank" rel="sponsored noopener" style="background:linear-gradient(135deg,#f97316,#ef4444)">疾风云领取</a>
         <a class="promo-action" href="https://ewanwtt.net/auth/register?code=EGi8tb" target="_blank" rel="sponsored noopener" style="background:linear-gradient(135deg,#7c4dff,#0ea5e9)">尔湾云领取</a>
+        <a class="promo-action" href="/go/mojie/" target="_blank" rel="sponsored noopener" style="background:linear-gradient(135deg,#059669,#0ea5e9)">mojie魔戒领取</a>
       </div>
+    </section>
+
+    <!-- 机场决策器 -->
+    <section class="card" id="airport-picker" style="margin-bottom:18px">
+      <div class="kicker">Picker</div>
+      <h2 style="font-size:20px;margin:6px 0 6px">🧭 30 秒选机场 · 不知道买哪个？</h2>
+      <p style="color:var(--muted);font-size:14px;margin:0 0 6px">回答 3 个小问题，帮你匹配最合适的机场与套餐，少走弯路。</p>
+      <div class="picker-q" data-q="use">
+        <div class="picker-label">1 · 你主要用来做什么？</div>
+        <div class="picker-opts">
+          <button type="button" class="picker-opt" data-v="stream">看视频 / 流媒体</button>
+          <button type="button" class="picker-opt" data-v="game">打游戏</button>
+          <button type="button" class="picker-opt" data-v="ai">ChatGPT / AI</button>
+          <button type="button" class="picker-opt" data-v="family">家庭 / 多设备</button>
+          <button type="button" class="picker-opt" data-v="light">偶尔轻度用</button>
+        </div>
+      </div>
+      <div class="picker-q" data-q="budget">
+        <div class="picker-label">2 · 预算偏好？</div>
+        <div class="picker-opts">
+          <button type="button" class="picker-opt" data-v="cheap">越便宜越好</button>
+          <button type="button" class="picker-opt" data-v="mid">中等、要性价比</button>
+          <button type="button" class="picker-opt" data-v="premium">要稳，价格不敏感</button>
+        </div>
+      </div>
+      <div class="picker-q" data-q="freq">
+        <div class="picker-label">3 · 使用频率？</div>
+        <div class="picker-opts">
+          <button type="button" class="picker-opt" data-v="longterm">长期稳定用</button>
+          <button type="button" class="picker-opt" data-v="occasional">偶尔用 / 不想每月续费</button>
+        </div>
+      </div>
+      <div class="picker-actions">
+        <button type="button" class="picker-go" id="picker-go">查看推荐 →</button>
+        <span id="picker-hint" style="color:#b91c1c;font-size:13px"></span>
+      </div>
+      <div id="picker-result" style="display:none"></div>
     </section>
 
     <section class="card" style="margin-bottom:18px">
@@ -294,18 +363,18 @@
               <td style="padding:10px 8px"><a href="https://u.lanpangyun.de/#/register?code=30Y2Sexl" target="_blank" rel="sponsored noopener" style="display:inline-block;padding:5px 12px;border-radius:8px;background:linear-gradient(135deg,rgba(14,165,233,.15),rgba(124,77,255,.15));color:var(--text);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;border:1px solid rgba(14,165,233,.2)">前往官网</a></td>
             </tr>
             <tr style="border-bottom:1px dashed rgba(255,255,255,.08)">
-              <td style="padding:10px 8px"><a href="#p-erwan" style="color:var(--accent);text-decoration:none;font-weight:600">尔湾云</a></td>
-              <td style="padding:10px 8px">五档套餐、基础/标准/旗舰节点分层</td>
-              <td style="padding:10px 8px">多设备家庭/影音与游戏用户</td>
-              <td style="padding:10px 8px">¥24.99–119.99</td>
-              <td style="padding:10px 8px"><a href="https://ewanwtt.net/auth/register?code=EGi8tb" target="_blank" rel="sponsored noopener" style="display:inline-block;padding:5px 12px;border-radius:8px;background:linear-gradient(135deg,rgba(14,165,233,.15),rgba(124,77,255,.15));color:var(--text);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;border:1px solid rgba(14,165,233,.2)">前往官网</a></td>
-            </tr>
-            <tr style="border-bottom:1px dashed rgba(255,255,255,.08)">
               <td style="padding:10px 8px"><a href="#p-yangfan" style="color:var(--accent);text-decoration:none;font-weight:600">扬帆云</a></td>
               <td style="padding:10px 8px">性价比、多地区、AI 全解锁</td>
               <td style="padding:10px 8px">影音解锁/AI 工具/日常通勤</td>
               <td style="padding:10px 8px">¥19.99–88.99</td>
               <td style="padding:10px 8px"><a href="https://ml.yfqz1.net/register?code=BnJcjUjE" target="_blank" rel="sponsored noopener" style="display:inline-block;padding:5px 12px;border-radius:8px;background:linear-gradient(135deg,rgba(14,165,233,.15),rgba(124,77,255,.15));color:var(--text);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;border:1px solid rgba(14,165,233,.2)">前往官网</a></td>
+            </tr>
+            <tr style="border-bottom:1px dashed rgba(255,255,255,.08)">
+              <td style="padding:10px 8px"><a href="#p-erwan" style="color:var(--accent);text-decoration:none;font-weight:600">尔湾云</a></td>
+              <td style="padding:10px 8px">五档套餐、基础/标准/旗舰节点分层</td>
+              <td style="padding:10px 8px">多设备家庭/影音与游戏用户</td>
+              <td style="padding:10px 8px">¥24.99–119.99</td>
+              <td style="padding:10px 8px"><a href="https://ewanwtt.net/auth/register?code=EGi8tb" target="_blank" rel="sponsored noopener" style="display:inline-block;padding:5px 12px;border-radius:8px;background:linear-gradient(135deg,rgba(14,165,233,.15),rgba(124,77,255,.15));color:var(--text);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;border:1px solid rgba(14,165,233,.2)">前往官网</a></td>
             </tr>
             <tr style="border-bottom:1px dashed rgba(255,255,255,.08)">
               <td style="padding:10px 8px"><a href="#p-dage" style="color:var(--accent);text-decoration:none;font-weight:600">大哥云</a></td>
@@ -314,12 +383,19 @@
               <td style="padding:10px 8px">¥20–100+</td>
               <td style="padding:10px 8px"><a href="https://a03.dgy02.com/#/register?code=1CAfWNQC" target="_blank" rel="sponsored noopener" style="display:inline-block;padding:5px 12px;border-radius:8px;background:linear-gradient(135deg,rgba(14,165,233,.15),rgba(124,77,255,.15));color:var(--text);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;border:1px solid rgba(14,165,233,.2)">前往官网</a></td>
             </tr>
+            <tr style="border-bottom:1px dashed rgba(255,255,255,.08)">
+              <td style="padding:10px 8px"><a href="#p-mojie" style="color:var(--accent);text-decoration:none;font-weight:600">mojie 魔戒</a></td>
+              <td style="padding:10px 8px">按量计费不限时、1 元体验、流媒体全解锁</td>
+              <td style="padding:10px 8px">轻量/不定期用户、想 1 元先试</td>
+              <td style="padding:10px 8px">按量 ¥1 起</td>
+              <td style="padding:10px 8px"><a href="/go/mojie/" target="_blank" rel="sponsored noopener" style="display:inline-block;padding:5px 12px;border-radius:8px;background:linear-gradient(135deg,rgba(14,165,233,.15),rgba(124,77,255,.15));color:var(--text);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;border:1px solid rgba(14,165,233,.2)">前往官网</a></td>
+            </tr>
             <tr>
               <td style="padding:10px 8px"><a href="#p-naiyun" style="color:var(--accent);text-decoration:none;font-weight:600">奈云</a></td>
               <td style="padding:10px 8px">免费试用、按量计费不限时、流媒体全解锁</td>
               <td style="padding:10px 8px">轻量/不定期用户/想先试后买</td>
               <td style="padding:10px 8px">年付 ¥168 / 按量 ¥98 起</td>
-              <td style="padding:10px 8px"><a href="https://www.nyaff.cc?path=register&code=rxkbocWK" target="_blank" rel="sponsored noopener" style="display:inline-block;padding:5px 12px;border-radius:8px;background:linear-gradient(135deg,rgba(14,165,233,.15),rgba(124,77,255,.15));color:var(--text);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;border:1px solid rgba(14,165,233,.2)">前往官网</a></td>
+              <td style="padding:10px 8px"><a href="/go/naiyun/" target="_blank" rel="sponsored noopener" style="display:inline-block;padding:5px 12px;border-radius:8px;background:linear-gradient(135deg,rgba(14,165,233,.15),rgba(124,77,255,.15));color:var(--text);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;border:1px solid rgba(14,165,233,.2)">前往官网</a></td>
             </tr>
           </tbody>
         </table>
@@ -458,6 +534,103 @@
       </details>
     </section>
 
+    <!-- 扬帆云 -->
+    <section class="card" id="p-yangfan">
+      <div class="kicker">Provider</div>
+      <h3>扬帆云</h3>
+      <p style="color:var(--muted);font-size:14px;line-height:1.65;margin:4px 0 14px">扬帆云以性价比和节点覆盖见长，节点按 LV1–LV4 分层；现已新增<strong style="color:var(--text)">不限时流量包</strong>（买一次、流量用完为止、无时间限制）；当前 LV1 ¥19.99/月，<strong style="color:var(--text)">618大促：半年付 9 折优惠码 <code class="inline">lucky9</code>、年付 6.9 折优惠码 <code class="inline">yf6189</code>、两年付 6.5 折优惠码 <code class="inline">yf6185</code></strong>（以下单页为准）。支持私人定制套餐。</p>
+      <div class="promo-mini">
+        <strong>618大促提醒：</strong>半年付用 <code class="inline">lucky9</code>（9 折），年付用 <code class="inline">yf6189</code>（6.9 折），两年付用 <code class="inline">yf6185</code>（6.5 折），具体活动时间以官网公示为准。
+      </div>
+      <ul class="steps">
+        <li>定位/特点：性价比、多地区、节点分层；新增不限时流量包（买断制，流量用完为止）</li>
+        <li>流媒体解锁：Netflix、Disney+ 等（带 NF 标识的节点）</li>
+        <li>AI 解锁：美国节点可解锁 ChatGPT、Claude、Gemini 等主流 AI 服务</li>
+        <li>售后：7×24 人工客服 · 隧道加密</li>
+        <li>618优惠：半年付 9 折 <strong>lucky9</strong>；年付 6.9 折，优惠码 <strong>yf6189</strong>；两年付 6.5 折，优惠码 <strong>yf6185</strong></li>
+        <li>提醒：若主要用于路由器全屋代理，建议先按短周期测试稳定性再长期购买</li>
+      </ul>
+      <div class="btns" style="margin-top:10px">
+        <a class="btn" href="https://ml.yfqz1.net/register?code=BnJcjUjE" target="_blank" rel="sponsored noopener">前往官网</a>
+        <a class="btn notice" href="/pages/yangfan-important-notice">重要通知</a>
+      </div>
+
+      <details style="margin-top:14px">
+        <summary style="cursor:pointer;font-size:14px;font-weight:600;color:var(--accent);padding:8px 0;user-select:none">查看套餐明细（LV1 – 旗舰版 · 周期套餐 + 不限时流量包）</summary>
+        <div style="padding-top:6px">
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">LV1 套餐 · ¥19.99/月</p>
+          <ul class="steps">
+            <li>流量：100 GB/月 · 速度：200 Mbps</li>
+            <li>设备同时在线：<strong>2</strong> 台</li>
+            <li>节点：等级一节点，适合轻度使用</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600;color:var(--accent)">⭐ LV2 套餐 · ¥29.99/月（推荐）</p>
+          <ul class="steps">
+            <li>流量：200 GB/月 · 速度：300 Mbps</li>
+            <li>设备同时在线：<strong>3</strong> 台</li>
+            <li>节点：等级一、二节点，适合日常使用</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">LV3 套餐 · ¥39.99/月</p>
+          <ul class="steps">
+            <li>流量：400 GB/月 · 速度：500 Mbps</li>
+            <li>设备同时在线：<strong>4</strong> 台</li>
+            <li>节点：等级一、二、三节点，部分 IEPL 专线，适合游戏/高清流媒体</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">LV4 套餐 · ¥49.99/月 <span style="font-size:12px;color:var(--success);font-weight:700">买3送1</span></p>
+          <ul class="steps">
+            <li>流量：700 GB/月 · 速度：1 Gbps</li>
+            <li>设备同时在线：<strong>5</strong> 台</li>
+            <li>节点：全 IEPL 专线，适合专业游戏/跨境办公</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">旗舰版 · ¥88.99/月</p>
+          <ul class="steps">
+            <li>流量：1200 GB/月 · 速度：不限速</li>
+            <li>设备同时在线：<strong>8</strong> 台</li>
+            <li>节点：全 IEPL 专线，超大流量，适合重度用户/家庭共享</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">私人定制 · 2 年付 ¥2135.76 起</p>
+          <ul class="steps">
+            <li>购买后联系客服定制节点，独立 IP，按需配置</li>
+            <li>适合对稳定性和隐私有极高要求的用户</li>
+          </ul>
+          <div class="callout" style="margin-top:8px">常规套餐默认每月订单日重置流量；当月未用流量不结转至下月。包年参考价：LV1 ¥239.88、LV2 ¥359.88、LV3 ¥479.88、LV4 ¥599.88、旗舰版 ¥1067.88。两年付参考价：LV1 ¥479.76、LV2 ¥719.76、LV3 ¥959.76、LV4 ¥1199.76、旗舰版 ¥2135.76。</div>
+
+          <p style="margin:18px 0 6px;font-size:14px;font-weight:700;color:var(--text)">不限时流量包（买一次 · 流量用完为止 · 永久有效 · 不续费）</p>
+          <p style="margin:8px 0 6px;font-size:14px;font-weight:600">LV1·不限时 · ¥119 一次性</p>
+          <ul class="steps">
+            <li>流量：100 GB · 速度：200 Mbps · 设备：<strong>2</strong> 台</li>
+          </ul>
+          <p style="margin:8px 0 6px;font-size:14px;font-weight:600">LV2·不限时 · ¥179 一次性</p>
+          <ul class="steps">
+            <li>流量：200 GB · 速度：300 Mbps · 设备：<strong>3</strong> 台</li>
+          </ul>
+          <p style="margin:8px 0 6px;font-size:14px;font-weight:600">LV3·不限时 · ¥239 一次性</p>
+          <ul class="steps">
+            <li>流量：400 GB · 速度：500 Mbps · 设备：<strong>4</strong> 台</li>
+          </ul>
+          <p style="margin:8px 0 6px;font-size:14px;font-weight:600">LV4·不限时 · ¥299 一次性</p>
+          <ul class="steps">
+            <li>流量：700 GB · 速度：1 Gbps · 设备：<strong>5</strong> 台</li>
+          </ul>
+          <p style="margin:8px 0 6px;font-size:14px;font-weight:600">旗舰版·不限时 · ¥533 一次性</p>
+          <ul class="steps">
+            <li>流量：1.2 TB · 速度：不限速 · 设备：<strong>8</strong> 台</li>
+          </ul>
+          <div class="callout" style="margin-top:8px">不限时流量包一次买断、流量用完为止、无时间限制、不支持续费，适合用得少不想每月续费的人；另有「补充流量包」可应急加量、5 秒到账。</div>
+        </div>
+      </details>
+
+      <details style="margin-top:8px">
+        <summary style="cursor:pointer;font-size:14px;font-weight:600;color:var(--muted);padding:8px 0;user-select:none">查看节点分析（基于实测截图）</summary>
+        <div class="callout" style="margin-top:6px">
+          1) 低延迟特征明显：自动选择实测约 <strong>55ms</strong>，故障转移约 <strong>95ms</strong>；香港/台湾节点多数落在 <strong>55~65ms</strong>，新加坡大多在 <strong>89~98ms</strong>。<br />
+          2) 节点按 <strong>level1~level4</strong> 分层，并带有 <strong>NF</strong> 等解锁标识，适合按用途（日常/影音）快速筛选。<br />
+          3) 延迟梯度比较清晰：日本节点大致在 <strong>110~125ms</strong>，马来西亚约 <strong>165~198ms</strong>，美国约 <strong>210~244ms</strong>，法国/韩国部分节点会升到 <strong>270ms+</strong>。<br />
+          4) 套餐与节点能力联动：从 LV1（100GB/200Mbps/2设备）到旗舰（1200GB/不限速/8设备），层级越高可用节点与带宽更充足；个别节点会出现超时或未返回延迟，建议以客户端实时测速结果为准。
+        </div>
+      </details>
+    </section>
+
     <!-- 尔湾云 -->
     <section class="card" id="p-erwan">
       <div class="kicker">Provider</div>
@@ -530,80 +703,6 @@
       </details>
     </section>
 
-    <!-- 扬帆云 -->
-    <section class="card" id="p-yangfan">
-      <div class="kicker">Provider</div>
-      <h3>扬帆云</h3>
-      <p style="color:var(--muted);font-size:14px;line-height:1.65;margin:4px 0 14px">扬帆云以性价比和节点覆盖见长，节点按 LV1–LV4 分层；当前 LV1 ¥19.99/月，<strong style="color:var(--text)">618大促：年付 6.9 折优惠码 <code class="inline">yf6189</code>、两年付 6.5 折优惠码 <code class="inline">yf6185</code></strong>（以下单页为准）。支持私人定制套餐。</p>
-      <div class="promo-mini">
-        <strong>618大促提醒：</strong>年付用 <code class="inline">yf6189</code>（6.9 折），两年付用 <code class="inline">yf6185</code>（6.5 折），具体活动时间以官网公示为准。
-      </div>
-      <ul class="steps">
-        <li>定位/特点：性价比、多地区、节点分层</li>
-        <li>流媒体解锁：Netflix、Disney+ 等（带 NF 标识的节点）</li>
-        <li>AI 解锁：美国节点可解锁 ChatGPT、Claude、Gemini 等主流 AI 服务</li>
-        <li>售后：7×24 人工客服 · 隧道加密</li>
-        <li>618优惠：年付 6.9 折，优惠码 <strong>yf6189</strong>；两年付 6.5 折，优惠码 <strong>yf6185</strong></li>
-        <li>提醒：若主要用于路由器全屋代理，建议先按短周期测试稳定性再长期购买</li>
-      </ul>
-      <div class="btns" style="margin-top:10px">
-        <a class="btn" href="https://ml.yfqz1.net/register?code=BnJcjUjE" target="_blank" rel="sponsored noopener">前往官网</a>
-        <a class="btn notice" href="/pages/yangfan-important-notice">重要通知</a>
-      </div>
-
-      <details style="margin-top:14px">
-        <summary style="cursor:pointer;font-size:14px;font-weight:600;color:var(--accent);padding:8px 0;user-select:none">查看套餐明细（LV1 – 旗舰版 + 私人定制）</summary>
-        <div style="padding-top:6px">
-          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">LV1 套餐 · ¥19.99/月</p>
-          <ul class="steps">
-            <li>流量：100 GB/月 · 速度：200 Mbps</li>
-            <li>设备同时在线：<strong>2</strong> 台</li>
-            <li>节点：等级一节点，适合轻度使用</li>
-          </ul>
-          <p style="margin:12px 0 6px;font-size:14px;font-weight:600;color:var(--accent)">⭐ LV2 套餐 · ¥29.99/月（推荐）</p>
-          <ul class="steps">
-            <li>流量：200 GB/月 · 速度：500 Mbps</li>
-            <li>设备同时在线：<strong>3</strong> 台</li>
-            <li>节点：等级一、二节点，适合日常使用</li>
-          </ul>
-          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">LV3 套餐 · ¥39.99/月</p>
-          <ul class="steps">
-            <li>流量：400 GB/月 · 速度：1000 Mbps</li>
-            <li>设备同时在线：<strong>4</strong> 台</li>
-            <li>节点：等级一、二、三节点，部分 IEPL 专线，适合游戏/高清流媒体</li>
-          </ul>
-          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">LV4 套餐 · ¥49.99/月</p>
-          <ul class="steps">
-            <li>流量：700 GB/月 · 速度：2000 Mbps</li>
-            <li>设备同时在线：<strong>6</strong> 台</li>
-            <li>节点：全等级节点（含 IEPL 专线），适合专业视频/远程办公</li>
-          </ul>
-          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">旗舰版 · ¥88.99/月</p>
-          <ul class="steps">
-            <li>流量：1200 GB/月 · 速度：2000 Mbps</li>
-            <li>设备同时在线：<strong>6</strong> 台</li>
-            <li>节点：全 IEPL 专线，超大流量，适合重度用户</li>
-          </ul>
-          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">私人定制 · 2 年付 ¥2135.76 起</p>
-          <ul class="steps">
-            <li>购买后联系客服定制节点，独立 IP，按需配置</li>
-            <li>适合对稳定性和隐私有极高要求的用户</li>
-          </ul>
-          <div class="callout" style="margin-top:8px">常规套餐默认每月订单日重置流量；当月未用流量不结转至下月。包年参考价分别为 LV1 ¥239.88、LV2 ¥359.88、LV3 ¥479.88、LV4 ¥599.88、旗舰版 ¥1067.88。</div>
-        </div>
-      </details>
-
-      <details style="margin-top:8px">
-        <summary style="cursor:pointer;font-size:14px;font-weight:600;color:var(--muted);padding:8px 0;user-select:none">查看节点分析（基于实测截图）</summary>
-        <div class="callout" style="margin-top:6px">
-          1) 低延迟特征明显：自动选择实测约 <strong>55ms</strong>，故障转移约 <strong>95ms</strong>；香港/台湾节点多数落在 <strong>55~65ms</strong>，新加坡大多在 <strong>89~98ms</strong>。<br />
-          2) 节点按 <strong>level1~level4</strong> 分层，并带有 <strong>NF</strong> 等解锁标识，适合按用途（日常/影音）快速筛选。<br />
-          3) 延迟梯度比较清晰：日本节点大致在 <strong>110~125ms</strong>，马来西亚约 <strong>165~198ms</strong>，美国约 <strong>210~244ms</strong>，法国/韩国部分节点会升到 <strong>270ms+</strong>。<br />
-          4) 套餐与节点能力联动：从 LV1（100GB/200Mbps/2设备）到旗舰（1200GB/2000Mbps/6设备），层级越高可用节点与带宽更充足；个别节点会出现超时或未返回延迟，建议以客户端实时测速结果为准。
-        </div>
-      </details>
-    </section>
-
     <!-- 大哥云 -->
     <section class="card" id="p-dage">
       <div class="kicker">Provider</div>
@@ -626,6 +725,64 @@
       </div>
     </section>
 
+    <!-- mojie 魔戒 -->
+    <section class="card" id="p-mojie">
+      <div class="kicker">Provider · 按量计费 · 不限时</div>
+      <h3>mojie 魔戒机场</h3>
+      <p style="color:var(--muted);font-size:14px;line-height:1.65;margin:4px 0 14px">魔戒机场是「1 元机场 / 按量计费」类代表，没有任何到期时间限制，所有套餐<strong style="color:var(--text)">一次性买断、流量用完为止</strong>，按实际用量付费，适合用得少、不想包月续费的用户；用邀请码注册还可 <strong style="color:var(--text)">1 元体验</strong>。</p>
+      <ul class="steps">
+        <li>定位：按量计费、不限时间买断，1 元可体验，轻量/不定期用户友好</li>
+        <li>注册（享 1 元体验优惠）：<a href="/go/mojie/" target="_blank" rel="sponsored noopener" style="color:var(--accent)">mojie.co/register?aff=ItS1igEf</a>（从本链接进入并填邀请码）</li>
+        <li>邀请码：<strong>ItS1igEf</strong>（用此码注册可免手续费购买 1 元体验包：2G 流量、不限时间，本套餐无法续费）</li>
+        <li>备用地址：主站打不开时可换 mojie.app / mojie.host，注册时记得填邀请码 ItS1igEf 才能享 1 元体验</li>
+        <li>协议：Shadowsocks / Clash / V2Ray / Trojan</li>
+        <li>特性：支持流媒体播放、不限使用人数、不限到期时间、不限网络速度（无限速）</li>
+        <li>节点：日本、新加坡、香港、台湾、美国、加拿大、德国、英国、印度、韩国、俄罗斯、土耳其、尼日利亚等多地优化线路</li>
+      </ul>
+      <div class="btns" style="margin-top:10px">
+        <a class="btn" href="/go/mojie/" target="_blank" rel="sponsored noopener">前往官网 / 注册体验</a>
+      </div>
+
+      <details style="margin-top:14px">
+        <summary style="cursor:pointer;font-size:14px;font-weight:600;color:var(--accent);padding:8px 0;user-select:none">查看套餐明细（按量计费 · 不限时间 · 一次性买断）</summary>
+        <div style="padding-top:6px">
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">1G 流量 · ¥1 一次性</p>
+          <ul class="steps">
+            <li>流量：1 GB · 仅一元体验，本套餐无法续费</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">130G 流量 · ¥19.9 一次性</p>
+          <ul class="steps">
+            <li>流量：130 GB · 不限时间</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">210G 流量 · ¥29.9 一次性</p>
+          <ul class="steps">
+            <li>流量：210 GB · 不限时间</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">420G 流量 · ¥52 一次性</p>
+          <ul class="steps">
+            <li>流量：420 GB · 不限时间</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">750G 流量 · ¥85 一次性</p>
+          <ul class="steps">
+            <li>流量：750 GB · 不限时间</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">1660G 流量 · ¥179 一次性</p>
+          <ul class="steps">
+            <li>流量：1660 GB · 不限时间</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">3600G 流量 · ¥330 一次性</p>
+          <ul class="steps">
+            <li>流量：3600 GB · 不限时间</li>
+          </ul>
+          <p style="margin:12px 0 6px;font-size:14px;font-weight:600">10T 流量 · ¥888 一次性</p>
+          <ul class="steps">
+            <li>流量：10240 GB · 不限时间</li>
+          </ul>
+          <div class="callout" style="margin-top:8px">全部套餐均「支持流媒体播放、不限制使用人数、不限制到期时间、不限制网络速度」。⚠️ 流量不叠加：同套餐重复购买会覆盖流量；升级套餐结账时自动抵扣金额，建议一次选好档位。价格以官网下单页为准。</div>
+        </div>
+      </details>
+    </section>
+
     <!-- 奈云 -->
     <section class="card" id="p-naiyun">
       <div class="kicker">Provider · 免费试用 · 按量计费</div>
@@ -640,7 +797,7 @@
         <li>自动续费可随时取消；一人一号，请勿公开分享账号</li>
       </ul>
       <div class="btns" style="margin-top:10px">
-        <a class="btn" href="https://www.nyaff.cc?path=register&code=rxkbocWK" target="_blank" rel="sponsored noopener">注册/免费试用</a>
+        <a class="btn" href="/go/naiyun/" target="_blank" rel="sponsored noopener">注册/免费试用</a>
       </div>
 
       <details style="margin-top:14px">
@@ -837,7 +994,88 @@
       }
     });
   </script>
+  <script>
+    (function(){
+      var providers={
+        jifeng:{name:'疾风云',url:'https://j134.net/?code=1p7r',anchor:'#p-jifeng',reason:'节点覆盖最广（港日新美台 + 欧韩）、流媒体友好，官方 UniClash 客户端一键切换免导入，3–10 台多设备，新手与综合用户都稳。'},
+        lanpang:{name:'蓝胖云',url:'https://u.lanpangyun.de/#/register?code=30Y2Sexl',anchor:'#p-lanpang',reason:'月付 ¥10 起、性价比之王，Netflix/Disney+/ChatGPT 都能解锁，轻量长期最划算。'},
+        yangfan:{name:'扬帆云',url:'https://ml.yfqz1.net/register?code=BnJcjUjE',anchor:'#p-yangfan',reason:'AI 全解锁（ChatGPT/Claude/Gemini）、低延迟，LV 分层灵活，还可买「不限时流量包」。'},
+        erwan:{name:'尔湾云',url:'https://ewanwtt.net/auth/register?code=EGi8tb',anchor:'#p-erwan',reason:'基础/尊享/旗舰节点分层 + IEPL 专线，2–10 台、影音与游戏体验稳，长期付折扣多。'},
+        dage:{name:'大哥云',url:'https://a03.dgy02.com/#/register?code=1CAfWNQC',anchor:'#p-dage',reason:'专线优化、稳定优先（Trojan，500–1000Mbps），远程办公 / 视频会议首选。'},
+        mojie:{name:'mojie 魔戒',url:'/go/mojie/',anchor:'#p-mojie',reason:'1 元即可体验、按量计费、永不过期，买一次用到完，偶尔用最省心。'},
+        naiyun:{name:'奈云',url:'/go/naiyun/',anchor:'#p-naiyun',reason:'注册先享 1 天免费试用，先试后买无压力；按量计费、不限时间。'}
+      };
+      function decide(use,budget,freq){
+        if(freq==='occasional'){
+          if(budget==='cheap'){return ['mojie','naiyun'];}
+          if(use==='ai'){return ['yangfan','naiyun'];}
+          return ['naiyun','mojie'];
+        }
+        if(use==='stream'){
+          if(budget==='cheap'){return ['lanpang','jifeng'];}
+          if(budget==='premium'){return ['jifeng','erwan'];}
+          return ['jifeng','yangfan'];
+        }
+        if(use==='game'){
+          if(budget==='cheap'){return ['yangfan','erwan'];}
+          if(budget==='premium'){return ['erwan','jifeng'];}
+          return ['erwan','yangfan'];
+        }
+        if(use==='ai'){
+          if(budget==='cheap'){return ['yangfan','lanpang'];}
+          if(budget==='premium'){return ['yangfan','erwan'];}
+          return ['yangfan','jifeng'];
+        }
+        if(use==='family'){
+          if(budget==='cheap'){return ['lanpang','yangfan'];}
+          if(budget==='premium'){return ['erwan','jifeng'];}
+          return ['jifeng','erwan'];
+        }
+        if(budget==='premium'){return ['dage','erwan'];}
+        if(budget==='cheap'){return ['lanpang','yangfan'];}
+        return ['lanpang','jifeng'];
+      }
+      var answers={};
+      var section=document.getElementById('airport-picker');
+      if(!section){return;}
+      section.querySelectorAll('.picker-q').forEach(function(q){
+        var key=q.getAttribute('data-q');
+        q.querySelectorAll('.picker-opt').forEach(function(btn){
+          btn.addEventListener('click',function(){
+            q.querySelectorAll('.picker-opt').forEach(function(b){b.classList.remove('active');});
+            btn.classList.add('active');
+            answers[key]=btn.getAttribute('data-v');
+            document.getElementById('picker-hint').textContent='';
+          });
+        });
+      });
+      function renderPick(p,label,isPrimary){
+        return '<div style="padding:14px;border-radius:12px;margin-bottom:10px;border:1px solid '+(isPrimary?'rgba(14,165,233,.4)':'rgba(0,0,0,.1)')+';background:'+(isPrimary?'rgba(14,165,233,.07)':'#fff')+'">'+
+          '<div style="font-size:12px;font-weight:800;letter-spacing:.05em;color:'+(isPrimary?'var(--accent)':'var(--muted)')+'">'+label+'</div>'+
+          '<div style="font-size:17px;font-weight:700;margin:4px 0">'+p.name+'</div>'+
+          '<p style="margin:0;color:var(--muted);font-size:13px;line-height:1.6">'+p.reason+'</p>'+
+          '<div class="btns" style="margin-top:10px"><a class="btn" href="'+p.url+'" target="_blank" rel="sponsored noopener">前往 '+p.name+' 注册</a><a class="btn secondary" href="'+p.anchor+'">查看套餐</a></div>'+
+          '</div>';
+      }
+      document.getElementById('picker-go').addEventListener('click',function(){
+        if(!answers.use||!answers.budget||!answers.freq){
+          document.getElementById('picker-hint').textContent='请把 3 个问题都选一下～';
+          return;
+        }
+        var pair=decide(answers.use,answers.budget,answers.freq);
+        var primary=providers[pair[0]],secondary=providers[pair[1]];
+        var box=document.getElementById('picker-result');
+        box.className='picker-result-card';
+        box.innerHTML='<div style="font-size:13px;color:var(--muted);margin-bottom:12px">根据你的选择，为你匹配 2 个最合适的机场，建议点「查看套餐」对比后再决定：</div>'+
+          renderPick(primary,'✅ 首选推荐',true)+
+          renderPick(secondary,'🔄 备选方案',false);
+        box.style.display='block';
+        box.scrollIntoView({behavior:'smooth',block:'nearest'});
+        if(window.gtag){gtag('event','airport_picker_result',{primary:primary.name,secondary:secondary.name});}
+      });
+    })();
+  </script>
   <script src="analytics-events.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Clash订阅申请指南","description":"详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程","url":"https://www.aixiaobai168.com/clash-subscription-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"datePublished":"2026-01-01","dateModified":"2026-06-01","mainEntity":{"@type":"ItemList","name":"机场推荐列表","itemListElement":[{"@type":"ListItem","position":1,"name":"扬帆云","description":"性价比、多地区，618大促 yf6189 / yf6185，月付 ¥19.99 起"},{"@type":"ListItem","position":2,"name":"蓝胖云","description":"极致性价比，New_2026 系列月付 ¥10 起，新增 5 倍流量节点"},{"@type":"ListItem","position":3,"name":"尔湾云","description":"五档套餐、基础/标准/旗舰节点分层，长期付 year69 等折扣码，月付 ¥24.99 起"},{"@type":"ListItem","position":4,"name":"疾风云","description":"V1–V4 节点分层，五档套餐，月付 ¥19.99 起"},{"@type":"ListItem","position":5,"name":"大哥云","description":"稳定优先、专线优化"}]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Clash订阅申请指南","description":"详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程","url":"https://www.aixiaobai168.com/clash-subscription-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"datePublished":"2026-01-01","dateModified":"2026-06-16","mainEntity":{"@type":"ItemList","name":"机场推荐列表","itemListElement":[{"@type":"ListItem","position":1,"name":"疾风云","description":"V1–V4 节点分层，五档套餐，618大促 jf5169/jff5165，月付 ¥19.99 起"},{"@type":"ListItem","position":2,"name":"蓝胖云","description":"极致性价比，New_2026 系列月付 ¥10 起，新增 5 倍流量节点"},{"@type":"ListItem","position":3,"name":"扬帆云","description":"性价比、多地区，618大促 yf6189/yf6185/lucky9，新增不限时买断流量包，月付 ¥19.99 起"},{"@type":"ListItem","position":4,"name":"尔湾云","description":"五档套餐、基础/标准/旗舰节点分层，长期付 year69 等折扣码，月付 ¥24.99 起"},{"@type":"ListItem","position":5,"name":"大哥云","description":"稳定优先、专线优化"},{"@type":"ListItem","position":6,"name":"mojie 魔戒","description":"1 元机场、按量计费不限时、邀请码 ItS1igEf，流媒体全解锁，按量 ¥1 起"},{"@type":"ListItem","position":7,"name":"奈云","description":"免费试用、按量计费不限时、流媒体全解锁，年付 ¥168 起"}]}}</script>
 </body>
 </html>

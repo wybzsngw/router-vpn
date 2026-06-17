@@ -1,9 +1,9 @@
 # Clash 全平台科学上网教程 2026 — 路由器 / 软路由 / Windows / macOS / Linux / 手机翻墙 + Cursor AI 编程 + 回国加速综合指南
 
 [![在线阅读](https://img.shields.io/badge/📖_在线阅读-主站-0ea5e9?style=for-the-badge)](https://www.aixiaobai168.com/)
-[![GitHub stars](https://img.shields.io/github/stars/mowei-ie/router-vpn?style=for-the-badge&logo=github&color=f59e0b)](https://github.com/mowei-ie/router-vpn/stargazers)
+[![GitHub stars](https://badgen.net/github/stars/mowei-ie/router-vpn?icon=github&label=stars&color=orange&scale=1.35)](https://github.com/mowei-ie/router-vpn/stargazers)
 [![License](https://img.shields.io/badge/license-Apache_2.0-10b981?style=for-the-badge)](LICENSE)
-[![Last Updated](https://img.shields.io/badge/v2.7_更新-2026.05.17-7c4dff?style=for-the-badge)](https://www.aixiaobai168.com/)
+[![Last Updated](https://img.shields.io/badge/v2.8_更新-2026.06.17-7c4dff?style=for-the-badge)](https://www.aixiaobai168.com/)
 
 > **2026 最新全平台综合指南** — 一个仓库覆盖三大专题：
 >
@@ -138,6 +138,12 @@
 
 ## 📝 更新日志
 
+### v2.8 — 2026 年 6 月
+
+- 新增**机场决策器**：多维度评分模型（速度 / 稳定性 / 价格 / 解锁能力），帮助用户快速选出最适合自己的机场方案
+- 重构**机场中转系统**：优化中转节点架构与分流规则，提升 IPLC / 专线中转的稳定性与覆盖范围
+- 整体内容梳理与细节优化
+
 ### v2.7 — 2026 年 5 月
 
 - 新增 **Cursor AI 编程系列**：完整指南 + 4 篇实战（建站 / SSH 远程 / 阿里云部署 / 全栈 App）
@@ -167,4 +173,4 @@
 
 ---
 
-**在线文档**：<https://www.aixiaobai168.com/>　|　**版本**：v2.7　|　**最后更新**：2026 年 6 月 13 日
+**在线文档**：<https://www.aixiaobai168.com/>　|　**版本**：v2.8　|　**最后更新**：2026 年 6 月 17 日
