@@ -1,0 +1,95 @@
+title: "[故障求助] "
+labels: ["support", "q-and-a"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的反馈。为了更快定位问题，请尽量完整填写下面的信息。
+
+        ---
+
+        **请勿提交以下敏感内容：**
+
+        - 订阅链接（含 `token=`、`subscribe`、`/link/` 等）
+        - 带邀请参数的注册链接（`?code=`、`?ref=`、`?invite=`）
+        - 邮箱、手机号、订单号、支付截图、验证码
+
+        日志里如果出现上述信息，请先打码再提交。
+
+  - type: dropdown
+    id: fault_type
+    attributes:
+      label: 故障类型
+      description: 请选择最接近的一类，便于快速分流
+      options:
+        - 订阅下载失败 / 导入后节点为空
+        - MerlinClash 启动失败 / 配置报错
+        - OpenClash 订阅或启动异常
+        - UniClash 登录或连接异常
+        - AI / 流媒体地区限制
+        - 客户端导入失败（Windows/macOS/Android/iOS）
+        - 其他
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: 设备与系统
+      description: 例如 AX86U + Merlin 388.x，或 Windows 11 24H2
+      placeholder: AX86U + Merlin 388.8
+    validations:
+      required: true
+
+  - type: input
+    id: client_version
+    attributes:
+      label: 客户端/插件版本
+      description: 例如 MerlinClash 2.x、OpenClash v0.47.x、Clash Verge Rev v2.x
+      placeholder: MerlinClash 2.x
+    validations:
+      required: true
+
+  - type: input
+    id: provider_name
+    attributes:
+      label: 机场或订阅来源（公开名称）
+      description: 只填公开名称，不要粘贴私人订阅 URL
+      placeholder: 扬帆云
+    validations:
+      required: true
+
+  - type: textarea
+    id: symptom
+    attributes:
+      label: 现象与报错
+      description: 粘贴关键报错行、出现时机、是否可复现
+      placeholder: |
+        现象：
+        报错：
+        复现步骤：
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried_steps
+    attributes:
+      label: 已尝试操作
+      description: 写清你已经改过哪些配置，避免重复排查
+      placeholder: |
+        - 改过订阅 UserAgent：
+        - 重置过订阅：
+        - 换过节点：
+        - 结果：
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我没有粘贴订阅链接、邀请码、token、邮箱、订单号等敏感信息
+          required: true
+        - label: 我已阅读故障中心并先尝试过已知问题方案
+          required: true
