@@ -1,64 +1,33 @@
-title: "[故障求助] "
+title: "[求助] "
 body:
   - type: markdown
     attributes:
       value: |
-        感谢你的反馈。为了更快定位问题，请尽量完整填写下面的信息。
+        简单描述即可，越具体越快定位。
 
-        请勿提交以下敏感内容：
-        - 订阅链接（含 token）
-        - 邀请码注册链接（?code= / ?ref=）
-        - 邮箱、手机号、订单号、支付截图
+        ⚠️ 请勿公开：订阅链接（含 token）、邀请码链接（?code= / ?ref=）、邮箱 / 手机号 / 订单号 / 支付截图。
 
   - type: dropdown
-    id: fault_type
+    id: scene
     attributes:
-      label: 故障类型
+      label: 大概属于哪类问题？（可选）
       options:
         - 订阅下载失败 / 导入后节点为空
-        - MerlinClash 启动失败 / 配置报错
-        - OpenClash 订阅或启动异常
-        - UniClash 登录或连接异常
+        - 客户端启动或配置报错
+        - 能连上但网页 / 应用打不开
         - AI / 流媒体地区限制
-        - 客户端导入失败（Windows/macOS/Android/iOS）
-        - 其他
+        - 选型 / 套餐 / 其他
     validations:
-      required: true
-
-  - type: input
-    id: environment
-    attributes:
-      label: 设备与系统
-      placeholder: 例如 AX86U + Merlin 388.8 / Windows 11 24H2
-    validations:
-      required: true
-
-  - type: input
-    id: client_version
-    attributes:
-      label: 客户端/插件版本
-      placeholder: 例如 MerlinClash 2.x / OpenClash v0.47.x
-    validations:
-      required: true
+      required: false
 
   - type: textarea
-    id: symptom
+    id: detail
     attributes:
-      label: 现象与报错
+      label: 问题描述
+      description: 一段话写清即可；方便的话带上设备、客户端版本、报错原文。
       placeholder: |
-        现象：
-        报错：
-        复现步骤：
-    validations:
-      required: true
-
-  - type: textarea
-    id: tried_steps
-    attributes:
-      label: 已尝试操作
-      placeholder: |
-        - 已尝试步骤 1：
-        - 已尝试步骤 2：
-        - 结果：
+        设备 / 客户端：例如 AX86U + MerlinClash / Windows + Clash Verge
+        现象 / 报错：
+        已经试过：
     validations:
       required: true
