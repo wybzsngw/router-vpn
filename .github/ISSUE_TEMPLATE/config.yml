@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 故障求助（GitHub Discussions）
+    url: https://github.com/mowei-ie/router-vpn/discussions/new?category=q-a
+    about: 订阅下载失败、MerlinClash/OpenClash/UniClash 异常、地区限制等使用问题，请在这里提问并可获得回复。
+  - name: 查看已知故障与排查入口
+    url: https://www.aixiaobai168.com/pages/troubleshooting
+    about: 提问前建议先看故障中心，避免重复问题。

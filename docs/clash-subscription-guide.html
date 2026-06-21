@@ -21,7 +21,7 @@
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:site_name" content="Clash 全平台科学上网教程" />
   <meta property="article:published_time" content="2026-01-01" />
-  <meta property="article:modified_time" content="2026-05-04" />
+  <meta property="article:modified_time" content="2026-06-21" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Clash 订阅申请指南 2026 — 机场推荐" />
   <meta name="twitter:description" content="精选机场推荐与价格对比，含 Clash 订阅获取与 MerlinClash 导入教程。" />
@@ -873,8 +873,12 @@
       <div class="callout">
         提示：若需分流/解锁流媒体，可在「规则设置」启用对应的规则集或策略组。
       </div>
+      <div class="callout" style="margin-top:10px">
+        若你在 MerlinClash 更新订阅后遇到 <code class="inline">/日本/ not found</code>、<code class="inline">proxies: []</code> 等报错，优先检查订阅下载 UserAgent，建议改为 <code class="inline">verge/mihomo</code> 后重新更新。完整入口见 <a href="/pages/troubleshooting#yangfan-merlinclash-ua">故障排查与反馈中心</a>。
+      </div>
       <div class="btns" style="margin-top:12px">
         <a class="btn" href="/">返回首页 · 选择教程</a>
+        <a class="btn secondary" href="/pages/troubleshooting">故障排查与反馈中心</a>
       </div>
     </section>
 
@@ -885,6 +889,7 @@
         <a href="/pages/windows-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🪟</span><div><strong style="font-size:14px">Windows 教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">Clash Verge Rev 安装与 TUN 模式</p></div></a>
         <a href="/pages/clash-for-windows-alternative" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🧭</span><div><strong style="font-size:14px">CFW 停更替代指南</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">不知道选哪个客户端时先看这里</p></div></a>
         <a href="/pages/asus-router-guide" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">📡</span><div><strong style="font-size:14px">华硕路由器教程</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">梅林固件 + MerlinClash 全屋翻墙</p></div></a>
+        <a href="/pages/troubleshooting" style="display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,.06);transition:border-color .2s"><span style="font-size:24px">🛠️</span><div><strong style="font-size:14px">故障排查与反馈中心</strong><p style="font-size:12px;color:var(--muted);margin:2px 0 0">已知问题 + GitHub 问答入口</p></div></a>
       </div>
     </section>
 
@@ -903,7 +908,8 @@
         <a href="/pages/linux-guide">Linux</a> ·
         <a href="/pages/mobile-guide">手机</a> ·
         <a href="/pages/chatgpt-guide">ChatGPT</a> ·
-        <a href="/pages/netflix-guide">Netflix</a>
+        <a href="/pages/netflix-guide">Netflix</a> ·
+        <a href="/pages/troubleshooting">故障排查中心</a>
       </nav>
     </footer>
   </div>
@@ -1069,6 +1075,6 @@
     })();
   </script>
   <script src="analytics-events.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Clash订阅申请指南","description":"详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程","url":"https://www.aixiaobai168.com/clash-subscription-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"datePublished":"2026-01-01","dateModified":"2026-06-16","mainEntity":{"@type":"ItemList","name":"机场推荐列表","itemListElement":[{"@type":"ListItem","position":1,"name":"疾风云","description":"V1–V4 节点分层，五档套餐，618大促 jf5169/jff5165，月付 ¥19.99 起"},{"@type":"ListItem","position":2,"name":"蓝胖云","description":"极致性价比，New_2026 系列月付 ¥10 起，新增 5 倍流量节点"},{"@type":"ListItem","position":3,"name":"扬帆云","description":"性价比、多地区，618大促 yf6189/yf6185/lucky9，新增不限时买断流量包，月付 ¥19.99 起"},{"@type":"ListItem","position":4,"name":"尔湾云","description":"五档套餐、基础/标准/旗舰节点分层，长期付 year69 等折扣码，月付 ¥24.99 起"},{"@type":"ListItem","position":5,"name":"大哥云","description":"稳定优先、专线优化"},{"@type":"ListItem","position":6,"name":"mojie 魔戒","description":"1 元机场、按量计费不限时、邀请码 ItS1igEf，流媒体全解锁，按量 ¥1 起"},{"@type":"ListItem","position":7,"name":"奈云","description":"免费试用、按量计费不限时、流媒体全解锁，年付 ¥168 起"}]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Clash订阅申请指南","description":"详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程","url":"https://www.aixiaobai168.com/clash-subscription-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"datePublished":"2026-01-01","dateModified":"2026-06-21","mainEntity":{"@type":"ItemList","name":"机场推荐列表","itemListElement":[{"@type":"ListItem","position":1,"name":"疾风云","description":"V1–V4 节点分层，五档套餐，618大促 jf5169/jff5165，月付 ¥19.99 起"},{"@type":"ListItem","position":2,"name":"蓝胖云","description":"极致性价比，New_2026 系列月付 ¥10 起，新增 5 倍流量节点"},{"@type":"ListItem","position":3,"name":"扬帆云","description":"性价比、多地区，618大促 yf6189/yf6185/lucky9，新增不限时买断流量包，月付 ¥19.99 起"},{"@type":"ListItem","position":4,"name":"尔湾云","description":"五档套餐、基础/标准/旗舰节点分层，长期付 year69 等折扣码，月付 ¥24.99 起"},{"@type":"ListItem","position":5,"name":"大哥云","description":"稳定优先、专线优化"},{"@type":"ListItem","position":6,"name":"mojie 魔戒","description":"1 元机场、按量计费不限时、邀请码 ItS1igEf，流媒体全解锁，按量 ¥1 起"},{"@type":"ListItem","position":7,"name":"奈云","description":"免费试用、按量计费不限时、流媒体全解锁，年付 ¥168 起"}]}}</script>
 </body>
 </html>

@@ -1,0 +1,61 @@
+name: 文档问题反馈
+description: 反馈教程错误、链接失效、步骤过期或描述不清
+title: "[Docs] "
+labels: ["docs", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈文档问题，这会直接帮助我们修复教程质量。
+
+        若你是“使用故障求助”，请优先到 Discussions 问答区提交：
+        https://github.com/mowei-ie/router-vpn/discussions/new?category=q-a
+
+  - type: input
+    id: page_url
+    attributes:
+      label: 页面 URL
+      description: 请粘贴有问题的页面链接（aixiaobai168.com 或 docs 路径）
+      placeholder: https://www.aixiaobai168.com/pages/asus-router-guide
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: 问题类型
+      options:
+        - 内容错误（步骤/命令/参数）
+        - 链接失效或跳转错误
+        - 页面信息过期（版本/价格/路径变更）
+        - 表述不清，容易误解
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: 详细说明
+      description: 请尽量给出“哪里错了 + 建议改成什么”
+      placeholder: |
+        当前内容：
+        问题点：
+        建议修改：
+    validations:
+      required: true
+
+  - type: input
+    id: evidence
+    attributes:
+      label: 参考证据（可选）
+      description: 官方文档链接、截图链接、日志片段等
+      placeholder: https://...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我确认这是文档质量问题，不是一般使用求助
+          required: true
