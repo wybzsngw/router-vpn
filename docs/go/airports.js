@@ -99,13 +99,13 @@
   function mountUI() {
     document.body.innerHTML =
       '<main class="panel" aria-live="polite">' +
-      '  <div class="brand">aixiaobai168.com · 官方线路直达助手</div>' +
+      '  <div class="brand">AI小白网络指南 · aixiaobai168.com</div>' +
       '  <h1 id="title">正在为你连接官方注册页</h1>' +
       '  <p class="sub">正在自动选择当前可用的<strong>官方入口</strong>，并为你带上优惠邀请码，请稍候…</p>' +
       '  <div class="spinner" aria-hidden="true"></div>' +
       '  <p class="status" id="status">正在检测可用线路…</p>' +
       '  <div class="list" id="manual-links"></div>' +
-      '  <p class="note">为什么会有这一步？机场官网域名常因网络原因临时变动，本页由 <strong>aixiaobai168.com</strong> 维护，会自动把你送到最新可用的<strong>官方注册地址</strong>，避免你卡在打不开的旧链接上。</p>' +
+      '  <p class="note">为什么会有这一步？机场官网域名常因网络原因临时变动，本页由「<strong>AI小白网络指南</strong>」（aixiaobai168.com）维护，会自动把你送到最新可用的<strong>官方注册地址</strong>，避免你卡在打不开的旧链接上。</p>' +
       "</main>";
   }
 
