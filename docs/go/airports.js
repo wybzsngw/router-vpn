@@ -100,12 +100,12 @@
     document.body.innerHTML =
       '<main class="panel" aria-live="polite">' +
       '  <div class="brand"><img class="brand-logo" src="/favicon.svg" width="22" height="22" alt="" />AI小白网络指南 · aixiaobai168.com</div>' +
-      '  <h1 id="title">正在为你连接官方注册页</h1>' +
-      '  <p class="sub">正在自动选择当前可用的<strong>官方入口</strong>，并为你带上优惠邀请码，请稍候…</p>' +
+      '  <h1 id="title">正在为你打开官方注册页</h1>' +
+      '  <p class="sub">我们会从已维护的<strong>官方入口</strong>中选择当前可访问的一条，稍后前往服务商官网。</p>' +
       '  <div class="spinner" aria-hidden="true"></div>' +
-      '  <p class="status" id="status">正在检测可用线路…</p>' +
+      '  <p class="status" id="status">正在确认官方入口是否可访问…</p>' +
       '  <div class="list" id="manual-links"></div>' +
-      '  <p class="note">为什么会有这一步？机场官网域名常因网络原因临时变动，本页由「<strong>AI小白网络指南</strong>」（aixiaobai168.com）维护，会自动把你送到最新可用的<strong>官方注册地址</strong>，避免你卡在打不开的旧链接上。</p>' +
+      '  <p class="note">为什么会有这一步？部分服务商官网域名会临时调整，本页由「<strong>AI小白网络指南</strong>」（aixiaobai168.com）整理常用官方入口，只负责帮你打开可访问的服务商官网。下方会显示即将前往的官方地址，自动打开失败时也可以手动选择。</p>' +
       "</main>";
   }
 
@@ -155,8 +155,8 @@
 
     var code = codeOverride || provider.defaultCode;
     var titleEl = document.getElementById("title");
-    if (titleEl) titleEl.textContent = "正在为你连接「" + provider.title + "」官方注册页";
-    document.title = provider.title + " - 正在为你选择官方线路";
+    if (titleEl) titleEl.textContent = "正在为你打开「" + provider.title + "」官方注册页";
+    document.title = provider.title + " - 正在打开官方注册页";
 
     function renderManualLinks(headClass, headText) {
       var rows = provider.entries.map(function (item) {
@@ -168,23 +168,23 @@
     }
 
     function jump(url) {
-      setStatus("入口可用，正在跳转...");
+      setStatus("已确认可用，正在前往服务商官网...");
       setTimeout(function () { window.location.replace(url); }, 240);
     }
 
     (async function run() {
-      renderManualLinks("warn", "若自动跳转失败，可手动点击以下入口：");
+      renderManualLinks("warn", "稍后会自动前往官网；如未打开，也可手动选择以下官方入口：");
       for (var i = 0; i < provider.entries.length; i++) {
         var current = provider.entries[i];
-        setStatus("正在检测 " + current.name + " ...");
+        setStatus("正在确认 " + current.name + " 是否可访问...");
         try {
           await probe(current.probe);
-          renderManualLinks("ok", "已检测到可用入口，若未自动跳转可手动点击：");
+          renderManualLinks("ok", "可用入口已确认，如未自动打开可手动选择：");
           jump(buildUrl(current.url, code));
           return;
         } catch (err) { /* 该入口不可用，继续探测下一个 */ }
       }
-      setStatus("自动检测未命中，正在尝试默认入口...");
+      setStatus("暂时无法完成确认，正在尝试打开默认官方入口...");
       jump(buildUrl(provider.entries[0].url, code));
     })();
   }
