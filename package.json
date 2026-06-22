@@ -1,0 +1,24 @@
+{
+  "name": "router-vpn",
+  "version": "1.0.0",
+  "description": "[![在线阅读](https://img.shields.io/badge/📖_在线阅读-主站-0ea5e9?style=for-the-badge)](https://www.aixiaobai168.com/)\r [![GitHub stars](https://badgen.net/github/stars/mowei-ie/router-vpn?icon=github&label=stars&color=orange&scale=1.35)](https://github.com/mowei-ie/router-vpn/stargazers)\r [![License](https://img.shields.io/badge/license-Apache_2.0-10b981?style=for-the-badge)](LICENSE)\r [![Last Updated](https://img.shields.io/badge/v2.8_更新-2026.06.17-7c4dff?style=for-the-badge)](https://www.aixiaobai168.com/)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mowei-ie/router-vpn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mowei-ie/router-vpn/issues"
+  },
+  "homepage": "https://github.com/mowei-ie/router-vpn#readme"
+}

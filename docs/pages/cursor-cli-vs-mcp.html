@@ -194,7 +194,7 @@
       <div class="kicker">章节三</div>
       <h2>CLI 为什么对 LLM 格外友好</h2>
       <p>这是我把大半任务迁到 CLI 的核心原因，展开说一下。</p>
-      <img src="../images/cursor-cli-vs-mcp-mechanism.png" alt="MCP 工具定义全量注入 vs CLI 按需发现的对比示意" style="max-width:100%;border-radius:12px;margin:12px 0">
+      <img src="../images/cursor-cli-vs-mcp-mechanism.webp" alt="MCP 工具定义全量注入 vs CLI 按需发现的对比示意" style="max-width:100%;border-radius:12px;margin:12px 0">
       <p style="color:var(--muted);font-size:13px">MCP 把所有工具定义一次性塞进上下文（左）；CLI 让 Agent 按需一条条查、用完即走（右）。</p>
       <h3>(a) 渐进式发现，信息按需加载</h3>
       <p>CLI 工具的用法不需要提前全部塞进上下文。Agent 想用 <code class="inline">gh</code> 做点什么，先跑一下 <code class="inline">gh --help</code>，看到命令目录；发现自己要的是 PR 相关操作，再跑 <code class="inline">gh pr --help</code>，看子命令；确定要列出 PR，<code class="inline">gh pr list --help</code> 看参数。每次 <code class="inline">--help</code> 的输出只有几十行，加载的都是当前步骤需要的信息，用完就不占了。这和 MCP"开局把整本手册塞进去"的方式正好相反。</p>
@@ -213,7 +213,7 @@
       <h2>一个真实的对照：同一个需求，两条路</h2>
       <p>说说一个我自己真实做过的对照。</p>
       <p><strong>需求很简单</strong>：列出仓库里所有 open 状态的 PR，看看每个人有几条、分别是哪些。</p>
-      <img src="../images/cursor-cli-vs-mcp-routes.png" alt="同一需求下 MCP 路线与 CLI 路线的链路长短对比" style="max-width:100%;border-radius:12px;margin:12px 0">
+      <img src="../images/cursor-cli-vs-mcp-routes.webp" alt="同一需求下 MCP 路线与 CLI 路线的链路长短对比" style="max-width:100%;border-radius:12px;margin:12px 0">
       <p style="color:var(--muted);font-size:13px">同一个需求：MCP 路线要走装 Server、配 key、注入工具、调用、拿结果五步；CLI 路线只要"已登录 → 一句命令 → 完成"。</p>
       <h3>路线 A：MCP 方式</h3>
       <p>当时我用的是 GitHub 的 MCP Server。步骤大概是：找到 MCP Server 的包、搞清楚认证方式（需要创建一个 Fine-grained token 并给对应仓库权限）、在 Cursor 的 MCP 配置文件里写好 Server 定义、重启 Cursor 让 Server 生效、确认 Agent 能看到工具列表。整个配置过程花了差不多二十分钟——主要时间在搞 token 权限，GitHub 的 Fine-grained token 权限选项挺细的，一项一项勾。配好以后能用，但上下文里多了一大块 GitHub 工具定义。</p>
