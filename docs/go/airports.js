@@ -35,11 +35,12 @@
     yangfan: {
       title: "扬帆云",
       defaultCode: "BnJcjUjE",
-      // 实测：ml.yfqz1.net / yangfanhome.com / yftg1.com 三个多入口面板，注册路由均为 /register?code=
+      // 2026-06 实测：a04.yfyn01.net/register?code=... 和 yangfanhome.com 入口已出现 Chrome 红标，
+      // 不再作为自动跳转目标。以下入口来自当前可用的扬帆云入口页，本站定期维护。
       entries: [
-        { name: "官方入口",   probe: "https://ml.yfqz1.net/",    url: "https://ml.yfqz1.net/register?code={code}" },
-        { name: "备用入口 A", probe: "https://yangfanhome.com/", url: "https://yangfanhome.com/register?code={code}" },
-        { name: "备用入口 B", probe: "https://yftg1.com/",       url: "https://yftg1.com/register?code={code}" }
+        { name: "官方入口",   probe: "https://yfsite.net/invite",             url: "https://yfsite.net/invite?code={code}" },
+        { name: "备用入口 A", probe: "https://ml.yangfan618.net/dashboard",   url: "https://ml.yangfan618.net/invite?code={code}" },
+        { name: "备用入口 B", probe: "https://yfsite.net/register",          url: "https://yfsite.net/register?code={code}" }
       ]
     },
     erwan: {

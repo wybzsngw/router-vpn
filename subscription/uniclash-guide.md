@@ -39,7 +39,7 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 | 服务商 | 网站代码 | 注册入口 | 客户端下载 | 支持平台 |
 |--------|---------|---------|----------|---------|
 | **疾风云** | `jifeng` | [注册疾风云](https://j134.net/?code=1p7r) | 注册登录后官网下载 | Android / Windows / Mac |
-| **扬帆云** | `yangfan` | [注册扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE) | 注册登录后官网下载 | Android / Windows / Mac |
+| **扬帆云** | `yangfan` | [注册扬帆云](https://www.aixiaobai168.com/go/yangfan/) | 注册登录后官网下载 | Android / Windows / Mac |
 | **尔湾云** | `erwan` | [注册尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) | 注册登录后官网下载 | Android / Windows / Mac |
 
 ### 方案 A：疾风云 UniClash（推荐）
@@ -56,7 +56,7 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 - AI 解锁能力强：已验证可解锁 ChatGPT / Claude / Gemini 等主流 AI。
 - 家宽专线 + 中转双线，年付 6.9 折优惠码 `yf6189`，两年付 6.5 折 `yf6185`，支持私人定制。
 - UniClash 网站代码填 `yangfan`，输入后右侧显示绿色 ✓ 和"扬帆云"字样，确认后继续输入邮箱密码登录。
-- 客户端下载需先[注册扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE)账号、购买套餐，再登录官网会员中心获取（Windows / Mac / Android）。
+- 客户端下载需先[注册扬帆云](https://www.aixiaobai168.com/go/yangfan/)账号、购买套餐，再登录官网会员中心获取（Windows / Mac / Android）。
 
 ![扬帆云 UniClash 官方下载页](../docs/images/uniclash/download-yangfan.png)
 
@@ -84,7 +84,7 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 
 按以下 6 步操作即可顺利登录使用，不要跳过注册和购买直接下载客户端：
 
-1. **选服务商**：[疾风云](https://j134.net/?code=1p7r)、[扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE) 或 [尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb)。
+1. **选服务商**：[疾风云](https://j134.net/?code=1p7r)、[扬帆云](https://www.aixiaobai168.com/go/yangfan/) 或 [尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb)。
 2. **注册账号**：点上面的服务商名称跳到注册页，填邮箱和密码。
 3. **购买套餐**：付款后登录服务商官网确认账号有有效套餐和剩余流量。
 4. **下载客户端**：三家都在注册登录官网后，从会员中心 / 官网下载页获取——疾风云从[疾风云官网](https://j134.net/?code=1p7r)登录后获取，扬帆云、尔湾云登录各自官网会员中心下载，不要用未注册的第三方裸下载页。
@@ -127,7 +127,7 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 
 ### Android
 
-1. 先在[扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE)、[尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) 或 [疾风云](https://j134.net/?code=1p7r) 官网注册登录，再到会员中心 / 官网下载页获取 Android 安装包。
+1. 先在[扬帆云](https://www.aixiaobai168.com/go/yangfan/)、[尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) 或 [疾风云](https://j134.net/?code=1p7r) 官网注册登录，再到会员中心 / 官网下载页获取 Android 安装包。
 2. 选 **下载 UniClash APK（线路一）**，速度慢就换线路二。
 3. 提示"未知来源"时，去系统设置允许当前浏览器或文件管理器安装。
 4. 下载页还提供 _改名 zip 版_，下载后把 `.zip` 改回 `.apk` 再安装。
