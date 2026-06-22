@@ -72,10 +72,13 @@
     mojie: {
       title: "魔戒",
       defaultCode: "ItS1igEf",
+      // 2026-06 实测：mojie.co/register?aff=... 已被 Chrome 安全页标记为危险入口，
+      // 不再作为自动跳转目标。以下入口来自「魔戒.net」（xn--xnun88j.net）官方发布页，
+      // 由本站定期维护；用户点击本站入口后仍直接进入带 aff 的注册页，不需要自行选择入口。
       entries: [
-        { name: "官方入口",   probe: "https://mojie.co/",   url: "https://mojie.co/register?aff={code}" },
-        { name: "备用入口 A", probe: "https://mojie.app/",  url: "https://mojie.app/register?aff={code}" },
-        { name: "备用入口 B", probe: "https://mojie.host/", url: "https://mojie.host/register?aff={code}" }
+        { name: "官方入口",   probe: "https://47.242.128.61:8000/", url: "https://47.242.128.61:8000/#/register?aff={code}" },
+        { name: "备用入口 A", probe: "https://47.112.97.173:5000/", url: "https://47.112.97.173:5000/#/register?aff={code}" },
+        { name: "备用入口 B", probe: "https://mojie.host/",          url: "https://mojie.host/#/register?aff={code}" }
       ]
     }
   };
