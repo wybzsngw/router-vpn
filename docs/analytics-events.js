@@ -3,14 +3,14 @@
   if (typeof gtag !== 'function') return;
 
   var AIRPORT_DOMAINS = [
-    'ml.yfqz1.net',
+    '/go/yangfan/',
     'lanpangyun.me',
     'ewanwtt.net',
     'j134.net'
   ];
 
   var AIRPORT_NAMES = {
-    'ml.yfqz1.net': '扬帆云',
+    '/go/yangfan/': '扬帆云',
     'lanpangyun.me': '蓝胖云',
     'ewanwtt.net': '尔湾云',
     'j134.net': '疾风云'
