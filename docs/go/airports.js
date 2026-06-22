@@ -99,7 +99,7 @@
   function mountUI() {
     document.body.innerHTML =
       '<main class="panel" aria-live="polite">' +
-      '  <div class="brand">AI小白网络指南 · aixiaobai168.com</div>' +
+      '  <div class="brand"><img class="brand-logo" src="/favicon.svg" width="22" height="22" alt="" />AI小白网络指南 · aixiaobai168.com</div>' +
       '  <h1 id="title">正在为你连接官方注册页</h1>' +
       '  <p class="sub">正在自动选择当前可用的<strong>官方入口</strong>，并为你带上优惠邀请码，请稍候…</p>' +
       '  <div class="spinner" aria-hidden="true"></div>' +

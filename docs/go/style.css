@@ -40,7 +40,8 @@ h1 {
   letter-spacing: 0.02em;
   text-align: center;
 }
-.brand { text-align: center; color: var(--accent); font-size: 13px; letter-spacing: 0.04em; margin: 0 0 14px; opacity: 0.92; }
+.brand { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--accent); font-size: 13px; letter-spacing: 0.04em; margin: 0 0 14px; opacity: 0.95; }
+.brand-logo { width: 22px; height: 22px; border-radius: 6px; display: block; flex: none; }
 .sub { margin: 0; text-align: center; color: var(--muted); font-size: 16px; }
 .sub strong { color: var(--text); }
 .note {
