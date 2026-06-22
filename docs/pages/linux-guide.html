@@ -11,7 +11,7 @@
   <title>Linux 翻墙教程 2026 — Clash Verge Rev 桌面与服务器版完整指南</title>
   <meta name="description" content="Linux 科学上网教程，覆盖命令行客户端安装、后台服务运行、订阅配置、增强模式、域名解析、转发规则、服务器代理、容器环境、开机自启、日志查看和无桌面主机常见连接失败排查，适合服务器、开发机和轻量桌面用户，并补充 systemd 与防火墙注意事项。同时提供实测经验。适合新手按步骤操作。避免常见配置错误。" />
   <meta name="keywords" content="Linux翻墙,Linux科学上网,Clash Linux,Clash Verge Rev Linux,Ubuntu翻墙,Debian翻墙,Linux代理,systemd Clash,无GUI Clash,headless Clash,Linux一键脚本,终端代理" />
-  <meta name="author" content="Router VPN Guide" />
+  <meta name="author" content="AI小白网络指南" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
   <meta property="og:title" content="Linux 翻墙教程 2026 — Clash 桌面版与服务器版科学上网" />
@@ -19,7 +19,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.aixiaobai168.com/pages/linux-guide" />
   <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="og:site_name" content="AI小白网络指南" />
   <meta property="article:published_time" content="2026-03-10" />
   <meta property="article:modified_time" content="2026-04-06" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -541,7 +541,7 @@ curl -X PUT http://127.0.0.1:9090/proxies/selector-name \
     });
   </script>
   <script src="../analytics-events.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Linux Clash 翻墙教程","description":"Linux 系统使用 Clash 实现科学上网，含 GUI 桌面版与无 GUI 服务器版教程","url":"https://www.aixiaobai168.com/pages/linux-guide","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"选择方案","text":"桌面版使用 Clash Verge Rev，服务器版使用命令行 Clash"},{"@type":"HowToStep","name":"下载安装","text":"从 GitHub 下载对应格式安装包（AppImage/deb/rpm）"},{"@type":"HowToStep","name":"导入订阅","text":"粘贴订阅链接导入配置"},{"@type":"HowToStep","name":"启动代理","text":"开启 System Proxy 或配置环境变量代理"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Linux Clash 翻墙教程","description":"Linux 系统使用 Clash 实现科学上网，含 GUI 桌面版与无 GUI 服务器版教程","url":"https://www.aixiaobai168.com/pages/linux-guide","author":{"@type":"Organization","name":"AI小白网络指南"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"选择方案","text":"桌面版使用 Clash Verge Rev，服务器版使用命令行 Clash"},{"@type":"HowToStep","name":"下载安装","text":"从 GitHub 下载对应格式安装包（AppImage/deb/rpm）"},{"@type":"HowToStep","name":"导入订阅","text":"粘贴订阅链接导入配置"},{"@type":"HowToStep","name":"启动代理","text":"开启 System Proxy 或配置环境变量代理"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"Linux 教程","item":"https://www.aixiaobai168.com/pages/linux-guide"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Linux 上 Clash 提示 Permission denied 怎么办？","acceptedAnswer":{"@type":"Answer","text":"确保 clash 二进制有执行权限，运行 chmod +x /usr/local/bin/clash。"}},{"@type":"Question","name":"Linux Clash 端口被占用怎么解决？","acceptedAnswer":{"@type":"Answer","text":"修改 config.yaml 中的 port、socks-port 端口号；或用 ss -tlnp 排查并关闭占用端口的进程。"}},{"@type":"Question","name":"Linux Clash DNS 解析失败怎么处理？","acceptedAnswer":{"@type":"Answer","text":"检查 config.yaml 中的 dns 配置段；确保 Country.mmdb 已下载到配置目录。"}},{"@type":"Question","name":"Linux Clash 服务无法启动怎么排查？","acceptedAnswer":{"@type":"Answer","text":"运行 clash -t -d ~/.config/clash 验证配置文件；查看 journalctl -u clash -f 日志定位错误。"}}]}</script>
 </body>

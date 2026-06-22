@@ -11,7 +11,7 @@
   <title>Cursor 阿里云部署教程 — ECS 上线 Node.js Web 应用全流程</title>
   <meta name="description" content="Cursor + 阿里云 ECS 部署实战：Remote-SSH 连接云服务器，用 AI 写 Node.js / Express 应用，配置 Nginx 反向代理、PM2 守护进程、HTTPS 证书，GitHub Actions 推送自动部署，含 ICP 备案要点，全程无需记忆命令行，零运维基础可上手。" />
   <meta name="keywords" content="Cursor 阿里云,Cursor ECS 部署,Cursor Web 应用,Cursor Node 部署,Cursor Python 部署,阿里云 Cursor 开发,Nginx Cursor,Let's Encrypt Cursor,Cursor GitHub Actions,PM2 Cursor" />
-  <meta name="author" content="Router VPN Guide" />
+  <meta name="author" content="AI小白网络指南" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
   <meta property="og:title" content="Cursor + 阿里云 ECS 实战 — 从写代码到上线 Web 应用全流程" />
@@ -19,7 +19,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.aixiaobai168.com/pages/cursor-aliyun-deploy" />
   <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="og:site_name" content="AI小白网络指南" />
   <meta property="article:published_time" content="2026-05-16" />
   <meta property="article:modified_time" content="2026-05-16" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -265,7 +265,7 @@ cat ~/.ssh/github-actions   # 复制私钥备用</pre>
 
     <footer>
       <a href="/">首页</a> · <a href="/pages/cursor-guide">Cursor 完整指南</a> · <a href="/pages/cursor-ssh-linux">SSH 远程开发</a> · <a href="/pages/cursor-build-static-site">静态站实战</a>
-      <p style="margin-top:8px">© 2026 Router VPN Guide · <em>本文仅供学习参考，请在当地法律法规范围内使用相关工具。</em></p>
+      <p style="margin-top:8px">© 2026 AI小白网络指南 · <em>本文仅供学习参考，请在当地法律法规范围内使用相关工具。</em></p>
     </footer>
   </main>
 
@@ -278,7 +278,7 @@ cat ~/.ssh/github-actions   # 复制私钥备用</pre>
   </script>
   <script src="../analytics-events.js" defer></script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"Cursor + 阿里云 ECS 实战：从写代码到上线 Web 应用全流程","description":"Remote-SSH 连 ECS，AI 写 Node.js 应用，Nginx 反代 + PM2 + HTTPS，GitHub Actions 自动部署，含备案要点。","url":"https://www.aixiaobai168.com/pages/cursor-aliyun-deploy","author":{"@type":"Organization","name":"Router VPN Guide"},"datePublished":"2026-05-16","dateModified":"2026-05-16","inLanguage":"zh-CN"}
+  {"@context":"https://schema.org","@type":"Article","headline":"Cursor + 阿里云 ECS 实战：从写代码到上线 Web 应用全流程","description":"Remote-SSH 连 ECS，AI 写 Node.js 应用，Nginx 反代 + PM2 + HTTPS，GitHub Actions 自动部署，含备案要点。","url":"https://www.aixiaobai168.com/pages/cursor-aliyun-deploy","author":{"@type":"Organization","name":"AI小白网络指南"},"datePublished":"2026-05-16","dateModified":"2026-05-16","inLanguage":"zh-CN"}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"HowTo","name":"Cursor + 阿里云 ECS 部署 Web 应用","description":"从购买 ECS 到自动化部署的八步完整流程。","url":"https://www.aixiaobai168.com/pages/cursor-aliyun-deploy","step":[{"@type":"HowToStep","name":"ECS 选型与购买","text":"选择 Ubuntu 22.04，配置安全组放行 22/80/443 端口。"},{"@type":"HowToStep","name":"Cursor Remote-SSH 连接","text":"配置 ed25519 Key，写 SSH Config 别名，Cursor 命令面板连接主机。"},{"@type":"HowToStep","name":"AI 写 Node.js 应用","text":"Cursor Composer 三段式提示词生成 Express 应用骨架，终端验证。"},{"@type":"HowToStep","name":"Nginx 反向代理","text":"让 Cursor Chat 生成 Nginx 配置，部署到 sites-available，reload Nginx。"},{"@type":"HowToStep","name":"PM2 守护进程","text":"PM2 启动应用，设置开机自启，pm2 save 保存进程列表。"},{"@type":"HowToStep","name":"Let's Encrypt SSL","text":"certbot --nginx 申请证书，自动配置 HTTPS 和 80→443 跳转。"},{"@type":"HowToStep","name":"域名解析与 ICP 备案","text":"DNS A 记录指向 ECS 公网 IP，国内服务器必须完成 ICP 备案。"},{"@type":"HowToStep","name":"GitHub Actions 自动部署","text":"ECS 生成 CI 专用 Key，GitHub 配置 Secrets，Cursor 生成 deploy.yml workflow。"}]}

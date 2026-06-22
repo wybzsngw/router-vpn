@@ -11,7 +11,7 @@
   <title>AI/Claude/Grok/makerworld 访问异常完整排查教程 2026</title>
   <meta name="description" content="全屋代理下 Claude、Grok、ChatGPT、makerworld 国际站仍提示地区不可用时，按 QUIC/UDP、IPv6、DNS、Fake-IP、规则命中、OpenClash、MerlinClash 和 PassWall 逐项排查，解决代理已开但仍被识别为中国访问、出现常见区域限制等问题。" />
   <meta name="keywords" content="代理,Claude 无法访问,Grok 地区限制,makerworld 国际站,QUIC 拦截,OpenClash,MerlinClash,iStoreOS,IPv6 泄漏,DNS 泄漏,全屋代理,UDP 转发,tproxy,Fake-IP,PassWall" />
-  <meta name="author" content="Router VPN Guide" />
+  <meta name="author" content="AI小白网络指南" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
   <meta property="og:title" content="代理模式无法访问 AI/Claude/Grok/makerworld 解决教程 2026" />
@@ -19,7 +19,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.aixiaobai168.com/pages/proxy-access-issues" />
   <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="Clash 全平台科学上网教程" />
+  <meta property="og:site_name" content="AI小白网络指南" />
   <meta property="article:published_time" content="2026-04-29" />
   <meta property="article:modified_time" content="2026-04-30" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -333,7 +333,7 @@
     window.addEventListener('hashchange', function() { alignToHash(true); });
   </script>
   <script src="../analytics-events.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"代理模式下 AI / makerworld 访问受限排查与解决","description":"针对 QUIC/UDP、IPv6、DNS 泄漏与 OpenClash、Merlin Clash 2、PassWall 的配置与验证步骤","url":"https://www.aixiaobai168.com/pages/proxy-access-issues","datePublished":"2026-04-29","dateModified":"2026-04-30","author":{"@type":"Organization","name":"Router VPN Guide"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"browserleaks 验证","text":"使用 browserleaks.com/ip、dns 与 ipinfo.io 检查 IP、IPv6 与 DNS"},{"@type":"HowToStep","name":"开启 UDP 转发并禁用 QUIC","text":"OpenClash 启用 UDP 流量转发 tproxy 后再启用禁用 QUIC"},{"@type":"HowToStep","name":"DNS 与 Merlin 前置分流","text":"Fake-IP 与强制劫持；Merlin Clash 2 白名单强制走代理"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"代理模式下 AI / makerworld 访问受限排查与解决","description":"针对 QUIC/UDP、IPv6、DNS 泄漏与 OpenClash、Merlin Clash 2、PassWall 的配置与验证步骤","url":"https://www.aixiaobai168.com/pages/proxy-access-issues","datePublished":"2026-04-29","dateModified":"2026-04-30","author":{"@type":"Organization","name":"AI小白网络指南"},"inLanguage":"zh-CN","step":[{"@type":"HowToStep","name":"browserleaks 验证","text":"使用 browserleaks.com/ip、dns 与 ipinfo.io 检查 IP、IPv6 与 DNS"},{"@type":"HowToStep","name":"开启 UDP 转发并禁用 QUIC","text":"OpenClash 启用 UDP 流量转发 tproxy 后再启用禁用 QUIC"},{"@type":"HowToStep","name":"DNS 与 Merlin 前置分流","text":"Fake-IP 与强制劫持；Merlin Clash 2 白名单强制走代理"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"禁用 QUIC 为什么必须开 UDP 转发？","acceptedAnswer":{"@type":"Answer","text":"QUIC 使用 UDP；未开启 UDP tproxy 时禁用 QUIC 规则往往只对路由器 input 生效，对局域网设备 forward 流量无效。详见 OpenClash GitHub Issue #5116。"}},{"@type":"Question","name":"Merlin Clash 2 白名单和黑名单区别？","acceptedAnswer":{"@type":"Answer","text":"IPtables 转发白名单为强制转发到 Clash（强制代理）；黑名单为强制绕行 Clash（强制直连）。AI 域名应填白名单。"}}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.aixiaobai168.com/"},{"@type":"ListItem","position":2,"name":"路由器教程","item":"https://www.aixiaobai168.com/pages/soft-router-guide"},{"@type":"ListItem","position":3,"name":"AI makerworld 代理访问排查","item":"https://www.aixiaobai168.com/pages/proxy-access-issues"}]}</script>
 </body>
