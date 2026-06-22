@@ -15,10 +15,21 @@
     naiyun: {
       title: "奈云",
       defaultCode: "rxkbocWK",
+      // 奈云官方用泛域名 *.nygo.cc / *.nyigo.cc 抗封锁（官方优选页 v2ny.co 会随机生成前缀，
+      // 故每次落地的具体地址不同）。这里固定用 www 前缀的稳定泛域名 + www.nyaff.cc 兜底，
+      // 不要写死随机前缀（随机前缀只是泛解析的一次性结果，不应硬编码）。
       entries: [
-        { name: "官方入口",   probe: "https://www.nyaff.cc/",      url: "https://www.nyaff.cc?path=register&code={code}" },
-        { name: "备用入口 A", probe: "https://0g116uhy.nyigo.cc/", url: "https://0g116uhy.nyigo.cc/#/auth/register?code={code}" },
-        { name: "备用入口 B", probe: "https://anyaff.cc/",         url: "https://anyaff.cc?path=register&code={code}" }
+        { name: "官方入口",   probe: "https://www.nygo.cc/",   url: "https://www.nygo.cc/#/auth/register?code={code}" },
+        { name: "备用入口 A", probe: "https://www.nyigo.cc/",  url: "https://www.nyigo.cc/#/auth/register?code={code}" },
+        { name: "备用入口 B", probe: "https://www.nyaff.cc/",  url: "https://www.nyaff.cc?path=register&code={code}" }
+      ]
+    },
+    dage: {
+      title: "大哥云",
+      defaultCode: "1CAfWNQC",
+      entries: [
+        { name: "官方入口",   probe: "https://dageyun.net/",   url: "https://dageyun.net/#/register?code={code}" },
+        { name: "备用入口 A", probe: "https://a03.dgy02.com/", url: "https://a03.dgy02.com/#/register?code={code}" }
       ]
     },
     mojie: {
