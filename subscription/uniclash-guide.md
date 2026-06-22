@@ -38,16 +38,16 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 
 | 服务商 | 网站代码 | 注册入口 | 客户端下载 | 支持平台 |
 |--------|---------|---------|----------|---------|
-| **疾风云** | `jifeng` | [注册疾风云](https://j134.net/?code=1p7r) | [疾风云官网获取下载](https://j134.net/?code=1p7r) | Android / Windows / Mac |
-| **扬帆云** | `yangfan` | [注册扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE) | [扬帆云 UniClash 下载](https://tusmartchat.com/uniclash.html) | Android / Windows / Mac |
-| **尔湾云** | `erwan` | [注册尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) | [尔湾云 UniClash 下载](https://tusmartchat.com/uniclash-erwan.html) | Android / Windows / Mac |
+| **疾风云** | `jifeng` | [注册疾风云](https://j134.net/?code=1p7r) | 注册登录后官网下载 | Android / Windows / Mac |
+| **扬帆云** | `yangfan` | [注册扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE) | 注册登录后官网下载 | Android / Windows / Mac |
+| **尔湾云** | `erwan` | [注册尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) | 注册登录后官网下载 | Android / Windows / Mac |
 
 ### 方案 A：疾风云 UniClash（推荐）
 
 - 疾风云（JFCLOUD）节点按 V1–V4 分层；基础版 ¥19.99/月（100GB）、标准版 ¥29.99/月（200GB）、高级版 ¥39.99/月（350GB）。
 - 年付 7 折码 `JF1111`，半年 9 折码 `JF888`。
 - UniClash 网站代码填 `jifeng`，输入后右侧显示绿色 ✓ 和"疾风云"字样，确认后继续输入邮箱密码登录。
-- 操作两步：① [注册疾风云](https://j134.net/?code=1p7r)；② [疾风云官网获取 UniClash 下载](https://j134.net/?code=1p7r)。
+- 客户端下载需先注册账号、购买套餐，再登录[疾风云官网](https://j134.net/?code=1p7r)获取（Windows / Mac / Android 均在官网下载页）。
 
 ![疾风云 UniClash 登录界面：网站代码 jifeng 后右侧出现绿色 ✓ 疾风云](../docs/images/uniclash/login-jifeng.png)
 
@@ -56,14 +56,14 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 - AI 解锁能力强：已验证可解锁 ChatGPT / Claude / Gemini 等主流 AI。
 - 家宽专线 + 中转双线，年付 6.9 折优惠码 `yf6189`，两年付 6.5 折 `yf6185`，支持私人定制。
 - UniClash 网站代码填 `yangfan`，输入后右侧显示绿色 ✓ 和"扬帆云"字样，确认后继续输入邮箱密码登录。
-- 操作两步：① [注册扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE)；② [下载扬帆云 UniClash](https://tusmartchat.com/uniclash.html)。
+- 客户端下载需先[注册扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE)账号、购买套餐，再登录官网会员中心获取（Windows / Mac / Android）。
 
 ![扬帆云 UniClash 官方下载页](../docs/images/uniclash/download-yangfan.png)
 
 ### 方案 C：尔湾云 UniClash
 
 - 套餐梯度清晰，官方明确要求填写网站代码 `erwan`。
-- 操作两步：① [注册尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb)；② [下载尔湾云 UniClash](https://tusmartchat.com/uniclash-erwan.html)。
+- 客户端下载需先[注册尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb)账号、购买套餐，再登录官网会员中心获取（Windows / Mac / Android）。
 
 ![尔湾云官网"推荐使用 UniClash 客户端"区块](../docs/images/uniclash/download-erwan-block.png)
 
@@ -87,7 +87,7 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 1. **选服务商**：[疾风云](https://j134.net/?code=1p7r)、[扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE) 或 [尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb)。
 2. **注册账号**：点上面的服务商名称跳到注册页，填邮箱和密码。
 3. **购买套餐**：付款后登录服务商官网确认账号有有效套餐和剩余流量。
-4. **下载客户端**：疾风云从[官网](https://j134.net/?code=1p7r)获取 UniClash 下载链接，扬帆云走 <https://tusmartchat.com/uniclash.html>，尔湾云走 <https://tusmartchat.com/uniclash-erwan.html>。
+4. **下载客户端**：三家都在注册登录官网后，从会员中心 / 官网下载页获取——疾风云从[疾风云官网](https://j134.net/?code=1p7r)登录后获取，扬帆云、尔湾云登录各自官网会员中心下载，不要用未注册的第三方裸下载页。
 5. **填写网站代码**：疾风云填 `jifeng`，扬帆云填 `yangfan`，尔湾云填 `erwan`，看到绿色 ✓ 和服务商名再继续。
 6. **输入邮箱密码登录**：用刚刚注册的服务商账号（不是本站账号），登录后点中间电源按钮即可连接。
 
@@ -127,7 +127,7 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 
 ### Android
 
-1. 打开 [扬帆云 UniClash 下载页](https://tusmartchat.com/uniclash.html)、[尔湾云 UniClash 下载页](https://tusmartchat.com/uniclash-erwan.html) 或从 [疾风云官网](https://j134.net/?code=1p7r) 获取 Android 安装包。
+1. 先在[扬帆云](https://ml.yfqz1.net/register?code=BnJcjUjE)、[尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) 或 [疾风云](https://j134.net/?code=1p7r) 官网注册登录，再到会员中心 / 官网下载页获取 Android 安装包。
 2. 选 **下载 UniClash APK（线路一）**，速度慢就换线路二。
 3. 提示"未知来源"时，去系统设置允许当前浏览器或文件管理器安装。
 4. 下载页还提供 _改名 zip 版_，下载后把 `.zip` 改回 `.apk` 再安装。
@@ -237,6 +237,50 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 
 退出登录，重新打开 UniClash，把网站代码改回对应的 `jifeng`、`yangfan` 或 `erwan`，再用原邮箱密码登录即可。原服务商账号和套餐数据都还在。
 
+### Q7：UniClash 安全吗？是不是官方客户端？
+
+UniClash 是疾风云、扬帆云、尔湾云等机场的**官方/定制客户端**，由各服务商自行打包维护。安全使用的关键在于**下载渠道**：务必在注册登录官网后，从会员中心或官网指定的下载页获取安装包，切勿使用第三方网盘或非官方裸下载页，避免下载到被改装或植入后门的版本。
+
+### Q8：UniClash 可以多设备同时登录吗？
+
+可以，但**同时在线设备数受套餐限制**。以尔湾云为例：基础版 2 台、标准版 3 台、高级版 5 台；超出后新设备会被踢下线，需升级套餐。疾风云、扬帆云规则类似，以购买时套餐说明为准。
+
+### Q9：UniClash 怎么更新到最新版？
+
+节点超时或打不开时优先升级客户端。登录官网会员中心，找到 UniClash 下载页重新下载最新安装包覆盖安装（Windows / Android 直接覆盖，Mac 拖到"应用程序"替换）。覆盖安装后登录态保留，无需重填网站代码。
+
+---
+
+## 进阶使用与维护
+
+### 更新升级
+
+节点超时或打不开时，优先升级到最新 UniClash。登录对应官网会员中心下载最新版覆盖安装；Windows / Android 直接覆盖，Mac 拖到"应用程序"替换旧版，登录态保留。
+
+### 卸载重装 / 重置
+
+卸载后重装，重新填写网站代码（`jifeng` / `yangfan` / `erwan`）并用原邮箱密码登录即可，**账号和套餐数据在云端不丢**。
+
+### 多设备与同时在线数
+
+多台设备可登录同一账号，但同时在线数受套餐限制。尔湾云档位参考：
+
+| 套餐 | 同时在线设备数 |
+|------|--------------|
+| 基础版 | 2 台 |
+| 标准版 | 3 台 |
+| 高级版 | 5 台 |
+
+疾风云、扬帆云规则类似，超出需升级套餐。
+
+### 节点能否导出订阅给其他客户端？
+
+**不能**。UniClash 不对外暴露订阅链接，节点仅在 App 内可用。需要多客户端或自定义规则请改用 [Clash Verge Rev](../windows/clash-verge-rev.md)，用服务商官网的订阅链接手动导入。
+
+### 续费与查流量
+
+登录对应服务商官网会员中心可查看剩余流量与到期时间，UniClash App 内"我的"Tab 也显示余量。流量为套餐周期内一次性到账，不累计到下个周期；到期或流量耗尽后在官网续费即可。
+
 ---
 
 ## 相关文档
@@ -248,4 +292,4 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 
 ---
 
-> 📌 本文只做客户端使用说明与下载入口整理，请以服务商官网公告为准。文档更新：2026 年 5 月（新增疾风云 jifeng）。
+> 📌 本文只做客户端使用说明与下载入口整理，请以服务商官网公告为准。文档更新：2026 年 6 月（统一注册入口、补充进阶维护与 FAQ）。

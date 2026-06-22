@@ -199,7 +199,7 @@
 <details>
 <summary>官方客户端与 iOS</summary>
 
-- **Windows / Mac / Android**：客户端 **UniClash**，网站代码 **`erwan`**，下载：<https://tusmartchat.com/uniclash-erwan.html>；使用与排障教程：<https://www.aixiaobai168.com/pages/uniclash-guide>
+- **Windows / Mac / Android**：客户端 **UniClash**，网站代码 **`erwan`**，注册登录尔湾云官网后在会员中心下载；使用与排障教程：<https://www.aixiaobai168.com/pages/uniclash-guide>
 - **iOS**：国区无法直接安装 Shadowrocket 时需自备外区 Apple ID；第三方示例：<http://tuzifaka.net/>（请自行判断风险）
 
 </details>
