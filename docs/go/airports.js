@@ -99,11 +99,13 @@
   function mountUI() {
     document.body.innerHTML =
       '<main class="panel" aria-live="polite">' +
-      '  <h1>安全检查</h1>' +
-      '  <p class="sub">请稍作等待，正在为您选择最优入口...</p>' +
+      '  <div class="brand">aixiaobai168.com · 官方线路直达助手</div>' +
+      '  <h1 id="title">正在为你连接官方注册页</h1>' +
+      '  <p class="sub">正在自动选择当前可用的<strong>官方入口</strong>，并为你带上优惠邀请码，请稍候…</p>' +
       '  <div class="spinner" aria-hidden="true"></div>' +
-      '  <p class="status" id="status">初始化中...</p>' +
+      '  <p class="status" id="status">正在检测可用线路…</p>' +
       '  <div class="list" id="manual-links"></div>' +
+      '  <p class="note">为什么会有这一步？机场官网域名常因网络原因临时变动，本页由 <strong>aixiaobai168.com</strong> 维护，会自动把你送到最新可用的<strong>官方注册地址</strong>，避免你卡在打不开的旧链接上。</p>' +
       "</main>";
   }
 
@@ -152,7 +154,9 @@
     }
 
     var code = codeOverride || provider.defaultCode;
-    document.title = provider.title + " - 正在为您选择最优节点";
+    var titleEl = document.getElementById("title");
+    if (titleEl) titleEl.textContent = "正在为你连接「" + provider.title + "」官方注册页";
+    document.title = provider.title + " - 正在为你选择官方线路";
 
     function renderManualLinks(headClass, headText) {
       var rows = provider.entries.map(function (item) {

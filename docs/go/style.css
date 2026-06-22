@@ -40,7 +40,15 @@ h1 {
   letter-spacing: 0.02em;
   text-align: center;
 }
+.brand { text-align: center; color: var(--accent); font-size: 13px; letter-spacing: 0.04em; margin: 0 0 14px; opacity: 0.92; }
 .sub { margin: 0; text-align: center; color: var(--muted); font-size: 16px; }
+.sub strong { color: var(--text); }
+.note {
+  margin: 18px 0 0; padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 12.5px; line-height: 1.65; text-align: center;
+}
+.note strong { color: var(--text); }
 .spinner {
   width: 60px; height: 60px; border-radius: 50%;
   border: 4px solid rgba(148, 163, 184, 0.28);

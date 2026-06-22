@@ -120,7 +120,7 @@ winver
 - **蓝胖云机场注册地址**  
   注册 & 购买节点推荐（可体验与自用，按需注册）：
 
-  [蓝胖云注册入口（自动选择最优线路）](https://www.aixiaobai168.com/go/lanpang/)
+  [蓝胖云注册 · 本站直达官方线路](https://www.aixiaobai168.com/go/lanpang/)（经 aixiaobai168.com 自动跳转到当前可用的官方注册页）
 
 
 
