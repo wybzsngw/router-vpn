@@ -92,7 +92,7 @@
 蓝胖云以极致性价比著称，当前 New_2026 系列入门档月付 ¥10 起；若确定长期使用，**年付单价更低，更划算**。
 
 - **定位**：极致性价比、稳定可靠
-- **官网**：<https://u.lanpangyun.de/#/register?code=30Y2Sexl>
+- **官网**：<https://www.aixiaobai168.com/go/lanpang/>
 - **流媒体解锁**：Netflix、Disney+ 等
 - **AI 解锁**：日本、新加坡等线路解锁 ChatGPT
 - **适用**：个人使用 / 小团队（以各套餐说明为准）

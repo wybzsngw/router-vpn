@@ -120,7 +120,7 @@ winver
 - **蓝胖云机场注册地址**  
   注册 & 购买节点推荐（可体验与自用，按需注册）：
 
-  [https://u.lanpangyun.de/#/register?code=30Y2Sexl](https://u.lanpangyun.de/#/register?code=30Y2Sexl)
+  [蓝胖云注册入口（自动选择最优线路）](https://www.aixiaobai168.com/go/lanpang/)
 
 
 
