@@ -81,6 +81,17 @@
         { name: "备用入口 A", probe: "https://47.112.97.173:5000/", url: "https://47.112.97.173:5000/#/register?aff={code}" },
         { name: "备用入口 B", probe: "https://mojie.host/",          url: "https://mojie.host/#/register?aff={code}" }
       ]
+    },
+    wgetcloud: {
+      title: "WgetCloud",
+      defaultCode: "ChCbdK",
+      // WgetCloud（原 GaCloud）高端专线机场，永久跳转域名 wgetcloud.ltd，
+      // 邀请/注册面板在 invite.wgetcloud.ltd，注册路由 /auth/register?code=。
+      // 官方另有随机前缀的 *.wgetcloud.org 优选域名（一次性、不固定，不写死）。
+      entries: [
+        { name: "官方入口",   probe: "https://invite.wgetcloud.ltd/", url: "https://invite.wgetcloud.ltd/auth/register?code={code}" },
+        { name: "备用入口 A", probe: "https://wgetcloud.ltd/",        url: "https://wgetcloud.ltd/auth/register?code={code}" }
+      ]
     }
   };
 
