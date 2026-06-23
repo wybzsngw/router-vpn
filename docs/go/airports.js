@@ -85,12 +85,11 @@
     wgetcloud: {
       title: "WgetCloud",
       defaultCode: "ChCbdK",
-      // WgetCloud（原 GaCloud）高端专线机场，永久跳转域名 wgetcloud.ltd，
-      // 邀请/注册面板在 invite.wgetcloud.ltd，注册路由 /auth/register?code=。
-      // 官方另有随机前缀的 *.wgetcloud.org 优选域名（一次性、不固定，不写死）。
+      // WgetCloud（原 GaCloud）高端专线机场。后台邀请链接固定走 invite.wgetcloud.ltd，
+      // 由官方再分配到随机 *.wgetcloud.org 面板域名。不要使用 wgetcloud.ltd 拼接
+      // /auth/register：它会把错误路径带到随机面板域名，导致 404。
       entries: [
-        { name: "官方入口",   probe: "https://invite.wgetcloud.ltd/", url: "https://invite.wgetcloud.ltd/auth/register?code={code}" },
-        { name: "备用入口 A", probe: "https://wgetcloud.ltd/",        url: "https://wgetcloud.ltd/auth/register?code={code}" }
+        { name: "官方邀请入口", probe: "https://invite.wgetcloud.ltd/auth/register", url: "https://invite.wgetcloud.ltd/auth/register?code={code}" }
       ]
     }
   };
