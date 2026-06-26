@@ -301,7 +301,8 @@
 
 - **定位**：10年老牌、极致性价比年付机场；Trojan 协议、IPLC专线
 - **注册入口**：[一枝红杏注册 · 本站直达官方线路](https://www.aixiaobai168.com/go/yizhihongxing/)（本站自动选择当前可用域名，打开后按页面注册即可）
-- **协议**：Trojan（TLS 1.3 加密）
+- **协议**：Trojan（TLS 1.3 加密），同时提供 Clash/mihomo 订阅格式
+- **客户端**：Windows/macOS/Linux 推荐 [Clash Verge Rev](https://clashverge.net)；iOS 推荐免费的 **ClashMi**（App Store ID: 6744321968，官方支持）或 Shadowrocket / Stash；Android 用 Clash Meta / ClashMi
 - **节点地区**：日本、台湾、美国、香港（IPLC）、荷兰、英国、德国等 10+ 国家
 - **支付**：支付宝 / 微信 / 加密货币（USDT）
 - **优惠**：**全场9折优惠码 `11meigui`**（长期有效，亲测可用）；多年付本身还有内置折扣：两年付 ¥188（省5%），三年付 ¥268（省10%），叠加优惠码后更划算
