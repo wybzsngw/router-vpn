@@ -170,4 +170,4 @@ curl.exe -s http://localhost:8000/go/<机场>/ | findstr /C:"noindex" /C:"airpor
    - 蓝胖云（lanpang）已于 2026-06 改为中转（`/go/lanpang/`，入口 u.lanpangyun.de / lanpangyun.de / www.lanpangyun.de），文档链接已全量切换。
    - 扬帆云（yangfan）/尔湾云（erwan）/疾风云（jifeng）已**预建**中转页与 provider，但**文档链接暂未切换**，处于观察期；待确认效果后再统一切换（切换时务必全仓无残留，并给 `/go/` 站内链接加 `rel="...nofollow"`）。
 5. **不要**把邀请码硬编码进 `airports.js` 的 `url` 里——邀请码统一用 `defaultCode` + `{code}` 占位。
-6. 邀请码归属：奈云 `rxkbocWK`、魔戒 `ItS1igEf`、大哥云 `1CAfWNQC`、蓝胖云 `30Y2Sexl`、扬帆云 `BnJcjUjE`、尔湾云 `EGi8tb`、疾风云 `1p7r`，**必须是我们自己的码**，不要改成别人的。
+6. 邀请码归属：奈云 `rxkbocWK`、魔戒 `ItS1igEf`、大哥云 `1CAfWNQC`、蓝胖云 `30Y2Sexl`、扬帆云 `BnJcjUjE`、尔湾云 `EGi8tb`、疾风云 `1p7r`、一枝红杏 aff ID `22631`（链接格式 `aff.php?aff=22631`，非常见邀请码格式），**必须是我们自己的码**，不要改成别人的。
