@@ -23,6 +23,8 @@
 
 **第一步**：获取 Clash 订阅 → [订阅申请指南（机场推荐与价格对比）](subscription/clash-subscription-guide.md)
 
+**品牌评测（第 1 个验证页）**： [疾风云评测：官网入口、套餐分层与优惠码核查](subscription/jifengyun.md)（[在线版](https://www.aixiaobai168.com/pages/jifengyun)）
+
 **第二步**：选择你的设备，按教程配置 👇
 
 ### 路由器 / 软路由（全屋翻墙）
