@@ -82,6 +82,17 @@
         { name: "备用入口 B", probe: "https://mojie.host/",          url: "https://mojie.host/#/register?aff={code}" }
       ]
     },
+    yizhihongxing: {
+      title: "一枝红杏",
+      defaultCode: "22631",
+      // 一枝红杏官方下单域名频繁变更（.org/.club/.com 轮换），故纳入中转探测。
+      // 链接格式：WHMCS aff.php?aff=<数字ID>，与常见邀请码格式不同。
+      entries: [
+        { name: "官方入口",   probe: "https://order.yizhihongxing.org/",  url: "https://order.yizhihongxing.org/aff.php?aff={code}" },
+        { name: "备用入口 A", probe: "https://order.yizhihongxing.club/", url: "https://order.yizhihongxing.club/aff.php?aff={code}" },
+        { name: "备用入口 B", probe: "https://order.yizhihongxing.com/",  url: "https://order.yizhihongxing.com/aff.php?aff={code}" }
+      ]
+    },
     wgetcloud: {
       title: "WgetCloud",
       defaultCode: "ChCbdK",
