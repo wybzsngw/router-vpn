@@ -15,32 +15,32 @@
     naiyun: {
       title: "奈云",
       defaultCode: "rxkbocWK",
-      // 奈云官方用泛域名 *.nygo.cc / *.nyigo.cc 抗封锁（官方优选页 v2ny.co 会随机生成前缀，
-      // 故每次落地的具体地址不同）。这里固定用 www 前缀的稳定泛域名 + www.nyaff.cc 兜底，
-      // 不要写死随机前缀（随机前缀只是泛解析的一次性结果，不应硬编码）。
+      // 2026-06：nygo.cc / nyigo.cc 均被 Chrome 标记为危险网站，已停用。
+      // anyaff.cc 是奈云官方邀请跳转服务，自身会选择可用入口，参数格式为
+      // ?path=register&code=（标准路由，无 #）。v2ny.com 为官网域名，国内需翻墙，仅兜底。
       entries: [
-        { name: "官方入口",   probe: "https://www.nygo.cc/",   url: "https://www.nygo.cc/#/auth/register?code={code}" },
-        { name: "备用入口 A", probe: "https://www.nyigo.cc/",  url: "https://www.nyigo.cc/#/auth/register?code={code}" },
-        { name: "备用入口 B", probe: "https://www.nyaff.cc/",  url: "https://www.nyaff.cc?path=register&code={code}" }
+        { name: "官方邀请入口", probe: "https://www.anyaff.cc/", url: "https://www.anyaff.cc?path=register&code={code}" },
+        { name: "备用入口",     probe: "https://www.v2ny.com/",  url: "https://www.v2ny.com/#/auth/register?code={code}" }
       ]
     },
     dage: {
       title: "大哥云",
       defaultCode: "1CAfWNQC",
+      // 2026-06：aff02.dgy02.com 为官方确认可用子域名。
       entries: [
-        { name: "官方入口",   probe: "https://dageyun.net/",   url: "https://dageyun.net/#/register?code={code}" },
-        { name: "备用入口 A", probe: "https://a03.dgy02.com/", url: "https://a03.dgy02.com/#/register?code={code}" }
+        { name: "官方入口",   probe: "https://dageyun.net/",     url: "https://dageyun.net/#/register?code={code}" },
+        { name: "备用入口 A", probe: "https://aff02.dgy02.com/", url: "https://aff02.dgy02.com/#/register?code={code}" }
       ]
     },
     yangfan: {
       title: "扬帆云",
       defaultCode: "BnJcjUjE",
-      // 2026-06 实测：a04.yfyn01.net/register?code=... 和 yangfanhome.com 入口已出现 Chrome 红标，
-      // 不再作为自动跳转目标。以下入口来自当前可用的扬帆云入口页，本站定期维护。
+      // 2026-06：官方最新注册域名 ml.yfqz1.net（后台公告要求替换旧链接）。
+      // 原 yfsite.net/invite 为佣金后台而非注册页，已停用。
+      // a04.yfyn01.net / yangfanhome.com 已被 Chrome 红标，已停用。
       entries: [
-        { name: "官方入口",   probe: "https://yfsite.net/invite",             url: "https://yfsite.net/invite?code={code}" },
-        { name: "备用入口 A", probe: "https://ml.yangfan618.net/dashboard",   url: "https://ml.yangfan618.net/invite?code={code}" },
-        { name: "备用入口 B", probe: "https://yfsite.net/register",          url: "https://yfsite.net/register?code={code}" }
+        { name: "官方入口",   probe: "https://ml.yfqz1.net/",       url: "https://ml.yfqz1.net/register?code={code}" },
+        { name: "备用入口",   probe: "https://yfsite.net/register",  url: "https://yfsite.net/register?code={code}" }
       ]
     },
     erwan: {
@@ -73,13 +73,12 @@
     mojie: {
       title: "魔戒",
       defaultCode: "ItS1igEf",
-      // 2026-06 实测：mojie.co/register?aff=... 已被 Chrome 安全页标记为危险入口，
-      // 不再作为自动跳转目标。以下入口来自「魔戒.net」（xn--xnun88j.net）官方发布页，
-      // 由本站定期维护；用户点击本站入口后仍直接进入带 aff 的注册页，不需要自行选择入口。
+      // 2026-06：官方正式域名 mojie.app，注册路由为 /register?aff=（标准路由，非 Hash）。
+      // IP 直连入口（47.242.128.61:8000 / 47.112.97.173:5000）使用 Hash 路由会导致
+      // aff 参数丢失（跳转后邀请码字段为空），已停用。mojie.host 作为备用保留。
       entries: [
-        { name: "官方入口",   probe: "https://47.242.128.61:8000/", url: "https://47.242.128.61:8000/#/register?aff={code}" },
-        { name: "备用入口 A", probe: "https://47.112.97.173:5000/", url: "https://47.112.97.173:5000/#/register?aff={code}" },
-        { name: "备用入口 B", probe: "https://mojie.host/",          url: "https://mojie.host/#/register?aff={code}" }
+        { name: "官方入口",   probe: "https://mojie.app/",   url: "https://mojie.app/register?aff={code}" },
+        { name: "备用入口 A", probe: "https://mojie.host/",  url: "https://mojie.host/register?aff={code}" }
       ]
     },
     yizhihongxing: {
