@@ -26,10 +26,11 @@
     dage: {
       title: "大哥云",
       defaultCode: "1CAfWNQC",
-      // 2026-06：aff02.dgy02.com 为官方确认可用子域名。
+      // 2026-06：aff02.dgy02.com 为官方确认可用的注册子域名，置于首位。
+      // dageyun.net 为旧主域名，保留作备用探测（探测仅测可达性，故确认入口优先）。
       entries: [
-        { name: "官方入口",   probe: "https://dageyun.net/",     url: "https://dageyun.net/#/register?code={code}" },
-        { name: "备用入口 A", probe: "https://aff02.dgy02.com/", url: "https://aff02.dgy02.com/#/register?code={code}" }
+        { name: "官方入口",   probe: "https://aff02.dgy02.com/", url: "https://aff02.dgy02.com/#/register?code={code}" },
+        { name: "备用入口 A", probe: "https://dageyun.net/",     url: "https://dageyun.net/#/register?code={code}" }
       ]
     },
     yangfan: {
