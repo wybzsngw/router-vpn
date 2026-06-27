@@ -6,23 +6,12 @@
  * 可用入口即跳转，并自动带上你的邀请码。url 中的 {code} 会被替换
  * 为该机场的邀请码（可被 ?code= 覆盖）。
  *
- * 机场由 URL 路径推断：/go/<机场标识>/  ——例如 /go/mojie/、/go/naiyun/
+ * 机场由 URL 路径推断：/go/<机场标识>/  ——例如 /go/mojie/、/go/dage/
  * 也兼容 ?to=<机场标识> 形式（用于本地测试或临时入口）。
  * ------------------------------------------------------------------
  */
 (function () {
   var PROVIDERS = {
-    naiyun: {
-      title: "奈云",
-      defaultCode: "rxkbocWK",
-      // 2026-06：nygo.cc / nyigo.cc 均被 Chrome 标记为危险网站，已停用。
-      // anyaff.cc 是奈云官方邀请跳转服务，自身会选择可用入口，参数格式为
-      // ?path=register&code=（标准路由，无 #）。v2ny.com 为官网域名，国内需翻墙，仅兜底。
-      entries: [
-        { name: "官方邀请入口", probe: "https://www.anyaff.cc/", url: "https://www.anyaff.cc?path=register&code={code}" },
-        { name: "备用入口",     probe: "https://www.v2ny.com/",  url: "https://www.v2ny.com/#/auth/register?code={code}" }
-      ]
-    },
     dage: {
       title: "大哥云",
       defaultCode: "1CAfWNQC",
