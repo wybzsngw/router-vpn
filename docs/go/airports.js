@@ -74,9 +74,9 @@
     mojie: {
       title: "魔戒",
       defaultCode: "ItS1igEf",
-      // 2026-06：官方正式域名 mojie.app，注册路由为 /register?aff=（标准路由，非 Hash）。
-      // IP 直连入口（47.242.128.61:8000 / 47.112.97.173:5000）使用 Hash 路由会导致
-      // aff 参数丢失（跳转后邀请码字段为空），已停用。mojie.host 作为备用保留。
+      // 2026-06：官方正式域名 mojie.app，注册路由为标准路由 /register?aff=（非 Hash）。
+      // 旧的 IP 直连入口用 Hash 路由会丢失 aff 参数（注册页邀请码为空），已弃用；
+      // mojie.host 作为备用保留。
       entries: [
         { name: "官方入口",   probe: "https://mojie.app/",   url: "https://mojie.app/register?aff={code}" },
         { name: "备用入口 A", probe: "https://mojie.host/",  url: "https://mojie.host/register?aff={code}" }
