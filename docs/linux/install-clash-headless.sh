@@ -8,8 +8,9 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-# 配置变量
-CLASH_VERSION="v1.18.0"
+# 配置变量（Dreamacro/clash 已下架，改用 MetaCubeX/mihomo 内核）
+MIHOMO_VERSION="v1.19.27"
+MIHOMO_REPO="MetaCubeX/mihomo"
 INSTALL_DIR="/usr/local/bin"
 CONFIG_DIR="$HOME/.config/clash"
 SERVICE_FILE="/etc/systemd/system/clash.service"
@@ -54,17 +55,19 @@ for cmd in wget curl gunzip; do
     fi
 done
 
-# 3. 下载Clash
-echo -e "${YELLOW}[3/7] 下载Clash...${NC}"
+# 3. 下载 Mihomo（Clash Meta 内核）
+echo -e "${YELLOW}[3/7] 下载 Mihomo 内核...${NC}"
 TMP_DIR=$(mktemp -d)
 cd $TMP_DIR
-wget -q https://github.com/Dreamacro/clash/releases/download/${CLASH_VERSION}/clash-linux-${CLASH_ARCH}-${CLASH_VERSION}.gz -O clash.gz
+MIHOMO_ASSET="mihomo-linux-${CLASH_ARCH}-${MIHOMO_VERSION}.gz"
+wget -q "https://github.com/${MIHOMO_REPO}/releases/download/${MIHOMO_VERSION}/${MIHOMO_ASSET}" -O mihomo.gz
 
-# 4. 安装Clash
-echo -e "${YELLOW}[4/7] 安装Clash...${NC}"
-gunzip clash.gz
-chmod +x clash
-sudo mv clash ${INSTALL_DIR}/clash
+# 4. 安装为 clash 命令（保持与现有 systemd 单元和文档一致）
+echo -e "${YELLOW}[4/7] 安装 Clash/Mihomo...${NC}"
+gunzip mihomo.gz
+MIHOMO_BIN="mihomo-linux-${CLASH_ARCH}-${MIHOMO_VERSION}"
+chmod +x "${MIHOMO_BIN}"
+sudo mv "${MIHOMO_BIN}" ${INSTALL_DIR}/clash
 
 # 验证安装
 if ! clash -v &> /dev/null; then
@@ -96,7 +99,7 @@ external-controller: 127.0.0.1:9090
 
 dns:
   enable: true
-  listen: 0.0.0.0:53
+  listen: 127.0.0.1:1053
   enhanced-mode: fake-ip
   nameserver:
     - 223.5.5.5
