@@ -299,7 +299,7 @@
       <p>两款均在 GitHub Releases 发布 <code>.apk</code>，下载后侧载安装（设置 → 安全 → 允许安装未知来源）。</p>
 
       <h3 class="sub-h">3.2 在配置文件中追加回国规则</h3>
-      <p>打开你现有的 Clash 配置文件（<code>.yaml</code>），分两步追加：</p>
+      <p>打开你现有的 Clash 配置文件（<code>.yaml</code>），分三步追加（<strong>先定义代理组，再写引用它的规则</strong>，否则 Clash 会报校验错误）：</p>
 
       <h4 class="minor-h">步骤 1：添加 rule-providers</h4>
       <pre class="code"><span class="k">rule-providers</span>:
@@ -311,16 +311,7 @@
     path: ./ruleset/return-china.yaml
     interval: 86400</pre>
 
-      <h4 class="minor-h">步骤 2：在 rules 最前面添加（优先级最高）</h4>
-      <pre class="code"><span class="k">rules</span>:
-  - RULE-SET,return-china,<span class="s">🇨🇳回国</span>          <span class="c"># 放在所有规则最前面</span>
-  - GEOSITE,cn,<span class="s">🇨🇳回国</span>                      <span class="c"># 可选：通用大陆兜底</span>
-  - GEOIP,CN,<span class="s">🇨🇳回国</span>,no-resolve             <span class="c"># 可选：大陆 IP 兜底</span>
-  <span class="c"># --- 你原有的出国规则继续在后面 ---</span>
-  - GEOSITE,google,出国代理
-  - MATCH,出国代理</pre>
-
-      <h4 class="minor-h">步骤 3：新增「🇨🇳回国」代理组</h4>
+      <h4 class="minor-h">步骤 2：新增「🇨🇳回国」代理组</h4>
       <pre class="code"><span class="k">proxy-groups</span>:
   - name: "<span class="s">🇨🇳回国</span>"
     type: select
@@ -328,6 +319,15 @@
       - <span class="s">回国节点A</span>
       - <span class="s">回国节点B</span>
       - DIRECT</pre>
+
+      <h4 class="minor-h">步骤 3：在 rules 最前面添加（优先级最高）</h4>
+      <pre class="code"><span class="k">rules</span>:
+  - RULE-SET,return-china,<span class="s">🇨🇳回国</span>          <span class="c"># 放在所有规则最前面</span>
+  - GEOSITE,cn,<span class="s">🇨🇳回国</span>                      <span class="c"># 可选：通用大陆兜底</span>
+  - GEOIP,CN,<span class="s">🇨🇳回国</span>,no-resolve             <span class="c"># 可选：大陆 IP 兜底</span>
+  <span class="c"># --- 你原有的出国规则继续在后面 ---</span>
+  - GEOSITE,google,出国代理
+  - MATCH,出国代理</pre>
 
       <h3 class="sub-h">3.3 在 FlClash 中导入配置</h3>
       <ol class="step-list">
