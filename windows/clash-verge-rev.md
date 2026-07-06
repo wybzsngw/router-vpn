@@ -307,8 +307,10 @@ rules:
 rule-providers:
   reject:
     type: http
+    behavior: domain
+    format: text
     url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
-    path: ./ruleset/reject.yaml
+    path: ./ruleset/reject.txt
     interval: 86400
 
 rules:
