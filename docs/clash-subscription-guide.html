@@ -21,7 +21,7 @@
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:site_name" content="AI小白网络指南" />
   <meta property="article:published_time" content="2026-01-01" />
-  <meta property="article:modified_time" content="2026-06-26" />
+  <meta property="article:modified_time" content="2026-07-08" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Clash 机场推荐 2026 — 蓝胖云 疾风云 扬帆云 一枝红杏 价格对比" />
   <meta name="twitter:description" content="精选机场推荐与价格对比：蓝胖云、疾风云、扬帆云、一枝红杏等，含优惠码与 MerlinClash 导入教程。" />
@@ -344,6 +344,7 @@
       </div>
       <div class="callout" style="margin-top:12px">说明：以上为常见区间，仅作参考，请以后续官网页实际标注为准。</div>
       <div class="callout" style="margin-top:12px">风险提示：机场行业存在停服、更换域名或跑路的可能，属正常现象。建议优先选择月付或小额套餐、避免大额长期预付，并备好 1～2 个备用机场。本页信息会持续核查与更新。</div>
+      <div class="callout" style="margin-top:12px">节点偶尔延迟高、超时是当前阶段机场行业的共性现象，并非单一服务商的个别问题；具体原因、手动选线技巧与涨价背景详见 <a href="/pages/airport-node-guide" style="color:var(--accent)">《机场节点为什么不稳定？2026年手动选线技巧与涨价说明》</a>。</div>
     </section>
 
     <!-- 疾风云 -->
@@ -471,12 +472,12 @@
       </details>
 
       <details style="margin-top:8px">
-        <summary style="cursor:pointer;font-size:14px;font-weight:600;color:var(--muted);padding:8px 0;user-select:none">查看节点分析（基于实测截图）</summary>
+        <summary style="cursor:pointer;font-size:14px;font-weight:600;color:var(--muted);padding:8px 0;user-select:none">查看节点分析（基于实测截图，2026-07 更新）</summary>
         <div class="callout" style="margin-top:6px">
-          1) 节点数量进一步增加，地区覆盖广（港/台/日/韩/美/新/马/越/德/英/法等），协议不再只是单一 <strong>SS/UDP</strong>，还可见 <strong>Trojan/UDP</strong> 直连线路。<br />
-          2) 新增多条 <strong>IEPL 01|5倍流量 / 02|5倍流量 / 03|5倍流量</strong> 节点，并出现<strong>家宽</strong>、<strong>直连</strong>、<strong>优化线路</strong>等细分标签，节点类型比之前更丰富。<br />
-          3) 自动选择实测约 <strong>75ms</strong>；香港直连/普通节点多在 <strong>75~110ms</strong>，日本直连约 <strong>84~102ms</strong>，新加坡与台湾常见在 <strong>107~147ms</strong>。<br />
-          4) 美欧节点与部分 5 倍流量 IEPL 线路延迟会明显更高，实测可到 <strong>250~400ms+</strong>，个别节点甚至超过 <strong>500ms</strong>；因此 5 倍流量更偏向流量倍率补充，并不等于一定低延迟，建议按当前用途实时测速筛选。
+          1) 节点体系分两条线并行：<strong>「直连/直连Pro/Pro2」Trojan · Vmess · Hysteria2 系列</strong>与<strong>传统 SS/UDP 系列</strong>。日本直连Pro2 实测约 <strong>92ms</strong>，日本直连整体在 <strong>80~108ms</strong>，美国直连Pro/Pro2 低至 <strong>170ms</strong> 左右，明显优于普通美国直连（<strong>299~430ms</strong>）。<br />
+          2) 新上线 <strong>Hysteria2（HY2）</strong>协议直连节点（香港HY2直连、新加坡HY2直连、日本HY2移动联通）与多条<strong>家宽</strong>标签节点（台湾03-家宽、日本东京家宽、马来西亚家宽01/02），出口更稳、被限概率更低，是近期更新的重点方向。<br />
+          3) 传统 SS/UDP 系列延迟波动明显更大：多数落在 <strong>90~400ms</strong>，但个别节点会飙升到 <strong>700~1400ms+</strong>（如部分新加坡、美国、韩国节点），是体验分化、偶发客诉的主要来源；相比之下「直连」系列更稳定。<br />
+          4) 地区覆盖进一步扩大到法国、德国、英国、韩国、越南、泰国、马来西亚等线路；建议追求稳定优先选「直连Pro/Pro2」「HY2」或家宽节点，SS 系列适合当流量备用池，连接前在客户端手动测速再固定策略组。
         </div>
       </details>
     </section>
@@ -575,12 +576,12 @@
       </details>
 
       <details style="margin-top:8px">
-        <summary style="cursor:pointer;font-size:14px;font-weight:600;color:var(--muted);padding:8px 0;user-select:none">查看节点分析（基于实测截图）</summary>
+        <summary style="cursor:pointer;font-size:14px;font-weight:600;color:var(--muted);padding:8px 0;user-select:none">查看节点分析（基于实测截图，2026-07 更新）</summary>
         <div class="callout" style="margin-top:6px">
-          1) 低延迟特征明显：自动选择实测约 <strong>55ms</strong>，故障转移约 <strong>95ms</strong>；香港/台湾节点多数落在 <strong>55~65ms</strong>，新加坡大多在 <strong>89~98ms</strong>。<br />
-          2) 节点按 <strong>level1~level4</strong> 分层，并带有 <strong>NF</strong> 等解锁标识，适合按用途（日常/影音）快速筛选。<br />
-          3) 延迟梯度比较清晰：日本节点大致在 <strong>110~125ms</strong>，马来西亚约 <strong>165~198ms</strong>，美国约 <strong>210~244ms</strong>，法国/韩国部分节点会升到 <strong>270ms+</strong>。<br />
-          4) 套餐与节点能力联动：从 LV1（100GB/200Mbps/2设备）到旗舰（1200GB/不限速/8设备），层级越高可用节点与带宽更充足；个别节点会出现超时或未返回延迟，建议以客户端实时测速结果为准。
+          1) 「aw」系列与非 NF 主力线路目前最稳：日本 aw 系列实测 <strong>73~76ms</strong>，韩国01、台湾02 多在 <strong>87~179ms</strong>，美国 aw 系列约 <strong>221~240ms</strong>。<br />
+          2) 本轮测速中，标注 <strong>NF（Netflix 解锁）</strong>的 <strong>level1~level4 新加坡/日本</strong> 节点普遍超时未通过，属于阶段性波动；选用这类节点建议先手动测速、超时及时切换，不建议直接交给自动选择。<br />
+          3) 个别线路波动较大：马来01 从超时到 <strong>677ms</strong> 不等，美国1、香港pump01/02（vless）本轮测速超时，稳定性明显低于 aw 系列与台湾/韩国主力线路。<br />
+          4) 节点按 <strong>level1~level4</strong> 分层并带 <strong>NF</strong> 解锁标识，层级越高节点池与带宽越大；建议日常优先选日本aw、韩国01、台湾02 等实测稳定线路，NF 类节点作为解锁补充，连接前实时测速。
         </div>
       </details>
     </section>
@@ -998,6 +999,6 @@
     });
   </script>
   <script src="analytics-events.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Clash订阅申请指南","description":"详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程","url":"https://www.aixiaobai168.com/clash-subscription-guide","author":{"@type":"Organization","name":"AI小白网络指南"},"datePublished":"2026-01-01","dateModified":"2026-07-01","mainEntity":{"@type":"ItemList","name":"机场推荐列表","itemListElement":[{"@type":"ListItem","position":1,"name":"疾风云","description":"V1–V4 节点分层，五档套餐，限时优惠 jf5169/jff5165，月付 ¥24.99 起"},{"@type":"ListItem","position":2,"name":"蓝胖云","description":"极致性价比，New_2026 系列月付 ¥10 起，年付88折优惠码 88OFF"},{"@type":"ListItem","position":3,"name":"扬帆云","description":"性价比、多地区，限时优惠 yf6189/yf6185/lucky9，新增不限时买断流量包，月付 ¥19.99 起"},{"@type":"ListItem","position":4,"name":"尔湾云","description":"五档套餐、基础/标准/旗舰节点分层，长期付 year69 等折扣码，月付 ¥24.99 起"},{"@type":"ListItem","position":5,"name":"大哥云","description":"稳定优先、专线优化"},{"@type":"ListItem","position":6,"name":"mojie 魔戒","description":"1 元机场、按量计费不限时、邀请码 ItS1igEf，流媒体全解锁，按量 ¥1 起"},{"@type":"ListItem","position":7,"name":"一枝红杏","description":"10年老牌澳洲注册机场，Trojan 协议，IPLC专线节点，年付 ¥99 起，9折优惠码 11meigui"},{"@type":"ListItem","position":8,"name":"WgetCloud","description":"原 GaCloud 高端专线机场，BGP+亚马逊专线加速，Trojan 协议，目前仅支持年付 ¥1188 起，主打极致稳定"}]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Clash订阅申请指南","description":"详细的Clash订阅申请指南，包含多个机场推荐和MerlinClash导入教程","url":"https://www.aixiaobai168.com/clash-subscription-guide","author":{"@type":"Organization","name":"AI小白网络指南"},"datePublished":"2026-01-01","dateModified":"2026-07-08","mainEntity":{"@type":"ItemList","name":"机场推荐列表","itemListElement":[{"@type":"ListItem","position":1,"name":"疾风云","description":"V1–V4 节点分层，五档套餐，限时优惠 jf5169/jff5165，月付 ¥24.99 起"},{"@type":"ListItem","position":2,"name":"蓝胖云","description":"极致性价比，New_2026 系列月付 ¥10 起，年付88折优惠码 88OFF"},{"@type":"ListItem","position":3,"name":"扬帆云","description":"性价比、多地区，限时优惠 yf6189/yf6185/lucky9，新增不限时买断流量包，月付 ¥19.99 起"},{"@type":"ListItem","position":4,"name":"尔湾云","description":"五档套餐、基础/标准/旗舰节点分层，长期付 year69 等折扣码，月付 ¥24.99 起"},{"@type":"ListItem","position":5,"name":"大哥云","description":"稳定优先、专线优化"},{"@type":"ListItem","position":6,"name":"mojie 魔戒","description":"1 元机场、按量计费不限时、邀请码 ItS1igEf，流媒体全解锁，按量 ¥1 起"},{"@type":"ListItem","position":7,"name":"一枝红杏","description":"10年老牌澳洲注册机场，Trojan 协议，IPLC专线节点，年付 ¥99 起，9折优惠码 11meigui"},{"@type":"ListItem","position":8,"name":"WgetCloud","description":"原 GaCloud 高端专线机场，BGP+亚马逊专线加速，Trojan 协议，目前仅支持年付 ¥1188 起，主打极致稳定"}]}}</script>
 </body>
 </html>

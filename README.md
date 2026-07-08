@@ -23,7 +23,7 @@
 
 **第一步**：获取 Clash 订阅 → [订阅申请指南（机场推荐与价格对比）](subscription/clash-subscription-guide.md)
 
-**品牌评测（第 1 个验证页）**： [疾风云评测：官网入口、套餐分层与优惠码核查](subscription/jifengyun.md)（[在线版](https://www.aixiaobai168.com/pages/jifengyun)）
+> 📚 机场相关深度阅读：[疾风云评测：官网入口、套餐分层与优惠码核查](subscription/jifengyun.md)（[在线版](https://www.aixiaobai168.com/pages/jifengyun)）　·　[机场节点为什么不稳定：2026 手动选线技巧与涨价说明](subscription/airport-node-guide.md)（[在线版](https://www.aixiaobai168.com/pages/airport-node-guide)）
 
 **第二步**：选择你的设备，按教程配置 👇
 
@@ -60,6 +60,7 @@
 | OpenAI API | [OpenAI API 申请与计费指南](chatgpt/openai-api-guide.md) |
 | Netflix | [Netflix 解锁观看教程](netflix/netflix-guide.md) |
 | AI / makerworld 访问异常 | [代理模式下 AI/makerworld/国外网站访问受限排查](common/proxy-access-issues.md) |
+| 机场节点不稳定 / 涨价 | [机场节点为什么不稳定：2026 手动选线技巧与涨价说明](subscription/airport-node-guide.md) |
 
 ### 🤖 AI 编程与对话工具
 
