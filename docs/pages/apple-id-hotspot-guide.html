@@ -273,10 +273,10 @@
         <li><strong>收不到验证码时</strong>：先检查短信拦截或垃圾短信分类，确认手机已完成实名登记；仍收不到可以换一个邮箱重试（优先 Gmail、Outlook），并避免使用虚拟号码接收验证码</li>
         <li><strong>没有「无」付款方式选项时</strong>：常见原因是地区选错了（比如误选了中国大陆或香港，实际想要的是台湾），需要重新注册；也可能是当前网络没有真正处于目标地区节点下，刷新或重新进入注册页面通常能解决。相比去修改现有 Apple ID 的国家地区，新建一个目标地区的账号更稳妥</li>
         <li><strong>地址模板</strong>：不需要填写真实的当地住址，用通用模板（城市、邮编等）即可，系统不做实地核查</li>
-        <li><strong>注册完只登录 App Store，不登录 iCloud</strong>：去「设置 → App Store」单独登录这个新账号即可下载 App，App Store 的登录只签入"媒体与购买项目"，不涉及 iCloud 同步</li>
+        <li><strong>注册完只登录 App Store，不登录 iCloud</strong>：iOS 系统设置里没有独立的"App Store"菜单，正确入口是——如果手机当前没有登录任何 Apple ID（设置顶部显示"登录 iPhone"），直接打开 <strong>App Store 这个 App</strong>，点右上角头像图标登录新账号即可，天然不会碰到 iCloud；如果手机已经登录了原来的账号，走「设置 → [你的名字] → 媒体与购买项目 → 退出登录」，再重新点一次「媒体与购买项目」选择登录新账号，这一步只影响 App Store / Apple Music 等媒体购买服务，同样不涉及 iCloud 同步（注意 iOS 26.4 起 App Store App 内自带的退出登录按钮被移除了，只能走"设置"这条路径）</li>
       </ul>
       <div class="danger-box">
-        <strong>致命陷阱：iCloud 的"云上贵州"提示会把账号永久打回大陆</strong>——如果登录 iCloud 时弹出"数据存储由云上贵州大数据产业发展有限公司运营"的同意框，一旦点了同意，这个 Apple ID 会被服务器端标记为中国大陆 iCloud 账号，国家/地区随之改成中国，<strong>基本无法挽回</strong>。这也是为什么强烈建议只用 Safari 网页注册（不会自动帮你登录 iCloud），并且只在 App Store 里单独登录：见到任何 iCloud 登录提示、尤其是"云上贵州"字样，一律拒绝或跳过。如果已经点了同意，这个账号大概率救不回来了，直接放弃、重新注册一个更省事。
+        <strong>致命陷阱：iCloud 的"云上贵州"提示会把账号永久打回大陆</strong>——如果登录 iCloud 时弹出"数据存储由云上贵州大数据产业发展有限公司运营"的同意框，一旦点了同意，这个 Apple ID 会被服务器端标记为中国大陆 iCloud 账号，国家/地区随之改成中国，<strong>基本无法挽回</strong>。这也是为什么强烈建议只用 Safari 网页注册（不会自动帮你登录 iCloud），并且只通过 App Store App 本身或「媒体与购买项目」单独登录：见到任何 iCloud 登录提示、尤其是"云上贵州"字样，一律拒绝或跳过。如果已经点了同意，这个账号大概率救不回来了，直接放弃、重新注册一个更省事。
       </div>
     </section>
 
@@ -372,7 +372,7 @@
       <h3>Q11：手机连上电脑热点后完全没有网络（连图标都不显示），电脑自己上网却正常，是怎么回事？</h3>
       <p>这是 Clash 的 <strong>TUN 全局模式和 Windows 移动热点（ICS）冲突</strong>的典型表现：TUN 会抢占系统默认路由，把本该转发给热点客户端（手机）的流量劫持走，导致手机连上热点却完全没有网络，而电脑自己走 Clash 进程处理的流量不受影响。遇到这种情况不用继续排查 TUN 配置，直接改用<a href="#hotspot">第四节</a>里的「局域网代理」方式：关掉 TUN，打开 Clash 的「允许局域网连接」，在手机 Wi-Fi 详情里手动配置代理指向电脑的网关 IP 和 Clash 混合端口即可，这个方式不依赖 TUN，不会有这个冲突。</p>
       <h3>Q12：注册好台湾（或其他外区）Apple ID 后，手机弹出"云上贵州"数据存储提示，点了同意账号就变成中国大陆了，怎么办？</h3>
-      <p>这个提示只在<strong>登录 iCloud</strong>时才会出现，和网络是否翻墙无关——只要点了同意，这个 Apple ID 就会被服务器端标记为中国大陆 iCloud 账号，国家/地区随之改成中国，基本无法挽回。常见触发原因是在「设置」App 里直接创建/登录新 Apple ID（这个入口会顺带自动登录 iCloud）。正确做法是<strong>只用 Safari 网页注册</strong>（<a href="https://appleid.apple.com/account/create" target="_blank" rel="noopener">appleid.apple.com/account/create</a>），注册完只在「设置 → App Store」里单独登录这个账号用于下载 App，全程不碰 iCloud 登录；如果中途弹出任何 iCloud 登录或"云上贵州"提示，一律拒绝/跳过。已经点了同意的账号基本救不回来，直接放弃重新注册一个更省事。</p>
+      <p>这个提示只在<strong>登录 iCloud</strong>时才会出现，和网络是否翻墙无关——只要点了同意，这个 Apple ID 就会被服务器端标记为中国大陆 iCloud 账号，国家/地区随之改成中国，基本无法挽回。常见触发原因是在「设置」App 里直接创建/登录新 Apple ID（这个入口会顺带自动登录 iCloud）。正确做法是<strong>只用 Safari 网页注册</strong>（<a href="https://appleid.apple.com/account/create" target="_blank" rel="noopener">appleid.apple.com/account/create</a>），注册完不要走「设置」顶部的账号登录入口：手机没登录过任何 Apple ID 的话，直接在 App Store App 里点头像登录新账号；已经登录了原账号的话，走「设置 → [你的名字] → 媒体与购买项目 → 退出登录」切换到新账号，这条路径只影响 App Store 等媒体购买服务，全程不碰 iCloud 登录；如果中途弹出任何 iCloud 登录或"云上贵州"提示，一律拒绝/跳过。已经点了同意的账号基本救不回来，直接放弃重新注册一个更省事。</p>
       <h3>Q13：美区 ID 想买付费 App，能不能直接用国内的 Visa 信用卡付款？</h3>
       <p>不建议，大概率绑得上但付不出。Apple 官方支持社区确认美区 App Store 只能添加美国发行的银行卡：国内双币/全币种卡的卡头（BIN）仍是中国大陆，绑定时可能通过初步验证，但实际扣款会因账单地址/邮编与发卡行记录不匹配、或国内银行跨境风控短验与美区支付流程不兼容而失败。详见本文<a href="#paid-purchase">第七节</a>。</p>
       <h3>Q14：能不能用国内信用卡验证一个 PayPal 账号，再用这个 PayPal 给美区 ID 付款？</h3>
