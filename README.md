@@ -45,7 +45,7 @@
 | macOS | [ClashX Meta 教程](macos/clashx-meta.md) · [系统代理配置](macos/macos-proxy-settings.md) |
 | Linux | [桌面版](linux/clash-linux-install-guide.md) · [无 GUI 服务器版](linux/clash-linux-headless-guide.md) |
 | Android | [Clash Meta for Android](mobile/android-clash-meta.md) |
-| iOS | [ShadowClash / Shadowrocket / Stash](mobile/ios-shadowrocket.md) · [ShadowClash 微信直连规则](mobile/shadowclash-wechat-direct.md) |
+| iOS | [ShadowClash / Shadowrocket / Stash](mobile/ios-shadowrocket.md) · [ShadowClash 微信直连规则](mobile/shadowclash-wechat-direct.md) · [海外 Apple ID + 电脑热点教程](mobile/apple-id-hotspot-guide.md) |
 | UniClash | [UniClash 下载教程：疾风云 jifeng、扬帆云 yangfan、尔湾云 erwan 网站代码](subscription/uniclash-guide.md)（[在线版](https://www.aixiaobai168.com/pages/uniclash-guide)） |
 | Karing | [Karing 下载与使用教程：免费的 Shadowrocket 替代客户端](subscription/karing-guide.md)（[在线版](https://www.aixiaobai168.com/pages/karing-guide)） |
 | Mihomo Party | [Mihomo Party / Clash Party 下载教程](subscription/mihomo-party-guide.md)（[在线版](https://www.aixiaobai168.com/pages/mihomo-party-guide)） |
