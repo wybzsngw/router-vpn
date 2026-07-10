@@ -299,15 +299,15 @@
     <section class="card" id="headless-2">
       <div class="kicker">Headless 02</div>
       <h2>7. 下载安装</h2>
-      <p>根据架构下载 Clash 二进制：</p>
+      <p>Dreamacro/clash 已下架（原 v1.18.0 链接已 404），请改用 MetaCubeX/mihomo v1.19.27：</p>
       <pre><code># 检测架构
 uname -m
 
 # 下载（以 amd64 为例）
-wget https://github.com/Dreamacro/clash/releases/download/v1.18.0/clash-linux-amd64-v1.18.0.gz
-gunzip clash-linux-amd64-v1.18.0.gz
-chmod +x clash-linux-amd64-v1.18.0
-sudo mv clash-linux-amd64-v1.18.0 /usr/local/bin/clash
+wget https://github.com/MetaCubeX/mihomo/releases/download/v1.19.27/mihomo-linux-amd64-v1.19.27.gz -O mihomo.gz
+gunzip mihomo.gz   # 解压后文件名是 mihomo
+chmod +x mihomo
+sudo mv mihomo /usr/local/bin/clash
 
 # 验证
 clash -v</code></pre>

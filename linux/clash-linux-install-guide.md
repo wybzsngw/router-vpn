@@ -35,6 +35,8 @@ uname -m
 
 ### 方法一：使用wget下载（推荐）
 
+> 说明：Dreamacro/clash 已下架（原 v1.18.0 下载链接已 404），以下命令改为 MetaCubeX/mihomo v1.19.27。
+
 根据您的系统架构选择对应的版本：
 
 ```bash
@@ -43,10 +45,10 @@ mkdir -p ~/clash-install
 cd ~/clash-install
 
 # AMD64架构（64位x86系统）
-wget https://github.com/Dreamacro/clash/releases/download/v1.18.0/clash-linux-amd64-v1.18.0.gz
+wget https://github.com/MetaCubeX/mihomo/releases/download/v1.19.27/mihomo-linux-amd64-v1.19.27.gz -O mihomo.gz
 
 # ARM64架构（64位ARM系统，如树莓派4）
-wget https://github.com/Dreamacro/clash/releases/download/v1.18.0/clash-linux-arm64-v1.18.0.gz
+wget https://github.com/MetaCubeX/mihomo/releases/download/v1.19.27/mihomo-linux-arm64-v1.19.27.gz -O mihomo.gz
 
 # ARMv7架构（32位ARM系统，如树莓派3）
 wget https://github.com/Dreamacro/clash/releases/download/v1.18.0/clash-linux-armv7-v1.18.0.gz
@@ -59,10 +61,10 @@ wget https://github.com/Dreamacro/clash/releases/download/v1.18.0/clash-linux-ar
 
 ```bash
 # AMD64架构
-curl -L -o clash-linux-amd64-v1.18.0.gz https://github.com/Dreamacro/clash/releases/download/v1.18.0/clash-linux-amd64-v1.18.0.gz
+curl -L -o mihomo.gz https://github.com/MetaCubeX/mihomo/releases/download/v1.19.27/mihomo-linux-amd64-v1.19.27.gz
 
 # ARM64架构
-curl -L -o clash-linux-arm64-v1.18.0.gz https://github.com/Dreamacro/clash/releases/download/v1.18.0/clash-linux-arm64-v1.18.0.gz
+curl -L -o mihomo.gz https://github.com/MetaCubeX/mihomo/releases/download/v1.19.27/mihomo-linux-arm64-v1.19.27.gz
 ```
 
 ### 方法三：从项目目录使用已下载的文件
@@ -84,28 +86,26 @@ cp ./clash-linux-amd64-v1.18.0 ~/clash-install/
 cd ~/clash-install
 
 # 解压.gz文件
-gunzip clash-linux-*-v1.18.0.gz
+gunzip mihomo.gz
 
 # 或者使用gzip命令
-gzip -d clash-linux-*-v1.18.0.gz
+gzip -d mihomo.gz
 ```
 
 ### 2. 设置执行权限
 
 ```bash
 # 根据您的架构选择对应的文件
-chmod +x clash-linux-amd64-v1.18.0
+chmod +x mihomo
 # 或
-chmod +x clash-linux-arm64-v1.18.0
-# 或
-chmod +x clash-linux-armv7-v1.18.0
+./mihomo -v
 ```
 
 ### 3. 移动到系统目录
 
 ```bash
 # 移动到/usr/local/bin并重命名为clash
-sudo mv clash-linux-amd64-v1.18.0 /usr/local/bin/clash
+sudo mv mihomo /usr/local/bin/clash
 
 # 验证安装
 clash -v

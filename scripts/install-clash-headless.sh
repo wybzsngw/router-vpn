@@ -65,8 +65,16 @@ wget -q "https://github.com/${MIHOMO_REPO}/releases/download/${MIHOMO_VERSION}/$
 # 4. 安装为 clash 命令（保持与现有 systemd 单元和文档一致）
 echo -e "${YELLOW}[4/7] 安装 Clash/Mihomo...${NC}"
 gunzip mihomo.gz
-MIHOMO_BIN="mihomo-linux-${CLASH_ARCH}-${MIHOMO_VERSION}"
+MIHOMO_BIN="mihomo"
 chmod +x "${MIHOMO_BIN}"
+if [ "${CLASH_ARCH}" = "amd64" ] && ! "./${MIHOMO_BIN}" -v &> /dev/null; then
+    echo -e "${YELLOW}检测到 amd64 构建可能不兼容，切换下载 compatible 版本...${NC}"
+    rm -f "${MIHOMO_BIN}"
+    MIHOMO_ASSET="mihomo-linux-amd64-compatible-${MIHOMO_VERSION}.gz"
+    wget -q "https://github.com/${MIHOMO_REPO}/releases/download/${MIHOMO_VERSION}/${MIHOMO_ASSET}" -O mihomo.gz
+    gunzip mihomo.gz
+    chmod +x "${MIHOMO_BIN}"
+fi
 sudo mv "${MIHOMO_BIN}" ${INSTALL_DIR}/clash
 
 # 验证安装
