@@ -51,16 +51,6 @@
         { name: "官方入口", probe: "https://j134.net/", url: "https://j134.net/?code={code}" }
       ]
     },
-    lanpang: {
-      title: "蓝胖云",
-      defaultCode: "30Y2Sexl",
-      // Xboard 面板，注册路由 /#/register?code=
-      entries: [
-        { name: "官方入口",   probe: "https://u.lanpangyun.de/",   url: "https://u.lanpangyun.de/#/register?code={code}" },
-        { name: "备用入口 A", probe: "https://lanpangyun.de/",     url: "https://lanpangyun.de/#/register?code={code}" },
-        { name: "备用入口 B", probe: "https://www.lanpangyun.de/", url: "https://www.lanpangyun.de/#/register?code={code}" }
-      ]
-    },
     mojie: {
       title: "魔戒",
       defaultCode: "ItS1igEf",
