@@ -6,21 +6,18 @@
  * 可用入口即跳转，并自动带上你的邀请码。url 中的 {code} 会被替换
  * 为该机场的邀请码（可被 ?code= 覆盖）。
  *
- * 机场由 URL 路径推断：/go/<机场标识>/  ——例如 /go/mojie/、/go/dage/
+ * 机场由 URL 路径推断：/go/<机场标识>/  ——例如 /go/jifeng/、/go/yangfan/
  * 也兼容 ?to=<机场标识> 形式（用于本地测试或临时入口）。
  * ------------------------------------------------------------------
  */
 (function () {
   var PROVIDERS = {
-    dage: {
-      title: "大哥云",
-      defaultCode: "1CAfWNQC",
-      // 2026-06：a03.dgy02.com 为用户最新可用注册链接，优先使用。
-      // aff02.dgy02.com 与 dageyun.net 保留作备用探测。
+    jifeng: {
+      title: "疾风云",
+      defaultCode: "1p7r",
+      // 备用薄弱：目前仅 j134.net 一个官方域名实测稳定可用，后续拿到官方备用域名再补。
       entries: [
-        { name: "官方入口",   probe: "https://a03.dgy02.com/",   url: "https://a03.dgy02.com/#/register?code={code}" },
-        { name: "备用入口 A", probe: "https://aff02.dgy02.com/", url: "https://aff02.dgy02.com/#/register?code={code}" },
-        { name: "备用入口 B", probe: "https://dageyun.net/",     url: "https://dageyun.net/#/register?code={code}" }
+        { name: "官方入口", probe: "https://j134.net/", url: "https://j134.net/?code={code}" }
       ]
     },
     yangfan: {
@@ -32,55 +29,6 @@
       entries: [
         { name: "官方入口",   probe: "https://ml.yfqz1.net/",       url: "https://ml.yfqz1.net/register?code={code}" },
         { name: "备用入口",   probe: "https://yfsite.net/register",  url: "https://yfsite.net/register?code={code}" }
-      ]
-    },
-    erwan: {
-      title: "尔湾云",
-      defaultCode: "EGi8tb",
-      // erwanfind.net 为官方后台公告推荐的防失联备用域名。
-      entries: [
-        { name: "官方入口",   probe: "https://ewanwtt.net/",   url: "https://ewanwtt.net/auth/register?code={code}" },
-        { name: "备用入口 A", probe: "https://erwanfind.net/", url: "https://erwanfind.net/auth/register?code={code}" }
-      ]
-    },
-    jifeng: {
-      title: "疾风云",
-      defaultCode: "1p7r",
-      // 备用薄弱：目前仅 j134.net 一个官方域名实测稳定可用，后续拿到官方备用域名再补。
-      entries: [
-        { name: "官方入口", probe: "https://j134.net/", url: "https://j134.net/?code={code}" }
-      ]
-    },
-    mojie: {
-      title: "魔戒",
-      defaultCode: "ItS1igEf",
-      // 2026-06：官方正式域名 mojie.app，注册路由为标准路由 /register?aff=（非 Hash）。
-      // 旧的 IP 直连入口用 Hash 路由会丢失 aff 参数（注册页邀请码为空），已弃用；
-      // mojie.host 作为备用保留。
-      entries: [
-        { name: "官方入口",   probe: "https://mojie.app/",   url: "https://mojie.app/register?aff={code}" },
-        { name: "备用入口 A", probe: "https://mojie.host/",  url: "https://mojie.host/register?aff={code}" }
-      ]
-    },
-    yizhihongxing: {
-      title: "一枝红杏",
-      defaultCode: "22631",
-      // 一枝红杏官方下单域名频繁变更（.org/.club/.com 轮换），故纳入中转探测。
-      // 链接格式：WHMCS aff.php?aff=<数字ID>，与常见邀请码格式不同。
-      entries: [
-        { name: "官方入口",   probe: "https://order.yizhihongxing.org/",  url: "https://order.yizhihongxing.org/aff.php?aff={code}" },
-        { name: "备用入口 A", probe: "https://order.yizhihongxing.club/", url: "https://order.yizhihongxing.club/aff.php?aff={code}" },
-        { name: "备用入口 B", probe: "https://order.yizhihongxing.com/",  url: "https://order.yizhihongxing.com/aff.php?aff={code}" }
-      ]
-    },
-    wgetcloud: {
-      title: "WgetCloud",
-      defaultCode: "ChCbdK",
-      // WgetCloud（原 GaCloud）高端专线机场。后台邀请链接固定走 invite.wgetcloud.ltd，
-      // 由官方再分配到随机 *.wgetcloud.org 面板域名。不要使用 wgetcloud.ltd 拼接
-      // /auth/register：它会把错误路径带到随机面板域名，导致 404。
-      entries: [
-        { name: "官方邀请入口", probe: "https://invite.wgetcloud.ltd/auth/register", url: "https://invite.wgetcloud.ltd/auth/register?code={code}" }
       ]
     }
   };
