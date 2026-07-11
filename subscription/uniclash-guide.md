@@ -38,23 +38,22 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 
 | 服务商 | 网站代码 | 注册入口 | 客户端下载 | 支持平台 |
 |--------|---------|---------|----------|---------|
-| **疾风云** | `jifeng` | [注册疾风云](https://j134.net/?code=1p7r) | 注册登录后官网下载 | Android / Windows / Mac |
+| **疾风云** | `jifeng` | [注册疾风云](https://j134.net/) | 注册登录后官网下载 | Android / Windows / Mac |
 | **扬帆云** | `yangfan` | [注册扬帆云](https://www.aixiaobai168.com/go/yangfan/) | 注册登录后官网下载 | Android / Windows / Mac |
-| **尔湾云** | `erwan` | [注册尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) | 注册登录后官网下载 | Android / Windows / Mac |
+| **尔湾云** | `erwan` | [注册尔湾云](https://ewanwtt.net/) | 注册登录后官网下载 | Android / Windows / Mac |
 
 ### 方案 A：疾风云 UniClash（推荐）
 
-- 疾风云（JFCLOUD）节点按 V1–V4 分层；基础版 ¥19.99/月（100GB）、标准版 ¥29.99/月（200GB）、高级版 ¥39.99/月（350GB）。
-- 年付 6.9 折码 `jf5169`，两年付 6.5 折码 `jff5165`，半年付 9 折码 `JF888`。
+- 疾风云（JFCLOUD）节点按 V1–V4 分层；基础版 ¥24.99/月（100GB）、标准版 ¥39.99/月（200GB）、高级版 ¥49.99/月（350GB）。
 - UniClash 网站代码填 `jifeng`，输入后右侧显示绿色 ✓ 和"疾风云"字样，确认后继续输入邮箱密码登录。
-- 客户端下载需先注册账号、购买套餐，再登录[疾风云官网](https://j134.net/?code=1p7r)获取（Windows / Mac / Android 均在官网下载页）。
+- 客户端下载需先注册账号、购买套餐，再登录疾风云官网获取（Windows / Mac / Android 均在官网下载页）。
 
 ![疾风云 UniClash 登录界面：网站代码 jifeng 后右侧出现绿色 ✓ 疾风云](../docs/images/uniclash/login-jifeng.png)
 
 ### 方案 B：扬帆云 UniClash
 
 - AI 解锁能力强：已验证可解锁 ChatGPT / Claude / Gemini 等主流 AI。
-- 家宽专线 + 中转双线，年付 6.9 折优惠码 `yf6189`，两年付 6.5 折 `yf6185`，支持私人定制。
+- 家宽专线 + 中转双线，支持私人定制。
 - UniClash 网站代码填 `yangfan`，输入后右侧显示绿色 ✓ 和"扬帆云"字样，确认后继续输入邮箱密码登录。
 - 客户端下载需先[注册扬帆云](https://www.aixiaobai168.com/go/yangfan/)账号、购买套餐，再登录官网会员中心获取（Windows / Mac / Android）。
 
@@ -63,7 +62,7 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 ### 方案 C：尔湾云 UniClash
 
 - 套餐梯度清晰，官方明确要求填写网站代码 `erwan`。
-- 客户端下载需先[注册尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb)账号、购买套餐，再登录官网会员中心获取（Windows / Mac / Android）。
+- 客户端下载需先[注册尔湾云](https://ewanwtt.net/)账号、购买套餐，再登录官网会员中心获取（Windows / Mac / Android）。
 
 ![尔湾云官网"推荐使用 UniClash 客户端"区块](../docs/images/uniclash/download-erwan-block.png)
 
@@ -84,10 +83,10 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 
 按以下 6 步操作即可顺利登录使用，不要跳过注册和购买直接下载客户端：
 
-1. **选服务商**：[疾风云](https://j134.net/?code=1p7r)、[扬帆云](https://www.aixiaobai168.com/go/yangfan/) 或 [尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb)。
+1. **选服务商**：[疾风云](https://j134.net/)、[扬帆云](https://www.aixiaobai168.com/go/yangfan/) 或 [尔湾云](https://ewanwtt.net/)。
 2. **注册账号**：点上面的服务商名称跳到注册页，填邮箱和密码。
 3. **购买套餐**：付款后登录服务商官网确认账号有有效套餐和剩余流量。
-4. **下载客户端**：三家都在注册登录官网后，从会员中心 / 官网下载页获取——疾风云从[疾风云官网](https://j134.net/?code=1p7r)登录后获取，扬帆云、尔湾云登录各自官网会员中心下载，不要用未注册的第三方裸下载页。
+4. **下载客户端**：三家都在注册登录官网后，从会员中心 / 官网下载页获取——疾风云从[疾风云官网](https://j134.net/)登录后获取，扬帆云、尔湾云登录各自官网会员中心下载，不要用未注册的第三方裸下载页。
 5. **填写网站代码**：疾风云填 `jifeng`，扬帆云填 `yangfan`，尔湾云填 `erwan`，看到绿色 ✓ 和服务商名再继续。
 6. **输入邮箱密码登录**：用刚刚注册的服务商账号（不是本站账号），登录后点中间电源按钮即可连接。
 
@@ -127,7 +126,7 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 
 ### Android
 
-1. 先在[扬帆云](https://www.aixiaobai168.com/go/yangfan/)、[尔湾云](https://ewanwtt.net/auth/register?code=EGi8tb) 或 [疾风云](https://j134.net/?code=1p7r) 官网注册登录，再到会员中心 / 官网下载页获取 Android 安装包。
+1. 先在[扬帆云](https://www.aixiaobai168.com/go/yangfan/)、[尔湾云](https://ewanwtt.net/) 或 [疾风云](https://j134.net/) 官网注册登录，再到会员中心 / 官网下载页获取 Android 安装包。
 2. 选 **下载 UniClash APK（线路一）**，速度慢就换线路二。
 3. 提示"未知来源"时，去系统设置允许当前浏览器或文件管理器安装。
 4. 下载页还提供 _改名 zip 版_，下载后把 `.zip` 改回 `.apk` 再安装。
