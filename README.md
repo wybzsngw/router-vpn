@@ -1,9 +1,9 @@
-# AI 编程实战 + 全平台网络工具教程 2026 — Cursor / ChatGPT 深度指南 · 回国加速方案 · 路由器 / 软路由 / 多端网络配置
+# AI 编程实战 + 全平台网络工具教程 2026 — Cursor / ChatGPT 深度指南 · 路由器 / 软路由 / 多端网络配置
 
 [![在线阅读](https://img.shields.io/badge/📖_在线阅读-主站-0ea5e9?style=for-the-badge)](https://www.aixiaobai168.com/)
 [![GitHub stars](https://badgen.net/github/stars/mowei-ie/router-vpn?icon=github&label=stars&color=orange&scale=1.35)](https://github.com/mowei-ie/router-vpn/stargazers)
 [![License](https://img.shields.io/badge/license-Apache_2.0-10b981?style=for-the-badge)](LICENSE)
-[![Last Updated](https://img.shields.io/badge/v2.8_更新-2026.06.17-7c4dff?style=for-the-badge)](https://www.aixiaobai168.com/)
+[![Last Updated](https://img.shields.io/badge/最近更新-2026.06-7c4dff?style=for-the-badge)](https://www.aixiaobai168.com/)
 
 > **2026 最新全平台综合指南** — 一个仓库覆盖三大专题：
 >
@@ -55,7 +55,7 @@
 
 | 设备 | 教程 |
 |------|------|
-| 华硕路由器 | [梅林刷机](asus-router/asus-merlin-flash.md) → [MerlinClash 配置](asus-router/asus-merlinclash-setup.md) → [高级功能 / Fancyss](asus-router/asus-advanced.md) |
+| 华硕路由器 | [梅林固件刷机教程](asus-router/asus-merlin-flash.md) |
 | 软路由 OpenWrt | [OpenWrt + OpenClash 完整教程](soft-router/openwrt-clash.md) |
 | 软路由 iKuai | [iKuai + 旁路由方案](soft-router/ikuai-clash.md) |
 | iStoreOS | [iStoreOS 网络配置专题（PassWall / SSR-Plus / Are-u-ok）](istoreos/istoreos-guide.md) |
@@ -108,7 +108,7 @@
 ## 📂 仓库结构
 
 ```
-├── asus-router/     华硕路由器（梅林 + MerlinClash + Fancyss）
+├── asus-router/     华硕路由器梅林固件刷机教程
 ├── soft-router/     软路由（OpenWrt + OpenClash、iKuai 旁路由）
 ├── istoreos/        iStoreOS 网络配置专题
 ├── windows/         Windows（Clash Verge Rev）
@@ -124,44 +124,30 @@
 ├── extras/          Tailscale、部署指南等扩展
 ├── docs/            在线文档（HTML）& 静态资源
 │   ├── pages/       各教程的 HTML 页面
-│   ├── images/      截图 & 封面图
-│   └── downloads/   离线安装包
+│   └── images/      截图 & 封面图
 └── scripts/         自动化脚本
 ```
 
-## 📦 离线安装包
-
-| 文件 | 说明 |
-|------|------|
-| [MC2_0.4.6_ARM64.tar.gz](docs/downloads/MC2_0.4.6_ARM64.tar.gz) | MerlinClash ARM64 版（推荐） |
-| [MC2_0.4.6_ARM32.tar.gz](docs/downloads/MC2_0.4.6_ARM32.tar.gz) | MerlinClash ARM32 版 |
-| [MC2_0.3_ARM64.tar.gz](docs/downloads/MC2_0.3_ARM64.tar.gz) | MerlinClash ARM64 旧版 |
-| [fancyss_hnd_full.tar.gz](docs/downloads/fancyss_hnd_full.tar.gz) | Fancyss HND Full 离线包 |
-
----
-
 ## 📝 更新日志
 
-### v2.8 — 2026 年 6 月
+### 2026 年 6 月
 
-- 新增**机场决策器**：多维度评分模型（速度 / 稳定性 / 价格 / 解锁能力），帮助用户快速选出最适合自己的机场方案
-- 重构**机场中转系统**：优化中转节点架构与分流规则，提升 IPLC / 专线中转的稳定性与覆盖范围
 - 整体内容梳理与细节优化
 
-### v2.7 — 2026 年 5 月
+### 2026 年 5 月
 
-- 新增 **Cursor AI 编程系列**：完整指南 + 4 篇实战（建站 / SSH 远程 / 阿里云部署 / 全栈 App）
-- **ChatGPT 内容保鲜**：依据 OpenAI 官网核对套餐（Go / Plus / Pro）与最新模型（GPT-5.2 / GPT-5.5），扩展 OpenAI 解锁节点、UniClash、杨帆云章节，移除账号星球导向
-- 新增回国加速专题骨架；补充 Karing / Mihomo Party / FlClash 客户端入口
+- 新增 **Cursor AI 编程系列**：完整指南 + 4 篇实战（建站 / SSH 远程 / 云部署 / 全栈 App）
+- **ChatGPT 内容保鲜**：依据官网套餐（Go / Plus / Pro）与最新模型持续校准
+- 新增回国加速专题；补充 Karing / Mihomo Party / FlClash 客户端教程
 
-### v2.6 — 2026 年 4 月
+### 2026 年 4 月
 
 - 新增 ChatGPT Plus 充值、OpenAI API、CFW 替代方案三篇指南
 - 完成全站 SEO 与 clean URL 优化，补充 UniClash 与移动端内容
 
-### v2.5 — 2026 年 3 月
+### 2026 年 3 月
 
-- 重构为全平台 Clash 教程体系，上线 iStoreOS、ChatGPT、Netflix、路由器等核心指南
+- 重构为全平台网络配置教程体系，上线 iStoreOS、ChatGPT、Netflix、路由器等核心指南
 
 ---
 
@@ -177,4 +163,4 @@
 
 ---
 
-**在线文档**：<https://www.aixiaobai168.com/>　|　**版本**：v2.8　|　**最后更新**：2026 年 6 月 17 日
+**在线文档**：<https://www.aixiaobai168.com/>　|　**最后更新**：2026 年 6 月

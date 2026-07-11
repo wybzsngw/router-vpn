@@ -252,7 +252,7 @@ A：复查 **UDP/TCP 是否同时进代理**、**DNS 是否仍泄漏**、**自�
 ## 参考资源
 
 - [OpenClash Issue #5116 — 禁用 QUIC 与 UDP 转发关系](https://github.com/vernesong/OpenClash/issues/5116)
-- [华硕 MerlinClash 配置](../asus-router/asus-merlinclash-setup.md)
+- [华硕路由器梅林固件刷机教程](../asus-router/asus-merlin-flash.md)
 - [OpenWrt + OpenClash](../soft-router/openwrt-clash.md)
 - [iStoreOS 专题](../istoreos/istoreos-guide.md)
 - [Clash 常见问题排查](./troubleshooting.md)

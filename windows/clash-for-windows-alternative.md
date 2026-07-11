@@ -75,7 +75,7 @@ Clash for Windows（CFW）已经停更并删除公开仓库。旧版本短期还
 | 多设备 Win + 安卓 + Mac | [FlClash](../subscription/flclash-guide.md) | Android 与桌面端体验更一致 |
 | iPhone / 免费跨平台方案 | [Karing](../subscription/karing-guide.md) | 适合 iOS 免费方案和多端订阅导入 |
 | 疾风云 / 扬帆云 / 尔湾云用户 | [UniClash](../subscription/uniclash-guide.md) | 服务商账号一键登录，不需要手动导入订阅 |
-| 路由器全屋代理 | [华硕路由器](../asus-router/asus-merlinclash-setup.md) / [软路由 OpenClash](../soft-router/openwrt-clash.md) | 不依赖每台设备单独安装客户端 |
+| 路由器全屋代理 | [华硕梅林固件刷机](../asus-router/asus-merlin-flash.md) / [软路由 OpenClash](../soft-router/openwrt-clash.md) | 不依赖每台设备单独安装客户端 |
 
 新手建议：
 

@@ -264,7 +264,7 @@
 | **Linux** | [Linux 安装](../linux/clash-linux-install-guide.md)、[无头模式](../linux/clash-linux-headless.md) | 权限、systemd、TUN |
 | **Android** | [Android Clash Meta](../mobile/android-clash-meta.md) | 后台保活、VPN 权限 |
 | **iOS** | [Shadowrocket 等](../mobile/ios-shadowrocket.md) | 配置导入、系统限制 |
-| **路由器** | [OpenWrt](../soft-router/openwrt-clash.md)、[爱快](../soft-router/ikuai-clash.md)、[华硕](../asus-router/asus-merlinclash-setup.md) | 存储空间、性能、兼容性 |
+| **路由器** | [OpenWrt](../soft-router/openwrt-clash.md)、[爱快](../soft-router/ikuai-clash.md)、[华硕梅林刷机](../asus-router/asus-merlin-flash.md) | 存储空间、性能、兼容性 |
 
 ---
 
