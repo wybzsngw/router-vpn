@@ -27,8 +27,8 @@
     'getmalus.com':    'Malus',
     'kuaifan.co':      '快帆',           // 快帆官网与子域（vip.kuaifan.co、download 等）
     'af.kuaifan.club': '快帆',           // 快帆推广员跳转短链域名
-    'transocks.com':   '穿梭 Transocks', // 穿梭推广链接（payment?affiliate-code=）
-    'ednovas.org':     'EdNovas 回国机场' // 少数提供回国线路的 Clash 机场（方案 B）
+    'transocks.com':   '穿梭 Transocks'  // 穿梭推广链接（payment?affiliate-code=）
+    // 回国机场类（方案 B）暂不点名接入联盟追踪：多为无法核实工商主体的匿名运营方，不予推广
   };
 
   // 回国加速专题：VPS 服务商联盟（自建党 self-hosted 教程引导用）。

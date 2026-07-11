@@ -34,7 +34,7 @@
 > 适合已经在用 Clash / Mihomo 的用户，加一份回国节点订阅即可。
 
 - [Clash 反向分流配置与一键规则集](client/clash-reverse-rules.md)（已上线）
-- 回国线路机场：已在 [综述 · 5.4](overview.md) 收录 EdNovas 云（少数明确提供回国专线的机场）；更多机场横评规划中（[airport/](airport/)）
+- 回国线路机场：市面上此类"机场"绝大多数是无法核实工商主体的匿名运营方，本站暂不点名推荐；如你已有稳定使用的机场订阅且带回国专线，可直接参考上方规则集自行配置（[综述 · 5.1](overview.md)）
 
 ### 自建回国节点（需大陆落地点）
 
@@ -129,6 +129,10 @@ docs/
 
 ## 📝 更新日志
 
+### 2026 年 7 月
+
+- **2026-07-11**：**联盟链接短暂下线后恢复**——Malus / 快帆 / 穿梭 Transocks 三家均为有工商注册主体的公司，恢复其联盟链接（主专题、世界杯专题、GitHub 综述同步）；EdNovas 回国机场因运营方为匿名个人、无法核实工商主体，**移除具名推荐**，改为不点名的机场使用提醒
+
 ### 2026 年 6 月
 
 - **2026-06-13**：**Clash 配置纠错**——修正回国分流规则中的无效 GeoSite 分类名 `category-games-cn` 为正确的属性写法 `category-games@cn`（错误写法会导致 `list not found` 解析失败），同步订正"默认 geo 数据源"表述为 Clash.Meta 内核默认加载的 MetaCubeX/meta-rules-dat；涉及综述、主专题 HTML、客户端文档与规则集说明
@@ -144,4 +148,4 @@ docs/
 
 ---
 
-**在线文档**：<https://www.aixiaobai168.com/pages/return-china-guide>　|　**版本**：v1.3　|　**最后更新**：2026 年 6 月 13 日
+**在线文档**：<https://www.aixiaobai168.com/pages/return-china-guide>　|　**版本**：v1.4　|　**最后更新**：2026 年 7 月 11 日
