@@ -70,12 +70,7 @@ UniClash 是疾风云、扬帆云、尔湾云等机场推出的**定制版 Clash
 
 ### 你在用的机场也支持 UniClash？
 
-我们正在持续整理 UniClash 机场目录。如果你的机场也提供官方 UniClash 下载页和网站代码（且亲测可用），欢迎通过 GitHub Issues 反馈：
-
-- 📝 [提交机场反馈](https://github.com/mowei-ie/router-vpn/issues/new?template=uniclash-airport-feedback.yml)（需 GitHub 账号）
-- 👀 [查看已收到的反馈](https://github.com/mowei-ie/router-vpn/issues?q=is%3Aissue+label%3Auniclash)
-
-> ⚠️ 提交时请勿包含订单号、邮箱、订阅链接等敏感信息。
+我们正在持续整理 UniClash 机场目录。如果你的机场也提供官方 UniClash 下载页和网站代码（且亲测可用），可在使用对应客户端时自行核验登录与订阅是否正常。
 
 ---
 
