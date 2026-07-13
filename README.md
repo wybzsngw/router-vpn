@@ -1,7 +1,7 @@
 # AI 编程实战 + 全平台网络工具教程 2026 — Cursor / ChatGPT 深度指南 · 路由器 / 软路由 / 多端网络配置
 
 [![在线阅读](https://img.shields.io/badge/📖_在线阅读-主站-0ea5e9?style=for-the-badge)](https://www.aixiaobai168.com/)
-[![GitHub stars](https://badgen.net/github/stars/mowei-ie/router-vpn?icon=github&label=stars&color=orange&scale=1.35)](https://github.com/mowei-ie/router-vpn/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/mowei-ie/router-vpn?style=for-the-badge&label=stars&color=orange)](https://github.com/mowei-ie/router-vpn/stargazers)
 [![License](https://img.shields.io/badge/license-Apache_2.0-10b981?style=for-the-badge)](LICENSE)
 [![Last Updated](https://img.shields.io/badge/最近更新-2026.06-7c4dff?style=for-the-badge)](https://www.aixiaobai168.com/)
 
