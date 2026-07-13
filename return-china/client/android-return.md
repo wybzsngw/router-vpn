@@ -74,7 +74,7 @@
 
 ### 3.3 添加回国规则集
 
-在你的 Clash 配置文件（YAML）里加入本站维护的回国规则集，两步完成：
+在你的 Clash 配置文件（YAML）里加入本站维护的回国规则集，分三步追加（**先定义代理组，再写引用它的规则**，否则 Clash 会报校验错误）：
 
 **步骤 1：在 `rule-providers` 块添加：**
 
@@ -89,7 +89,19 @@ rule-providers:
     interval: 86400
 ```
 
-**步骤 2：在 `rules` 块最前面添加（放在所有其他规则之前）：**
+**步骤 2：新增代理组 `🇨🇳回国`：**
+
+```yaml
+proxy-groups:
+  - name: "🇨🇳回国"
+    type: select
+    proxies:
+      - 回国节点A
+      - 回国节点B
+      - DIRECT
+```
+
+**步骤 3：在 `rules` 块最前面添加（放在所有其他规则之前）：**
 
 ```yaml
 rules:
@@ -100,18 +112,6 @@ rules:
   # --- 你原有的出国规则继续在后面 ---
   - GEOSITE,google,出国代理
   - MATCH,出国代理
-```
-
-**步骤 3：新增代理组 `🇨🇳回国`：**
-
-```yaml
-proxy-groups:
-  - name: "🇨🇳回国"
-    type: select
-    proxies:
-      - 回国节点A
-      - 回国节点B
-      - DIRECT
 ```
 
 > 完整配置示例和字段说明见：[Clash 反向分流配置指南](./clash-reverse-rules.md)
