@@ -1,0 +1,58 @@
+name: 文档问题反馈
+description: 反馈教程错误、链接失效、步骤过期或描述不清
+title: "[Docs] "
+labels: ["docs", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈文档问题。本仓库当前主要维护 Cursor / ChatGPT / OpenAI API 相关教程。
+
+  - type: input
+    id: page_path
+    attributes:
+      label: 文档路径
+      description: 请填写有问题的 Markdown / 页面路径
+      placeholder: cursor/cursor-guide.md
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: 问题类型
+      options:
+        - 内容错误（步骤/命令/参数）
+        - 链接失效或跳转错误
+        - 页面信息过期（版本/价格/路径变更）
+        - 表述不清，容易误解
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: 详细说明
+      description: 请尽量给出“哪里错了 + 建议改成什么”
+      placeholder: |
+        当前内容：
+        问题点：
+        建议修改：
+    validations:
+      required: true
+
+  - type: input
+    id: evidence
+    attributes:
+      label: 参考证据（可选）
+      description: 官方文档链接、截图链接、日志片段等
+      placeholder: https://...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我确认这是文档质量问题
+          required: true

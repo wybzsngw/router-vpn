@@ -1,0 +1,24 @@
+{
+  "name": "router-vpn",
+  "version": "1.0.0",
+  "description": "AI 编程实战教程：Cursor / ChatGPT Plus / OpenAI API",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wybzsngw/router-vpn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/wybzsngw/router-vpn/issues"
+  },
+  "homepage": "https://github.com/wybzsngw/router-vpn#readme"
+}

@@ -1,0 +1,30 @@
+title: "[求助] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        简单描述即可。请勿公开：API Key、账号密码、支付截图等敏感信息。
+
+  - type: dropdown
+    id: scene
+    attributes:
+      label: 大概属于哪类问题？（可选）
+      options:
+        - Cursor 使用 / 配置
+        - ChatGPT Plus / Go 充值
+        - OpenAI API
+        - 其他
+    validations:
+      required: false
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: 问题描述
+      description: 一段话写清即可；方便的话带上系统、工具版本、报错原文。
+      placeholder: |
+        环境：例如 Windows + Cursor
+        现象 / 报错：
+        已经试过：
+    validations:
+      required: true
